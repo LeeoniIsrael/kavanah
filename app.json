@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Kavanah",
+    "slug": "kavanah",
+    "scheme": "kavanah",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.leeoniisrael.kavanah",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Kavanah can lock your spiritual profile behind Face ID when you enable biometric lock.",
+        "NSLocationWhenInUseUsageDescription": "Kavanah uses your location to calculate local zmanim and Shabbat times."
+      }
+    },
+    "android": {
+      "package": "com.leeoniisrael.kavanah",
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION", "USE_BIOMETRIC"]
+    },
+    "plugins": [
+      "expo-apple-authentication",
+      "expo-local-authentication",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Kavanah uses your location to calculate local zmanim."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#111827"
+        }
+      ]
+    ]
+  }
+}
