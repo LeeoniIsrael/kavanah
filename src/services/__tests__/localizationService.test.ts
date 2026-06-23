@@ -2,8 +2,34 @@ import { languageOptions } from "@/data/languages";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
 
 describe("localization service", () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it("keeps English translations local", async () => {
     await expect(translatePrayerText("Blessed are You", "en")).resolves.toBe("Blessed are You");
+  });
+
+  it("uses clean translated text for Russian", async () => {
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      ok: true,
+      json: async () => [[["Благословен Ты, Адонай, Бог наш.", "Blessed are You, Adonai our God."]]]
+    } as Response);
+
+    await expect(translatePrayerText("Blessed are You, Adonai our God.", "ru")).resolves.toBe("Благословен Ты, Адонай, Бог наш.");
+  });
+
+  it("decodes percent-encoded fallback provider responses", async () => {
+    jest
+      .spyOn(global, "fetch")
+      .mockRejectedValueOnce(new Error("google unavailable"))
+      .mockRejectedValueOnce(new Error("google unavailable"))
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ responseData: { translatedText: "Благословен%20Ты%2C%20Адонай" } })
+      } as Response);
+
+    await expect(translatePrayerText("Blessed are You, Adonai", "uk")).resolves.toBe("Благословен Ты, Адонай");
   });
 
   it("adapts Hebrew transliteration conventions for selected languages", () => {

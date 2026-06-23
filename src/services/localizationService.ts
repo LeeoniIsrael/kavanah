@@ -1,7 +1,7 @@
 import { cacheStorage, readJson, writeJson } from "@/services/mmkv";
 import { secureFetch } from "@/services/network";
 
-const TRANSLATION_CACHE_KEY = "language.translations";
+const TRANSLATION_CACHE_KEY = "language.translations.v2";
 
 type TranslationCache = Record<string, string>;
 
@@ -27,9 +27,7 @@ export async function translatePrayerText(text: string, languageCode: string): P
 
   try {
     const providerLanguageCode = toTranslationProviderCode(languageCode);
-    const response = await secureFetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanText)}&langpair=en|${encodeURIComponent(providerLanguageCode)}`, {}, { retries: 1, timeoutMs: 7000 });
-    const payload = (await response.json()) as { responseData?: { translatedText?: unknown } };
-    const translated = typeof payload.responseData?.translatedText === "string" ? stripEntities(payload.responseData.translatedText) : cleanText;
+    const translated = await translateWithGoogle(cleanText, providerLanguageCode).catch(() => translateWithMyMemory(cleanText, providerLanguageCode));
     writeJson(cacheStorage, TRANSLATION_CACHE_KEY, { ...cache, [cacheKey]: translated });
     return translated;
   } catch {
@@ -115,7 +113,50 @@ function toTranslationProviderCode(languageCode: string): string {
 }
 
 function stripEntities(input: string): string {
-  return input.replace(/&#39;/g, "'").replace(/&quot;/g, "\"").replace(/&amp;/g, "&").trim();
+  return decodePercentEncodedText(input).replace(/&#39;/g, "'").replace(/&quot;/g, "\"").replace(/&amp;/g, "&").trim();
+}
+
+async function translateWithGoogle(text: string, languageCode: string): Promise<string> {
+  const response = await secureFetch(
+    `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(languageCode)}&dt=t&q=${encodeURIComponent(text)}`,
+    {},
+    { retries: 1, timeoutMs: 7000 }
+  );
+  const payload = (await response.json()) as unknown;
+  const translated = parseGoogleTranslateResponse(payload);
+  if (!translated) {
+    throw new Error("Google translation response did not include translated text.");
+  }
+  return translated;
+}
+
+async function translateWithMyMemory(text: string, languageCode: string): Promise<string> {
+  const response = await secureFetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${encodeURIComponent(languageCode)}`, {}, { retries: 1, timeoutMs: 7000 });
+  const payload = (await response.json()) as { responseData?: { translatedText?: unknown } };
+  return typeof payload.responseData?.translatedText === "string" ? stripEntities(payload.responseData.translatedText) : text;
+}
+
+function parseGoogleTranslateResponse(payload: unknown): string {
+  if (!Array.isArray(payload) || !Array.isArray(payload[0])) {
+    return "";
+  }
+
+  return payload[0]
+    .map((segment) => (Array.isArray(segment) && typeof segment[0] === "string" ? segment[0] : ""))
+    .join("")
+    .trim();
+}
+
+function decodePercentEncodedText(input: string): string {
+  if (!/%[0-9A-F]{2}/i.test(input)) {
+    return input;
+  }
+
+  try {
+    return decodeURIComponent(input);
+  } catch {
+    return input.replace(/%20/g, " ");
+  }
 }
 
 function romanizedHebrewToJapaneseKana(input: string): string {
