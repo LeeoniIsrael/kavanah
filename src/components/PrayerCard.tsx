@@ -18,7 +18,12 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
         <View style={styles.text}>
           <Label>{prayer.category}</Label>
           <SectionTitle>{prayer.title}</SectionTitle>
-          <Body numberOfLines={2}>{prayer.tokens[0]?.translation || prayer.summary || prayer.sefariaRef}</Body>
+          <Body numberOfLines={3} style={styles.useCase}>
+            {prayer.useCase || prayer.summary}
+          </Body>
+          <Body numberOfLines={1} style={styles.source}>
+            {prayer.summary || prayer.sefariaRef}
+          </Body>
         </View>
         <View style={[styles.dot, selected && styles.selectedDot]} />
       </View>
@@ -46,6 +51,16 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     gap: 4
+  },
+  useCase: {
+    color: colors.ink,
+    fontSize: 15,
+    lineHeight: 21
+  },
+  source: {
+    color: colors.inkMuted,
+    fontSize: 12,
+    lineHeight: 17
   },
   dot: {
     width: 11,

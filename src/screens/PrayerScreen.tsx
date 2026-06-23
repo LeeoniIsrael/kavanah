@@ -1,6 +1,6 @@
 import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, X } from "lucide-react-native";
-import { useEffect, useState } from "react";
-import { Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { useEffect, useRef, useState } from "react";
+import { Animated, Easing, Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
@@ -35,6 +35,7 @@ export function PrayerScreen(): React.JSX.Element {
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results : [];
+  const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
 
   useEffect(() => {
     const handle = setTimeout(() => {
@@ -42,6 +43,15 @@ export function PrayerScreen(): React.JSX.Element {
     }, 450);
     return () => clearTimeout(handle);
   }, [query, searchRemote]);
+
+  useEffect(() => {
+    Animated.timing(bookmarkReveal, {
+      toValue: showResults ? 0 : 1,
+      duration: showResults ? 220 : 280,
+      easing: showResults ? Easing.out(Easing.cubic) : Easing.bezier(0.2, 0.9, 0.25, 1),
+      useNativeDriver: false
+    }).start();
+  }, [bookmarkReveal, showResults]);
 
   useEffect(() => {
     let cancelled = false;
@@ -124,27 +134,42 @@ export function PrayerScreen(): React.JSX.Element {
         </AnimatedPressable>
       </View>
 
-      <Card accent="gold" style={styles.bookmarkShelf}>
-        <View style={styles.sectionHeader}>
-          <View>
-            <Label>Bookmarked</Label>
-            <SectionTitle>Saved prayers</SectionTitle>
+      <Animated.View
+        pointerEvents={showResults ? "none" : "auto"}
+        style={[
+          styles.bookmarkMotion,
+          {
+            opacity: bookmarkReveal,
+            maxHeight: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [0, 320] }),
+            marginBottom: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [0, spacing.md] }),
+            transform: [{ translateY: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }]
+          }
+        ]}
+      >
+        <Card accent="gold" style={styles.bookmarkShelf}>
+          <View style={styles.sectionHeader}>
+            <View>
+              <Label>Bookmarked</Label>
+              <SectionTitle>Saved prayers</SectionTitle>
+            </View>
+            <BookmarkCheck size={20} color={colors.gold} />
           </View>
-          <BookmarkCheck size={20} color={colors.gold} />
-        </View>
-        <View style={styles.bookmarkList}>
-          {bookmarkedPrayers.length > 0 ? (
-            bookmarkedPrayers.map((prayer) => (
-              <AnimatedPressable key={prayer.id} onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChip}>
-                <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
-                <Body style={styles.bookmarkChipMeta}>{prayer.category}</Body>
-              </AnimatedPressable>
-            ))
-          ) : (
-            <Body>Tap the bookmark on any prayer to keep it here.</Body>
-          )}
-        </View>
-      </Card>
+          <View style={styles.bookmarkList}>
+            {bookmarkedPrayers.length > 0 ? (
+              bookmarkedPrayers.map((prayer) => (
+                <AnimatedPressable key={prayer.id} onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChip}>
+                  <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
+                  <Body numberOfLines={2} style={styles.bookmarkChipMeta}>
+                    {prayer.useCase || prayer.category}
+                  </Body>
+                </AnimatedPressable>
+              ))
+            ) : (
+              <Body>Tap the bookmark on any prayer to keep it here.</Body>
+            )}
+          </View>
+        </Card>
+      </Animated.View>
 
       {showResults ? (
         <View style={styles.resultStack}>
@@ -286,6 +311,9 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 18
   },
+  bookmarkMotion: {
+    overflow: "hidden"
+  },
   bookmarkShelf: {
     gap: spacing.md
   },
@@ -312,8 +340,7 @@ const styles = StyleSheet.create({
   },
   bookmarkChipMeta: {
     fontSize: 12,
-    lineHeight: 17,
-    textTransform: "capitalize"
+    lineHeight: 17
   },
   readerSafeArea: {
     flex: 1,

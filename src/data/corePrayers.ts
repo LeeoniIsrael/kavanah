@@ -8,6 +8,7 @@ type PrayerSeed = {
   sefariaRef: string;
   category: PrayerCategory;
   summary: string;
+  useCase: string;
   aliases: string[];
   tags: string[];
   lines: Pick<PrayerToken, "hebrew" | "translation" | "transliteration">[];
@@ -20,6 +21,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Sefard, Upon Arising, Modeh Ani",
     category: "thanks",
     summary: "First waking words of gratitude for restored life.",
+    useCase: "Use this immediately after waking up, before the day starts, to begin with gratitude.",
     aliases: ["wake up", "morning gratitude", "thanks", "thank you"],
     tags: ["morning", "gratitude", "daily"],
     lines: [
@@ -36,6 +38,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Deuteronomy 6:4-9",
     category: "daily",
     summary: "The central declaration of Jewish faith and covenantal attention.",
+    useCase: "Use this morning or evening when you want the core Jewish declaration of faith and focus.",
     aliases: ["hear israel", "adonai echad", "acceptance of heaven"],
     tags: ["morning", "evening", "faith", "protection"],
     lines: [
@@ -57,6 +60,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Tefillin",
     category: "tefillin",
     summary: "The blessing recited when wrapping tefillin.",
+    useCase: "Use this on weekday mornings when you are putting on tefillin.",
     aliases: ["wrap tefillin", "tfellin", "tefilin", "phylacteries"],
     tags: ["morning", "mitzvah", "weekday", "bookmark"],
     lines: [
@@ -73,6 +77,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tallit",
     category: "daily",
     summary: "The blessing recited when wrapping in a tallit.",
+    useCase: "Use this before wrapping yourself in a tallit or prayer shawl.",
     aliases: ["tzitzit", "tallis", "prayer shawl"],
     tags: ["morning", "mitzvah", "weekday", "shabbat"],
     lines: [
@@ -89,6 +94,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Olat Reiyah, Netilat Yadayim and Asher Yatzar",
     category: "health",
     summary: "A blessing of gratitude for the body’s intricate function.",
+    useCase: "Use this after using the bathroom or when giving thanks for your body working properly.",
     aliases: ["bathroom blessing", "body", "health", "healing"],
     tags: ["health", "daily", "thanks"],
     lines: [
@@ -105,6 +111,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Morning Blessings",
     category: "study",
     summary: "Blessings before engaging in Torah learning.",
+    useCase: "Use this before Torah learning, Jewish study, or beginning a serious learning session.",
     aliases: ["study", "learning", "school", "yeshiva", "success in studies"],
     tags: ["study", "morning", "success"],
     lines: [
@@ -121,6 +128,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Prayers for Special Occasions, Traveler's Prayer",
     category: "travel",
     summary: "A prayer for safety, peace, and arrival while traveling.",
+    useCase: "Use this when leaving on a trip, flight, drive, or journey outside your usual area.",
     aliases: ["travelers prayer", "road", "flight", "trip", "journey", "driving"],
     tags: ["travel", "safety", "protection"],
     lines: [
@@ -142,6 +150,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Psalms 121",
     category: "protection",
     summary: "A psalm for protection, journeys, and watchfulness.",
+    useCase: "Use this when you want protection while traveling, commuting, or feeling exposed.",
     aliases: ["song of ascents", "help", "mountains", "safety", "protection"],
     tags: ["travel", "safety", "protection"],
     lines: [
@@ -163,6 +172,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Psalms 23",
     category: "protection",
     summary: "A psalm of trust, comfort, and steadiness in fear.",
+    useCase: "Use this for comfort during fear, grief, uncertainty, illness, or emotional heaviness.",
     aliases: ["shepherd", "comfort", "fear", "valley", "safety"],
     tags: ["protection", "health", "mourning"],
     lines: [
@@ -179,6 +189,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Mi Sheberach",
     category: "health",
     summary: "A prayer asking for complete healing of body and spirit.",
+    useCase: "Use this when praying for someone who is sick, recovering, or in need of healing.",
     aliases: ["refuah", "healing", "sick", "hospital", "health"],
     tags: ["health", "healing", "community"],
     lines: [
@@ -195,6 +206,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Olat Reiyah, Hamotzi",
     category: "food",
     summary: "The blessing before eating bread.",
+    useCase: "Use this before eating bread or a meal centered around bread.",
     aliases: ["bread", "meal", "food", "before eating"],
     tags: ["food", "thanks", "daily"],
     lines: [
@@ -211,6 +223,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Birkat Hamazon",
     category: "food",
     summary: "Grace after meals, recited after eating bread.",
+    useCase: "Use this after eating a bread meal, traditionally after you have washed and eaten bread.",
     aliases: ["benching", "after meal", "grace after meals", "food"],
     tags: ["food", "thanks", "meal"],
     lines: [
@@ -227,6 +240,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Borei Nefashot",
     category: "food",
     summary: "After-blessing for many foods and drinks.",
+    useCase: "Use this after many snacks, drinks, fruits, vegetables, meat, fish, eggs, or dairy.",
     aliases: ["after blessing", "snack", "drink", "food"],
     tags: ["food", "thanks"],
     lines: [
@@ -243,6 +257,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Sefard, Blessings, Shehecheyanu",
     category: "thanks",
     summary: "Blessing for arriving at a new or special moment.",
+    useCase: "Use this for a new experience, milestone, holiday, special purchase, or first-time moment.",
     aliases: ["new", "first time", "holiday", "milestone", "thanks"],
     tags: ["thanks", "holiday", "success"],
     lines: [
@@ -259,6 +274,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Sefard, Bedtime Shema",
     category: "sleep",
     summary: "Night prayer before sleep, with protection and forgiveness themes.",
+    useCase: "Use this before going to sleep, especially when you want protection and peace at night.",
     aliases: ["night", "sleep", "before bed", "fear", "protection"],
     tags: ["sleep", "protection", "daily"],
     lines: [
@@ -275,6 +291,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Kaddish, Orphan's Kaddish",
     category: "mourning",
     summary: "A mourner’s prayer magnifying and sanctifying God’s name.",
+    useCase: "Use this when mourning, observing yahrzeit, or saying Kaddish with a minyan.",
     aliases: ["mourner kaddish", "death", "yahrzeit", "mourning", "memorial"],
     tags: ["mourning", "community", "daily"],
     lines: [
@@ -291,6 +308,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Aleinu",
     category: "daily",
     summary: "Concluding prayer expressing responsibility and hope.",
+    useCase: "Use this near the end of a prayer service or as a daily statement of purpose.",
     aliases: ["end of service", "closing prayer", "daily"],
     tags: ["daily", "shacharit", "mincha", "maariv"],
     lines: [
@@ -307,6 +325,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Olat Reiyah, Adon Olam",
     category: "daily",
     summary: "A hymn of trust in God’s sovereignty and care.",
+    useCase: "Use this as a closing hymn, morning song, bedtime song, or simple expression of trust.",
     aliases: ["song", "hymn", "morning", "bedtime"],
     tags: ["daily", "thanks", "protection"],
     lines: [
@@ -323,6 +342,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Shacharit",
     category: "daily",
     summary: "The weekday morning prayer service.",
+    useCase: "Use this for the full weekday morning service.",
     aliases: ["morning prayer", "shaharit", "morning service"],
     tags: ["daily", "morning", "service"],
     lines: []
@@ -333,6 +353,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Minchah",
     category: "daily",
     summary: "The afternoon prayer service.",
+    useCase: "Use this for the afternoon prayer service, usually from after midday until sunset.",
     aliases: ["afternoon prayer", "minchah"],
     tags: ["daily", "afternoon", "service"],
     lines: []
@@ -343,6 +364,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Maariv",
     category: "daily",
     summary: "The evening prayer service.",
+    useCase: "Use this for the evening or nighttime prayer service.",
     aliases: ["arvit", "evening prayer", "night service"],
     tags: ["daily", "evening", "service"],
     lines: []
@@ -353,6 +375,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Kiddush",
     category: "shabbat",
     summary: "Sanctification over wine at the entrance of Shabbat.",
+    useCase: "Use this at the Friday night Shabbat table over wine or grape juice.",
     aliases: ["kiddush", "wine", "friday night", "shabbos"],
     tags: ["shabbat", "food", "holiday"],
     lines: [
@@ -369,6 +392,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Shabbat, Havdalah",
     category: "shabbat",
     summary: "The ceremony separating Shabbat from the week.",
+    useCase: "Use this after Shabbat ends, with wine, spices, and a braided candle.",
     aliases: ["end shabbat", "motzei shabbat", "wine spices candle"],
     tags: ["shabbat", "transition", "holiday"],
     lines: [
@@ -385,6 +409,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Sefard, Shabbat Candle Lighting",
     category: "shabbat",
     summary: "Blessing recited when lighting Shabbat candles.",
+    useCase: "Use this before Shabbat begins when lighting Shabbat candles.",
     aliases: ["candles", "candle lighting", "shabbat candles", "friday"],
     tags: ["shabbat", "home", "holiday"],
     lines: [
@@ -401,6 +426,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Blessings on Chanukah Candles",
     category: "holiday",
     summary: "Blessings for lighting Chanukah candles.",
+    useCase: "Use this during Chanukah when lighting the menorah.",
     aliases: ["hanukkah", "chanuka", "menorah", "candles"],
     tags: ["holiday", "candles", "thanks"],
     lines: []
@@ -411,6 +437,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Omer",
     category: "holiday",
     summary: "Blessing and count recited during the Omer period.",
+    useCase: "Use this each night during the Omer period between Pesach and Shavuot.",
     aliases: ["omer", "sefira", "count"],
     tags: ["holiday", "time", "counting"],
     lines: []
@@ -421,6 +448,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Vidui and 13 Middot",
     category: "repentance",
     summary: "Confessional prayer used in repentance and reflection.",
+    useCase: "Use this for confession, teshuva, forgiveness, Yom Kippur, or serious self-reflection.",
     aliases: ["confession", "teshuva", "repentance", "forgiveness"],
     tags: ["repentance", "weekday", "yom kippur"],
     lines: [
@@ -437,6 +465,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Siddur Sefard, Various Prayers & Segulot, Prayer for Livelihood",
     category: "success",
     summary: "A prayer for honest livelihood and material stability.",
+    useCase: "Use this when praying for work, income, a job, business stability, or honest success.",
     aliases: ["parnasa", "parnassah", "work", "job", "money", "success"],
     tags: ["success", "livelihood", "work"],
     lines: []
@@ -447,6 +476,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Ana Bekoach",
     category: "protection",
     summary: "A mystical prayer associated with strength, transition, and protection.",
+    useCase: "Use this for strength, protection, transitions, or moments when you feel spiritually stuck.",
     aliases: ["ana bekoach", "strength", "protection", "kabbalah"],
     tags: ["protection", "daily", "shabbat"],
     lines: [
@@ -463,6 +493,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Nishmat",
     category: "thanks",
     summary: "A sweeping prayer of gratitude recited on Shabbat and festivals.",
+    useCase: "Use this for deep gratitude, especially on Shabbat or festivals.",
     aliases: ["nishmat", "gratitude", "thanks", "shabbat"],
     tags: ["thanks", "shabbat", "holiday"],
     lines: [
@@ -479,6 +510,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "El Malei Rachamim",
     category: "mourning",
     summary: "Memorial prayer asking for compassionate rest for the departed.",
+    useCase: "Use this at memorials, funerals, Yizkor, or when praying for someone who has died.",
     aliases: ["memorial", "yizkor", "mourning", "funeral"],
     tags: ["mourning", "memorial"],
     lines: [
@@ -495,6 +527,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "State of Israel",
     category: "nation",
     summary: "Prayer for the welfare and flourishing of the State of Israel.",
+    useCase: "Use this when praying for Israel’s safety, leaders, people, and future.",
     aliases: ["israel", "state", "medinat yisrael", "country"],
     tags: ["nation", "community", "protection"],
     lines: [
@@ -511,6 +544,7 @@ const seeds: PrayerSeed[] = [
     sefariaRef: "Prayer for the Welfare of the Israel Defense Forces",
     category: "nation",
     summary: "Prayer for the safety and courage of Israel’s defenders.",
+    useCase: "Use this when praying for IDF soldiers and Israel’s defenders.",
     aliases: ["idf", "soldiers", "army", "tzahal", "protection"],
     tags: ["nation", "safety", "protection"],
     lines: [
@@ -534,6 +568,7 @@ export const corePrayers: PrayerText[] = seeds.map((seed) => ({
   sefariaRef: seed.sefariaRef,
   category: seed.category,
   summary: seed.summary,
+  useCase: seed.useCase,
   aliases: seed.aliases,
   tags: seed.tags,
   source: "local-cache",

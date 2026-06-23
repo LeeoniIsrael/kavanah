@@ -25,7 +25,8 @@ function isPrayerTextArray(value: unknown): value is PrayerText[] {
 }
 
 export function getCachedPrayers(): PrayerText[] {
-  return readJson(cacheStorage, CACHE_KEY, isPrayerTextArray) ?? corePrayers;
+  const cached = readJson(cacheStorage, CACHE_KEY, isPrayerTextArray);
+  return cached ? hydrateMissingSearchGuidance(cached) : corePrayers;
 }
 
 export async function hydratePrayerFromSefaria(prayer: PrayerText): Promise<PrayerText> {
@@ -93,6 +94,7 @@ export function searchPrayers(query: string, prayers: PrayerText[] = getCachedPr
         prayer.category,
         prayer.sefariaRef,
         prayer.summary,
+        prayer.useCase,
         ...prayer.aliases,
         ...prayer.tags,
         ...prayer.tokens.flatMap((token) => [token.translation, token.transliteration, token.hebrew])
@@ -116,6 +118,14 @@ export function mergePrayerCollections(localPrayers: PrayerText[], remotePrayers
     seen.add(key);
     return true;
   });
+}
+
+function hydrateMissingSearchGuidance(prayers: PrayerText[]): PrayerText[] {
+  const guidanceById = new Map(corePrayers.map((prayer) => [prayer.id, prayer.useCase]));
+  return prayers.map((prayer) => ({
+    ...prayer,
+    useCase: prayer.useCase || guidanceById.get(prayer.id) || prayer.summary || `Open ${prayer.title} to read the full prayer.`
+  }));
 }
 
 function normalizeLines(value: unknown): string[] {
@@ -196,6 +206,7 @@ function createSefariaSearchPrayer(ref: string, query: string): PrayerText {
     sefariaRef: ref,
     category: "source",
     summary: `Sefaria result for “${query}”. Open to load Hebrew, translation, and generated transliteration.`,
+    useCase: "Open this Sefaria source when the local prayer list does not have the exact text you searched for.",
     aliases: [query, ref],
     tags: ["sefaria", "library", "source"],
     source: "sefaria-search",

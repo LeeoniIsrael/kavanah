@@ -30,6 +30,7 @@ export type PrayerText = {
   sefariaRef: string;
   category: PrayerCategory;
   summary: string;
+  useCase: string;
   aliases: string[];
   tags: string[];
   tokens: PrayerToken[];
