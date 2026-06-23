@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
   },
   label: {
     ...type.caption,
-    color: colors.gold,
-    textTransform: "uppercase"
+    color: colors.inkMuted
   }
 });

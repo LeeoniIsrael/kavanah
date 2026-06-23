@@ -27,31 +27,28 @@ export function RootNavigator(): React.JSX.Element {
       }}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.ink,
-        tabBarInactiveTintColor: "#9AA0A9",
+        tabBarActiveTintColor: colors.blue,
+        tabBarInactiveTintColor: "#8A929B",
         tabBarStyle: {
-          borderTopWidth: 0,
+          borderTopWidth: 1,
+          borderTopColor: colors.hairline,
           elevation: 0,
-          height: 92,
-          paddingBottom: 24,
-          paddingTop: 12,
-          marginHorizontal: 14,
-          marginBottom: 10,
+          height: 78,
+          paddingBottom: 18,
+          paddingTop: 8,
+          marginHorizontal: 0,
+          marginBottom: 0,
           position: "absolute",
-          borderRadius: radii.xl,
-          backgroundColor: colors.vellum,
-          shadowColor: colors.shadow,
-          shadowOffset: { width: 0, height: 12 },
-          shadowOpacity: 1,
-          shadowRadius: 22
+          borderRadius: 0,
+          backgroundColor: colors.white
         },
         tabBarLabelStyle: {
           fontSize: 11,
-          fontWeight: "700",
+          fontWeight: "600",
           letterSpacing: 0
         },
         tabBarItemStyle: {
-          borderRadius: radii.lg
+          borderRadius: radii.md
         }
       }}
     >
@@ -65,7 +62,7 @@ export function RootNavigator(): React.JSX.Element {
 
 function tabIcon(Icon: typeof Sparkles) {
   function TabBarIcon({ color, size, focused }: { color: string; size: number; focused: boolean }): React.JSX.Element {
-    return <Icon color={focused ? colors.gold : color} size={size} strokeWidth={focused ? 2.2 : 1.8} />;
+    return <Icon color={focused ? colors.blue : color} size={size} strokeWidth={focused ? 2.2 : 1.8} />;
   }
 
   return TabBarIcon;

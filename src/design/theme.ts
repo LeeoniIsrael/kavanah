@@ -1,24 +1,24 @@
 import { Platform } from "react-native";
 
 export const colors = {
-  parchment: "#F6F1E7",
-  parchmentLift: "#FAF7EF",
-  vellum: "#FFFDF8",
-  glass: "rgba(255, 253, 248, 0.86)",
-  ink: "#18202B",
-  inkMuted: "#68707C",
-  inkFaint: "rgba(24, 32, 43, 0.52)",
-  hairline: "rgba(24, 32, 43, 0.10)",
-  hairlineStrong: "rgba(24, 32, 43, 0.16)",
-  gold: "#B58A2A",
-  goldSoft: "#EFE2C1",
-  olive: "#5F765F",
-  oliveSoft: "#E6ECE2",
-  blue: "#385B78",
-  blueSoft: "#E7EEF3",
-  rose: "#9F5F55",
-  roseSoft: "#F0DFDA",
-  shadow: "rgba(24, 32, 43, 0.14)",
+  parchment: "#F6F7F8",
+  parchmentLift: "#FFFFFF",
+  vellum: "#FFFFFF",
+  glass: "rgba(255, 255, 255, 0.88)",
+  ink: "#0B0D10",
+  inkMuted: "#626A73",
+  inkFaint: "rgba(11, 13, 16, 0.48)",
+  hairline: "rgba(11, 13, 16, 0.08)",
+  hairlineStrong: "rgba(11, 13, 16, 0.14)",
+  gold: "#0A84FF",
+  goldSoft: "#E8F2FF",
+  olive: "#0A84FF",
+  oliveSoft: "#EEF5FF",
+  blue: "#0A84FF",
+  blueSoft: "#E8F2FF",
+  rose: "#0A84FF",
+  roseSoft: "#EEF5FF",
+  shadow: "rgba(11, 13, 16, 0.10)",
   white: "#FFFFFF"
 } as const;
 
@@ -33,10 +33,10 @@ export const spacing = {
 } as const;
 
 export const radii = {
-  sm: 7,
-  md: 13,
-  lg: 21,
-  xl: 34,
+  sm: 6,
+  md: 12,
+  lg: 18,
+  xl: 26,
   pill: 999
 } as const;
 
@@ -55,21 +55,21 @@ export const grid = {
 
 export const type = {
   display: {
-    fontSize: 40,
-    lineHeight: 45,
-    fontWeight: "700" as const,
+    fontSize: 38,
+    lineHeight: 42,
+    fontWeight: "600" as const,
     letterSpacing: 0
   },
   title: {
-    fontSize: 27,
-    lineHeight: 33,
-    fontWeight: "700" as const,
+    fontSize: 28,
+    lineHeight: 34,
+    fontWeight: "600" as const,
     letterSpacing: 0
   },
   section: {
-    fontSize: 19,
-    lineHeight: 25,
-    fontWeight: "700" as const,
+    fontSize: 18,
+    lineHeight: 24,
+    fontWeight: "600" as const,
     letterSpacing: 0
   },
   body: {
@@ -81,13 +81,13 @@ export const type = {
   caption: {
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: "700" as const,
-    letterSpacing: 0.8
+    fontWeight: "600" as const,
+    letterSpacing: 0
   },
   data: {
     fontSize: 22,
     lineHeight: 26,
-    fontWeight: "700" as const,
+    fontWeight: "600" as const,
     letterSpacing: 0
   }
 } as const;
@@ -97,8 +97,8 @@ export const shadows = {
     ios: {
       shadowColor: colors.shadow,
       shadowOffset: { width: 0, height: 16 },
-      shadowOpacity: 1,
-      shadowRadius: 26
+      shadowOpacity: 0.52,
+      shadowRadius: 30
     },
     default: {
       elevation: 3
@@ -108,8 +108,8 @@ export const shadows = {
     ios: {
       shadowColor: colors.shadow,
       shadowOffset: { width: 0, height: 10 },
-      shadowOpacity: 0.8,
-      shadowRadius: 22
+      shadowOpacity: 0.5,
+      shadowRadius: 24
     },
     default: {
       elevation: 5
@@ -119,8 +119,8 @@ export const shadows = {
     ios: {
       shadowColor: colors.shadow,
       shadowOffset: { width: 0, height: 5 },
-      shadowOpacity: 0.55,
-      shadowRadius: 13
+      shadowOpacity: 0.32,
+      shadowRadius: 12
     },
     default: {
       elevation: 2

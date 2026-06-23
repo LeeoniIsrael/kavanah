@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { Body, Label, SectionTitle } from "@/components/Text";
-import { colors, radii, spacing } from "@/design/theme";
+import { Body, SectionTitle } from "@/components/Text";
+import { colors, radii, spacing, type } from "@/design/theme";
 import type { PrayerText } from "@/types/prayer";
 
 type Props = {
@@ -16,8 +16,8 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
     <AnimatedPressable onPress={onPress} style={[styles.card, selected && styles.selected]}>
       <View style={styles.row}>
         <View style={styles.text}>
-          <Label>{prayer.category}</Label>
-          <SectionTitle>{prayer.title}</SectionTitle>
+          <Text style={styles.meta}>{prayer.category}</Text>
+          <SectionTitle style={styles.title}>{prayer.title}</SectionTitle>
           <Body numberOfLines={3} style={styles.useCase}>
             {prayer.useCase || prayer.summary}
           </Body>
@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
     borderRadius: radii.lg,
     borderWidth: 1,
     borderColor: colors.hairline,
-    backgroundColor: "rgba(255,255,255,0.62)",
+    backgroundColor: colors.white,
     padding: spacing.lg
   },
   selected: {
     backgroundColor: colors.vellum,
-    borderColor: "rgba(181,138,42,0.45)"
+    borderColor: colors.blue
   },
   row: {
     flexDirection: "row",
@@ -50,7 +50,15 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
-    gap: 4
+    gap: spacing.xs
+  },
+  meta: {
+    ...type.caption,
+    color: colors.inkMuted
+  },
+  title: {
+    fontSize: 18,
+    lineHeight: 23
   },
   useCase: {
     color: colors.ink,
@@ -63,14 +71,14 @@ const styles = StyleSheet.create({
     lineHeight: 17
   },
   dot: {
-    width: 11,
-    height: 11,
+    width: 8,
+    height: 8,
     borderRadius: radii.pill,
     borderWidth: 1,
     borderColor: colors.hairline
   },
   selectedDot: {
-    backgroundColor: colors.gold,
-    borderColor: colors.gold
+    backgroundColor: colors.blue,
+    borderColor: colors.blue
   }
 });

@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from "react";
 import { useEffect, useRef } from "react";
-import { Animated, ScrollView, StyleSheet } from "react-native";
+import { Animated, Easing, ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { colors, spacing } from "@/design/theme";
+import { colors, motion, spacing } from "@/design/theme";
 
 export function Screen({ children }: PropsWithChildren): React.JSX.Element {
   const opacity = useRef(new Animated.Value(0)).current;
@@ -13,14 +13,15 @@ export function Screen({ children }: PropsWithChildren): React.JSX.Element {
     Animated.parallel([
       Animated.timing(opacity, {
         toValue: 1,
-        duration: 340,
+        duration: motion.navigationMs,
+        easing: Easing.bezier(...motion.standard),
         useNativeDriver: true
       }),
-      Animated.spring(translateY, {
+      Animated.timing(translateY, {
         toValue: 0,
+        duration: motion.navigationMs,
+        easing: Easing.bezier(...motion.standard),
         useNativeDriver: true,
-        speed: 14,
-        bounciness: 3
       })
     ]).start();
   }, [opacity, translateY]);
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: spacing.xl,
-    paddingTop: spacing.lg,
+    paddingTop: spacing.xl,
     paddingBottom: 132
   },
   stack: {

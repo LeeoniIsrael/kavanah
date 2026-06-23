@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
-    borderRadius: radii.lg,
+    borderRadius: radii.pill,
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.vellum,
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.pill,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.blueSoft
+    backgroundColor: colors.parchment
   },
   resultStack: {
     gap: spacing.md
@@ -327,7 +327,8 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   bookmarkShelf: {
-    gap: spacing.md
+    gap: spacing.md,
+    backgroundColor: colors.white
   },
   sectionHeader: {
     flexDirection: "row",
@@ -339,10 +340,10 @@ const styles = StyleSheet.create({
     gap: spacing.sm
   },
   bookmarkChip: {
-    borderRadius: radii.md,
+    borderRadius: radii.lg,
     borderWidth: 1,
     borderColor: colors.hairline,
-    backgroundColor: "rgba(255,255,255,0.72)",
+    backgroundColor: colors.parchment,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.md
   },
@@ -356,7 +357,7 @@ const styles = StyleSheet.create({
   },
   readerSafeArea: {
     flex: 1,
-    backgroundColor: colors.parchmentLift
+    backgroundColor: colors.parchment
   },
   readerChrome: {
     position: "absolute",
@@ -403,7 +404,8 @@ const styles = StyleSheet.create({
     ...shadows.floating
   },
   floatingBookmarkActive: {
-    backgroundColor: colors.gold
+    backgroundColor: colors.blue,
+    borderColor: colors.blue
   },
   readerMetaRow: {
     flexDirection: "row",
@@ -412,8 +414,7 @@ const styles = StyleSheet.create({
   },
   readerMeta: {
     ...type.caption,
-    color: colors.inkFaint,
-    textTransform: "uppercase"
+    color: colors.inkFaint
   },
   readerDisplay: {
     fontSize: 42,
@@ -509,7 +510,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.pill,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.ink
+    backgroundColor: colors.blue
   },
   askSendDisabled: {
     opacity: 0.42
@@ -529,7 +530,7 @@ const styles = StyleSheet.create({
   transliterationBlock: {
     gap: spacing.xs,
     borderLeftWidth: 2,
-    borderLeftColor: colors.gold,
+    borderLeftColor: colors.blue,
     paddingLeft: spacing.md
   },
   transliteration: {

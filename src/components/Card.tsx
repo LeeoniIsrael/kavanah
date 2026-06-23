@@ -8,21 +8,8 @@ type Props = PropsWithChildren<{
   accent?: "gold" | "olive" | "blue" | "rose" | "none";
 }>;
 
-const accentColor = {
-  gold: colors.gold,
-  olive: colors.olive,
-  blue: colors.blue,
-  rose: colors.rose,
-  none: "transparent"
-};
-
-export function Card({ children, style, accent = "gold" }: Props): React.JSX.Element {
-  return (
-    <View style={[styles.card, shadows.card, style]}>
-      {accent !== "none" ? <View style={[styles.lightLine, { backgroundColor: accentColor[accent] }]} /> : null}
-      {children}
-    </View>
-  );
+export function Card({ children, style, accent = "none" }: Props): React.JSX.Element {
+  return <View style={[styles.card, accent !== "none" && styles.accentCard, style]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
@@ -34,11 +21,7 @@ const styles = StyleSheet.create({
     borderColor: colors.hairline,
     padding: spacing.lg
   },
-  lightLine: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 3
+  accentCard: {
+    ...shadows.card
   }
 });
