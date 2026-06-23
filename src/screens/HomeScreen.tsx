@@ -14,7 +14,7 @@ const habitLabels: Record<StreakHabit, string> = {
 };
 
 export function HomeScreen(): React.JSX.Element {
-  const { habits, completeHabit, useFreeze } = useStreakStore();
+  const { habits, completeHabit, useFreeze: consumeFreeze } = useStreakStore();
 
   return (
     <Screen>
@@ -33,7 +33,7 @@ export function HomeScreen(): React.JSX.Element {
                 <Body className="text-sm">{habit.streak} day streak · {habit.freezes} freezes</Body>
               </View>
               <View className="flex-row gap-2">
-                <Pressable accessibilityRole="button" onPress={() => useFreeze(habit.habit)} className="h-11 w-11 items-center justify-center rounded-full bg-mist">
+                <Pressable accessibilityRole="button" onPress={() => consumeFreeze(habit.habit)} className="h-11 w-11 items-center justify-center rounded-full bg-mist">
                   <Snowflake size={18} color="#111827" />
                 </Pressable>
                 <Pressable accessibilityRole="button" onPress={() => completeHabit(habit.habit)} className="h-11 w-11 items-center justify-center rounded-full bg-ink">

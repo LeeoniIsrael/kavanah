@@ -12,6 +12,19 @@
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.ts"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "^expo-crypto$": "<rootDir>/src/test/expoCryptoMock.ts",
+      "^expo-secure-store$": "<rootDir>/src/test/expoSecureStoreMock.ts",
+      "^react-native-mmkv$": "<rootDir>/src/test/mmkvMock.ts"
+    }
+  },
   "dependencies": {
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-google-signin/google-signin": "^13.2.0",
@@ -45,6 +58,7 @@
     "@babel/core": "^7.25.2",
     "@testing-library/react-native": "^13.0.0",
     "@types/jest": "^29.5.14",
+    "@types/node": "^26.0.0",
     "@types/react": "~19.0.10",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
@@ -55,6 +69,7 @@
     "prettier": "^3.4.2",
     "react-test-renderer": "19.0.0",
     "tailwindcss": "^3.4.17",
+    "ts-jest": "^29.4.11",
     "typescript": "~5.8.3"
   }
 }

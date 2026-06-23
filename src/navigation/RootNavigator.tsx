@@ -48,5 +48,9 @@ export function RootNavigator(): React.JSX.Element {
 }
 
 function tabIcon(Icon: typeof Sparkles) {
-  return ({ color, size }: { color: string; size: number }) => <Icon color={color} size={size} strokeWidth={1.8} />;
+  function TabBarIcon({ color, size }: { color: string; size: number }): React.JSX.Element {
+    return <Icon color={color} size={size} strokeWidth={1.8} />;
+  }
+
+  return TabBarIcon;
 }

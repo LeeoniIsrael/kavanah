@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from "react";
+import { useEffect, type PropsWithChildren } from "react";
 
 import { initializeNotifications } from "@/services/notifications";
 
