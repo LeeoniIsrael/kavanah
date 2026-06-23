@@ -62,6 +62,8 @@ export function PrayerScreen(): React.JSX.Element {
         return;
       }
 
+      setLocalizedTokens(selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration })));
+
       const tokens = await Promise.all(
         selected.tokens.map(async (token) => ({
           ...token,
@@ -82,8 +84,8 @@ export function PrayerScreen(): React.JSX.Element {
     };
   }, [primaryLanguageCode, selected]);
 
-  const openPrayer = async (id: string) => {
-    await selectPrayer(id);
+  const openPrayer = (id: string) => {
+    void selectPrayer(id);
     setAssistantOpen(false);
     setAssistantInput("");
     setAssistantMessages([]);
