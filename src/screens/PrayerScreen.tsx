@@ -1,6 +1,7 @@
-import { Bookmark, BookmarkCheck, RefreshCw, Search } from "lucide-react-native";
-import { useEffect } from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { Bookmark, BookmarkCheck, RefreshCw, Search, X } from "lucide-react-native";
+import { useEffect, useState } from "react";
+import { Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Card } from "@/components/Card";
@@ -12,9 +13,12 @@ import { usePrayerStore } from "@/store/prayerStore";
 
 export function PrayerScreen(): React.JSX.Element {
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
+  const [readerOpen, setReaderOpen] = useState(false);
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
+  const showResults = query.trim().length > 0;
+  const visibleResults = showResults ? results : [];
 
   useEffect(() => {
     const handle = setTimeout(() => {
@@ -23,37 +27,13 @@ export function PrayerScreen(): React.JSX.Element {
     return () => clearTimeout(handle);
   }, [query, searchRemote]);
 
+  const openPrayer = async (id: string) => {
+    await selectPrayer(id);
+    setReaderOpen(true);
+  };
+
   return (
     <Screen>
-      <View style={styles.hero}>
-        <View style={styles.lightLine} />
-        <Label>Intent search</Label>
-        <Display>Find the words</Display>
-        <Body>Search by need, phrase, English, Hebrew, or transliteration.</Body>
-      </View>
-
-      <Card accent="gold" style={styles.bookmarkShelf}>
-        <View style={styles.sectionHeader}>
-          <View>
-            <Label>Bookmarked</Label>
-            <SectionTitle>Ready when you are</SectionTitle>
-          </View>
-          <BookmarkCheck size={20} color={colors.gold} />
-        </View>
-        <View style={styles.bookmarkList}>
-          {bookmarkedPrayers.length > 0 ? (
-            bookmarkedPrayers.map((prayer) => (
-              <AnimatedPressable key={prayer.id} onPress={() => void selectPrayer(prayer.id)} style={[styles.bookmarkChip, prayer.id === selectedPrayerId && styles.bookmarkChipSelected]}>
-                <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
-                <Body style={styles.bookmarkChipMeta}>{prayer.category}</Body>
-              </AnimatedPressable>
-            ))
-          ) : (
-            <Body>Tap the bookmark on any prayer to keep it here.</Body>
-          )}
-        </View>
-      </Card>
-
       <View style={styles.searchBox}>
         <Search size={18} color={colors.inkMuted} />
         <TextInput
@@ -68,53 +48,83 @@ export function PrayerScreen(): React.JSX.Element {
         </AnimatedPressable>
       </View>
 
-      <View style={styles.resultStack}>
-        {results.map((result) => (
-          <PrayerCard key={result.prayer.id} prayer={result.prayer} selected={result.prayer.id === selectedPrayerId} onPress={() => selectPrayer(result.prayer.id)} />
-        ))}
-      </View>
-
-      {selected ? (
-        <Card accent="gold" style={styles.reader}>
-          <View style={styles.readerHeaderRow}>
-            <View style={styles.readerHeader}>
-              <Label>{selected.source}</Label>
-              <SectionTitle style={styles.readerTitle}>{selected.title}</SectionTitle>
-              <Body>{selected.summary}</Body>
-            </View>
-            <AnimatedPressable accessibilityRole="button" onPress={() => toggleBookmark(selected.id)} style={[styles.readerBookmark, selectedBookmarked && styles.readerBookmarkActive]}>
-              {selectedBookmarked ? <BookmarkCheck size={21} color={colors.white} /> : <Bookmark size={21} color={colors.gold} />}
-            </AnimatedPressable>
+      <Card accent="gold" style={styles.bookmarkShelf}>
+        <View style={styles.sectionHeader}>
+          <View>
+            <Label>Bookmarked</Label>
+            <SectionTitle>Saved prayers</SectionTitle>
           </View>
-          {selected.tokens.map((token) => (
-            <View key={token.id} style={styles.token}>
-              {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
-              {token.transliteration ? (
-                <View style={styles.transliterationPill}>
-                  <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
-                </View>
-              ) : null}
-              <Body>{token.translation}</Body>
-            </View>
-          ))}
-        </Card>
+          <BookmarkCheck size={20} color={colors.gold} />
+        </View>
+        <View style={styles.bookmarkList}>
+          {bookmarkedPrayers.length > 0 ? (
+            bookmarkedPrayers.map((prayer) => (
+              <AnimatedPressable key={prayer.id} onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChip}>
+                <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
+                <Body style={styles.bookmarkChipMeta}>{prayer.category}</Body>
+              </AnimatedPressable>
+            ))
+          ) : (
+            <Body>Tap the bookmark on any prayer to keep it here.</Body>
+          )}
+        </View>
+      </Card>
+
+      {showResults ? (
+        <View style={styles.resultStack}>
+          <View style={styles.resultHeader}>
+            <Label>{isSearchingRemote ? "Searching Sefaria" : "Results"}</Label>
+            <Body style={styles.resultCount}>{visibleResults.length} found</Body>
+          </View>
+          {visibleResults.length > 0 ? (
+            visibleResults.map((result) => <PrayerCard key={result.prayer.id} prayer={result.prayer} selected={false} onPress={() => void openPrayer(result.prayer.id)} />)
+          ) : (
+            <Card accent="none">
+              <Body>Keep typing. Matches appear here as the search gets clearer.</Body>
+            </Card>
+          )}
+        </View>
       ) : null}
+
+      <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setReaderOpen(false)}>
+        <SafeAreaView style={styles.readerSafeArea}>
+          <ScrollView contentContainerStyle={styles.readerContent} showsVerticalScrollIndicator={false}>
+            {selected ? (
+              <Card accent="gold" style={styles.reader}>
+                <View style={styles.readerHeaderRow}>
+                  <AnimatedPressable accessibilityRole="button" onPress={() => setReaderOpen(false)} style={styles.closeButton}>
+                    <X size={20} color={colors.ink} />
+                  </AnimatedPressable>
+                  <AnimatedPressable accessibilityRole="button" onPress={() => toggleBookmark(selected.id)} style={[styles.readerBookmark, selectedBookmarked && styles.readerBookmarkActive]}>
+                    {selectedBookmarked ? <BookmarkCheck size={21} color={colors.white} /> : <Bookmark size={21} color={colors.gold} />}
+                  </AnimatedPressable>
+                </View>
+                <View style={styles.readerHeader}>
+                  <Label>{selected.source}</Label>
+                  <Display style={styles.readerDisplay}>{selected.title}</Display>
+                  <Body>{selected.summary}</Body>
+                </View>
+                {selected.tokens.map((token) => (
+                  <View key={token.id} style={styles.token}>
+                    {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
+                    {token.transliteration ? (
+                      <View style={styles.transliterationPill}>
+                        <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
+                      </View>
+                    ) : null}
+                    <Body>{token.translation}</Body>
+                  </View>
+                ))}
+              </Card>
+            ) : null}
+          </ScrollView>
+        </SafeAreaView>
+      </Modal>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  hero: {
-    gap: spacing.sm,
-    paddingTop: spacing.sm
-  },
-  lightLine: {
-    width: 64,
-    height: 4,
-    borderRadius: radii.pill,
-    backgroundColor: colors.blue,
-    marginBottom: spacing.sm
-  },
   searchBox: {
     minHeight: 58,
     flexDirection: "row",
@@ -144,6 +154,15 @@ const styles = StyleSheet.create({
   resultStack: {
     gap: spacing.md
   },
+  resultHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  resultCount: {
+    fontSize: 13,
+    lineHeight: 18
+  },
   bookmarkShelf: {
     gap: spacing.md
   },
@@ -164,10 +183,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.md
   },
-  bookmarkChipSelected: {
-    borderColor: "rgba(181,138,42,0.45)",
-    backgroundColor: colors.goldSoft
-  },
   bookmarkChipText: {
     fontSize: 16,
     lineHeight: 21
@@ -177,18 +192,36 @@ const styles = StyleSheet.create({
     lineHeight: 17,
     textTransform: "capitalize"
   },
+  readerSafeArea: {
+    flex: 1,
+    backgroundColor: colors.parchment
+  },
+  readerContent: {
+    padding: spacing.xl,
+    paddingBottom: spacing.xxl
+  },
   reader: {
     gap: spacing.lg,
     padding: spacing.xl
   },
   readerHeaderRow: {
     flexDirection: "row",
-    gap: spacing.lg,
-    alignItems: "flex-start"
+    gap: spacing.md,
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   readerHeader: {
-    flex: 1,
     gap: 4
+  },
+  closeButton: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.vellum,
+    borderWidth: 1,
+    borderColor: colors.hairline
   },
   readerBookmark: {
     width: 46,
@@ -201,9 +234,9 @@ const styles = StyleSheet.create({
   readerBookmarkActive: {
     backgroundColor: colors.gold
   },
-  readerTitle: {
-    fontSize: 25,
-    lineHeight: 31
+  readerDisplay: {
+    fontSize: 34,
+    lineHeight: 39
   },
   token: {
     gap: spacing.md,
