@@ -1,41 +1,46 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-import { Body, SectionTitle } from "@/components/Text";
-import { colors, spacing } from "@/design/theme";
+import { colors, spacing, type } from "@/design/theme";
 import type { Zman } from "@/types/zmanim";
 
 export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
   return (
     <View style={styles.row}>
       <View>
-        <SectionTitle style={styles.name}>{zman.title}</SectionTitle>
-        <Body style={styles.lead}>{zman.notificationLeadMinutes} minute reminder</Body>
+        <Text style={styles.name}>{zman.title}</Text>
+        <Text style={styles.lead}>{zman.notificationLeadMinutes} min reminder</Text>
       </View>
-      <SectionTitle style={styles.time}>{zman.time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</SectionTitle>
+      <Text style={styles.time}>{zman.time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   row: {
+    minHeight: 68,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     gap: spacing.lg,
     borderBottomWidth: 1,
     borderBottomColor: colors.hairline,
-    paddingVertical: spacing.lg
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md
   },
   name: {
-    fontSize: 16,
-    lineHeight: 22
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
   },
   lead: {
-    fontSize: 13,
-    lineHeight: 18
+    ...type.caption,
+    color: colors.inkMuted,
+    marginTop: 2
   },
   time: {
-    fontSize: 19,
-    color: colors.blue
+    ...type.section,
+    color: colors.ink,
+    minWidth: 84,
+    textAlign: "right"
   }
 });

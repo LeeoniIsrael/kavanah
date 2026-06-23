@@ -1,15 +1,13 @@
-import { Check, Languages, Lock, LogOut, ShieldCheck, X } from "lucide-react-native";
+import { Check, ChevronRight, Languages, Lock, LogOut, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useState } from "react";
-import { Modal, ScrollView, StyleSheet, Switch, View } from "react-native";
+import { Modal, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { findLanguage, languageOptions } from "@/data/languages";
-import { colors, radii, spacing } from "@/design/theme";
+import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { HALACHIC_ASSISTANT_SYSTEM_PROMPT } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { useAuthStore } from "@/store/authStore";
@@ -27,71 +25,76 @@ export function ProfileScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View style={styles.hero}>
-        <View style={styles.lightLine} />
-        <Label>Security</Label>
-        <Display>Private by default</Display>
-        <Body>Tokens stay in secure storage. Sensitive moments stay on the device whenever possible.</Body>
+      <View style={styles.header}>
+        <Label>Account</Label>
+        <Display>Profile</Display>
+        <Body style={styles.headerCopy}>Privacy, language, and access controls for Kavanah.</Body>
       </View>
 
-      <Card accent="olive" style={styles.authCard}>
-        <View style={styles.statusRow}>
-          <View style={styles.statusIcon}>
-            <ShieldCheck size={22} color={colors.olive} />
-          </View>
-          <View style={styles.statusText}>
-            <SectionTitle>{tokens ? "Signed in securely" : "Guest mode"}</SectionTitle>
-            <Body>{tokens ? "Your session is protected by native secure storage." : "You can explore Kavanah without creating an account."}</Body>
-          </View>
+      <View style={styles.statusPanel}>
+        <View style={styles.statusTop}>
+          <View style={styles.blueDot} />
+          <Text style={styles.statusMeta}>{tokens ? "Secure session" : "Guest session"}</Text>
         </View>
-        <Button label={tokens ? "Sign out" : "Sign in with Apple"} icon={tokens ? <LogOut size={17} color={colors.white} /> : <Lock size={17} color={colors.white} />} onPress={() => (tokens ? void signOut() : void signInWithApple())} />
-      </Card>
+        <SectionTitle style={styles.statusTitle}>{tokens ? "Signed in" : "Private by default"}</SectionTitle>
+        <Body style={styles.statusBody}>{tokens ? "Your tokens are stored in the native secure store." : "Use the app without an account. Sign in only when you need profile sync."}</Body>
+        <AnimatedPressable accessibilityRole="button" onPress={() => (tokens ? void signOut() : void signInWithApple())} style={styles.primaryAction}>
+          <Text style={styles.primaryActionText}>{tokens ? "Sign out" : "Sign in with Apple"}</Text>
+          {tokens ? <LogOut size={17} color={colors.white} /> : <Lock size={17} color={colors.white} />}
+        </AnimatedPressable>
+      </View>
 
-      <Card accent="blue" style={styles.settingCard}>
-        <View style={styles.settingText}>
-          <SectionTitle>Biometric lock</SectionTitle>
-          <Body>Require Face ID, Touch ID, or device biometrics before opening your profile.</Body>
-        </View>
-        <Switch
-          value={biometricLockEnabled}
-          trackColor={{ false: colors.hairline, true: colors.blueSoft }}
-          thumbColor={biometricLockEnabled ? colors.blue : colors.white}
-          onValueChange={(enabled) => {
-            void confirmHaptic();
-            void setBiometricLockEnabled(enabled);
-          }}
-        />
-      </Card>
-
-      <Card accent="gold" style={styles.languageCard}>
-        <View style={styles.statusRow}>
-          <View style={styles.languageIcon}>
-            <Languages size={22} color={colors.gold} />
+      <View style={styles.settingsList}>
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}>
+            <ShieldCheck size={19} color={colors.blue} />
           </View>
-          <View style={styles.statusText}>
-            <SectionTitle>Primary language</SectionTitle>
-            <Body>{primaryLanguage.name} · {primaryLanguage.nativeName}</Body>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Biometric lock</Text>
+            <Text style={styles.settingDetail}>Require Face ID, Touch ID, or device biometrics.</Text>
           </View>
+          <Switch
+            value={biometricLockEnabled}
+            trackColor={{ false: colors.hairlineStrong, true: colors.blueSoft }}
+            thumbColor={biometricLockEnabled ? colors.blue : colors.white}
+            onValueChange={(enabled) => {
+              void confirmHaptic();
+              void setBiometricLockEnabled(enabled);
+            }}
+          />
         </View>
-        <Button label="Change language" tone="quiet" onPress={() => setLanguageModalOpen(true)} />
-      </Card>
 
-      <Card accent="rose" style={styles.guardrailCard}>
-        <Label>Assistant guardrail</Label>
-        <Body style={styles.guardrail}>{HALACHIC_ASSISTANT_SYSTEM_PROMPT}</Body>
-      </Card>
+        <AnimatedPressable accessibilityRole="button" onPress={() => setLanguageModalOpen(true)} style={styles.settingRow}>
+          <View style={styles.settingIcon}>
+            <Languages size={19} color={colors.blue} />
+          </View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Primary language</Text>
+            <Text style={styles.settingDetail}>{primaryLanguage.name} · {primaryLanguage.nativeName}</Text>
+          </View>
+          <ChevronRight size={18} color={colors.inkMuted} />
+        </AnimatedPressable>
+      </View>
 
-      <Modal visible={languageModalOpen} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setLanguageModalOpen(false)}>
+      <View style={styles.guardrail}>
+        <Text style={styles.guardrailTitle}>Assistant boundary</Text>
+        <Text style={styles.guardrailText} numberOfLines={6}>
+          {HALACHIC_ASSISTANT_SYSTEM_PROMPT}
+        </Text>
+      </View>
+
+      <Modal visible={languageModalOpen} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setLanguageModalOpen(false)}>
         <SafeAreaView style={styles.modalSafeArea}>
+          <View style={styles.modalChrome} pointerEvents="box-none">
+            <AnimatedPressable accessibilityLabel="Close language picker" accessibilityRole="button" onPress={() => setLanguageModalOpen(false)} pressedScale={0.94} style={styles.closeButton}>
+              <X size={18} color={colors.ink} />
+            </AnimatedPressable>
+          </View>
           <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
             <View style={styles.modalHeader}>
-              <View>
-                <Label>Language</Label>
-                <Display style={styles.modalTitle}>Choose text language</Display>
-              </View>
-              <AnimatedPressable accessibilityRole="button" onPress={() => setLanguageModalOpen(false)} style={styles.closeButton}>
-                <X size={20} color={colors.ink} />
-              </AnimatedPressable>
+              <Label>Language</Label>
+              <Display style={styles.modalTitle}>Text language</Display>
+              <Body>Hebrew remains visible. Translation and transliteration follow this choice.</Body>
             </View>
             <View style={styles.languageList}>
               {languageOptions.map((language) => {
@@ -108,10 +111,10 @@ export function ProfileScreen(): React.JSX.Element {
                     style={[styles.languageRow, selected && styles.languageRowSelected]}
                   >
                     <View style={styles.settingText}>
-                      <SectionTitle style={styles.languageName}>{language.name}</SectionTitle>
-                      <Body>{language.nativeName}</Body>
+                      <Text style={styles.settingTitle}>{language.name}</Text>
+                      <Text style={styles.settingDetail}>{language.nativeName}</Text>
                     </View>
-                    {selected ? <Check size={20} color={colors.gold} /> : null}
+                    {selected ? <Check size={20} color={colors.blue} /> : null}
                   </AnimatedPressable>
                 );
               })}
@@ -124,114 +127,166 @@ export function ProfileScreen(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  hero: {
+  header: {
+    gap: spacing.xs
+  },
+  headerCopy: {
+    maxWidth: 320
+  },
+  statusPanel: {
+    borderRadius: radii.xl,
+    backgroundColor: colors.ink,
+    padding: spacing.xl,
+    gap: spacing.md,
+    ...shadows.card
+  },
+  statusTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm
+  },
+  blueDot: {
+    width: 8,
+    height: 8,
+    borderRadius: radii.pill,
+    backgroundColor: colors.blue
+  },
+  statusMeta: {
+    ...type.caption,
+    color: "rgba(255,255,255,0.66)"
+  },
+  statusTitle: {
+    color: colors.white
+  },
+  statusBody: {
+    color: "rgba(255,255,255,0.70)"
+  },
+  primaryAction: {
+    alignSelf: "flex-start",
+    minHeight: 44,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.lg,
+    backgroundColor: colors.blue,
+    flexDirection: "row",
+    alignItems: "center",
     gap: spacing.sm,
-    paddingTop: spacing.sm
+    marginTop: spacing.xs
   },
-  lightLine: {
-    width: 64,
-    height: 4,
-    borderRadius: radii.pill,
-    backgroundColor: colors.olive,
-    marginBottom: spacing.sm
+  primaryActionText: {
+    ...type.caption,
+    color: colors.white
   },
-  authCard: {
-    gap: spacing.lg
+  settingsList: {
+    borderRadius: radii.lg,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    overflow: "hidden"
   },
-  statusRow: {
-    flexDirection: "row",
-    gap: spacing.md
-  },
-  statusIcon: {
-    width: 46,
-    height: 46,
-    borderRadius: radii.pill,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.oliveSoft
-  },
-  statusText: {
-    flex: 1,
-    gap: 4
-  },
-  settingCard: {
+  settingRow: {
+    minHeight: 74,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    gap: spacing.lg
+    gap: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline
+  },
+  settingIcon: {
+    width: 38,
+    height: 38,
+    borderRadius: radii.pill,
+    backgroundColor: colors.blueSoft,
+    alignItems: "center",
+    justifyContent: "center"
   },
   settingText: {
     flex: 1,
-    gap: 4
+    gap: 2
   },
-  languageCard: {
-    gap: spacing.lg
+  settingTitle: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
   },
-  languageIcon: {
-    width: 46,
-    height: 46,
-    borderRadius: radii.pill,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.goldSoft
-  },
-  guardrailCard: {
-    gap: spacing.sm
+  settingDetail: {
+    ...type.caption,
+    color: colors.inkMuted,
+    lineHeight: 18
   },
   guardrail: {
-    fontSize: 14,
-    lineHeight: 21
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.white,
+    padding: spacing.lg,
+    gap: spacing.sm
+  },
+  guardrailTitle: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  guardrailText: {
+    ...type.caption,
+    color: colors.inkMuted,
+    lineHeight: 18
   },
   modalSafeArea: {
     flex: 1,
     backgroundColor: colors.parchment
   },
+  modalChrome: {
+    position: "absolute",
+    top: spacing.lg,
+    right: grid.margin,
+    zIndex: 10,
+    pointerEvents: "box-none"
+  },
+  closeButton: {
+    width: grid.touch,
+    height: grid.touch,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.floating
+  },
   modalContent: {
-    padding: spacing.xl,
-    paddingBottom: spacing.xxl,
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.xxxl + spacing.xl,
+    paddingBottom: spacing.xxxl,
     gap: spacing.xl
   },
   modalHeader: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    gap: spacing.lg
+    gap: spacing.xs,
+    paddingRight: spacing.xxxl
   },
   modalTitle: {
     fontSize: 34,
     lineHeight: 39
   },
-  closeButton: {
-    width: 46,
-    height: 46,
-    borderRadius: radii.pill,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.vellum,
-    borderWidth: 1,
-    borderColor: colors.hairline
-  },
   languageList: {
-    gap: spacing.sm
+    borderRadius: radii.lg,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    overflow: "hidden"
   },
   languageRow: {
-    minHeight: 66,
+    minHeight: 64,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.vellum,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md
   },
   languageRowSelected: {
-    borderColor: "rgba(181,138,42,0.45)",
-    backgroundColor: colors.goldSoft
-  },
-  languageName: {
-    fontSize: 16,
-    lineHeight: 21
+    backgroundColor: colors.blueSoft
   }
 });
