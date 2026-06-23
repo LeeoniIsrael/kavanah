@@ -1,7 +1,8 @@
 import type { PropsWithChildren } from "react";
 import { useRef } from "react";
-import { Animated, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
+import { Animated, Easing, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 
+import { motion } from "@/design/theme";
 import { tapHaptic } from "@/services/haptics";
 
 type Props = PropsWithChildren<
@@ -16,11 +17,11 @@ export function AnimatedPressable({ children, onPress, style, pressedScale = 0.9
   const scale = useRef(new Animated.Value(1)).current;
 
   const animateTo = (value: number) => {
-    Animated.spring(scale, {
+    Animated.timing(scale, {
       toValue: value,
       useNativeDriver: true,
-      speed: 28,
-      bounciness: 4
+      duration: motion.pressMs,
+      easing: Easing.bezier(...motion.standard)
     }).start();
   };
 

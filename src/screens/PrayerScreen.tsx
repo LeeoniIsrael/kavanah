@@ -1,6 +1,6 @@
 import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
@@ -8,7 +8,7 @@ import { Card } from "@/components/Card";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
-import { colors, radii, spacing, type } from "@/design/theme";
+import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
@@ -189,33 +189,43 @@ export function PrayerScreen(): React.JSX.Element {
         </View>
       ) : null}
 
-      <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setReaderOpen(false)}>
+      <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
         <SafeAreaView style={styles.readerSafeArea}>
+          {selected ? (
+            <View style={styles.readerChrome} pointerEvents="box-none">
+              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={() => setReaderOpen(false)} pressedScale={0.94} style={styles.floatingClose}>
+                <X size={17} color={colors.ink} />
+              </AnimatedPressable>
+              <AnimatedPressable
+                accessibilityLabel={selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"}
+                accessibilityRole="button"
+                onPress={() => toggleBookmark(selected.id)}
+                pressedScale={0.94}
+                style={[styles.floatingBookmark, selectedBookmarked && styles.floatingBookmarkActive]}
+              >
+                {selectedBookmarked ? <BookmarkCheck size={17} color={colors.white} /> : <Bookmark size={17} color={colors.gold} />}
+              </AnimatedPressable>
+            </View>
+          ) : null}
           <ScrollView contentContainerStyle={styles.readerContent} showsVerticalScrollIndicator={false}>
             {selected ? (
-              <Card accent="gold" style={styles.reader}>
-                <View style={styles.readerHeaderRow}>
-                  <AnimatedPressable accessibilityRole="button" onPress={() => setReaderOpen(false)} style={styles.closeButton}>
-                    <X size={20} color={colors.ink} />
-                  </AnimatedPressable>
-                  <AnimatedPressable accessibilityRole="button" onPress={() => toggleBookmark(selected.id)} style={[styles.readerBookmark, selectedBookmarked && styles.readerBookmarkActive]}>
-                    {selectedBookmarked ? <BookmarkCheck size={21} color={colors.white} /> : <Bookmark size={21} color={colors.gold} />}
-                  </AnimatedPressable>
-                </View>
+              <View style={styles.reader}>
                 <View style={styles.readerHeader}>
-                  <Label>{selected.source}</Label>
+                  <View style={styles.readerMetaRow}>
+                    <Text style={styles.readerMeta}>{selected.source}</Text>
+                    <Text style={styles.readerMeta}>{primaryLanguageCode}</Text>
+                  </View>
                   <Display style={styles.readerDisplay}>{selected.title}</Display>
-                  <Body>{selected.summary}</Body>
-                  <Label>Language: {primaryLanguageCode}</Label>
+                  <Body style={styles.readerSummary}>{selected.summary}</Body>
                 </View>
-                <Card accent="blue" style={styles.askCard}>
+                <View style={styles.askCard}>
                   <View style={styles.askHeader}>
                     <View style={styles.askIcon}>
                       <MessageCircle size={18} color={colors.blue} />
                     </View>
                     <View style={styles.askTitle}>
                       <SectionTitle style={styles.askTitleText}>Ask about this prayer</SectionTitle>
-                      <Body style={styles.askSubtitle}>Answers use this prayer’s text as context.</Body>
+                      <Body style={styles.askSubtitle}>Uses this text as context.</Body>
                     </View>
                   </View>
                   {assistantOpen ? (
@@ -249,23 +259,23 @@ export function PrayerScreen(): React.JSX.Element {
                       <Send size={17} color={colors.white} />
                     </AnimatedPressable>
                   </View>
-                </Card>
+                </View>
                 {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
                   <View key={token.id} style={styles.token}>
                     {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
                     {token.localizedTransliteration ? (
-                      <View style={styles.transliterationPill}>
-                        <Label>Transliteration</Label>
+                      <View style={styles.transliterationBlock}>
+                        <Text style={styles.readerMeta}>Transliteration</Text>
                         <SectionTitle style={styles.transliteration}>{token.localizedTransliteration}</SectionTitle>
                       </View>
                     ) : null}
                     <View style={styles.translationBlock}>
-                      <Label>Translation</Label>
+                      <Text style={styles.readerMeta}>Translation</Text>
                       <Body>{token.localizedTranslation}</Body>
                     </View>
                   </View>
                 ))}
-              </Card>
+              </View>
             ) : null}
           </ScrollView>
         </SafeAreaView>
@@ -346,53 +356,81 @@ const styles = StyleSheet.create({
   },
   readerSafeArea: {
     flex: 1,
-    backgroundColor: colors.parchment
+    backgroundColor: colors.parchmentLift
+  },
+  readerChrome: {
+    position: "absolute",
+    top: spacing.lg,
+    left: grid.margin,
+    right: grid.margin,
+    zIndex: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    pointerEvents: "box-none"
   },
   readerContent: {
-    padding: spacing.xl,
-    paddingBottom: spacing.xxl
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.xxxl + spacing.xl,
+    paddingBottom: spacing.xxxl
   },
   reader: {
-    gap: spacing.lg,
-    padding: spacing.xl
-  },
-  readerHeaderRow: {
-    flexDirection: "row",
-    gap: spacing.md,
-    alignItems: "center",
-    justifyContent: "space-between"
+    gap: spacing.xl
   },
   readerHeader: {
-    gap: 4
+    gap: spacing.sm,
+    paddingBottom: spacing.md
   },
-  closeButton: {
-    width: 46,
-    height: 46,
+  floatingClose: {
+    width: grid.touch,
+    height: grid.touch,
     borderRadius: radii.pill,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.vellum,
+    backgroundColor: colors.glass,
     borderWidth: 1,
-    borderColor: colors.hairline
+    borderColor: colors.hairline,
+    ...shadows.floating
   },
-  readerBookmark: {
-    width: 46,
-    height: 46,
+  floatingBookmark: {
+    width: grid.touch,
+    height: grid.touch,
     borderRadius: radii.pill,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.goldSoft
+    backgroundColor: colors.glass,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.floating
   },
-  readerBookmarkActive: {
+  floatingBookmarkActive: {
     backgroundColor: colors.gold
   },
+  readerMetaRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm
+  },
+  readerMeta: {
+    ...type.caption,
+    color: colors.inkFaint,
+    textTransform: "uppercase"
+  },
   readerDisplay: {
-    fontSize: 34,
-    lineHeight: 39
+    fontSize: 42,
+    lineHeight: 47
+  },
+  readerSummary: {
+    color: colors.inkFaint,
+    maxWidth: 320
   },
   askCard: {
     gap: spacing.md,
-    padding: spacing.lg
+    padding: spacing.lg,
+    borderRadius: radii.lg,
+    backgroundColor: colors.glass,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.pressed
   },
   askHeader: {
     flexDirection: "row",
@@ -402,7 +440,7 @@ const styles = StyleSheet.create({
   askIcon: {
     width: 42,
     height: 42,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.blueSoft
@@ -450,7 +488,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-end",
     gap: spacing.sm,
-    borderRadius: radii.md,
+    borderRadius: radii.lg,
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.vellum,
@@ -477,27 +515,26 @@ const styles = StyleSheet.create({
     opacity: 0.42
   },
   token: {
-    gap: spacing.md,
+    gap: spacing.lg,
     borderTopWidth: 1,
     borderTopColor: colors.hairline,
-    paddingTop: spacing.lg
+    paddingTop: spacing.xl
   },
   hebrew: {
     textAlign: "right",
-    fontSize: 28,
-    lineHeight: 42,
+    fontSize: 31,
+    lineHeight: 46,
     color: colors.ink
   },
-  transliterationPill: {
-    alignSelf: "flex-start",
-    borderRadius: radii.md,
-    backgroundColor: colors.goldSoft,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
+  transliterationBlock: {
+    gap: spacing.xs,
+    borderLeftWidth: 2,
+    borderLeftColor: colors.gold,
+    paddingLeft: spacing.md
   },
   transliteration: {
-    fontSize: 15,
-    lineHeight: 21,
+    fontSize: 17,
+    lineHeight: 24,
     color: colors.ink
   },
   translationBlock: {
