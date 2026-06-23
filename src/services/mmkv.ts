@@ -1,3 +1,5 @@
+import Constants from "expo-constants";
+
 type SyncKeyValueStorage = {
   getString: (key: string) => string | undefined;
   set: (key: string, value: string) => void;
@@ -37,6 +39,10 @@ export function writeJson(storage: SyncKeyValueStorage, key: string, value: unkn
 }
 
 function createStorage(id: string): SyncKeyValueStorage {
+  if (Constants.appOwnership === "expo") {
+    return new MemoryStorage();
+  }
+
   try {
     // MMKV is unavailable in Expo Go, so this must stay a guarded runtime load.
     // eslint-disable-next-line @typescript-eslint/no-require-imports

@@ -20,6 +20,7 @@
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1",
+      "^expo-constants$": "<rootDir>/src/test/expoConstantsMock.ts",
       "^expo-crypto$": "<rootDir>/src/test/expoCryptoMock.ts",
       "^expo-secure-store$": "<rootDir>/src/test/expoSecureStoreMock.ts",
       "^react-native-mmkv$": "<rootDir>/src/test/mmkvMock.ts"
@@ -35,6 +36,7 @@
     "expo": "^54.0.0",
     "expo-apple-authentication": "~8.0.8",
     "expo-application": "~7.0.8",
+    "expo-constants": "~18.0.10",
     "expo-crypto": "~15.0.9",
     "expo-device": "~8.0.10",
     "expo-local-authentication": "~17.0.8",
