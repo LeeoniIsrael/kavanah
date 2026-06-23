@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck, RefreshCw, Search, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, X } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import { Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -9,11 +9,17 @@ import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, radii, spacing, type } from "@/design/theme";
+import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
+import { confirmHaptic } from "@/services/haptics";
 import { usePrayerStore } from "@/store/prayerStore";
 
 export function PrayerScreen(): React.JSX.Element {
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const [readerOpen, setReaderOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
+  const [assistantInput, setAssistantInput] = useState("");
+  const [assistantMessages, setAssistantMessages] = useState<AssistantMessage[]>([]);
+  const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
@@ -29,7 +35,37 @@ export function PrayerScreen(): React.JSX.Element {
 
   const openPrayer = async (id: string) => {
     await selectPrayer(id);
+    setAssistantOpen(false);
+    setAssistantInput("");
+    setAssistantMessages([]);
     setReaderOpen(true);
+  };
+
+  const askAboutSelectedPrayer = async () => {
+    if (!selected || !assistantInput.trim() || isAssistantStreaming) {
+      return;
+    }
+
+    void confirmHaptic();
+    const clean = assistantInput.trim();
+    setAssistantInput("");
+    setAssistantOpen(true);
+    setIsAssistantStreaming(true);
+
+    const userMessage: AssistantMessage = { id: `${Date.now()}-user`, role: "user", content: clean, createdAt: new Date().toISOString() };
+    const assistantId = `${Date.now()}-assistant`;
+    setAssistantMessages((current) => [...current, userMessage, { id: assistantId, role: "assistant", content: "", createdAt: new Date().toISOString() }]);
+
+    const context = [
+      `${selected.title}: ${selected.summary}`,
+      `Sefaria reference: ${selected.sefariaRef}`,
+      ...selected.tokens.flatMap((token) => [`Hebrew: ${token.hebrew}`, `Transliteration: ${token.transliteration}`, `Translation: ${token.translation}`])
+    ].filter(Boolean);
+
+    for await (const chunk of createAssistantStream(clean, context)) {
+      setAssistantMessages((current) => current.map((message) => (message.id === assistantId ? { ...message, content: `${message.content}${chunk}` } : message)));
+    }
+    setIsAssistantStreaming(false);
   };
 
   return (
@@ -104,6 +140,48 @@ export function PrayerScreen(): React.JSX.Element {
                   <Display style={styles.readerDisplay}>{selected.title}</Display>
                   <Body>{selected.summary}</Body>
                 </View>
+                <Card accent="blue" style={styles.askCard}>
+                  <View style={styles.askHeader}>
+                    <View style={styles.askIcon}>
+                      <MessageCircle size={18} color={colors.blue} />
+                    </View>
+                    <View style={styles.askTitle}>
+                      <SectionTitle style={styles.askTitleText}>Ask about this prayer</SectionTitle>
+                      <Body style={styles.askSubtitle}>Answers use this prayer’s text as context.</Body>
+                    </View>
+                  </View>
+                  {assistantOpen ? (
+                    <View style={styles.assistantThread}>
+                      {assistantMessages.length > 0 ? (
+                        assistantMessages.map((message) => (
+                          <View key={message.id} style={[styles.assistantBubble, message.role === "user" ? styles.assistantUserBubble : styles.assistantAnswerBubble]}>
+                            <Body style={message.role === "user" ? styles.assistantUserText : styles.assistantAnswerText}>{message.content}</Body>
+                          </View>
+                        ))
+                      ) : (
+                        <Body>Ask for meaning, context, how it is used, or a simple two-sentence takeaway.</Body>
+                      )}
+                    </View>
+                  ) : null}
+                  <View style={styles.askComposer}>
+                    <TextInput
+                      value={assistantInput}
+                      onChangeText={setAssistantInput}
+                      placeholder="What does this mean?"
+                      placeholderTextColor={colors.inkMuted}
+                      style={styles.askInput}
+                      multiline
+                    />
+                    <AnimatedPressable
+                      accessibilityRole="button"
+                      onPress={() => void askAboutSelectedPrayer()}
+                      disabled={!assistantInput.trim() || isAssistantStreaming}
+                      style={[styles.askSend, (!assistantInput.trim() || isAssistantStreaming) && styles.askSendDisabled]}
+                    >
+                      <Send size={17} color={colors.white} />
+                    </AnimatedPressable>
+                  </View>
+                </Card>
                 {selected.tokens.map((token) => (
                   <View key={token.id} style={styles.token}>
                     {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
@@ -237,6 +315,92 @@ const styles = StyleSheet.create({
   readerDisplay: {
     fontSize: 34,
     lineHeight: 39
+  },
+  askCard: {
+    gap: spacing.md,
+    padding: spacing.lg
+  },
+  askHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md
+  },
+  askIcon: {
+    width: 42,
+    height: 42,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  askTitle: {
+    flex: 1,
+    gap: 2
+  },
+  askTitleText: {
+    fontSize: 17,
+    lineHeight: 22
+  },
+  askSubtitle: {
+    fontSize: 13,
+    lineHeight: 18
+  },
+  assistantThread: {
+    gap: spacing.sm
+  },
+  assistantBubble: {
+    maxWidth: "92%",
+    borderRadius: radii.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  assistantUserBubble: {
+    alignSelf: "flex-end",
+    backgroundColor: colors.ink
+  },
+  assistantAnswerBubble: {
+    alignSelf: "flex-start",
+    backgroundColor: colors.blueSoft
+  },
+  assistantUserText: {
+    color: colors.white,
+    fontSize: 14,
+    lineHeight: 20
+  },
+  assistantAnswerText: {
+    color: colors.ink,
+    fontSize: 14,
+    lineHeight: 20
+  },
+  askComposer: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: spacing.sm,
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.vellum,
+    padding: spacing.sm
+  },
+  askInput: {
+    ...type.body,
+    flex: 1,
+    minHeight: 40,
+    maxHeight: 116,
+    color: colors.ink,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs
+  },
+  askSend: {
+    width: 40,
+    height: 40,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.ink
+  },
+  askSendDisabled: {
+    opacity: 0.42
   },
   token: {
     gap: spacing.md,

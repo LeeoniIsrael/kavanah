@@ -1,8 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { BookOpenText, CalendarDays, MessageCircle, Shield, Sparkles } from "lucide-react-native";
+import { BookOpenText, CalendarDays, Shield, Sparkles } from "lucide-react-native";
 
 import { colors, radii } from "@/design/theme";
-import { AssistantScreen } from "@/screens/AssistantScreen";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
@@ -13,7 +12,6 @@ export type RootTabParamList = {
   Home: undefined;
   Prayer: undefined;
   Zmanim: undefined;
-  Assistant: undefined;
   Profile: undefined;
 };
 
@@ -60,7 +58,6 @@ export function RootNavigator(): React.JSX.Element {
       <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarIcon: tabIcon(Sparkles) }} />
       <Tab.Screen name="Prayer" component={PrayerScreen} options={{ tabBarIcon: tabIcon(BookOpenText) }} />
       <Tab.Screen name="Zmanim" component={ZmanimScreen} options={{ tabBarIcon: tabIcon(CalendarDays) }} />
-      <Tab.Screen name="Assistant" component={AssistantScreen} options={{ tabBarIcon: tabIcon(MessageCircle) }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarIcon: tabIcon(Shield) }} />
     </Tab.Navigator>
   );
