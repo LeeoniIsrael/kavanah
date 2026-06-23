@@ -1,9 +1,12 @@
 import { RefreshCw, Search } from "lucide-react-native";
-import { Pressable, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
+import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { Card } from "@/components/Card";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
-import { Body, Label, Title } from "@/components/Text";
+import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { colors, radii, spacing, type } from "@/design/theme";
 import { usePrayerStore } from "@/store/prayerStore";
 
 export function PrayerScreen(): React.JSX.Element {
@@ -12,47 +15,128 @@ export function PrayerScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View className="gap-2">
+      <View style={styles.hero}>
+        <View style={styles.lightLine} />
         <Label>Intent search</Label>
-        <Title>Find the words</Title>
+        <Display>Find the words</Display>
         <Body>Search by need, phrase, English, Hebrew, or transliteration.</Body>
       </View>
 
-      <View className="flex-row items-center gap-3 rounded-lg border border-ink/10 bg-white px-4">
-        <Search size={18} color="#6B7280" />
+      <View style={styles.searchBox}>
+        <Search size={18} color={colors.inkMuted} />
         <TextInput
           value={query}
           onChangeText={setQuery}
           placeholder="travel, shema, protection..."
-          className="h-14 flex-1 text-base text-ink"
-          placeholderTextColor="#8A8F98"
+          style={styles.searchInput}
+          placeholderTextColor={colors.inkMuted}
         />
-        <Pressable accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing}>
-          <RefreshCw size={18} color={isSyncing ? "#8A8F98" : "#111827"} />
-        </Pressable>
+        <AnimatedPressable accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
+          <RefreshCw size={18} color={isSyncing ? colors.inkMuted : colors.ink} />
+        </AnimatedPressable>
       </View>
 
-      <View className="gap-3">
+      <View style={styles.resultStack}>
         {results.map((result) => (
           <PrayerCard key={result.prayer.id} prayer={result.prayer} selected={result.prayer.id === selectedPrayerId} onPress={() => selectPrayer(result.prayer.id)} />
         ))}
       </View>
 
       {selected ? (
-        <View className="gap-5 rounded-lg bg-white p-5">
-          <View>
+        <Card accent="gold" style={styles.reader}>
+          <View style={styles.readerHeader}>
             <Label>{selected.source}</Label>
-            <Body className="text-2xl font-semibold text-ink">{selected.title}</Body>
+            <SectionTitle style={styles.readerTitle}>{selected.title}</SectionTitle>
           </View>
           {selected.tokens.map((token) => (
-            <View key={token.id} className="gap-2 border-t border-ink/10 pt-5">
-              <Body className="text-right text-2xl leading-10 text-ink">{token.hebrew}</Body>
-              <Body className="font-medium text-ink">{token.transliteration}</Body>
+            <View key={token.id} style={styles.token}>
+              <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle>
+              <View style={styles.transliterationPill}>
+                <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
+              </View>
               <Body>{token.translation}</Body>
             </View>
           ))}
-        </View>
+        </Card>
       ) : null}
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  hero: {
+    gap: spacing.sm,
+    paddingTop: spacing.sm
+  },
+  lightLine: {
+    width: 64,
+    height: 4,
+    borderRadius: radii.pill,
+    backgroundColor: colors.blue,
+    marginBottom: spacing.sm
+  },
+  searchBox: {
+    minHeight: 58,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.vellum,
+    paddingLeft: spacing.lg,
+    paddingRight: spacing.sm
+  },
+  searchInput: {
+    ...type.body,
+    flex: 1,
+    minHeight: 56,
+    color: colors.ink
+  },
+  refreshButton: {
+    width: 42,
+    height: 42,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  resultStack: {
+    gap: spacing.md
+  },
+  reader: {
+    gap: spacing.lg,
+    padding: spacing.xl
+  },
+  readerHeader: {
+    gap: 4
+  },
+  readerTitle: {
+    fontSize: 25,
+    lineHeight: 31
+  },
+  token: {
+    gap: spacing.md,
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline,
+    paddingTop: spacing.lg
+  },
+  hebrew: {
+    textAlign: "right",
+    fontSize: 28,
+    lineHeight: 42,
+    color: colors.ink
+  },
+  transliterationPill: {
+    alignSelf: "flex-start",
+    borderRadius: radii.md,
+    backgroundColor: colors.goldSoft,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  transliteration: {
+    fontSize: 15,
+    lineHeight: 21,
+    color: colors.ink
+  }
+});

@@ -1,11 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BookOpenText, CalendarDays, MessageCircle, Shield, Sparkles } from "lucide-react-native";
 
+import { colors, radii } from "@/design/theme";
 import { AssistantScreen } from "@/screens/AssistantScreen";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
 import { ZmanimScreen } from "@/screens/ZmanimScreen";
+import { tapHaptic } from "@/services/haptics";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -20,21 +22,38 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 export function RootNavigator(): React.JSX.Element {
   return (
     <Tab.Navigator
+      screenListeners={{
+        tabPress: () => {
+          void tapHaptic();
+        }
+      }}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#111827",
-        tabBarInactiveTintColor: "#8A8F98",
+        tabBarActiveTintColor: colors.ink,
+        tabBarInactiveTintColor: "#9AA0A9",
         tabBarStyle: {
           borderTopWidth: 0,
           elevation: 0,
-          height: 84,
+          height: 92,
           paddingBottom: 24,
-          paddingTop: 10,
-          backgroundColor: "#F7F4EE"
+          paddingTop: 12,
+          marginHorizontal: 14,
+          marginBottom: 10,
+          position: "absolute",
+          borderRadius: radii.xl,
+          backgroundColor: colors.vellum,
+          shadowColor: colors.shadow,
+          shadowOffset: { width: 0, height: 12 },
+          shadowOpacity: 1,
+          shadowRadius: 22
         },
         tabBarLabelStyle: {
           fontSize: 11,
-          fontWeight: "600"
+          fontWeight: "700",
+          letterSpacing: 0
+        },
+        tabBarItemStyle: {
+          borderRadius: radii.lg
         }
       }}
     >
@@ -48,8 +67,8 @@ export function RootNavigator(): React.JSX.Element {
 }
 
 function tabIcon(Icon: typeof Sparkles) {
-  function TabBarIcon({ color, size }: { color: string; size: number }): React.JSX.Element {
-    return <Icon color={color} size={size} strokeWidth={1.8} />;
+  function TabBarIcon({ color, size, focused }: { color: string; size: number; focused: boolean }): React.JSX.Element {
+    return <Icon color={focused ? colors.gold : color} size={size} strokeWidth={focused ? 2.2 : 1.8} />;
   }
 
   return TabBarIcon;

@@ -1,8 +1,12 @@
 import { Check, Snowflake } from "lucide-react-native";
-import { Pressable, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
+import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { Card } from "@/components/Card";
 import { Screen } from "@/components/Screen";
-import { Body, Label, Title } from "@/components/Text";
+import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { colors, radii, spacing, type } from "@/design/theme";
+import { confirmHaptic } from "@/services/haptics";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 
 const habitLabels: Record<StreakHabit, string> = {
@@ -15,36 +19,162 @@ const habitLabels: Record<StreakHabit, string> = {
 
 export function HomeScreen(): React.JSX.Element {
   const { habits, completeHabit, useFreeze: consumeFreeze } = useStreakStore();
+  const totalStreak = habits.reduce((sum, habit) => sum + habit.streak, 0);
+  const leadingHabit = habits.reduce<(typeof habits)[number] | null>((best, habit) => (!best || habit.streak > best.streak ? habit : best), null);
 
   return (
     <Screen>
-      <View className="gap-2">
-        <Label>Today</Label>
-        <Title>Kavanah</Title>
-        <Body>A quiet dashboard for prayer, time, learning, and consistency.</Body>
+      <View style={styles.hero}>
+        <View style={styles.lightLine} />
+        <Label>Morning intention</Label>
+        <Display>Kavanah</Display>
+        <Body style={styles.heroCopy}>A calm place to begin, return, and keep the small promises that shape the day.</Body>
       </View>
 
-      <View className="gap-3">
+      <Card accent="gold" style={styles.summaryCard}>
+        <View style={styles.summaryTop}>
+          <View>
+            <Label>Today’s rhythm</Label>
+            <SectionTitle>{leadingHabit ? habitLabels[leadingHabit.habit] : "Prayer"}</SectionTitle>
+          </View>
+          <View style={styles.scoreMark}>
+            <Text style={styles.scoreNumber}>{totalStreak}</Text>
+            <Text style={styles.scoreLabel}>days</Text>
+          </View>
+        </View>
+        <Body>Mark only what is true. A streak should feel like evidence, not pressure.</Body>
+      </Card>
+
+      <View style={styles.habitStack}>
         {habits.map((habit) => (
-          <View key={habit.habit} className="rounded-lg border border-ink/10 bg-white p-4">
-            <View className="flex-row items-center justify-between">
-              <View>
-                <Body className="font-semibold text-ink">{habitLabels[habit.habit]}</Body>
-                <Body className="text-sm">{habit.streak} day streak · {habit.freezes} freezes</Body>
+          <Card key={habit.habit} accent={habit.habit === "tefillin" ? "blue" : "olive"} style={styles.habitCard}>
+            <View style={styles.habitTop}>
+              <View style={styles.habitText}>
+                <SectionTitle>{habitLabels[habit.habit]}</SectionTitle>
+                <Body>{habit.streak} day streak · {habit.freezes} freezes left</Body>
               </View>
-              <View className="flex-row gap-2">
-                <Pressable accessibilityRole="button" onPress={() => consumeFreeze(habit.habit)} className="h-11 w-11 items-center justify-center rounded-full bg-mist">
-                  <Snowflake size={18} color="#111827" />
-                </Pressable>
-                <Pressable accessibilityRole="button" onPress={() => completeHabit(habit.habit)} className="h-11 w-11 items-center justify-center rounded-full bg-ink">
-                  <Check size={18} color="#FFFFFF" />
-                </Pressable>
+              <View style={styles.actions}>
+                <AnimatedPressable
+                  accessibilityRole="button"
+                  onPress={() => {
+                    consumeFreeze(habit.habit);
+                    void confirmHaptic();
+                  }}
+                  style={styles.iconButtonQuiet}
+                >
+                  <Snowflake size={18} color={colors.blue} />
+                </AnimatedPressable>
+                <AnimatedPressable
+                  accessibilityRole="button"
+                  onPress={() => {
+                    completeHabit(habit.habit);
+                    void confirmHaptic();
+                  }}
+                  style={styles.iconButton}
+                >
+                  <Check size={18} color={colors.white} />
+                </AnimatedPressable>
               </View>
             </View>
-            {habit.badges.length > 0 ? <Body className="mt-3 text-sm text-clay">{habit.badges.join(" · ")}</Body> : null}
-          </View>
+            <View style={styles.progressTrack}>
+              <View style={[styles.progressFill, { width: `${Math.min(habit.streak * 9, 100)}%` }]} />
+            </View>
+            {habit.badges.length > 0 ? <Body style={styles.badges}>{habit.badges.join(" · ")}</Body> : null}
+          </Card>
         ))}
       </View>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  hero: {
+    gap: spacing.sm,
+    paddingTop: spacing.sm
+  },
+  lightLine: {
+    width: 64,
+    height: 4,
+    borderRadius: radii.pill,
+    backgroundColor: colors.gold,
+    marginBottom: spacing.sm
+  },
+  heroCopy: {
+    maxWidth: 310
+  },
+  summaryCard: {
+    gap: spacing.md
+  },
+  summaryTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.lg
+  },
+  scoreMark: {
+    minWidth: 78,
+    height: 78,
+    borderRadius: radii.xl,
+    backgroundColor: colors.ink,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  scoreNumber: {
+    ...type.data,
+    color: colors.white
+  },
+  scoreLabel: {
+    ...type.caption,
+    color: colors.goldSoft,
+    textTransform: "uppercase"
+  },
+  habitStack: {
+    gap: spacing.md
+  },
+  habitCard: {
+    gap: spacing.md
+  },
+  habitTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.lg
+  },
+  habitText: {
+    flex: 1,
+    gap: 4
+  },
+  actions: {
+    flexDirection: "row",
+    gap: spacing.sm
+  },
+  iconButton: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.ink
+  },
+  iconButtonQuiet: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  progressTrack: {
+    height: 7,
+    borderRadius: radii.pill,
+    backgroundColor: colors.oliveSoft,
+    overflow: "hidden"
+  },
+  progressFill: {
+    height: "100%",
+    borderRadius: radii.pill,
+    backgroundColor: colors.olive
+  },
+  badges: {
+    color: colors.rose
+  }
+});

@@ -1,10 +1,14 @@
 import { Send } from "lucide-react-native";
 import { useState } from "react";
-import { Pressable, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
+import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { Card } from "@/components/Card";
 import { Screen } from "@/components/Screen";
-import { Body, Label, Title } from "@/components/Text";
+import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { colors, radii, spacing, type } from "@/design/theme";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
+import { confirmHaptic } from "@/services/haptics";
 import { usePrayerStore } from "@/store/prayerStore";
 
 export function AssistantScreen(): React.JSX.Element {
@@ -18,6 +22,7 @@ export function AssistantScreen(): React.JSX.Element {
     if (!clean || isStreaming) {
       return;
     }
+    void confirmHaptic();
     setInput("");
     setIsStreaming(true);
     const userMessage: AssistantMessage = { id: `${Date.now()}-user`, role: "user", content: clean, createdAt: new Date().toISOString() };
@@ -32,33 +37,114 @@ export function AssistantScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View className="gap-2">
+      <View style={styles.hero}>
+        <View style={styles.lightLine} />
         <Label>Guarded assistant</Label>
-        <Title>Ask simply</Title>
-        <Body>Short source-aware explanations, clear practice notes, and privacy redaction before external use.</Body>
+        <Display>Ask simply</Display>
+        <Body>Short source-aware explanations, practical care, and privacy redaction before anything leaves the device.</Body>
       </View>
 
-      <View className="gap-3">
-        {messages.map((message) => (
-          <View key={message.id} className={`rounded-lg p-4 ${message.role === "user" ? "bg-ink" : "bg-white"}`}>
-            <Body className={message.role === "user" ? "text-white" : "text-ink"}>{message.content}</Body>
-          </View>
-        ))}
-      </View>
+      {messages.length === 0 ? (
+        <Card accent="rose" style={styles.empty}>
+          <SectionTitle>Try a gentle question</SectionTitle>
+          <Body>Ask what a prayer means, how to prepare for a ritual, or what a source is trying to teach.</Body>
+        </Card>
+      ) : (
+        <View style={styles.messages}>
+          {messages.map((message) => (
+            <View key={message.id} style={[styles.bubble, message.role === "user" ? styles.userBubble : styles.assistantBubble]}>
+              <Body style={message.role === "user" ? styles.userText : styles.assistantText}>{message.content}</Body>
+            </View>
+          ))}
+        </View>
+      )}
 
-      <View className="flex-row items-center gap-3 rounded-lg border border-ink/10 bg-white px-4">
+      <View style={styles.composer}>
         <TextInput
           value={input}
           onChangeText={setInput}
           placeholder="What does this prayer mean?"
-          className="min-h-14 flex-1 text-base text-ink"
-          placeholderTextColor="#8A8F98"
+          style={styles.input}
+          placeholderTextColor={colors.inkMuted}
           multiline
         />
-        <Pressable accessibilityRole="button" onPress={() => void send()} className="h-11 w-11 items-center justify-center rounded-full bg-ink">
-          <Send size={17} color="#FFFFFF" />
-        </Pressable>
+        <AnimatedPressable accessibilityRole="button" onPress={() => void send()} disabled={!input.trim() || isStreaming} style={[styles.sendButton, (!input.trim() || isStreaming) && styles.sendDisabled]}>
+          <Send size={17} color={colors.white} />
+        </AnimatedPressable>
       </View>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  hero: {
+    gap: spacing.sm,
+    paddingTop: spacing.sm
+  },
+  lightLine: {
+    width: 64,
+    height: 4,
+    borderRadius: radii.pill,
+    backgroundColor: colors.rose,
+    marginBottom: spacing.sm
+  },
+  empty: {
+    gap: spacing.sm
+  },
+  messages: {
+    gap: spacing.md
+  },
+  bubble: {
+    maxWidth: "88%",
+    borderRadius: radii.lg,
+    padding: spacing.lg
+  },
+  userBubble: {
+    alignSelf: "flex-end",
+    backgroundColor: colors.ink,
+    borderBottomRightRadius: radii.sm
+  },
+  assistantBubble: {
+    alignSelf: "flex-start",
+    backgroundColor: colors.vellum,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    borderBottomLeftRadius: radii.sm
+  },
+  userText: {
+    color: colors.white
+  },
+  assistantText: {
+    color: colors.ink
+  },
+  composer: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: spacing.md,
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.vellum,
+    padding: spacing.sm
+  },
+  input: {
+    ...type.body,
+    flex: 1,
+    minHeight: 44,
+    maxHeight: 132,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    color: colors.ink
+  },
+  sendButton: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.ink
+  },
+  sendDisabled: {
+    opacity: 0.42
+  }
+});

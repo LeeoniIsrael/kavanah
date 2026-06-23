@@ -1,6 +1,8 @@
-import { Pressable, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import { Body, Label } from "@/components/Text";
+import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { Body, Label, SectionTitle } from "@/components/Text";
+import { colors, radii, spacing } from "@/design/theme";
 import type { PrayerText } from "@/types/prayer";
 
 type Props = {
@@ -11,12 +13,49 @@ type Props = {
 
 export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Element {
   return (
-    <Pressable onPress={onPress} className={`rounded-lg border p-4 ${selected ? "border-ink bg-white" : "border-ink/10 bg-white/50"}`}>
-      <View className="gap-1">
-        <Label>{prayer.category}</Label>
-        <Body className="text-lg font-semibold text-ink">{prayer.title}</Body>
-        <Body className="text-sm">{prayer.tokens[0]?.translation ?? prayer.sefariaRef}</Body>
+    <AnimatedPressable onPress={onPress} style={[styles.card, selected && styles.selected]}>
+      <View style={styles.row}>
+        <View style={styles.text}>
+          <Label>{prayer.category}</Label>
+          <SectionTitle>{prayer.title}</SectionTitle>
+          <Body numberOfLines={2}>{prayer.tokens[0]?.translation ?? prayer.sefariaRef}</Body>
+        </View>
+        <View style={[styles.dot, selected && styles.selectedDot]} />
       </View>
-    </Pressable>
+    </AnimatedPressable>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: "rgba(255,255,255,0.62)",
+    padding: spacing.lg
+  },
+  selected: {
+    backgroundColor: colors.vellum,
+    borderColor: "rgba(181,138,42,0.45)"
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md
+  },
+  text: {
+    flex: 1,
+    gap: 4
+  },
+  dot: {
+    width: 11,
+    height: 11,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.hairline
+  },
+  selectedDot: {
+    backgroundColor: colors.gold,
+    borderColor: colors.gold
+  }
+});

@@ -1,26 +1,68 @@
 import type { PropsWithChildren } from "react";
-import { Text as RNText, type TextProps } from "react-native";
+import { StyleSheet, Text as RNText, type TextProps } from "react-native";
 
-export function Title({ children, className = "", ...props }: PropsWithChildren<TextProps & { className?: string }>): React.JSX.Element {
+import { colors, type } from "@/design/theme";
+
+export function Title({ children, style, ...props }: PropsWithChildren<TextProps>): React.JSX.Element {
   return (
-    <RNText className={`text-4xl font-semibold leading-tight text-ink ${className}`} {...props}>
+    <RNText style={[styles.title, style]} {...props}>
       {children}
     </RNText>
   );
 }
 
-export function Body({ children, className = "", ...props }: PropsWithChildren<TextProps & { className?: string }>): React.JSX.Element {
+export function Display({ children, style, ...props }: PropsWithChildren<TextProps>): React.JSX.Element {
   return (
-    <RNText className={`text-base leading-7 text-ink/75 ${className}`} {...props}>
+    <RNText style={[styles.display, style]} {...props}>
       {children}
     </RNText>
   );
 }
 
-export function Label({ children, className = "", ...props }: PropsWithChildren<TextProps & { className?: string }>): React.JSX.Element {
+export function Body({ children, style, ...props }: PropsWithChildren<TextProps>): React.JSX.Element {
   return (
-    <RNText className={`text-xs font-semibold uppercase tracking-[1px] text-ink/50 ${className}`} {...props}>
+    <RNText style={[styles.body, style]} {...props}>
       {children}
     </RNText>
   );
 }
+
+export function Label({ children, style, ...props }: PropsWithChildren<TextProps>): React.JSX.Element {
+  return (
+    <RNText style={[styles.label, style]} {...props}>
+      {children}
+    </RNText>
+  );
+}
+
+export function SectionTitle({ children, style, ...props }: PropsWithChildren<TextProps>): React.JSX.Element {
+  return (
+    <RNText style={[styles.section, style]} {...props}>
+      {children}
+    </RNText>
+  );
+}
+
+const styles = StyleSheet.create({
+  display: {
+    ...type.display,
+    color: colors.ink
+  },
+  title: {
+    ...type.title,
+    color: colors.ink
+  },
+  section: {
+    ...type.section,
+    color: colors.ink
+  },
+  body: {
+    ...type.body,
+    color: colors.inkMuted
+  },
+  label: {
+    ...type.caption,
+    color: colors.gold,
+    textTransform: "uppercase"
+  }
+});
