@@ -1,6 +1,3 @@
-import "react-native-reanimated";
-import "./global.css";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
