@@ -11,15 +11,25 @@ import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, radii, spacing, type } from "@/design/theme";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
+import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
 import { usePrayerStore } from "@/store/prayerStore";
+import { useSettingsStore } from "@/store/settingsStore";
+import type { PrayerToken } from "@/types/prayer";
+
+type LocalizedToken = PrayerToken & {
+  localizedTranslation: string;
+  localizedTransliteration: string;
+};
 
 export function PrayerScreen(): React.JSX.Element {
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
+  const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
   const [readerOpen, setReaderOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
   const [assistantMessages, setAssistantMessages] = useState<AssistantMessage[]>([]);
   const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
+  const [localizedTokens, setLocalizedTokens] = useState<LocalizedToken[]>([]);
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
@@ -32,6 +42,35 @@ export function PrayerScreen(): React.JSX.Element {
     }, 450);
     return () => clearTimeout(handle);
   }, [query, searchRemote]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function localizeSelectedPrayer(): Promise<void> {
+      if (!selected) {
+        setLocalizedTokens([]);
+        return;
+      }
+
+      const tokens = await Promise.all(
+        selected.tokens.map(async (token) => ({
+          ...token,
+          localizedTransliteration: localizeHebrewTransliteration(token.transliteration, primaryLanguageCode),
+          localizedTranslation: primaryLanguageCode === "he" && token.hebrew ? token.hebrew : await translatePrayerText(token.translation, primaryLanguageCode)
+        }))
+      );
+
+      if (!cancelled) {
+        setLocalizedTokens(tokens);
+      }
+    }
+
+    void localizeSelectedPrayer();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [primaryLanguageCode, selected]);
 
   const openPrayer = async (id: string) => {
     await selectPrayer(id);
@@ -59,7 +98,8 @@ export function PrayerScreen(): React.JSX.Element {
     const context = [
       `${selected.title}: ${selected.summary}`,
       `Sefaria reference: ${selected.sefariaRef}`,
-      ...selected.tokens.flatMap((token) => [`Hebrew: ${token.hebrew}`, `Transliteration: ${token.transliteration}`, `Translation: ${token.translation}`])
+      `Primary language: ${primaryLanguageCode}`,
+      ...localizedTokens.flatMap((token) => [`Hebrew: ${token.hebrew}`, `Transliteration: ${token.localizedTransliteration}`, `Translation: ${token.localizedTranslation}`])
     ].filter(Boolean);
 
     for await (const chunk of createAssistantStream(clean, context)) {
@@ -139,6 +179,7 @@ export function PrayerScreen(): React.JSX.Element {
                   <Label>{selected.source}</Label>
                   <Display style={styles.readerDisplay}>{selected.title}</Display>
                   <Body>{selected.summary}</Body>
+                  <Label>Language: {primaryLanguageCode}</Label>
                 </View>
                 <Card accent="blue" style={styles.askCard}>
                   <View style={styles.askHeader}>
@@ -182,15 +223,19 @@ export function PrayerScreen(): React.JSX.Element {
                     </AnimatedPressable>
                   </View>
                 </Card>
-                {selected.tokens.map((token) => (
+                {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
                   <View key={token.id} style={styles.token}>
                     {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
-                    {token.transliteration ? (
+                    {token.localizedTransliteration ? (
                       <View style={styles.transliterationPill}>
-                        <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
+                        <Label>Transliteration</Label>
+                        <SectionTitle style={styles.transliteration}>{token.localizedTransliteration}</SectionTitle>
                       </View>
                     ) : null}
-                    <Body>{token.translation}</Body>
+                    <View style={styles.translationBlock}>
+                      <Label>Translation</Label>
+                      <Body>{token.localizedTranslation}</Body>
+                    </View>
                   </View>
                 ))}
               </Card>
@@ -425,5 +470,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 21,
     color: colors.ink
+  },
+  translationBlock: {
+    gap: spacing.xs
   }
 });

@@ -1,18 +1,25 @@
-import { Lock, LogOut, ShieldCheck } from "lucide-react-native";
-import { useEffect } from "react";
-import { StyleSheet, Switch, View } from "react-native";
+import { Check, Languages, Lock, LogOut, ShieldCheck, X } from "lucide-react-native";
+import { useEffect, useState } from "react";
+import { Modal, ScrollView, StyleSheet, Switch, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
+import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { findLanguage, languageOptions } from "@/data/languages";
 import { colors, radii, spacing } from "@/design/theme";
 import { HALACHIC_ASSISTANT_SYSTEM_PROMPT } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { useAuthStore } from "@/store/authStore";
+import { useSettingsStore } from "@/store/settingsStore";
 
 export function ProfileScreen(): React.JSX.Element {
   const { tokens, biometricLockEnabled, hydrate, signInWithApple, signOut, setBiometricLockEnabled } = useAuthStore();
+  const { primaryLanguageCode, setPrimaryLanguageCode } = useSettingsStore();
+  const [languageModalOpen, setLanguageModalOpen] = useState(false);
+  const primaryLanguage = findLanguage(primaryLanguageCode);
 
   useEffect(() => {
     void hydrate();
@@ -56,10 +63,62 @@ export function ProfileScreen(): React.JSX.Element {
         />
       </Card>
 
+      <Card accent="gold" style={styles.languageCard}>
+        <View style={styles.statusRow}>
+          <View style={styles.languageIcon}>
+            <Languages size={22} color={colors.gold} />
+          </View>
+          <View style={styles.statusText}>
+            <SectionTitle>Primary language</SectionTitle>
+            <Body>{primaryLanguage.name} · {primaryLanguage.nativeName}</Body>
+          </View>
+        </View>
+        <Button label="Change language" tone="quiet" onPress={() => setLanguageModalOpen(true)} />
+      </Card>
+
       <Card accent="rose" style={styles.guardrailCard}>
         <Label>Assistant guardrail</Label>
         <Body style={styles.guardrail}>{HALACHIC_ASSISTANT_SYSTEM_PROMPT}</Body>
       </Card>
+
+      <Modal visible={languageModalOpen} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setLanguageModalOpen(false)}>
+        <SafeAreaView style={styles.modalSafeArea}>
+          <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
+            <View style={styles.modalHeader}>
+              <View>
+                <Label>Language</Label>
+                <Display style={styles.modalTitle}>Choose text language</Display>
+              </View>
+              <AnimatedPressable accessibilityRole="button" onPress={() => setLanguageModalOpen(false)} style={styles.closeButton}>
+                <X size={20} color={colors.ink} />
+              </AnimatedPressable>
+            </View>
+            <View style={styles.languageList}>
+              {languageOptions.map((language) => {
+                const selected = language.code === primaryLanguageCode;
+                return (
+                  <AnimatedPressable
+                    key={language.code}
+                    accessibilityRole="button"
+                    onPress={() => {
+                      void confirmHaptic();
+                      setPrimaryLanguageCode(language.code);
+                      setLanguageModalOpen(false);
+                    }}
+                    style={[styles.languageRow, selected && styles.languageRowSelected]}
+                  >
+                    <View style={styles.settingText}>
+                      <SectionTitle style={styles.languageName}>{language.name}</SectionTitle>
+                      <Body>{language.nativeName}</Body>
+                    </View>
+                    {selected ? <Check size={20} color={colors.gold} /> : null}
+                  </AnimatedPressable>
+                );
+              })}
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      </Modal>
     </Screen>
   );
 }
@@ -105,11 +164,74 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 4
   },
+  languageCard: {
+    gap: spacing.lg
+  },
+  languageIcon: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.goldSoft
+  },
   guardrailCard: {
     gap: spacing.sm
   },
   guardrail: {
     fontSize: 14,
+    lineHeight: 21
+  },
+  modalSafeArea: {
+    flex: 1,
+    backgroundColor: colors.parchment
+  },
+  modalContent: {
+    padding: spacing.xl,
+    paddingBottom: spacing.xxl,
+    gap: spacing.xl
+  },
+  modalHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: spacing.lg
+  },
+  modalTitle: {
+    fontSize: 34,
+    lineHeight: 39
+  },
+  closeButton: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.vellum,
+    borderWidth: 1,
+    borderColor: colors.hairline
+  },
+  languageList: {
+    gap: spacing.sm
+  },
+  languageRow: {
+    minHeight: 66,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.vellum,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md
+  },
+  languageRowSelected: {
+    borderColor: "rgba(181,138,42,0.45)",
+    backgroundColor: colors.goldSoft
+  },
+  languageName: {
+    fontSize: 16,
     lineHeight: 21
   }
 });
