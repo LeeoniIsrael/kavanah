@@ -49,13 +49,16 @@ export function localizeHebrewTransliteration(transliteration: string, languageC
   if (languageCode === "ko") {
     return replaceByOrderedMap(clean, koreanMap);
   }
+  if (languageCode === "el") {
+    return replaceByOrderedMap(clean, greekMap);
+  }
   if (["ru", "uk"].includes(languageCode)) {
     return replaceByOrderedMap(clean, cyrillicMap);
   }
   if (["ar", "fa", "ur"].includes(languageCode)) {
     return replaceByOrderedMap(clean, arabicMap);
   }
-  if (languageCode === "he") {
+  if (languageCode === "he" || languageCode === "yi") {
     return replaceByOrderedMap(clean, hebrewPronunciationMap);
   }
   if (languageCode === "hi") {
@@ -67,8 +70,11 @@ export function localizeHebrewTransliteration(transliteration: string, languageC
   if (languageCode === "th") {
     return replaceByOrderedMap(clean, thaiMap);
   }
+  if (languageCode === "am") {
+    return replaceByOrderedMap(clean, ethiopicMap);
+  }
   if (["zh-CN", "zh-TW"].includes(languageCode)) {
-    return romanizedHebrewToJapaneseKana(clean);
+    return romanizedHebrewToChineseCharacters(clean);
   }
 
   if (["es", "pt", "it", "lad"].includes(languageCode)) {
@@ -77,7 +83,7 @@ export function localizeHebrewTransliteration(transliteration: string, languageC
   if (["fr"].includes(languageCode)) {
     return clean.replace(/ch/gi, "kh").replace(/ou/gi, "ou");
   }
-  if (["de", "yi"].includes(languageCode)) {
+  if (["de"].includes(languageCode)) {
     return clean.replace(/sh/gi, "sch").replace(/ch/gi, "ch").replace(/tz/gi, "z");
   }
   if (["pl"].includes(languageCode)) {
@@ -154,6 +160,29 @@ function romanWordToKana(input: string): string {
     .replace(/u/g, "ウ")
     .replace(/'/g, "")
     .replace(/\b\w+\b/g, (value) => value);
+}
+
+function romanizedHebrewToChineseCharacters(input: string): string {
+  const phraseMap: Record<string, string> = {
+    adonai: "阿多奈",
+    eloheinu: "埃洛海努",
+    baruch: "巴鲁赫",
+    atah: "阿塔",
+    shema: "舍玛",
+    yisrael: "以色列",
+    echad: "埃哈德",
+    torah: "托拉",
+    shalom: "沙洛姆",
+    amen: "阿门"
+  };
+
+  return input
+    .split(/(\s+|[,.;:!?]+)/)
+    .map((part) => {
+      const key = part.toLowerCase().replace(/[’']/g, "'");
+      return phraseMap[key] ?? replaceByOrderedMap(part.toLowerCase(), chineseMap);
+    })
+    .join("");
 }
 
 function replaceByOrderedMap(input: string, replacements: [RegExp, string][]): string {
@@ -281,7 +310,63 @@ const koreanMap: [RegExp, string][] = [
   [/shema/gi, "쉐마"],
   [/sh/gi, "샤"],
   [/ch|kh/gi, "하"],
-  [/tz|ts/gi, "츠"]
+  [/tz|ts/gi, "츠"],
+  [/a/gi, "아"],
+  [/b/gi, "브"],
+  [/d/gi, "드"],
+  [/e/gi, "에"],
+  [/f/gi, "프"],
+  [/g/gi, "그"],
+  [/h/gi, "흐"],
+  [/i/gi, "이"],
+  [/j/gi, "즈"],
+  [/k/gi, "크"],
+  [/l/gi, "르"],
+  [/m/gi, "므"],
+  [/n/gi, "느"],
+  [/o/gi, "오"],
+  [/p/gi, "프"],
+  [/q/gi, "크"],
+  [/r/gi, "르"],
+  [/s/gi, "스"],
+  [/t/gi, "트"],
+  [/u/gi, "우"],
+  [/v/gi, "브"],
+  [/w/gi, "우"],
+  [/x/gi, "크스"],
+  [/y/gi, "이"],
+  [/z/gi, "즈"]
+];
+
+const greekMap: [RegExp, string][] = [
+  [/sh/gi, "σ̌"],
+  [/ch|kh/gi, "χ"],
+  [/tz|ts/gi, "τσ"],
+  [/a/gi, "α"],
+  [/b/gi, "β"],
+  [/d/gi, "δ"],
+  [/e/gi, "ε"],
+  [/f/gi, "φ"],
+  [/g/gi, "γ"],
+  [/h/gi, "χ"],
+  [/i/gi, "ι"],
+  [/j/gi, "τζ"],
+  [/k/gi, "κ"],
+  [/l/gi, "λ"],
+  [/m/gi, "μ"],
+  [/n/gi, "ν"],
+  [/o/gi, "ο"],
+  [/p/gi, "π"],
+  [/q/gi, "κ"],
+  [/r/gi, "ρ"],
+  [/s/gi, "σ"],
+  [/t/gi, "τ"],
+  [/u/gi, "ου"],
+  [/v/gi, "β"],
+  [/w/gi, "ου"],
+  [/x/gi, "ξ"],
+  [/y/gi, "ι"],
+  [/z/gi, "ζ"]
 ];
 
 const cyrillicMap: [RegExp, string][] = [
@@ -309,7 +394,12 @@ const cyrillicMap: [RegExp, string][] = [
   [/t/gi, "т"],
   [/u/gi, "у"],
   [/f/gi, "ф"],
-  [/h/gi, "х"]
+  [/h/gi, "х"],
+  [/j/gi, "дж"],
+  [/q/gi, "к"],
+  [/w/gi, "в"],
+  [/x/gi, "кс"],
+  [/y/gi, "й"]
 ];
 
 const arabicMap: [RegExp, string][] = [
@@ -320,19 +410,26 @@ const arabicMap: [RegExp, string][] = [
   [/b/gi, "ب"],
   [/d/gi, "د"],
   [/e/gi, "ي"],
+  [/f/gi, "ف"],
   [/g/gi, "غ"],
   [/h/gi, "ه"],
   [/i/gi, "ي"],
+  [/j/gi, "ج"],
   [/k/gi, "ك"],
   [/l/gi, "ل"],
   [/m/gi, "م"],
   [/n/gi, "ن"],
   [/o/gi, "و"],
+  [/p/gi, "پ"],
+  [/q/gi, "ق"],
   [/r/gi, "ر"],
   [/s/gi, "س"],
   [/t/gi, "ت"],
   [/u/gi, "و"],
   [/v/gi, "ڤ"],
+  [/w/gi, "و"],
+  [/x/gi, "كس"],
+  [/z/gi, "ز"],
   [/y/gi, "ي"]
 ];
 
@@ -344,19 +441,26 @@ const hebrewPronunciationMap: [RegExp, string][] = [
   [/b/gi, "ב"],
   [/d/gi, "ד"],
   [/e/gi, "י"],
+  [/f/gi, "פ"],
   [/g/gi, "ג"],
   [/h/gi, "ה"],
   [/i/gi, "י"],
+  [/j/gi, "ג"],
   [/k/gi, "ק"],
   [/l/gi, "ל"],
   [/m/gi, "מ"],
   [/n/gi, "נ"],
   [/o/gi, "ו"],
+  [/p/gi, "פ"],
+  [/q/gi, "ק"],
   [/r/gi, "ר"],
   [/s/gi, "ס"],
   [/t/gi, "ט"],
   [/u/gi, "ו"],
   [/v/gi, "ו"],
+  [/w/gi, "ו"],
+  [/x/gi, "קס"],
+  [/z/gi, "ז"],
   [/y/gi, "י"]
 ];
 
@@ -371,16 +475,21 @@ const devanagariMap: [RegExp, string][] = [
   [/g/gi, "ग"],
   [/h/gi, "ह"],
   [/i/gi, "ि"],
+  [/j/gi, "ज"],
   [/k/gi, "क"],
   [/l/gi, "ल"],
   [/m/gi, "म"],
   [/n/gi, "न"],
   [/o/gi, "ो"],
   [/r/gi, "र"],
+  [/q/gi, "क"],
   [/s/gi, "स"],
   [/t/gi, "त"],
   [/u/gi, "ु"],
   [/v/gi, "व"],
+  [/w/gi, "व"],
+  [/x/gi, "क्स"],
+  [/z/gi, "ज़"],
   [/y/gi, "य"]
 ];
 
@@ -392,19 +501,26 @@ const bengaliMap: [RegExp, string][] = [
   [/b/gi, "ব"],
   [/d/gi, "দ"],
   [/e/gi, "ে"],
+  [/f/gi, "ফ"],
   [/g/gi, "গ"],
   [/h/gi, "হ"],
   [/i/gi, "ি"],
+  [/j/gi, "জ"],
   [/k/gi, "ক"],
   [/l/gi, "ল"],
   [/m/gi, "ম"],
   [/n/gi, "ন"],
   [/o/gi, "ো"],
+  [/p/gi, "প"],
+  [/q/gi, "ক"],
   [/r/gi, "র"],
   [/s/gi, "স"],
   [/t/gi, "ত"],
   [/u/gi, "ু"],
   [/v/gi, "ভ"],
+  [/w/gi, "ও"],
+  [/x/gi, "ক্স"],
+  [/z/gi, "জ"],
   [/y/gi, "য"]
 ];
 
@@ -419,15 +535,83 @@ const thaiMap: [RegExp, string][] = [
   [/g/gi, "ก"],
   [/h/gi, "ฮ"],
   [/i/gi, "ิ"],
+  [/j/gi, "จ"],
   [/k/gi, "ค"],
   [/l/gi, "ล"],
   [/m/gi, "ม"],
   [/n/gi, "น"],
   [/o/gi, "โ"],
+  [/p/gi, "พ"],
+  [/q/gi, "ค"],
   [/r/gi, "ร"],
   [/s/gi, "ส"],
   [/t/gi, "ต"],
   [/u/gi, "ุ"],
   [/v/gi, "ว"],
+  [/w/gi, "ว"],
+  [/x/gi, "คส"],
+  [/z/gi, "ซ"],
   [/y/gi, "ย"]
+];
+
+const ethiopicMap: [RegExp, string][] = [
+  [/sh/gi, "ሽ"],
+  [/ch|kh/gi, "ኅ"],
+  [/tz|ts/gi, "ጽ"],
+  [/a/gi, "አ"],
+  [/b/gi, "ብ"],
+  [/d/gi, "ድ"],
+  [/e/gi, "ኤ"],
+  [/f/gi, "ፍ"],
+  [/g/gi, "ግ"],
+  [/h/gi, "ህ"],
+  [/i/gi, "ኢ"],
+  [/j/gi, "ጅ"],
+  [/k/gi, "ክ"],
+  [/l/gi, "ል"],
+  [/m/gi, "ም"],
+  [/n/gi, "ን"],
+  [/o/gi, "ኦ"],
+  [/p/gi, "ፕ"],
+  [/q/gi, "ቅ"],
+  [/r/gi, "ር"],
+  [/s/gi, "ስ"],
+  [/t/gi, "ት"],
+  [/u/gi, "ኡ"],
+  [/v/gi, "ቭ"],
+  [/w/gi, "ው"],
+  [/x/gi, "ክስ"],
+  [/y/gi, "ይ"],
+  [/z/gi, "ዝ"]
+];
+
+const chineseMap: [RegExp, string][] = [
+  [/sh/gi, "沙"],
+  [/ch|kh/gi, "赫"],
+  [/tz|ts/gi, "茨"],
+  [/a/gi, "阿"],
+  [/b/gi, "布"],
+  [/d/gi, "德"],
+  [/e/gi, "埃"],
+  [/f/gi, "夫"],
+  [/g/gi, "格"],
+  [/h/gi, "赫"],
+  [/i/gi, "伊"],
+  [/j/gi, "吉"],
+  [/k/gi, "克"],
+  [/l/gi, "勒"],
+  [/m/gi, "姆"],
+  [/n/gi, "恩"],
+  [/o/gi, "奥"],
+  [/p/gi, "普"],
+  [/q/gi, "克"],
+  [/r/gi, "尔"],
+  [/s/gi, "斯"],
+  [/t/gi, "特"],
+  [/u/gi, "乌"],
+  [/v/gi, "夫"],
+  [/w/gi, "乌"],
+  [/x/gi, "克斯"],
+  [/y/gi, "伊"],
+  [/z/gi, "兹"]
 ];
