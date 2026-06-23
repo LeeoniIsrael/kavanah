@@ -1,4 +1,5 @@
-import { RefreshCw, Search } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, RefreshCw, Search } from "lucide-react-native";
+import { useEffect } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
@@ -10,8 +11,17 @@ import { colors, radii, spacing, type } from "@/design/theme";
 import { usePrayerStore } from "@/store/prayerStore";
 
 export function PrayerScreen(): React.JSX.Element {
-  const { prayers, results, selectedPrayerId, query, isSyncing, setQuery, selectPrayer, sync } = usePrayerStore();
+  const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
+  const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
+  const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
+
+  useEffect(() => {
+    const handle = setTimeout(() => {
+      void searchRemote(query);
+    }, 450);
+    return () => clearTimeout(handle);
+  }, [query, searchRemote]);
 
   return (
     <Screen>
@@ -21,6 +31,28 @@ export function PrayerScreen(): React.JSX.Element {
         <Display>Find the words</Display>
         <Body>Search by need, phrase, English, Hebrew, or transliteration.</Body>
       </View>
+
+      <Card accent="gold" style={styles.bookmarkShelf}>
+        <View style={styles.sectionHeader}>
+          <View>
+            <Label>Bookmarked</Label>
+            <SectionTitle>Ready when you are</SectionTitle>
+          </View>
+          <BookmarkCheck size={20} color={colors.gold} />
+        </View>
+        <View style={styles.bookmarkList}>
+          {bookmarkedPrayers.length > 0 ? (
+            bookmarkedPrayers.map((prayer) => (
+              <AnimatedPressable key={prayer.id} onPress={() => void selectPrayer(prayer.id)} style={[styles.bookmarkChip, prayer.id === selectedPrayerId && styles.bookmarkChipSelected]}>
+                <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
+                <Body style={styles.bookmarkChipMeta}>{prayer.category}</Body>
+              </AnimatedPressable>
+            ))
+          ) : (
+            <Body>Tap the bookmark on any prayer to keep it here.</Body>
+          )}
+        </View>
+      </Card>
 
       <View style={styles.searchBox}>
         <Search size={18} color={colors.inkMuted} />
@@ -32,7 +64,7 @@ export function PrayerScreen(): React.JSX.Element {
           placeholderTextColor={colors.inkMuted}
         />
         <AnimatedPressable accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
-          <RefreshCw size={18} color={isSyncing ? colors.inkMuted : colors.ink} />
+          <RefreshCw size={18} color={isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink} />
         </AnimatedPressable>
       </View>
 
@@ -44,16 +76,24 @@ export function PrayerScreen(): React.JSX.Element {
 
       {selected ? (
         <Card accent="gold" style={styles.reader}>
-          <View style={styles.readerHeader}>
-            <Label>{selected.source}</Label>
-            <SectionTitle style={styles.readerTitle}>{selected.title}</SectionTitle>
+          <View style={styles.readerHeaderRow}>
+            <View style={styles.readerHeader}>
+              <Label>{selected.source}</Label>
+              <SectionTitle style={styles.readerTitle}>{selected.title}</SectionTitle>
+              <Body>{selected.summary}</Body>
+            </View>
+            <AnimatedPressable accessibilityRole="button" onPress={() => toggleBookmark(selected.id)} style={[styles.readerBookmark, selectedBookmarked && styles.readerBookmarkActive]}>
+              {selectedBookmarked ? <BookmarkCheck size={21} color={colors.white} /> : <Bookmark size={21} color={colors.gold} />}
+            </AnimatedPressable>
           </View>
           {selected.tokens.map((token) => (
             <View key={token.id} style={styles.token}>
-              <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle>
-              <View style={styles.transliterationPill}>
-                <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
-              </View>
+              {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
+              {token.transliteration ? (
+                <View style={styles.transliterationPill}>
+                  <SectionTitle style={styles.transliteration}>{token.transliteration}</SectionTitle>
+                </View>
+              ) : null}
               <Body>{token.translation}</Body>
             </View>
           ))}
@@ -104,12 +144,62 @@ const styles = StyleSheet.create({
   resultStack: {
     gap: spacing.md
   },
+  bookmarkShelf: {
+    gap: spacing.md
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.md
+  },
+  bookmarkList: {
+    gap: spacing.sm
+  },
+  bookmarkChip: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: "rgba(255,255,255,0.72)",
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md
+  },
+  bookmarkChipSelected: {
+    borderColor: "rgba(181,138,42,0.45)",
+    backgroundColor: colors.goldSoft
+  },
+  bookmarkChipText: {
+    fontSize: 16,
+    lineHeight: 21
+  },
+  bookmarkChipMeta: {
+    fontSize: 12,
+    lineHeight: 17,
+    textTransform: "capitalize"
+  },
   reader: {
     gap: spacing.lg,
     padding: spacing.xl
   },
+  readerHeaderRow: {
+    flexDirection: "row",
+    gap: spacing.lg,
+    alignItems: "flex-start"
+  },
   readerHeader: {
+    flex: 1,
     gap: 4
+  },
+  readerBookmark: {
+    width: 46,
+    height: 46,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.goldSoft
+  },
+  readerBookmarkActive: {
+    backgroundColor: colors.gold
   },
   readerTitle: {
     fontSize: 25,

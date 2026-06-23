@@ -18,7 +18,7 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
         <View style={styles.text}>
           <Label>{prayer.category}</Label>
           <SectionTitle>{prayer.title}</SectionTitle>
-          <Body numberOfLines={2}>{prayer.tokens[0]?.translation ?? prayer.sefariaRef}</Body>
+          <Body numberOfLines={2}>{prayer.tokens[0]?.translation || prayer.summary || prayer.sefariaRef}</Body>
         </View>
         <View style={[styles.dot, selected && styles.selectedDot]} />
       </View>

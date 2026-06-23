@@ -5,13 +5,35 @@ export type PrayerToken = {
   transliteration: string;
 };
 
+export type PrayerCategory =
+  | "daily"
+  | "tefillin"
+  | "food"
+  | "safety"
+  | "health"
+  | "thanks"
+  | "success"
+  | "study"
+  | "protection"
+  | "travel"
+  | "shabbat"
+  | "holiday"
+  | "mourning"
+  | "sleep"
+  | "repentance"
+  | "nation"
+  | "source";
+
 export type PrayerText = {
   id: string;
   title: string;
   sefariaRef: string;
-  category: "daily" | "travel" | "nation" | "study";
+  category: PrayerCategory;
+  summary: string;
+  aliases: string[];
+  tags: string[];
   tokens: PrayerToken[];
-  source: "sefaria" | "local-cache";
+  source: "sefaria" | "local-cache" | "sefaria-search";
   updatedAt: string;
 };
 
