@@ -5,7 +5,8 @@ const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
 const OPENAI_MODERATIONS_URL = "https://api.openai.com/v1/moderations";
 const MAX_QUESTION_LENGTH = 1000;
 const MAX_CONTEXT_LENGTH = 18000;
-const DAILY_REQUEST_LIMIT = 20;
+const DAILY_REQUEST_LIMIT = 10;
+const MAX_OUTPUT_TOKENS = 350;
 const usage = new Map();
 
 const SYSTEM_PROMPT = [
@@ -64,8 +65,9 @@ module.exports = async function handler(request, response) {
         model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
         instructions: SYSTEM_PROMPT,
         input: `Verified prayer context:\n${context}\n\nUser question:\n${question}`,
-        max_output_tokens: 500,
+        max_output_tokens: MAX_OUTPUT_TOKENS,
         reasoning: { effort: "none" },
+        service_tier: "default",
         stream: true,
         store: false,
         safety_identifier: crypto.createHash("sha256").update(installationId).digest("hex")
