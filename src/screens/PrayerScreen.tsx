@@ -315,21 +315,25 @@ export function PrayerScreen(): React.JSX.Element {
                 <Body>Your question, this prayer text, language, and source reference are sent to OpenAI through Kavanah. Contact details are removed first. Do not include anything private.</Body>
                 <Body style={styles.consentNote}>Answers are educational and are not binding halachic rulings.</Body>
                 <View style={styles.consentActions}>
-                  <AnimatedPressable accessibilityRole="button" onPress={() => setConsentModalOpen(false)} style={styles.consentSecondary}>
-                    <Text style={styles.consentSecondaryText}>Not now</Text>
-                  </AnimatedPressable>
-                  <AnimatedPressable
-                    accessibilityRole="button"
-                    onPress={() => {
-                      const question = assistantInput.trim();
-                      setAssistantConsent(true);
-                      setConsentModalOpen(false);
-                      void submitAssistantQuestion(question);
-                    }}
-                    style={styles.consentPrimary}
-                  >
-                    <Text style={styles.consentPrimaryText}>Allow and ask</Text>
-                  </AnimatedPressable>
+                  <View style={styles.consentSecondarySlot}>
+                    <AnimatedPressable accessibilityRole="button" onPress={() => setConsentModalOpen(false)} style={styles.consentSecondary}>
+                      <Text style={styles.consentSecondaryText}>Not now</Text>
+                    </AnimatedPressable>
+                  </View>
+                  <View style={styles.consentPrimarySlot}>
+                    <AnimatedPressable
+                      accessibilityRole="button"
+                      onPress={() => {
+                        const question = assistantInput.trim();
+                        setAssistantConsent(true);
+                        setConsentModalOpen(false);
+                        void submitAssistantQuestion(question);
+                      }}
+                      style={styles.consentPrimary}
+                    >
+                      <Text style={styles.consentPrimaryText}>Allow and ask</Text>
+                    </AnimatedPressable>
+                  </View>
                 </View>
               </View>
             </View>
@@ -641,11 +645,17 @@ const styles = StyleSheet.create({
   },
   consentActions: {
     flexDirection: "row",
+    alignItems: "stretch",
     gap: spacing.sm,
     marginTop: spacing.sm
   },
+  consentSecondarySlot: {
+    flex: 1
+  },
+  consentPrimarySlot: {
+    flex: 1.4
+  },
   consentSecondary: {
-    flex: 1,
     minHeight: 48,
     alignItems: "center",
     justifyContent: "center",
@@ -659,7 +669,6 @@ const styles = StyleSheet.create({
     color: colors.ink
   },
   consentPrimary: {
-    flex: 1.4,
     minHeight: 48,
     alignItems: "center",
     justifyContent: "center",
