@@ -3,6 +3,7 @@ import { create } from "zustand";
 import { requestZmanimLocation } from "@/services/location";
 import { scheduleZmanNotifications } from "@/services/notifications";
 import { calculateZmanim } from "@/services/zmanimService";
+import { useSettingsStore } from "@/store/settingsStore";
 import type { GeoPoint, Zman } from "@/types/zmanim";
 
 type ZmanimState = {
@@ -21,7 +22,9 @@ export const useZmanimStore = create<ZmanimState>((set) => ({
     try {
       const location = await requestZmanimLocation();
       const zmanim = await calculateZmanim(location);
-      await scheduleZmanNotifications(zmanim);
+      if (useSettingsStore.getState().zmanNotificationsEnabled) {
+        await scheduleZmanNotifications(zmanim);
+      }
       set({ location, zmanim });
     } finally {
       set({ isLoading: false });

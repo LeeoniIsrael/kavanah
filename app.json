@@ -3,7 +3,7 @@
     "name": "Kavanah",
     "slug": "kavanah",
     "scheme": "kavanah",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,6 +11,10 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.leeoniisrael.kavanah",
+      "buildNumber": "1",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
       "infoPlist": {
         "NSFaceIDUsageDescription": "Kavanah can lock your spiritual profile behind Face ID when you enable biometric lock.",
         "NSLocationWhenInUseUsageDescription": "Kavanah uses your location to calculate local zmanim and Shabbat times."
@@ -18,6 +22,7 @@
     },
     "android": {
       "package": "com.leeoniisrael.kavanah",
+      "versionCode": 1,
       "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION", "USE_BIOMETRIC"]
     },
     "plugins": [
@@ -36,6 +41,11 @@
           "color": "#111827"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "privacyPolicyUrl": "https://github.com/LeeoniIsrael/kavanah/blob/main/docs/privacy-policy.md",
+      "termsUrl": "https://github.com/LeeoniIsrael/kavanah/blob/main/docs/terms-of-use.md",
+      "supportUrl": "https://github.com/LeeoniIsrael/kavanah/issues"
+    }
   }
 }

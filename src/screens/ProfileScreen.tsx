@@ -1,5 +1,5 @@
-import { Check, ChevronRight, Languages, Lock, LogOut, ShieldCheck, X } from "lucide-react-native";
-import { useEffect, useState } from "react";
+import { Bell, Check, ChevronRight, Languages, LockKeyhole, ShieldCheck, Sparkles, X } from "lucide-react-native";
+import { useState } from "react";
 import { Modal, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,173 +8,213 @@ import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { findLanguage, languageOptions } from "@/data/languages";
 import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
-import { HALACHIC_ASSISTANT_SYSTEM_PROMPT } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
+import { initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
-import { useSettingsStore } from "@/store/settingsStore";
+import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
+import { useZmanimStore } from "@/store/zmanimStore";
+
+type ProfileModal = "language" | "privacy" | null;
 
 export function ProfileScreen(): React.JSX.Element {
-  const { tokens, biometricLockEnabled, hydrate, signInWithApple, signOut, setBiometricLockEnabled } = useAuthStore();
-  const { primaryLanguageCode, setPrimaryLanguageCode } = useSettingsStore();
-  const [languageModalOpen, setLanguageModalOpen] = useState(false);
+  const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
+  const {
+    primaryLanguageCode,
+    assistantConsentVersion,
+    zmanNotificationsEnabled,
+    setPrimaryLanguageCode,
+    setAssistantConsent,
+    setZmanNotificationsEnabled
+  } = useSettingsStore();
+  const [activeModal, setActiveModal] = useState<ProfileModal>(null);
+  const [notificationMessage, setNotificationMessage] = useState("");
   const primaryLanguage = findLanguage(primaryLanguageCode);
+  const assistantEnabled = assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
 
-  useEffect(() => {
-    void hydrate();
-  }, [hydrate]);
+  const changeNotifications = async (enabled: boolean) => {
+    void confirmHaptic();
+    if (!enabled) {
+      setZmanNotificationsEnabled(false);
+      setNotificationMessage("");
+      return;
+    }
+    const granted = await initializeNotifications();
+    setZmanNotificationsEnabled(granted);
+    setNotificationMessage(granted ? "Reminders will follow your calculated local times." : "Notifications are disabled in device settings.");
+    if (granted) {
+      const zmanim = useZmanimStore.getState().zmanim;
+      if (zmanim.length > 0) await scheduleZmanNotifications(zmanim);
+    }
+  };
 
   return (
     <Screen>
       <View style={styles.header}>
-        <Label>Account</Label>
-        <Display>Profile</Display>
-        <Body style={styles.headerCopy}>Privacy, language, and access controls for Kavanah.</Body>
+        <Label>Settings</Label>
+        <Display>Your Kavanah</Display>
+        <Body style={styles.headerCopy}>Language, reminders, and privacy stay under your control.</Body>
       </View>
 
-      <View style={styles.statusPanel}>
-        <View style={styles.statusTop}>
-          <View style={styles.blueDot} />
-          <Text style={styles.statusMeta}>{tokens ? "Secure session" : "Guest session"}</Text>
+      <View style={styles.localPanel}>
+        <View style={styles.localIcon}><ShieldCheck size={21} color={colors.blue} /></View>
+        <View style={styles.settingText}>
+          <Text style={styles.settingTitle}>Local by default</Text>
+          <Text style={styles.settingDetail}>Bookmarks, streaks, and location calculations stay on this device.</Text>
         </View>
-        <SectionTitle style={styles.statusTitle}>{tokens ? "Signed in" : "Private by default"}</SectionTitle>
-        <Body style={styles.statusBody}>{tokens ? "Your tokens are stored in the native secure store." : "Use the app without an account. Sign in only when you need profile sync."}</Body>
-        <AnimatedPressable accessibilityRole="button" onPress={() => (tokens ? void signOut() : void signInWithApple())} style={styles.primaryAction}>
-          <Text style={styles.primaryActionText}>{tokens ? "Sign out" : "Sign in with Apple"}</Text>
-          {tokens ? <LogOut size={17} color={colors.white} /> : <Lock size={17} color={colors.white} />}
-        </AnimatedPressable>
       </View>
 
       <View style={styles.settingsList}>
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}>
-            <ShieldCheck size={19} color={colors.blue} />
-          </View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Biometric lock</Text>
-            <Text style={styles.settingDetail}>Require Face ID, Touch ID, or device biometrics.</Text>
-          </View>
-          <Switch
-            value={biometricLockEnabled}
-            trackColor={{ false: colors.hairlineStrong, true: colors.blueSoft }}
-            thumbColor={biometricLockEnabled ? colors.blue : colors.white}
-            onValueChange={(enabled) => {
-              void confirmHaptic();
-              void setBiometricLockEnabled(enabled);
-            }}
-          />
-        </View>
-
-        <AnimatedPressable accessibilityRole="button" onPress={() => setLanguageModalOpen(true)} style={styles.settingRow}>
-          <View style={styles.settingIcon}>
-            <Languages size={19} color={colors.blue} />
-          </View>
+        <AnimatedPressable accessibilityRole="button" onPress={() => setActiveModal("language")} style={styles.settingRow}>
+          <View style={styles.settingIcon}><Languages size={19} color={colors.blue} /></View>
           <View style={styles.settingText}>
             <Text style={styles.settingTitle}>Primary language</Text>
             <Text style={styles.settingDetail}>{primaryLanguage.name} · {primaryLanguage.nativeName}</Text>
           </View>
           <ChevronRight size={18} color={colors.inkMuted} />
         </AnimatedPressable>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}><Bell size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Zmanim reminders</Text>
+            <Text style={styles.settingDetail}>{notificationMessage || "Alerts before selected local prayer times."}</Text>
+          </View>
+          <Switch value={zmanNotificationsEnabled} onValueChange={(enabled) => void changeNotifications(enabled)} {...switchColors(zmanNotificationsEnabled)} />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}><LockKeyhole size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Biometric lock</Text>
+            <Text style={styles.settingDetail}>Lock Kavanah whenever the app leaves the foreground.</Text>
+          </View>
+          <Switch
+            value={biometricLockEnabled}
+            onValueChange={(enabled) => {
+              void confirmHaptic();
+              void setBiometricLockEnabled(enabled);
+            }}
+            {...switchColors(biometricLockEnabled)}
+          />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}><Sparkles size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Prayer assistant</Text>
+            <Text style={styles.settingDetail}>Allow prayer questions to be processed by OpenAI through Kavanah.</Text>
+          </View>
+          <Switch
+            value={assistantEnabled}
+            onValueChange={(enabled) => {
+              void confirmHaptic();
+              setAssistantConsent(enabled);
+            }}
+            {...switchColors(assistantEnabled)}
+          />
+        </View>
+
+        <AnimatedPressable accessibilityRole="button" onPress={() => setActiveModal("privacy")} style={[styles.settingRow, styles.lastRow]}>
+          <View style={styles.settingIcon}><ShieldCheck size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Privacy and data use</Text>
+            <Text style={styles.settingDetail}>What stays here and what leaves this device.</Text>
+          </View>
+          <ChevronRight size={18} color={colors.inkMuted} />
+        </AnimatedPressable>
       </View>
 
-      <View style={styles.guardrail}>
-        <Text style={styles.guardrailTitle}>Assistant boundary</Text>
-        <Text style={styles.guardrailText} numberOfLines={6}>
-          {HALACHIC_ASSISTANT_SYSTEM_PROMPT}
-        </Text>
-      </View>
+      <Body style={styles.accountNote}>Account sync is unavailable until secure server verification and complete account deletion are ready.</Body>
 
-      <Modal visible={languageModalOpen} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setLanguageModalOpen(false)}>
+      <Modal visible={activeModal !== null} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setActiveModal(null)}>
         <SafeAreaView style={styles.modalSafeArea}>
           <View style={styles.modalChrome} pointerEvents="box-none">
-            <AnimatedPressable accessibilityLabel="Close language picker" accessibilityRole="button" onPress={() => setLanguageModalOpen(false)} pressedScale={0.94} style={styles.closeButton}>
+            <AnimatedPressable accessibilityLabel="Close" accessibilityRole="button" onPress={() => setActiveModal(null)} pressedScale={0.94} style={styles.closeButton}>
               <X size={18} color={colors.ink} />
             </AnimatedPressable>
           </View>
-          <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
-            <View style={styles.modalHeader}>
-              <Label>Language</Label>
-              <Display style={styles.modalTitle}>Text language</Display>
-              <Body>Hebrew remains visible. Translation and transliteration follow this choice.</Body>
-            </View>
-            <View style={styles.languageList}>
-              {languageOptions.map((language) => {
-                const selected = language.code === primaryLanguageCode;
-                return (
-                  <AnimatedPressable
-                    key={language.code}
-                    accessibilityRole="button"
-                    onPress={() => {
-                      void confirmHaptic();
-                      setPrimaryLanguageCode(language.code);
-                      setLanguageModalOpen(false);
-                    }}
-                    style={[styles.languageRow, selected && styles.languageRowSelected]}
-                  >
-                    <View style={styles.settingText}>
-                      <Text style={styles.settingTitle}>{language.name}</Text>
-                      <Text style={styles.settingDetail}>{language.nativeName}</Text>
-                    </View>
-                    {selected ? <Check size={20} color={colors.blue} /> : null}
-                  </AnimatedPressable>
-                );
-              })}
-            </View>
-          </ScrollView>
+          {activeModal === "language" ? (
+            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
+              <View style={styles.modalHeader}>
+                <Label>Language</Label>
+                <Display style={styles.modalTitle}>Prayer text</Display>
+                <Body>Hebrew remains visible. Translation and transliteration follow this choice.</Body>
+              </View>
+              <View style={styles.languageList}>
+                {languageOptions.map((language) => {
+                  const selected = language.code === primaryLanguageCode;
+                  return (
+                    <AnimatedPressable
+                      key={language.code}
+                      accessibilityRole="button"
+                      onPress={() => {
+                        void confirmHaptic();
+                        setPrimaryLanguageCode(language.code);
+                        setActiveModal(null);
+                      }}
+                      style={[styles.languageRow, selected && styles.languageRowSelected]}
+                    >
+                      <View style={styles.settingText}>
+                        <Text style={styles.settingTitle}>{language.name}</Text>
+                        <Text style={styles.settingDetail}>{language.nativeName}</Text>
+                      </View>
+                      {selected ? <Check size={20} color={colors.blue} /> : null}
+                    </AnimatedPressable>
+                  );
+                })}
+              </View>
+            </ScrollView>
+          ) : (
+            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
+              <View style={styles.modalHeader}>
+                <Label>Privacy</Label>
+                <Display style={styles.modalTitle}>Clear by design</Display>
+              </View>
+              <PrivacySection title="Stored on this device" body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Precise coordinates are not sent to the prayer assistant." />
+              <PrivacySection title="Prayer assistant" body="Only after you allow it, your question, selected prayer text, language, and verified source reference are sent through Kavanah's server to OpenAI. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising." />
+              <PrivacySection title="Religious guidance" body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service." />
+              <PrivacySection title="Your choice" body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account." />
+            </ScrollView>
+          )}
         </SafeAreaView>
       </Modal>
     </Screen>
   );
 }
 
+function PrivacySection({ title, body }: { title: string; body: string }): React.JSX.Element {
+  return <View style={styles.privacySection}><SectionTitle>{title}</SectionTitle><Body>{body}</Body></View>;
+}
+
+function switchColors(enabled: boolean) {
+  return {
+    trackColor: { false: colors.hairlineStrong, true: colors.blueSoft },
+    thumbColor: enabled ? colors.blue : colors.white
+  };
+}
+
 const styles = StyleSheet.create({
-  header: {
-    gap: spacing.xs
-  },
-  headerCopy: {
-    maxWidth: 320
-  },
-  statusPanel: {
-    borderRadius: radii.xl,
-    backgroundColor: colors.ink,
-    padding: spacing.xl,
+  header: { gap: spacing.xs },
+  headerCopy: { maxWidth: 330 },
+  localPanel: {
+    minHeight: 94,
+    padding: spacing.lg,
+    flexDirection: "row",
+    alignItems: "center",
     gap: spacing.md,
-    ...shadows.card
+    borderRadius: radii.lg,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.pressed
   },
-  statusTop: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm
-  },
-  blueDot: {
-    width: 8,
-    height: 8,
+  localIcon: {
+    width: 42,
+    height: 42,
     borderRadius: radii.pill,
-    backgroundColor: colors.blue
-  },
-  statusMeta: {
-    ...type.caption,
-    color: "rgba(255,255,255,0.66)"
-  },
-  statusTitle: {
-    color: colors.white
-  },
-  statusBody: {
-    color: "rgba(255,255,255,0.70)"
-  },
-  primaryAction: {
-    alignSelf: "flex-start",
-    minHeight: 44,
-    borderRadius: radii.pill,
-    paddingHorizontal: spacing.lg,
-    backgroundColor: colors.blue,
-    flexDirection: "row",
     alignItems: "center",
-    gap: spacing.sm,
-    marginTop: spacing.xs
-  },
-  primaryActionText: {
-    ...type.caption,
-    color: colors.white
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
   },
   settingsList: {
     borderRadius: radii.lg,
@@ -184,7 +224,7 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   settingRow: {
-    minHeight: 74,
+    minHeight: 76,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
     flexDirection: "row",
@@ -193,6 +233,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.hairline
   },
+  lastRow: { borderBottomWidth: 0 },
   settingIcon: {
     width: 38,
     height: 38,
@@ -201,49 +242,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  settingText: {
-    flex: 1,
-    gap: 2
-  },
-  settingTitle: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.ink
-  },
-  settingDetail: {
-    ...type.caption,
-    color: colors.inkMuted,
-    lineHeight: 18
-  },
-  guardrail: {
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.white,
-    padding: spacing.lg,
-    gap: spacing.sm
-  },
-  guardrailTitle: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.ink
-  },
-  guardrailText: {
-    ...type.caption,
-    color: colors.inkMuted,
-    lineHeight: 18
-  },
-  modalSafeArea: {
-    flex: 1,
-    backgroundColor: colors.parchment
-  },
-  modalChrome: {
-    position: "absolute",
-    top: spacing.lg,
-    right: grid.margin,
-    zIndex: 10,
-    pointerEvents: "box-none"
-  },
+  settingText: { flex: 1, gap: 2 },
+  settingTitle: { ...type.body, fontWeight: "600", color: colors.ink },
+  settingDetail: { ...type.caption, color: colors.inkMuted, lineHeight: 18 },
+  accountNote: { fontSize: 12, lineHeight: 18, paddingHorizontal: spacing.xs },
+  modalSafeArea: { flex: 1, backgroundColor: colors.parchment },
+  modalChrome: { position: "absolute", top: spacing.lg, right: grid.margin, zIndex: 10 },
   closeButton: {
     width: grid.touch,
     height: grid.touch,
@@ -255,38 +259,11 @@ const styles = StyleSheet.create({
     borderColor: colors.hairline,
     ...shadows.floating
   },
-  modalContent: {
-    paddingHorizontal: spacing.xl,
-    paddingTop: spacing.xxxl + spacing.xl,
-    paddingBottom: spacing.xxxl,
-    gap: spacing.xl
-  },
-  modalHeader: {
-    gap: spacing.xs,
-    paddingRight: spacing.xxxl
-  },
-  modalTitle: {
-    fontSize: 34,
-    lineHeight: 39
-  },
-  languageList: {
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    overflow: "hidden"
-  },
-  languageRow: {
-    minHeight: 64,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md
-  },
-  languageRowSelected: {
-    backgroundColor: colors.blueSoft
-  }
+  modalContent: { paddingHorizontal: spacing.xl, paddingTop: spacing.xxxl + spacing.xl, paddingBottom: spacing.xxxl, gap: spacing.xl },
+  modalHeader: { gap: spacing.xs, paddingRight: spacing.xxxl },
+  modalTitle: { fontSize: 34, lineHeight: 39 },
+  languageList: { borderRadius: radii.lg, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.hairline, overflow: "hidden" },
+  languageRow: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md },
+  languageRowSelected: { backgroundColor: colors.blueSoft },
+  privacySection: { gap: spacing.sm, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.hairline }
 });

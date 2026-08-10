@@ -22,4 +22,4 @@ Expo managed JavaScript cannot fully enforce TLS 1.3 negotiation or certificate 
 ## Primary External Endpoints
 
 - `https://www.sefaria.org` for public Jewish text synchronization.
-- Future LLM gateway should be a Kavanah-controlled HTTPS endpoint that performs server-side source retrieval, audit logging without PII, and prompt enforcement.
+- The prayer assistant uses the Kavanah-controlled `api/assistant.js` HTTPS gateway for moderation, request limits, prompt enforcement, and source-bounded responses. The OpenAI key remains server-side.

@@ -4,6 +4,8 @@ import { create } from "zustand";
 
 import { clearAuthTokens, loadAuthTokens, saveAuthTokens, type AuthTokens } from "@/services/security";
 
+const BIOMETRIC_PREFERENCE_KEY = "kavanah.biometric-lock-enabled";
+
 type AuthState = {
   tokens: AuthTokens | null;
   biometricLockEnabled: boolean;
@@ -18,7 +20,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   tokens: null,
   biometricLockEnabled: false,
   hydrate: async () => {
-    set({ tokens: await loadAuthTokens() });
+    const [tokens, biometricPreference] = await Promise.all([
+      loadAuthTokens(),
+      SecurePreference.get(BIOMETRIC_PREFERENCE_KEY)
+    ]);
+    set({ tokens, biometricLockEnabled: biometricPreference === "true" });
   },
   signInWithApple: async () => {
     const credential = await AppleAuthentication.signInAsync({
@@ -43,11 +49,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
   setBiometricLockEnabled: async (enabled) => {
     if (!enabled) {
+      await SecurePreference.set(BIOMETRIC_PREFERENCE_KEY, "false");
       set({ biometricLockEnabled: false });
       return true;
     }
     const available = await get().unlockWithBiometrics();
     if (available) {
+      await SecurePreference.set(BIOMETRIC_PREFERENCE_KEY, "true");
       set({ biometricLockEnabled: true });
     }
     return available;
@@ -66,3 +74,16 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     return result.success;
   }
 }));
+
+const SecurePreference = {
+  async get(key: string): Promise<string | null> {
+    const SecureStore = await import("expo-secure-store");
+    return SecureStore.getItemAsync(key);
+  },
+  async set(key: string, value: string): Promise<void> {
+    const SecureStore = await import("expo-secure-store");
+    await SecureStore.setItemAsync(key, value, {
+      keychainAccessible: SecureStore.WHEN_UNLOCKED_THIS_DEVICE_ONLY
+    });
+  }
+};
