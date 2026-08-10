@@ -24,6 +24,7 @@ type AssistantStreamEvent = {
 
 const MAX_CONTEXT_ITEMS = 18;
 const MAX_CONTEXT_ITEM_LENGTH = 1400;
+const DEFAULT_ASSISTANT_API_URL = "https://kavanah-rho.vercel.app/api/assistant";
 
 export async function* createAssistantStream(userInput: string, verifiedContext: string[]): AsyncGenerator<string> {
   const endpoint = getAssistantEndpoint();
@@ -91,7 +92,10 @@ export async function* createAssistantStream(userInput: string, verifiedContext:
 }
 
 function getAssistantEndpoint(): string | null {
-  const configured = process.env.EXPO_PUBLIC_ASSISTANT_API_URL ?? Constants.expoConfig?.extra?.assistantApiUrl;
+  const configured =
+    process.env.EXPO_PUBLIC_ASSISTANT_API_URL ??
+    Constants.expoConfig?.extra?.assistantApiUrl ??
+    DEFAULT_ASSISTANT_API_URL;
   if (typeof configured !== "string" || !configured.trim()) {
     return null;
   }
