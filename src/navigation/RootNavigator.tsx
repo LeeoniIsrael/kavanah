@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BookOpenText, CalendarDays, Shield, Sparkles } from "lucide-react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { colors, radii } from "@/design/theme";
+import { colors } from "@/design/theme";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
@@ -18,6 +19,9 @@ export type RootTabParamList = {
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export function RootNavigator(): React.JSX.Element {
+  const insets = useSafeAreaInsets();
+  const bottomInset = Math.max(insets.bottom, 10);
+
   return (
     <Tab.Navigator
       screenListeners={{
@@ -29,13 +33,14 @@ export function RootNavigator(): React.JSX.Element {
         headerShown: false,
         tabBarActiveTintColor: colors.blue,
         tabBarInactiveTintColor: "#8A929B",
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           borderTopWidth: 1,
           borderTopColor: colors.hairline,
           elevation: 0,
-          height: 78,
-          paddingBottom: 18,
-          paddingTop: 8,
+          height: 58 + bottomInset,
+          paddingBottom: bottomInset,
+          paddingTop: 6,
           marginHorizontal: 0,
           marginBottom: 0,
           position: "absolute",
@@ -43,12 +48,18 @@ export function RootNavigator(): React.JSX.Element {
           backgroundColor: colors.white
         },
         tabBarLabelStyle: {
-          fontSize: 11,
+          fontSize: 10,
+          lineHeight: 13,
           fontWeight: "600",
-          letterSpacing: 0
+          letterSpacing: 0,
+          marginTop: 2
         },
         tabBarItemStyle: {
-          borderRadius: radii.md
+          height: 50,
+          paddingVertical: 3
+        },
+        tabBarIconStyle: {
+          height: 24
         }
       }}
     >
