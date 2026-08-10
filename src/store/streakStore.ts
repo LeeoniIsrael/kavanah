@@ -16,6 +16,7 @@ export type HabitProgress = {
 type StreakState = {
   habits: HabitProgress[];
   completeHabit: (habit: StreakHabit, date?: Date) => void;
+  toggleHabit: (habit: StreakHabit, date?: Date) => void;
   useFreeze: (habit: StreakHabit, date?: Date) => void;
 };
 
@@ -40,6 +41,8 @@ export const useStreakStore = create<StreakState>((set) => ({
   habits: persisted,
   completeHabit: (habit, date = new Date()) =>
     set((state) => persist(updateHabit(state.habits, habit, date, false))),
+  toggleHabit: (habit, date = new Date()) =>
+    set((state) => persist(toggleHabit(state.habits, habit, date))),
   useFreeze: (habit, date = new Date()) =>
     set((state) => persist(updateHabit(state.habits, habit, date, true)))
 }));
@@ -53,14 +56,55 @@ function updateHabit(habits: HabitProgress[], habit: StreakHabit, date: Date, co
     if (entry.completedDates.includes(iso)) {
       return entry;
     }
-    const lastDate = entry.completedDates.at(-1);
-    const continued = lastDate ? isSameDay(parseISO(lastDate), subDays(date, 1)) : false;
-    const streak = continued || entry.streak === 0 ? entry.streak + 1 : 1;
+    const completedDates = [...entry.completedDates, iso].sort();
+    const streak = calculateStreak(completedDates);
     const freezes = consumeFreeze ? Math.max(entry.freezes - 1, 0) : entry.freezes;
     const badges = Array.from(new Set([...entry.badges, ...milestones(streak)]));
-    return { ...entry, streak, freezes, badges, completedDates: [...entry.completedDates, iso] };
+    return { ...entry, streak, freezes, badges, completedDates };
   });
   return { habits: updated };
+}
+
+function toggleHabit(habits: HabitProgress[], habit: StreakHabit, date: Date): { habits: HabitProgress[] } {
+  const iso = formatISO(date, { representation: "date" });
+  const entry = habits.find((item) => item.habit === habit);
+
+  if (!entry?.completedDates.includes(iso)) {
+    return updateHabit(habits, habit, date, false);
+  }
+
+  return {
+    habits: habits.map((item) => {
+      if (item.habit !== habit) {
+        return item;
+      }
+      const completedDates = item.completedDates.filter((completedDate) => completedDate !== iso);
+      return { ...item, completedDates, streak: calculateStreak(completedDates) };
+    })
+  };
+}
+
+function calculateStreak(completedDates: string[]): number {
+  const dates = Array.from(new Set(completedDates)).sort();
+  if (dates.length === 0) {
+    return 0;
+  }
+
+  let streak = 1;
+  for (let index = dates.length - 1; index > 0; index -= 1) {
+    const currentDate = dates[index];
+    const previousDate = dates[index - 1];
+    if (!currentDate || !previousDate) {
+      break;
+    }
+    const current = parseISO(currentDate);
+    const previous = parseISO(previousDate);
+    if (!isSameDay(previous, subDays(current, 1))) {
+      break;
+    }
+    streak += 1;
+  }
+  return streak;
 }
 
 function persist(state: { habits: HabitProgress[] }): { habits: HabitProgress[] } {

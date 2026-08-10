@@ -1,5 +1,6 @@
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
+import { formatISO } from "date-fns";
 import { CalendarDays, Check, ChevronRight, MapPin, Search } from "lucide-react-native";
 import { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -17,12 +18,12 @@ import type { Zman } from "@/types/zmanim";
 
 type Navigation = BottomTabNavigationProp<RootTabParamList>;
 
-const habitLabels: Record<StreakHabit, string> = {
-  shacharit: "Shacharit",
-  mincha: "Mincha",
-  maariv: "Maariv",
-  tefillin: "Tefillin",
-  study: "Study"
+const habitDetails: Record<StreakHabit, { name: string; description: string }> = {
+  shacharit: { name: "Shacharit", description: "The morning prayer service" },
+  mincha: { name: "Mincha", description: "The afternoon prayer service" },
+  maariv: { name: "Maariv", description: "The evening prayer service" },
+  tefillin: { name: "Tefillin", description: "Prayer straps worn on weekday mornings" },
+  study: { name: "Daily study", description: "A little Torah or Jewish learning" }
 };
 
 const prayerMomentByZman: Partial<Record<Zman["key"], { query: string; label: string; helper: string }>> = {
@@ -45,7 +46,7 @@ const shortcuts = [
 
 export function HomeScreen(): React.JSX.Element {
   const navigation = useNavigation<Navigation>();
-  const { habits, completeHabit } = useStreakStore();
+  const { habits, toggleHabit } = useStreakStore();
   const { zmanim, location, isLoading, refresh } = useZmanimStore();
   const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
   const now = useMemo(() => new Date(), []);
@@ -59,8 +60,8 @@ export function HomeScreen(): React.JSX.Element {
     navigation.navigate("Prayer");
   };
 
-  const markHabit = (habit: StreakHabit) => {
-    completeHabit(habit);
+  const togglePractice = (habit: StreakHabit) => {
+    toggleHabit(habit);
     void confirmHaptic();
   };
 
@@ -114,17 +115,28 @@ export function HomeScreen(): React.JSX.Element {
 
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
-          <SectionTitle style={styles.sectionTitle}>Momentum</SectionTitle>
+          <SectionTitle style={styles.sectionTitle}>Daily practice</SectionTitle>
           <Text style={styles.sectionMeta}>{completedToday.length}/5 today</Text>
         </View>
         <View style={styles.habitList}>
           {habits.map((habit) => {
             const complete = habit.completedDates.includes(formatDateKey(now));
+            const details = habitDetails[habit.habit];
+            const streakLabel = `${habit.streak} ${habit.streak === 1 ? "day" : "days"}`;
             return (
-              <AnimatedPressable key={habit.habit} accessibilityRole="button" onPress={() => markHabit(habit.habit)} style={styles.habitRow}>
-                <View>
-                  <Text style={styles.habitName}>{habitLabels[habit.habit]}</Text>
-                  <Text style={styles.habitDetail}>{habit.streak} day streak</Text>
+              <AnimatedPressable
+                key={habit.habit}
+                accessibilityRole="checkbox"
+                accessibilityLabel={`${details.name}. ${details.description}`}
+                accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"}
+                accessibilityState={{ checked: complete }}
+                onPress={() => togglePractice(habit.habit)}
+                style={styles.habitRow}
+              >
+                <View style={styles.habitCopy}>
+                  <Text style={styles.habitName}>{details.name}</Text>
+                  <Text style={styles.habitDescription}>{details.description}</Text>
+                  <Text style={styles.habitDetail}>{streakLabel} in a row</Text>
                 </View>
                 <View style={[styles.checkCircle, complete && styles.checkCircleDone]}>{complete ? <Check size={14} color={colors.white} /> : null}</View>
               </AnimatedPressable>
@@ -187,7 +199,7 @@ function formatHebrewDate(date: Date): string {
 }
 
 function formatDateKey(date: Date): string {
-  return date.toISOString().slice(0, 10);
+  return formatISO(date, { representation: "date" });
 }
 
 const styles = StyleSheet.create({
@@ -319,22 +331,33 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   habitRow: {
-    minHeight: 64,
+    minHeight: 82,
     paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: spacing.lg,
     borderBottomWidth: 1,
     borderBottomColor: colors.hairline
+  },
+  habitCopy: {
+    flex: 1
   },
   habitName: {
     ...type.body,
     fontWeight: "600",
     color: colors.ink
   },
+  habitDescription: {
+    ...type.caption,
+    color: colors.ink,
+    marginTop: 1
+  },
   habitDetail: {
     ...type.caption,
-    color: colors.inkMuted
+    color: colors.inkMuted,
+    marginTop: 2
   },
   checkCircle: {
     width: 26,
