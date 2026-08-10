@@ -1,12 +1,12 @@
-import { redactPii } from "@/services/security";
+import Constants from "expo-constants";
+import { fetch as expoFetch } from "expo/fetch";
+
+import { getOrCreateInstallationId, redactPii } from "@/services/security";
 
 export const HALACHIC_ASSISTANT_SYSTEM_PROMPT = [
-  "You are Kavanah, a guarded Jewish prayer and learning assistant.",
-  "Use verified source data supplied by the app or user; do not invent citations.",
-  "Translate complex or archaic commentary into simple accessible two-sentence takeaways.",
-  "For ritual practice, clearly separate practical dos and don'ts from background context.",
-  "Never issue binding halachic rulings; advise asking a trusted rabbi for personal or high-stakes cases.",
-  "Mask private details and avoid transmitting precise geolocation or personally identifying information."
+  "Kavanah answers from the prayer text and verified source references supplied with each question.",
+  "It explains context in plain language, separates established practice from interpretation, and does not issue binding halachic rulings.",
+  "Personal details are removed before a question is sent."
 ].join(" ");
 
 export type AssistantMessage = {
@@ -16,18 +16,90 @@ export type AssistantMessage = {
   createdAt: string;
 };
 
+type AssistantStreamEvent = {
+  delta?: unknown;
+  error?: unknown;
+  done?: unknown;
+};
+
+const MAX_CONTEXT_ITEMS = 18;
+const MAX_CONTEXT_ITEM_LENGTH = 1400;
+
 export async function* createAssistantStream(userInput: string, verifiedContext: string[]): AsyncGenerator<string> {
-  const sanitizedInput = redactPii(userInput.trim());
-  const context = verifiedContext.map(redactPii).join("\n");
-  const summary = buildLocalGuardedAnswer(sanitizedInput, context);
-  const words = summary.split(" ");
-  for (const word of words) {
-    await new Promise((resolve) => setTimeout(resolve, 18));
-    yield `${word} `;
+  const endpoint = getAssistantEndpoint();
+  if (!endpoint) {
+    yield "The assistant is not connected in this build yet. The prayer and its verified source remain available above.";
+    return;
+  }
+
+  const installationId = await getOrCreateInstallationId();
+  const response = await expoFetch(endpoint, {
+    method: "POST",
+    headers: {
+      Accept: "text/event-stream",
+      "Content-Type": "application/json",
+      "X-Kavanah-Install-Id": installationId
+    },
+    body: JSON.stringify({
+      question: redactPii(userInput.trim()).slice(0, 1000),
+      context: verifiedContext
+        .slice(0, MAX_CONTEXT_ITEMS)
+        .map((item) => redactPii(item).slice(0, MAX_CONTEXT_ITEM_LENGTH))
+    })
+  });
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => null)) as { error?: unknown } | null;
+    throw new Error(typeof payload?.error === "string" ? payload.error : "The assistant could not answer right now.");
+  }
+
+  if (!response.body) {
+    throw new Error("The assistant response was empty.");
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    buffer += decoder.decode(value, { stream: !done });
+    const events = buffer.split("\n\n");
+    buffer = events.pop() ?? "";
+
+    for (const event of events) {
+      const data = event
+        .split("\n")
+        .find((line) => line.startsWith("data: "))
+        ?.slice(6);
+      if (!data) {
+        continue;
+      }
+      const parsed = JSON.parse(data) as AssistantStreamEvent;
+      if (typeof parsed.error === "string") {
+        throw new Error(parsed.error);
+      }
+      if (typeof parsed.delta === "string") {
+        yield parsed.delta;
+      }
+    }
+
+    if (done) {
+      break;
+    }
   }
 }
 
-function buildLocalGuardedAnswer(userInput: string, context: string): string {
-  const sourceLine = context ? `Based on the supplied source context: ${context.slice(0, 220)}` : "I do not have a verified source loaded for that exact request yet.";
-  return `${sourceLine}\n\nTakeaway: ${userInput || "This practice"} can be approached with calm attention and respect for the source tradition. Keep the next step small, concrete, and repeatable.\n\nDos: use verified texts, preserve dignity, and ask a trusted rabbi for personal rulings.\nDon'ts: do not treat this chat as a final halachic ruling, and do not share private identifying details.`;
+function getAssistantEndpoint(): string | null {
+  const configured = process.env.EXPO_PUBLIC_ASSISTANT_API_URL ?? Constants.expoConfig?.extra?.assistantApiUrl;
+  if (typeof configured !== "string" || !configured.trim()) {
+    return null;
+  }
+
+  const endpoint = configured.trim();
+  const isLocalDevelopment = __DEV__ && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//i.test(endpoint);
+  if (!endpoint.startsWith("https://") && !isLocalDevelopment) {
+    throw new Error("The assistant endpoint must use HTTPS.");
+  }
+  return endpoint;
 }

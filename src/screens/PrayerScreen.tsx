@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -13,7 +13,7 @@ import { createAssistantStream, type AssistantMessage } from "@/services/assista
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
 import { usePrayerStore } from "@/store/prayerStore";
-import { useSettingsStore } from "@/store/settingsStore";
+import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
 import type { PrayerToken } from "@/types/prayer";
 
 type LocalizedToken = PrayerToken & {
@@ -24,11 +24,14 @@ type LocalizedToken = PrayerToken & {
 export function PrayerScreen(): React.JSX.Element {
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
+  const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
+  const setAssistantConsent = useSettingsStore((state) => state.setAssistantConsent);
   const [readerOpen, setReaderOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
   const [assistantMessages, setAssistantMessages] = useState<AssistantMessage[]>([]);
   const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
+  const [consentModalOpen, setConsentModalOpen] = useState(false);
   const [localizedTokens, setLocalizedTokens] = useState<LocalizedToken[]>([]);
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
@@ -97,8 +100,19 @@ export function PrayerScreen(): React.JSX.Element {
       return;
     }
 
+    if (assistantConsentVersion !== CURRENT_ASSISTANT_CONSENT_VERSION) {
+      void confirmHaptic();
+      setConsentModalOpen(true);
+      return;
+    }
+
+    await submitAssistantQuestion(assistantInput.trim());
+  };
+
+  const submitAssistantQuestion = async (clean: string) => {
+    if (!selected || !clean || isAssistantStreaming) return;
+
     void confirmHaptic();
-    const clean = assistantInput.trim();
     setAssistantInput("");
     setAssistantOpen(true);
     setIsAssistantStreaming(true);
@@ -114,10 +128,16 @@ export function PrayerScreen(): React.JSX.Element {
       ...localizedTokens.flatMap((token) => [`Hebrew: ${token.hebrew}`, `Transliteration: ${token.localizedTransliteration}`, `Translation: ${token.localizedTranslation}`])
     ].filter(Boolean);
 
-    for await (const chunk of createAssistantStream(clean, context)) {
-      setAssistantMessages((current) => current.map((message) => (message.id === assistantId ? { ...message, content: `${message.content}${chunk}` } : message)));
+    try {
+      for await (const chunk of createAssistantStream(clean, context)) {
+        setAssistantMessages((current) => current.map((message) => (message.id === assistantId ? { ...message, content: `${message.content}${chunk}` } : message)));
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "The assistant could not answer right now.";
+      setAssistantMessages((current) => current.map((item) => (item.id === assistantId ? { ...item, content: message } : item)));
+    } finally {
+      setIsAssistantStreaming(false);
     }
-    setIsAssistantStreaming(false);
   };
 
   return (
@@ -278,6 +298,33 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
             ) : null}
           </ScrollView>
+          {consentModalOpen ? (
+            <View style={styles.consentBackdrop}>
+              <View style={styles.consentSheet}>
+                <View style={styles.consentMark}><ShieldCheck size={21} color={colors.blue} /></View>
+                <SectionTitle>Before your first question</SectionTitle>
+                <Body>Your question, this prayer text, language, and source reference are sent to OpenAI through Kavanah. Contact details are removed first. Do not include anything private.</Body>
+                <Body style={styles.consentNote}>Answers are educational and are not binding halachic rulings.</Body>
+                <View style={styles.consentActions}>
+                  <AnimatedPressable accessibilityRole="button" onPress={() => setConsentModalOpen(false)} style={styles.consentSecondary}>
+                    <Text style={styles.consentSecondaryText}>Not now</Text>
+                  </AnimatedPressable>
+                  <AnimatedPressable
+                    accessibilityRole="button"
+                    onPress={() => {
+                      const question = assistantInput.trim();
+                      setAssistantConsent(true);
+                      setConsentModalOpen(false);
+                      void submitAssistantQuestion(question);
+                    }}
+                    style={styles.consentPrimary}
+                  >
+                    <Text style={styles.consentPrimaryText}>Allow and ask</Text>
+                  </AnimatedPressable>
+                </View>
+              </View>
+            </View>
+          ) : null}
         </SafeAreaView>
       </Modal>
     </Screen>
@@ -540,5 +587,66 @@ const styles = StyleSheet.create({
   },
   translationBlock: {
     gap: spacing.xs
+  },
+  consentBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 30,
+    justifyContent: "flex-end",
+    padding: spacing.md,
+    paddingBottom: spacing.xxxl,
+    backgroundColor: "rgba(11, 13, 16, 0.28)"
+  },
+  consentSheet: {
+    padding: spacing.lg,
+    paddingBottom: spacing.xl,
+    gap: spacing.sm,
+    borderRadius: radii.xl,
+    backgroundColor: colors.white,
+    ...shadows.floating
+  },
+  consentMark: {
+    width: 42,
+    height: 42,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  consentNote: {
+    fontSize: 13,
+    lineHeight: 19,
+    color: colors.inkMuted
+  },
+  consentActions: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    marginTop: spacing.sm
+  },
+  consentSecondary: {
+    flex: 1,
+    minHeight: 48,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong
+  },
+  consentSecondaryText: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  consentPrimary: {
+    flex: 1.4,
+    minHeight: 48,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: radii.pill,
+    backgroundColor: colors.blue
+  },
+  consentPrimaryText: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.white
   }
 });

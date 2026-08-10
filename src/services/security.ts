@@ -3,6 +3,7 @@ import * as SecureStore from "expo-secure-store";
 
 const TOKEN_KEY = "kavanah.auth.tokens";
 const DEVICE_KEY_KEY = "kavanah.device.cache-key";
+const INSTALLATION_ID_KEY = "kavanah.installation-id";
 
 export type AuthTokens = {
   accessToken: string;
@@ -60,6 +61,21 @@ export async function getDeviceCacheKey(): Promise<string> {
     keychainAccessible: SecureStore.WHEN_UNLOCKED_THIS_DEVICE_ONLY
   });
   return key;
+}
+
+export async function getOrCreateInstallationId(): Promise<string> {
+  const existing = await SecureStore.getItemAsync(INSTALLATION_ID_KEY);
+  if (existing) {
+    return existing;
+  }
+  const installationId = await Crypto.digestStringAsync(
+    Crypto.CryptoDigestAlgorithm.SHA256,
+    `${Date.now()}-${Math.random()}-${Math.random()}`
+  );
+  await SecureStore.setItemAsync(INSTALLATION_ID_KEY, installationId, {
+    keychainAccessible: SecureStore.WHEN_UNLOCKED_THIS_DEVICE_ONLY
+  });
+  return installationId;
 }
 
 export function maskLocationForExternalServices(latitude: number, longitude: number): { latitude: number; longitude: number } {
