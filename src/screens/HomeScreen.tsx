@@ -1,7 +1,7 @@
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
-import { CalendarDays, Check, ChevronRight, MapPin, Plus, Search, SlidersHorizontal } from "lucide-react-native";
+import { CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Plus, Search, SlidersHorizontal } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,8 +10,10 @@ import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, radii, shadows, spacing, type } from "@/design/theme";
+import { useCurrentDate } from "@/hooks/useCurrentDate";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { confirmHaptic } from "@/services/haptics";
+import { calculateCurrentRun, calculatePracticeStats, type PracticeStats } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
@@ -51,11 +53,13 @@ export function HomeScreen(): React.JSX.Element {
   const { zmanim, location, isLoading, refresh } = useZmanimStore();
   const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
-  const now = useMemo(() => new Date(), []);
+  const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
+  const now = useCurrentDate();
   const nextZman = useMemo(() => findNextZman(zmanim, now), [zmanim, now]);
   const nextMoment = nextZman ? prayerMomentByZman[nextZman.key] ?? { query: nextZman.title, label: nextZman.title, helper: "Next moment" } : null;
   const activeHabits = habits.filter((habit) => enabledHabits.includes(habit.habit));
   const completedToday = activeHabits.filter((habit) => habit.completedDates.includes(formatDateKey(now)));
+  const practiceStats = useMemo(() => calculatePracticeStats(habits, now), [habits, now]);
   const bookmark = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).find(Boolean);
 
   const openPrayerSearch = (query: string) => {
@@ -71,6 +75,11 @@ export function HomeScreen(): React.JSX.Element {
   const closePracticeEditor = () => {
     void confirmHaptic();
     setPracticeEditorOpen(false);
+  };
+
+  const closePracticeStats = () => {
+    void confirmHaptic();
+    setPracticeStatsOpen(false);
   };
 
   return (
@@ -136,7 +145,8 @@ export function HomeScreen(): React.JSX.Element {
             {activeHabits.map((habit, index) => {
               const complete = habit.completedDates.includes(formatDateKey(now));
               const details = habitDetails[habit.habit];
-              const streakLabel = `${habit.streak} ${habit.streak === 1 ? "day" : "days"}`;
+              const currentStreak = calculateCurrentRun(habit.completedDates, now);
+              const streakLabel = `${currentStreak} ${currentStreak === 1 ? "day" : "days"}`;
               return (
                 <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
                   <View style={styles.habitCopy}>
@@ -161,6 +171,14 @@ export function HomeScreen(): React.JSX.Element {
             </AnimatedPressable>
           </View>
         )}
+        <AnimatedPressable accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`} accessibilityRole="button" onPress={() => setPracticeStatsOpen(true)} style={styles.overallRow}>
+          <ChartColumn size={18} color={colors.blue} />
+          <View style={styles.overallCopy}>
+            <Text style={styles.overallTitle}>Overall</Text>
+            <Text style={styles.overallDetail}>{formatOverallSummary(practiceStats)}</Text>
+          </View>
+          <ChevronRight size={17} color={colors.inkMuted} />
+        </AnimatedPressable>
       </View>
 
       <View style={styles.infoGrid}>
@@ -220,7 +238,44 @@ export function HomeScreen(): React.JSX.Element {
           </SafeAreaView>
         </View>
       </Modal>
+
+      <Modal animationType="fade" onRequestClose={closePracticeStats} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceStatsOpen}>
+        <View style={styles.editorRoot}>
+          <Pressable accessibilityLabel="Close overall practice" accessibilityRole="button" onPress={closePracticeStats} style={styles.editorBackdrop} />
+          <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
+            <View style={styles.statsSheet}>
+              <View style={styles.editorHandle} />
+              <View style={styles.editorHeader}>
+                <View style={styles.editorHeading}>
+                  <SectionTitle>Your practice</SectionTitle>
+                  <Body>Every practice you mark complete counts here, even if it is no longer on Today.</Body>
+                </View>
+                <AnimatedPressable accessibilityRole="button" haptic={false} onPress={closePracticeStats} style={styles.doneButton}>
+                  <Text style={styles.doneButtonText}>Done</Text>
+                </AnimatedPressable>
+              </View>
+              <View style={styles.statsList}>
+                <PracticeStatRow label="Current run" value={formatCount(practiceStats.currentRun, "day")} />
+                <PracticeStatRow label="This week" value={formatCount(practiceStats.thisWeek, "practice")} />
+                <PracticeStatRow label="This month" value={formatCount(practiceStats.thisMonth, "practice")} />
+                <PracticeStatRow label="This year" value={formatCount(practiceStats.thisYear, "practice")} />
+                <PracticeStatRow label="All time" value={formatCount(practiceStats.allTime, "practice")} last />
+              </View>
+              <Body style={styles.statsNote}>A run counts consecutive days with at least one completed practice. The current day remains open until midnight.</Body>
+            </View>
+          </SafeAreaView>
+        </View>
+      </Modal>
     </Screen>
+  );
+}
+
+function PracticeStatRow({ label, value, last = false }: { label: string; value: string; last?: boolean }): React.JSX.Element {
+  return (
+    <View style={[styles.statRow, last && styles.lastStatRow]}>
+      <Text style={styles.statLabel}>{label}</Text>
+      <Text style={styles.statValue}>{value}</Text>
+    </View>
   );
 }
 
@@ -253,6 +308,18 @@ function formatHebrewDate(date: Date): string {
 
 function formatDateKey(date: Date): string {
   return formatISO(date, { representation: "date" });
+}
+
+function formatOverallSummary(stats: PracticeStats): string {
+  if (stats.allTime === 0) {
+    return "No activity recorded yet";
+  }
+  const run = stats.currentRun > 0 ? `${stats.currentRun} ${stats.currentRun === 1 ? "day" : "days"} in a row` : "No current run";
+  return `${stats.thisWeek} this week · ${run}`;
+}
+
+function formatCount(value: number, noun: string): string {
+  return `${value} ${noun}${value === 1 ? "" : "s"}`;
 }
 
 const styles = StyleSheet.create({
@@ -481,6 +548,27 @@ const styles = StyleSheet.create({
     ...type.caption,
     color: colors.blue
   },
+  overallRow: {
+    minHeight: 52,
+    paddingHorizontal: spacing.xs,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline
+  },
+  overallCopy: {
+    flex: 1
+  },
+  overallTitle: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  overallDetail: {
+    ...type.caption,
+    color: colors.inkMuted
+  },
   infoGrid: {
     flexDirection: "row",
     gap: spacing.md
@@ -541,6 +629,12 @@ const styles = StyleSheet.create({
     ...shadows.floating
   },
   editorSheet: {
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.lg,
+    gap: spacing.lg
+  },
+  statsSheet: {
     paddingHorizontal: spacing.xl,
     paddingTop: spacing.sm,
     paddingBottom: spacing.lg,
@@ -612,5 +706,34 @@ const styles = StyleSheet.create({
   choiceCircleSelected: {
     backgroundColor: colors.blue,
     borderColor: colors.blue
+  },
+  statsList: {
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline
+  },
+  statRow: {
+    minHeight: 54,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.lg,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline
+  },
+  lastStatRow: {
+    borderBottomWidth: 0
+  },
+  statLabel: {
+    ...type.body,
+    color: colors.ink
+  },
+  statValue: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  statsNote: {
+    fontSize: 12,
+    lineHeight: 18
   }
 });
