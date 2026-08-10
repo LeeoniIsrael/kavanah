@@ -3,6 +3,7 @@ import { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { AssistantResponseText } from "@/components/AssistantResponseText";
 import { Card } from "@/components/Card";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
@@ -53,7 +54,11 @@ export function AssistantScreen(): React.JSX.Element {
         <View style={styles.messages}>
           {messages.map((message) => (
             <View key={message.id} style={[styles.bubble, message.role === "user" ? styles.userBubble : styles.assistantBubble]}>
-              <Body style={message.role === "user" ? styles.userText : styles.assistantText}>{message.content}</Body>
+              {message.role === "user" ? (
+                <Body style={styles.userText}>{message.content}</Body>
+              ) : (
+                <AssistantResponseText content={message.content} style={styles.assistantText} />
+              )}
             </View>
           ))}
         </View>

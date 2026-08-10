@@ -4,6 +4,7 @@ import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View 
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { AssistantResponseText } from "@/components/AssistantResponseText";
 import { Card } from "@/components/Card";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
@@ -262,7 +263,11 @@ export function PrayerScreen(): React.JSX.Element {
                       {assistantMessages.length > 0 ? (
                         assistantMessages.map((message) => (
                           <View key={message.id} style={[styles.assistantBubble, message.role === "user" ? styles.assistantUserBubble : styles.assistantAnswerBubble]}>
-                            <Body style={message.role === "user" ? styles.assistantUserText : styles.assistantAnswerText}>{message.content}</Body>
+                            {message.role === "user" ? (
+                              <Body style={styles.assistantUserText}>{message.content}</Body>
+                            ) : (
+                              <AssistantResponseText content={message.content} style={styles.assistantAnswerText} />
+                            )}
                           </View>
                         ))
                       ) : (
