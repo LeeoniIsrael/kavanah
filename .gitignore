@@ -11,3 +11,4 @@ coverage/
 ios/
 android/
 !.gitkeep
+.vercel
