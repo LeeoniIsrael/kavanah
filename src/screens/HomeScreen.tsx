@@ -1,9 +1,10 @@
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
-import { CalendarDays, Check, ChevronRight, MapPin, Search } from "lucide-react-native";
-import { useMemo } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { CalendarDays, Check, ChevronRight, MapPin, Plus, Search, SlidersHorizontal } from "lucide-react-native";
+import { useMemo, useState } from "react";
+import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Screen } from "@/components/Screen";
@@ -46,13 +47,15 @@ const shortcuts = [
 
 export function HomeScreen(): React.JSX.Element {
   const navigation = useNavigation<Navigation>();
-  const { habits, toggleHabit } = useStreakStore();
+  const { habits, enabledHabits, setHabitEnabled, toggleHabit } = useStreakStore();
   const { zmanim, location, isLoading, refresh } = useZmanimStore();
   const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
+  const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const now = useMemo(() => new Date(), []);
   const nextZman = useMemo(() => findNextZman(zmanim, now), [zmanim, now]);
   const nextMoment = nextZman ? prayerMomentByZman[nextZman.key] ?? { query: nextZman.title, label: nextZman.title, helper: "Next moment" } : null;
-  const completedToday = habits.filter((habit) => habit.completedDates.includes(formatDateKey(now)));
+  const activeHabits = habits.filter((habit) => enabledHabits.includes(habit.habit));
+  const completedToday = activeHabits.filter((habit) => habit.completedDates.includes(formatDateKey(now)));
   const bookmark = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).find(Boolean);
 
   const openPrayerSearch = (query: string) => {
@@ -63,6 +66,11 @@ export function HomeScreen(): React.JSX.Element {
   const togglePractice = (habit: StreakHabit) => {
     toggleHabit(habit);
     void confirmHaptic();
+  };
+
+  const closePracticeEditor = () => {
+    void confirmHaptic();
+    setPracticeEditorOpen(false);
   };
 
   return (
@@ -116,33 +124,43 @@ export function HomeScreen(): React.JSX.Element {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <SectionTitle style={styles.sectionTitle}>Daily practice</SectionTitle>
-          <Text style={styles.sectionMeta}>{completedToday.length}/5 today</Text>
+          <View style={styles.sectionControls}>
+            <Text style={styles.sectionMeta}>{activeHabits.length > 0 ? `${completedToday.length}/${activeHabits.length} today` : "Optional"}</Text>
+            <AnimatedPressable accessibilityLabel="Choose daily practices" accessibilityRole="button" onPress={() => setPracticeEditorOpen(true)} pressedScale={0.94} style={styles.editPracticesButton}>
+              <SlidersHorizontal size={16} color={colors.ink} />
+            </AnimatedPressable>
+          </View>
         </View>
-        <View style={styles.habitList}>
-          {habits.map((habit) => {
-            const complete = habit.completedDates.includes(formatDateKey(now));
-            const details = habitDetails[habit.habit];
-            const streakLabel = `${habit.streak} ${habit.streak === 1 ? "day" : "days"}`;
-            return (
-              <AnimatedPressable
-                key={habit.habit}
-                accessibilityRole="checkbox"
-                accessibilityLabel={`${details.name}. ${details.description}`}
-                accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"}
-                accessibilityState={{ checked: complete }}
-                onPress={() => togglePractice(habit.habit)}
-                style={styles.habitRow}
-              >
-                <View style={styles.habitCopy}>
-                  <Text style={styles.habitName}>{details.name}</Text>
-                  <Text style={styles.habitDescription}>{details.description}</Text>
-                  <Text style={styles.habitDetail}>{streakLabel} in a row</Text>
-                </View>
-                <View style={[styles.checkCircle, complete && styles.checkCircleDone]}>{complete ? <Check size={14} color={colors.white} /> : null}</View>
-              </AnimatedPressable>
-            );
-          })}
-        </View>
+        {activeHabits.length > 0 ? (
+          <View style={styles.habitList}>
+            {activeHabits.map((habit, index) => {
+              const complete = habit.completedDates.includes(formatDateKey(now));
+              const details = habitDetails[habit.habit];
+              const streakLabel = `${habit.streak} ${habit.streak === 1 ? "day" : "days"}`;
+              return (
+                <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
+                  <View style={styles.habitCopy}>
+                    <Text style={styles.habitName}>{details.name}</Text>
+                    <Text style={styles.habitDescription}>{details.description}</Text>
+                    <Text style={styles.habitDetail}>{streakLabel} in a row</Text>
+                  </View>
+                  <View style={[styles.checkCircle, complete && styles.checkCircleDone]}>{complete ? <Check size={14} color={colors.white} /> : null}</View>
+                </AnimatedPressable>
+              );
+            })}
+          </View>
+        ) : (
+          <View style={styles.emptyPractices}>
+            <View style={styles.emptyPracticeCopy}>
+              <Text style={styles.emptyPracticeTitle}>Nothing to keep up with</Text>
+              <Text style={styles.emptyPracticeBody}>Add a practice whenever it feels useful.</Text>
+            </View>
+            <AnimatedPressable accessibilityRole="button" onPress={() => setPracticeEditorOpen(true)} style={styles.choosePracticesButton}>
+              <Plus size={16} color={colors.blue} />
+              <Text style={styles.choosePracticesText}>Choose</Text>
+            </AnimatedPressable>
+          </View>
+        )}
       </View>
 
       <View style={styles.infoGrid}>
@@ -167,6 +185,41 @@ export function HomeScreen(): React.JSX.Element {
         <Text style={styles.commandText}>Search prayers for today</Text>
         <ChevronRight size={18} color={colors.inkMuted} />
       </AnimatedPressable>
+
+      <Modal animationType="fade" onRequestClose={closePracticeEditor} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceEditorOpen}>
+        <View style={styles.editorRoot}>
+          <Pressable accessibilityLabel="Close practice chooser" accessibilityRole="button" onPress={closePracticeEditor} style={styles.editorBackdrop} />
+          <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
+            <View style={styles.editorSheet}>
+              <View style={styles.editorHandle} />
+              <View style={styles.editorHeader}>
+                <View style={styles.editorHeading}>
+                  <SectionTitle>Choose your practices</SectionTitle>
+                  <Body>Keep only what feels meaningful right now. You can change this anytime.</Body>
+                </View>
+                <AnimatedPressable accessibilityRole="button" haptic={false} onPress={closePracticeEditor} style={styles.doneButton}>
+                  <Text style={styles.doneButtonText}>Done</Text>
+                </AnimatedPressable>
+              </View>
+              <View style={styles.practiceChoices}>
+                {habits.map((habit, index) => {
+                  const details = habitDetails[habit.habit];
+                  const selected = enabledHabits.includes(habit.habit);
+                  return (
+                    <AnimatedPressable key={habit.habit} accessibilityHint={selected ? "Removes this from Today" : "Adds this to Today"} accessibilityLabel={`${details.name}. ${details.description}`} accessibilityRole="checkbox" accessibilityState={{ checked: selected }} onPress={() => setHabitEnabled(habit.habit, !selected)} style={[styles.practiceChoice, index === habits.length - 1 && styles.lastPracticeChoice]}>
+                      <View style={styles.practiceChoiceCopy}>
+                        <Text style={styles.practiceChoiceName}>{details.name}</Text>
+                        <Text style={styles.practiceChoiceDescription}>{details.description}</Text>
+                      </View>
+                      <View style={[styles.choiceCircle, selected && styles.choiceCircleSelected]}>{selected ? <Check size={14} color={colors.white} /> : null}</View>
+                    </AnimatedPressable>
+                  );
+                })}
+              </View>
+            </View>
+          </SafeAreaView>
+        </View>
+      </Modal>
     </Screen>
   );
 }
@@ -323,6 +376,21 @@ const styles = StyleSheet.create({
     ...type.caption,
     color: colors.inkMuted
   },
+  sectionControls: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm
+  },
+  editPracticesButton: {
+    width: 36,
+    height: 36,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline
+  },
   habitList: {
     borderRadius: radii.lg,
     backgroundColor: colors.white,
@@ -340,6 +408,9 @@ const styles = StyleSheet.create({
     gap: spacing.lg,
     borderBottomWidth: 1,
     borderBottomColor: colors.hairline
+  },
+  lastHabitRow: {
+    borderBottomWidth: 0
   },
   habitCopy: {
     flex: 1
@@ -371,6 +442,44 @@ const styles = StyleSheet.create({
   checkCircleDone: {
     backgroundColor: colors.blue,
     borderColor: colors.blue
+  },
+  emptyPractices: {
+    minHeight: 92,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.lg,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    borderRadius: radii.lg
+  },
+  emptyPracticeCopy: {
+    flex: 1,
+    gap: 2
+  },
+  emptyPracticeTitle: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  emptyPracticeBody: {
+    ...type.caption,
+    color: colors.inkMuted
+  },
+  choosePracticesButton: {
+    minHeight: 40,
+    paddingHorizontal: spacing.md,
+    borderRadius: radii.pill,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    backgroundColor: colors.blueSoft
+  },
+  choosePracticesText: {
+    ...type.caption,
+    color: colors.blue
   },
   infoGrid: {
     flexDirection: "row",
@@ -415,5 +524,93 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: "600",
     color: colors.ink
+  },
+  editorRoot: {
+    flex: 1,
+    justifyContent: "flex-end"
+  },
+  editorBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(11, 13, 16, 0.30)"
+  },
+  editorSafeArea: {
+    backgroundColor: colors.white,
+    borderTopLeftRadius: radii.xl,
+    borderTopRightRadius: radii.xl,
+    overflow: "hidden",
+    ...shadows.floating
+  },
+  editorSheet: {
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.lg,
+    gap: spacing.lg
+  },
+  editorHandle: {
+    width: 36,
+    height: 4,
+    borderRadius: radii.pill,
+    backgroundColor: colors.hairlineStrong,
+    alignSelf: "center"
+  },
+  editorHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.lg
+  },
+  editorHeading: {
+    flex: 1,
+    gap: spacing.xs
+  },
+  doneButton: {
+    minHeight: 36,
+    justifyContent: "center",
+    paddingHorizontal: spacing.sm
+  },
+  doneButtonText: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.blue
+  },
+  practiceChoices: {
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline
+  },
+  practiceChoice: {
+    minHeight: 68,
+    paddingVertical: spacing.sm,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.lg,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline
+  },
+  lastPracticeChoice: {
+    borderBottomWidth: 0
+  },
+  practiceChoiceCopy: {
+    flex: 1
+  },
+  practiceChoiceName: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.ink
+  },
+  practiceChoiceDescription: {
+    ...type.caption,
+    color: colors.inkMuted
+  },
+  choiceCircle: {
+    width: 26,
+    height: 26,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  choiceCircleSelected: {
+    backgroundColor: colors.blue,
+    borderColor: colors.blue
   }
 });

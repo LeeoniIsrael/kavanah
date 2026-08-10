@@ -15,12 +15,15 @@ export type HabitProgress = {
 
 type StreakState = {
   habits: HabitProgress[];
+  enabledHabits: StreakHabit[];
   completeHabit: (habit: StreakHabit, date?: Date) => void;
+  setHabitEnabled: (habit: StreakHabit, enabled: boolean) => void;
   toggleHabit: (habit: StreakHabit, date?: Date) => void;
   useFreeze: (habit: StreakHabit, date?: Date) => void;
 };
 
 const STORAGE_KEY = "streaks.v1";
+const ENABLED_HABITS_KEY = "streaks.enabled.v1";
 const habitKeys: StreakHabit[] = ["shacharit", "mincha", "maariv", "tefillin", "study"];
 
 const initialHabits: HabitProgress[] = habitKeys.map((habit) => ({
@@ -35,12 +38,19 @@ function isHabitProgressArray(value: unknown): value is HabitProgress[] {
   return Array.isArray(value) && value.every((item) => typeof item === "object" && item !== null && typeof (item as { habit?: unknown }).habit === "string");
 }
 
+function isStreakHabitArray(value: unknown): value is StreakHabit[] {
+  return Array.isArray(value) && value.every((item) => typeof item === "string" && habitKeys.includes(item as StreakHabit));
+}
+
 const persisted = readJson(userStorage, STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
+const persistedEnabledHabits = readJson(userStorage, ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
 
 export const useStreakStore = create<StreakState>((set) => ({
   habits: persisted,
+  enabledHabits: persistedEnabledHabits,
   completeHabit: (habit, date = new Date()) =>
     set((state) => persist(updateHabit(state.habits, habit, date, false))),
+  setHabitEnabled: (habit, enabled) => set((state) => persistEnabledHabits(updateHabitVisibility(state.enabledHabits, habit, enabled))),
   toggleHabit: (habit, date = new Date()) =>
     set((state) => persist(toggleHabit(state.habits, habit, date))),
   useFreeze: (habit, date = new Date()) =>
@@ -107,8 +117,25 @@ function calculateStreak(completedDates: string[]): number {
   return streak;
 }
 
+function updateHabitVisibility(enabledHabits: StreakHabit[], habit: StreakHabit, enabled: boolean): { enabledHabits: StreakHabit[] } {
+  const nextEnabledHabits = new Set(enabledHabits);
+  if (enabled) {
+    nextEnabledHabits.add(habit);
+  } else {
+    nextEnabledHabits.delete(habit);
+  }
+  return {
+    enabledHabits: habitKeys.filter((habitKey) => nextEnabledHabits.has(habitKey))
+  };
+}
+
 function persist(state: { habits: HabitProgress[] }): { habits: HabitProgress[] } {
   writeJson(userStorage, STORAGE_KEY, state.habits);
+  return state;
+}
+
+function persistEnabledHabits(state: { enabledHabits: StreakHabit[] }): { enabledHabits: StreakHabit[] } {
+  writeJson(userStorage, ENABLED_HABITS_KEY, state.enabledHabits);
   return state;
 }
 
