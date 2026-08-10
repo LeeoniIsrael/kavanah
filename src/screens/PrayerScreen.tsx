@@ -1,7 +1,7 @@
 import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Card } from "@/components/Card";
@@ -22,6 +22,7 @@ type LocalizedToken = PrayerToken & {
 };
 
 export function PrayerScreen(): React.JSX.Element {
+  const insets = useSafeAreaInsets();
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
   const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
@@ -212,7 +213,7 @@ export function PrayerScreen(): React.JSX.Element {
       <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
         <SafeAreaView style={styles.readerSafeArea}>
           {selected ? (
-            <View style={styles.readerChrome} pointerEvents="box-none">
+            <View style={[styles.readerChrome, { top: insets.top + spacing.lg }]} pointerEvents="box-none">
               <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={() => setReaderOpen(false)} pressedScale={0.94} style={styles.floatingClose}>
                 <X size={17} color={colors.ink} />
               </AnimatedPressable>
@@ -227,14 +228,13 @@ export function PrayerScreen(): React.JSX.Element {
               </AnimatedPressable>
             </View>
           ) : null}
-          <ScrollView contentContainerStyle={styles.readerContent} showsVerticalScrollIndicator={false}>
+          <ScrollView
+            contentContainerStyle={[styles.readerContent, { paddingTop: insets.top + grid.touch + spacing.xxl }]}
+            showsVerticalScrollIndicator={false}
+          >
             {selected ? (
               <View style={styles.reader}>
                 <View style={styles.readerHeader}>
-                  <View style={styles.readerMetaRow}>
-                    <Text style={styles.readerMeta}>{selected.source}</Text>
-                    <Text style={styles.readerMeta}>{primaryLanguageCode}</Text>
-                  </View>
                   <Display style={styles.readerDisplay}>{selected.title}</Display>
                   <Body style={styles.readerSummary}>{selected.summary}</Body>
                 </View>
@@ -408,7 +408,6 @@ const styles = StyleSheet.create({
   },
   readerChrome: {
     position: "absolute",
-    top: spacing.lg,
     left: grid.margin,
     right: grid.margin,
     zIndex: 10,
@@ -418,7 +417,6 @@ const styles = StyleSheet.create({
   },
   readerContent: {
     paddingHorizontal: spacing.xl,
-    paddingTop: spacing.xxxl + spacing.xl,
     paddingBottom: spacing.xxxl
   },
   reader: {
@@ -453,11 +451,6 @@ const styles = StyleSheet.create({
   floatingBookmarkActive: {
     backgroundColor: colors.blue,
     borderColor: colors.blue
-  },
-  readerMetaRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm
   },
   readerMeta: {
     ...type.caption,
