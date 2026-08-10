@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, BookmarkMinus, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -180,12 +180,21 @@ export function PrayerScreen(): React.JSX.Element {
           <View style={styles.bookmarkList}>
             {bookmarkedPrayers.length > 0 ? (
               bookmarkedPrayers.map((prayer) => (
-                <AnimatedPressable key={prayer.id} onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChip}>
-                  <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
-                  <Body numberOfLines={2} style={styles.bookmarkChipMeta}>
-                    {prayer.useCase || prayer.category}
-                  </Body>
-                </AnimatedPressable>
+                <View key={prayer.id} style={styles.bookmarkChip}>
+                  <View style={styles.bookmarkChipMainSlot}>
+                    <AnimatedPressable accessibilityLabel={`Open ${prayer.title}`} accessibilityRole="button" onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChipMain}>
+                      <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
+                      <Body numberOfLines={2} style={styles.bookmarkChipMeta}>
+                        {prayer.useCase || prayer.category}
+                      </Body>
+                    </AnimatedPressable>
+                  </View>
+                  <View style={styles.removeBookmarkSlot}>
+                    <AnimatedPressable accessibilityLabel={`Remove ${prayer.title} from bookmarks`} accessibilityRole="button" onPress={() => toggleBookmark(prayer.id)} pressedScale={0.92} style={styles.removeBookmarkButton}>
+                      <BookmarkMinus size={18} color={colors.blue} />
+                    </AnimatedPressable>
+                  </View>
+                </View>
               ))
             ) : (
               <Body>Tap the bookmark on any prayer to keep it here.</Body>
@@ -391,6 +400,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.parchment,
+    flexDirection: "row",
+    alignItems: "center",
+    overflow: "hidden"
+  },
+  bookmarkChipMainSlot: {
+    flex: 1
+  },
+  bookmarkChipMain: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.md
   },
@@ -401,6 +418,18 @@ const styles = StyleSheet.create({
   bookmarkChipMeta: {
     fontSize: 12,
     lineHeight: 17
+  },
+  removeBookmarkButton: {
+    width: grid.touch,
+    height: grid.touch,
+    borderRadius: radii.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  removeBookmarkSlot: {
+    width: grid.touch + spacing.sm,
+    alignItems: "flex-start"
   },
   readerSafeArea: {
     flex: 1,
