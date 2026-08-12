@@ -24,6 +24,23 @@ export type PrayerCategory =
   | "nation"
   | "source";
 
+export type HebrewContentKind = "complete" | "excerpt" | "collection" | "missing" | "remote-unreviewed";
+
+export type HebrewReviewStatus = "pending" | "approved" | "changes-requested";
+
+export type HebrewReview = {
+  contentKind: HebrewContentKind;
+  status: HebrewReviewStatus;
+  tradition: "common" | "ashkenaz" | "sefard" | "scriptural" | "modern-israeli" | "varies";
+  sourceTitle: string;
+  sourceRef: string;
+  sourceUrl: string;
+  licenseStatus: "verified" | "verification-required";
+  reviewer?: string;
+  reviewedAt?: string;
+  notes?: string;
+};
+
 export type PrayerText = {
   id: string;
   title: string;
@@ -36,6 +53,7 @@ export type PrayerText = {
   tokens: PrayerToken[];
   source: "sefaria" | "local-cache" | "sefaria-search";
   updatedAt: string;
+  hebrewReview: HebrewReview;
 };
 
 export type PrayerSearchResult = {

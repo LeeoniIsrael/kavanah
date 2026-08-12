@@ -1,10 +1,11 @@
 import { corePrayers } from "@/data/corePrayers";
+import { getPendingHebrewReview } from "@/data/prayerReviewCatalog";
 import { cacheStorage, readJson, writeJson } from "@/services/mmkv";
 import { secureFetch } from "@/services/network";
 import type { PrayerSearchResult, PrayerText, PrayerToken } from "@/types/prayer";
 import { transliterate } from "hebrew-transliteration";
 
-const CACHE_KEY = "prayers.core";
+const CACHE_KEY = "prayers.core.v2";
 const SEFARIA_SEARCH_CACHE_KEY = "prayers.sefaria-search";
 const SEFARIA_BASE_URL = "https://www.sefaria.org/api/texts/";
 const SEFARIA_NAME_URL = "https://www.sefaria.org/api/name/";
@@ -51,10 +52,10 @@ export async function hydratePrayerFromSefaria(prayer: PrayerText): Promise<Pray
 }
 
 export async function syncCorePrayers(): Promise<PrayerText[]> {
-  const settled = await Promise.allSettled(corePrayers.map(hydratePrayerFromSefaria));
-  const prayers = settled.map((result, index) => (result.status === "fulfilled" ? result.value : corePrayers[index])).filter(Boolean) as PrayerText[];
-  writeJson(cacheStorage, CACHE_KEY, prayers);
-  return prayers;
+  // Bundled Hebrew stays immutable until its exact source and wording receive
+  // rabbinic approval. Remote search results remain available separately.
+  writeJson(cacheStorage, CACHE_KEY, corePrayers);
+  return corePrayers;
 }
 
 export async function searchSefariaPrayerRefs(query: string): Promise<PrayerText[]> {
@@ -211,6 +212,7 @@ function createSefariaSearchPrayer(ref: string, query: string): PrayerText {
     tags: ["sefaria", "library", "source"],
     source: "sefaria-search",
     updatedAt: new Date().toISOString(),
+    hebrewReview: getPendingHebrewReview(`sefaria-${slugify(ref)}`),
     tokens: [
       {
         id: `sefaria-${slugify(ref)}-preview`,

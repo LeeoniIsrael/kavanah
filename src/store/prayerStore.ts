@@ -53,7 +53,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
   selectPrayer: async (id) => {
     set({ selectedPrayerId: id });
     const prayer = get().prayers.find((item) => item.id === id);
-    if (!prayer || prayer.source === "sefaria") {
+    if (!prayer || prayer.source !== "sefaria-search") {
       return;
     }
     try {

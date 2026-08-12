@@ -17,7 +17,7 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
     <AnimatedPressable onPress={onPress} style={[styles.card, selected && styles.selected]}>
       <View style={styles.row}>
         <View style={styles.text}>
-          <Text style={styles.meta}>{prayer.category}</Text>
+          <Text style={styles.meta}>{prayer.category} · {contentLabel(prayer.hebrewReview.contentKind)}</Text>
           <SectionTitle style={styles.title}>{prayer.title}</SectionTitle>
           <Body numberOfLines={3} style={styles.useCase}>
             {prayer.useCase || prayer.summary}
@@ -71,3 +71,11 @@ const styles = StyleSheet.create({
   dot: {},
   selectedDot: {}
 });
+
+function contentLabel(kind: PrayerText["hebrewReview"]["contentKind"]): string {
+  if (kind === "complete") return "complete Hebrew";
+  if (kind === "excerpt") return "excerpt";
+  if (kind === "collection") return "service";
+  if (kind === "missing") return "in preparation";
+  return "library result";
+}

@@ -15,12 +15,28 @@ import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
 import { usePrayerStore } from "@/store/prayerStore";
 import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
-import type { PrayerToken } from "@/types/prayer";
+import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
 
 type LocalizedToken = PrayerToken & {
   localizedTranslation: string;
   localizedTransliteration: string;
 };
+
+function hebrewContentLabel(kind: HebrewContentKind): string {
+  if (kind === "complete") return "Hebrew review pending";
+  if (kind === "excerpt") return "Draft excerpt";
+  if (kind === "collection") return "Service collection";
+  if (kind === "missing") return "Text being prepared";
+  return "Unreviewed library text";
+}
+
+function hebrewReviewMessage(kind: HebrewContentKind): string {
+  if (kind === "complete") return "The full Hebrew is present and awaiting final rabbinic approval.";
+  if (kind === "excerpt") return "This is a clearly marked excerpt, not yet the complete prayer.";
+  if (kind === "collection") return "This entry represents a full service whose sections must be reviewed individually.";
+  if (kind === "missing") return "Kavanah will not invent or silently substitute sacred text while the canonical Hebrew is being prepared.";
+  return "This text came from a live library search and is outside Kavanah's reviewed catalog.";
+}
 
 export function PrayerScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
@@ -251,6 +267,16 @@ export function PrayerScreen(): React.JSX.Element {
                   <Display style={styles.readerDisplay}>{selected.title}</Display>
                   <Body style={styles.readerSummary}>{selected.summary}</Body>
                 </View>
+                {selected.hebrewReview.status !== "approved" ? (
+                  <View style={styles.hebrewReviewNotice}>
+                    <View style={styles.hebrewReviewRule} />
+                    <View style={styles.hebrewReviewCopy}>
+                      <Label>{hebrewContentLabel(selected.hebrewReview.contentKind)}</Label>
+                      <Body style={styles.hebrewReviewText}>{hebrewReviewMessage(selected.hebrewReview.contentKind)}</Body>
+                      <Text style={styles.hebrewReviewSource}>{selected.hebrewReview.sourceTitle} · {selected.hebrewReview.sourceRef}</Text>
+                    </View>
+                  </View>
+                ) : null}
                 <View style={styles.askCard}>
                   <View style={styles.askHeader}>
                     <View style={styles.askIcon}>
@@ -513,6 +539,28 @@ const styles = StyleSheet.create({
   readerSummary: {
     color: colors.inkFaint,
     maxWidth: 320
+  },
+  hebrewReviewNotice: {
+    flexDirection: "row",
+    gap: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  hebrewReviewRule: {
+    width: 2,
+    backgroundColor: colors.gold
+  },
+  hebrewReviewCopy: {
+    flex: 1,
+    gap: spacing.xs
+  },
+  hebrewReviewText: {
+    color: colors.inkMuted,
+    fontSize: 14,
+    lineHeight: 20
+  },
+  hebrewReviewSource: {
+    ...type.caption,
+    color: colors.inkFaint
   },
   askCard: {
     gap: spacing.md,

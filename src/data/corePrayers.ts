@@ -1,4 +1,5 @@
 import type { PrayerCategory, PrayerText, PrayerToken } from "@/types/prayer";
+import { getPendingHebrewReview } from "@/data/prayerReviewCatalog";
 
 const now = "2026-06-22T00:00:00.000Z";
 
@@ -573,6 +574,7 @@ export const corePrayers: PrayerText[] = seeds.map((seed) => ({
   tags: seed.tags,
   source: "local-cache",
   updatedAt: now,
+  hebrewReview: getPendingHebrewReview(seed.id),
   tokens: seed.lines.map((line, index) => ({
     id: `${seed.id}-${index}`,
     ...line
