@@ -4,16 +4,15 @@
 
 ## Important
 
-This packet is an editorial working document, not a claim that every entry is ready. Entries marked **Excerpt**, **Service collection**, or **Missing** must not be approved as complete prayers. They identify exactly where source preparation is still required.
+This packet contains static source-backed candidates where available. Entries marked **Excerpt**, **Service collection**, or **Missing** must not be approved as complete prayers. They identify exactly where source preparation is still required.
 
 The initial baseline is common wording where broadly shared, Ashkenaz for service-dependent wording, scriptural Hebrew for biblical passages, and separately labeled modern Israeli communal prayers. The reviewer should flag every place where another nusach must be offered or where the wording is not universal.
 
 ## Inventory
 
-- Complete candidates awaiting review: **6**
-- Excerpts requiring completion: **21**
-- Service collections requiring section-level treatment: **3**
-- Entries with no Hebrew candidate: **3**
+- Source-backed candidates added in this packet: **22**
+- Existing short complete candidates: **6**
+- Entries still blocked before rabbinic review: **5**
 - Total catalog entries: **33**
 
 ## Review standard
@@ -26,9 +25,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `modeh-ani`
 - **Proposed tradition:** Common
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Sefard, Upon Arising, Modeh Ani
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Sefard%2C%20Upon%20Arising%2C%20Modeh%20Ani)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Upon Arising, Modeh Ani; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -53,16 +52,22 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `shema`
 - **Proposed tradition:** Scriptural
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Torah, Deuteronomy 6:4-9
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Torah%2C%20Deuteronomy%206%3A4-9)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** The app currently includes only the declaration and first verse of Ve'ahavta.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">שמע ישראל יהוה אלהינו יהוה אחד</div>
+<div dir="rtl" lang="he">שְׁמַע יִשְׂרָאֵל יְהֹוָה אֱלֹהֵֽינוּ יְהֹוָה אֶחָד:</div>
 
-<div dir="rtl" lang="he">ואהבת את יהוה אלהיך בכל לבבך ובכל נפשך ובכל מאדך</div>
+<div dir="rtl" lang="he">בָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד:</div>
+
+<div dir="rtl" lang="he">וְאָהַבְתָּ אֵת יְהֹוָה אֱלֹהֶֽיךָ בְּכָל֯־לְ֯בָבְ֒ךָ וּבְכָל־נַפְשְׁ֒ךָ וּבְכָל־מְאֹדֶֽךָ: וְהָיוּ הַדְּ֒בָרִים הָאֵֽלֶּה אֲשֶׁר֯ אָ֯נֹכִי מְצַוְּ֒ךָ הַיּוֹם עַל֯־לְ֯בָבֶֽךָ: וְשִׁנַּנְתָּם לְבָנֶֽיךָ וְדִבַּרְתָּ בָּם בְּשִׁבְתְּ֒ךָ בְּבֵיתֶֽךָ וּבְלֶכְתְּ֒ךָ בַדֶּֽרֶךְ וּבְשָׁכְבְּ֒ךָ וּבְקוּמֶֽךָ: וּקְשַׁרְתָּם לְאוֹת עַל֯־יָ֯דֶֽךָ וְהָיוּ לְטֹטָפֹת בֵּין עֵינֶֽיךָ: וּכְתַבְתָּם עַל־מְזֻזוֹת בֵּיתֶֽךָ וּבִשְׁעָרֶֽיךָ:</div>
+
+<div dir="rtl" lang="he">וְהָיָה אִם־שָׁמֹֽעַ תִּשְׁמְ֒עוּ אֶל־מִצְוֹתַי אֲשֶׁר֯ אָ֯נֹכִי מְצַוֶּה אֶתְכֶם הַיּוֹם לְאַהֲבָה אֶת־יְהֹוָה אֱלֹהֵיכֶם וּלְעָבְדוֹ בְּכָל֯־לְ֯בַבְכֶם וּבְכָל־נַפְשְׁ֒כֶם: וְנָתַתִּי מְטַר֯־אַ֯רְצְ֒כֶם בְּעִתּוֹ֯ י֯וֹרֶה וּמַלְקוֹשׁ וְאָסַפְתָּ דְגָנֶֽךָ וְתִירשְׁ֒ךָ וְיִצְהָרֶֽךָ: וְנָתַתִּי עֵֽשֶׂב֯ בְּ֯שָׂדְ֒ךָ לִבְהֶמְתֶּֽךָ וְאָכַלְתָּ וְשָׂבָֽעְתָּ: הִשָּׁמְ֒רוּ לָכֶם פֶּן֯־יִ֯פְתֶּה לְבַבְכֶם וְסַרְתֶּם וַעֲבַדְתֶּם אֱלֹהִים֯ אֲ֯חֵרִים וְהִשְׁתַּחֲוִיתֶם לָהֶם: וְחָרָה אַף־יְהֹוָה בָּכֶם וְעָצַר֯ אֶ֯ת־הַשָּׁמַֽיִם וְלֹא֯־יִ֯הְיֶה מָטָר וְהָאֲדָמָה לֹא תִתֵּן אֶת֯־יְ֯בוּלָהּ וַאֲבַדְתֶּם֯ מְ֯הֵרָה מֵעַל הָאָֽרֶץ הַטֹּבָה אֲשֶׁר֯ יְ֯הֹוָה נֹתֵן לָכֶם: וְשַׂמְתֶּם֯ אֶ֯ת־דְּבָרַי֯ אֵֽ֯לֶּה עַל֯־לְ֯בַבְכֶם וְעַל־נַפְשְׁ֒כֶם וּקְשַׁרְתֶּם֯ אֹ֯תָם לְאוֹת עַל֯־יֶ֯דְכֶם וְהָיוּ לְטוֹטָפֹת בֵּין עֵינֵיכֶם: וְלִמַּדְתֶּם֯ אֹ֯תָם אֶת־בְּנֵיכֶם לְדַבֵּר בָּם בְּשִׁבְתְּ֒ךָ בְּבֵיתֶֽךָ וּבְלֶכְתְּ֒ךָ בַדֶּֽרֶךְ וּבְשָׁכְבְּ֒ךָ וּבְקוּמֶֽךָ: וּכְתַבְתָּם עַל־מְזוּזוֹת בֵּיתֶֽךָ וּבִשְׁעָרֶֽיךָ: לְמַֽעַן֯ יִ֯רְבּוּ יְמֵיכֶם וִימֵי בְנֵיכֶם עַל הָאֲדָמָה אֲשֶׁר נִשְׁבַּע יְהֹוָה לַאֲבֹתֵיכֶם לָתֵת לָהֶם כִּימֵי הַשָּׁמַֽיִם עַל־הָאָֽרֶץ:</div>
+
+<div dir="rtl" lang="he">וַֽיֹּאמֶר֯ יְ֯הֹוָה֯ אֶ֯ל־משֶׁה לֵּאמֹר: דַּבֵּר֯ אֶ֯ל־בְּנֵי יִשְׂרָאֵל וְאָמַרְתָּ אֲלֵהֶם וְעָשׂוּ לָהֶם צִיצִת עַל־כַּנְפֵי בִגְ֒דֵיהֶם לְדֹרֹתָם וְנָתְ֒נוּ עַל־צִיצִת הַכָּנָף֯ פְּ֯תִיל תְּכֵֽלֶת: וְהָיָה לָכֶם לְצִיצִת וּרְאִיתֶם֯ אֹ֯תוֹ וּזְכַרְתֶּם֯ אֶ֯ת־כָּל־מִצְוֹת֯ יְ֯הֹוָה וַעֲשִׂיתֶם֯ אֹ֯תָם וְלֹא תָתֽוּרוּ אַחֲרֵי לְבַבְכֶם וְאַחֲרֵי עֵינֵיכֶם אֲשֶׁר֯־אַ֯תֶּם זֹנִים֯ אַ֯חֲרֵיהֶם: לְמַֽעַן תִּזְכְּ֒רוּ וַעֲשִׂיתֶם֯ אֶ֯ת־כָּל־מִצְוֹתָי וִהְיִיתֶם קְדשִׁים לֵאלֹהֵיכֶם: אֲנִי יְהֹוָה אֱלֹהֵיכֶם֯ אֲ֯שֶׁר הוֹצֵֽאתִי אֶתְכֶם֯ מֵ֯אֶֽרֶץ מִצְרַֽיִם לִהְיוֹת לָכֶם לֵאלֹהִים֯ אֲ֯נִי יְהֹוָה אֱלֹהֵיכֶם֯:</div>
 
 ### Rabbinic decision
 
@@ -82,9 +87,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `tefillin-blessing`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Ashkenaz, Weekday Shacharit, Tefillin
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Shacharit%2C%20Tefillin)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday Shacharit, Tefillin; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -109,9 +114,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `tallit-blessing`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Ashkenaz, Weekday Shacharit, Preparatory Prayers, Tallit
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Shacharit%2C%20Preparatory%20Prayers%2C%20Tallit)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday Shacharit, Preparatory Prayers, Tallit; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -136,14 +141,14 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `asher-yatzar`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Berachot, Asher Yatzar
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Berachot%2C%20Asher%20Yatzar)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Asher Yatzar — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the concluding blessing is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה רופא כל בשר ומפליא לעשות</div>
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם אֲשֶׁר יָצַר אֶת־הָאָדָם בְּחָכְמָה וּבָֽרָא בוֹ נְקָבִים נְקָבִים חֲלוּלִים חֲלוּלִים גָּלוּי וְיָדֽוּעַ לִפְנֵי כִסֵּא כְבוֹדֶֽךָ שֶׁאִם יִפָּתֵֽחַ אֶחָד מֵהֶם אוֹ יִסָּתֵם אֶחָד מֵהֶם אִי אֶפְשַׁר לְהִתְקַיֵּם וְלַעֲמֹד לְפָנֶֽיךָ אֲפִילוּ שָׁעָה אֶחָת. בָּרוּךְ אַתָּה יְהֹוָה רוֹפֵא כָל־בָּשָׂר וּמַפְלִיא לַעֲשׂוֹת:</div>
 
 ### Rabbinic decision
 
@@ -163,14 +168,18 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `torah-blessings`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Weekday Shacharit, Birchot HaTorah
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Shacharit%2C%20Birchot%20HaTorah)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Blessings — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the first blessing is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה אלהינו מלך העולם אשר קדשנו במצותיו וצונו לעסוק בדברי תורה</div>
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם אֲשֶׁר קִדְּ֒שָֽׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לַעֲסֹק בְּדִבְרֵי תוֹרָה:</div>
+
+<div dir="rtl" lang="he">וְהַעֲרֶב נָא יְהֹוָה אֱלֹהֵֽינוּ אֶת־דִּבְרֵי תוֹרָתְךָ בְּפִֽינוּ וּבְפִי עַמְּךָ בֵּית יִשְׂרָאֵל. וְנִהְיֶה אֲנַֽחְנוּ וְצֶאֱצָאֵֽינוּ וְצֶאֱצָאֵי עַמְּךָ בֵּית יִשְׂרָאֵל כֻּלָּֽנוּ יוֹדְעֵי שְׁמֶֽךָ וְלוֹמְדֵי תוֹרָתֶֽךָ. לִשְׁמָהּ. בָּרוּךְ אַתָּה יְהֹוָה הַמְלַמֵּד תּוֹרָה לְעַמּוֹ יִשְׂרָאֵל.</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם אֲשֶׁר בָּֽחַר בָּֽנוּ מִכָּל הָעַמִּים וְנָֽתַן לָֽנוּ אֶת־תּוֹרָתוֹ: בָּרוּךְ אַתָּה יְהֹוָה נוֹתֵן הַתּוֹרָה:</div>
 
 ### Rabbinic decision
 
@@ -190,16 +199,14 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `tefilat-haderech`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Prayers for Special Occasions, Traveler's Prayer
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Prayers%20for%20Special%20Occasions%2C%20Traveler's%20Prayer)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Blessings, Traveler's Prayer — Torat Emet 357; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">יהי רצון מלפניך יהוה אלהינו ואלהי אבותינו שתוליכנו לשלום</div>
-
-<div dir="rtl" lang="he">ותצעידנו לשלום ותדריכנו לשלום</div>
+<div dir="rtl" lang="he">יְהִי רָצוֹן מִלְפָנֶיךָ יְהֹוָה אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם וְתַצְעִידֵנוּ לְשָׁלוֹם וְתַדְרִיכֵנוּ לְשָׁלוֹם, וְתִסְמְכֵנִי לְשָׁלוֹם, וְתַגִּיעֵנוּ לִמְחוֹז חֶפְצֵנוּ לְחַיִּים לְשִׂמְחָה וּלְשָׁלוֹם, [וְתַחְזִירֵנִי לְשָׁלוֹם] וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב וְאוֹרֵב וְלִסְטִים וְחַיּוֹת רָעוֹת בַּדֶּרֶךְ, וּמִכָּל מִינֵי פֻרְעָנִיּוֹת הַמִּתְרַגְּשׁוֹת וּבָאוֹת לָעוֹלָם וְתִשְׁלַח בְּרָכָה וְהַצְלָחָה בְּכָל מַעֲשֵׂה יָדֵינוּ, וְתִתְּנֵנוּ לְחֵן וּלְחֶסֶד וּלְרַחֲמִים בְּעֵינֶיךָ וּבְעֵינֵי כָל רֹאֵינוּ, וְתִגְמְלֵינוּ חֲסָדִים טוֹבִים וְתִשְׁמַע קוֹל תַּחֲנוּנֵינוּ, כִּי אֵל שֹׁמֵעַ תְּפִלָּה וְתַחֲנוּן אָתָּה: בָּרוּךְ אַתָּה יְהֹוָה, שׁוֹמֵעַ תְּפִלָה:</div>
 
 ### Rabbinic decision
 
@@ -219,16 +226,28 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `psalm-121`
 - **Proposed tradition:** Scriptural
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Tanakh, Psalms 121
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Tanakh%2C%20Psalms%20121)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Psalms 121 — Miqra according to the Masorah; license: CC-BY-SA
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only verses 1-2 are bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">אשא עיני אל ההרים מאין יבא עזרי</div>
+<div dir="rtl" lang="he">שִׁ֗יר לַֽמַּ֫עֲל֥וֹת אֶשָּׂ֣א עֵ֭ינַי אֶל־הֶהָרִ֑ים מֵ֝אַ֗יִן יָבֹ֥א עֶזְרִֽי׃</div>
 
-<div dir="rtl" lang="he">עזרי מעם יהוה עשה שמים וארץ</div>
+<div dir="rtl" lang="he">עֶ֭זְרִי מֵעִ֣ם יְהֹוָ֑ה עֹ֝שֵׂ֗ה שָׁמַ֥יִם וָאָֽרֶץ׃</div>
+
+<div dir="rtl" lang="he">אַל־יִתֵּ֣ן לַמּ֣וֹט רַגְלֶ֑ךָ אַל־יָ֝נ֗וּם שֹׁמְרֶֽךָ׃</div>
+
+<div dir="rtl" lang="he">הִנֵּ֣ה לֹֽא־יָ֭נוּם וְלֹ֣א יִישָׁ֑ן שׁ֝וֹמֵ֗ר יִשְׂרָאֵֽל׃</div>
+
+<div dir="rtl" lang="he">יְהֹוָ֥ה שֹׁמְרֶ֑ךָ יְהֹוָ֥ה צִ֝לְּךָ֗ עַל־יַ֥ד יְמִינֶֽךָ׃</div>
+
+<div dir="rtl" lang="he">יוֹמָ֗ם הַשֶּׁ֥מֶשׁ לֹֽא־יַכֶּ֗כָּה וְיָרֵ֥חַ בַּלָּֽיְלָה׃</div>
+
+<div dir="rtl" lang="he">יְֽהֹוָ֗ה יִשְׁמׇרְךָ֥ מִכׇּל־רָ֑ע יִ֝שְׁמֹ֗ר אֶת־נַפְשֶֽׁךָ׃</div>
+
+<div dir="rtl" lang="he">יְֽהֹוָ֗ה יִשְׁמׇר־צֵאתְךָ֥ וּבוֹאֶ֑ךָ מֵ֝עַתָּ֗ה וְעַד־עוֹלָֽם׃ {פ}</div>
 
 ### Rabbinic decision
 
@@ -248,14 +267,24 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `psalm-23`
 - **Proposed tradition:** Scriptural
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Tanakh, Psalms 23
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Tanakh%2C%20Psalms%2023)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Psalms 23 — Miqra according to the Masorah; license: CC-BY-SA
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only verse 1 is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">יהוה רעי לא אחסר</div>
+<div dir="rtl" lang="he">מִזְמ֥וֹר לְדָוִ֑ד יְהֹוָ֥ה רֹ֝עִ֗י לֹ֣א אֶחְסָֽר׃</div>
+
+<div dir="rtl" lang="he">בִּנְא֣וֹת דֶּ֭שֶׁא יַרְבִּיצֵ֑נִי עַל־מֵ֖י מְנֻח֣וֹת יְנַהֲלֵֽנִי׃</div>
+
+<div dir="rtl" lang="he">נַפְשִׁ֥י יְשׁוֹבֵ֑ב יַֽנְחֵ֥נִי בְמַעְגְּלֵי־צֶ֝֗דֶק לְמַ֣עַן שְׁמֽוֹ׃</div>
+
+<div dir="rtl" lang="he">גַּ֤ם כִּֽי־אֵלֵ֨ךְ בְּגֵ֪יא צַלְמָ֡וֶת לֹא־אִ֘ירָ֤א רָ֗ע כִּי־אַתָּ֥ה עִמָּדִ֑י שִׁבְטְךָ֥ וּ֝מִשְׁעַנְתֶּ֗ךָ הֵ֣מָּה יְנַֽחֲמֻֽנִי׃</div>
+
+<div dir="rtl" lang="he">תַּעֲרֹ֬ךְ לְפָנַ֨י ׀ שֻׁלְחָ֗ן נֶ֥גֶד צֹרְרָ֑י דִּשַּׁ֥נְתָּ בַשֶּׁ֥מֶן רֹ֝אשִׁ֗י כּוֹסִ֥י רְוָיָֽה׃</div>
+
+<div dir="rtl" lang="he">אַ֤ךְ ׀ ט֤וֹב וָחֶ֣סֶד יִ֭רְדְּפוּנִי כׇּל־יְמֵ֣י חַיָּ֑י וְשַׁבְתִּ֥י בְּבֵית־יְ֝הֹוָ֗ה לְאֹ֣רֶךְ יָמִֽים׃ {פ}</div>
 
 ### Rabbinic decision
 
@@ -276,8 +305,8 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 - **Catalog ID:** `mi-sheberach`
 - **Proposed tradition:** Varies
 - **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Communal liturgy, Mi Sheberach for Healing
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Communal%20liturgy%2C%20Mi%20Sheberach%20for%20Healing)
+- **Candidate source and edition:** Communal liturgy, Mi Sheberach for Healing; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** Wording and name insertion vary by community.
 
 ### Hebrew candidate
@@ -286,7 +315,7 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 ### Rabbinic decision
 
-- [ ] Approve the Hebrew exactly as shown
+- [ ] Candidate incomplete — approval is blocked
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
@@ -302,9 +331,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `hamotzi`
 - **Proposed tradition:** Common
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Ashkenaz, Berachot, HaMotzi
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Berachot%2C%20HaMotzi)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Berachot, HaMotzi; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -329,14 +358,36 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `birkat-hamazon`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Birkat Hamazon, Blessing on the Food
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Birkat%20Hamazon%2C%20Blessing%20on%20the%20Food)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Birkat Hamazon, Blessing on the Food — Birkat Hamazon -- Ashkenaz; license: unknown<br />Birkat Hamazon, Blessing on the Land — Birkat Hamazon -- Ashkenaz; license: unknown<br />Birkat Hamazon, Blessing on Jerusalem — Birkat Hamazon -- Ashkenaz; license: unknown<br />Birkat Hamazon, Hatov Vehametiv — Birkat Hamazon -- Ashkenaz; license: unknown
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the first blessing's closing formula is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה הזן את הכל</div>
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם הַזָּן אֶת הָעוֹלָם כֻּלּוֹ בְּטוּבוֹ בְּחֵן בְּחֶסֶד וּבְרַחֲמִים, הוּא נֹתֵן לֶחֶם לְכָל־בָּשָׂר כִּי לְעוֹלָם חַסְדּוֹ וּבְטוּבוֹ הַגָּדוֹל תָּמִיד לֹא חָסַר לָנוּ וְאַל יֶחְסַר לָנוּ מָזוֹן (תָּמִיד) לְעוֹלָם וָעֶד בַּעֲבוּר שְׁמוֹ הַגָּדוֹל כִּי הוּא אֵל זָן וּמְפַרְנֵס לַכֹּל וּמֵטִיב לַכֹּל וּמֵכִין מָזוֹן לְכָל־בְּרִיּוֹתָיו אֲשֶׁר בָּרָא בָּרוּךְ אַתָּה יְיָ הַזָּן אֶת הַכֹּל.</div>
+
+<div dir="rtl" lang="he">נוֹדֶה לְּךָ יְהֹוָה אֱלֹהֵינוּ עַל שֶׁהִנְחַלְתָּ לַאֲבוֹתֵינוּ אֶרֶץ חֶמְדָּה טוֹבָה וּרְחָבָה וְעַל שֶׁהוֹצֵאתָנוּ יְיָ אֱלֹהֵינוּ מֵאֶרֶץ מִצְרַיִם וּפְדִיתָנוּ מִבֵּית עֲבָדִים וְעַל בְּרִיתְךָ שֶׁחָתַמְתָּ בִּבְשָׂרֵנוּ וְעַל תּוֹרָתְךָ שֶׁלִּמַּדְתָּנוּ וְעַל חֻקֶּיךָ שֶׁהוֹדַעְתָּנוּ וְעַל חַיִּים חֵן וָחֶסֶד שֶׁחוֹנַנְתָּנוּ, וְעַל אֲכִילַת מָזוֹן שָׁאַתָּה זָן וּמְפַרְנֵס אוֹתָנוּ תָּמִיד, בְּכָל יוֹם וּבְכָל עֵת וּבְכָל שָׁעָה.</div>
+
+<div dir="rtl" lang="he">וְעַל הַכֹּל יְיָ אֱלֹהֵינוּ אֲנַחְנוּ מוֹדִים לָךְ וּמְבָרְכִים אוֹתָךְ, יִתְבָּרַךְ שִׁמְךָ בְּפִי כָּל חַי תָּמִיד לְעוֹלָם וָעֶד, כַּכָּתוּב: וְאָכַלְתָּ וְשָׂבַעְתָּ, וּבֵרַכְתָּ אֶת יְיָ אֱלֹהֶיךָ עַל הָאָרֶץ הַטּוֹבָה אֲשֶּׁר נָתַן לָךְ. בָּרוּךְ אַתָּה יְיָ, עַל הָאָרֶץ וְעַל הַמָּזוֹן.</div>
+
+<div dir="rtl" lang="he">רַחֶם נָא יְיָ אֱלֹהֵינוּ עַל יִשְׂרָאֵל עַמֶּךָ, וְעַל יְרוּשָׁלַיִם עִירֶךָ, וְעַל צִיּוֹן מִשְׁכַּן כְּבוֹדֶךָ, וְעַל מַלְכוּת בֵּית דָּוִד מְשִׁיחֶךָ, וְעַל הַבַּיִת הַגָדוֹל וְהַקָדוֹשׁ שֶׁנִּקְרָא שִׁמְךָ עָלָיו. אֱלֹהֵינוּ, אָבִינוּ, רְעֵנוּ, זוּנֵנוּ, פַרְנְסֵנוּ וְכַלְכְּלֵנוּ וְהַרְוִיחֵנוּ, וְהַרְוַח לָנוּ יְיָ אֱלֹהֵינוּ מְהֵרָה מִכָּל צָרוֹתֵינוּ. וְנָא אַל תַּצְרִיכֵנוּ יְיָ אֱלֹהֵינוּ, לֹא לִידֵי מַתְּנַת בָּשָׂר וָדָם וְלֹא לִידֵי הַלְוָאָתָם, כִּי אִם לְיָדְךָ הַמְּלֵאָה הַפְּתוּחָה הַקְּדוֹשָׁה וְהָרְחָבָה, שֶׁלֹא נֵבוֹשׁ וְלֹא נִכָּלֵם לְעוֹלָם וָעֶד.</div>
+
+<div dir="rtl" lang="he">וּבְנֵה יְרוּשָׁלַיִם עִיר הַקֹּדֶשׁ בִּמְהֵרָה בְיָמֵינוּ. בָּרוּךְ אַתָּה יְיָ, בּוֹנֵה בְרַחֲמָיו יְרוּשָׁלַיִם. אָמֵן.</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הָאֵל אָבִינוּ, מַלְכֵּנוּ, אַדִירֵנוּ, בּוֹרְאֵנוּ, גֹּאֲלֵנוּ, יוֹצְרֵנוּ, קְדוֹשֵׁנוּ קְדוֹשׁ יַעֲקֹב, רוֹעֵנוּ רוֹעֵה יִשְׂרָאֵל, הַמֶּלֶךְ הַטּוֹב וְהַמֵּיטִיב לַכֹּל, שֶׁבְּכָל יוֹם וָיוֹם הוּא הֵיטִיב, הוּא מֵיטִיב, הוּא יֵיטִיב לָנוּ, הוּא גְמָלָנוּ, הוּא גוֹמְלֵנוּ, הוּא יִגְמְלֵנוּ לָעַד, לְחֵן וּלְחֶסֶד וּלְרַחֲמִים וּלְרֶוַח הַצָּלָה וְהַצְלָחָה, בְּרָכָה וִישׁוּעָה, נֶחָמָה פַּרְנָסָה וְכַלְכָּלָה וְרַחֲמִים וְחַיִּים וְשָׁלוֹם, וְכָל טוֹב; וּמִכָּל טוּב לְעוֹלָם אַל יְחַסְּרֵנוּ.</div>
+
+<div dir="rtl" lang="he">הָרַחֲמָן הוּא יִמְלוֹךְ עָלֵינוּ לְעוֹלָם וָעֶד. הָרַחֲמָן הוּא יִתְבָּרַךְ בַּשָּׁמַיִם וּבָאָרֶץ. הָרַחֲמָן הוּא יִשְׁתַּבַּח לְדוֹר דּוֹרִים, וְיִתְפָּאַר בָּנוּ לָעַד וּלְנֵצַח נְצָחִים, וְיִתְהַדַּר בָּנוּ לָעַד וּלְעוֹלְמֵי עוֹלָמִים.</div>
+
+<div dir="rtl" lang="he">הָרַחֲמָן הוּא יְפַרְנְסֵנוּ בְּכָבוֹד. הָרַחֲמָן הוּא יִשְׁבּוֹר עֻלֵּנוּ מֵעַל צַּוָּארֵנוּ, וְהוּא יוֹלִיכֵנוּ קוֹמְמִיוּת לְאַרְצֵנוּ. הָרַחֲמָן הוּא יִשְׁלַח לָנוּ בְּרָכָה מְרֻבָּה בַּבַּיִת הַזֶּה, וְעַל שֻׁלְחָן זֶה שֶׁאָכַלְנוּ עָלָיו. הָרַחֲמָן הוּא יִשְׁלַח לָנוּ אֶת אֵלִיָּהוּ הַנָּבִיא זָכוּר לַטּוֹב, וִיבַשֵּׂר לָנוּ בְּשׂוֹרוֹת טוֹבוֹת יְשׁוּעוֹת וְנֶחָמוֹת.</div>
+
+<div dir="rtl" lang="he">אוֹתָם וְאֶת בֵּיתָם וְאֶת זַרְעָם וְאֶת כָּל אֲשֶׁר לָהֶם, אוֹתָנוּ וְאֶת כָּל אֲשֶׁר לָנוּ, כְּמוֹ שֶׁנִּתְבָּרְכוּ אֲבוֹתֵינוּ אַבְרָהָם יִצְחָק וְיַעֲקֹב בַּכֹּל מִכֹּל כֹּל – כֵּן יְבָרֵךְ אוֹתָנוּ כֻּלָּנוּ יַחַד בִּבְרָכָה שְׁלֵמָה. וְנֹאמַר: אָמֵן.יְהִי רָצוֹן שֶׁלֹּא יֵבוֹשׁ וְלֹא יִכָּלֵם בַּעַל הַבַּֽיִת הַזֶּה לֹא בָעוֹלָם הַזֶּה וְלֹא בָעוֹלָם הַבָּא וְיַצְלִֽיחַ בְּכָל־נְכָסָיו וְיִהְיוּ נְכָסָיו מוּצְלָחִים וּקְרוֹבִים לָעִיר וְאַל־יִשְׁלוֹט שָׂטָן בְּמַעֲשֵׂה יָדָיו וְאַל יִזְדָקֵּק לְפָנָיו שׁוּם דְּבַר חֵטְא וְהַרְהוֹר עָוֹן מַעַתָּה וְעַד עוֹלָם:</div>
+
+<div dir="rtl" lang="he">בַּמָרוֹם יְלַמְּדוּ עֲלֵיהֶם וְעָלֵינוּ זְכוּת שֶׁתְּהֵא לְמִשְׁמֶרֶת שָׁלוֹם. וְנִשָׂא בְרָכָה מֵאֵת יְיָ, וּצְדָקָה מֵאֱלֹהֵי יִשְׁעֵנוּ, וְנִמְצָא חֵן וְשֵׂכֶל טוֹב בְּעֵינֵי אֱלֹהִים וְאָדָם.</div>
+
+<div dir="rtl" lang="he">הָרַחֲמָן הוּא יְזַכֵּנוּ לִימוֹת הַמָּשִׁיחַ וּלְחַיֵּי הָעוֹלָם הַבָּא. מַגְדִּיל (מִגְדּוֹל) יְשׁוּעוֹת מַלְכּוֹ, וְעֹשֶׂה חֶסֶד לִמְשִׁיחוֹ, לְדָוִד וּלְזַרְעוֹ עַד עוֹלָם. עֹשֶׂה שָׁלוֹם בִּמְרוֹמָיו, הוּא יַעֲשֶׂה שָׁלוֹם עָלֵינוּ וְעַל כָּל יִשְׂרָאַל. וְאִמְרוּ: אָמֵן.</div>
+
+<div dir="rtl" lang="he">יְראוּ אֶת יְיָ קְדֹשָׁיו, כִּי אֵין מַחְסוֹר לִירֵאָיו. כְּפִירִים רָשׁוּ וְרָעֵבוּ, וְדֹרְשֵׁי יְיָ לֹא יַחְסְרוּ כָל טוֹב. הוֹדוּ לַיְיָ כִּי טוֹב, כִּי לְעוֹלָם חַסְדּוֹ. פּוֹתֵחַ אֶת יָדֶךָ, וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן. בָּרוּךְ הַגֶּבֶר אֲשֶׁר יִבְטַח בַּיְיָ, וְהָיָה יְיָ מִבְטַחוֹ. נַעַר הָיִיתִי גַּם זָקַנְתִּי, וְלֹא רָאִיתִי צַדִּיק נֶעֱזָב, וְזַרְעוֹ מְבַקֶּשׁ לָחֶם. יְיָ עֹז לְעַמּוֹ יִתֵּן, יְיָ יְבָרֵךְ אֶת עַמּוֹ בַשָּׁלוֹם.</div>
 
 ### Rabbinic decision
 
@@ -356,14 +407,14 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `borei-nefashot`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Berachot, Borei Nefashot
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Berachot%2C%20Borei%20Nefashot)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Borei Nefashot — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening clause is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה בורא נפשות רבות וחסרונן</div>
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְ‑יָ אֱ‑לֹהֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא נְפָשׁוֹת רַבּוֹת וְחֶסְרוֹנָן עַל כָּל מַה שֶׁבָּרָאתָּ לְהַחֲיוֹת בָּהֶם נֶפֶשׁ כָּל חָי בָּרוּךְ חֵי הָעוֹלָמִים:</div>
 
 ### Rabbinic decision
 
@@ -383,9 +434,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `shehecheyanu`
 - **Proposed tradition:** Common
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Sefard, Blessings, Shehecheyanu
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Sefard%2C%20Blessings%2C%20Shehecheyanu)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Blessings, Shehecheyanu; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -410,14 +461,74 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `bedtime-shema`
 - **Proposed tradition:** Sefard
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Sefard, Bedtime Shema
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Sefard%2C%20Bedtime%20Shema)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Bedtime Shema — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only one concluding verse is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">בידך אפקיד רוחי פדיתה אותי יהוה אל אמת</div>
+<div dir="rtl" lang="he">רִבּוֹנוֹ שֶׁל־עוֹלָם הֲרֵינִי מוֹחֵל לְכָל־מִי שֶׁהִכְעִיס וְהִקְנִיט אוֹתִי אוֹ שֶׁחָטָא כְּנֶגְדִי בֵּין בְּגוּפִי בֵּין בְּמֶמוֹנִי בֵין בִּכְבוֹדִי בֵין בְכָל אֲשֶׁר לִי בֵין בְּאוֹנֶס בֵּין בְּרָצוֹן בֵּין בְּשׁוֹגֵג בֵּין בְּמֵזִיד בֵין בְּדִבּוּר בֵּין בְּמַעֲשֶׂה בֵּין בְּגִלְגוּל זֶה בֵּין בְּגִלְגּוּל אַחֵר לְכָל־בַּר יִשְׂרָאֵל וְלֹא יֵעָנֵשׁ שׁוּם אָדָם בְסִבָּתִי יְהִי רָצוֹן מִלְּפָנֶֽיךָ יְהֹוָה אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי שֶׁלֹּא אֶחְטֶא עוֹד וְלֹא אֶחֱזוֹר בָּהֶם וְלֹא אָשׁוּב עוֹד לְהַכְעִיסֶךָ וְלֹא אֶעֱשֶׂה הָרַע בְּעֵינֶֽיךָ וּמַה־שֶׁחָטָֽאתִי מְחוֹק בְּרַחֲמֶֽיךָ הָרַבִּים וְלֹא עַל יְדֵי יִסּוּרִים וָחֳלֶיִם רָעִים: יִהְיוּ לְרָצוֹן אִמְרֵי־פִי וְהֶגְיוֹן לִבִּי לְפָנֶֽיךָ יְהֹוָה צוּרִי וְגֹאֲלִי:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֺהֵֽינוּ מֶֽלֶךְ הָעוֹלָם הַמַּפִּיל חֶבְלֵי שֵׁנָה עַל עֵינָי וּתְנוּמָה עַל עַפְעַפָּי: וּמֵאִיר לְאִישׁוֹן בַּת עָיִן. וִיהִי רָצוֹן מִלְּ֒פָנֶֽיךָ יְהֹוָה אֱלֺהַי וֵאלֺהֵי אֲבוֹתַי שֶׁתַּשְׁכִּיבֵֽנִי לְשָׁלוֹם וְתַעֲמִידֵֽנִי לְחַיִים טוֹבִים וּלְשָׁלוֹם וְתֵן חֶלְקֵי בְּתוֹרָתֶךָ וְתַרְגִילֵנוּ לִדְבַר מִצְוָה וְאַל תַּרְגִילֵנוּ לִדְבַר עַבֵרָה וְאַל תְּבִיאֵֽנוּ לֹא לִידֵי חֵטְא וְלֹא לִידֵי נִסָּיוֹן וְלֹא לִידֵי בִזָּיוֹן וְיִשְׁלֹט בִּי יֵצֵר הַטוֹב וְאַל יִשְׁלֹט בִּי יֵֽצֶר הָרָע וְתַצִילֵנוּ מִשָׂטָן וּמִפֶגַע רָע וּמֵחָלָיִם רָעִים וְאַל יְבַהֲלֽוּנִי רַעְיוֹנַי וַחֲלוֹמוֹת רָעִים וְהַרְהוֹרִים רָעִים וּתְהֵא מִטָּתִי שְׁלֵמָה לְפָנֶֽיךָ: וְהָאֵר עֵינַי פֶּן אִישַׁן הַמָּֽוֶת. בָּרוּךְ אַתָּה יְהֹוָה הַמֵּאִיר לָעוֹלָם כֻּלּוֹ בִּכְבוֹדוֹ:</div>
+
+<div dir="rtl" lang="he">אֵל מֶֽלֶךְ נֶאֱמָן:</div>
+
+<div dir="rtl" lang="he">שְׁמַע יִשְׂרָאֵל יְהֹוָה אֱלֹהֵֽינוּ יְהֹוָה אֶחָד:</div>
+
+<div dir="rtl" lang="he">וְאָהַבְתָּ אֵת יְהֹוָה אֱלֹהֶֽיךָ בְּכָל֯־לְ֯בָבְ֒ךָ וּבְכָל־נַפְשְׁךָ וּבְכָל־מְאֹדֶֽךָ: וְהָיוּ הַדְּ֒בָרִים הָאֵֽלֶּה אֲשֶׁר֯ אָ֯נֹכִי מְצַוְּ֒ךָ הַיּוֹם עַל֯־לְ֯בָבֶֽךָ: וְשִׁנַּנְתָּם לְבָנֶֽיךָ וְדִבַּרְתָּ בָּם בְּשִׁבְתְּ֒ךָ בְּבֵיתֶֽךָ וּבְ֒לֶכְתְּךָ בַדֶּֽרֶךְ וּבְ֒שָׁכְבְּךָ וּבְ֒קוּמֶֽךָ: וּקְ֒שַׁרְתָּם לְאוֹת עַל֯־יָ֯דֶֽךָ וְהָיוּ לְטֹטָפֹת בֵּין עֵינֶֽיךָ: וּכְ֒תַבְתָּם עַל־מְזֻזוֹת בֵּיתֶֽךָ וּבִשְׁ֒עָרֶֽיךָ:</div>
+
+<div dir="rtl" lang="he">וִיהִי נֹֽעַם אֲדֹנָי אֱלֹהֵֽינוּ עָלֵֽינוּ וּמַעֲשֵׂה יָדֵֽינוּ כּוֹנְנָה עָלֵֽינוּ וּמַעֲשֵׂה יָדֵֽינוּ כּוֹנְנֵֽהוּ:</div>
+
+<div dir="rtl" lang="he">ישֵׁב בְּסֵֽתֶר עֶלְיוֹן בְּצֵל שַׁדַּי יִתְלוֹנָן: אֹמַר לַיהֹוָה מַחְסִי וּמְצוּדָתִי אֱלֹהַי אֶבְטַח־בּוֹ: כִּי הוּא יַצִּילְךָ מִפַּח יָקוּשׁ מִדֶּֽבֶר הַוָּוֹת: בְּאֶבְרָתוֹ יָֽסֶךְ לָךְ וְתַֽחַת־כְּנָפָיו תֶּחְסֶה צִנָּה וְסֹחֵרָה אֲמִתּוֹ: לֹא־תִירָא מִפַּֽחַד לָֽיְלָה מֵחֵץ יָעוּף יוֹמָם: מִדֶּֽבֶר בָּאֹֽפֶל יַהֲלֹךְ מִקֶּֽטֶב יָשׁוּד צָהֳרָֽיִם: יִפֹּל מִצִּדְּךָ אֶֽלֶף וּרְבָבָה מִימִינֶֽךָ אֵלֶֽיךָ לֹא יִגָּשׁ: רַק בְּעֵינֶֽיךָ תַבִּיט וְשִׁלֻּמַת רְשָׁעִים תִּרְאֶה: כִּי־אַתָּה יְהֹוָה מַחְסִי עֶלְיוֹן שַֽׂמְתָּ מְעוֹנֶֽךָ: לֹא־תְאֻנֶּה אֵלֶֽיךָ רָעָה וְנֶֽגַע לֹא־יִקְרַב בְּאָהֳלֶֽךָ: כִּי מַלְאָכָיו יְצַוֶּה־לָּךְ לִשְׁמָרְךָ בְּכָל־דְּרָכֶֽיךָ: עַל־כַּפַּֽיִם יִשָּׂאֽוּנְךָ פֶּן־תִּגֹּף בָּאֶֽבֶן רַגְלֶֽךָ: עַל־שַֽׁחַל וָפֶֽתֶן תִּדְרֹךְ תִּרְמֹס כְּפִיר וְתַנִּין: כִּי בִי חָשַׁק וַאֲפַלְּטֵֽהוּ אֲשַׂגְּבֵֽהוּ כִּי־יָדַע שְׁמִי: יִקְרָאֵֽנִי וְאֶעֱנֵֽהוּ עִמּוֹ־אָנֹכִי בְצָרָה אֲחַלְּצֵֽהוּ וַאֲכַבְּדֵֽהוּ: אֹֽרֶךְ יָמִים אַשְׂבִּיעֵֽהוּ וְאַרְאֵֽהוּ בִּישׁוּעָתִי: אֹֽרֶךְ יָמִים אַשְׂבִּיעֵֽהוּ וְאַרְאֵֽהוּ בִּישׁוּעָתִי:</div>
+
+<div dir="rtl" lang="he">יְהֹוָה מָה־רַבּוּ צָרָי רַבִּים קָמִים עָלָי: רַבִּים אֹמְ֒רִים לְנַפְשִׁי אֵין יְשׁוּעָֽתָה לוֹ בֵאלֺהִים סֶֽלָה: וְאַתָּה יְהֹוָה מָגֵן בַּעֲדִי כְּבוֹדִי וּמֵרִים רֹאשִׁי: קוֹלִי אֶל־יְהֹוָה אֶקְרָא וַיַּעֲנֵֽנִי מֵהַר קָדְשׁוֹ סֶֽלָה: אֲנִי שָׁכַֽבְתִּי וָאִישָֽׁנָה הֱקִיצֽוֹתִי כִּי יְהֹוָה יִסְמְ֒כֵֽנִי: לֺא אִירָא מֵרִבְבוֹת עָם אֲשֶׁר סָבִיב שָֽׁתוּ עָלָי: קוּמָה יְהֹוָה הוֹשִׁיעֵֽנִי אֱלֺהַי כִּי־הִכִּֽיתָ אֶת־כָּל אֹיְ֒בַי לֶֽחִי שִׁנֵּי רְשָׁעִים שִׁבַּֽרְתָּ: לַיהוָֹה הַיְ֒שׁוּעָה עַל־עַמְּ֒ךָ בִרְכָתֶֽךָ סֶֽלָה:</div>
+
+<div dir="rtl" lang="he">הַשְׁכִּיבֵֽנוּ יְהֹוָה אֱלֺהֵֽינוּ לְשָׁלוֹם וְהַעֲמִידֵֽנוּ מַלְכֵּֽנוּ לְחַיִּים טוֹבִים וּלשָׁלוֹם. וּפְרוֹשׂ עָלֵֽינוּ סֻכַּת שְׁלוֹמֶֽךָ וְתַקְּ֒נֵֽנוּ בְּעֵצָה טוֹבָה מִלְּ֒פָנֶֽיךָ וְהוֹשִׁיעֵֽנוּ מְהֵרָה לְמַֽעַן שְׁמֶֽךָ. וְהָגֵן בַּעֲדֵֽנוּ וְהָסֵר מֵעָלֵֽינוּ אוֹיֵב דֶּֽבֶר וְחֶֽרֶב וְרָעָב וְיָגוֹן וְהָסֵר שָׂטָן מִלְּ֒פָנֵֽינוּ וּמֵאַחֲרֵֽינוּ וּבְצֵל כְּנָפֶֽיךָ תַּסְתִּירֵֽנוּ. כִּי אֵל שׁוֹמְ֒רֵֽנוּ וּמַצִּילֵֽנוּ אָֽתָּה כִּי אֵל מֶֽלֶךְ חַנּוּן וְרַחוּם אָֽתָּה. וּשְׁמוֹר צֵאתֵֽנוּ וּבוֹאֵֽנוּ לְחַיִּים וּלְשָׁלוֹם מֵעַתָּה וְעַד עוֹלָם:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ יְהֹוָה בַּיּוֹם בָּרוּךְ יְהֹוָה בַּלָּֽיְלָה בָּרוּךְ יְהֹוָה בְּשָׁכְבֵֽנוּ בָּרוּךְ יְהֹוָה בְּקוּמֵֽנוּ. כִּי בְיָדְ֒ךָ נַפְשׁוֹת הַחַיִּים וְהַמֵּתִים אֲשֶׁר בְּיָדוֹ נֶֽפֶשׁ כָּל חָי וְרֽוּחַ כָּל בְּשַׂר אִישׁ. בְּיָדְ֒ךָ אַפְקִיד רוּחִי פָּדִֽיתָה אוֹתִי יְהֹוָה אֵל אֱמֶת. אֱלֺהֵֽינוּ שֶׁבַּשָּׁמַֽיִם יַחֵד שִׁמְךָ וְקַיֵּם מַלְכוּתְ֒ךָ תָּמִיד וּמְלֺךְ עָלֵֽינוּ לְעוֹלָם וָעֶד:</div>
+
+<div dir="rtl" lang="he">יִרְאוּ עֵינֵֽינוּ וְיִשְׂמַח לִבֵּֽנוּ וְתָגֵל נַפְשֵֽׁנוּ בִּישׁוּעָתְ֒ךָ בֶּאֱמֶת בֶּאֱמוֹר לְצִיּוֹן מָלַךְ אֱלֺהָֽיִךְ. יְהֹוָה מֶֽלֶךְ יְהֹוָה מָלָךְ יְהֹוָה יִמְלֹךְ לְעוֹלָם וָעֶד: כִּי הַמַּלְכוּת שֶׁלְּ֒ךָ הִיא וּלְעֽוֹלְ֒מֵי עַד תִּמְלוֹךְ בְּכָבוֹד כִּי אֵין לָֽנוּ מֶֽלֶךְ אֶלָּא אָֽתָּה:</div>
+
+<div dir="rtl" lang="he">הַמַּלְאָךְ הַגֹּאֵל אֹתִי מִכָּל רָע יְבָרֵךְ אֶת הַנְּ֒עָרִים וְיִקָּרֵא בָהֶם שְׁמִי וְשֵׁם אֲבוֹתַי אַבְרָהָם וְיִצְחָק וְיִדְגּוּ לָרֹב בְּקֶֽרֶב הָאָֽרֶץ:</div>
+
+<div dir="rtl" lang="he">וַיֹּֽאמֶר אִם שָׁמֽוֹעַ תִּשְׁמַע לְקוֹל יְהֹוָה אֱלֺהֶֽיךָ וְהַיָּשָׁר בְּעֵינָיו תַּעֲשֶׂה וְהַאֲזַנְתָּ לְמִצְוֹתָיו וְשָׁמַרְתָּ כָּל חֻקָּיו כָּל הַמַּחֲלָה אֲשֶׁר שַֽׂמְתִּי בְמִצְרַֽיִם לֺא אָשִׂים עָלֶֽיךָ כִּי אֲנִי יְהֹוָה רֹפְ֒אֶֽךָ:</div>
+
+<div dir="rtl" lang="he">וַיֹּֽאמֶר יְהֹוָה אֶל הַשָּׂטָן יִגְעַר יְהֹוָה בְּךָ הַשָּׂטָן וְיִגְעַר יְהֹוָה בְּךָ הַבֹּחֵר בִּירוּשָׁלָֽםִ הֲלֺא זֶה אוּד מֻצָּל מֵאֵשׁ</div>
+
+<div dir="rtl" lang="he">הִנֵּה מִטָּתוֹ שֶׁלִּשְׁלֺמֹה שִׁשִּׁים גִּבֹּרִים סָבִיב לָהּ מִגִּבֹּרֵי יִשְׂרָאֵל כֻּלָּם אֲחֻֽזֵי חֶֽרֶב מְלֻמְּ֒דֵי מִלְחָמָה אִישׁ חַרְבּוֹ עַל יְרֵכוֹ מִפַּֽחַד בַּלֵּילוֹת</div>
+
+<div dir="rtl" lang="he">יְבָרֶכְךָ יְהֹוָה וְיִשְׁמְרֶֽךָ יָאֵר יְהֹוָה פָּנָיו אֵלֶֽיךָ וִיחֻנֶּֽךָּ: יִשָּׂא יְהֹוָה פָּנָיו אֵלֶֽיךָ וְיָשֵׂם לְךָ שָׁלוֹם:</div>
+
+<div dir="rtl" lang="he">הִנֵּה לֺא יָנוּם וְלֺא יִישָׁן שׁוֹמֵר יִשְׂרָאֵל:</div>
+
+<div dir="rtl" lang="he">לִישׁוּעָתְ֒ךָ קִוִּיתִי יְהֹוָה קִוִּיתִי יְהֹוָה לִישׁוּעָתְ֒ךָ יְהֹוָה לִישׁוּעָתְ֒ךָ קִוִּיתִי</div>
+
+<div dir="rtl" lang="he">בְּשֵׁם יְהֹוָה אֱלֺהֵי יִשְׂרָאֵל מִימִינִי מִיכָאֵל וּמִשְּׂ֒מֹאלִי גַבְרִיאֵל וּמִלְּ֒פָנַי אוֹרִיאֵל וּמֵאֲחוֹרַי רְפָאֵל וְעַל רֹאשִי שְׁכִינַת אֵל:</div>
+
+<div dir="rtl" lang="he">שִׁיר הַמַּעֲלוֹת אַשְׁרֵי כָּל־יְרֵא יְהֹוָה הַהֹלֵךְ בִּדְרָכָיו: יְגִֽיעַ כַּפֶּֽיךָ כִּי תֹאכֵל אַשְׁרֶֽיךָ וְטוֹב לָךְ: אֶשְׁתְּ֒ךָ כְּגֶֽפֶן פֹּרִיָּה בְּיַרְכְּ֒תֵי בֵיתֶֽךָ בָּנֶֽיךָ כִּשְׁתִלֵי זֵיתִים סָבִיב לְשֻׁלְחָנֶֽךָ: הִנֵּה כִי־כֵן יְבֹֽרַךְ גָּֽבֶר יְרֵא יְהֹוָה: יְבָרֶכְךָ יְהֹוָה מִצִּיּוֹן וּרְאֵה בְּטוּב יְרוּשָׁלָֽםִ כֹּל יְמֵי חַיֶּֽיךָ: וּרְאֵה־ בָנִים לְבָנֶֽיךָ שָׁלוֹם עַל־יִשְׂרָאֵל:</div>
+
+<div dir="rtl" lang="he">רִגְזוּ וְאַל תֶּחֱטָֽאוּ אִמְרוּ בִלְבַבְכֶם עַל מִשְׁכַּבְכֶם וְדֹֽמּוּ סֶֽלָה:</div>
+
+<div dir="rtl" lang="he">אֲדוֹן עוֹלָם אֲשֶׁר מָלַךְ, בְּטֶֽרֶם כָּל יְצִיר נִבְרָא:</div>
+
+<div dir="rtl" lang="he">לְעֵת נַעֲשָׂה בְחֶפְצוֹ כֹּל, אֲזַי מֶֽלֶךְ שְׁמוֹ נִקְרָא:</div>
+
+<div dir="rtl" lang="he">וְאַחֲרֵי כִּכְ֒לוֹת הַכֹּל, לְבַדּוֹ יִמְלֹךְ נוֹרָא:</div>
+
+<div dir="rtl" lang="he">וְהוּא הָיָה וְהוּא הֹוֶה, וְהוּא יִהְיֶה בְּתִפְאָרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא אֶחָד וְאֵין שֵׁנִי, לְהַמְשִׁיל לוֹ לְהַחְבִּֽירָה:</div>
+
+<div dir="rtl" lang="he">בְּלִי רֵאשִׁית בְּלִי תַכְלִית, וְלוֹ הָעֹז וְהַמִּשְׂרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא אֵלִי וְחַי גּוֹאֲלִי, וְצוּר חֶבְלִי בְּעֵת צָרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא נִסִּי וּמָנוֹס לִי, מְנָת כּוֹסִי בְּיוֹם אֶקְרָא:</div>
+
+<div dir="rtl" lang="he">בְּיָדוֹ אַפְקִיד רוּחִי, בְּעֵת אִישַׁן וְאָעִֽירָה:</div>
+
+<div dir="rtl" lang="he">וְעִם רוּחִי גְּוִיָּתִי, יְהֹוָה לִי וְלֹא אִירָא:</div>
 
 ### Rabbinic decision
 
@@ -437,14 +548,26 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `kaddish-yatom`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Kaddish, Mourner's Kaddish
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Kaddish%2C%20Mourner's%20Kaddish)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Kaddish, Mourner's Kaddish — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening sentence is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">יתגדל ויתקדש שמיה רבא</div>
+<div dir="rtl" lang="he">יִתְגַּדַּל וְיִתְקַדַּשׁ שְׁמֵהּ רַבָּא. [ אמן]</div>
+
+<div dir="rtl" lang="he">בְּעָלְמָא דִּי בְרָא כִרְעוּתֵהּ וְיַמְלִיךְ מַלְכוּתֵהּ בְּחַיֵּיכון וּבְיומֵיכון וּבְחַיֵּי דְכָל בֵּית יִשרָאֵל בַּעֲגָלָא וּבִזְמַן קָרִיב, וְאִמְרוּ אָמֵן: [ אמן]</div>
+
+<div dir="rtl" lang="he">יְהֵא שְׁמֵהּ רַבָּא מְבָרַךְ לְעָלַם וּלְעָלְמֵי עָלְמַיָּא:</div>
+
+<div dir="rtl" lang="he">יִתְבָּרַךְ וְיִשְׁתַּבַּח וְיִתְפָּאַר וְיִתְרומַם וְיִתְנַשּא וְיִתְהַדָּר וְיִתְעַלֶּה וְיִתְהַלָּל שְׁמֵהּ דְּקֻדְשָׁא. בְּרִיךְ הוּא. [ בריך הוא:]</div>
+
+<div dir="rtl" lang="he">לְעֵלָּא מִן כָּל בִּרְכָתָא וְשִׁירָתָא תֻּשְׁבְּחָתָא וְנֶחֱמָתָא דַּאֲמִירָן בְּעָלְמָא. וְאִמְרוּ אָמֵן: [ אמן]</div>
+
+<div dir="rtl" lang="he">יְהֵא שְׁלָמָא רַבָּא מִן שְׁמַיָּא וְחַיִּים עָלֵינוּ וְעַל כָּל יִשרָאֵל. וְאִמְרוּ אָמֵן: [ אמן]</div>
+
+<div dir="rtl" lang="he">עוֹשה שָׁלוֹם בִּמְרומָיו הוּא יַעֲשה שָׁלום עָלֵינוּ וְעַל כָּל יִשרָאֵל וְאִמְרוּ אָמֵן: [ אמן]</div>
 
 ### Rabbinic decision
 
@@ -464,14 +587,16 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `aleinu`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Shabbat Maariv, Aleinu
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Shabbat%20Maariv%2C%20Aleinu)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Maariv, Aleinu — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening phrase is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">עלינו לשבח לאדון הכל</div>
+<div dir="rtl" lang="he">עָלֵֽינוּ לְשַׁבֵּֽחַ לַאֲדוֹן הַכֹּל לָתֵת גְּדֻלָּה לְיוֹצֵר בְּרֵאשִׁית שֶׁלֺּא עָשָֽׂנוּ כְּגוֹיֵי הָאֲרָצוֹת וְלֺא שָׂמָֽנוּ כְּמִשְׁפְּחוֹת הָאֲדָמָה שֶׁלֺּא שָׂם חֶלְקֵֽנוּ כָּהֶם וְגוֹרָלֵֽנוּ כְּכָל הֲמוֹנָם: שֶׁהֵם מִשְׁתַּחֲוִים לָהֶֽבֶל וָרִיק וּמִתְפַּלְּ֒לִים אֶל אֵל לֹא יוֹשִֽׁיעַ, וַאֲנַֽחְנוּ כּוֹרְ֒עִים וּמִשְׁתַּחֲוִים וּמוֹדִים לִפְנֵי מֶֽלֶךְ מַלְכֵי הַמְּ֒לָכִים הַקָּדוֹשׁ בָּרוּךְ הוּא, שֶׁהוּא נוֹטֶה שָׁמַֽיִם וְיוֹסֵד אָֽרֶץ, וּמוֹשַׁב יְקָרוֹ בַּשָּׁמַֽיִם מִמַּֽעַל, וּשְׁ֒כִינַת עֻזּוֹ בְּגָבְ֒הֵי מְרוֹמִים, הוּא אֱלֺהֵֽינוּ אֵין עוֹד, אֱמֶת מַלְכֵּֽנוּ אֶֽפֶס זוּלָתוֹ כַּכָּתוּב בְּתוֹרָתוֹ וְיָדַעְתָּ הַיּוֹם וַהֲשֵׁבֹתָ אֶל לְבָבֶֽךָ כִּי יְהֹוָה הוּא הָאֱלֺהִים בַּשָּׁמַֽיִם מִמַּֽעַל וְעַל הָאָֽרֶץ מִתָּֽחַת אֵין עוֹד:</div>
+
+<div dir="rtl" lang="he">עַל כֵּן נְקַוֶּה לְךָ יְהֹוָה אֱלֺהֵֽינוּ לִרְאוֹת מְהֵרָה בְּתִפְאֶֽרֶת עֻזֶּֽךָ לְהַעֲבִיר גִּלּוּלִים מִן הָאָֽרֶץ וְהָאֱלִילִים כָּרוֹת יִכָּרֵתוּן לְתַקֵּן עוֹלָם בְּמַלְכוּת שַׁדַּי וְכָל בְּנֵי בָשָׂר יִקְרְאוּ בִשְׁ֒מֶֽךָ, לְהַפְנוֹת אֵלֶֽיךָ כָּל רִשְׁ֒עֵי אָֽרֶץ, יַכִּֽירוּ וְיֵדְ֒עוּ כָּל יוֹשְׁ֒בֵי תֵבֵל כִּי לְךָ תִכְרַע כָּל בֶּֽרֶךְ תִּשָּׁבַע כָּל לָשׁוֹן: לְפָנֶֽיךָ יְהֹוָה אֱלֺהֵֽינוּ יִכְרְעוּ וְיִפֹּֽלוּ, וְלִכְ֒בוֹד שִׁמְךָ יְקָר יִתֵּֽנוּ, וִיקַבְּ֒לוּ כֻלָּם אֶת עֹל מַלְכוּתֶֽךָ, וְתִמְלֺךְ עֲלֵיהֶם מְהֵרָה לְעוֹלָם וָעֶד, כִּי הַמַּלְכוּת שֶׁלְּ֒ךָ הִיא וּלְעֽוֹלְ֒מֵי עַד תִּמְלוֹךְ בְּכָבוֹד, כַּכָּתוּב בְּתוֹרָתֶֽךָ יְהֹוָה יִמְלֺךְ לְעֹלָם וָעֶד: וְנֶאֱמַר וְהָיָה יְהֹוָה לְמֶֽלֶךְ עַל כָּל הָאָֽרֶץ בַּיּוֹם הַהוּא יִהְיֶה יְהֹוָה אֶחָד וּשְׁמוֹ אֶחָד:</div>
 
 ### Rabbinic decision
 
@@ -491,14 +616,32 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `adon-olam`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Shabbat Maariv, Adon Olam
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Shabbat%20Maariv%2C%20Adon%20Olam)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Maariv, Adon Olam — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening stanza is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">אדון עולם אשר מלך בטרם כל יציר נברא</div>
+<div dir="rtl" lang="he">אֲדוֹן עוֹלָם אֲשֶׁר מָלַךְ, בְּטֶֽרֶם כָּל יְצִיר נִבְרָא:</div>
+
+<div dir="rtl" lang="he">לְעֵת נַעֲשָׂה בְחֶפְצוֹ כֹּל, אֲזַי מֶֽלֶךְ שְׁמוֹ נִקְרָא:</div>
+
+<div dir="rtl" lang="he">וְאַחֲרֵי כִּכְ֒לוֹת הַכֹּל, לְבַדּוֹ יִמְלֹךְ נוֹרָא:</div>
+
+<div dir="rtl" lang="he">וְהוּא הָיָה וְהוּא הֹוֶה, וְהוּא יִהְיֶה בְּתִפְאָרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא אֶחָד וְאֵין שֵׁנִי, לְהַמְשִׁיל לוֹ לְהַחְבִּֽירָה:</div>
+
+<div dir="rtl" lang="he">בְּלִי רֵאשִׁית בְּלִי תַכְלִית, וְלוֹ הָעֹז וְהַמִּשְׂרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא אֵלִי וְחַי גּוֹאֲלִי, וְצוּר חֶבְלִי בְּעֵת צָרָה:</div>
+
+<div dir="rtl" lang="he">וְהוּא נִסִּי וּמָנוֹס לִי, מְנָת כּוֹסִי בְּיוֹם אֶקְרָא:</div>
+
+<div dir="rtl" lang="he">בְּיָדוֹ אַפְקִיד רוּחִי, בְּעֵת אִישַׁן וְאָעִֽירָה:</div>
+
+<div dir="rtl" lang="he">וְעִם רוּחִי גְּוִיָּתִי, יְהֹוָה לִי וְלֹא אִירָא:</div>
 
 ### Rabbinic decision
 
@@ -519,8 +662,8 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 - **Catalog ID:** `shacharit`
 - **Proposed tradition:** Ashkenaz
 - **Content state:** Service collection; section-level source plan required
-- **Candidate source:** Siddur Ashkenaz, Weekday Shacharit
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Shacharit)
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday Shacharit; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** This is a service collection, not a single prayer.
 
 ### Hebrew candidate
@@ -529,7 +672,7 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 ### Rabbinic decision
 
-- [ ] Approve the Hebrew exactly as shown
+- [ ] Candidate incomplete — approval is blocked
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
@@ -546,8 +689,8 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 - **Catalog ID:** `mincha`
 - **Proposed tradition:** Ashkenaz
 - **Content state:** Service collection; section-level source plan required
-- **Candidate source:** Siddur Ashkenaz, Weekday Minchah
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Minchah)
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday Minchah; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** This is a service collection, not a single prayer.
 
 ### Hebrew candidate
@@ -556,7 +699,7 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 ### Rabbinic decision
 
-- [ ] Approve the Hebrew exactly as shown
+- [ ] Candidate incomplete — approval is blocked
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
@@ -573,8 +716,8 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 - **Catalog ID:** `maariv`
 - **Proposed tradition:** Ashkenaz
 - **Content state:** Service collection; section-level source plan required
-- **Candidate source:** Siddur Ashkenaz, Weekday Maariv
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Maariv)
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday Maariv; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** This is a service collection, not a single prayer.
 
 ### Hebrew candidate
@@ -583,7 +726,7 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 ### Rabbinic decision
 
-- [ ] Approve the Hebrew exactly as shown
+- [ ] Candidate incomplete — approval is blocked
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
@@ -599,14 +742,22 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `kiddush-friday-night`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Shabbat, Friday Night Kiddush
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Shabbat%2C%20Friday%20Night%20Kiddush)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Shabbat Evening, Kiddush — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the concluding blessing is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה מקדש השבת</div>
+<div dir="rtl" lang="he">וַיְהִי עֶֽרֶב וַיְהִי בֹֽקֶר</div>
+
+<div dir="rtl" lang="he">יוֹם הַשִּׁשִּׁי: וַיְכֻלּוּ הַשָּׁמַֽיִם וְהָאָֽרֶץ וְכָל־צְבָאָם: וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי מְלַאכְתּוֹ אֲשֶׁר עָשָׂה. וַיִּשְׁבֹּת בַּיּוֹם הַשְּׁבִיעִי מִכָּל־מְלַאכְתּוֹ אֲשֶׁר עָשָׂה: וַיְבָֽרֶךְ אֱלֹהִים אֶת־יוֹם הַשְּׁבִיעִי וַיְקַדֵּשׁ אֹתוֹ. כִּי בוֹ שָׁבַת מִכָּל מְלַאכְתּוֹ אֲשֶׁר־בָּרָא אֱלֹהִים לַעֲשׂוֹת:</div>
+
+<div dir="rtl" lang="he">סַבְרִי מָרָנָן וְרַבּוֹתַי:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָּֽפֶן:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם, אֲשֶׁר קִדְּשָֽׁנוּ בְּמִצְוֹתָיו וְרָֽצָה בָֽנוּ, וְשַׁבַּת קָדְשׁוֹ בְּאַהֲבָה וּבְרָצוֹן הִנְחִילָֽנוּ, זִכָּרוֹן לְמַעֲשֵׂה בְרֵאשִׁית. (כִּי הוּא יוֹם) תְּחִלָּה לְמִקְרָאֵי קֹֽדֶשׁ, זֵֽכֶר לִיצִיאַת מִצְרָֽיִם. (כִּי בָֽנוּ בָחַֽרְתָּ וְאוֹתָֽנוּ קִדַּֽשְׁתָּ מִכָּל הָעַמִּים) וְשַׁבַּת קָדְשְׁךָ בְּאַהֲבָה וּבְרָצוֹן הִנְחַלְתָּֽנוּ. בָּרוּךְ אַתָּה יְהוָה, מְקַדֵּשׁ הַשַּׁבָּת:</div>
 
 ### Rabbinic decision
 
@@ -626,14 +777,38 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `havdalah`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Shabbat, Havdalah
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Shabbat%2C%20Havdalah)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Havdalah — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the concluding blessing is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">ברוך אתה יהוה המבדיל בין קדש לחול</div>
+<div dir="rtl" lang="he">הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד כִּי עָזִּי וְזִמְרָת יָהּ יי וַיְהִי לִי לִישׁוּעָה:</div>
+
+<div dir="rtl" lang="he">וּשְׁאַבְתֶּם מַיִם בְּשָׂשׂוֹן מִמַּעַיְנֵי הַיְשׁוּעָה:</div>
+
+<div dir="rtl" lang="he">לַיי הַיְשׁוּעָה עַל עַמְּךָ בִרְכָתֶךָ סֶּלָה:</div>
+
+<div dir="rtl" lang="he">יי צְבָאוֹת עִמָּנוּ מִשְׂגָּב לָנוּ אֱלֹהֵי יַעֲקֹב סֶלָה:</div>
+
+<div dir="rtl" lang="he">יי צְבָאוֹת, אַשְׁרֵי אָדָם בֹּוטֵחַ בָּךְ:</div>
+
+<div dir="rtl" lang="he">יי הוֹשִׁיעָה, הַמֶּלֶךְ יַעֲנֵנוּ בְיוֹם קָרְאֵנו:</div>
+
+<div dir="rtl" lang="he">לַיְּהוּדִים הָיְתָה אוֹרָה וְשִׂמְחָה וְשָׂשֹׂן וִיקָר:</div>
+
+<div dir="rtl" lang="he">כן תהיה לנו:</div>
+
+<div dir="rtl" lang="he">כּוֹס יְשׁוּעוֹת אֶשָּׂא וּבְשֵׁם יי אֶקְרָא:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא פְּרִי הַגָּפֶן:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא מִינֵי בְשָׂמִים:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא מְאוֹרֵי הָאֵשׁ:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, הַמַּבְדִּיל בֵּין קֹדֶשׁ לְחוֹל, בֵּין אוֹר לְחֹשֶׁךְ, בֵּין יִשְׂרָאֵל לָעַמִּים, בֵּין יוֹם הַשְּׁבִיעִי לְשֵׁשֶׁת יְמֵי הַמַּעֲשֶׂה, בָּרוּךְ אַתָּה יי, הַמַּבְדִּיל בֵּין קֹדֶשׁ לְחוֹל:</div>
 
 ### Rabbinic decision
 
@@ -653,9 +828,9 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `candle-lighting`
 - **Proposed tradition:** Common
-- **Content state:** Complete candidate; rabbinic approval pending
-- **Candidate source:** Siddur Sefard, Shabbat Candle Lighting
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Sefard%2C%20Shabbat%20Candle%20Lighting)
+- **Content state:** Existing short candidate; source verification and rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Shabbat Candle Lighting; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** No special note.
 
 ### Hebrew candidate
@@ -680,14 +855,26 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `chanukah-candles`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Missing; no candidate to approve
-- **Candidate source:** Siddur Ashkenaz, Festivals, Chanukah Candle Blessings
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Festivals%2C%20Chanukah%20Candle%20Blessings)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Blessings on Chanukah Candles — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** No Hebrew text is currently bundled.
 
 ### Hebrew candidate
 
-**No Hebrew candidate is ready for approval.**
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם</div>
+
+<div dir="rtl" lang="he">אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לְהַדְלִיק נֵר חֲנֻכָּה.</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם</div>
+
+<div dir="rtl" lang="he">שֶׁעָשָׂה נִסִּים לַאֲבוֹתֵינוּ בַּיָּמִים הָהֵם בַּזְּמַן הַזֶּה.</div>
+
+<div dir="rtl" lang="he">בלילה הראשון מוסיפים:</div>
+
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם</div>
+
+<div dir="rtl" lang="he">שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמַן הַזֶּה.</div>
 
 ### Rabbinic decision
 
@@ -707,14 +894,114 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `counting-omer`
 - **Proposed tradition:** Varies
-- **Content state:** Missing; no candidate to approve
-- **Candidate source:** Siddur Ashkenaz, Festivals, Counting of the Omer
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Festivals%2C%20Counting%20of%20the%20Omer)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Edot HaMizrach, Counting of the Omer —  Shaliehsaboo Edition; license: CC0
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** No Hebrew text is currently bundled.
 
 ### Hebrew candidate
 
-**No Hebrew candidate is ready for approval.**
+<div dir="rtl" lang="he">בָּרוּךְ אַתָּה יְהֹוָה, אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם, אֲשֶׁר קִדְּשָֽׁנוּ בְּמִצְוֹתָיו וְצִוָּֽנוּ עַל סְפִירַת הָעֹֽמֶר: הַיּוֹם</div>
+
+<div dir="rtl" lang="he">יוֹם אֶחָד לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">שְׁנֵי יָמִים לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשָׁה יָמִים לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעָה יָמִים לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">חֲמִשָּׁה יָמִים לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">שִׁשָּׁה יָמִים לָעֹֽמֶר:</div>
+
+<div dir="rtl" lang="he">שִׁבְעָה יָמִים לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד:</div>
+
+<div dir="rtl" lang="he">שְׁמוֹנָה יָמִים לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וְיוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">תִּשְׁעָה יָמִים לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">עֲשָׂרָה יָמִים לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">אַחַד עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁנֵים עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשָׁה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שָׁבֽוּעַ אֶחָד וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעָה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">חֲמִשָּׁה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת ויוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">שִׁשָּׁה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">שִׁבְעָה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁמוֹנָה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">תִּשְׁעָה עָשָׂר יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">עֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁנֵי שָׁבוּעוֹת וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">אֶחָד וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">שְׁנַיִם וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וְיוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשָׁה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעָה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">חֲמִשָּׁה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">שִׁשָּׁה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שִׁבְעָה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם שְׁלֹשָׁה שָׁבוּעוֹת וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁמוֹנָה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">תִּשְׁעָה וְעֶשְׂרִים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וְיוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">אֶחָד וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁנַיִם וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשָׁה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעָה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם אַרְבָּעָה שָׁבוּעוֹת וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">חֲמִשָּׁה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">שִׁשָּׁה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וְיוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">שִׁבְעָה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁמוֹנָה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">תִּשְׁעָה וּשְׁלֹשִׁים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">אֶחָד וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם חֲמִשָּׁה שָׁבוּעוֹת וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁנַיִם וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">שְׁלֹשָׁה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וְיוֹם אֶחָד:</div>
+
+<div dir="rtl" lang="he">אַרְבָּעָה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וּשְׁנֵי יָמִים:</div>
+
+<div dir="rtl" lang="he">חֲמִשָּׁה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וּשְׁלֹשָׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שִׁשָּׁה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וְאַרְבָּעָה יָמִים:</div>
+
+<div dir="rtl" lang="he">שִׁבְעָה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וַחֲמִשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">שְׁמוֹנָה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁשָּׁה שָׁבוּעוֹת וְשִׁשָּׁה יָמִים:</div>
+
+<div dir="rtl" lang="he">תִּשְׁעָה וְאַרְבָּעִים יוֹם לָעֹֽמֶר, שֶׁהֵם שִׁבְעָה שָׁבוּעוֹת:</div>
+
+<div dir="rtl" lang="he">הָרַחֲמָן הוּא יַחֲזִיר עֲבוֹדַת בֵּית הַמִּקְדָּשׁ לִמְקוֹמָהּ בִּמְהֵרָה בְיָמֵֽינוּ אָמֵן:</div>
 
 ### Rabbinic decision
 
@@ -734,14 +1021,18 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `vidui`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Weekday Shacharit, Vidui
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Weekday%20Shacharit%2C%20Vidui)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Vidui and 13 Middot — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening five words of Ashamnu are bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">אשמנו בגדנו גזלנו דברנו דופי</div>
+<div dir="rtl" lang="he">אֱלֺהֵֽינוּ וֵאלֺהֵי אֲבוֹתֵֽינוּ תָּבֹא לְפָנֶֽיךָ תְּפִלָּֽתֵֽנוּ, וְאַל־תִּתְעַלַּם מִתְּ֒חִנָּתֵֽנוּ שֶׁאֵין אָֽנוּ עַזֵּי פָנִים וּקְשֵׁי עֹֽרֶף לוֹמַר לְפָנֶֽיךָ יְהֹוָה אֱלֺהֵֽינוּ וֵאלֺהֵי אֲבוֹתֵֽינוּ צַדִּיקִים אֲנַֽחְנוּ וְלֺא חָטָֽאנוּ אֲבָל אֲנַֽחְנוּ וַאֲבוֹתֵֽינוּ חָטָֽאנוּ:</div>
+
+<div dir="rtl" lang="he">אָשַֽׁמְנוּ. בָּגַֽדְנוּ. גָּזַֽלְנוּ. דִּבַּֽרְנוּ דֹּֽפִי. הֶעֱוִֽינוּ. וְהִרְשַֽׁעְנוּ. זַֽדְנוּ. חָמַֽסְנוּ. טָפַֽלְנוּ שֶֽׁקֶר. יָעַֽצְנוּ רָע. כִּזַּֽבְנוּ. לַֽצְנוּ. מָרַֽדְנוּ. נִאַֽצְנוּ. סָרַֽרְנוּ. עָוִֽינוּ. פָּשַֽׁעְנוּ. צָרַֽרְנוּ. קִשִּֽׁינוּ עֹֽרֶף. רָשַֽׁעְנוּ. שִׁחַֽתְנוּ. תִּעַֽבְנוּ. תָּעִֽינוּ. תִּעְתָּֽעְנוּ:</div>
+
+<div dir="rtl" lang="he">סַֽרְנוּ מִמִּצְוֹתֶֽיךָ וּמִמִּשְׁפָּטֶֽיךָ הַטּוֹבִים וְלֺא שָֽׁוָה לָֽנוּ. וְאַתָּה צַדִּיק עַל כָּל הַבָּא עָלֵֽינוּ. כִּי אֱמֶת עָשִֽׂיתָ וַאֲנַֽחְנוּ הִרְשָֽׁעְנוּ:</div>
 
 ### Rabbinic decision
 
@@ -761,14 +1052,16 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `prayer-for-livelihood`
 - **Proposed tradition:** Sefard
-- **Content state:** Missing; no candidate to approve
-- **Candidate source:** Siddur Sefard, Various Prayers, Prayer for Livelihood
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Sefard%2C%20Various%20Prayers%2C%20Prayer%20for%20Livelihood)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Sefard, Various Prayers & Segulot, Prayer for Livelihood — Torat Emet 357; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** No Hebrew text is currently bundled.
 
 ### Hebrew candidate
 
-**No Hebrew candidate is ready for approval.**
+<div dir="rtl" lang="he">אַתָּה הוּא יְהֹוָה לְבַדֶּךָ אַתָּה עָשִׂיתָ אֶת הַשָּׁמַיִם וּשְׁמֵי הַשָּׁמַיִם הָאָרֶץ וְכָל אֲשֶׁר עָלֶיהָ הַיַּמִים וְכָל אֲשֶׁר בָּהֶם וְאַתָּה מְחַיֶּה אֶת כֻּלָּם וְאַתָּה הוּא שֶׁעָשִׂיתָ נִסִּים וְנִפְלָאוֹת גְּדוֹלוֹת תָּמִיד עִם אֲבוֹתֵינוּ גַּם בַּמִּדְבָּר הִמְטַרְתָּ לָהֶם לֶחֶם מִן הַשָּׁמַיִם וּמִצּוּר הַחַלָּמִישׁ הוֹצֵאתָ לָהֶם מַיִם וְגַם נָתַתָּ לָהֶם כָּל צָרְכֵיהֶם שִׂמְלוֹתָם לֹא בָלְתָה מֵעֲלֵיהֶם כֵּן בְּרַחֲמֶיךָ הָרַבִּים וּבַחֲסָדֶיךָ הָעֲצוּמִים תְּזוּנֵנוּ וּתְפַרְנְסֵנוּ וּתְכַלְכְּלֵנוּ וְתַסְפִּיק לָנוּ כָּל צָרְכֵנוּ וְצָרְכֵי עַמְּךָ בֵּית יִשְׂרָאֵל הַמְרוּבִּים בְּמִלּוּי וּבְרֶוַח בְּלִי טֹרַח וְעָמָל גָּדוֹל מִתַּחַת יָדְךָ הַנְּקִיָּה וְלֹא מִתַּחַת יְדֵי בָשָׂר וָדָם:</div>
+
+<div dir="rtl" lang="he">יְהִי רָצוֹן מִלְּפָנֶיךָ יְהֹוָה אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי שֶׁתָּכִין לִי וּלְאַנְשֵׁי בֵיתִי כָּל מַחֲסוֹרֵנוּ וְתַזְמִין לָנוּ כָּל צָרְכֵנוּ לְכָל יוֹם וָיּוֹם מֵחַיֵּינוּ דֵי מַחֲסוֹרֵנוּ וּלְכָל שָׁעָה וְשָׁעָה מִשָּׁעוֹתֵינוּ דֵי סִפּוּקֵנוּ וּלְכָל עֶצֶם מֵעֲצָמֵינוּ דֵי מִחְיָתֵנוּ מִיָּדְךָ הַטוֹבָה וְהָרְחָבָה וְלֹא כְּמִעוּט מִפְעָלֵינוּ וְקוֹצֶר חֲסָדֵינוּ וּמִזְעֵיר גְּמוּלוֹתֵינוּ וְיִהְיוּ מְזוֹנוֹתַי וּמְזוֹנוֹת אַנְשֵׁי בֵיתִי וְזַרְעִי וְזֶרַע זַרְעִי מְסוּרִים בְּיָדְךָ וְלֹא בְּיַד בָּשָׂר וָדָם:</div>
 
 ### Rabbinic decision
 
@@ -788,14 +1081,14 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `ana-bekoach`
 - **Proposed tradition:** Common
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Communal liturgy, Ana Bekoach
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Communal%20liturgy%2C%20Ana%20Bekoach)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Ana Bekoach — The Metsudah siddur, 1981; license: CC-BY
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the first line is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">אנא בכח גדלת ימינך תתיר צרורה</div>
+<div dir="rtl" lang="he">אָנָּא בְּכֹֽחַ גְּדֻלַּת יְמִינְ֒ךָ תַּתִּיר צְרוּרָה: קַבֵּל רִנַּת עַמְּ֒ךָ שַׂגְּ֒בֵֽנוּ טַהֲרֵֽנוּ נוֹרָא: נָא גִבּוֹר דּוֹרְ֒שֵׁי יִחוּדְ֒ךָ כְּבָבַת שָׁמְרֵם: בָּרְ֒כֵם טַהֲרֵם רַחֲמֵם צִדְקָתְ֒ךָ תָּמִיד גָּמְלֵם: חֲסִין קָדוֹשׁ בְּרֹב טוּבְ֒ךָ נַהֵל עֲדָתֶֽךָ: יָחִיד גֵּאֶה לְעַמְּ֒ךָ פְּנֵה, זוֹכְ֒רֵי קְדֻשָּׁתֶֽךָ: שַׁוְעָתֵֽנוּ קַבֵּל וּשְׁמַע צַעֲקָתֵֽנוּ יוֹדֵֽעַ תַּעֲלוּמוֹת: בָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד:</div>
 
 ### Rabbinic decision
 
@@ -815,14 +1108,14 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `nishmat`
 - **Proposed tradition:** Ashkenaz
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Shabbat Shacharit, Nishmat
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Shabbat%20Shacharit%2C%20Nishmat)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Nishmat Kol Chai — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening phrase is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">נשמת כל חי תברך את שמך יהוה אלהינו</div>
+<div dir="rtl" lang="he">נִשְׁמַת כָּל חַי תְּבָרֵךְ אֶת שִׁמְךָ ה' אֱלהֵינוּ. וְרוּחַ כָּל בָּשר תְּפָאֵר וּתְרומֵם זִכְרְךָ מַלְכֵּנוּ תָּמִיד: מִן הָעולָם וְעַד הָעולָם אַתָּה אֵל. וּמִבַּלְעָדֶיךָ אֵין לָנוּ מֶלֶךְ גּואֵל וּמושִׁיעַ. פּודֶה וּמַצִּיל וּמְפַרְנֵס וּמְרַחֵם בְּכָל עֵת צָרָה וְצוּקָה. אֵין לָנוּ מֶלֶךְ עוזֵר וְסומֵךְ אֶלָּא אָתָּה: אֱלהֵי הָרִאשׁונִים וְהָאַחֲרונִים. אֱלוהַּ כָּל בְּרִיות. אֲדון כָּל תּולָדות. הַמְּהֻלָּל בְּרוב הַתִּשְׁבָּחות. הַמְּנַהֵג עולָמו בְּחֶסֶד וּבְרִיּותָיו בְּרַחֲמִים: וה' לא יָנוּם וְלא יִישָׁן. הַמְעורֵר יְשֵׁנִים. וְהַמֵּקִיץ נִרְדָּמִים. וְהַמֵּשיחַ אִלְמִים. וְהַמַּתִּיר אֲסוּרִים. וְהַסּומֵךְ נופְלִים. וְהַזּוקֵף כְּפוּפִים. לְךָ לְבַדְּךָ אֲנַחְנוּ מודִים: אִלּוּ פִינוּ מָלֵא שִׁירָה כַּיָּם. וּלְשׁונֵנוּ רִנָּה כַּהֲמון גַּלָּיו. וְשפְתותֵינוּ שֶׁבַח כְּמֶרְחֲבֵי רָקִיעַ. וְעֵינֵינוּ מְאִירות כַּשֶּׁמֶשׁ וְכַיָּרֵחַ. וְיָדֵינוּ פְרוּשות כְּנִשְׁרֵי שָׁמָיִם. וְרַגְלֵינוּ קַלּות כָּאַיָּלות. אֵין אֲנַחְנוּ מַסְפִּיקִים לְהודות לְךָ ה' אֱלהֵינוּ וֵאלהֵי אֲבותֵינוּ. וּלְבָרֵךְ אֶת שְׁמֶךָ עַל אַחַת מֵאֶלֶף אַלְפֵי אֲלָפִים וְרִבֵּי רְבָבות פְּעָמִים. הַטּובות שֶׁעָשיתָ עִם אֲבותֵינוּ וְעִמָּנוּ: מִמִּצְרַיִם גְּאַלְתָּנוּ ה' אֱלהֵינוּ. וּמִבֵּית עֲבָדִים פְּדִיתָנוּ. בְּרָעָב זַנְתָּנוּ. וּבְשבָע כִּלְכַּלְתָּנוּ. מֵחֶרֶב הִצַּלְתָּנוּ. וּמִדֶּבֶר מִלַּטְתָּנוּ. וּמֵחֳלָיִם רָעִים וְנֶאֱמָנִים דִּלִּיתָנוּ: עַד הֵנָּה עֲזָרוּנוּ רַחֲמֶיךָ. וְלא עֲזָבוּנוּ חֲסָדֶיךָ וְאַל תִּטְּשֵׁנוּ ה' אֱלהֵינוּ לָנֶצַח: עַל כֵּן אֵבָרִים שֶׁפִּלַּגְתָּ בָּנוּ. וְרוּחַ וּנְשָׁמָה שֶׁנָּפַחְתָּ בְּאַפֵּינוּ. וְלָשׁון אֲשֶׁר שמְתָּ בְּפִינוּ. הֵן הֵם. יודוּ וִיבָרְכוּ וִישַׁבְּחוּ וִיפָאֲרוּ וִירומְמוּ וְיַעֲרִיצוּ וְיַקְדִּישׁוּ וְיַמְלִיכוּ אֶת שִׁמְךָ מַלְכֵּנוּ: כִּי כָל פֶּה לְךָ יודֶה. וְכָל לָשׁון לְךָ תִשָּׁבַע. וְכָל בֶּרֶךְ לְךָ תִכְרַע. וְכָל קומָה לְפָנֶיךָ תִשְׁתַּחֲוֶה. וְכָל לְּבָבות יִירָאוּךָ. וְכָל קֶרֶב וּכְלָיות יְזַמְּרוּ לִשְׁמֶךָ. כַּדָּבָר שֶׁכָּתוּב. כָּל עַצְמותַי תּאמַרְנָה ה' מִי כָמוךָ. מַצִּיל עָנִי מֵחָזָק מִמֶּנּוּ. וְעָנִי וְאֶבְיון מִגּוזְלו. מִי יִדְמֶה לָּךְ. וּמִי יִשְׁוֶה לָּךְ. וּמִי יַעֲרָךְ לָךְ. הָאֵל הַגָּדול הַגִּבּור וְהַנּורָא אֵל עֶלְיון. קונֵה שָׁמַיִם וָאָרֶץ: נְהַלֶּלְךָ וּנְשַׁבֵּחֲךָ וּנְפָאֶרְךָ וּנְבָרֵךְ אֶת שֵׁם קָדְשֶׁךָ. כָּאָמוּר, לְדָוִד, בָּרְכִי נַפְשִׁי אֶת ה'. וְכָל קְרָבַי אֶת שֵׁם קָדְשׁו:</div>
 
 ### Rabbinic decision
 
@@ -843,8 +1136,8 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 - **Catalog ID:** `el-malei-rachamim`
 - **Proposed tradition:** Varies
 - **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Memorial liturgy, El Malei Rachamim
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Memorial%20liturgy%2C%20El%20Malei%20Rachamim)
+- **Candidate source and edition:** Memorial liturgy, El Malei Rachamim; license verification required
+- **Source snapshot retrieved:** Not yet
 - **Editorial note:** The complete text requires a memorial-name form and communal variant.
 
 ### Hebrew candidate
@@ -853,7 +1146,7 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 ### Rabbinic decision
 
-- [ ] Approve the Hebrew exactly as shown
+- [ ] Candidate incomplete — approval is blocked
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
@@ -869,14 +1162,82 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `prayer-state-israel`
 - **Proposed tradition:** Modern Israeli
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Siddur Ashkenaz, Communal Prayers, Prayer for the State of Israel
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Siddur%20Ashkenaz%2C%20Communal%20Prayers%2C%20Prayer%20for%20the%20State%20of%20Israel)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer of the State of Israel — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Only the opening phrase is bundled.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">אבינו שבשמים צור ישראל וגואלו ברך את מדינת ישראל</div>
+<div dir="rtl" lang="he">אָבִינוּ שֶׁבַּשָּׁמַיִם,</div>
+
+<div dir="rtl" lang="he">צוּר יִשְׂרָאֵל וְגוֹאֲלוֹ,</div>
+
+<div dir="rtl" lang="he">בָּרֵךְ אֶת מְדִינַת יִשְׂרָאֵל,</div>
+
+<div dir="rtl" lang="he">רֵאשִׁית צְמִיחַת גְּאֻלָּתֵנוּ.</div>
+
+<div dir="rtl" lang="he">הָגֵן עָלֶיהָ בְּאֶבְרַת חַסְדֶּךָ,</div>
+
+<div dir="rtl" lang="he">וּפְרֹשׂ עָלֶיהָ סֻכַּת שְׁלוֹמֶךָ,</div>
+
+<div dir="rtl" lang="he">וּשְׁלַח אוֹרְךָ וַאֲמִתְּךָ לְרָאשֶׁיהָ, שָׂרֶיהָ וְיוֹעֲצֶיהָ,</div>
+
+<div dir="rtl" lang="he">וְתַקְּנֵם בְּעֵצָה טוֹבָה מִלְּפָנֶיךָ.</div>
+
+<div dir="rtl" lang="he">חַזֵּק אֶת יְדֵי מְגִנֵּי אֶרֶץ קׇדְשֵׁנוּ,</div>
+
+<div dir="rtl" lang="he">וְהַנְחִילֵם אֱלֹהֵינוּ יְשׁוּעָה</div>
+
+<div dir="rtl" lang="he">וַעֲטֶרֶת נִצָּחוֹן תְּעַטְּרֵם,</div>
+
+<div dir="rtl" lang="he">וְנָתַתָּ שָׁלוֹם בָּאָרֶץ,</div>
+
+<div dir="rtl" lang="he">וְשִׂמְחַת עוֹלָם לְיוֹשְׁבֶיהָ.</div>
+
+<div dir="rtl" lang="he">וְאֶת אַחֵינוּ כָּל בֵּית יִשְׂרָאֵל,</div>
+
+<div dir="rtl" lang="he">פְּקׇד נָא בְּכָל אַרְצוֹת פְּזוּרֵיהֶם,</div>
+
+<div dir="rtl" lang="he">וְתוֹלִיכֵם מְהֵרָה קוֹמְמִיּוּת לְצִיּוֹן עִירֶךָ</div>
+
+<div dir="rtl" lang="he">וְלִירוּשָׁלַיִם מִשְׁכַּן שְׁמֶךָ,</div>
+
+<div dir="rtl" lang="he">כַּכָּתוּב בְּתוֹרַת מֹשֶׁה עַבְדֶּךְ (דברים ל,ד-ו):</div>
+
+<div dir="rtl" lang="he">"אִם יִהְיֶה נִדַּחֲךָ בִּקְצֵה הַשָּׁמָיִם,</div>
+
+<div dir="rtl" lang="he">מִשָּׁם יְקַבֶּצְךָ יְיָ אֱלֹהֶיךָ וּמִשָּׁם יִקָּחֶךָ.</div>
+
+<div dir="rtl" lang="he">וֶהֱבִיאֲךָ יְיָ אֱלֹהֶיךָ אֶל הָאָרֶץ אֲשֶׁר יָרְשׁוּ אֲבֹתֶיךָ וִירִשְׁתָּהּ,</div>
+
+<div dir="rtl" lang="he">וְהֵיטִבְךָ וְהִרְבְּךָ מֵאֲבֹתֶיךָ.</div>
+
+<div dir="rtl" lang="he">וּמָל יְיָ אֱלֹהֶיךָ אֶת לְבָבְךָ וְאֶת לְבַב זַרְעֶךָ,</div>
+
+<div dir="rtl" lang="he">לְאַהֲבָה אֶת יְיָ אֱלֹהֶיךָ בְּכׇל לְבָבְךָ וּבְכׇל נַפְשְׁךָ,</div>
+
+<div dir="rtl" lang="he">לְמַעַן חַיֶּיךָ".</div>
+
+<div dir="rtl" lang="he">וְיַחֵד לְבָבֵנוּ לְאַהֲבָה וּלְיִרְאָה אֶת שְׁמֶךָ,</div>
+
+<div dir="rtl" lang="he">וְלִשְׁמֹר אֶת כׇּל דִּבְרֵי תּוֹרָתֶךָ,</div>
+
+<div dir="rtl" lang="he">וּשְׁלַח לָנוּ מְהֵרָה בֶּן דָּוִד מְשִׁיחַ צִדְקֶךָ,</div>
+
+<div dir="rtl" lang="he">לִפְדּוֹת מְחַכֵּי קֵץ יְשׁוּעָתֶךָ.</div>
+
+<div dir="rtl" lang="he">הוֹפַע בַּהֲדַר גְּאוֹן עֻזֶּךָ</div>
+
+<div dir="rtl" lang="he">עַל כׇּל יוֹשְׁבֵי תֵּבֵל אַרְצֶךָ,</div>
+
+<div dir="rtl" lang="he">וְיֹאמַר כֹּל אֲשֶׁר נְשָׁמָה בְּאַפּוֹ:</div>
+
+<div dir="rtl" lang="he">"יְיָ אֱלֹהֵי יִשְׂרָאֵל מֶלֶךְ,</div>
+
+<div dir="rtl" lang="he">וּמַלְכוּתוֹ בַּכֹּל מָשָׁלָה!"</div>
+
+<div dir="rtl" lang="he">אָמֵן סֶלָה.</div>
 
 ### Rabbinic decision
 
@@ -896,16 +1257,36 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `idf-prayer`
 - **Proposed tradition:** Modern Israeli
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source:** Communal liturgy, Prayer for the Welfare of Israel's Soldiers
-- **Source lookup:** [Open source record](https://www.sefaria.org/search?q=Communal%20liturgy%2C%20Prayer%20for%20the%20Welfare%20of%20Israel's%20Soldiers)
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Israeli Soldiers — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** The bundled wording is an unreviewed paraphrased excerpt.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">מי שברך אבותינו אברהם יצחק ויעקב</div>
+<div dir="rtl" lang="he">מִי שֶׁבֵּרַךְ אֲבוֹתֵינוּ אַבְרָהָם יִצְחָק וְיַעֲקֹב</div>
 
-<div dir="rtl" lang="he">הקדוש ברוך הוא ישמור ויציל את חיילינו</div>
+<div dir="rtl" lang="he">הוּא יְבָרֵךְ אֶת חַיָּלֵי צְבָא הֲגַנָּה לְיִשְׂרָאֵל</div>
+
+<div dir="rtl" lang="he">הָעוֹמְדִים עַל מִשְׁמַר אַרְצֵנוּ וְעָרֵי אֱלֹהֵינוּ</div>
+
+<div dir="rtl" lang="he">מִגְּבוּל הַלְּבָנוֹן וְעַד מִדְבַּר מִצְרַיִם</div>
+
+<div dir="rtl" lang="he">וּמִן הַיָּם הַגָּדוֹל עַד לְבוֹא הָעֲרָבָה בַּיַּבָּשָׁה בָּאֲוִיר וּבַיָּם</div>
+
+<div dir="rtl" lang="he">יִתֵּן ה' אֶת אוֹיְבֵינוּ הַקָּמִים עָלֵינוּ נִגָּפִים לִפְנֵיהֶם</div>
+
+<div dir="rtl" lang="he">הַקָּדוֹשׁ בָּרוּךְ הוּא יִשְׁמֹר וְיַצִּיל אֶת חַיָלֵינוּ מִכָּל צָרָה וְצוּקָה וּמִכָּל נֶגַע וּמַחֲלָה</div>
+
+<div dir="rtl" lang="he">וְיִשְׁלַח בְּרָכָה וְהַצְלָחָה בְּכָל מַעֲשֵׂה יְדֵיהֶם</div>
+
+<div dir="rtl" lang="he">יַדְבֵּר שׂוֹנְאֵינוּ תַּחְתֵּיהֶם וִיעַטְרֵם בְּכֶתֶר יְשׁוּעָה וּבְעֲטֶרֶת נִצָּחוֹן</div>
+
+<div dir="rtl" lang="he">וִיקֻיַּם בָּהֶם הַכָּתוּב:</div>
+
+<div dir="rtl" lang="he">כִּי ה' אֱלֹהֵיכֶם הַהֹלֵךְ עִמָּכֶם לְהִלָּחֵם לָכֶם עִם אֹיְבֵיכֶם לְהוֹשִׁיעַ אֶתְכֶם</div>
+
+<div dir="rtl" lang="he">וְנֹאמַר אָמֵן</div>
 
 ### Rabbinic decision
 

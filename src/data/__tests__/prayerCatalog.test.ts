@@ -1,4 +1,5 @@
 import { corePrayers } from "@/data/corePrayers";
+import generatedCandidates from "@/data/generatedHebrewCandidates.json";
 
 describe("Hebrew prayer catalog", () => {
   it("has unique identities and complete review metadata", () => {
@@ -11,6 +12,27 @@ describe("Hebrew prayer catalog", () => {
       expect(prayer.hebrewReview.sourceTitle).not.toHaveLength(0);
       expect(prayer.hebrewReview.sourceRef).not.toHaveLength(0);
       expect(prayer.hebrewReview.sourceUrl).toMatch(/^https:\/\//);
+    }
+  });
+
+  it("preserves static source provenance for prepared Hebrew candidates", () => {
+    expect(generatedCandidates.candidates).toHaveLength(22);
+    expect(new Set(generatedCandidates.candidates.map((candidate) => candidate.id)).size).toBe(22);
+
+    for (const candidate of generatedCandidates.candidates) {
+      expect(corePrayers.some((prayer) => prayer.id === candidate.id)).toBe(true);
+      expect(candidate.hebrew.length).toBeGreaterThan(0);
+      expect(candidate.sources.length).toBeGreaterThan(0);
+      for (const line of candidate.hebrew) {
+        expect(line).toMatch(/[\u0590-\u05FF]/);
+        expect(line).not.toMatch(/<[^>]+>|&[a-z]+;|%[0-9A-F]{2}/i);
+      }
+      for (const source of candidate.sources) {
+        expect(source.ref).not.toHaveLength(0);
+        expect(source.versionTitle).not.toHaveLength(0);
+        expect(source.license).not.toHaveLength(0);
+        expect(source.url).toMatch(/^https:\/\//);
+      }
     }
   });
 

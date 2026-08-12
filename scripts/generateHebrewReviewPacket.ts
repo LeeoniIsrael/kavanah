@@ -1,10 +1,12 @@
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { corePrayers } from "../src/data/corePrayers";
 import type { HebrewContentKind } from "../src/types/prayer";
 
 const output = resolve(process.cwd(), "docs/rabbinic-hebrew-review.md");
+const generated = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generatedHebrewCandidates.json"), "utf8")) as GeneratedCandidates;
+const candidates = new Map(generated.candidates.map((candidate) => [candidate.id, candidate]));
 const counts = corePrayers.reduce<Record<HebrewContentKind, number>>(
   (result, prayer) => ({ ...result, [prayer.hebrewReview.contentKind]: result[prayer.hebrewReview.contentKind] + 1 }),
   { complete: 0, excerpt: 0, collection: 0, missing: 0, "remote-unreviewed": 0 }
@@ -12,15 +14,20 @@ const counts = corePrayers.reduce<Record<HebrewContentKind, number>>(
 
 const sections = corePrayers.map((prayer, index) => {
   const review = prayer.hebrewReview;
-  const hebrew = prayer.tokens.map((token) => token.hebrew.trim()).filter(Boolean);
+  const sourcedCandidate = candidates.get(prayer.id);
+  const hebrew = sourcedCandidate?.hebrew ?? prayer.tokens.map((token) => token.hebrew.trim()).filter(Boolean);
+  const candidateComplete = review.contentKind === "complete" || Boolean(sourcedCandidate);
+  const sourceLines = sourcedCandidate
+    ? sourcedCandidate.sources.map((source) => `${source.ref} — ${source.versionTitle}; license: ${source.license}`).join("<br />")
+    : `${review.sourceTitle}, ${review.sourceRef}; license verification required`;
   return [
     `## ${index + 1}. ${prayer.title}`,
     "",
     `- **Catalog ID:** \`${prayer.id}\``,
     `- **Proposed tradition:** ${formatTradition(review.tradition)}`,
-    `- **Content state:** ${formatKind(review.contentKind)}`,
-    `- **Candidate source:** ${review.sourceTitle}, ${review.sourceRef}`,
-    `- **Source lookup:** [Open source record](${review.sourceUrl})`,
+    `- **Content state:** ${sourcedCandidate ? "Source-backed candidate; rabbinic approval pending" : candidateComplete ? "Existing short candidate; source verification and rabbinic approval pending" : formatKind(review.contentKind)}`,
+    `- **Candidate source and edition:** ${sourceLines}`,
+    `- **Source snapshot retrieved:** ${sourcedCandidate ? generated.retrievedAt.slice(0, 10) : "Not yet"}`,
     `- **Editorial note:** ${review.notes ?? "No special note."}`,
     "",
     "### Hebrew candidate",
@@ -29,7 +36,7 @@ const sections = corePrayers.map((prayer, index) => {
     "",
     "### Rabbinic decision",
     "",
-    "- [ ] Approve the Hebrew exactly as shown",
+    candidateComplete ? "- [ ] Approve the Hebrew exactly as shown" : "- [ ] Candidate incomplete — approval is blocked",
     "- [ ] Approve after corrections written below",
     "- [ ] Do not use this text",
     "- **Corrected Hebrew / notes:**",
@@ -51,16 +58,15 @@ const packet = [
   "",
   "## Important",
   "",
-  "This packet is an editorial working document, not a claim that every entry is ready. Entries marked **Excerpt**, **Service collection**, or **Missing** must not be approved as complete prayers. They identify exactly where source preparation is still required.",
+  "This packet contains static source-backed candidates where available. Entries marked **Excerpt**, **Service collection**, or **Missing** must not be approved as complete prayers. They identify exactly where source preparation is still required.",
   "",
   "The initial baseline is common wording where broadly shared, Ashkenaz for service-dependent wording, scriptural Hebrew for biblical passages, and separately labeled modern Israeli communal prayers. The reviewer should flag every place where another nusach must be offered or where the wording is not universal.",
   "",
   "## Inventory",
   "",
-  `- Complete candidates awaiting review: **${counts.complete}**`,
-  `- Excerpts requiring completion: **${counts.excerpt}**`,
-  `- Service collections requiring section-level treatment: **${counts.collection}**`,
-  `- Entries with no Hebrew candidate: **${counts.missing}**`,
+  `- Source-backed candidates added in this packet: **${candidates.size}**`,
+  `- Existing short complete candidates: **${counts.complete}**`,
+  `- Entries still blocked before rabbinic review: **${corePrayers.length - candidates.size - counts.complete}**`,
   `- Total catalog entries: **${corePrayers.length}**`,
   "",
   "## Review standard",
@@ -86,3 +92,12 @@ function formatKind(kind: HebrewContentKind): string {
 function formatTradition(tradition: string): string {
   return tradition.split("-").map((part) => part[0]?.toUpperCase() + part.slice(1)).join(" ");
 }
+
+type GeneratedCandidates = {
+  retrievedAt: string;
+  candidates: {
+    id: string;
+    hebrew: string[];
+    sources: { ref: string; versionTitle: string; license: string; url: string }[];
+  }[];
+};

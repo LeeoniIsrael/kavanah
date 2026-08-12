@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest",
-    "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts"
+    "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts",
+    "prayers:source": "tsx scripts/sourceHebrewCandidates.ts"
   },
   "jest": {
     "preset": "ts-jest",
