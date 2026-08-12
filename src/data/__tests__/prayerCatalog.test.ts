@@ -16,8 +16,8 @@ describe("Hebrew prayer catalog", () => {
   });
 
   it("preserves static source provenance for prepared Hebrew candidates", () => {
-    expect(generatedCandidates.candidates).toHaveLength(23);
-    expect(new Set(generatedCandidates.candidates.map((candidate) => candidate.id)).size).toBe(23);
+    expect(generatedCandidates.candidates).toHaveLength(30);
+    expect(new Set(generatedCandidates.candidates.map((candidate) => candidate.id)).size).toBe(30);
 
     for (const candidate of generatedCandidates.candidates) {
       expect(corePrayers.some((prayer) => prayer.id === candidate.id)).toBe(true);

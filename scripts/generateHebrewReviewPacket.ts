@@ -7,10 +7,14 @@ import type { HebrewContentKind } from "../src/types/prayer";
 const output = resolve(process.cwd(), "docs/rabbinic-hebrew-review.md");
 const generated = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generatedHebrewCandidates.json"), "utf8")) as GeneratedCandidates;
 const candidates = new Map(generated.candidates.map((candidate) => [candidate.id, candidate]));
-const counts = corePrayers.reduce<Record<HebrewContentKind, number>>(
-  (result, prayer) => ({ ...result, [prayer.hebrewReview.contentKind]: result[prayer.hebrewReview.contentKind] + 1 }),
-  { complete: 0, excerpt: 0, collection: 0, missing: 0, "remote-unreviewed": 0 }
-);
+const preparedIds = new Set([
+  ...candidates.keys(),
+  ...corePrayers.filter((prayer) => prayer.hebrewReview.contentKind === "complete").map((prayer) => prayer.id)
+]);
+const unsnapshottedComplete = corePrayers.filter(
+  (prayer) => prayer.hebrewReview.contentKind === "complete" && !candidates.has(prayer.id)
+).length;
+const blockedCount = corePrayers.length - preparedIds.size;
 
 const sections = corePrayers.map((prayer, index) => {
   const review = prayer.hebrewReview;
@@ -58,15 +62,15 @@ const packet = [
   "",
   "## Important",
   "",
-  "This packet contains static source-backed candidates where available. Entries marked **Excerpt**, **Service collection**, or **Missing** must not be approved as complete prayers. They identify exactly where source preparation is still required.",
+  "This packet contains static source-backed candidates for individual prayers. Entries marked **Service collection** must not be approved as single prayers; Shacharit, Mincha, and Maariv require a separate section-level review.",
   "",
   "The initial baseline is common wording where broadly shared, Ashkenaz for service-dependent wording, scriptural Hebrew for biblical passages, and separately labeled modern Israeli communal prayers. The reviewer should flag every place where another nusach must be offered or where the wording is not universal.",
   "",
   "## Inventory",
   "",
-  `- Source-backed candidates added in this packet: **${candidates.size}**`,
-  `- Existing short complete candidates: **${counts.complete}**`,
-  `- Entries still blocked before rabbinic review: **${corePrayers.length - candidates.size - counts.complete}**`,
+  `- Source-backed individual candidates ready for review: **${candidates.size}**`,
+  `- Complete candidates still awaiting a pinned source edition: **${unsnapshottedComplete}**`,
+  `- Service collections excluded from single-prayer approval: **${blockedCount}**`,
   `- Total catalog entries: **${corePrayers.length}**`,
   "",
   "## Review standard",
