@@ -10,7 +10,8 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest"
+    "test": "jest",
+    "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts"
   },
   "jest": {
     "preset": "ts-jest",
@@ -81,6 +82,7 @@
     "react-test-renderer": "19.1.0",
     "tailwindcss": "^3.4.17",
     "ts-jest": "^29.4.11",
+    "tsx": "^4.23.12",
     "typescript": "~5.9.2"
   }
 }

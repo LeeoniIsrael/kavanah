@@ -58,7 +58,7 @@ export function getPendingHebrewReview(prayerId: string): HebrewReview {
   return {
     ...seed,
     status: "pending",
-    sourceUrl: `https://www.sefaria.org/${encodeURIComponent(seed.sourceRef.replaceAll(" ", "_"))}`,
+    sourceUrl: `https://www.sefaria.org/search?q=${encodeURIComponent(`${seed.sourceTitle}, ${seed.sourceRef}`)}`,
     licenseStatus: "verification-required"
   };
 }

@@ -10,5 +10,5 @@
     },
     "types": ["nativewind/types", "jest", "node"]
   },
-  "include": ["App.tsx", "src/**/*.ts", "src/**/*.tsx", "nativewind-env.d.ts"]
+  "include": ["App.tsx", "src/**/*.ts", "src/**/*.tsx", "scripts/**/*.ts", "nativewind-env.d.ts"]
 }
