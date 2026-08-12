@@ -87,10 +87,10 @@ const styles = StyleSheet.create({
     paddingTop: spacing.sm
   },
   lightLine: {
-    width: 64,
-    height: 4,
-    borderRadius: radii.pill,
-    backgroundColor: colors.rose,
+    width: 32,
+    height: 2,
+    borderRadius: radii.sm,
+    backgroundColor: colors.gold,
     marginBottom: spacing.sm
   },
   empty: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
   bubble: {
     maxWidth: "88%",
-    borderRadius: radii.lg,
+    borderRadius: radii.md,
     padding: spacing.lg
   },
   userBubble: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   assistantBubble: {
     alignSelf: "flex-start",
-    backgroundColor: colors.vellum,
+    backgroundColor: colors.mineral,
     borderWidth: 1,
     borderColor: colors.hairline,
     borderBottomLeftRadius: radii.sm
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-end",
     gap: spacing.md,
-    borderRadius: radii.lg,
+    borderRadius: radii.md,
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.vellum,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   sendButton: {
     width: 46,
     height: 46,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.ink

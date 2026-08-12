@@ -7,7 +7,7 @@ import { colors, motion, spacing } from "@/design/theme";
 
 export function Screen({ children }: PropsWithChildren): React.JSX.Element {
   const opacity = useRef(new Animated.Value(0)).current;
-  const translateY = useRef(new Animated.Value(10)).current;
+  const translateY = useRef(new Animated.Value(6)).current;
 
   useEffect(() => {
     Animated.parallel([
@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.parchment
   },
   content: {
-    paddingHorizontal: spacing.xl,
-    paddingTop: spacing.xl,
+    paddingHorizontal: 20,
+    paddingTop: spacing.lg,
     paddingBottom: 132
   },
   stack: {
-    gap: spacing.xl
+    gap: spacing.xxl
   }
 });

@@ -6,7 +6,7 @@ import type { Zman } from "@/types/zmanim";
 export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
   return (
     <View style={styles.row}>
-      <View>
+      <View style={styles.copy}>
         <Text style={styles.name}>{zman.title}</Text>
         <Text style={styles.lead}>{zman.notificationLeadMinutes} min reminder</Text>
       </View>
@@ -17,16 +17,17 @@ export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
 
 const styles = StyleSheet.create({
   row: {
-    minHeight: 68,
+    minHeight: 72,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     gap: spacing.lg,
     borderBottomWidth: 1,
     borderBottomColor: colors.hairline,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.xs,
     paddingVertical: spacing.md
   },
+  copy: { flex: 1 },
   name: {
     ...type.body,
     fontWeight: "600",
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
   },
   time: {
     ...type.section,
+    fontFamily: "IBMPlexSans_500Medium",
     color: colors.ink,
     minWidth: 84,
     textAlign: "right"

@@ -65,10 +65,10 @@ const styles = StyleSheet.create({
   lockMark: {
     width: 54,
     height: 54,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.white,
+    backgroundColor: colors.mineral,
     borderWidth: 1,
     borderColor: colors.hairline
   },
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   unlockButton: {
     minHeight: 48,
     minWidth: 150,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.blue,

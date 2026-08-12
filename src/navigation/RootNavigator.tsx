@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { BookOpenText, CalendarDays, Shield, Sparkles } from "lucide-react-native";
+import { BookOpenText, CalendarDays, CircleUserRound, House } from "lucide-react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { colors } from "@/design/theme";
@@ -38,19 +38,20 @@ export function RootNavigator(): React.JSX.Element {
           borderTopWidth: 1,
           borderTopColor: colors.hairline,
           elevation: 0,
-          height: 58 + bottomInset,
+          height: 62 + bottomInset,
           paddingBottom: bottomInset,
           paddingTop: 6,
           marginHorizontal: 0,
           marginBottom: 0,
           position: "absolute",
           borderRadius: 0,
-          backgroundColor: colors.white
+          backgroundColor: colors.vellum
         },
         tabBarLabelStyle: {
           fontSize: 10,
           lineHeight: 13,
-          fontWeight: "600",
+          fontFamily: "IBMPlexSans_500Medium",
+          fontWeight: "500",
           letterSpacing: 0,
           marginTop: 2
         },
@@ -63,15 +64,15 @@ export function RootNavigator(): React.JSX.Element {
         }
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarIcon: tabIcon(Sparkles) }} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarIcon: tabIcon(House) }} />
       <Tab.Screen name="Prayer" component={PrayerScreen} options={{ tabBarIcon: tabIcon(BookOpenText) }} />
       <Tab.Screen name="Zmanim" component={ZmanimScreen} options={{ tabBarIcon: tabIcon(CalendarDays) }} />
-      <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarIcon: tabIcon(Shield) }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarIcon: tabIcon(CircleUserRound) }} />
     </Tab.Navigator>
   );
 }
 
-function tabIcon(Icon: typeof Sparkles) {
+function tabIcon(Icon: typeof House) {
   function TabBarIcon({ color, size, focused }: { color: string; size: number; focused: boolean }): React.JSX.Element {
     return <Icon color={focused ? colors.blue : color} size={size} strokeWidth={focused ? 2.2 : 1.8} />;
   }

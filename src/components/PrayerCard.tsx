@@ -2,7 +2,8 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Body, SectionTitle } from "@/components/Text";
-import { colors, radii, spacing, type } from "@/design/theme";
+import { ChevronRight } from "lucide-react-native";
+import { colors, spacing, type } from "@/design/theme";
 import type { PrayerText } from "@/types/prayer";
 
 type Props = {
@@ -25,7 +26,7 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
             {prayer.summary || prayer.sefariaRef}
           </Body>
         </View>
-        <View style={[styles.dot, selected && styles.selectedDot]} />
+        <ChevronRight size={18} color={selected ? colors.blue : colors.mineralDark} />
       </View>
     </AnimatedPressable>
   );
@@ -33,15 +34,12 @@ export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Elem
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.white,
-    padding: spacing.lg
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline,
+    paddingVertical: spacing.lg
   },
   selected: {
-    backgroundColor: colors.vellum,
-    borderColor: colors.blue
+    backgroundColor: colors.blueSoft
   },
   row: {
     flexDirection: "row",
@@ -70,15 +68,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 17
   },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: radii.pill,
-    borderWidth: 1,
-    borderColor: colors.hairline
-  },
-  selectedDot: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue
-  }
+  dot: {},
+  selectedDot: {}
 });

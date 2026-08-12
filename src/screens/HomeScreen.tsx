@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
 import { CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Plus, Search, SlidersHorizontal } from "lucide-react-native";
 import { useMemo, useState } from "react";
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { Modal, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
@@ -69,7 +69,6 @@ export function HomeScreen(): React.JSX.Element {
 
   const togglePractice = (habit: StreakHabit) => {
     toggleHabit(habit);
-    void confirmHaptic();
   };
 
   const closePracticeEditor = () => {
@@ -95,6 +94,7 @@ export function HomeScreen(): React.JSX.Element {
       </View>
 
       <View style={styles.primaryPanel}>
+        <View style={styles.timeRail}><View style={styles.timeMarker} /></View>
         <View style={styles.panelTop}>
           <View style={styles.pulse} />
           <Text style={styles.panelMeta}>{nextZman ? timeUntil(nextZman.time) : "Location needed"}</Text>
@@ -148,7 +148,7 @@ export function HomeScreen(): React.JSX.Element {
               const currentStreak = calculateCurrentRun(habit.completedDates, now);
               const streakLabel = `${currentStreak} ${currentStreak === 1 ? "day" : "days"}`;
               return (
-                <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
+                <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} haptic="success" onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
                   <View style={styles.habitCopy}>
                     <Text style={styles.habitName}>{details.name}</Text>
                     <Text style={styles.habitDescription}>{details.description}</Text>
@@ -206,7 +206,7 @@ export function HomeScreen(): React.JSX.Element {
 
       <Modal animationType="fade" onRequestClose={closePracticeEditor} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceEditorOpen}>
         <View style={styles.editorRoot}>
-          <Pressable accessibilityLabel="Close practice chooser" accessibilityRole="button" onPress={closePracticeEditor} style={styles.editorBackdrop} />
+          <AnimatedPressable accessibilityLabel="Close practice chooser" accessibilityRole="button" haptic="selection" onPress={closePracticeEditor} pressedScale={1} style={styles.editorBackdrop} />
           <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
             <View style={styles.editorSheet}>
               <View style={styles.editorHandle} />
@@ -215,7 +215,7 @@ export function HomeScreen(): React.JSX.Element {
                   <SectionTitle>Choose your practices</SectionTitle>
                   <Body>Keep only what feels meaningful right now. You can change this anytime.</Body>
                 </View>
-                <AnimatedPressable accessibilityRole="button" haptic={false} onPress={closePracticeEditor} style={styles.doneButton}>
+                <AnimatedPressable accessibilityRole="button" haptic="selection" onPress={closePracticeEditor} style={styles.doneButton}>
                   <Text style={styles.doneButtonText}>Done</Text>
                 </AnimatedPressable>
               </View>
@@ -241,7 +241,7 @@ export function HomeScreen(): React.JSX.Element {
 
       <Modal animationType="fade" onRequestClose={closePracticeStats} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceStatsOpen}>
         <View style={styles.editorRoot}>
-          <Pressable accessibilityLabel="Close overall practice" accessibilityRole="button" onPress={closePracticeStats} style={styles.editorBackdrop} />
+          <AnimatedPressable accessibilityLabel="Close overall practice" accessibilityRole="button" haptic="selection" onPress={closePracticeStats} pressedScale={1} style={styles.editorBackdrop} />
           <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
             <View style={styles.statsSheet}>
               <View style={styles.editorHandle} />
@@ -250,7 +250,7 @@ export function HomeScreen(): React.JSX.Element {
                   <SectionTitle>Your practice</SectionTitle>
                   <Body>Every practice you mark complete counts here, even if it is no longer on Today.</Body>
                 </View>
-                <AnimatedPressable accessibilityRole="button" haptic={false} onPress={closePracticeStats} style={styles.doneButton}>
+                <AnimatedPressable accessibilityRole="button" haptic="selection" onPress={closePracticeStats} style={styles.doneButton}>
                   <Text style={styles.doneButtonText}>Done</Text>
                 </AnimatedPressable>
               </View>
@@ -335,19 +335,43 @@ const styles = StyleSheet.create({
   iconButton: {
     width: 44,
     height: 44,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.white,
+    backgroundColor: colors.vellum,
     borderWidth: 1,
     borderColor: colors.hairline
   },
   primaryPanel: {
-    borderRadius: radii.xl,
-    backgroundColor: colors.ink,
-    padding: spacing.xl,
+    position: "relative",
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum,
+    paddingVertical: spacing.xl,
+    paddingLeft: spacing.xxxl,
+    paddingRight: spacing.xl,
     gap: spacing.md,
-    ...shadows.card
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.pressed
+  },
+  timeRail: {
+    position: "absolute",
+    top: spacing.xl,
+    bottom: spacing.xl,
+    left: spacing.xl,
+    width: 1,
+    backgroundColor: colors.mineral
+  },
+  timeMarker: {
+    position: "absolute",
+    top: 9,
+    left: -4,
+    width: 9,
+    height: 9,
+    borderRadius: radii.pill,
+    backgroundColor: colors.gold,
+    borderWidth: 2,
+    borderColor: colors.vellum
   },
   panelTop: {
     flexDirection: "row",
@@ -355,26 +379,26 @@ const styles = StyleSheet.create({
     gap: spacing.sm
   },
   pulse: {
-    width: 8,
-    height: 8,
+    width: 6,
+    height: 6,
     borderRadius: radii.pill,
-    backgroundColor: colors.blue
+    backgroundColor: colors.gold
   },
   panelMeta: {
     ...type.caption,
-    color: "rgba(255,255,255,0.66)"
+    color: colors.gold
   },
   panelTitle: {
-    color: colors.white
+    color: colors.ink
   },
   panelTime: {
     ...type.display,
-    fontSize: 40,
-    lineHeight: 45,
-    color: colors.white
+    fontSize: 46,
+    lineHeight: 49,
+    color: colors.ink
   },
   panelBody: {
-    color: "rgba(255,255,255,0.70)"
+    color: colors.inkMuted
   },
   panelActions: {
     flexDirection: "row",
@@ -384,7 +408,7 @@ const styles = StyleSheet.create({
   },
   primaryAction: {
     minHeight: 44,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     paddingHorizontal: spacing.lg,
     backgroundColor: colors.blue,
     flexDirection: "row",
@@ -397,29 +421,29 @@ const styles = StyleSheet.create({
   },
   secondaryAction: {
     minHeight: 44,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     paddingHorizontal: spacing.lg,
-    backgroundColor: "rgba(255,255,255,0.10)",
+    backgroundColor: colors.mineral,
     alignItems: "center",
     justifyContent: "center"
   },
   secondaryActionText: {
     ...type.caption,
-    color: colors.white
+    color: colors.ink
   },
   shortcutRow: {
     flexDirection: "row",
-    gap: spacing.sm
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.hairline
   },
   shortcutSlot: {
     flex: 1
   },
   shortcut: {
-    minHeight: 48,
-    borderRadius: radii.pill,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.white,
+    minHeight: 52,
+    borderRightWidth: 1,
+    borderRightColor: colors.hairline,
     alignItems: "center",
     justifyContent: "center"
   },
@@ -451,7 +475,7 @@ const styles = StyleSheet.create({
   editPracticesButton: {
     width: 36,
     height: 36,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.white,
@@ -459,15 +483,12 @@ const styles = StyleSheet.create({
     borderColor: colors.hairline
   },
   habitList: {
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    overflow: "hidden"
+    borderTopWidth: 1,
+    borderTopColor: colors.hairlineStrong
   },
   habitRow: {
     minHeight: 82,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.xs,
     paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",
@@ -498,8 +519,8 @@ const styles = StyleSheet.create({
     marginTop: 2
   },
   checkCircle: {
-    width: 26,
-    height: 26,
+    width: 28,
+    height: 28,
     borderRadius: radii.pill,
     borderWidth: 1,
     borderColor: colors.hairlineStrong,
@@ -507,8 +528,8 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   checkCircleDone: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue
+    backgroundColor: colors.olive,
+    borderColor: colors.olive
   },
   emptyPractices: {
     minHeight: 92,
@@ -517,10 +538,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    borderRadius: radii.lg
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.hairline
   },
   emptyPracticeCopy: {
     flex: 1,
@@ -538,7 +558,7 @@ const styles = StyleSheet.create({
   choosePracticesButton: {
     minHeight: 40,
     paddingHorizontal: spacing.md,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.xs,
@@ -571,16 +591,17 @@ const styles = StyleSheet.create({
   },
   infoGrid: {
     flexDirection: "row",
-    gap: spacing.md
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.hairline
   },
   infoBlock: {
     flex: 1,
-    minHeight: 132,
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    padding: spacing.lg,
+    minHeight: 120,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.md,
+    borderRightWidth: 1,
+    borderRightColor: colors.hairline,
     gap: spacing.xs
   },
   infoLabel: {
@@ -598,10 +619,10 @@ const styles = StyleSheet.create({
   },
   commandStrip: {
     minHeight: 58,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     borderWidth: 1,
     borderColor: colors.hairline,
-    backgroundColor: colors.white,
+    backgroundColor: colors.vellum,
     paddingHorizontal: spacing.lg,
     flexDirection: "row",
     alignItems: "center",
@@ -619,12 +640,12 @@ const styles = StyleSheet.create({
   },
   editorBackdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(11, 13, 16, 0.30)"
+    backgroundColor: "rgba(21, 23, 21, 0.34)"
   },
   editorSafeArea: {
     backgroundColor: colors.white,
-    borderTopLeftRadius: radii.xl,
-    borderTopRightRadius: radii.xl,
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
     overflow: "hidden",
     ...shadows.floating
   },

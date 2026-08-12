@@ -198,34 +198,31 @@ const styles = StyleSheet.create({
   headerCopy: { maxWidth: 330 },
   localPanel: {
     minHeight: 94,
-    padding: spacing.lg,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.md,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.pressed
+    borderRadius: radii.md,
+    backgroundColor: colors.oliveSoft,
+    borderLeftWidth: 2,
+    borderLeftColor: colors.olive
   },
   localIcon: {
     width: 42,
     height: 42,
-    borderRadius: radii.pill,
+    borderRadius: radii.sm,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.blueSoft
+    backgroundColor: colors.vellum
   },
   settingsList: {
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    overflow: "hidden"
+    borderTopWidth: 1,
+    borderTopColor: colors.hairlineStrong
   },
   settingRow: {
     minHeight: 76,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.xs,
     paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",
@@ -235,10 +232,10 @@ const styles = StyleSheet.create({
   },
   lastRow: { borderBottomWidth: 0 },
   settingIcon: {
-    width: 38,
-    height: 38,
-    borderRadius: radii.pill,
-    backgroundColor: colors.blueSoft,
+    width: 34,
+    height: 34,
+    borderRadius: radii.sm,
+    backgroundColor: colors.mineral,
     alignItems: "center",
     justifyContent: "center"
   },
@@ -251,7 +248,7 @@ const styles = StyleSheet.create({
   closeButton: {
     width: grid.touch,
     height: grid.touch,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.white,
@@ -262,8 +259,8 @@ const styles = StyleSheet.create({
   modalContent: { paddingHorizontal: spacing.xl, paddingTop: spacing.xxxl + spacing.xl, paddingBottom: spacing.xxxl, gap: spacing.xl },
   modalHeader: { gap: spacing.xs, paddingRight: spacing.xxxl },
   modalTitle: { fontSize: 34, lineHeight: 39 },
-  languageList: { borderRadius: radii.lg, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.hairline, overflow: "hidden" },
-  languageRow: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md },
+  languageList: { borderTopWidth: 1, borderTopColor: colors.hairlineStrong },
+  languageRow: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline, paddingHorizontal: spacing.xs, paddingVertical: spacing.md },
   languageRowSelected: { backgroundColor: colors.blueSoft },
   privacySection: { gap: spacing.sm, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.hairline }
 });

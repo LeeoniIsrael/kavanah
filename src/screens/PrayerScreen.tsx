@@ -9,7 +9,7 @@ import { Card } from "@/components/Card";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
-import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
+import { colors, fonts, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
@@ -144,7 +144,8 @@ export function PrayerScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View style={styles.searchBox}>
+      <View style={styles.prayerDiscovery}>
+        <View style={styles.searchBox}>
         <Search size={18} color={colors.inkMuted} />
         <TextInput
           value={query}
@@ -156,7 +157,7 @@ export function PrayerScreen(): React.JSX.Element {
         <AnimatedPressable accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
           <RefreshCw size={18} color={isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink} />
         </AnimatedPressable>
-      </View>
+        </View>
 
       <Animated.View
         pointerEvents={showResults ? "none" : "auto"}
@@ -191,7 +192,7 @@ export function PrayerScreen(): React.JSX.Element {
                     </AnimatedPressable>
                   </View>
                   <View style={styles.removeBookmarkSlot}>
-                    <AnimatedPressable accessibilityLabel={`Remove ${prayer.title} from bookmarks`} accessibilityRole="button" onPress={() => toggleBookmark(prayer.id)} pressedScale={0.92} style={styles.removeBookmarkButton}>
+                    <AnimatedPressable accessibilityLabel={`Remove ${prayer.title} from bookmarks`} accessibilityRole="button" haptic="confirm" onPress={() => toggleBookmark(prayer.id)} pressedScale={0.96} style={styles.removeBookmarkButton}>
                       <BookmarkMinus size={18} color={colors.blue} />
                     </AnimatedPressable>
                   </View>
@@ -204,8 +205,8 @@ export function PrayerScreen(): React.JSX.Element {
         </Card>
       </Animated.View>
 
-      {showResults ? (
-        <View style={styles.resultStack}>
+        {showResults ? (
+          <View style={styles.resultStack}>
           <View style={styles.resultHeader}>
             <Label>{isSearchingRemote ? "Searching Sefaria" : "Results"}</Label>
             <Body style={styles.resultCount}>{visibleResults.length} found</Body>
@@ -217,8 +218,9 @@ export function PrayerScreen(): React.JSX.Element {
               <Body>Keep typing. Matches appear here as the search gets clearer.</Body>
             </Card>
           )}
-        </View>
-      ) : null}
+          </View>
+        ) : null}
+      </View>
 
       <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
         <SafeAreaView style={styles.readerSafeArea}>
@@ -230,6 +232,7 @@ export function PrayerScreen(): React.JSX.Element {
               <AnimatedPressable
                 accessibilityLabel={selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"}
                 accessibilityRole="button"
+                haptic="confirm"
                 onPress={() => toggleBookmark(selected.id)}
                 pressedScale={0.94}
                 style={[styles.floatingBookmark, selectedBookmarked && styles.floatingBookmarkActive]}
@@ -350,12 +353,15 @@ export function PrayerScreen(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  prayerDiscovery: {
+    gap: spacing.xl
+  },
   searchBox: {
-    minHeight: 58,
+    minHeight: 60,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
-    borderRadius: radii.pill,
+    borderRadius: radii.lg,
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.vellum,
@@ -371,10 +377,10 @@ const styles = StyleSheet.create({
   refreshButton: {
     width: 42,
     height: 42,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.parchment
+    backgroundColor: colors.mineral
   },
   resultStack: {
     gap: spacing.md
@@ -392,8 +398,13 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   bookmarkShelf: {
-    gap: spacing.md,
-    backgroundColor: colors.white
+    gap: spacing.lg,
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    paddingHorizontal: 0,
+    paddingVertical: spacing.sm,
+    shadowOpacity: 0,
+    elevation: 0
   },
   sectionHeader: {
     flexDirection: "row",
@@ -402,13 +413,12 @@ const styles = StyleSheet.create({
     gap: spacing.md
   },
   bookmarkList: {
-    gap: spacing.sm
+    borderTopWidth: 1,
+    borderTopColor: colors.hairlineStrong
   },
   bookmarkChip: {
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.parchment,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline,
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden"
@@ -417,8 +427,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   bookmarkChipMain: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.md
+    paddingHorizontal: spacing.xs,
+    paddingVertical: spacing.lg
   },
   bookmarkChipText: {
     fontSize: 16,
@@ -434,7 +444,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.pill,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.blueSoft
+    backgroundColor: colors.mineral
   },
   removeBookmarkSlot: {
     width: grid.touch + spacing.sm,
@@ -442,7 +452,7 @@ const styles = StyleSheet.create({
   },
   readerSafeArea: {
     flex: 1,
-    backgroundColor: colors.parchment
+    backgroundColor: colors.vellum
   },
   readerChrome: {
     position: "absolute",
@@ -454,20 +464,22 @@ const styles = StyleSheet.create({
     pointerEvents: "box-none"
   },
   readerContent: {
-    paddingHorizontal: spacing.xl,
-    paddingBottom: spacing.xxxl
+    paddingHorizontal: 22,
+    paddingBottom: 72
   },
   reader: {
-    gap: spacing.xl
+    gap: spacing.xxl
   },
   readerHeader: {
-    gap: spacing.sm,
-    paddingBottom: spacing.md
+    gap: spacing.md,
+    paddingBottom: spacing.lg,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline
   },
   floatingClose: {
     width: grid.touch,
     height: grid.touch,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.glass,
@@ -478,7 +490,7 @@ const styles = StyleSheet.create({
   floatingBookmark: {
     width: grid.touch,
     height: grid.touch,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.glass,
@@ -495,8 +507,8 @@ const styles = StyleSheet.create({
     color: colors.inkFaint
   },
   readerDisplay: {
-    fontSize: 42,
-    lineHeight: 47
+    fontSize: 38,
+    lineHeight: 42
   },
   readerSummary: {
     color: colors.inkFaint,
@@ -505,11 +517,9 @@ const styles = StyleSheet.create({
   askCard: {
     gap: spacing.md,
     padding: spacing.lg,
-    borderRadius: radii.lg,
-    backgroundColor: colors.glass,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.pressed
+    borderRadius: radii.md,
+    backgroundColor: colors.mineral,
+    borderWidth: 0
   },
   askHeader: {
     flexDirection: "row",
@@ -519,10 +529,10 @@ const styles = StyleSheet.create({
   askIcon: {
     width: 42,
     height: 42,
-    borderRadius: radii.md,
+    borderRadius: radii.sm,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.blueSoft
+    backgroundColor: colors.vellum
   },
   askTitle: {
     flex: 1,
@@ -540,8 +550,8 @@ const styles = StyleSheet.create({
     gap: spacing.sm
   },
   assistantBubble: {
-    maxWidth: "92%",
-    borderRadius: radii.md,
+    maxWidth: "94%",
+    borderRadius: radii.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm
   },
@@ -551,7 +561,7 @@ const styles = StyleSheet.create({
   },
   assistantAnswerBubble: {
     alignSelf: "flex-start",
-    backgroundColor: colors.blueSoft
+    backgroundColor: colors.vellum
   },
   assistantUserText: {
     color: colors.white,
@@ -567,7 +577,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-end",
     gap: spacing.sm,
-    borderRadius: radii.lg,
+    borderRadius: radii.md,
     borderWidth: 1,
     borderColor: colors.hairline,
     backgroundColor: colors.vellum,
@@ -585,7 +595,7 @@ const styles = StyleSheet.create({
   askSend: {
     width: 40,
     height: 40,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.blue
@@ -594,21 +604,23 @@ const styles = StyleSheet.create({
     opacity: 0.42
   },
   token: {
-    gap: spacing.lg,
+    gap: spacing.xl,
     borderTopWidth: 1,
     borderTopColor: colors.hairline,
     paddingTop: spacing.xl
   },
   hebrew: {
+    fontFamily: fonts.hebrewSemibold,
+    fontWeight: "600",
     textAlign: "right",
-    fontSize: 31,
-    lineHeight: 46,
+    fontSize: 33,
+    lineHeight: 50,
     color: colors.ink
   },
   transliterationBlock: {
     gap: spacing.xs,
     borderLeftWidth: 2,
-    borderLeftColor: colors.blue,
+    borderLeftColor: colors.gold,
     paddingLeft: spacing.md
   },
   transliteration: {
@@ -631,14 +643,14 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     paddingBottom: spacing.xl,
     gap: spacing.sm,
-    borderRadius: radii.xl,
+    borderRadius: radii.lg,
     backgroundColor: colors.white,
     ...shadows.floating
   },
   consentMark: {
     width: 42,
     height: 42,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.blueSoft
@@ -664,7 +676,7 @@ const styles = StyleSheet.create({
     minHeight: 48,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     borderWidth: 1,
     borderColor: colors.hairlineStrong
   },

@@ -3,35 +3,52 @@ import { useRef } from "react";
 import { Animated, Easing, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 
 import { motion } from "@/design/theme";
-import { tapHaptic } from "@/services/haptics";
+import { confirmHaptic, softHaptic, successHaptic, tapHaptic } from "@/services/haptics";
+
+type HapticTone = "selection" | "soft" | "confirm" | "success" | "none";
 
 type Props = PropsWithChildren<
   Omit<PressableProps, "style"> & {
     style?: StyleProp<ViewStyle>;
     pressedScale?: number;
-    haptic?: boolean;
+    haptic?: boolean | HapticTone;
   }
 >;
 
-export function AnimatedPressable({ children, onPress, style, pressedScale = 0.975, haptic = true, ...props }: Props): React.JSX.Element {
+export function AnimatedPressable({ children, onPress, style, pressedScale = 0.985, haptic = "soft", ...props }: Props): React.JSX.Element {
   const scale = useRef(new Animated.Value(1)).current;
+  const lift = useRef(new Animated.Value(0)).current;
 
   const animateTo = (value: number) => {
-    Animated.timing(scale, {
-      toValue: value,
-      useNativeDriver: true,
-      duration: motion.pressMs,
-      easing: Easing.bezier(...motion.standard)
-    }).start();
+    Animated.parallel([
+      Animated.timing(scale, {
+        toValue: value,
+        useNativeDriver: true,
+        duration: motion.pressMs,
+        easing: Easing.bezier(...motion.standard)
+      }),
+      Animated.timing(lift, {
+        toValue: value === 1 ? 0 : 1.5,
+        useNativeDriver: true,
+        duration: motion.pressMs,
+        easing: Easing.bezier(...motion.standard)
+      })
+    ]).start();
+  };
+
+  const playHaptic = async () => {
+    if (haptic === false || haptic === "none") return;
+    if (haptic === true || haptic === "selection") return tapHaptic();
+    if (haptic === "confirm") return confirmHaptic();
+    if (haptic === "success") return successHaptic();
+    return softHaptic();
   };
 
   return (
     <Pressable
       {...props}
       onPress={async (event) => {
-        if (haptic) {
-          await tapHaptic();
-        }
+        await playHaptic();
         onPress?.(event);
       }}
       onPressIn={(event) => {
@@ -43,7 +60,7 @@ export function AnimatedPressable({ children, onPress, style, pressedScale = 0.9
         props.onPressOut?.(event);
       }}
     >
-      <Animated.View style={[style, { transform: [{ scale }] }]}>{children}</Animated.View>
+      <Animated.View style={[style, { transform: [{ scale }, { translateY: lift }] }]}>{children}</Animated.View>
     </Pressable>
   );
 }

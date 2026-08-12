@@ -30,6 +30,7 @@ export function ZmanimScreen(): React.JSX.Element {
       </View>
 
       <View style={styles.nextPanel}>
+        <View style={styles.dayRail}><View style={styles.dayMarker} /></View>
         <View style={styles.panelMetaRow}>
           <View style={styles.blueDot} />
           <Text style={styles.panelMeta}>Next</Text>
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
   iconButton: {
     width: 44,
     height: 44,
-    borderRadius: radii.pill,
+    borderRadius: radii.md,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.white,
@@ -88,11 +89,35 @@ const styles = StyleSheet.create({
     borderColor: colors.hairline
   },
   nextPanel: {
-    borderRadius: radii.xl,
-    backgroundColor: colors.ink,
-    padding: spacing.xl,
+    position: "relative",
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum,
+    paddingVertical: spacing.xl,
+    paddingLeft: spacing.xxxl,
+    paddingRight: spacing.xl,
     gap: spacing.md,
-    ...shadows.card
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    ...shadows.pressed
+  },
+  dayRail: {
+    position: "absolute",
+    top: spacing.xl,
+    bottom: spacing.xl,
+    left: spacing.xl,
+    width: 1,
+    backgroundColor: colors.mineral
+  },
+  dayMarker: {
+    position: "absolute",
+    top: 8,
+    left: -4,
+    width: 9,
+    height: 9,
+    borderRadius: radii.pill,
+    backgroundColor: colors.gold,
+    borderWidth: 2,
+    borderColor: colors.vellum
   },
   panelMetaRow: {
     flexDirection: "row",
@@ -103,31 +128,30 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: radii.pill,
-    backgroundColor: colors.blue
+    backgroundColor: colors.gold
   },
   panelMeta: {
     ...type.caption,
-    color: "rgba(255,255,255,0.66)"
+    color: colors.gold
   },
   panelTitle: {
-    color: colors.white
+    color: colors.ink
   },
   panelTime: {
     ...type.display,
-    fontSize: 54,
-    lineHeight: 58,
-    color: colors.white
+    fontSize: 52,
+    lineHeight: 55,
+    color: colors.ink
   },
   panelBody: {
-    color: "rgba(255,255,255,0.70)"
+    color: colors.inkMuted
   },
   locationStrip: {
     minHeight: 58,
-    borderRadius: radii.pill,
-    borderWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     borderColor: colors.hairline,
-    backgroundColor: colors.white,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.xs,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md
@@ -139,8 +163,8 @@ const styles = StyleSheet.create({
   },
   smallButton: {
     minHeight: 36,
-    borderRadius: radii.pill,
-    backgroundColor: colors.blueSoft,
+    borderRadius: radii.md,
+    backgroundColor: colors.mineral,
     paddingHorizontal: spacing.md,
     alignItems: "center",
     justifyContent: "center"
@@ -150,11 +174,8 @@ const styles = StyleSheet.create({
     color: colors.blue
   },
   list: {
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    overflow: "hidden"
+    borderTopWidth: 1,
+    borderTopColor: colors.hairlineStrong
   },
   emptyState: {
     gap: spacing.sm,
@@ -162,11 +183,9 @@ const styles = StyleSheet.create({
   },
   notice: {
     minHeight: 58,
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.white,
-    paddingHorizontal: spacing.lg,
+    borderLeftWidth: 2,
+    borderLeftColor: colors.gold,
+    paddingHorizontal: spacing.md,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md
