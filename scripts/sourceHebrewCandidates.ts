@@ -35,6 +35,7 @@ const specs: CandidateSpec[] = [
   candidate("tefilat-haderech", source("Siddur Sefard, Blessings, Traveler's Prayer", indices(2), true)),
   candidate("psalm-121", source("Psalms 121")),
   candidate("psalm-23", source("Psalms 23")),
+  candidate("mi-sheberach", source("Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman)", all, true)),
   candidate(
     "birkat-hamazon",
     source("Birkat Hamazon, Blessing on the Food"),

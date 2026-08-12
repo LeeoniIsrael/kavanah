@@ -10,9 +10,9 @@ The initial baseline is common wording where broadly shared, Ashkenaz for servic
 
 ## Inventory
 
-- Source-backed candidates added in this packet: **22**
+- Source-backed candidates added in this packet: **23**
 - Existing short complete candidates: **6**
-- Entries still blocked before rabbinic review: **5**
+- Entries still blocked before rabbinic review: **4**
 - Total catalog entries: **33**
 
 ## Review standard
@@ -304,18 +304,20 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Catalog ID:** `mi-sheberach`
 - **Proposed tradition:** Varies
-- **Content state:** Excerpt; completion required before approval
-- **Candidate source and edition:** Communal liturgy, Mi Sheberach for Healing; license verification required
-- **Source snapshot retrieved:** Not yet
+- **Content state:** Source-backed candidate; rabbinic approval pending
+- **Candidate source and edition:** Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman) — Daat Siddur Ashkenaz; license: Public Domain
+- **Source snapshot retrieved:** 2026-08-12
 - **Editorial note:** Wording and name insertion vary by community.
 
 ### Hebrew candidate
 
-<div dir="rtl" lang="he">מי שברך אבותינו אברהם יצחק ויעקב הוא יברך וירפא את החולה</div>
+<div dir="rtl" lang="he">לזכר: מִי שֶׁבֵּרַךְ אֲבותֵינוּ אַבְרָהָם יִצְחָק וְיַעֲקב משֶׁה וְאַהֲרן דָּוִד וּשְׁלמה הוּא יְבָרֵךְ אֶת הַחולֶה פב"פ בַּעֲבוּר שפב"פ נודֵר צְדָקָה בַּעֲבוּרו, בִּשכַר זֶה הַקָּדושׁ בָּרוּךְ הוּא יִמָלֵא רַחֲמִים עָלָיו לְהַחֲלִימו וּלְרַפְּאתו וּלְהַחֲזִיקו וּלְהַחֲיותו, וְיִשְׁלַח לו מְהֵרָה רְפוּאָה שְׁלֵמָה מִן הַשָּׁמַיִם לִרְמַ"ח אֵבָרָיו וּשְׁסָ"ה גִּידָיו בְּתוךְ שְׁאָר חולֵי יִשרָאֵל, רְפוּאַת הַנֶּפֶשׁ וּרְפוּאַת הַגּוּף בשבת: שַׁבָּת הִיא מִלִזְּעוק וּרְפוּאָה קְרובָה לָבוא. ביו"ט: יום טוב הוא מִלְזּעוק וּרְפוּאָה קְרובָה לָבוא, הַשְׁתָּא בַּעֲגָלָא וּבִזְמַן קָרִיב. וְנאמַר אָמֵן:</div>
+
+<div dir="rtl" lang="he">לנקבה: מִי שֶׁבֵּרַךְ אֲבותֵינוּ אַבְרָהָם יִצְחָק וְיַעֲקב משֶׁה וְאַהֲרן דָּוִד וּשְׁלמה הוּא יְבָרֵךְ אֶת הַחולָה פב"פ בַּעֲבוּר שפב"פ נודֵר צְדָקָה בַּעֲבוּרָהּ, בִּשכַר זֶה הַקָּדושׁ בָּרוּךְ הוּא יִמָלֵא רַחֲמִים עָלֶיהָ לְהַחֲלִימָהּ וּלְרַפְּאתָהּ וּלְהַחֲזִיקָהּ וּלְהַחֲיותָהּ, וְיִשְׁלַח לָהּ מְהֵרָה רְפוּאָה שְׁלֵמָה מִן הַשָּׁמַיִם לְכָל אֵבָרֶיהּ וּלְכָל גִּידֶיהָ בְּתוךְ שְׁאָר חולֵי יִשרָאֵל, רְפוּאַת הַנֶּפֶשׁ וּרְפוּאַת הַגּוּף בשבת: שַׁבָּת הִיא מִלִזְּעוק וּרְפוּאָה קְרובָה לָבוא. ביו"ט: יום טוב הוא מִלְזּעוק וּרְפוּאָה קְרובָה לָבוא, הַשְׁתָּא בַּעֲגָלָא וּבִזְמַן קָרִיב. וְנאמַר אָמֵן:</div>
 
 ### Rabbinic decision
 
-- [ ] Candidate incomplete — approval is blocked
+- [ ] Approve the Hebrew exactly as shown
 - [ ] Approve after corrections written below
 - [ ] Do not use this text
 - **Corrected Hebrew / notes:**
