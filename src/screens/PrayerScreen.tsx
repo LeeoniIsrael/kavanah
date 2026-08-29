@@ -11,6 +11,7 @@ import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, fonts, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
@@ -141,12 +142,7 @@ export function PrayerScreen(): React.JSX.Element {
     const assistantId = `${Date.now()}-assistant`;
     setAssistantMessages((current) => [...current, userMessage, { id: assistantId, role: "assistant", content: "", createdAt: new Date().toISOString() }]);
 
-    const context = [
-      `${selected.title}: ${selected.summary}`,
-      `Sefaria reference: ${selected.sefariaRef}`,
-      `Primary language: ${primaryLanguageCode}`,
-      ...localizedTokens.flatMap((token) => [`Hebrew: ${token.hebrew}`, `Transliteration: ${token.localizedTransliteration}`, `Translation: ${token.localizedTranslation}`])
-    ].filter(Boolean);
+    const context = buildPrayerAssistantContext(selected, primaryLanguageCode, localizedTokens);
 
     try {
       for await (const chunk of createAssistantStream(clean, context)) {
@@ -355,7 +351,7 @@ export function PrayerScreen(): React.JSX.Element {
               <View style={styles.consentSheet}>
                 <View style={styles.consentMark}><ShieldCheck size={21} color={colors.blue} /></View>
                 <SectionTitle>Before your first question</SectionTitle>
-                <Body>Your question, this prayer text, language, and source reference are sent to OpenAI through Kavanah. Contact details are removed first. Do not include anything private.</Body>
+                <Body>Your question, this prayer text, language, source reference, and review status are sent to OpenAI through Kavanah. Display translations are identified as unreviewed. Contact details are removed first. Do not include anything private.</Body>
                 <Body style={styles.consentNote}>Answers are educational and are not binding halachic rulings.</Body>
                 <View style={styles.consentActions}>
                   <View style={styles.consentSecondarySlot}>

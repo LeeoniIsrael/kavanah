@@ -11,11 +11,13 @@ const usage = new Map();
 
 const SYSTEM_PROMPT = [
   "You are Kavanah, a guarded Jewish prayer and learning assistant.",
-  "Answer only from the verified context supplied in the request. If the context is insufficient, say that clearly and do not fill gaps from memory.",
+  "Answer only from the provided context. If the context is insufficient, say that clearly and do not fill gaps from memory.",
+  "Respect every review-status label exactly. Never imply rabbinic approval unless the context explicitly says the Hebrew is approved.",
+  "Treat text labeled display translation or display transliteration as unreviewed support, not authoritative source text.",
   "Write in the language requested by the supplied context.",
   "Begin with a direct two-sentence takeaway. Then include short Practical guidance and Sources sections only when supported.",
   "Clearly distinguish established text, common practice, and interpretation.",
-  "Never invent quotations or citations. Never issue a binding halachic ruling.",
+  "State that explanations are educational and AI-generated when that distinction matters. Never invent quotations or citations. Never issue a binding halachic ruling.",
   "For personal, disputed, medical, safety, or high-stakes questions, recommend a qualified rabbi or appropriate professional.",
   "Do not repeat private information from the question."
 ].join(" ");
@@ -35,9 +37,6 @@ module.exports = async function handler(request, response) {
   if (!/^[a-f0-9]{64}$/i.test(installationId)) {
     return response.status(400).json({ error: "This installation could not be verified." });
   }
-  if (!consumeAllowance(installationId)) {
-    return response.status(429).json({ error: "Today's assistant limit has been reached. Try again tomorrow." });
-  }
 
   const body = isObject(request.body) ? request.body : {};
   const question = typeof body.question === "string" ? body.question.trim().slice(0, MAX_QUESTION_LENGTH) : "";
@@ -46,7 +45,10 @@ module.exports = async function handler(request, response) {
     : "";
 
   if (!question || !context) {
-    return response.status(400).json({ error: "A question and verified prayer context are required." });
+    return response.status(400).json({ error: "A question and prayer context are required." });
+  }
+  if (!consumeAllowance(installationId)) {
+    return response.status(429).json({ error: "Today's assistant limit has been reached. Try again tomorrow." });
   }
 
   try {
@@ -64,7 +66,7 @@ module.exports = async function handler(request, response) {
       body: JSON.stringify({
         model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
         instructions: SYSTEM_PROMPT,
-        input: `Verified prayer context:\n${context}\n\nUser question:\n${question}`,
+        input: `Provided prayer context:\n${context}\n\nUser question:\n${question}`,
         max_output_tokens: MAX_OUTPUT_TOKENS,
         reasoning: { effort: "none" },
         service_tier: "default",

@@ -14,7 +14,7 @@ Location access is optional. If allowed, Kavanah uses your current coordinates t
 
 ## Prayer assistant
 
-The prayer assistant is optional and remains disabled until you allow it. When used, Kavanah sends your question, the selected prayer text, your chosen language, and the prayer's source reference through a Kavanah-controlled server to OpenAI for processing. Kavanah removes recognizable email addresses, phone numbers, and street addresses before transmission. Do not submit private, confidential, medical, financial, or identifying information.
+The prayer assistant is optional and remains disabled until you allow it. When used, Kavanah sends your question, the selected prayer text, your chosen language, the prayer's source reference, and its review status through a Kavanah-controlled server to OpenAI for processing. Display translations and transliterations are explicitly identified to the assistant as not rabbinically reviewed. Kavanah removes recognizable email addresses, phone numbers, and street addresses before transmission. Do not submit private, confidential, medical, financial, or identifying information.
 
 Assistant requests are processed for the purpose of answering the question, preventing abuse, and maintaining service reliability. They are not used by Kavanah for advertising. OpenAI's API data handling and retention practices are described in [OpenAI's API data controls](https://developers.openai.com/api/docs/guides/your-data).
 

@@ -177,7 +177,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <Display style={styles.modalTitle}>Clear by design</Display>
               </View>
               <PrivacySection title="Stored on this device" body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Precise coordinates are not sent to the prayer assistant." />
-              <PrivacySection title="Prayer assistant" body="Only after you allow it, your question, selected prayer text, language, and verified source reference are sent through Kavanah's server to OpenAI. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising." />
+              <PrivacySection title="Prayer assistant" body="Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising." />
               <PrivacySection title="Religious guidance" body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service." />
               <PrivacySection title="Your choice" body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account." />
             </ScrollView>
