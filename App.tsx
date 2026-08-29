@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { AppErrorBoundary } from "./src/components/AppErrorBoundary";
 import { colors } from "./src/design/theme";
 import { RootNavigator } from "./src/navigation/RootNavigator";
 import { AppProviders } from "./src/providers/AppProviders";
@@ -25,12 +26,14 @@ export default function App(): React.JSX.Element {
 
   return (
     <SafeAreaProvider>
-      <AppProviders>
-        <NavigationContainer>
-          <StatusBar style="dark" />
-          <RootNavigator />
-        </NavigationContainer>
-      </AppProviders>
+      <AppErrorBoundary>
+        <AppProviders>
+          <NavigationContainer>
+            <StatusBar style="dark" />
+            <RootNavigator />
+          </NavigationContainer>
+        </AppProviders>
+      </AppErrorBoundary>
     </SafeAreaProvider>
   );
 }

@@ -32,7 +32,12 @@ export function AppProviders({ children }: PropsWithChildren): React.JSX.Element
   }, [biometricLockEnabled]);
 
   if (!hydrated) {
-    return <View style={styles.lockScreen} />;
+    return (
+      <View accessibilityLabel="Opening Kavanah" accessibilityRole="progressbar" style={styles.loadingScreen}>
+        <Text style={styles.loadingTitle}>Kavanah</Text>
+        <View style={styles.loadingRule} />
+      </View>
+    );
   }
 
   if (biometricLockEnabled && !unlocked) {
@@ -43,7 +48,7 @@ export function AppProviders({ children }: PropsWithChildren): React.JSX.Element
         </View>
         <Text style={styles.lockTitle}>Kavanah is locked</Text>
         <Text style={styles.lockBody}>Your saved prayers and personal progress stay private.</Text>
-        <AnimatedPressable accessibilityRole="button" onPress={() => void unlockWithBiometrics().then(setUnlocked)} style={styles.unlockButton}>
+        <AnimatedPressable accessibilityLabel="Unlock Kavanah" accessibilityRole="button" onPress={() => void unlockWithBiometrics().then(setUnlocked)} style={styles.unlockButton}>
           <Text style={styles.unlockText}>Unlock</Text>
         </AnimatedPressable>
       </View>
@@ -54,6 +59,22 @@ export function AppProviders({ children }: PropsWithChildren): React.JSX.Element
 }
 
 const styles = StyleSheet.create({
+  loadingScreen: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.parchment,
+    gap: spacing.md
+  },
+  loadingTitle: {
+    ...type.title,
+    color: colors.ink
+  },
+  loadingRule: {
+    width: 28,
+    height: 2,
+    backgroundColor: colors.gold
+  },
   lockScreen: {
     flex: 1,
     alignItems: "center",
