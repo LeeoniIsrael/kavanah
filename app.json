@@ -32,7 +32,6 @@
       ]
     },
     "plugins": [
-      "expo-apple-authentication",
       "expo-local-authentication",
       "expo-secure-store",
       [

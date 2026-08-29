@@ -40,7 +40,6 @@
     "@react-navigation/native-stack": "^7.2.0",
     "date-fns": "^4.1.0",
     "expo": "~54.0.37",
-    "expo-apple-authentication": "~8.0.8",
     "expo-application": "~7.0.8",
     "expo-constants": "~18.0.14",
     "expo-crypto": "~15.0.9",
