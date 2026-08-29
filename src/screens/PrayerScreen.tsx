@@ -10,6 +10,7 @@ import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, fonts, grid, radii, shadows, spacing, type } from "@/design/theme";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
@@ -51,6 +52,7 @@ export function PrayerScreen(): React.JSX.Element {
   const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
   const [consentModalOpen, setConsentModalOpen] = useState(false);
   const [localizedTokens, setLocalizedTokens] = useState<LocalizedToken[]>([]);
+  const reduceMotion = useReducedMotion();
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
@@ -68,11 +70,11 @@ export function PrayerScreen(): React.JSX.Element {
   useEffect(() => {
     Animated.timing(bookmarkReveal, {
       toValue: showResults ? 0 : 1,
-      duration: showResults ? 220 : 280,
+      duration: reduceMotion ? 0 : showResults ? 220 : 280,
       easing: showResults ? Easing.out(Easing.cubic) : Easing.bezier(0.2, 0.9, 0.25, 1),
       useNativeDriver: false
     }).start();
-  }, [bookmarkReveal, showResults]);
+  }, [bookmarkReveal, reduceMotion, showResults]);
 
   useEffect(() => {
     let cancelled = false;
@@ -164,13 +166,14 @@ export function PrayerScreen(): React.JSX.Element {
         <View style={styles.searchBox}>
         <Search size={18} color={colors.inkMuted} />
         <TextInput
+          accessibilityLabel="Search prayers"
           value={query}
           onChangeText={setQuery}
           placeholder="travel, shema, protection..."
           style={styles.searchInput}
           placeholderTextColor={colors.inkMuted}
         />
-        <AnimatedPressable accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
+        <AnimatedPressable accessibilityLabel="Refresh prayer library" accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
           <RefreshCw size={18} color={isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink} />
         </AnimatedPressable>
         </View>
@@ -238,7 +241,7 @@ export function PrayerScreen(): React.JSX.Element {
         ) : null}
       </View>
 
-      <Modal visible={readerOpen && Boolean(selected)} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
+      <Modal visible={readerOpen && Boolean(selected)} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
         <SafeAreaView style={styles.readerSafeArea}>
           {selected ? (
             <View style={[styles.readerChrome, { top: insets.top + spacing.lg }]} pointerEvents="box-none">
@@ -277,14 +280,33 @@ export function PrayerScreen(): React.JSX.Element {
                     </View>
                   </View>
                 ) : null}
+                <View style={styles.intentionCue}>
+                  <Label>Kavanah</Label>
+                  <Body style={styles.intentionText}>Pause for one breath. Bring to mind why you opened this prayer.</Body>
+                </View>
+                {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
+                  <View key={token.id} style={styles.token}>
+                    {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
+                    {token.localizedTransliteration ? (
+                      <View style={styles.transliterationBlock}>
+                        <Text style={styles.readerMeta}>Transliteration</Text>
+                        <SectionTitle style={styles.transliteration}>{token.localizedTransliteration}</SectionTitle>
+                      </View>
+                    ) : null}
+                    <View style={styles.translationBlock}>
+                      <Text style={styles.readerMeta}>Translation</Text>
+                      <Body>{token.localizedTranslation}</Body>
+                    </View>
+                  </View>
+                ))}
                 <View style={styles.askCard}>
                   <View style={styles.askHeader}>
                     <View style={styles.askIcon}>
                       <MessageCircle size={18} color={colors.blue} />
                     </View>
                     <View style={styles.askTitle}>
-                      <SectionTitle style={styles.askTitleText}>Ask about this prayer</SectionTitle>
-                      <Body style={styles.askSubtitle}>Uses this text as context.</Body>
+                      <SectionTitle style={styles.askTitleText}>Questions about this prayer</SectionTitle>
+                      <Body style={styles.askSubtitle}>Educational guidance using this text as context.</Body>
                     </View>
                   </View>
                   {assistantOpen ? (
@@ -306,6 +328,7 @@ export function PrayerScreen(): React.JSX.Element {
                   ) : null}
                   <View style={styles.askComposer}>
                     <TextInput
+                      accessibilityLabel="Question about this prayer"
                       value={assistantInput}
                       onChangeText={setAssistantInput}
                       placeholder="What does this mean?"
@@ -314,6 +337,7 @@ export function PrayerScreen(): React.JSX.Element {
                       multiline
                     />
                     <AnimatedPressable
+                      accessibilityLabel="Ask question"
                       accessibilityRole="button"
                       onPress={() => void askAboutSelectedPrayer()}
                       disabled={!assistantInput.trim() || isAssistantStreaming}
@@ -323,21 +347,6 @@ export function PrayerScreen(): React.JSX.Element {
                     </AnimatedPressable>
                   </View>
                 </View>
-                {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
-                  <View key={token.id} style={styles.token}>
-                    {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
-                    {token.localizedTransliteration ? (
-                      <View style={styles.transliterationBlock}>
-                        <Text style={styles.readerMeta}>Transliteration</Text>
-                        <SectionTitle style={styles.transliteration}>{token.localizedTransliteration}</SectionTitle>
-                      </View>
-                    ) : null}
-                    <View style={styles.translationBlock}>
-                      <Text style={styles.readerMeta}>Translation</Text>
-                      <Body>{token.localizedTranslation}</Body>
-                    </View>
-                  </View>
-                ))}
               </View>
             ) : null}
           </ScrollView>
@@ -561,6 +570,17 @@ const styles = StyleSheet.create({
   hebrewReviewSource: {
     ...type.caption,
     color: colors.inkFaint
+  },
+  intentionCue: {
+    gap: spacing.xs,
+    borderLeftWidth: 2,
+    borderLeftColor: colors.gold,
+    paddingLeft: spacing.md,
+    paddingVertical: spacing.xs
+  },
+  intentionText: {
+    color: colors.ink,
+    maxWidth: 330
   },
   askCard: {
     gap: spacing.md,

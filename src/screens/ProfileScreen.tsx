@@ -8,6 +8,7 @@ import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { findLanguage, languageOptions } from "@/data/languages";
 import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
 import { initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
@@ -28,6 +29,7 @@ export function ProfileScreen(): React.JSX.Element {
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
+  const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled = assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
 
@@ -130,7 +132,7 @@ export function ProfileScreen(): React.JSX.Element {
 
       <Body style={styles.accountNote}>Account sync is unavailable until secure server verification and complete account deletion are ready.</Body>
 
-      <Modal visible={activeModal !== null} animationType="slide" presentationStyle="fullScreen" onRequestClose={() => setActiveModal(null)}>
+      <Modal visible={activeModal !== null} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={() => setActiveModal(null)}>
         <SafeAreaView style={styles.modalSafeArea}>
           <View style={styles.modalChrome} pointerEvents="box-none">
             <AnimatedPressable accessibilityLabel="Close" accessibilityRole="button" onPress={() => setActiveModal(null)} pressedScale={0.94} style={styles.closeButton}>

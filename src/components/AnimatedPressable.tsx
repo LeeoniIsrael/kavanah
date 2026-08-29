@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Animated, Easing, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 
 import { motion } from "@/design/theme";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, softHaptic, successHaptic, tapHaptic } from "@/services/haptics";
 
 type HapticTone = "selection" | "soft" | "confirm" | "success" | "none";
@@ -18,8 +19,14 @@ type Props = PropsWithChildren<
 export function AnimatedPressable({ children, onPress, style, pressedScale = 0.985, haptic = "soft", ...props }: Props): React.JSX.Element {
   const scale = useRef(new Animated.Value(1)).current;
   const lift = useRef(new Animated.Value(0)).current;
+  const reduceMotion = useReducedMotion();
 
   const animateTo = (value: number) => {
+    if (reduceMotion) {
+      scale.setValue(1);
+      lift.setValue(0);
+      return;
+    }
     Animated.parallel([
       Animated.timing(scale, {
         toValue: value,

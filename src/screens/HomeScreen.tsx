@@ -11,6 +11,7 @@ import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, radii, shadows, spacing, type } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { confirmHaptic } from "@/services/haptics";
 import { calculateCurrentRun, calculatePracticeStats, type PracticeStats } from "@/services/practiceStats";
@@ -54,6 +55,7 @@ export function HomeScreen(): React.JSX.Element {
   const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
   const now = useCurrentDate();
   const nextZman = useMemo(() => findNextZman(upcomingZmanim, now), [upcomingZmanim, now]);
   const nextMoment = nextZman ? prayerMomentByZman[nextZman.key] ?? { query: nextZman.title, label: nextZman.title, helper: "Next moment" } : null;
@@ -88,7 +90,7 @@ export function HomeScreen(): React.JSX.Element {
           <Label>{formatHebrewDate(now)}</Label>
           <Display>Today</Display>
         </View>
-        <AnimatedPressable accessibilityRole="button" onPress={() => navigation.navigate("Zmanim")} style={styles.iconButton}>
+        <AnimatedPressable accessibilityLabel="Open local prayer times" accessibilityRole="button" onPress={() => navigation.navigate("Zmanim")} style={styles.iconButton}>
           <CalendarDays size={19} color={colors.ink} />
         </AnimatedPressable>
       </View>
@@ -99,8 +101,8 @@ export function HomeScreen(): React.JSX.Element {
           <View style={styles.pulse} />
           <Text style={styles.panelMeta}>{nextZman ? timeUntil(nextZman.time) : "Location needed"}</Text>
         </View>
-        <SectionTitle style={styles.panelTitle}>{nextZman ? nextZman.title : "Set your location"}</SectionTitle>
-        <Text style={styles.panelTime}>{nextZman ? formatTime(nextZman.time) : "Local zmanim are off"}</Text>
+        <SectionTitle style={styles.panelTitle}>{nextZman ? nextZman.title : "Prayer times near you"}</SectionTitle>
+        {nextZman ? <Text style={styles.panelTime}>{formatTime(nextZman.time)}</Text> : null}
         <Body style={styles.panelBody}>{nextZman ? `${nextMoment?.helper ?? "Next prayer moment"} · ${location?.label ?? "local time"}` : error ?? "Enable location once to calculate prayer times and Shabbat reminders."}</Body>
         <View style={styles.panelActions}>
           {nextMoment ? (
@@ -148,7 +150,7 @@ export function HomeScreen(): React.JSX.Element {
               const currentStreak = calculateCurrentRun(habit.completedDates, now);
               const streakLabel = `${currentStreak} ${currentStreak === 1 ? "day" : "days"}`;
               return (
-                <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} haptic="success" onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
+                <AnimatedPressable key={habit.habit} accessibilityRole="checkbox" accessibilityLabel={`${details.name}. ${details.description}`} accessibilityHint={complete ? "Marks this practice incomplete" : "Marks this practice complete"} accessibilityState={{ checked: complete }} haptic={complete ? "selection" : "success"} onPress={() => togglePractice(habit.habit)} style={[styles.habitRow, index === activeHabits.length - 1 && styles.lastHabitRow]}>
                   <View style={styles.habitCopy}>
                     <Text style={styles.habitName}>{details.name}</Text>
                     <Text style={styles.habitDescription}>{details.description}</Text>
@@ -204,7 +206,7 @@ export function HomeScreen(): React.JSX.Element {
         <ChevronRight size={18} color={colors.inkMuted} />
       </AnimatedPressable>
 
-      <Modal animationType="fade" onRequestClose={closePracticeEditor} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceEditorOpen}>
+      <Modal animationType={reduceMotion ? "none" : "fade"} onRequestClose={closePracticeEditor} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceEditorOpen}>
         <View style={styles.editorRoot}>
           <AnimatedPressable accessibilityLabel="Close practice chooser" accessibilityRole="button" haptic="selection" onPress={closePracticeEditor} pressedScale={1} style={styles.editorBackdrop} />
           <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
@@ -239,7 +241,7 @@ export function HomeScreen(): React.JSX.Element {
         </View>
       </Modal>
 
-      <Modal animationType="fade" onRequestClose={closePracticeStats} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceStatsOpen}>
+      <Modal animationType={reduceMotion ? "none" : "fade"} onRequestClose={closePracticeStats} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceStatsOpen}>
         <View style={styles.editorRoot}>
           <AnimatedPressable accessibilityLabel="Close overall practice" accessibilityRole="button" haptic="selection" onPress={closePracticeStats} pressedScale={1} style={styles.editorBackdrop} />
           <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>

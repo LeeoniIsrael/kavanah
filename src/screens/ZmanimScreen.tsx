@@ -24,7 +24,7 @@ export function ZmanimScreen(): React.JSX.Element {
           <Label>Local time</Label>
           <Display>Zmanim</Display>
         </View>
-        <AnimatedPressable accessibilityRole="button" onPress={() => void refresh()} disabled={isLoading} style={styles.iconButton}>
+        <AnimatedPressable accessibilityLabel="Refresh local prayer times" accessibilityRole="button" onPress={() => void refresh()} disabled={isLoading} style={styles.iconButton}>
           <RefreshCw size={19} color={isLoading ? colors.inkMuted : colors.ink} />
         </AnimatedPressable>
       </View>
