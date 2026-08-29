@@ -20,6 +20,8 @@ The project is pre-release (`0.2.0`). It is not yet ready for App Store submissi
 
 The bundled runtime catalog contains 33 entries. All Hebrew entries are currently marked `pending` for rabbinic review: 6 complete candidates, 21 excerpts, 3 service collections, and 3 entries with no bundled Hebrew. Source-backed Hebrew candidates and the review packet live in [docs/rabbinic-hebrew-review.md](docs/rabbinic-hebrew-review.md).
 
+For a rabbi reviewing on a phone, tablet, or printed copy, use the polished [Hebrew prayer review PDF](output/pdf/Kavanah-Hebrew-Prayer-Review.pdf). It contains 30 source-backed candidates with approval checkboxes and correction space; translations and transliterations are intentionally excluded.
+
 Do not change an entry to `approved` or promote generated candidates into runtime content without a named reviewer, review date, exact source edition, and explicit approval. Translations and transliterations need separate qualified language review; they are never represented as rabbinically approved.
 
 ## Run Locally
