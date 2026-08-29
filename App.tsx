@@ -1,6 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { IBMPlexSans_400Regular, IBMPlexSans_500Medium, IBMPlexSans_600SemiBold } from "@expo-google-fonts/ibm-plex-sans";
-import { NotoSansHebrew_400Regular, NotoSansHebrew_600SemiBold } from "@expo-google-fonts/noto-sans-hebrew";
+import { IBMPlexSans_400Regular } from "@expo-google-fonts/ibm-plex-sans/400Regular";
+import { IBMPlexSans_500Medium } from "@expo-google-fonts/ibm-plex-sans/500Medium";
+import { IBMPlexSans_600SemiBold } from "@expo-google-fonts/ibm-plex-sans/600SemiBold";
+import { NotoSansHebrew_400Regular } from "@expo-google-fonts/noto-sans-hebrew/400Regular";
+import { NotoSansHebrew_600SemiBold } from "@expo-google-fonts/noto-sans-hebrew/600SemiBold";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";

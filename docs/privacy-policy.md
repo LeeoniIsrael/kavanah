@@ -28,7 +28,7 @@ Kavanah does not currently provide cloud accounts or account synchronization. Si
 
 ## Data deletion
 
-Because current personal data is stored locally, deleting Kavanah removes its local data. Secure system credentials may also be removed through the device's password and account settings. Assistant consent and reminders can be revoked inside Kavanah at any time.
+Because current personal data is stored locally, deleting Kavanah removes its app-container data. Operating-system secure storage can have different uninstall behavior by platform; Kavanah currently stores only a biometric preference and pseudonymous assistant installation ID there, not an account or prayer history. Assistant consent and reminders can be revoked inside Kavanah at any time. An in-app control to clear all local Kavanah data is planned before public release.
 
 ## Children
 
