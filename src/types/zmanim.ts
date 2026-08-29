@@ -21,4 +21,5 @@ export type Zman = {
   title: string;
   time: Date;
   notificationLeadMinutes: number;
+  method: string;
 };

@@ -50,12 +50,12 @@ const shortcuts = [
 export function HomeScreen(): React.JSX.Element {
   const navigation = useNavigation<Navigation>();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } = useStreakStore();
-  const { zmanim, location, isLoading, refresh } = useZmanimStore();
+  const { upcomingZmanim, location, isLoading, error, refresh } = useZmanimStore();
   const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
   const now = useCurrentDate();
-  const nextZman = useMemo(() => findNextZman(zmanim, now), [zmanim, now]);
+  const nextZman = useMemo(() => findNextZman(upcomingZmanim, now), [upcomingZmanim, now]);
   const nextMoment = nextZman ? prayerMomentByZman[nextZman.key] ?? { query: nextZman.title, label: nextZman.title, helper: "Next moment" } : null;
   const activeHabits = habits.filter((habit) => enabledHabits.includes(habit.habit));
   const completedToday = activeHabits.filter((habit) => habit.completedDates.includes(formatDateKey(now)));
@@ -101,7 +101,7 @@ export function HomeScreen(): React.JSX.Element {
         </View>
         <SectionTitle style={styles.panelTitle}>{nextZman ? nextZman.title : "Set your location"}</SectionTitle>
         <Text style={styles.panelTime}>{nextZman ? formatTime(nextZman.time) : "Local zmanim are off"}</Text>
-        <Body style={styles.panelBody}>{nextZman ? `${nextMoment?.helper ?? "Next prayer moment"} · ${location?.label ?? "local time"}` : "Enable location once to calculate prayer times and Shabbat reminders."}</Body>
+        <Body style={styles.panelBody}>{nextZman ? `${nextMoment?.helper ?? "Next prayer moment"} · ${location?.label ?? "local time"}` : error ?? "Enable location once to calculate prayer times and Shabbat reminders."}</Body>
         <View style={styles.panelActions}>
           {nextMoment ? (
             <AnimatedPressable accessibilityRole="button" onPress={() => openPrayerSearch(nextMoment.query)} style={styles.primaryAction}>
@@ -280,7 +280,7 @@ function PracticeStatRow({ label, value, last = false }: { label: string; value:
 }
 
 function findNextZman(zmanim: Zman[], now: Date): Zman | null {
-  return zmanim.find((zman) => zman.time.getTime() > now.getTime()) ?? zmanim[0] ?? null;
+  return zmanim.find((zman) => zman.time.getTime() > now.getTime()) ?? null;
 }
 
 function formatTime(date: Date): string {

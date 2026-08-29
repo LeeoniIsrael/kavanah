@@ -42,8 +42,12 @@ export function ProfileScreen(): React.JSX.Element {
     setZmanNotificationsEnabled(granted);
     setNotificationMessage(granted ? "Reminders will follow your calculated local times." : "Notifications are disabled in device settings.");
     if (granted) {
-      const zmanim = useZmanimStore.getState().zmanim;
-      if (zmanim.length > 0) await scheduleZmanNotifications(zmanim);
+      const { upcomingZmanim, refresh } = useZmanimStore.getState();
+      if (upcomingZmanim.length > 0) {
+        await scheduleZmanNotifications(upcomingZmanim);
+      } else {
+        await refresh();
+      }
     }
   };
 

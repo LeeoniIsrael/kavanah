@@ -10,8 +10,8 @@ import { colors, radii, shadows, spacing, type } from "@/design/theme";
 import { useZmanimStore } from "@/store/zmanimStore";
 
 export function ZmanimScreen(): React.JSX.Element {
-  const { location, zmanim, isLoading, refresh } = useZmanimStore();
-  const nextZman = zmanim.find((zman) => zman.time.getTime() > Date.now()) ?? zmanim[0];
+  const { location, zmanim, upcomingZmanim, isLoading, error, refresh } = useZmanimStore();
+  const nextZman = upcomingZmanim[0];
 
   useEffect(() => {
     void refresh();
@@ -37,12 +37,12 @@ export function ZmanimScreen(): React.JSX.Element {
         </View>
         <SectionTitle style={styles.panelTitle}>{nextZman?.title ?? "Calculating times"}</SectionTitle>
         <Text style={styles.panelTime}>{nextZman ? formatTime(nextZman.time) : "--:--"}</Text>
-        <Body style={styles.panelBody}>{location?.label ?? "Set location to calculate precise local zmanim."}</Body>
+        <Body style={styles.panelBody}>{nextZman ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}` : error ?? "Set location to calculate precise local zmanim."}</Body>
       </View>
 
       <View style={styles.locationStrip}>
         <MapPin size={18} color={colors.blue} />
-        <Text style={styles.locationText}>{location?.label ?? "Location unavailable"}</Text>
+        <Text style={styles.locationText}>{error ?? location?.label ?? "Location unavailable"}</Text>
         <AnimatedPressable accessibilityRole="button" onPress={() => void refresh()} disabled={isLoading} style={styles.smallButton}>
           <Text style={styles.smallButtonText}>{isLoading ? "Finding" : "Update"}</Text>
         </AnimatedPressable>
@@ -50,18 +50,21 @@ export function ZmanimScreen(): React.JSX.Element {
 
       <View style={styles.list}>
         {zmanim.length > 0 ? (
-          zmanim.map((zman) => <ZmanRow key={zman.key} zman={zman} />)
+          <>
+            <Label style={styles.listLabel}>Today</Label>
+            {zmanim.map((zman) => <ZmanRow key={zman.key} zman={zman} />)}
+          </>
         ) : (
           <View style={styles.emptyState}>
             <SectionTitle>Waiting for local times</SectionTitle>
-            <Body>Use your location once and Kavanah will calculate today’s zmanim on device.</Body>
+            <Body>{error ?? "Use your location once and Kavanah will calculate today’s zmanim on device."}</Body>
           </View>
         )}
       </View>
 
       <View style={styles.notice}>
         <Bell size={18} color={colors.blue} />
-        <Body style={styles.noticeText}>Reminders stay local for zmanim, candle lighting, Havdalah, and tefillin.</Body>
+        <Body style={styles.noticeText}>Reminders stay on this device. Shabbat candle lighting appears on Friday; Havdalah appears on Saturday.</Body>
       </View>
     </Screen>
   );
@@ -69,6 +72,15 @@ export function ZmanimScreen(): React.JSX.Element {
 
 function formatTime(date: Date): string {
   return date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+}
+
+function formatDay(date: Date): string {
+  const today = new Date();
+  if (date.toDateString() === today.toDateString()) return "Today";
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  if (date.toDateString() === tomorrow.toDateString()) return "Tomorrow";
+  return date.toLocaleDateString([], { weekday: "long" });
 }
 
 const styles = StyleSheet.create({
@@ -176,6 +188,11 @@ const styles = StyleSheet.create({
   list: {
     borderTopWidth: 1,
     borderTopColor: colors.hairlineStrong
+  },
+  listLabel: {
+    paddingHorizontal: spacing.xs,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.xs
   },
   emptyState: {
     gap: spacing.sm,

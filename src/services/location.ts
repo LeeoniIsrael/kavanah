@@ -5,7 +5,7 @@ import type { GeoPoint } from "@/types/zmanim";
 export async function requestZmanimLocation(): Promise<GeoPoint> {
   const { status } = await Location.requestForegroundPermissionsAsync();
   if (status !== Location.PermissionStatus.GRANTED) {
-    return { latitude: 40.7128, longitude: -74.006, label: "New York" };
+    throw new Error("Location is off. Enable it to calculate accurate times for where you are.");
   }
 
   const position = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });

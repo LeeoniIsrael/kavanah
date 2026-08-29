@@ -8,7 +8,7 @@ export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
     <View style={styles.row}>
       <View style={styles.copy}>
         <Text style={styles.name}>{zman.title}</Text>
-        <Text style={styles.lead}>{zman.notificationLeadMinutes} min reminder</Text>
+        <Text style={styles.lead}>{zman.method} · {zman.notificationLeadMinutes} min reminder</Text>
       </View>
       <Text style={styles.time}>{zman.time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</Text>
     </View>
