@@ -1,5 +1,6 @@
 import { corePrayers } from "@/data/corePrayers";
 import generatedCandidates from "@/data/generatedHebrewCandidates.json";
+import generatedLiturgyIndex from "@/data/generatedLiturgyIndex.json";
 
 describe("Hebrew prayer catalog", () => {
   it("has unique identities and complete review metadata", () => {
@@ -54,6 +55,22 @@ describe("Hebrew prayer catalog", () => {
         expect(token.hebrew).toMatch(/[\u0590-\u05FF]/);
         for (const pattern of forbidden) expect(token.hebrew).not.toMatch(pattern);
       }
+    }
+  });
+
+  it("indexes every available non-commentary section in Sefaria's liturgy catalog", () => {
+    expect(generatedLiturgyIndex.workCount).toBeGreaterThan(40);
+    expect(generatedLiturgyIndex.entryCount).toBe(generatedLiturgyIndex.entries.length);
+    expect(generatedLiturgyIndex.entryCount).toBeGreaterThan(2_000);
+    expect(new Set(generatedLiturgyIndex.entries.map((entry) => entry.id)).size).toBe(generatedLiturgyIndex.entryCount);
+    expect(new Set(generatedLiturgyIndex.entries.map((entry) => entry.ref)).size).toBe(generatedLiturgyIndex.entryCount);
+
+    for (const entry of generatedLiturgyIndex.entries) {
+      expect(entry.title).not.toHaveLength(0);
+      expect(entry.ref).toMatch(/^.+/);
+      expect(entry.useCase).not.toHaveLength(0);
+      if (entry.sourceVersion) expect(entry.sourceVersion.license).toMatch(/Public Domain|CC0|CC[- ]BY/i);
+      for (const version of entry.translationVersions) expect(version.license).toMatch(/Public Domain|CC0|CC[- ]BY/i);
     }
   });
 });
