@@ -178,29 +178,15 @@ function createEntry(
 }
 
 function chooseSourceVersion(versions: PrayerSourceVersion[]): PrayerSourceVersion | null {
-  return [...versions]
-    .filter((version) => version.actualLanguage === "he" || version.language === "he")
-    .sort(compareVersions)[0] ?? null;
+  return versions.find((version) => version.actualLanguage === "he" || version.language === "he") ?? null;
 }
 
 function chooseTranslations(versions: PrayerSourceVersion[]): PrayerSourceVersion[] {
   const byLanguage = new Map<string, PrayerSourceVersion>();
-  for (const version of [...versions].filter((item) => item.actualLanguage !== "he").sort(compareVersions)) {
+  for (const version of versions.filter((item) => item.actualLanguage !== "he")) {
     if (!byLanguage.has(version.actualLanguage)) byLanguage.set(version.actualLanguage, version);
   }
   return [...byLanguage.values()].sort((a, b) => a.actualLanguage.localeCompare(b.actualLanguage));
-}
-
-function compareVersions(a: PrayerSourceVersion, b: PrayerSourceVersion): number {
-  return licenseRank(a.license) - licenseRank(b.license) || a.versionTitle.localeCompare(b.versionTitle);
-}
-
-function licenseRank(license: string): number {
-  const clean = license.toLowerCase();
-  if (clean.includes("public domain")) return 0;
-  if (clean.includes("cc0")) return 1;
-  if (/cc[- ]by(?:\s|$|\d)/i.test(clean)) return 2;
-  return 3;
 }
 
 function normalizeVersion(value: VersionResponse): PrayerSourceVersion | null {
