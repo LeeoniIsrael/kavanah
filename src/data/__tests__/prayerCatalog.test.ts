@@ -61,7 +61,7 @@ describe("Hebrew prayer catalog", () => {
   it("indexes every available non-commentary section in Sefaria's liturgy catalog", () => {
     expect(generatedLiturgyIndex.workCount).toBeGreaterThan(40);
     expect(generatedLiturgyIndex.entryCount).toBe(generatedLiturgyIndex.entries.length);
-    expect(generatedLiturgyIndex.entryCount).toBeGreaterThan(2_000);
+    expect(generatedLiturgyIndex.entryCount).toBeGreaterThan(2_200);
     expect(new Set(generatedLiturgyIndex.entries.map((entry) => entry.id)).size).toBe(generatedLiturgyIndex.entryCount);
     expect(new Set(generatedLiturgyIndex.entries.map((entry) => entry.ref)).size).toBe(generatedLiturgyIndex.entryCount);
 
@@ -72,5 +72,9 @@ describe("Hebrew prayer catalog", () => {
       if (entry.sourceVersion) expect(entry.sourceVersion.license).toMatch(/Public Domain|CC0|CC[- ]BY/i);
       for (const version of entry.translationVersions) expect(version.license).toMatch(/Public Domain|CC0|CC[- ]BY/i);
     }
+
+    const psalms = generatedLiturgyIndex.entries.filter((entry) => entry.work === "Psalms");
+    expect(psalms).toHaveLength(150);
+    expect(new Set(psalms.map((entry) => entry.ref))).toEqual(new Set(Array.from({ length: 150 }, (_value, index) => `Psalms ${index + 1}`)));
   });
 });

@@ -6,6 +6,7 @@ import type { LiturgyIndexEntry, LiturgyIndexManifest, PrayerSourceVersion, Pray
 const SEFARIA = "https://www.sefaria.org";
 const OUTPUT = resolve(process.cwd(), "src/data/generatedLiturgyIndex.json");
 const REUSABLE_LICENSE = /^(public domain|cc0|cc[- ]by(?:[- ]sa)?)(?:\s|$|\d)/i;
+const SUPPLEMENTAL_WORKS = ["Psalms"];
 
 type TocNode = {
   category?: unknown;
@@ -19,6 +20,7 @@ type SchemaNode = {
   depth?: unknown;
   heTitle?: unknown;
   key?: unknown;
+  lengths?: unknown;
   nodes?: unknown;
   title?: unknown;
   titles?: unknown;
@@ -74,7 +76,7 @@ async function main(): Promise<void> {
   const liturgy = toc.find((node) => isObject(node) && node.category === "Liturgy") as TocNode | undefined;
   if (!liturgy) throw new Error("Sefaria's Liturgy catalog was not found.");
 
-  const titles = collectWorkTitles(liturgy).sort((a, b) => a.localeCompare(b));
+  const titles = unique([...collectWorkTitles(liturgy), ...SUPPLEMENTAL_WORKS]).sort((a, b) => a.localeCompare(b));
   const excludedWorks: LiturgyIndexManifest["excludedWorks"] = [];
   const entries: LiturgyIndexEntry[] = [];
   let workCount = 0;
@@ -100,9 +102,16 @@ async function main(): Promise<void> {
     const schema = isObject(work.schema) ? work.schema as SchemaNode : null;
     if (!schema) throw new Error(`No schema found for ${title}`);
 
-    const leaves = collectSchemaLeaves(schema);
-    for (const leaf of leaves) {
-      entries.push(createEntry(title, categories, leaf, sourceVersion, translationVersions));
+    if (title === "Psalms") {
+      const chapterCount = Array.isArray(schema.lengths) && typeof schema.lengths[0] === "number" ? schema.lengths[0] : 150;
+      for (let chapter = 1; chapter <= chapterCount; chapter += 1) {
+        entries.push(createPsalmEntry(chapter, categories, sourceVersion, translationVersions));
+      }
+    } else {
+      const leaves = collectSchemaLeaves(schema);
+      for (const leaf of leaves) {
+        entries.push(createEntry(title, categories, leaf, sourceVersion, translationVersions));
+      }
     }
   }
 
@@ -121,6 +130,28 @@ async function main(): Promise<void> {
 
   writeFileSync(OUTPUT, `${JSON.stringify(manifest)}\n`, "utf8");
   process.stdout.write(`Wrote ${manifest.entryCount} sections from ${manifest.workCount} works to ${OUTPUT}\n`);
+}
+
+function createPsalmEntry(chapter: number, categories: string[], sourceVersion: PrayerSourceVersion | null, translationVersions: PrayerSourceVersion[]): LiturgyIndexEntry {
+  const guidance = psalmGuidance[chapter];
+  const title = `Psalm ${chapter}`;
+  const aliases = unique([`Psalms ${chapter}`, `Tehillim ${chapter}`, `Tehilim ${chapter}`, ...(guidance?.aliases ?? [])]);
+  return {
+    id: `sefaria-psalms-${chapter}`,
+    title,
+    hebrewTitle: `תהילים ${chapter}`,
+    ref: `Psalms ${chapter}`,
+    work: "Psalms",
+    categories: [...categories, "Psalms"],
+    path: [title],
+    tradition: "scriptural",
+    aliases,
+    tags: unique(["psalms", "tehillim", "scriptural", "reflection", ...(guidance?.tags ?? [])]),
+    summary: `${title}, a scriptural chapter of Tehillim.`,
+    useCase: guidance?.useCase ?? "Use this Psalm for prayer, reflection, study, or according to your community's custom.",
+    sourceVersion,
+    translationVersions
+  };
 }
 
 function collectWorkTitles(node: TocNode): string[] {
@@ -251,6 +282,20 @@ function slugify(input: string): string {
 function intent(pattern: RegExp, aliases: string[], tags: string[], useCase: string): Intent {
   return { pattern: new RegExp(pattern.source, pattern.flags.includes("i") ? pattern.flags : `${pattern.flags}i`), aliases, tags, useCase };
 }
+
+const psalmGuidance: Record<number, { aliases: string[]; tags: string[]; useCase: string }> = {
+  20: { aliases: ["distress", "help in difficulty"], tags: ["help", "protection"], useCase: "Often used when seeking help during distress or difficulty; customs vary." },
+  23: { aliases: ["comfort", "grief", "the lord is my shepherd"], tags: ["comfort", "mourning"], useCase: "Often used for comfort, trust, grief, or reflection." },
+  27: { aliases: ["elul", "high holidays", "adonai ori"], tags: ["repentance", "holiday"], useCase: "Commonly recited during Elul and the High Holiday season; customs vary." },
+  30: { aliases: ["healing", "recovery", "house dedication"], tags: ["health", "healing", "thanks"], useCase: "Often used for healing, recovery, gratitude, or a dedication; customs vary." },
+  67: { aliases: ["menorah psalm", "blessing", "omer"], tags: ["blessing", "holiday"], useCase: "Used in several devotional and holiday customs, including some Counting of the Omer practices." },
+  91: { aliases: ["protection", "safety", "danger"], tags: ["protection", "safety"], useCase: "Often used when seeking protection, safety, or reassurance." },
+  100: { aliases: ["gratitude", "thank you", "mizmor letodah"], tags: ["thanks", "gratitude"], useCase: "Use this Psalm to express gratitude and praise." },
+  121: { aliases: ["travel", "journey", "protection", "shir lamaalot"], tags: ["travel", "protection", "safety"], useCase: "Often used for travel, protection, and reassurance during a journey." },
+  130: { aliases: ["repentance", "forgiveness", "from the depths"], tags: ["repentance", "forgiveness"], useCase: "Often used for repentance, forgiveness, grief, or calling for help from a difficult place." },
+  145: { aliases: ["ashrei", "daily prayer"], tags: ["daily", "thanks", "praise"], useCase: "Forms the central body of Ashrei and is commonly used in daily prayer." },
+  150: { aliases: ["praise", "music", "hallelujah", "thank you"], tags: ["thanks", "praise"], useCase: "Use this Psalm for praise, music, celebration, or gratitude." }
+};
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
