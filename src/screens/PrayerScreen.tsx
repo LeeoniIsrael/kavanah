@@ -1,6 +1,6 @@
-import { Bookmark, BookmarkCheck, BookmarkMinus, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, BookmarkMinus, ExternalLink, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Linking, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
@@ -42,7 +42,7 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 
 export function PrayerScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
-  const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
+  const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, loadingPrayerId, prayerLoadError, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
   const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
   const setAssistantConsent = useSettingsStore((state) => state.setAssistantConsent);
@@ -57,8 +57,9 @@ export function PrayerScreen(): React.JSX.Element {
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
+  const selectedLoading = selected ? loadingPrayerId === selected.id : false;
   const showResults = query.trim().length > 0;
-  const visibleResults = showResults ? results : [];
+  const visibleResults = showResults ? results.slice(0, 18) : [];
   const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
 
   useEffect(() => {
@@ -280,6 +281,31 @@ export function PrayerScreen(): React.JSX.Element {
                   <Label>Kavanah</Label>
                   <Body style={styles.intentionText}>Pause for one breath. Bring to mind why you opened this prayer.</Body>
                 </View>
+                {selectedLoading ? (
+                  <View style={styles.sourceLoading}>
+                    <ActivityIndicator size="small" color={colors.blue} />
+                    <View style={styles.sourceLoadingCopy}>
+                      <SectionTitle style={styles.sourceLoadingTitle}>Preparing the text</SectionTitle>
+                      <Body style={styles.sourceLoadingText}>Loading a reusable Hebrew edition and translation from Sefaria.</Body>
+                    </View>
+                  </View>
+                ) : null}
+                {!selectedLoading && prayerLoadError ? (
+                  <View style={styles.sourceUnavailable}>
+                    <Label>Source access</Label>
+                    <SectionTitle>This text stays with its publisher</SectionTitle>
+                    <Body style={styles.sourceUnavailableText}>{prayerLoadError}</Body>
+                    <AnimatedPressable
+                      accessibilityLabel={`Open ${selected.title} on Sefaria`}
+                      accessibilityRole="link"
+                      onPress={() => void Linking.openURL(selected.hebrewReview.sourceUrl)}
+                      style={styles.sourceButton}
+                    >
+                      <Text style={styles.sourceButtonText}>Open on Sefaria</Text>
+                      <ExternalLink size={16} color={colors.white} />
+                    </AnimatedPressable>
+                  </View>
+                ) : null}
                 {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
                   <View key={token.id} style={styles.token}>
                     {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
@@ -295,6 +321,13 @@ export function PrayerScreen(): React.JSX.Element {
                     </View>
                   </View>
                 ))}
+                {selected.sourceMetadata?.sourceVersion ? (
+                  <View style={styles.sourceAttribution}>
+                    <Label>Text source</Label>
+                    <Body style={styles.sourceAttributionText}>{selected.sourceMetadata.work}</Body>
+                    <Text style={styles.sourceAttributionMeta}>{selected.sourceMetadata.sourceVersion.versionTitle} · {selected.sourceMetadata.sourceVersion.license}</Text>
+                  </View>
+                ) : null}
                 <View style={styles.askCard}>
                   <View style={styles.askHeader}>
                     <View style={styles.askIcon}>
@@ -577,6 +610,69 @@ const styles = StyleSheet.create({
   intentionText: {
     color: colors.ink,
     maxWidth: 330
+  },
+  sourceLoading: {
+    minHeight: 96,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.hairline,
+    paddingVertical: spacing.lg
+  },
+  sourceLoadingCopy: {
+    flex: 1,
+    gap: spacing.xs
+  },
+  sourceLoadingTitle: {
+    fontSize: 17,
+    lineHeight: 22
+  },
+  sourceLoadingText: {
+    fontSize: 14,
+    lineHeight: 20,
+    color: colors.inkMuted
+  },
+  sourceUnavailable: {
+    gap: spacing.sm,
+    borderLeftWidth: 2,
+    borderLeftColor: colors.gold,
+    paddingLeft: spacing.lg,
+    paddingVertical: spacing.sm
+  },
+  sourceUnavailableText: {
+    color: colors.inkMuted
+  },
+  sourceButton: {
+    minHeight: 44,
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    borderRadius: radii.md,
+    backgroundColor: colors.blue,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm
+  },
+  sourceButtonText: {
+    ...type.body,
+    fontWeight: "600",
+    color: colors.white
+  },
+  sourceAttribution: {
+    gap: spacing.xs,
+    borderTopWidth: 1,
+    borderTopColor: colors.hairline,
+    paddingTop: spacing.lg
+  },
+  sourceAttributionText: {
+    color: colors.ink
+  },
+  sourceAttributionMeta: {
+    ...type.caption,
+    color: colors.inkMuted
   },
   askCard: {
     gap: spacing.md,

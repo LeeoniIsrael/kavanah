@@ -13,6 +13,8 @@ type PrayerState = {
   selectedPrayerId: string;
   isSyncing: boolean;
   isSearchingRemote: boolean;
+  loadingPrayerId: string | null;
+  prayerLoadError: string | null;
   bookmarkedPrayerIds: string[];
   setQuery: (query: string) => void;
   searchRemote: (query?: string) => Promise<void>;
@@ -31,6 +33,8 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
   selectedPrayerId: cached[0]?.id ?? "shema",
   isSyncing: false,
   isSearchingRemote: false,
+  loadingPrayerId: null,
+  prayerLoadError: null,
   bookmarkedPrayerIds: persistedBookmarks,
   setQuery: (query) => {
     const prayers = get().prayers;
@@ -38,24 +42,27 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
   },
   searchRemote: async (queryOverride) => {
     const query = (queryOverride ?? get().query).trim();
-    if (query.length < 3) {
+    if (query.length < 2) {
       return;
     }
     set({ isSearchingRemote: true });
     try {
       const remotePrayers = await searchSefariaPrayerRefs(query);
       const prayers = mergePrayerCollections(get().prayers, remotePrayers);
-      set({ prayers, results: searchPrayers(query, prayers) });
+      if (get().query.trim().toLowerCase() === query.toLowerCase()) {
+        set({ prayers, results: searchPrayers(query, prayers) });
+      }
     } finally {
       set({ isSearchingRemote: false });
     }
   },
   selectPrayer: async (id) => {
-    set({ selectedPrayerId: id });
+    set({ selectedPrayerId: id, loadingPrayerId: null, prayerLoadError: null });
     const prayer = get().prayers.find((item) => item.id === id);
     if (!prayer || prayer.source !== "sefaria-search") {
       return;
     }
+    set({ loadingPrayerId: id });
     try {
       const hydrated = await hydratePrayerFromSefaria(prayer);
       set((state) => {
@@ -63,11 +70,17 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
         return {
           prayers,
           results: searchPrayers(state.query, prayers),
-          selectedPrayerId: id
+          loadingPrayerId: state.loadingPrayerId === id ? null : state.loadingPrayerId,
+          prayerLoadError: state.selectedPrayerId === id ? null : state.prayerLoadError
         };
       });
-    } catch {
-      set({ selectedPrayerId: id });
+    } catch (error) {
+      set((state) => state.selectedPrayerId === id
+        ? {
+            loadingPrayerId: null,
+            prayerLoadError: error instanceof Error ? error.message : "This prayer could not be loaded right now."
+          }
+        : state);
     }
   },
   toggleBookmark: (id) => {
