@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck, BookmarkMinus, ExternalLink, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, BookmarkMinus, BookOpenCheck, ChevronRight, ExternalLink, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Linking, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -6,6 +6,7 @@ import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { AssistantResponseText } from "@/components/AssistantResponseText";
 import { Card } from "@/components/Card";
+import { GuidedPrayer, type GuidedPrayerToken } from "@/components/GuidedPrayer";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
@@ -22,6 +23,11 @@ import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
 type LocalizedToken = PrayerToken & {
   localizedTranslation: string;
   localizedTransliteration: string;
+};
+
+type LocalizedPrayer = {
+  prayerId: string;
+  tokens: LocalizedToken[];
 };
 
 function hebrewContentLabel(kind: HebrewContentKind): string {
@@ -47,17 +53,19 @@ export function PrayerScreen(): React.JSX.Element {
   const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
   const setAssistantConsent = useSettingsStore((state) => state.setAssistantConsent);
   const [readerOpen, setReaderOpen] = useState(false);
+  const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
   const [assistantMessages, setAssistantMessages] = useState<AssistantMessage[]>([]);
   const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
   const [consentModalOpen, setConsentModalOpen] = useState(false);
-  const [localizedTokens, setLocalizedTokens] = useState<LocalizedToken[]>([]);
+  const [localizedPrayer, setLocalizedPrayer] = useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
   const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
   const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
   const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
   const selectedLoading = selected ? loadingPrayerId === selected.id : false;
+  const localizedTokens = localizedPrayer && localizedPrayer.prayerId === selected?.id ? localizedPrayer.tokens : [];
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results.slice(0, 18) : [];
   const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
@@ -83,11 +91,14 @@ export function PrayerScreen(): React.JSX.Element {
 
     async function localizeSelectedPrayer(): Promise<void> {
       if (!selected) {
-        setLocalizedTokens([]);
+        setLocalizedPrayer(null);
         return;
       }
 
-      setLocalizedTokens(selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration })));
+      setLocalizedPrayer({
+        prayerId: selected.id,
+        tokens: selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))
+      });
 
       const tokens = await Promise.all(
         selected.tokens.map(async (token) => ({
@@ -98,7 +109,7 @@ export function PrayerScreen(): React.JSX.Element {
       );
 
       if (!cancelled) {
-        setLocalizedTokens(tokens);
+        setLocalizedPrayer({ prayerId: selected.id, tokens });
       }
     }
 
@@ -111,11 +122,22 @@ export function PrayerScreen(): React.JSX.Element {
 
   const openPrayer = (id: string) => {
     void selectPrayer(id);
+    setGuidedPrayerOpen(false);
     setAssistantOpen(false);
     setAssistantInput("");
     setAssistantMessages([]);
     setReaderOpen(true);
   };
+
+  const readerTokens = (localizedTokens.length > 0
+    ? localizedTokens
+    : selected?.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration })) ?? []);
+  const guidedTokens: GuidedPrayerToken[] = readerTokens.map((token) => ({
+    id: token.id,
+    hebrew: token.hebrew,
+    transliteration: token.localizedTransliteration,
+    translation: token.localizedTranslation
+  }));
 
   const askAboutSelectedPrayer = async () => {
     if (!selected || !assistantInput.trim() || isAssistantStreaming) {
@@ -242,7 +264,7 @@ export function PrayerScreen(): React.JSX.Element {
         <SafeAreaView style={styles.readerSafeArea}>
           {selected ? (
             <View style={[styles.readerChrome, { top: insets.top + spacing.lg }]} pointerEvents="box-none">
-              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={() => setReaderOpen(false)} pressedScale={0.94} style={styles.floatingClose}>
+              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={() => { setGuidedPrayerOpen(false); setReaderOpen(false); }} pressedScale={0.94} style={styles.floatingClose}>
                 <X size={17} color={colors.ink} />
               </AnimatedPressable>
               <AnimatedPressable
@@ -281,6 +303,23 @@ export function PrayerScreen(): React.JSX.Element {
                   <Label>Kavanah</Label>
                   <Body style={styles.intentionText}>Pause for one breath. Bring to mind why you opened this prayer.</Body>
                 </View>
+                {!selectedLoading && guidedTokens.length > 0 ? (
+                  <AnimatedPressable
+                    accessibilityHint="Shows one prayer line at a time"
+                    accessibilityLabel="Start guided reading"
+                    accessibilityRole="button"
+                    haptic="confirm"
+                    onPress={() => setGuidedPrayerOpen(true)}
+                    style={styles.guidedEntry}
+                  >
+                    <View style={styles.guidedEntryIcon}><BookOpenCheck size={19} color={colors.blue} /></View>
+                    <View style={styles.guidedEntryCopy}>
+                      <SectionTitle style={styles.guidedEntryTitle}>Read line by line</SectionTitle>
+                      <Body style={styles.guidedEntryBody}>Hebrew, pronunciation, and meaning at your pace.</Body>
+                    </View>
+                    <ChevronRight size={18} color={colors.inkMuted} />
+                  </AnimatedPressable>
+                ) : null}
                 {selectedLoading ? (
                   <View style={styles.sourceLoading}>
                     <ActivityIndicator size="small" color={colors.blue} />
@@ -306,7 +345,7 @@ export function PrayerScreen(): React.JSX.Element {
                     </AnimatedPressable>
                   </View>
                 ) : null}
-                {(localizedTokens.length > 0 ? localizedTokens : selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))).map((token) => (
+                {readerTokens.map((token) => (
                   <View key={token.id} style={styles.token}>
                     {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
                     {token.localizedTransliteration ? (
@@ -410,6 +449,12 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
             </View>
           ) : null}
+          <GuidedPrayer
+            prayerTitle={selected?.title ?? "Prayer"}
+            tokens={guidedTokens}
+            visible={guidedPrayerOpen}
+            onClose={() => setGuidedPrayerOpen(false)}
+          />
         </SafeAreaView>
       </Modal>
     </Screen>
@@ -610,6 +655,37 @@ const styles = StyleSheet.create({
   intentionText: {
     color: colors.ink,
     maxWidth: 330
+  },
+  guidedEntry: {
+    minHeight: 74,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    paddingVertical: spacing.md,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.hairline
+  },
+  guidedEntryIcon: {
+    width: 42,
+    height: 42,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  guidedEntryCopy: {
+    flex: 1,
+    gap: 2
+  },
+  guidedEntryTitle: {
+    fontSize: 17,
+    lineHeight: 22
+  },
+  guidedEntryBody: {
+    fontSize: 13,
+    lineHeight: 18,
+    color: colors.inkMuted
   },
   sourceLoading: {
     minHeight: 96,
