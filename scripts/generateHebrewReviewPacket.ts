@@ -2,10 +2,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { corePrayers } from "../src/data/corePrayers";
-import type { HebrewContentKind } from "../src/types/prayer";
+import type { HebrewContentKind, LiturgyIndexManifest } from "../src/types/prayer";
 
 const output = resolve(process.cwd(), "docs/rabbinic-hebrew-review.md");
 const generated = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generatedHebrewCandidates.json"), "utf8")) as GeneratedCandidates;
+const liturgyIndex = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generatedLiturgyIndex.json"), "utf8")) as LiturgyIndexManifest;
 const candidates = new Map(generated.candidates.map((candidate) => [candidate.id, candidate]));
 const preparedIds = new Set([
   ...candidates.keys(),
@@ -15,6 +16,8 @@ const unsnapshottedComplete = corePrayers.filter(
   (prayer) => prayer.hebrewReview.contentKind === "complete" && !candidates.has(prayer.id)
 ).length;
 const blockedCount = corePrayers.length - preparedIds.size;
+const licensedSectionCount = liturgyIndex.entries.filter((entry) => entry.sourceVersion !== null).length;
+const sourceLinkOnlyCount = liturgyIndex.entryCount - licensedSectionCount;
 
 const sections = corePrayers.map((prayer, index) => {
   const review = prayer.hebrewReview;
@@ -79,7 +82,8 @@ const packet = [
   "",
   "Approval means the exact Hebrew shown may be bundled in Kavanah under the stated tradition. Corrections should preserve line boundaries where practical so translations and transliterations can later be aligned without altering the approved Hebrew.",
   "",
-  ...sections
+  ...sections,
+  buildCoverageAppendix()
 ].join("\n");
 
 writeFileSync(output, packet, "utf8");
@@ -95,6 +99,59 @@ function formatKind(kind: HebrewContentKind): string {
 
 function formatTradition(tradition: string): string {
   return tradition.split("-").map((part) => part[0]?.toUpperCase() + part.slice(1)).join(" ");
+}
+
+function buildCoverageAppendix(): string {
+  const byWork = new Map<string, LiturgyIndexManifest["entries"]>();
+  for (const entry of liturgyIndex.entries) {
+    byWork.set(entry.work, [...(byWork.get(entry.work) ?? []), entry]);
+  }
+
+  const workSections = [...byWork.entries()].map(([work, entries]) => {
+    const licensed = entries.filter((entry) => entry.sourceVersion !== null).length;
+    const traditions = [...new Set(entries.map((entry) => formatTradition(entry.tradition)))].join(", ");
+    const inventory = entries.map((entry, index) => {
+      const availability = entry.sourceVersion
+        ? `In-app source: ${entry.sourceVersion.versionTitle}; ${entry.sourceVersion.license}`
+        : "Source link only: no reusable Hebrew edition is currently listed";
+      return `${index + 1}. **${entry.title}** — ${entry.ref} — ${availability}`;
+    });
+    return [
+      `## ${work}`,
+      "",
+      `- **Tradition:** ${traditions}`,
+      `- **Sections indexed:** ${entries.length}`,
+      `- **Sections with reusable Hebrew editions:** ${licensed}`,
+      `- **Sections restricted to source links:** ${entries.length - licensed}`,
+      "",
+      ...inventory,
+      ""
+    ].join("\n");
+  });
+
+  return [
+    "# Comprehensive Source Library Index",
+    "",
+    "This is the complete section-level inventory currently discoverable in Kavanah from Sefaria's non-commentary Liturgy catalog plus all 150 Psalms. It is a coverage and triage index, not blanket rabbinic approval. Exact Hebrew must be approved from a static review packet before an entry can move into Kavanah's approved core catalog.",
+    "",
+    "## Coverage summary",
+    "",
+    `- **Source works available:** ${liturgyIndex.workCount}`,
+    `- **Prayer and liturgy sections indexed:** ${liturgyIndex.entryCount}`,
+    `- **Sections with reusable Hebrew editions available in Kavanah:** ${licensedSectionCount}`,
+    `- **Sections shown as source links only:** ${sourceLinkOnlyCount}`,
+    `- **Upstream catalog records currently unavailable:** ${liturgyIndex.excludedWorks.length}`,
+    "",
+    "## How to use this index",
+    "",
+    "1. Confirm that the source works and sections cover the communities and use cases Kavanah should support.",
+    "2. Comment on incorrect titles, misleading section boundaries, missing nusach labels, or important works absent from Sefaria's catalog.",
+    "3. Choose the next source work for exact Hebrew review. Kavanah should promote only reviewed sections into its approved offline core.",
+    "4. Do not approve all sections from this inventory alone; each exact text packet must still be checked for wording, omissions, responses, variants, and ritual context.",
+    "",
+    ...liturgyIndex.excludedWorks.flatMap((work) => [`- **Unavailable upstream:** ${work.title} — ${work.reason}`, ""]),
+    ...workSections
+  ].join("\n");
 }
 
 type GeneratedCandidates = {

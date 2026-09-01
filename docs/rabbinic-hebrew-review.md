@@ -1463,3 +1463,2663 @@ Approval means the exact Hebrew shown may be bundled in Kavanah under the stated
 
 - **Reviewer name:** ______________________________
 - **Date:** ____________________
+
+# Comprehensive Source Library Index
+
+This is the complete section-level inventory currently discoverable in Kavanah from Sefaria's non-commentary Liturgy catalog plus all 150 Psalms. It is a coverage and triage index, not blanket rabbinic approval. Exact Hebrew must be approved from a static review packet before an entry can move into Kavanah's approved core catalog.
+
+## Coverage summary
+
+- **Source works available:** 47
+- **Prayer and liturgy sections indexed:** 2263
+- **Sections with reusable Hebrew editions available in Kavanah:** 1564
+- **Sections shown as source links only:** 699
+- **Upstream catalog records currently unavailable:** 1
+
+## How to use this index
+
+1. Confirm that the source works and sections cover the communities and use cases Kavanah should support.
+2. Comment on incorrect titles, misleading section boundaries, missing nusach labels, or important works absent from Sefaria's catalog.
+3. Choose the next source work for exact Hebrew review. Kavanah should promote only reviewed sections into its approved offline core.
+4. Do not approve all sections from this inventory alone; each exact text packet must still be checked for wording, omissions, responses, variants, and ritual context.
+
+- **Unavailable upstream:** Machzor Yom Ha'atzmaut & Yom Yerushalyim — No book named 'Machzor Yom Ha'atzmaut & Yom Yerushalyim'.
+
+## Akdamut Milin
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Akdamut Milin** — Akdamut Milin — Source link only: no reusable Hebrew edition is currently listed
+
+## Azharot of Solomon ibn Gabirol
+
+- **Tradition:** Varies
+- **Sections indexed:** 4
+- **Sections with reusable Hebrew editions:** 4
+- **Sections restricted to source links:** 0
+
+1. **Negative Commandments** — Azharot of Solomon ibn Gabirol, Negative Commandments — In-app source: Vilna, 1879 -- vocalized; Public Domain
+2. **Positive Commandments** — Azharot of Solomon ibn Gabirol, Positive Commandments — In-app source: Vilna, 1879 -- vocalized; Public Domain
+3. **Postscript** — Azharot of Solomon ibn Gabirol, Postscript — In-app source: Vilna, 1879 -- vocalized; Public Domain
+4. **Prelude** — Azharot of Solomon ibn Gabirol, Prelude — In-app source: Vilna, 1879 -- vocalized; Public Domain
+
+## Birkat Hamazon
+
+- **Tradition:** Varies
+- **Sections indexed:** 10
+- **Sections with reusable Hebrew editions:** 10
+- **Sections restricted to source links:** 0
+
+1. **Blessing on Jerusalem** — Birkat Hamazon, Blessing on Jerusalem — In-app source: Brit Mila Additions ; Public Domain
+2. **Blessing on the Food** — Birkat Hamazon, Blessing on the Food — In-app source: Brit Mila Additions ; Public Domain
+3. **Blessing on the Land** — Birkat Hamazon, Blessing on the Land — In-app source: Brit Mila Additions ; Public Domain
+4. **Bore Nefashot** — Birkat Hamazon, Blessings After Other Foods, Bore Nefashot — In-app source: Brit Mila Additions ; Public Domain
+5. **M'ainShalosh** — Birkat Hamazon, Blessings After Other Foods, M'ainShalosh — In-app source: Brit Mila Additions ; Public Domain
+6. **HaRachaman of Brit Milah** — Birkat Hamazon, HaRachaman of Brit Milah — In-app source: Brit Mila Additions ; Public Domain
+7. **Hatov Vehametiv** — Birkat Hamazon, Hatov Vehametiv — In-app source: Brit Mila Additions ; Public Domain
+8. **Preliminary Psalms** — Birkat Hamazon, Preliminary Psalms — In-app source: Brit Mila Additions ; Public Domain
+9. **Sheva Brachot** — Birkat Hamazon, Sheva Brachot — In-app source: Brit Mila Additions ; Public Domain
+10. **Zimmun** — Birkat Hamazon, Zimmun — In-app source: Brit Mila Additions ; Public Domain
+
+## Hadran
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Hadran** — Hadran — Source link only: no reusable Hebrew edition is currently listed
+
+## Hadran for Tanakh
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Hadran for Tanakh** — Hadran for Tanakh — Source link only: no reusable Hebrew edition is currently listed
+
+## Hallel
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Hallel** — Hallel — Source link only: no reusable Hebrew edition is currently listed
+
+## Kabbalat Shabbat
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Kabbalat Shabbat** — Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+
+## Keter Malkhut
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Keter Malkhut** — Keter Malkhut — In-app source: Mahberet miShire Kodesh, I. Davidson. JPS, Philadelphia, 1923; Public Domain
+
+## Ketubah Text
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Ketubah Text** — Ketubah Text — Source link only: no reusable Hebrew edition is currently listed
+
+## Kinnot for Tisha B'Av (Ashkenaz)
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 2
+- **Sections with reusable Hebrew editions:** 2
+- **Sections restricted to source links:** 0
+
+1. **Kinot for Tisha B'Av Day** — Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day — In-app source: Kinnot for Tisha B'Av -- Wikisource; CC-BY-SA
+2. **Kinot for Tisha B'Av Night** — Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night — In-app source: Kinnot for Tisha B'Av -- Wikisource; CC-BY-SA
+
+## Lekha Dodi
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Lekha Dodi** — Lekha Dodi — In-app source: Wikisource; CC-BY-SA
+
+## Leshon Chakhamim
+
+- **Tradition:** Varies
+- **Sections indexed:** 4
+- **Sections with reusable Hebrew editions:** 4
+- **Sections restricted to source links:** 0
+
+1. **Part I** — Leshon Chakhamim, Part I — In-app source: Bakhshi Edition, 2021; CC-BY-SA
+2. **Introduction** — Leshon Chakhamim, Part I, Introduction — In-app source: Bakhshi Edition, 2021; CC-BY-SA
+3. **Part II** — Leshon Chakhamim, Part II — In-app source: Bakhshi Edition, 2021; CC-BY-SA
+4. **Introduction** — Leshon Chakhamim, Part II, Introduction — In-app source: Bakhshi Edition, 2021; CC-BY-SA
+
+## Ma'aneh Lashon Chabad
+
+- **Tradition:** Chabad
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Ma'aneh Lashon Chabad** — Ma'aneh Lashon Chabad — In-app source: Warsaw, 1869; Public Domain
+
+## Ma'avar Yabbok
+
+- **Tradition:** Varies
+- **Sections indexed:** 10
+- **Sections with reusable Hebrew editions:** 10
+- **Sections restricted to source links:** 0
+
+1. **Atar Anan HaKetoret** — Ma'avar Yabbok, Atar Anan HaKetoret — In-app source: Vilna, 1860; Public Domain
+2. **Author's Introduction** — Ma'avar Yabbok, Author's Introduction — In-app source: Vilna, 1860; Public Domain
+3. **Epilogue** — Ma'avar Yabbok, Epilogue — In-app source: Vilna, 1860; Public Domain
+4. **Imrei Noam** — Ma'avar Yabbok, Imrei Noam — In-app source: Vilna, 1860; Public Domain
+5. **Introduction** — Ma'avar Yabbok, Introduction — In-app source: Vilna, 1860; Public Domain
+6. **Korban Ta'anit** — Ma'avar Yabbok, Korban Ta'anit — In-app source: Vilna, 1860; Public Domain
+7. **Minchat Aharon** — Ma'avar Yabbok, Minchat Aharon — In-app source: Vilna, 1860; Public Domain
+8. **Sefat Emet** — Ma'avar Yabbok, Sefat Emet — In-app source: Vilna, 1860; Public Domain
+9. **Siftei Renanot** — Ma'avar Yabbok, Siftei Renanot — In-app source: Vilna, 1860; Public Domain
+10. **Siftei Tzedek** — Ma'avar Yabbok, Siftei Tzedek — In-app source: Vilna, 1860; Public Domain
+
+## Machzor Rosh Hashanah Ashkenaz Linear
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 98
+- **Sections with reusable Hebrew editions:** 98
+- **Sections restricted to source links:** 0
+
+1. **Annullment of Vows** — Machzor Rosh Hashanah Ashkenaz Linear, Annullment of Vows — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+2. **Eiruv Tavshilin** — Machzor Rosh Hashanah Ashkenaz Linear, Eiruv Tavshilin — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+3. **Kiddush** — Machzor Rosh Hashanah Ashkenaz Linear, Kiddush — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+4. **Lighting the Candles** — Machzor Rosh Hashanah Ashkenaz Linear, Lighting the Candles — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+5. **Adon Olam** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+6. **Aleinu** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+7. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+8. **Borechu** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Borechu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+9. **Kabbalas Shabbos** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Kabbalas Shabbos — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+10. **Magein Avos** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Magein Avos — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+11. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+12. **Vayechulu** — Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Vayechulu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+13. **Aleinu** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+14. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+15. **Ashrei** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+16. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+17. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+18. **Aleinu** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+19. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+20. **Ashrei** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+21. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+22. **Berich Shemei** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+23. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+24. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+25. **Aleinu** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+26. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+27. **Avodah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+28. **Hymn of Glory** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Hymn of Glory — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+29. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+30. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+31. **Malkhuyot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Malkhuyot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+32. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+33. **Shofarot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Shofarot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+34. **Song of the Day** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Song of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+35. **Zikhronot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Zikhronot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+36. **Hineni** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Hineni — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+37. **Aleinu** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+38. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+39. **Avodah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+40. **Hymn of Glory** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Hymn of Glory — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+41. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+42. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+43. **Malkhuyot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Malkhuyot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+44. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+45. **Shofarot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Shofarot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+46. **Song of the Day** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Song of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+47. **Zikhronot** — Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Zikhronot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+48. **Berachos for the Haftarah** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+49. **Berich Shemei** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+50. **Haftarah for the First Day of Rosh Hashana** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the First Day of Rosh Hashana — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+51. **Haftarah for the Second Day of Rosh Hashana** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+52. **Maftir Reading from the Second Sefer Torah** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+53. **Reading of the Torah for the First Day** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the First Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+54. **Reading of the Torah for the Second Day** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the Second Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+55. **Va'yehi Binsoa** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+56. **Yekum Purkon** — Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Yekum Purkon — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+57. **Sounding of the Shofar** — Machzor Rosh Hashanah Ashkenaz Linear, Sounding of the Shofar — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+58. **Tashlich** — Machzor Rosh Hashanah Ashkenaz Linear, Tashlich — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+59. **Adon Olam** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+60. **Akeidah (The Binding of Yitzchak)** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+61. **Baruch She'amar** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Baruch She'amar — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+62. **Blessings of the Torah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings of the Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+63. **Blessings Upon Arising** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+64. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+65. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+66. **Avodah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+67. **Eil Adon** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Eil Adon — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+68. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+69. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+70. **Recitation of Shema** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+71. **Sancification of the Day** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+72. **The King** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, The King — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+73. **Yishtabach** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Yishtabach — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+74. **Hodu** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Hodu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+75. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+76. **Ketores (Incense Offering)** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+77. **Korban Tamid (Daily Offering)** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+78. **Korbanos (Sacrificial Offerings)** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+79. **Ma Tovu** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ma Tovu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+80. **Mizmor Shir** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mizmor Shir — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+81. **Morning Blessings** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Morning Blessings — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+82. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+83. **Nishmas** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Nishmas — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+84. **Pesukei Dezimrah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+85. **Putting On the Tallis** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Putting On the Tallis — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+86. **Amidah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+87. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+88. **Avodah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+89. **Kedushah** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+90. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+91. **Recitation of Shema** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+92. **Sancification of the Day** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+93. **The King** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, The King — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+94. **Yishtabach** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+95. **Shiras Hayam** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Shiras Hayam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+96. **Upon Arising in the Morning** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+97. **Yehi Kevod** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yehi Kevod — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+98. **Yigdal** — Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yigdal — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he; CC-BY
+
+## Machzor Rosh Hashanah Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 98
+- **Sections with reusable Hebrew editions:** 98
+- **Sections restricted to source links:** 0
+
+1. **Annullment of Vows** — Machzor Rosh Hashanah Ashkenaz, Annullment of Vows — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+2. **Eiruv Tavshilin** — Machzor Rosh Hashanah Ashkenaz, Eiruv Tavshilin — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+3. **Kiddush** — Machzor Rosh Hashanah Ashkenaz, Kiddush — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+4. **Lighting the Candles** — Machzor Rosh Hashanah Ashkenaz, Lighting the Candles — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+5. **Adon Olam** — Machzor Rosh Hashanah Ashkenaz, Maariv, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+6. **Aleinu** — Machzor Rosh Hashanah Ashkenaz, Maariv, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+7. **Amidah** — Machzor Rosh Hashanah Ashkenaz, Maariv, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+8. **Borechu** — Machzor Rosh Hashanah Ashkenaz, Maariv, Borechu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+9. **Kabbalas Shabbos** — Machzor Rosh Hashanah Ashkenaz, Maariv, Kabbalas Shabbos — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+10. **Magein Avos** — Machzor Rosh Hashanah Ashkenaz, Maariv, Magein Avos — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+11. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz, Maariv, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+12. **Vayechulu** — Machzor Rosh Hashanah Ashkenaz, Maariv, Vayechulu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+13. **Aleinu** — Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+14. **Amidah** — Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+15. **Ashrei** — Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+16. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+17. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+18. **Aleinu** — Machzor Rosh Hashanah Ashkenaz, Mincha, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+19. **Amidah** — Machzor Rosh Hashanah Ashkenaz, Mincha, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+20. **Ashrei** — Machzor Rosh Hashanah Ashkenaz, Mincha, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+21. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz, Mincha, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+22. **Berich Shemei** — Machzor Rosh Hashanah Ashkenaz, Mincha, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+23. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, Mincha, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+24. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz, Mincha, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+25. **Aleinu** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+26. **Amidah** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+27. **Avodah** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+28. **Hymn of Glory** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Hymn of Glory — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+29. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+30. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+31. **Malkhuyot** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Malkhuyot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+32. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+33. **Shofarot** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Shofarot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+34. **Song of the Day** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Song of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+35. **Zikhronot** — Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Zikhronot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+36. **Hineni** — Machzor Rosh Hashanah Ashkenaz, Musaf, Hineni — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+37. **Aleinu** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+38. **Amidah** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+39. **Avodah** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+40. **Hymn of Glory** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Hymn of Glory — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+41. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+42. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+43. **Malkhuyot** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Malkhuyot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+44. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+45. **Shofarot** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Shofarot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+46. **Song of the Day** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Song of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+47. **Zikhronot** — Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Zikhronot — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+48. **Berachos for the Haftarah** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berachos for the Haftarah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+49. **Berich Shemei** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+50. **Haftarah for the First Day of Rosh Hashana** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the First Day of Rosh Hashana — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+51. **Haftarah for the Second Day of Rosh Hashana** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+52. **Maftir Reading from the Second Sefer Torah** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+53. **Reading of the Torah for the First Day** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the First Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+54. **Reading of the Torah for the Second Day** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the Second Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+55. **Va'yehi Binsoa** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Va'yehi Binsoa — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+56. **Yekum Purkon** — Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Yekum Purkon — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+57. **Sounding of the Shofar** — Machzor Rosh Hashanah Ashkenaz, Sounding of the Shofar — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+58. **Tashlich** — Machzor Rosh Hashanah Ashkenaz, Tashlich — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+59. **Adon Olam** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+60. **Akeidah (The Binding of Yitzchak)** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+61. **Baruch She'amar** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Baruch She'amar — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+62. **Blessings of the Torah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings of the Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+63. **Blessings Upon Arising** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings Upon Arising — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+64. **Amidah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+65. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+66. **Avodah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+67. **Eil Adon** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Eil Adon — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+68. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+69. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+70. **Recitation of Shema** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+71. **Sancification of the Day** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+72. **The King** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, The King — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+73. **Yishtabach** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Yishtabach — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+74. **Hodu** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Hodu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+75. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+76. **Ketores (Incense Offering)** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ketores (Incense Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+77. **Korban Tamid (Daily Offering)** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+78. **Korbanos (Sacrificial Offerings)** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+79. **Ma Tovu** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ma Tovu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+80. **Mizmor Shir** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mizmor Shir — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+81. **Morning Blessings** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Morning Blessings — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+82. **Mourner's Kaddish** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+83. **Nishmas** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Nishmas — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+84. **Pesukei Dezimrah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Pesukei Dezimrah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+85. **Putting On the Tallis** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Putting On the Tallis — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+86. **Amidah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+87. **Avinu Malkenu** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+88. **Avodah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+89. **Kedushah** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+90. **Reader's Repetition** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+91. **Recitation of Shema** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+92. **Sancification of the Day** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+93. **The King** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, The King — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+94. **Yishtabach** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+95. **Shiras Hayam** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Shiras Hayam — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+96. **Upon Arising in the Morning** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Upon Arising in the Morning — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+97. **Yehi Kevod** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yehi Kevod — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+98. **Yigdal** — Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yigdal — In-app source: The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.); CC-BY
+
+## Machzor Rosh Hashanah Edot HaMizrach
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 53
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 53
+
+1. **Annulment of Vows and Curses** — Machzor Rosh Hashanah Edot HaMizrach, Annulment of Vows and Curses — Source link only: no reusable Hebrew edition is currently listed
+2. **Arvit for Motzei Rosh Hashana** — Machzor Rosh Hashanah Edot HaMizrach, Arvit for Motzei Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+3. **Achot Ketannah** — Machzor Rosh Hashanah Edot HaMizrach, Arvit, Achot Ketannah — Source link only: no reusable Hebrew edition is currently listed
+4. **Aleinu** — Machzor Rosh Hashanah Edot HaMizrach, Arvit, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+5. **Amidah** — Machzor Rosh Hashanah Edot HaMizrach, Arvit, Amidah — Source link only: no reusable Hebrew edition is currently listed
+6. **Barechu** — Machzor Rosh Hashanah Edot HaMizrach, Arvit, Barechu — Source link only: no reusable Hebrew edition is currently listed
+7. **Vayechulu** — Machzor Rosh Hashanah Edot HaMizrach, Arvit, Vayechulu — Source link only: no reusable Hebrew edition is currently listed
+8. **Birkat Hamazon** — Machzor Rosh Hashanah Edot HaMizrach, Birkat Hamazon — Source link only: no reusable Hebrew edition is currently listed
+9. **Blessing after the Haftarah** — Machzor Rosh Hashanah Edot HaMizrach, Blessing after the Haftarah — Source link only: no reusable Hebrew edition is currently listed
+10. **Blessing on the Torah** — Machzor Rosh Hashanah Edot HaMizrach, Blessing on the Torah — Source link only: no reusable Hebrew edition is currently listed
+11. **Candle Lighting** — Machzor Rosh Hashanah Edot HaMizrach, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+12. **Daytime Kiddush** — Machzor Rosh Hashanah Edot HaMizrach, Daytime Kiddush — Source link only: no reusable Hebrew edition is currently listed
+13. **Eiruv Tavshilin** — Machzor Rosh Hashanah Edot HaMizrach, Eiruv Tavshilin — Source link only: no reusable Hebrew edition is currently listed
+14. **Haftarah for the First Day of Rosh Hashana** — Machzor Rosh Hashanah Edot HaMizrach, Haftarah for the First Day of Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+15. **Haftarah for the Second Day of Rosh Hashana** — Machzor Rosh Hashanah Edot HaMizrach, Haftarah for the Second Day of Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+16. **Havdalah** — Machzor Rosh Hashanah Edot HaMizrach, Havdalah — Source link only: no reusable Hebrew edition is currently listed
+17. **Kabbalat Shabbat** — Machzor Rosh Hashanah Edot HaMizrach, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+18. **Maftir** — Machzor Rosh Hashanah Edot HaMizrach, Maftir — Source link only: no reusable Hebrew edition is currently listed
+19. **Masekhet Rosh Hashana** — Machzor Rosh Hashanah Edot HaMizrach, Masekhet Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+20. **Aleinu** — Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+21. **Amidah** — Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Amidah — Source link only: no reusable Hebrew edition is currently listed
+22. **Ashrei** — Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+23. **Korbanot** — Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+24. **Aleinu** — Machzor Rosh Hashanah Edot HaMizrach, Mincha, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+25. **Amidah** — Machzor Rosh Hashanah Edot HaMizrach, Mincha, Amidah — Source link only: no reusable Hebrew edition is currently listed
+26. **Avinu Malkenu** — Machzor Rosh Hashanah Edot HaMizrach, Mincha, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+27. **Korbanot** — Machzor Rosh Hashanah Edot HaMizrach, Mincha, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+28. **Reading of the Torah for Shabbat** — Machzor Rosh Hashanah Edot HaMizrach, Mincha, Reading of the Torah for Shabbat — Source link only: no reusable Hebrew edition is currently listed
+29. **Musaf** — Machzor Rosh Hashanah Edot HaMizrach, Musaf — Source link only: no reusable Hebrew edition is currently listed
+30. **Nighttime Kiddush** — Machzor Rosh Hashanah Edot HaMizrach, Nighttime Kiddush — Source link only: no reusable Hebrew edition is currently listed
+31. **Opening of the Ark** — Machzor Rosh Hashanah Edot HaMizrach, Opening of the Ark — Source link only: no reusable Hebrew edition is currently listed
+32. **Reading of the Torah for the First Day** — Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the First Day — Source link only: no reusable Hebrew edition is currently listed
+33. **Reading of the Torah for the Second Day** — Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the Second Day — Source link only: no reusable Hebrew edition is currently listed
+34. **Seder Rosh Hashana** — Machzor Rosh Hashanah Edot HaMizrach, Seder Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+35. **Akeidah** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Akeidah — Source link only: no reusable Hebrew edition is currently listed
+36. **Amidah** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Amidah — Source link only: no reusable Hebrew edition is currently listed
+37. **Avinu Malkenu** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+38. **Baruch She'amar** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Baruch She'amar — Source link only: no reusable Hebrew edition is currently listed
+39. **Hodu** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Hodu — Source link only: no reusable Hebrew edition is currently listed
+40. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Kaddish d'Rabanan — Source link only: no reusable Hebrew edition is currently listed
+41. **Ketoret** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Ketoret — Source link only: no reusable Hebrew edition is currently listed
+42. **Korbanot** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+43. **Morning Prayers** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Morning Prayers — Source link only: no reusable Hebrew edition is currently listed
+44. **Nishmat** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+45. **Pesukei Dezimrah** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Pesukei Dezimrah — Source link only: no reusable Hebrew edition is currently listed
+46. **Putting On the Tallit** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Putting On the Tallit — Source link only: no reusable Hebrew edition is currently listed
+47. **Shema and Blessings** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shema and Blessings — Source link only: no reusable Hebrew edition is currently listed
+48. **Shirat Hayam** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shirat Hayam — Source link only: no reusable Hebrew edition is currently listed
+49. **Upon Arising in the Morning** — Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Upon Arising in the Morning — Source link only: no reusable Hebrew edition is currently listed
+50. **Sounding of the Shofar** — Machzor Rosh Hashanah Edot HaMizrach, Sounding of the Shofar — Source link only: no reusable Hebrew edition is currently listed
+51. **Tashlich** — Machzor Rosh Hashanah Edot HaMizrach, Tashlich — Source link only: no reusable Hebrew edition is currently listed
+52. **Unetanneh Tokef** — Machzor Rosh Hashanah Edot HaMizrach, Unetanneh Tokef — Source link only: no reusable Hebrew edition is currently listed
+53. **Zohar Study for Rosh Hashana Night** — Machzor Rosh Hashanah Edot HaMizrach, Zohar Study for Rosh Hashana Night — Source link only: no reusable Hebrew edition is currently listed
+
+## Machzor Rosh Hashanah Sefard
+
+- **Tradition:** Sefard
+- **Sections indexed:** 76
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 76
+
+1. **Annullment of Vows** — Machzor Rosh Hashanah Sefard, Annullment of Vows — Source link only: no reusable Hebrew edition is currently listed
+2. **Eiruv Chatzerot** — Machzor Rosh Hashanah Sefard, Eiruv Chatzerot — Source link only: no reusable Hebrew edition is currently listed
+3. **Eiruv Tavshilin** — Machzor Rosh Hashanah Sefard, Eiruv Tavshilin — Source link only: no reusable Hebrew edition is currently listed
+4. **Eiruv Techumin** — Machzor Rosh Hashanah Sefard, Eiruv Techumin — Source link only: no reusable Hebrew edition is currently listed
+5. **Kiddush** — Machzor Rosh Hashanah Sefard, Kiddush — Source link only: no reusable Hebrew edition is currently listed
+6. **Laws of Erev Rosh Hashanah** — Machzor Rosh Hashanah Sefard, Laws of Erev Rosh Hashanah — Source link only: no reusable Hebrew edition is currently listed
+7. **Laws of Rosh Hashanah Day** — Machzor Rosh Hashanah Sefard, Laws of Rosh Hashanah Day — Source link only: no reusable Hebrew edition is currently listed
+8. **Lighting the Candles** — Machzor Rosh Hashanah Sefard, Lighting the Candles — Source link only: no reusable Hebrew edition is currently listed
+9. **Achot Ketannah** — Machzor Rosh Hashanah Sefard, Maariv, Achot Ketannah — Source link only: no reusable Hebrew edition is currently listed
+10. **Aleinu** — Machzor Rosh Hashanah Sefard, Maariv, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+11. **Amidah** — Machzor Rosh Hashanah Sefard, Maariv, Amidah — Source link only: no reusable Hebrew edition is currently listed
+12. **Barechu** — Machzor Rosh Hashanah Sefard, Maariv, Barechu — Source link only: no reusable Hebrew edition is currently listed
+13. **Kabbalat Shabbat** — Machzor Rosh Hashanah Sefard, Maariv, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+14. **Vayechulu** — Machzor Rosh Hashanah Sefard, Maariv, Vayechulu — Source link only: no reusable Hebrew edition is currently listed
+15. **Aleinu** — Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+16. **Amidah** — Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Amidah — Source link only: no reusable Hebrew edition is currently listed
+17. **Ashrei** — Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+18. **Korbanot** — Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+19. **Aleinu** — Machzor Rosh Hashanah Sefard, Mincha, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+20. **Amidah** — Machzor Rosh Hashanah Sefard, Mincha, Amidah — Source link only: no reusable Hebrew edition is currently listed
+21. **Avinu Malkenu** — Machzor Rosh Hashanah Sefard, Mincha, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+22. **Korbanot** — Machzor Rosh Hashanah Sefard, Mincha, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+23. **Reading of the Torah for Shabbat** — Machzor Rosh Hashanah Sefard, Mincha, Reading of the Torah for Shabbat — Source link only: no reusable Hebrew edition is currently listed
+24. **Aleinu** — Machzor Rosh Hashanah Sefard, Musaf, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+25. **Amidah** — Machzor Rosh Hashanah Sefard, Musaf, First Day of Rosh Hashana, Amidah — Source link only: no reusable Hebrew edition is currently listed
+26. **Reader's Repetition** — Machzor Rosh Hashanah Sefard, Musaf, First Day of Rosh Hashana, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+27. **Hineni** — Machzor Rosh Hashanah Sefard, Musaf, Hineni — Source link only: no reusable Hebrew edition is currently listed
+28. **Hymn of Glory** — Machzor Rosh Hashanah Sefard, Musaf, Hymn of Glory — Source link only: no reusable Hebrew edition is currently listed
+29. **Kaveh** — Machzor Rosh Hashanah Sefard, Musaf, Kaveh — Source link only: no reusable Hebrew edition is currently listed
+30. **Laws of Musaf** — Machzor Rosh Hashanah Sefard, Musaf, Laws of Musaf — Source link only: no reusable Hebrew edition is currently listed
+31. **Mourner's Kaddish** — Machzor Rosh Hashanah Sefard, Musaf, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+32. **Amidah** — Machzor Rosh Hashanah Sefard, Musaf, Second Day of Rosh Hashana, Amidah — Source link only: no reusable Hebrew edition is currently listed
+33. **Reader's Repetition** — Machzor Rosh Hashanah Sefard, Musaf, Second Day of Rosh Hashana, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+34. **Blessings for the Haftarah** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Blessings for the Haftarah — Source link only: no reusable Hebrew edition is currently listed
+35. **Haftarah for the First Day of Rosh Hashana** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the First Day of Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+36. **Haftarah for the Second Day of Rosh Hashana** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana — Source link only: no reusable Hebrew edition is currently listed
+37. **Maftir Reading** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Maftir Reading — Source link only: no reusable Hebrew edition is currently listed
+38. **Mi Sheberach** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Mi Sheberach — Source link only: no reusable Hebrew edition is currently listed
+39. **Reading of the Torah for the First Day** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the First Day — Source link only: no reusable Hebrew edition is currently listed
+40. **Reading of the Torah for the Second Day** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the Second Day — Source link only: no reusable Hebrew edition is currently listed
+41. **Va'yehi Binsoa** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Va'yehi Binsoa — Source link only: no reusable Hebrew edition is currently listed
+42. **Yekum Purkan** — Machzor Rosh Hashanah Sefard, Reading of the Torah, Yekum Purkan — Source link only: no reusable Hebrew edition is currently listed
+43. **Rosh Hashanah Customs** — Machzor Rosh Hashanah Sefard, Rosh Hashanah Customs — Source link only: no reusable Hebrew edition is currently listed
+44. **Blessings and Sounding of the Shofar** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Blessings and Sounding of the Shofar — Source link only: no reusable Hebrew edition is currently listed
+45. **Kavanot for Shofar** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Kavanot for Shofar — Source link only: no reusable Hebrew edition is currently listed
+46. **Laws of Circumcision on Rosh Hashanah** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Laws of Circumcision on Rosh Hashanah — Source link only: no reusable Hebrew edition is currently listed
+47. **Laws of Shofar** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Laws of Shofar — Source link only: no reusable Hebrew edition is currently listed
+48. **Order of the Shofar Sounds** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Order of the Shofar Sounds — Source link only: no reusable Hebrew edition is currently listed
+49. **Rav Saadiah Gaon's Ten Reasons for Shofar Sounding** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Rav Saadiah Gaon's Ten Reasons for Shofar Sounding — Source link only: no reusable Hebrew edition is currently listed
+50. **Zohar Recitation Prior to Shofar** — Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Zohar Recitation Prior to Shofar — Source link only: no reusable Hebrew edition is currently listed
+51. **Tashlich** — Machzor Rosh Hashanah Sefard, Tashlich — Source link only: no reusable Hebrew edition is currently listed
+52. **Akeidah** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Akeidah — Source link only: no reusable Hebrew edition is currently listed
+53. **Baruch She'amar** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Baruch She'amar — Source link only: no reusable Hebrew edition is currently listed
+54. **Blessings Upon Arising** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Blessings Upon Arising — Source link only: no reusable Hebrew edition is currently listed
+55. **Amidah** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Amidah — Source link only: no reusable Hebrew edition is currently listed
+56. **Blessings of the Shema** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+57. **Reader's Repetition** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+58. **Recitation of Shema** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema — Source link only: no reusable Hebrew edition is currently listed
+59. **Song of the Day** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Song of the Day — Source link only: no reusable Hebrew edition is currently listed
+60. **The King** — Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, The King — Source link only: no reusable Hebrew edition is currently listed
+61. **Hodu** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Hodu — Source link only: no reusable Hebrew edition is currently listed
+62. **Kaddish d'Rabanan** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Kaddish d'Rabanan — Source link only: no reusable Hebrew edition is currently listed
+63. **Ketoret** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Ketoret — Source link only: no reusable Hebrew edition is currently listed
+64. **Korbanot** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+65. **Nishmat** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+66. **Pesukei Dezimrah** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Pesukei Dezimrah — Source link only: no reusable Hebrew edition is currently listed
+67. **Putting On the Tallit** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Putting On the Tallit — Source link only: no reusable Hebrew edition is currently listed
+68. **Amidah** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Amidah — Source link only: no reusable Hebrew edition is currently listed
+69. **Blessings of the Shema** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+70. **Reader's Repetition** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+71. **Recitation of Shema** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema — Source link only: no reusable Hebrew edition is currently listed
+72. **Song of the Day** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Song of the Day — Source link only: no reusable Hebrew edition is currently listed
+73. **The King** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, The King — Source link only: no reusable Hebrew edition is currently listed
+74. **Shirat Hayam** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Shirat Hayam — Source link only: no reusable Hebrew edition is currently listed
+75. **Upon Arising in the Morning** — Machzor Rosh Hashanah Sefard, The Morning Prayers, Upon Arising in the Morning — Source link only: no reusable Hebrew edition is currently listed
+76. **Yesod HaTeshuva of Rabbeinu Yonah** — Machzor Rosh Hashanah Sefard, Yesod HaTeshuva of Rabbeinu Yonah — Source link only: no reusable Hebrew edition is currently listed
+
+## Machzor Yom Kippur Ashkenaz Linear
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 81
+- **Sections with reusable Hebrew editions:** 81
+- **Sections restricted to source links:** 0
+
+1. **Blessing the Children** — Machzor Yom Kippur Ashkenaz Linear, Blessing the Children — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+2. **Candle Lighting** — Machzor Yom Kippur Ashkenaz Linear, Candle Lighting — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+3. **Customs of Yom Kippur Night** — Machzor Yom Kippur Ashkenaz Linear, Customs of Yom Kippur Night — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+4. **Kaporos** — Machzor Yom Kippur Ashkenaz Linear, Kaporos — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+5. **Kol Nidrei** — Machzor Yom Kippur Ashkenaz Linear, Kol Nidrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+6. **Adon Olam** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+7. **Aleinu** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+8. **Amidah** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+9. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+10. **Borechu** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Borechu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+11. **Kabbalas Shabbos** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+12. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+13. **Vayechulu** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Vayechulu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+14. **Yaaleh** — Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Yaaleh — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+15. **Memorial Services** — Machzor Yom Kippur Ashkenaz Linear, Memorial Services — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+16. **Aleinu** — Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Aleinu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+17. **Ashrei** — Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+18. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+19. **Shemoneh Esrei** — Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Shemoneh Esrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+20. **Amidah for Mincha** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Amidah for Mincha — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+21. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+22. **Avodah** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+23. **Berich Shemei** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+24. **Kedushah** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+25. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Reader's Repetition of the Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+26. **Torah Reading for Mincha Service** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Torah Reading for Mincha Service — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+27. **Va'yehi Binsoa** — Machzor Yom Kippur Ashkenaz Linear, Mincha, Va'yehi Binsoa — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+28. **Motzei Yom Kippur** — Machzor Yom Kippur Ashkenaz Linear, Motzei Yom Kippur — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+29. **Avodah** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+30. **Hineni** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Hineni — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+31. **Kedushah** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+32. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Reader's Repetition of the Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+33. **Shemoneh Esrei** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Shemoneh Esrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+34. **The Avodah Service** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, The Avodah Service — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+35. **The Ten Martyrs** — Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, The Ten Martyrs — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+36. **Amidah for Neilah** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Amidah for Neilah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+37. **Ashrei** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+38. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+39. **Avodah** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+40. **Kedushah** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+41. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Reader's Repetition of the Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+42. **Sanctification of the Day** — Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Sanctification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+43. **Berachos for the Haftarah** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+44. **Berich Shemei** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berich Shemei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+45. **Haftarah for Yom Kippur Morning** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Haftarah for Yom Kippur Morning — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+46. **Maftir Reading from the Second Sefer Torah** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+47. **Reading for Yom Kippur Morning** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Reading for Yom Kippur Morning — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+48. **Va'yehi Binsoa** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+49. **Yekum Purkon** — Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Yekum Purkon — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+50. **Adon Olam** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Adon Olam — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+51. **Akeidah (The Binding of Yitzchak)** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak) — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+52. **Amidah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+53. **Ashrei** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ashrei — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+54. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avinu Malkenu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+55. **Avodah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avodah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+56. **Baruch She'amar** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Baruch She'amar — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+57. **Blessings of the Torah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings of the Torah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+58. **Blessings Upon Arising** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+59. **Eil Adon** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Eil Adon — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+60. **Hodu** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Hodu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+61. **Kaddish d'Rabanan** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+62. **Kedushah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kedushah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+63. **Ketores (Incense Offering)** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+64. **Korban Tamid (Daily Offering)** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering) — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+65. **Korbanos (Sacrificial Offerings)** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+66. **Ma Tovu** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ma Tovu — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+67. **Mizmor Shir** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mizmor Shir — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+68. **Morning Blessings** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Morning Blessings — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+69. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+70. **Nishmas** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Nishmas — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+71. **Pesukei Dezimrah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+72. **Putting On the Tallis** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Putting On the Tallis — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+73. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Reader's Repetition of the Amidah — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+74. **Recitation of Shema** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Recitation of Shema — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+75. **Sanctification of the Day** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Sanctification of the Day — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+76. **Shiras Hayam** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Shiras Hayam — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+77. **The King** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, The King — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+78. **Upon Arising in the Morning** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+79. **Yehi Kevod** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yehi Kevod — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+80. **Yigdal** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yigdal — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+81. **Yishtabach** — Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yishtabach — In-app source: The Metsudah Machzor. Metsudah Publications, New York; CC-BY
+
+## Machzor Yom Kippur Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 81
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 81
+
+1. **Blessing the Children** — Machzor Yom Kippur Ashkenaz, Blessing the Children — Source link only: no reusable Hebrew edition is currently listed
+2. **Candle Lighting** — Machzor Yom Kippur Ashkenaz, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+3. **Customs of Yom Kippur Night** — Machzor Yom Kippur Ashkenaz, Customs of Yom Kippur Night — Source link only: no reusable Hebrew edition is currently listed
+4. **Kaporos** — Machzor Yom Kippur Ashkenaz, Kaporos — Source link only: no reusable Hebrew edition is currently listed
+5. **Kol Nidrei** — Machzor Yom Kippur Ashkenaz, Kol Nidrei — Source link only: no reusable Hebrew edition is currently listed
+6. **Adon Olam** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Adon Olam — Source link only: no reusable Hebrew edition is currently listed
+7. **Aleinu** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+8. **Amidah** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Amidah — Source link only: no reusable Hebrew edition is currently listed
+9. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+10. **Borechu** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Borechu — Source link only: no reusable Hebrew edition is currently listed
+11. **Kabbalas Shabbos** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos — Source link only: no reusable Hebrew edition is currently listed
+12. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+13. **Vayechulu** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Vayechulu — Source link only: no reusable Hebrew edition is currently listed
+14. **Yaaleh** — Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Yaaleh — Source link only: no reusable Hebrew edition is currently listed
+15. **Memorial Services** — Machzor Yom Kippur Ashkenaz, Memorial Services — Source link only: no reusable Hebrew edition is currently listed
+16. **Aleinu** — Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+17. **Ashrei** — Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+18. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+19. **Shemoneh Esrei** — Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Shemoneh Esrei — Source link only: no reusable Hebrew edition is currently listed
+20. **Amidah for Mincha** — Machzor Yom Kippur Ashkenaz, Mincha, Amidah for Mincha — Source link only: no reusable Hebrew edition is currently listed
+21. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz, Mincha, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+22. **Avodah** — Machzor Yom Kippur Ashkenaz, Mincha, Avodah — Source link only: no reusable Hebrew edition is currently listed
+23. **Berich Shemei** — Machzor Yom Kippur Ashkenaz, Mincha, Berich Shemei — Source link only: no reusable Hebrew edition is currently listed
+24. **Kedushah** — Machzor Yom Kippur Ashkenaz, Mincha, Kedushah — Source link only: no reusable Hebrew edition is currently listed
+25. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz, Mincha, Reader's Repetition of the Amidah — Source link only: no reusable Hebrew edition is currently listed
+26. **Torah Reading for Mincha Service** — Machzor Yom Kippur Ashkenaz, Mincha, Torah Reading for Mincha Service — Source link only: no reusable Hebrew edition is currently listed
+27. **Va'yehi Binsoa** — Machzor Yom Kippur Ashkenaz, Mincha, Va'yehi Binsoa — Source link only: no reusable Hebrew edition is currently listed
+28. **Motzei Yom Kippur** — Machzor Yom Kippur Ashkenaz, Motzei Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+29. **Avodah** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Avodah — Source link only: no reusable Hebrew edition is currently listed
+30. **Hineni** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Hineni — Source link only: no reusable Hebrew edition is currently listed
+31. **Kedushah** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Kedushah — Source link only: no reusable Hebrew edition is currently listed
+32. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Reader's Repetition of the Amidah — Source link only: no reusable Hebrew edition is currently listed
+33. **Shemoneh Esrei** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Shemoneh Esrei — Source link only: no reusable Hebrew edition is currently listed
+34. **The Avodah Service** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, The Avodah Service — Source link only: no reusable Hebrew edition is currently listed
+35. **The Ten Martyrs** — Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, The Ten Martyrs — Source link only: no reusable Hebrew edition is currently listed
+36. **Amidah for Neilah** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Amidah for Neilah — Source link only: no reusable Hebrew edition is currently listed
+37. **Ashrei** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+38. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+39. **Avodah** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Avodah — Source link only: no reusable Hebrew edition is currently listed
+40. **Kedushah** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Kedushah — Source link only: no reusable Hebrew edition is currently listed
+41. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Reader's Repetition of the Amidah — Source link only: no reusable Hebrew edition is currently listed
+42. **Sanctification of the Day** — Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Sanctification of the Day — Source link only: no reusable Hebrew edition is currently listed
+43. **Berachos for the Haftarah** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berachos for the Haftarah — Source link only: no reusable Hebrew edition is currently listed
+44. **Berich Shemei** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berich Shemei — Source link only: no reusable Hebrew edition is currently listed
+45. **Haftarah for Yom Kippur Morning** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Haftarah for Yom Kippur Morning — Source link only: no reusable Hebrew edition is currently listed
+46. **Maftir Reading from the Second Sefer Torah** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah — Source link only: no reusable Hebrew edition is currently listed
+47. **Reading for Yom Kippur Morning** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Reading for Yom Kippur Morning — Source link only: no reusable Hebrew edition is currently listed
+48. **Va'yehi Binsoa** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Va'yehi Binsoa — Source link only: no reusable Hebrew edition is currently listed
+49. **Yekum Purkon** — Machzor Yom Kippur Ashkenaz, Reading of the Torah, Yekum Purkon — Source link only: no reusable Hebrew edition is currently listed
+50. **Adon Olam** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Adon Olam — Source link only: no reusable Hebrew edition is currently listed
+51. **Akeidah (The Binding of Yitzchak)** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak) — Source link only: no reusable Hebrew edition is currently listed
+52. **Amidah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Amidah — Source link only: no reusable Hebrew edition is currently listed
+53. **Ashrei** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+54. **Avinu Malkenu** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+55. **Avodah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avodah — Source link only: no reusable Hebrew edition is currently listed
+56. **Baruch She'amar** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Baruch She'amar — Source link only: no reusable Hebrew edition is currently listed
+57. **Blessings of the Torah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings of the Torah — Source link only: no reusable Hebrew edition is currently listed
+58. **Blessings Upon Arising** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings Upon Arising — Source link only: no reusable Hebrew edition is currently listed
+59. **Eil Adon** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Eil Adon — Source link only: no reusable Hebrew edition is currently listed
+60. **Hodu** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Hodu — Source link only: no reusable Hebrew edition is currently listed
+61. **Kaddish d'Rabanan** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kaddish d'Rabanan — Source link only: no reusable Hebrew edition is currently listed
+62. **Kedushah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kedushah — Source link only: no reusable Hebrew edition is currently listed
+63. **Ketores (Incense Offering)** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ketores (Incense Offering) — Source link only: no reusable Hebrew edition is currently listed
+64. **Korban Tamid (Daily Offering)** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering) — Source link only: no reusable Hebrew edition is currently listed
+65. **Korbanos (Sacrificial Offerings)** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings) — Source link only: no reusable Hebrew edition is currently listed
+66. **Ma Tovu** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ma Tovu — Source link only: no reusable Hebrew edition is currently listed
+67. **Mizmor Shir** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mizmor Shir — Source link only: no reusable Hebrew edition is currently listed
+68. **Morning Blessings** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Morning Blessings — Source link only: no reusable Hebrew edition is currently listed
+69. **Mourner's Kaddish** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+70. **Nishmas** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Nishmas — Source link only: no reusable Hebrew edition is currently listed
+71. **Pesukei Dezimrah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Pesukei Dezimrah — Source link only: no reusable Hebrew edition is currently listed
+72. **Putting On the Tallis** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Putting On the Tallis — Source link only: no reusable Hebrew edition is currently listed
+73. **Reader's Repetition of the Amidah** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Reader's Repetition of the Amidah — Source link only: no reusable Hebrew edition is currently listed
+74. **Recitation of Shema** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Recitation of Shema — Source link only: no reusable Hebrew edition is currently listed
+75. **Sanctification of the Day** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Sanctification of the Day — Source link only: no reusable Hebrew edition is currently listed
+76. **Shiras Hayam** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Shiras Hayam — Source link only: no reusable Hebrew edition is currently listed
+77. **The King** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, The King — Source link only: no reusable Hebrew edition is currently listed
+78. **Upon Arising in the Morning** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Upon Arising in the Morning — Source link only: no reusable Hebrew edition is currently listed
+79. **Yehi Kevod** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yehi Kevod — Source link only: no reusable Hebrew edition is currently listed
+80. **Yigdal** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yigdal — Source link only: no reusable Hebrew edition is currently listed
+81. **Yishtabach** — Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yishtabach — Source link only: no reusable Hebrew edition is currently listed
+
+## Machzor Yom Kippur Edot HaMizrach
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 56
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 56
+
+1. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Arvit, Amidah — Source link only: no reusable Hebrew edition is currently listed
+2. **Arvit Finale** — Machzor Yom Kippur Edot HaMizrach, Arvit, Arvit Finale — Source link only: no reusable Hebrew edition is currently listed
+3. **Barechu** — Machzor Yom Kippur Edot HaMizrach, Arvit, Barechu — Source link only: no reusable Hebrew edition is currently listed
+4. **Kabbalat Shabbat** — Machzor Yom Kippur Edot HaMizrach, Arvit, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+5. **Kol Nidrei** — Machzor Yom Kippur Edot HaMizrach, Arvit, Kol Nidrei — Source link only: no reusable Hebrew edition is currently listed
+6. **Lecha Eli Teshukati** — Machzor Yom Kippur Edot HaMizrach, Arvit, Lecha Eli Teshukati — Source link only: no reusable Hebrew edition is currently listed
+7. **Prayer Before the Service** — Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before the Service — Source link only: no reusable Hebrew edition is currently listed
+8. **Prayer Before Yom Kippur Services** — Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before Yom Kippur Services — Source link only: no reusable Hebrew edition is currently listed
+9. **Shema and its Blessings** — Machzor Yom Kippur Edot HaMizrach, Arvit, Shema and its Blessings — Source link only: no reusable Hebrew edition is currently listed
+10. **Slichot** — Machzor Yom Kippur Edot HaMizrach, Arvit, Slichot — Source link only: no reusable Hebrew edition is currently listed
+11. **Blessing the Children** — Machzor Yom Kippur Edot HaMizrach, Blessing the Children — Source link only: no reusable Hebrew edition is currently listed
+12. **Candle Lighting** — Machzor Yom Kippur Edot HaMizrach, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+13. **Kapparot** — Machzor Yom Kippur Edot HaMizrach, Kapparot — Source link only: no reusable Hebrew edition is currently listed
+14. **Lashes** — Machzor Yom Kippur Edot HaMizrach, Lashes — Source link only: no reusable Hebrew edition is currently listed
+15. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Amidah — Source link only: no reusable Hebrew edition is currently listed
+16. **Ashrei** — Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+17. **Korbanot** — Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+18. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Mincha, Amidah — Source link only: no reusable Hebrew edition is currently listed
+19. **Ashrei** — Machzor Yom Kippur Edot HaMizrach, Mincha, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+20. **Prayer of Rabbi Chaim Yosef David Azulai** — Machzor Yom Kippur Edot HaMizrach, Mincha, Prayer of Rabbi Chaim Yosef David Azulai — Source link only: no reusable Hebrew edition is currently listed
+21. **Reader's Repetition** — Machzor Yom Kippur Edot HaMizrach, Mincha, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+22. **Reading of the Torah** — Machzor Yom Kippur Edot HaMizrach, Mincha, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+23. **Slichot** — Machzor Yom Kippur Edot HaMizrach, Mincha, Slichot — Source link only: no reusable Hebrew edition is currently listed
+24. **Motzei Yom Kippur** — Machzor Yom Kippur Edot HaMizrach, Motzei Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+25. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Amidah — Source link only: no reusable Hebrew edition is currently listed
+26. **Ashrei** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+27. **Mussaf Finale** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Mussaf Finale — Source link only: no reusable Hebrew edition is currently listed
+28. **Reader's Repetition** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+29. **Slichot** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Slichot — Source link only: no reusable Hebrew edition is currently listed
+30. **Story of Rabbi Amnon of Mainz** — Machzor Yom Kippur Edot HaMizrach, Mussaf, Story of Rabbi Amnon of Mainz — Source link only: no reusable Hebrew edition is currently listed
+31. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Neilah, Amidah — Source link only: no reusable Hebrew edition is currently listed
+32. **Ashrei** — Machzor Yom Kippur Edot HaMizrach, Neilah, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+33. **El Nora Alilah** — Machzor Yom Kippur Edot HaMizrach, Neilah, El Nora Alilah — Source link only: no reusable Hebrew edition is currently listed
+34. **Reader's Repetition** — Machzor Yom Kippur Edot HaMizrach, Neilah, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+35. **Slichot** — Machzor Yom Kippur Edot HaMizrach, Neilah, Slichot — Source link only: no reusable Hebrew edition is currently listed
+36. **Prayer After the Meal** — Machzor Yom Kippur Edot HaMizrach, Seudah HaMafseket, Prayer After the Meal — Source link only: no reusable Hebrew edition is currently listed
+37. **Prayer Before the Meal** — Machzor Yom Kippur Edot HaMizrach, Seudah HaMafseket, Prayer Before the Meal — Source link only: no reusable Hebrew edition is currently listed
+38. **Akeidah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Akeidah — Source link only: no reusable Hebrew edition is currently listed
+39. **Amidah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Amidah — Source link only: no reusable Hebrew edition is currently listed
+40. **Blessings of the Torah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings of the Torah — Source link only: no reusable Hebrew edition is currently listed
+41. **Blessings Upon Arising** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings Upon Arising — Source link only: no reusable Hebrew edition is currently listed
+42. **Chana's Prayer** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Chana's Prayer — Source link only: no reusable Hebrew edition is currently listed
+43. **Haftarah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Haftarah — Source link only: no reusable Hebrew edition is currently listed
+44. **Hodu** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Hodu — Source link only: no reusable Hebrew edition is currently listed
+45. **Korbanot** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+46. **Mi Sheberach** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Mi Sheberach — Source link only: no reusable Hebrew edition is currently listed
+47. **Modeh Ani** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Modeh Ani — Source link only: no reusable Hebrew edition is currently listed
+48. **Opening of the Ark** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Opening of the Ark — Source link only: no reusable Hebrew edition is currently listed
+49. **Patach Eliyahu** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Patach Eliyahu — Source link only: no reusable Hebrew edition is currently listed
+50. **Pesukei Dezimrah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Pesukei Dezimrah — Source link only: no reusable Hebrew edition is currently listed
+51. **Piyutim** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Piyutim — Source link only: no reusable Hebrew edition is currently listed
+52. **Putting On the Tallit** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Putting On the Tallit — Source link only: no reusable Hebrew edition is currently listed
+53. **Reader's Repetition** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+54. **Reading of the Torah** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+55. **Shema and its Blessings** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Shema and its Blessings — Source link only: no reusable Hebrew edition is currently listed
+56. **Slichot** — Machzor Yom Kippur Edot HaMizrach, Shacharit, Slichot — Source link only: no reusable Hebrew edition is currently listed
+
+## Machzor Yom Kippur Sefard
+
+- **Tradition:** Sefard
+- **Sections indexed:** 67
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 67
+
+1. **Before Kol Nidrei** — Machzor Yom Kippur Sefard, Before Kol Nidrei — Source link only: no reusable Hebrew edition is currently listed
+2. **Blessing the Children** — Machzor Yom Kippur Sefard, Blessing the Children — Source link only: no reusable Hebrew edition is currently listed
+3. **Candle Lighting** — Machzor Yom Kippur Sefard, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+4. **Four Chapters of Tehillim** — Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Four Chapters of Tehillim — Source link only: no reusable Hebrew edition is currently listed
+5. **Shir HaKavod** — Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Shir HaKavod — Source link only: no reusable Hebrew edition is currently listed
+6. **Shir HaYichud** — Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Shir HaYichud — Source link only: no reusable Hebrew edition is currently listed
+7. **Havdalah** — Machzor Yom Kippur Sefard, Havdalah — Source link only: no reusable Hebrew edition is currently listed
+8. **Kapparot** — Machzor Yom Kippur Sefard, Kapparot — Source link only: no reusable Hebrew edition is currently listed
+9. **Kiddush Levanah** — Machzor Yom Kippur Sefard, Kiddush Levanah — Source link only: no reusable Hebrew edition is currently listed
+10. **Kol Nidrei** — Machzor Yom Kippur Sefard, Kol Nidrei — Source link only: no reusable Hebrew edition is currently listed
+11. **Maariv Service for Motzei Yom Kippur** — Machzor Yom Kippur Sefard, Maariv Service for Motzei Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+12. **Aleinu** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+13. **Amidah** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Amidah — Source link only: no reusable Hebrew edition is currently listed
+14. **Avinu Malkenu** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+15. **Barechu** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Barechu — Source link only: no reusable Hebrew edition is currently listed
+16. **Kabbalat Shabbat** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+17. **Mourner's Kaddish** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+18. **Vayechulu** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Vayechulu — Source link only: no reusable Hebrew edition is currently listed
+19. **Yaaleh** — Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Yaaleh — Source link only: no reusable Hebrew edition is currently listed
+20. **Memorial Services** — Machzor Yom Kippur Sefard, Memorial Services — Source link only: no reusable Hebrew edition is currently listed
+21. **Aleinu** — Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+22. **Amidah** — Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Amidah — Source link only: no reusable Hebrew edition is currently listed
+23. **Ashrei** — Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+24. **Korbanot** — Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+25. **Laws of Tevilah on Erev Yom Kippur** — Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Laws of Tevilah on Erev Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+26. **Amidah** — Machzor Yom Kippur Sefard, Mincha Service, Amidah — Source link only: no reusable Hebrew edition is currently listed
+27. **Avinu Malkenu** — Machzor Yom Kippur Sefard, Mincha Service, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+28. **Haftarah** — Machzor Yom Kippur Sefard, Mincha Service, Haftarah — Source link only: no reusable Hebrew edition is currently listed
+29. **Korbanot** — Machzor Yom Kippur Sefard, Mincha Service, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+30. **Reader's Repetition** — Machzor Yom Kippur Sefard, Mincha Service, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+31. **Torah Reading** — Machzor Yom Kippur Sefard, Mincha Service, Torah Reading — Source link only: no reusable Hebrew edition is currently listed
+32. **Va'yehi Binsoa** — Machzor Yom Kippur Sefard, Mincha Service, Va'yehi Binsoa — Source link only: no reusable Hebrew edition is currently listed
+33. **Amidah** — Machzor Yom Kippur Sefard, Musaf Service, Amidah — Source link only: no reusable Hebrew edition is currently listed
+34. **Hineni** — Machzor Yom Kippur Sefard, Musaf Service, Hineni — Source link only: no reusable Hebrew edition is currently listed
+35. **Priestly Blessing** — Machzor Yom Kippur Sefard, Musaf Service, Priestly Blessing — Source link only: no reusable Hebrew edition is currently listed
+36. **Reader's Repetition** — Machzor Yom Kippur Sefard, Musaf Service, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+37. **The Avodah Service** — Machzor Yom Kippur Sefard, Musaf Service, The Avodah Service — Source link only: no reusable Hebrew edition is currently listed
+38. **Amidah** — Machzor Yom Kippur Sefard, Neilah Service, Amidah — Source link only: no reusable Hebrew edition is currently listed
+39. **Ashrei** — Machzor Yom Kippur Sefard, Neilah Service, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+40. **Avinu Malkenu** — Machzor Yom Kippur Sefard, Neilah Service, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+41. **Laws of Neilah Service** — Machzor Yom Kippur Sefard, Neilah Service, Laws of Neilah Service — Source link only: no reusable Hebrew edition is currently listed
+42. **Reader's Repetition** — Machzor Yom Kippur Sefard, Neilah Service, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+43. **On Motzei Shabbat** — Machzor Yom Kippur Sefard, On Motzei Shabbat — Source link only: no reusable Hebrew edition is currently listed
+44. **Haftarah** — Machzor Yom Kippur Sefard, Reading of the Torah, Haftarah — Source link only: no reusable Hebrew edition is currently listed
+45. **Mi Sheberach** — Machzor Yom Kippur Sefard, Reading of the Torah, Mi Sheberach — Source link only: no reusable Hebrew edition is currently listed
+46. **Torah Reading** — Machzor Yom Kippur Sefard, Reading of the Torah, Torah Reading — Source link only: no reusable Hebrew edition is currently listed
+47. **Va'yehi Binsoa** — Machzor Yom Kippur Sefard, Reading of the Torah, Va'yehi Binsoa — Source link only: no reusable Hebrew edition is currently listed
+48. **Yekum Purkan** — Machzor Yom Kippur Sefard, Reading of the Torah, Yekum Purkan — Source link only: no reusable Hebrew edition is currently listed
+49. **Akeidah** — Machzor Yom Kippur Sefard, The Morning Prayers, Akeidah — Source link only: no reusable Hebrew edition is currently listed
+50. **Amidah** — Machzor Yom Kippur Sefard, The Morning Prayers, Amidah — Source link only: no reusable Hebrew edition is currently listed
+51. **Avinu Malkenu** — Machzor Yom Kippur Sefard, The Morning Prayers, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+52. **Baruch She'amar** — Machzor Yom Kippur Sefard, The Morning Prayers, Baruch She'amar — Source link only: no reusable Hebrew edition is currently listed
+53. **Blessings of the Shema** — Machzor Yom Kippur Sefard, The Morning Prayers, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+54. **Blessings Upon Arising** — Machzor Yom Kippur Sefard, The Morning Prayers, Blessings Upon Arising — Source link only: no reusable Hebrew edition is currently listed
+55. **Hodu** — Machzor Yom Kippur Sefard, The Morning Prayers, Hodu — Source link only: no reusable Hebrew edition is currently listed
+56. **Kaddish d'Rabanan** — Machzor Yom Kippur Sefard, The Morning Prayers, Kaddish d'Rabanan — Source link only: no reusable Hebrew edition is currently listed
+57. **Ketoret** — Machzor Yom Kippur Sefard, The Morning Prayers, Ketoret — Source link only: no reusable Hebrew edition is currently listed
+58. **Korbanot** — Machzor Yom Kippur Sefard, The Morning Prayers, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+59. **Nishmat** — Machzor Yom Kippur Sefard, The Morning Prayers, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+60. **Pesukei Dezimrah** — Machzor Yom Kippur Sefard, The Morning Prayers, Pesukei Dezimrah — Source link only: no reusable Hebrew edition is currently listed
+61. **Putting On the Tallit** — Machzor Yom Kippur Sefard, The Morning Prayers, Putting On the Tallit — Source link only: no reusable Hebrew edition is currently listed
+62. **Reader's Repetition** — Machzor Yom Kippur Sefard, The Morning Prayers, Reader's Repetition — Source link only: no reusable Hebrew edition is currently listed
+63. **Recitation of Shema** — Machzor Yom Kippur Sefard, The Morning Prayers, Recitation of Shema — Source link only: no reusable Hebrew edition is currently listed
+64. **Shirat Hayam** — Machzor Yom Kippur Sefard, The Morning Prayers, Shirat Hayam — Source link only: no reusable Hebrew edition is currently listed
+65. **Song of the Day** — Machzor Yom Kippur Sefard, The Morning Prayers, Song of the Day — Source link only: no reusable Hebrew edition is currently listed
+66. **The King** — Machzor Yom Kippur Sefard, The Morning Prayers, The King — Source link only: no reusable Hebrew edition is currently listed
+67. **Upon Arising in the Morning** — Machzor Yom Kippur Sefard, The Morning Prayers, Upon Arising in the Morning — Source link only: no reusable Hebrew edition is currently listed
+
+## Perek Shirah
+
+- **Tradition:** Varies
+- **Sections indexed:** 3
+- **Sections with reusable Hebrew editions:** 3
+- **Sections restricted to source links:** 0
+
+1. **Perek Shirah** — Perek Shirah — In-app source: Torat Emet 357; Public Domain
+2. **Concluding Prayer** — Perek Shirah, Concluding Prayer — In-app source: Torat Emet 357; Public Domain
+3. **Introductory Text** — Perek Shirah, Introductory Text — In-app source: Torat Emet 357; Public Domain
+
+## Pesach Haggadah Edot Hamizrah
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 31
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 31
+
+1. **Birkat Hamazon** — Pesach Haggadah Edot Hamizrah, Barech, Birkat Hamazon — Source link only: no reusable Hebrew edition is currently listed
+2. **Pour Out Thy Wrath** — Pesach Haggadah Edot Hamizrah, Barech, Pour Out Thy Wrath — Source link only: no reusable Hebrew edition is currently listed
+3. **Third Cup of Wine** — Pesach Haggadah Edot Hamizrah, Barech, Third Cup of Wine — Source link only: no reusable Hebrew edition is currently listed
+4. **Fourth Cup of Wine** — Pesach Haggadah Edot Hamizrah, Hallel, Fourth Cup of Wine — Source link only: no reusable Hebrew edition is currently listed
+5. **Second Half of Hallel** — Pesach Haggadah Edot Hamizrah, Hallel, Second Half of Hallel — Source link only: no reusable Hebrew edition is currently listed
+6. **Songs of Praise and Thanks** — Pesach Haggadah Edot Hamizrah, Hallel, Songs of Praise and Thanks — Source link only: no reusable Hebrew edition is currently listed
+7. **Kadesh** — Pesach Haggadah Edot Hamizrah, Kadesh — Source link only: no reusable Hebrew edition is currently listed
+8. **Karpas** — Pesach Haggadah Edot Hamizrah, Karpas — Source link only: no reusable Hebrew edition is currently listed
+9. **Korech** — Pesach Haggadah Edot Hamizrah, Korech — Source link only: no reusable Hebrew edition is currently listed
+10. **Dayenu** — Pesach Haggadah Edot Hamizrah, Magid, Dayenu — Source link only: no reusable Hebrew edition is currently listed
+11. **First Fruits Declaration** — Pesach Haggadah Edot Hamizrah, Magid, First Fruits Declaration — Source link only: no reusable Hebrew edition is currently listed
+12. **First Half of Hallel** — Pesach Haggadah Edot Hamizrah, Magid, First Half of Hallel — Source link only: no reusable Hebrew edition is currently listed
+13. **Four Questions** — Pesach Haggadah Edot Hamizrah, Magid, Four Questions — Source link only: no reusable Hebrew edition is currently listed
+14. **Ha Lachma Anya** — Pesach Haggadah Edot Hamizrah, Magid, Ha Lachma Anya — Source link only: no reusable Hebrew edition is currently listed
+15. **In the Beginning Our Fathers Were Idol Worshipers** — Pesach Haggadah Edot Hamizrah, Magid, In the Beginning Our Fathers Were Idol Worshipers — Source link only: no reusable Hebrew edition is currently listed
+16. **Rabban Gamliel's Three Things** — Pesach Haggadah Edot Hamizrah, Magid, Rabban Gamliel's Three Things — Source link only: no reusable Hebrew edition is currently listed
+17. **Second Cup of Wine** — Pesach Haggadah Edot Hamizrah, Magid, Second Cup of Wine — Source link only: no reusable Hebrew edition is currently listed
+18. **Story of the Five Rabbis** — Pesach Haggadah Edot Hamizrah, Magid, Story of the Five Rabbis — Source link only: no reusable Hebrew edition is currently listed
+19. **The Four Sons** — Pesach Haggadah Edot Hamizrah, Magid, The Four Sons — Source link only: no reusable Hebrew edition is currently listed
+20. **The Ten Plagues** — Pesach Haggadah Edot Hamizrah, Magid, The Ten Plagues — Source link only: no reusable Hebrew edition is currently listed
+21. **We Were Slaves in Egypt** — Pesach Haggadah Edot Hamizrah, Magid, We Were Slaves in Egypt — Source link only: no reusable Hebrew edition is currently listed
+22. **Yechol Me'rosh Chodesh** — Pesach Haggadah Edot Hamizrah, Magid, Yechol Me'rosh Chodesh — Source link only: no reusable Hebrew edition is currently listed
+23. **Maror** — Pesach Haggadah Edot Hamizrah, Maror — Source link only: no reusable Hebrew edition is currently listed
+24. **Motzi Matzah** — Pesach Haggadah Edot Hamizrah, Motzi Matzah — Source link only: no reusable Hebrew edition is currently listed
+25. **Chad Gadya** — Pesach Haggadah Edot Hamizrah, Nirtzah, Chad Gadya — Source link only: no reusable Hebrew edition is currently listed
+26. **Echad Mi Yodea** — Pesach Haggadah Edot Hamizrah, Nirtzah, Echad Mi Yodea — Source link only: no reusable Hebrew edition is currently listed
+27. **Rachtzah** — Pesach Haggadah Edot Hamizrah, Rachtzah — Source link only: no reusable Hebrew edition is currently listed
+28. **Shulchan Orech** — Pesach Haggadah Edot Hamizrah, Shulchan Orech — Source link only: no reusable Hebrew edition is currently listed
+29. **Tzafun** — Pesach Haggadah Edot Hamizrah, Tzafun — Source link only: no reusable Hebrew edition is currently listed
+30. **Urchatz** — Pesach Haggadah Edot Hamizrah, Urchatz — Source link only: no reusable Hebrew edition is currently listed
+31. **Yachatz** — Pesach Haggadah Edot Hamizrah, Yachatz — Source link only: no reusable Hebrew edition is currently listed
+
+## Pesach Haggadah
+
+- **Tradition:** Varies
+- **Sections indexed:** 38
+- **Sections with reusable Hebrew editions:** 38
+- **Sections restricted to source links:** 0
+
+1. **Birkat Hamazon** — Pesach Haggadah, Barech, Birkat Hamazon — In-app source: Pesach Haggadah; Public Domain
+2. **Pour Out Thy Wrath** — Pesach Haggadah, Barech, Pour Out Thy Wrath — In-app source: Pesach Haggadah; Public Domain
+3. **Third Cup of Wine** — Pesach Haggadah, Barech, Third Cup of Wine — In-app source: Pesach Haggadah; Public Domain
+4. **Fourth Cup of Wine** — Pesach Haggadah, Hallel, Fourth Cup of Wine — In-app source: Pesach Haggadah; Public Domain
+5. **Second Half of Hallel** — Pesach Haggadah, Hallel, Second Half of Hallel — In-app source: Pesach Haggadah; Public Domain
+6. **Songs of Praise and Thanks** — Pesach Haggadah, Hallel, Songs of Praise and Thanks — In-app source: Pesach Haggadah; Public Domain
+7. **Kadesh** — Pesach Haggadah, Kadesh — In-app source: Pesach Haggadah; Public Domain
+8. **Karpas** — Pesach Haggadah, Karpas — In-app source: Pesach Haggadah; Public Domain
+9. **Korech** — Pesach Haggadah, Korech — In-app source: Pesach Haggadah; Public Domain
+10. **Dayenu** — Pesach Haggadah, Magid, Dayenu — In-app source: Pesach Haggadah; Public Domain
+11. **First Fruits Declaration** — Pesach Haggadah, Magid, First Fruits Declaration — In-app source: Pesach Haggadah; Public Domain
+12. **First Half of Hallel** — Pesach Haggadah, Magid, First Half of Hallel — In-app source: Pesach Haggadah; Public Domain
+13. **Four Questions** — Pesach Haggadah, Magid, Four Questions — In-app source: Pesach Haggadah; Public Domain
+14. **Ha Lachma Anya** — Pesach Haggadah, Magid, Ha Lachma Anya — In-app source: Pesach Haggadah; Public Domain
+15. **In the Beginning Our Fathers Were Idol Worshipers** — Pesach Haggadah, Magid, In the Beginning Our Fathers Were Idol Worshipers — In-app source: Pesach Haggadah; Public Domain
+16. **Rabban Gamliel's Three Things** — Pesach Haggadah, Magid, Rabban Gamliel's Three Things — In-app source: Pesach Haggadah; Public Domain
+17. **Second Cup of Wine** — Pesach Haggadah, Magid, Second Cup of Wine — In-app source: Pesach Haggadah; Public Domain
+18. **Story of the Five Rabbis** — Pesach Haggadah, Magid, Story of the Five Rabbis — In-app source: Pesach Haggadah; Public Domain
+19. **The Four Sons** — Pesach Haggadah, Magid, The Four Sons — In-app source: Pesach Haggadah; Public Domain
+20. **The Ten Plagues** — Pesach Haggadah, Magid, The Ten Plagues — In-app source: Pesach Haggadah; Public Domain
+21. **We Were Slaves in Egypt** — Pesach Haggadah, Magid, We Were Slaves in Egypt — In-app source: Pesach Haggadah; Public Domain
+22. **Yechol Me'rosh Chodesh** — Pesach Haggadah, Magid, Yechol Me'rosh Chodesh — In-app source: Pesach Haggadah; Public Domain
+23. **Maror** — Pesach Haggadah, Maror — In-app source: Pesach Haggadah; Public Domain
+24. **Motzi Matzah** — Pesach Haggadah, Motzi Matzah — In-app source: Pesach Haggadah; Public Domain
+25. **Adir Hu** — Pesach Haggadah, Nirtzah, Adir Hu — In-app source: Pesach Haggadah; Public Domain
+26. **And It Happened at Midnight** — Pesach Haggadah, Nirtzah, And It Happened at Midnight — In-app source: Pesach Haggadah; Public Domain
+27. **Chad Gadya** — Pesach Haggadah, Nirtzah, Chad Gadya — In-app source: Pesach Haggadah; Public Domain
+28. **Chasal Siddur Pesach** — Pesach Haggadah, Nirtzah, Chasal Siddur Pesach — In-app source: Pesach Haggadah; Public Domain
+29. **Echad Mi Yodea** — Pesach Haggadah, Nirtzah, Echad Mi Yodea — In-app source: Pesach Haggadah; Public Domain
+30. **Ki Lo Na'e** — Pesach Haggadah, Nirtzah, Ki Lo Na'e — In-app source: Pesach Haggadah; Public Domain
+31. **L'Shana HaBaa** — Pesach Haggadah, Nirtzah, L'Shana HaBaa — In-app source: Pesach Haggadah; Public Domain
+32. **Sefirat HaOmer** — Pesach Haggadah, Nirtzah, Sefirat HaOmer — In-app source: Pesach Haggadah; Public Domain
+33. **Zevach Pesach** — Pesach Haggadah, Nirtzah, Zevach Pesach — In-app source: Pesach Haggadah; Public Domain
+34. **Rachtzah** — Pesach Haggadah, Rachtzah — In-app source: Pesach Haggadah; Public Domain
+35. **Shulchan Orech** — Pesach Haggadah, Shulchan Orech — In-app source: Pesach Haggadah; Public Domain
+36. **Tzafun** — Pesach Haggadah, Tzafun — In-app source: Pesach Haggadah; Public Domain
+37. **Urchatz** — Pesach Haggadah, Urchatz — In-app source: Pesach Haggadah; Public Domain
+38. **Yachatz** — Pesach Haggadah, Yachatz — In-app source: Pesach Haggadah; Public Domain
+
+## Psalms
+
+- **Tradition:** Scriptural
+- **Sections indexed:** 150
+- **Sections with reusable Hebrew editions:** 150
+- **Sections restricted to source links:** 0
+
+1. **Psalm 1** — Psalms 1 — In-app source: Miqra according to the Masorah; CC-BY-SA
+2. **Psalm 10** — Psalms 10 — In-app source: Miqra according to the Masorah; CC-BY-SA
+3. **Psalm 100** — Psalms 100 — In-app source: Miqra according to the Masorah; CC-BY-SA
+4. **Psalm 101** — Psalms 101 — In-app source: Miqra according to the Masorah; CC-BY-SA
+5. **Psalm 102** — Psalms 102 — In-app source: Miqra according to the Masorah; CC-BY-SA
+6. **Psalm 103** — Psalms 103 — In-app source: Miqra according to the Masorah; CC-BY-SA
+7. **Psalm 104** — Psalms 104 — In-app source: Miqra according to the Masorah; CC-BY-SA
+8. **Psalm 105** — Psalms 105 — In-app source: Miqra according to the Masorah; CC-BY-SA
+9. **Psalm 106** — Psalms 106 — In-app source: Miqra according to the Masorah; CC-BY-SA
+10. **Psalm 107** — Psalms 107 — In-app source: Miqra according to the Masorah; CC-BY-SA
+11. **Psalm 108** — Psalms 108 — In-app source: Miqra according to the Masorah; CC-BY-SA
+12. **Psalm 109** — Psalms 109 — In-app source: Miqra according to the Masorah; CC-BY-SA
+13. **Psalm 11** — Psalms 11 — In-app source: Miqra according to the Masorah; CC-BY-SA
+14. **Psalm 110** — Psalms 110 — In-app source: Miqra according to the Masorah; CC-BY-SA
+15. **Psalm 111** — Psalms 111 — In-app source: Miqra according to the Masorah; CC-BY-SA
+16. **Psalm 112** — Psalms 112 — In-app source: Miqra according to the Masorah; CC-BY-SA
+17. **Psalm 113** — Psalms 113 — In-app source: Miqra according to the Masorah; CC-BY-SA
+18. **Psalm 114** — Psalms 114 — In-app source: Miqra according to the Masorah; CC-BY-SA
+19. **Psalm 115** — Psalms 115 — In-app source: Miqra according to the Masorah; CC-BY-SA
+20. **Psalm 116** — Psalms 116 — In-app source: Miqra according to the Masorah; CC-BY-SA
+21. **Psalm 117** — Psalms 117 — In-app source: Miqra according to the Masorah; CC-BY-SA
+22. **Psalm 118** — Psalms 118 — In-app source: Miqra according to the Masorah; CC-BY-SA
+23. **Psalm 119** — Psalms 119 — In-app source: Miqra according to the Masorah; CC-BY-SA
+24. **Psalm 12** — Psalms 12 — In-app source: Miqra according to the Masorah; CC-BY-SA
+25. **Psalm 120** — Psalms 120 — In-app source: Miqra according to the Masorah; CC-BY-SA
+26. **Psalm 121** — Psalms 121 — In-app source: Miqra according to the Masorah; CC-BY-SA
+27. **Psalm 122** — Psalms 122 — In-app source: Miqra according to the Masorah; CC-BY-SA
+28. **Psalm 123** — Psalms 123 — In-app source: Miqra according to the Masorah; CC-BY-SA
+29. **Psalm 124** — Psalms 124 — In-app source: Miqra according to the Masorah; CC-BY-SA
+30. **Psalm 125** — Psalms 125 — In-app source: Miqra according to the Masorah; CC-BY-SA
+31. **Psalm 126** — Psalms 126 — In-app source: Miqra according to the Masorah; CC-BY-SA
+32. **Psalm 127** — Psalms 127 — In-app source: Miqra according to the Masorah; CC-BY-SA
+33. **Psalm 128** — Psalms 128 — In-app source: Miqra according to the Masorah; CC-BY-SA
+34. **Psalm 129** — Psalms 129 — In-app source: Miqra according to the Masorah; CC-BY-SA
+35. **Psalm 13** — Psalms 13 — In-app source: Miqra according to the Masorah; CC-BY-SA
+36. **Psalm 130** — Psalms 130 — In-app source: Miqra according to the Masorah; CC-BY-SA
+37. **Psalm 131** — Psalms 131 — In-app source: Miqra according to the Masorah; CC-BY-SA
+38. **Psalm 132** — Psalms 132 — In-app source: Miqra according to the Masorah; CC-BY-SA
+39. **Psalm 133** — Psalms 133 — In-app source: Miqra according to the Masorah; CC-BY-SA
+40. **Psalm 134** — Psalms 134 — In-app source: Miqra according to the Masorah; CC-BY-SA
+41. **Psalm 135** — Psalms 135 — In-app source: Miqra according to the Masorah; CC-BY-SA
+42. **Psalm 136** — Psalms 136 — In-app source: Miqra according to the Masorah; CC-BY-SA
+43. **Psalm 137** — Psalms 137 — In-app source: Miqra according to the Masorah; CC-BY-SA
+44. **Psalm 138** — Psalms 138 — In-app source: Miqra according to the Masorah; CC-BY-SA
+45. **Psalm 139** — Psalms 139 — In-app source: Miqra according to the Masorah; CC-BY-SA
+46. **Psalm 14** — Psalms 14 — In-app source: Miqra according to the Masorah; CC-BY-SA
+47. **Psalm 140** — Psalms 140 — In-app source: Miqra according to the Masorah; CC-BY-SA
+48. **Psalm 141** — Psalms 141 — In-app source: Miqra according to the Masorah; CC-BY-SA
+49. **Psalm 142** — Psalms 142 — In-app source: Miqra according to the Masorah; CC-BY-SA
+50. **Psalm 143** — Psalms 143 — In-app source: Miqra according to the Masorah; CC-BY-SA
+51. **Psalm 144** — Psalms 144 — In-app source: Miqra according to the Masorah; CC-BY-SA
+52. **Psalm 145** — Psalms 145 — In-app source: Miqra according to the Masorah; CC-BY-SA
+53. **Psalm 146** — Psalms 146 — In-app source: Miqra according to the Masorah; CC-BY-SA
+54. **Psalm 147** — Psalms 147 — In-app source: Miqra according to the Masorah; CC-BY-SA
+55. **Psalm 148** — Psalms 148 — In-app source: Miqra according to the Masorah; CC-BY-SA
+56. **Psalm 149** — Psalms 149 — In-app source: Miqra according to the Masorah; CC-BY-SA
+57. **Psalm 15** — Psalms 15 — In-app source: Miqra according to the Masorah; CC-BY-SA
+58. **Psalm 150** — Psalms 150 — In-app source: Miqra according to the Masorah; CC-BY-SA
+59. **Psalm 16** — Psalms 16 — In-app source: Miqra according to the Masorah; CC-BY-SA
+60. **Psalm 17** — Psalms 17 — In-app source: Miqra according to the Masorah; CC-BY-SA
+61. **Psalm 18** — Psalms 18 — In-app source: Miqra according to the Masorah; CC-BY-SA
+62. **Psalm 19** — Psalms 19 — In-app source: Miqra according to the Masorah; CC-BY-SA
+63. **Psalm 2** — Psalms 2 — In-app source: Miqra according to the Masorah; CC-BY-SA
+64. **Psalm 20** — Psalms 20 — In-app source: Miqra according to the Masorah; CC-BY-SA
+65. **Psalm 21** — Psalms 21 — In-app source: Miqra according to the Masorah; CC-BY-SA
+66. **Psalm 22** — Psalms 22 — In-app source: Miqra according to the Masorah; CC-BY-SA
+67. **Psalm 23** — Psalms 23 — In-app source: Miqra according to the Masorah; CC-BY-SA
+68. **Psalm 24** — Psalms 24 — In-app source: Miqra according to the Masorah; CC-BY-SA
+69. **Psalm 25** — Psalms 25 — In-app source: Miqra according to the Masorah; CC-BY-SA
+70. **Psalm 26** — Psalms 26 — In-app source: Miqra according to the Masorah; CC-BY-SA
+71. **Psalm 27** — Psalms 27 — In-app source: Miqra according to the Masorah; CC-BY-SA
+72. **Psalm 28** — Psalms 28 — In-app source: Miqra according to the Masorah; CC-BY-SA
+73. **Psalm 29** — Psalms 29 — In-app source: Miqra according to the Masorah; CC-BY-SA
+74. **Psalm 3** — Psalms 3 — In-app source: Miqra according to the Masorah; CC-BY-SA
+75. **Psalm 30** — Psalms 30 — In-app source: Miqra according to the Masorah; CC-BY-SA
+76. **Psalm 31** — Psalms 31 — In-app source: Miqra according to the Masorah; CC-BY-SA
+77. **Psalm 32** — Psalms 32 — In-app source: Miqra according to the Masorah; CC-BY-SA
+78. **Psalm 33** — Psalms 33 — In-app source: Miqra according to the Masorah; CC-BY-SA
+79. **Psalm 34** — Psalms 34 — In-app source: Miqra according to the Masorah; CC-BY-SA
+80. **Psalm 35** — Psalms 35 — In-app source: Miqra according to the Masorah; CC-BY-SA
+81. **Psalm 36** — Psalms 36 — In-app source: Miqra according to the Masorah; CC-BY-SA
+82. **Psalm 37** — Psalms 37 — In-app source: Miqra according to the Masorah; CC-BY-SA
+83. **Psalm 38** — Psalms 38 — In-app source: Miqra according to the Masorah; CC-BY-SA
+84. **Psalm 39** — Psalms 39 — In-app source: Miqra according to the Masorah; CC-BY-SA
+85. **Psalm 4** — Psalms 4 — In-app source: Miqra according to the Masorah; CC-BY-SA
+86. **Psalm 40** — Psalms 40 — In-app source: Miqra according to the Masorah; CC-BY-SA
+87. **Psalm 41** — Psalms 41 — In-app source: Miqra according to the Masorah; CC-BY-SA
+88. **Psalm 42** — Psalms 42 — In-app source: Miqra according to the Masorah; CC-BY-SA
+89. **Psalm 43** — Psalms 43 — In-app source: Miqra according to the Masorah; CC-BY-SA
+90. **Psalm 44** — Psalms 44 — In-app source: Miqra according to the Masorah; CC-BY-SA
+91. **Psalm 45** — Psalms 45 — In-app source: Miqra according to the Masorah; CC-BY-SA
+92. **Psalm 46** — Psalms 46 — In-app source: Miqra according to the Masorah; CC-BY-SA
+93. **Psalm 47** — Psalms 47 — In-app source: Miqra according to the Masorah; CC-BY-SA
+94. **Psalm 48** — Psalms 48 — In-app source: Miqra according to the Masorah; CC-BY-SA
+95. **Psalm 49** — Psalms 49 — In-app source: Miqra according to the Masorah; CC-BY-SA
+96. **Psalm 5** — Psalms 5 — In-app source: Miqra according to the Masorah; CC-BY-SA
+97. **Psalm 50** — Psalms 50 — In-app source: Miqra according to the Masorah; CC-BY-SA
+98. **Psalm 51** — Psalms 51 — In-app source: Miqra according to the Masorah; CC-BY-SA
+99. **Psalm 52** — Psalms 52 — In-app source: Miqra according to the Masorah; CC-BY-SA
+100. **Psalm 53** — Psalms 53 — In-app source: Miqra according to the Masorah; CC-BY-SA
+101. **Psalm 54** — Psalms 54 — In-app source: Miqra according to the Masorah; CC-BY-SA
+102. **Psalm 55** — Psalms 55 — In-app source: Miqra according to the Masorah; CC-BY-SA
+103. **Psalm 56** — Psalms 56 — In-app source: Miqra according to the Masorah; CC-BY-SA
+104. **Psalm 57** — Psalms 57 — In-app source: Miqra according to the Masorah; CC-BY-SA
+105. **Psalm 58** — Psalms 58 — In-app source: Miqra according to the Masorah; CC-BY-SA
+106. **Psalm 59** — Psalms 59 — In-app source: Miqra according to the Masorah; CC-BY-SA
+107. **Psalm 6** — Psalms 6 — In-app source: Miqra according to the Masorah; CC-BY-SA
+108. **Psalm 60** — Psalms 60 — In-app source: Miqra according to the Masorah; CC-BY-SA
+109. **Psalm 61** — Psalms 61 — In-app source: Miqra according to the Masorah; CC-BY-SA
+110. **Psalm 62** — Psalms 62 — In-app source: Miqra according to the Masorah; CC-BY-SA
+111. **Psalm 63** — Psalms 63 — In-app source: Miqra according to the Masorah; CC-BY-SA
+112. **Psalm 64** — Psalms 64 — In-app source: Miqra according to the Masorah; CC-BY-SA
+113. **Psalm 65** — Psalms 65 — In-app source: Miqra according to the Masorah; CC-BY-SA
+114. **Psalm 66** — Psalms 66 — In-app source: Miqra according to the Masorah; CC-BY-SA
+115. **Psalm 67** — Psalms 67 — In-app source: Miqra according to the Masorah; CC-BY-SA
+116. **Psalm 68** — Psalms 68 — In-app source: Miqra according to the Masorah; CC-BY-SA
+117. **Psalm 69** — Psalms 69 — In-app source: Miqra according to the Masorah; CC-BY-SA
+118. **Psalm 7** — Psalms 7 — In-app source: Miqra according to the Masorah; CC-BY-SA
+119. **Psalm 70** — Psalms 70 — In-app source: Miqra according to the Masorah; CC-BY-SA
+120. **Psalm 71** — Psalms 71 — In-app source: Miqra according to the Masorah; CC-BY-SA
+121. **Psalm 72** — Psalms 72 — In-app source: Miqra according to the Masorah; CC-BY-SA
+122. **Psalm 73** — Psalms 73 — In-app source: Miqra according to the Masorah; CC-BY-SA
+123. **Psalm 74** — Psalms 74 — In-app source: Miqra according to the Masorah; CC-BY-SA
+124. **Psalm 75** — Psalms 75 — In-app source: Miqra according to the Masorah; CC-BY-SA
+125. **Psalm 76** — Psalms 76 — In-app source: Miqra according to the Masorah; CC-BY-SA
+126. **Psalm 77** — Psalms 77 — In-app source: Miqra according to the Masorah; CC-BY-SA
+127. **Psalm 78** — Psalms 78 — In-app source: Miqra according to the Masorah; CC-BY-SA
+128. **Psalm 79** — Psalms 79 — In-app source: Miqra according to the Masorah; CC-BY-SA
+129. **Psalm 8** — Psalms 8 — In-app source: Miqra according to the Masorah; CC-BY-SA
+130. **Psalm 80** — Psalms 80 — In-app source: Miqra according to the Masorah; CC-BY-SA
+131. **Psalm 81** — Psalms 81 — In-app source: Miqra according to the Masorah; CC-BY-SA
+132. **Psalm 82** — Psalms 82 — In-app source: Miqra according to the Masorah; CC-BY-SA
+133. **Psalm 83** — Psalms 83 — In-app source: Miqra according to the Masorah; CC-BY-SA
+134. **Psalm 84** — Psalms 84 — In-app source: Miqra according to the Masorah; CC-BY-SA
+135. **Psalm 85** — Psalms 85 — In-app source: Miqra according to the Masorah; CC-BY-SA
+136. **Psalm 86** — Psalms 86 — In-app source: Miqra according to the Masorah; CC-BY-SA
+137. **Psalm 87** — Psalms 87 — In-app source: Miqra according to the Masorah; CC-BY-SA
+138. **Psalm 88** — Psalms 88 — In-app source: Miqra according to the Masorah; CC-BY-SA
+139. **Psalm 89** — Psalms 89 — In-app source: Miqra according to the Masorah; CC-BY-SA
+140. **Psalm 9** — Psalms 9 — In-app source: Miqra according to the Masorah; CC-BY-SA
+141. **Psalm 90** — Psalms 90 — In-app source: Miqra according to the Masorah; CC-BY-SA
+142. **Psalm 91** — Psalms 91 — In-app source: Miqra according to the Masorah; CC-BY-SA
+143. **Psalm 92** — Psalms 92 — In-app source: Miqra according to the Masorah; CC-BY-SA
+144. **Psalm 93** — Psalms 93 — In-app source: Miqra according to the Masorah; CC-BY-SA
+145. **Psalm 94** — Psalms 94 — In-app source: Miqra according to the Masorah; CC-BY-SA
+146. **Psalm 95** — Psalms 95 — In-app source: Miqra according to the Masorah; CC-BY-SA
+147. **Psalm 96** — Psalms 96 — In-app source: Miqra according to the Masorah; CC-BY-SA
+148. **Psalm 97** — Psalms 97 — In-app source: Miqra according to the Masorah; CC-BY-SA
+149. **Psalm 98** — Psalms 98 — In-app source: Miqra according to the Masorah; CC-BY-SA
+150. **Psalm 99** — Psalms 99 — In-app source: Miqra according to the Masorah; CC-BY-SA
+
+## Seder Ma'amadot
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Seder Ma'amadot** — Seder Ma'amadot — In-app source: סדר מעמדות; Public Domain
+
+## Seder Tisha B'Av (Edot HaMizrach)
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 10
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 10
+
+1. **Tisha B'Av Day** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day — Source link only: no reusable Hebrew edition is currently listed
+2. **Tisha B'Av Night** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night — Source link only: no reusable Hebrew edition is currently listed
+3. **Al Heichali** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Al Heichali — Source link only: no reusable Hebrew edition is currently listed
+4. **Al Naharot Bavel** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Al Naharot Bavel — Source link only: no reusable Hebrew edition is currently listed
+5. **Aleinu** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+6. **Arvit** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Arvit — Source link only: no reusable Hebrew edition is currently listed
+7. **Ha'azinu HaShamayim** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Ha'azinu HaShamayim — Source link only: no reusable Hebrew edition is currently listed
+8. **L'mi Evkeh** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, L'mi Evkeh — Source link only: no reusable Hebrew edition is currently listed
+9. **Megillat Eichah** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Megillat Eichah — Source link only: no reusable Hebrew edition is currently listed
+10. **Oy Ki Yarad Esh** — Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Oy Ki Yarad Esh — Source link only: no reusable Hebrew edition is currently listed
+
+## Selichot Edot HaMizrach
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Selichot Edot HaMizrach** — Selichot Edot HaMizrach — In-app source: Selichot Edot HaMizrach - Torat Emet; Public Domain
+
+## Selichot Nusach Ashkenaz Lita
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 14
+- **Sections with reusable Hebrew editions:** 14
+- **Sections restricted to source links:** 0
+
+1. **Erev Rosh Hashana** — Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+2. **Fast of Gedaliah** — Selichot Nusach Ashkenaz Lita, Fast of Gedaliah — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+3. **Fifth Day** — Selichot Nusach Ashkenaz Lita, Fifth Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+4. **Fifth Day of the Ten Days of Penitence** — Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+5. **First Day** — Selichot Nusach Ashkenaz Lita, First Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+6. **Fourth Day** — Selichot Nusach Ashkenaz Lita, Fourth Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+7. **Fourth Day of the Ten Days of Penitence** — Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+8. **Second Day** — Selichot Nusach Ashkenaz Lita, Second Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+9. **Second Day of the Ten Days of Penitence** — Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+10. **Seventh Day** — Selichot Nusach Ashkenaz Lita, Seventh Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+11. **Sixth Day** — Selichot Nusach Ashkenaz Lita, Sixth Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+12. **Third Day** — Selichot Nusach Ashkenaz Lita, Third Day — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+13. **Third Day of the Ten Days of Penitence** — Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+14. **Yom Kippur Eve** — Selichot Nusach Ashkenaz Lita, Yom Kippur Eve — In-app source: Selichot Nusach Lita -- Wikisource; CC-BY-SA
+
+## Selichot Nusach Lita Linear
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 14
+- **Sections with reusable Hebrew editions:** 14
+- **Sections restricted to source links:** 0
+
+1. **Erev Rosh Hashana** — Selichot Nusach Lita Linear, Erev Rosh Hashana — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+2. **Fast of Gedaliah** — Selichot Nusach Lita Linear, Fast of Gedaliah — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+3. **Fifth Day** — Selichot Nusach Lita Linear, Fifth Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+4. **Fifth Day of the Ten Days of Penitence** — Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+5. **First Day** — Selichot Nusach Lita Linear, First Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+6. **Fourth Day** — Selichot Nusach Lita Linear, Fourth Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+7. **Fourth Day of the Ten Days of Penitence** — Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+8. **Second Day** — Selichot Nusach Lita Linear, Second Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+9. **Second Day of the Ten Days of Penitence** — Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+10. **Seventh Day** — Selichot Nusach Lita Linear, Seventh Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+11. **Sixth Day** — Selichot Nusach Lita Linear, Sixth Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+12. **Third Day** — Selichot Nusach Lita Linear, Third Day — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+13. **Third Day of the Ten Days of Penitence** — Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+14. **Yom Kippur Eve** — Selichot Nusach Lita Linear, Yom Kippur Eve — In-app source: The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986; CC-BY
+
+## Selichot Nusach Polin
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 14
+- **Sections with reusable Hebrew editions:** 14
+- **Sections restricted to source links:** 0
+
+1. **Erev Rosh Hashana** — Selichot Nusach Polin, Erev Rosh Hashana — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+2. **Fast of Gedaliah** — Selichot Nusach Polin, Fast of Gedaliah — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+3. **Fifth Day** — Selichot Nusach Polin, Fifth Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+4. **Fifth Day of the Ten Days of Penitence** — Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+5. **First Day** — Selichot Nusach Polin, First Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+6. **Fourth Day** — Selichot Nusach Polin, Fourth Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+7. **Fourth Day of the Ten Days of Penitence** — Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+8. **Second Day** — Selichot Nusach Polin, Second Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+9. **Second Day of the Ten Days of Penitence** — Selichot Nusach Polin, Second Day of the Ten Days of Penitence — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+10. **Seventh Day** — Selichot Nusach Polin, Seventh Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+11. **Sixth Day** — Selichot Nusach Polin, Sixth Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+12. **Third Day** — Selichot Nusach Polin, Third Day — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+13. **Third Day of the Ten Days of Penitence** — Selichot Nusach Polin, Third Day of the Ten Days of Penitence — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+14. **Yom Kippur Eve** — Selichot Nusach Polin, Yom Kippur Eve — In-app source: Selichot Nusach Polin -- Wikisource; CC-BY-SA
+
+## Shabbat Siddur Sefard Linear
+
+- **Tradition:** Sefard
+- **Sections indexed:** 139
+- **Sections with reusable Hebrew editions:** 139
+- **Sections restricted to source links:** 0
+
+1. **Berachos Said Upon Witnessing Phenomenal Sights** — Shabbat Siddur Sefard Linear, Berachos Said Upon Witnessing Phenomenal Sights — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+2. **Berachos Said Before Eating or Drinking** — Shabbat Siddur Sefard Linear, Birchas Hamazon, Berachos Said Before Eating or Drinking — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+3. **Birchas Hamazon** — Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+4. **Birchas Hamazon for Sheva Berachos** — Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon for Sheva Berachos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+5. **Birchas Hamozon for Bris Milah** — Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamozon for Bris Milah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+6. **Concluding Blessings** — Shabbat Siddur Sefard Linear, Birchas Hamazon, Concluding Blessings — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+7. **The Seven Marriage Blessings** — Shabbat Siddur Sefard Linear, Birchas Hamazon, The Seven Marriage Blessings — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+8. **Candle Lighting for Shabbos** — Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting for Shabbos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+9. **Candle Lighting for Yom Tov** — Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting for Yom Tov — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+10. **Candle Lighting when Shabbos occurs on Yom Tov** — Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting when Shabbos occurs on Yom Tov — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+11. **Counting the Omer** — Shabbat Siddur Sefard Linear, Counting the Omer — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+12. **Eiruv Tavshilin** — Shabbat Siddur Sefard Linear, Eiruv Tavshilin — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+13. **Eiruvei Chatzeiros** — Shabbat Siddur Sefard Linear, Eiruvei Chatzeiros — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+14. **Eiruvei Techumin** — Shabbat Siddur Sefard Linear, Eiruvei Techumin — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+15. **Hallel** — Shabbat Siddur Sefard Linear, Hallel — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+16. **Havdalah** — Shabbat Siddur Sefard Linear, Havdalah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+17. **Lecha Dodi** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Lecha Dodi — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+18. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+19. **Psalm 29** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 29 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+20. **Psalm 92** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 92 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+21. **Psalm 93** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 93 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+22. **Psalm 95** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 95 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+23. **Psalm 96** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 96 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+24. **Psalm 97** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 97 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+25. **Psalm 98** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 98 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+26. **Psalm 99** — Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 99 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+27. **Kiddush for Shabbos day** — Shabbat Siddur Sefard Linear, Kiddush for Shabbos day — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+28. **Kiddush Levanah** — Shabbat Siddur Sefard Linear, Kiddush Levanah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+29. **Aleinu** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Aleinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+30. **Amidah for Shabbos Eve** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Amidah for Shabbos Eve — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+31. **Borechu** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Borechu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+32. **Magein Avos** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Magein Avos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+33. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+34. **Vayechulu** — Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Vayechulu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+35. **Aleinu** — Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Aleinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+36. **Amidah** — Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Amidah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+37. **Borechu** — Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Borechu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+38. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+39. **Veyiten Lecha** — Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Veyiten Lecha — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+40. **Aleinu** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Aleinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+41. **Ashrei** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Ashrei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+42. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+43. **Psalm 107** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Psalm 107 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+44. **Shemoneh Esrei** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Shemoneh Esrei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+45. **Yedid Nefesh** — Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Yedid Nefesh — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+46. **Aleinu** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Aleinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+47. **Amidah** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Amidah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+48. **Ashrei** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ashrei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+49. **Berich Shemei** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Berich Shemei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+50. **Ketores (Incense Offering)** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ketores (Incense Offering) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+51. **Korban Tamid (Daily Offering)** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korban Tamid (Daily Offering) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+52. **Korbanos (Sacrificial Offerings)** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+53. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+54. **Pirkei Avos** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+55. **Preface** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos, Preface — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+56. **Psalms recited between Sukkos and Pesach** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Psalms recited between Sukkos and Pesach — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+57. **Reading of the Torah** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Reading of the Torah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+58. **Uvah L'tzion** — Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Uvah L'tzion — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+59. **Adon Olam** — Shabbat Siddur Sefard Linear, Musaf Service, Adon Olam — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+60. **Aleinu** — Shabbat Siddur Sefard Linear, Musaf Service, Aleinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+61. **Amidah** — Shabbat Siddur Sefard Linear, Musaf Service, Amidah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+62. **Ashrei** — Shabbat Siddur Sefard Linear, Musaf Service, Ashrei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+63. **Ein Keiloheinu** — Shabbat Siddur Sefard Linear, Musaf Service, Ein Keiloheinu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+64. **Hymn of Glory** — Shabbat Siddur Sefard Linear, Musaf Service, Hymn of Glory — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+65. **Kaddish d'Rabanan** — Shabbat Siddur Sefard Linear, Musaf Service, Kaddish d'Rabanan — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+66. **Mourner's Kaddish** — Shabbat Siddur Sefard Linear, Musaf Service, Mourner's Kaddish — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+67. **Blessing the Children** — Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Blessing the Children — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+68. **Eishes Chayil** — Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Eishes Chayil — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+69. **Kiddush for Shabbos Eve** — Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Kiddush for Shabbos Eve — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+70. **Sholom Aleichem** — Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Sholom Aleichem — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+71. **Prayer Before Retiring at Night** — Shabbat Siddur Sefard Linear, Prayer Before Retiring at Night — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+72. **Amidah for Yom Tov Maariv, Shacharis and Minchah** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Amidah for Yom Tov Maariv, Shacharis and Minchah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+73. **Blessings on the Lulav** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Blessings on the Lulav — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+74. **Kah Keili** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Kah Keili — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+75. **Kiddush for Yom Tov Evenings** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Kiddush for Yom Tov Evenings — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+76. **Amidah** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Amidah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+77. **Birkas Kohanim** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Birkas Kohanim — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+78. **Divine Sanctification** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Divine Sanctification — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+79. **Kedusha for Chol Hamoed** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Kedusha for Chol Hamoed — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+80. **Prayer for Dew** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Dew — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+81. **Prayer for Rain** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Rain — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+82. **Ushpizin** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Ushpizin — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+83. **Yizkor** — Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Yizkor — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+84. **Av Horachamim** — Shabbat Siddur Sefard Linear, Reading of the Torah, Av Horachamim — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+85. **Berachos for the Haftarah** — Shabbat Siddur Sefard Linear, Reading of the Torah, Berachos for the Haftarah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+86. **Berich Shemei** — Shabbat Siddur Sefard Linear, Reading of the Torah, Berich Shemei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+87. **Birchas Hagomeil** — Shabbat Siddur Sefard Linear, Reading of the Torah, Birchas Hagomeil — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+88. **Blessings of the New Month** — Shabbat Siddur Sefard Linear, Reading of the Torah, Blessings of the New Month — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+89. **Prayer for the Government** — Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer for the Government — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+90. **Prayer on Behalf of a Sick Person** — Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of a Sick Person — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+91. **Prayer on Behalf of the Oleh to Torah** — Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of the Oleh to Torah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+92. **Va'yehi Binsoa** — Shabbat Siddur Sefard Linear, Reading of the Torah, Va'yehi Binsoa — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+93. **Yekum Purkon** — Shabbat Siddur Sefard Linear, Reading of the Torah, Yekum Purkon — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+94. **Service at a Circumcision** — Shabbat Siddur Sefard Linear, Service at a Circumcision — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+95. **Song of Songs** — Shabbat Siddur Sefard Linear, Song of Songs — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+96. **Preface to Shir Hashirim** — Shabbat Siddur Sefard Linear, Song of Songs, Preface to Shir Hashirim — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+97. **Short Version** — Shabbat Siddur Sefard Linear, Song of Songs, Short Version — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+98. **Songs for Motzoei Shabbos** — Shabbat Siddur Sefard Linear, Songs for Motzoei Shabbos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+99. **Songs for Seudah Shelishis** — Shabbat Siddur Sefard Linear, Songs for Seudah Shelishis — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+100. **Kol Mekadesh** — Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Kol Mekadesh — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+101. **Mah Yedidut** — Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Mah Yedidut — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+102. **Menucha Vesimcha** — Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Menucha Vesimcha — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+103. **Tzur Mishelo** — Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Tzur Mishelo — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+104. **Yah Ribbon** — Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Yah Ribbon — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+105. **Baruch El Elyon** — Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch El Elyon — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+106. **Baruch Hashem Yom Yom** — Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch Hashem Yom Yom — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+107. **Dror Yikra** — Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Dror Yikra — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+108. **Shabbos Hayom** — Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Shabbos Hayom — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+109. **Yom Zeh Mechubod** — Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Yom Zeh Mechubod — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+110. **Adon Olam** — Shabbat Siddur Sefard Linear, The Morning Prayers, Adon Olam — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+111. **Akeidah (The Binding of Isaac)** — Shabbat Siddur Sefard Linear, The Morning Prayers, Akeidah (The Binding of Isaac) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+112. **Amidah for Shabbos Morning** — Shabbat Siddur Sefard Linear, The Morning Prayers, Amidah for Shabbos Morning — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+113. **Ashrei** — Shabbat Siddur Sefard Linear, The Morning Prayers, Ashrei — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+114. **Baruch She'amar** — Shabbat Siddur Sefard Linear, The Morning Prayers, Baruch She'amar — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+115. **Blessings of the Torah** — Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+116. **Blessings Upon Arising** — Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings Upon Arising — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+117. **Eil Adon** — Shabbat Siddur Sefard Linear, The Morning Prayers, Eil Adon — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+118. **Hodu** — Shabbat Siddur Sefard Linear, The Morning Prayers, Hodu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+119. **Kaddish d'Rabanan** — Shabbat Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+120. **Ketores (Incense Offering)** — Shabbat Siddur Sefard Linear, The Morning Prayers, Ketores (Incense Offering) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+121. **Korban Tamid (Daily Offering)** — Shabbat Siddur Sefard Linear, The Morning Prayers, Korban Tamid (Daily Offering) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+122. **Korbanos (Sacrificial Offerings)** — Shabbat Siddur Sefard Linear, The Morning Prayers, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+123. **Ma Tovu** — Shabbat Siddur Sefard Linear, The Morning Prayers, Ma Tovu — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+124. **Mizmor Shir** — Shabbat Siddur Sefard Linear, The Morning Prayers, Mizmor Shir — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+125. **Morning Blessings** — Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Blessings — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+126. **Morning Supplications** — Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Supplications — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+127. **Nishmas** — Shabbat Siddur Sefard Linear, The Morning Prayers, Nishmas — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+128. **Pesukei Dezimrah** — Shabbat Siddur Sefard Linear, The Morning Prayers, Pesukei Dezimrah — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+129. **Psalm 92** — Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 92 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+130. **Psalm 93** — Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 93 — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+131. **Putting On the Tallis** — Shabbat Siddur Sefard Linear, The Morning Prayers, Putting On the Tallis — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+132. **Recitation of Shema** — Shabbat Siddur Sefard Linear, The Morning Prayers, Recitation of Shema — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+133. **Shiras Hayam** — Shabbat Siddur Sefard Linear, The Morning Prayers, Shiras Hayam — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+134. **Song of the Day** — Shabbat Siddur Sefard Linear, The Morning Prayers, Song of the Day — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+135. **Upon Arising in the Morning** — Shabbat Siddur Sefard Linear, The Morning Prayers, Upon Arising in the Morning — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+136. **Yehi Chevod** — Shabbat Siddur Sefard Linear, The Morning Prayers, Yehi Chevod — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+137. **Yigdal** — Shabbat Siddur Sefard Linear, The Morning Prayers, Yigdal — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+138. **Yishtabach** — Shabbat Siddur Sefard Linear, The Morning Prayers, Yishtabach — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+139. **Various Other Berachos** — Shabbat Siddur Sefard Linear, Various Other Berachos — In-app source: The Metsudah Siddur, Metsudah Publications, 1981 - HE; CC-BY
+
+## Shalom Aleichem
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Shalom Aleichem** — Shalom Aleichem — In-app source: Shalom Alechem; CC-BY-SA
+
+## Shir HaKavod
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Shir HaKavod** — Shir HaKavod — Source link only: no reusable Hebrew edition is currently listed
+
+## Siddur Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 454
+- **Sections with reusable Hebrew editions:** 454
+- **Sections restricted to source links:** 0
+
+1. **Asher Yatzar Etchem Badin** — Siddur Ashkenaz, Berachot, Asher Yatzar Etchem Badin — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+2. **Birkat HaMazon** — Siddur Ashkenaz, Berachot, Birkat HaMazon — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+3. **Blessings on Sights Sounds and Smells** — Siddur Ashkenaz, Berachot, Birkat Hanehenin, Blessings on Sights Sounds and Smells — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+4. **Barachot Rishonot** — Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Barachot Rishonot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+5. **Al Hamichyah** — Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Al Hamichyah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+6. **Borei Nefashot** — Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Borei Nefashot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+7. **Birkhot Hamitzvot** — Siddur Ashkenaz, Berachot, Birkhot Hamitzvot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+8. **Havinenu** — Siddur Ashkenaz, Berachot, Havinenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+9. **Tefillat HaDerech** — Siddur Ashkenaz, Berachot, Tefillat HaDerech — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+10. **Blessings on Chanukah Candles** — Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Blessings on Chanukah Candles — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+11. **Hanerot Hallalu** — Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Hanerot Hallalu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+12. **Maoz Tzur** — Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Maoz Tzur — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+13. **Prayer for Dew** — Siddur Ashkenaz, Festivals, Prayer for Dew — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+14. **Prayer for Rain** — Siddur Ashkenaz, Festivals, Prayer for Rain — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+15. **Berakhah after the Hallel** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Berakhah after the Hallel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+16. **Berakhah before the Hallel** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Berakhah before the Hallel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+17. **Psalm 113** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 113 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+18. **Psalm 114** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 114 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+19. **Psalm 115** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 115 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+20. **Psalm 116** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 116 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+21. **Psalm 117** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 117 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+22. **Psalm 118** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 118 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+23. **Avodah** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Avodah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+24. **Avot** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Avot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+25. **Birkat Kohanim** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+26. **Gevurot** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Gevurot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+27. **Hodayah** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Hodayah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+28. **Kedushat HaShem** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Kedushah, Kedushat HaShem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+29. **Passages Ending Amidah** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Passages Ending Amidah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+30. **Peace** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+31. **Sanctity of the Day** — Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+32. **BaHaB** — Siddur Ashkenaz, Festivals, Selichot, BaHaB — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+33. **Fast of Esther** — Siddur Ashkenaz, Festivals, Selichot, Fast of Esther — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+34. **Fast of Gedalia** — Siddur Ashkenaz, Festivals, Selichot, Fast of Gedalia — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+35. **Seventeen of Tamuz** — Siddur Ashkenaz, Festivals, Selichot, Seventeen of Tamuz — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+36. **Ten of Tevet** — Siddur Ashkenaz, Festivals, Selichot, Ten of Tevet — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+37. **Yom Kippur Katan** — Siddur Ashkenaz, Festivals, Selichot, Yom Kippur Katan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+38. **Avodah** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avodah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+39. **Avot** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+40. **Birkat Kohanim** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+41. **Concluding Prayer** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Concluding Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+42. **Gevurot** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Gevurot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+43. **Kedusha** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Kedusha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+44. **Modim** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Modim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+45. **Peace** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+46. **Sanctity of the Day** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+47. **Avodah** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Avodah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+48. **Avot** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Avot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+49. **Birkat Kohanim** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+50. **Concluding Prayer** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Concluding Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+51. **Gevurot** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Gevurot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+52. **Kedusha** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Kedusha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+53. **Modim** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Modim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+54. **Peace** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+55. **Sanctity of the Day** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+56. **Sanctity of the Name** — Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Sanctity of the Name — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+57. **Blessing on Lulav** — Siddur Ashkenaz, Festivals, Sukkot, Blessing on Lulav — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+58. **Fifth Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Fifth Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+59. **First Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, First Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+60. **For Shabbat Chol Hamoed** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, For Shabbat Chol Hamoed — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+61. **Fourth Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Fourth Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+62. **Hosha'ana Rabba** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Hosha'ana Rabba — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+63. **Second Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Second Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+64. **Sixth Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Sixth Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+65. **Third Day of Sukkot** — Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Third Day of Sukkot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+66. **Entering the Sukkah** — Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Entering the Sukkah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+67. **Leaving the Sukkah** — Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Leaving the Sukkah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+68. **Ushpizin** — Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Ushpizin — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+69. **Half Kaddish** — Siddur Ashkenaz, Kaddish, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+70. **Kaddish achar HaKevura** — Siddur Ashkenaz, Kaddish, Kaddish achar HaKevura — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+71. **Kaddish achar Hashlamat Meschet** — Siddur Ashkenaz, Kaddish, Kaddish achar Hashlamat Meschet — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+72. **Kaddish d'Rabbanan** — Siddur Ashkenaz, Kaddish, Kaddish d'Rabbanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+73. **Kaddish Shalem** — Siddur Ashkenaz, Kaddish, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+74. **Mourner's Kaddish** — Siddur Ashkenaz, Kaddish, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+75. **Kiddusha Rabba** — Siddur Ashkenaz, Shabbat, Daytime Meal, Kiddusha Rabba — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+76. **Baruch Kel Elyon** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Baruch Kel Elyon — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+77. **Dror Yikrah** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Dror Yikrah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+78. **Ki Eshmera** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Ki Eshmera — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+79. **Shimru Shabtotai** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Shimru Shabtotai — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+80. **Yom Shabbaton** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Yom Shabbaton — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+81. **Yom Zeh Mechubad** — Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Yom Zeh Mechubad — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+82. **Havdalah** — Siddur Ashkenaz, Shabbat, Havdalah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+83. **Ana Bekoach** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Ana Bekoach — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+84. **Bameh Madlikin** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Bameh Madlikin — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+85. **Kaddish DeRabbanan** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Kaddish DeRabbanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+86. **Lekha Dodi** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Lekha Dodi — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+87. **Mourner's Kaddish** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+88. **Psalm 29** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 29 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+89. **Psalm 92** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 92 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+90. **Psalm 93** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 93 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+91. **Psalm 95** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 95 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+92. **Psalm 96** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 96 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+93. **Psalm 97** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 97 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+94. **Psalm 98** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 98 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+95. **Psalm 99** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 99 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+96. **Yedid Nefesh** — Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Yedid Nefesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+97. **Adon Olam** — Siddur Ashkenaz, Shabbat, Maariv, Adon Olam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+98. **Aleinu** — Siddur Ashkenaz, Shabbat, Maariv, Aleinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+99. **Concluding Passage** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+100. **Divine Might** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+101. **Holines of God's Name** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Holines of God's Name — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+102. **Patriarchs** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+103. **Peace** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+104. **Sanctity of the Day** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+105. **Temple Service** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+106. **Thanksgiving** — Siddur Ashkenaz, Shabbat, Maariv, Amidah, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+107. **Barchu** — Siddur Ashkenaz, Shabbat, Maariv, Barchu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+108. **First Blessing after Shema** — Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+109. **First Blessing before Shema** — Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+110. **Second Blessing after Shema** — Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+111. **Second Blessing before Shema** — Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+112. **Shema** — Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+113. **Half Kaddish** — Siddur Ashkenaz, Shabbat, Maariv, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+114. **Kaddish Shalem** — Siddur Ashkenaz, Shabbat, Maariv, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+115. **LeDavid** — Siddur Ashkenaz, Shabbat, Maariv, LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+116. **Me'ein Sheva** — Siddur Ashkenaz, Shabbat, Maariv, Me'ein Sheva — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+117. **Mourner's Kaddish** — Siddur Ashkenaz, Shabbat, Maariv, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+118. **Sefirat HaOmer** — Siddur Ashkenaz, Shabbat, Maariv, Sefirat HaOmer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+119. **Vay'chulu** — Siddur Ashkenaz, Shabbat, Maariv, Vay'chulu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+120. **Veshamru** — Siddur Ashkenaz, Shabbat, Maariv, Veshamru — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+121. **Yigdal** — Siddur Ashkenaz, Shabbat, Maariv, Yigdal — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+122. **Alenu** — Siddur Ashkenaz, Shabbat, Minchah, Alenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+123. **Concluding Passage** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+124. **Divine Might** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+125. **Holiness of God** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+126. **Kedushah** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Kedushah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+127. **Patriarchs** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+128. **Peace** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+129. **Sanctity of the Day** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+130. **Temple Service** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+131. **Al Hanisim for Chanukkah** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Chanukkah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+132. **Al Hanisim for Purim** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Purim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+133. **Modim** — Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Modim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+134. **Ashrei** — Siddur Ashkenaz, Shabbat, Minchah, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+135. **Barchi Nafshi** — Siddur Ashkenaz, Shabbat, Minchah, Barchi Nafshi — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+136. **Half Kaddish** — Siddur Ashkenaz, Shabbat, Minchah, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+137. **Kaddish Shalem** — Siddur Ashkenaz, Shabbat, Minchah, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+138. **Mourner's Kaddish** — Siddur Ashkenaz, Shabbat, Minchah, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+139. **Birkat HaTorah** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Birkat HaTorah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+140. **Raising the Torah** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Raising the Torah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+141. **Av Harachamim** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Av Harachamim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+142. **Berich Shmei** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Berich Shmei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+143. **Gadlu** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Gadlu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+144. **Lekha Hashem** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Lekha Hashem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+145. **Va'ani Tefillati** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Va'ani Tefillati — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+146. **Vayehi Binsoa** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+147. **Vetigaleh Veteraeh** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+148. **LeDavid** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+149. **Uvenucho Yomar** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+150. **Yehalelu** — Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Yehalelu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+151. **Tzidkatkhah Tzedek** — Siddur Ashkenaz, Shabbat, Minchah, Tzidkatkhah Tzedek — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+152. **Uva Letzion** — Siddur Ashkenaz, Shabbat, Minchah, Uva Letzion — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+153. **Adon Olam** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Adon Olam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+154. **Alenu** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Alenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+155. **Birkat Kohanim** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+156. **Concluding Passage** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+157. **Divine Might** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+158. **Holiness of God** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+159. **Kaddish Shalem** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+160. **Kedushah** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kedushah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+161. **Patriarchs** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+162. **Peace** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+163. **For Shabbat** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Sanctity of the Day, For Shabbat — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+164. **For Shabbat Rosh Chodesh** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Sanctity of the Day, For Shabbat Rosh Chodesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+165. **Temple Service** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+166. **Thanksgiving** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+167. **Ein Keloheinu** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Ein Keloheinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+168. **Kaddish Derabbanan** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Derabbanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+169. **Kaddish Shalem** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+170. **LeDavid** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+171. **Mizmor Shir L'Yom HaShabbat** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mizmor Shir L'Yom HaShabbat — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+172. **Mourner's Kaddish** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+173. **Pitum Haketoret** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Pitum Haketoret — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+174. **Shir HaKavod** — Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Shir HaKavod — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+175. **Blessing the Children** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Blessing the Children — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+176. **Eshet Chayil** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Eshet Chayil — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+177. **Kiddush** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Kiddush — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+178. **Ribon Kol HaOlamim** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Ribon Kol HaOlamim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+179. **Shalom Aleichem** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Shalom Aleichem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+180. **Kol Mekadesh** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Kol Mekadesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+181. **Ma Yedidut** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Ma Yedidut — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+182. **Menucha VeSimcha** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Menucha VeSimcha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+183. **Tzamah Nafshi** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzamah Nafshi — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+184. **Tzur Mishelo** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzur Mishelo — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+185. **Yah Ribon** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yah Ribon — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+186. **Yom zeh L'yisrael** — Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yom zeh L'yisrael — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+187. **Birkat Kohanim** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+188. **Concluding Passage** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+189. **Divine Might** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+190. **Holiness of God** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+191. **Kaddish Shalem** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+192. **Kedushah** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kedushah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+193. **Patriarchs** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+194. **Peace** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+195. **Sanctity of the Day** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Sanctity of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+196. **Temple Service** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+197. **Thanksgiving** — Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+198. **Ashrei** — Siddur Ashkenaz, Shabbat, Shacharit, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+199. **Barchu** — Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Barchu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+200. **Blessing after Shema** — Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+201. **First Blessing before Shema** — Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, First Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+202. **Second Blessing before Shema** — Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Second Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+203. **Shema** — Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+204. **Av HaRachamim** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Av HaRachamim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+205. **Birkat Hachodesh** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Birkat Hachodesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+206. **Prayer for Israeli Soldiers** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Israeli Soldiers — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+207. **Prayer for Those Being Held in Captivity** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Those Being Held in Captivity — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+208. **Prayer of the State of Israel** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer of the State of Israel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+209. **Yekum Purkan** — Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Yekum Purkan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+210. **Half Kaddish** — Siddur Ashkenaz, Shabbat, Shacharit, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+211. **Ashrei** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+212. **Baruch Hashem** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Baruch Hashem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+213. **Barukh She'amar** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Barukh She'amar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+214. **Half Kaddish** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+215. **Hodu** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Hodu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+216. **Mizmor Letoda** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Letoda — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+217. **Mizmor Shir** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Shir — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+218. **Mourner's Kaddish** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+219. **Nishmat Kol Chai** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Nishmat Kol Chai — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+220. **Psalm 130** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 130 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+221. **Psalm 135** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 135 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+222. **Psalm 136** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 136 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+223. **Psalm 146** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 146 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+224. **Psalm 147** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 147 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+225. **Psalm 148** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 148 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+226. **Psalm 149** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 149 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+227. **Psalm 150** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 150 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+228. **Psalm 19** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 19 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+229. **Psalm 33** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 33 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+230. **Psalm 34** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 34 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+231. **Psalm 90** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 90 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+232. **Psalm 91** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 91 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+233. **Psalm 92** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 92 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+234. **Psalm 93** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 93 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+235. **Shirat HaYam** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shirat HaYam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+236. **Shochen Ad** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shochen Ad — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+237. **Vayevarech David** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Vayevarech David — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+238. **Yehi Chevod** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yehi Chevod — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+239. **Yishtabach** — Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yishtabach — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+240. **Adon Olam** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Adon Olam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+241. **Akedah** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Akedah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+242. **Asher Yatzar** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Asher Yatzar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+243. **Elokai Neshama** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Elokai Neshama — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+244. **Baraita of Rabbi Yishmael** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Baraita of Rabbi Yishmael — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+245. **Kaddish DeRabbanan** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+246. **Ketoret** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Ketoret — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+247. **Kiyor** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kiyor — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+248. **Korban HaTamid** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Korban HaTamid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+249. **Laws of Sacrifices** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Laws of Sacrifices — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+250. **Order of the Temple Service** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Order of the Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+251. **Terumat HaDeshen** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Terumat HaDeshen — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+252. **Ma Tovu** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Ma Tovu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+253. **Modeh Ani** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Modeh Ani — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+254. **Morning Blessings** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Morning Blessings — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+255. **Netilat Yadayim** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Netilat Yadayim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+256. **Sovereignty of Heaven** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Sovereignty of Heaven — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+257. **Tallit** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tallit — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+258. **Tzitzit** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tzitzit — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+259. **Yigdal** — Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Yigdal — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+260. **Returning Sefer to Aron** — Siddur Ashkenaz, Shabbat, Shacharit, Returning Sefer to Aron — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+261. **Birkat Hagomel** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+262. **Birkat HaTorah** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+263. **Haftarah** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Haftarah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+264. **Half Kaddish** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+265. **Bar Mitzvah** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bar Mitzvah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+266. **Bat Mitzvah** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bat Mitzvah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+267. **For an Oleh** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For an Oleh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+268. **Birth of a Son** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of a Son — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+269. **Birth of Daughter** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of Daughter — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+270. **For Sickness (includes man and woman)** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+271. **Raising the Torah** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+272. **Berich Shmei** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Berich Shmei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+273. **Ein Kamocha** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Ein Kamocha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+274. **Lecha Hashem** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Lecha Hashem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+275. **Shema Yisrael (Gadlu)** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Shema Yisrael (Gadlu) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+276. **Vayehi Binsoa** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Vayehi Binsoa — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+277. **Veyazor Veyagen** — Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Veyazor Veyagen — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+278. **Atkinu** — Siddur Ashkenaz, Shabbat, Third Meal, Atkinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+279. **Mizmor LeDavid** — Siddur Ashkenaz, Shabbat, Third Meal, Mizmor LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+280. **Yedid Nefesh** — Siddur Ashkenaz, Shabbat, Third Meal, Yedid Nefesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+281. **Veyiten Lekha** — Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Veyiten Lekha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+282. **Viyehi Noam** — Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Viyehi Noam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+283. **Alenu** — Siddur Ashkenaz, Weekday, Maariv, Alenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+284. **Against Enemies** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Against Enemies — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+285. **Concluding Passage** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+286. **Divine Might** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+287. **Forgiveness** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Forgiveness — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+288. **Gathering the Exiles** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Gathering the Exiles — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+289. **Healing** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Healing — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+290. **Holiness of God** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+291. **Justice** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Justice — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+292. **Kingdom of David** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Kingdom of David — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+293. **Knowledge** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Knowledge — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+294. **Patriarchs** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+295. **Peace** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+296. **Prosperity** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Prosperity — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+297. **Rebuilding Jerusalem** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Rebuilding Jerusalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+298. **Redemption** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Redemption — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+299. **Repentance** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Repentance — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+300. **Response to Prayer** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Response to Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+301. **Temple Service** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+302. **Thanksgiving** — Siddur Ashkenaz, Weekday, Maariv, Amidah, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+303. **The Righteous** — Siddur Ashkenaz, Weekday, Maariv, Amidah, The Righteous — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+304. **Barchu** — Siddur Ashkenaz, Weekday, Maariv, Barchu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+305. **Birkat HaLevana** — Siddur Ashkenaz, Weekday, Maariv, Birkat HaLevana — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+306. **First Blessing after Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, First Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+307. **First Blessing before Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, First Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+308. **Half Kaddish** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+309. **Second Blessing after Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Second Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+310. **Second Blessing before Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Second Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+311. **Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+312. **Third Blessing after Shema** — Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Third Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+313. **Kaddish Shalem** — Siddur Ashkenaz, Weekday, Maariv, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+314. **Keri'at Shema al Hamita** — Siddur Ashkenaz, Weekday, Maariv, Keri'at Shema al Hamita — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+315. **LeDavid** — Siddur Ashkenaz, Weekday, Maariv, LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+316. **Mourner's Kaddish** — Siddur Ashkenaz, Weekday, Maariv, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+317. **Sefirat HaOmer** — Siddur Ashkenaz, Weekday, Maariv, Sefirat HaOmer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+318. **Vehu Rachum** — Siddur Ashkenaz, Weekday, Maariv, Vehu Rachum — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+319. **Against Enemies** — Siddur Ashkenaz, Weekday, Minchah, Amida, Against Enemies — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+320. **Birkat Kohanim** — Siddur Ashkenaz, Weekday, Minchah, Amida, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+321. **Concluding Passage** — Siddur Ashkenaz, Weekday, Minchah, Amida, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+322. **Divine Might** — Siddur Ashkenaz, Weekday, Minchah, Amida, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+323. **Forgiveness** — Siddur Ashkenaz, Weekday, Minchah, Amida, Forgiveness — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+324. **Gathering the Exiles** — Siddur Ashkenaz, Weekday, Minchah, Amida, Gathering the Exiles — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+325. **Healing** — Siddur Ashkenaz, Weekday, Minchah, Amida, Healing — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+326. **Holiness of God** — Siddur Ashkenaz, Weekday, Minchah, Amida, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+327. **Justice** — Siddur Ashkenaz, Weekday, Minchah, Amida, Justice — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+328. **Keduasha** — Siddur Ashkenaz, Weekday, Minchah, Amida, Keduasha — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+329. **Kingdom of David** — Siddur Ashkenaz, Weekday, Minchah, Amida, Kingdom of David — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+330. **Knowledge** — Siddur Ashkenaz, Weekday, Minchah, Amida, Knowledge — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+331. **Patriarchs** — Siddur Ashkenaz, Weekday, Minchah, Amida, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+332. **Peace** — Siddur Ashkenaz, Weekday, Minchah, Amida, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+333. **Prosperity** — Siddur Ashkenaz, Weekday, Minchah, Amida, Prosperity — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+334. **Rebuilding Jerusalem** — Siddur Ashkenaz, Weekday, Minchah, Amida, Rebuilding Jerusalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+335. **Redemption** — Siddur Ashkenaz, Weekday, Minchah, Amida, Redemption — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+336. **Repentance** — Siddur Ashkenaz, Weekday, Minchah, Amida, Repentance — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+337. **Response to Prayer** — Siddur Ashkenaz, Weekday, Minchah, Amida, Response to Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+338. **Temple Service** — Siddur Ashkenaz, Weekday, Minchah, Amida, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+339. **Thanksgiving** — Siddur Ashkenaz, Weekday, Minchah, Amida, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+340. **The Righteous** — Siddur Ashkenaz, Weekday, Minchah, Amida, The Righteous — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+341. **Ashrei** — Siddur Ashkenaz, Weekday, Minchah, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+342. **Alenu** — Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Alenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+343. **Mourner's Kaddish** — Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+344. **Avinu Malkenu** — Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Avinu Malkenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+345. **Kaddish Shalem** — Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+346. **Nefilat Appayim** — Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Nefilat Appayim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+347. **Shomer Yisrael** — Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Shomer Yisrael — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+348. **Vidui and 13 Middot** — Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Vidui and 13 Middot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+349. **Against Enemies** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Against Enemies — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+350. **Birkat Kohanim** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Birkat Kohanim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+351. **Concluding Passage** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Concluding Passage — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+352. **Divine Might** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Divine Might — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+353. **Forgiveness** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Forgiveness — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+354. **Gathering the Exiles** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Gathering the Exiles — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+355. **Healing** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Healing — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+356. **Holiness of God** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Holiness of God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+357. **Justice** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Justice — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+358. **Kedushah** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Kedushah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+359. **Kingdom of David** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Kingdom of David — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+360. **Knowledge** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Knowledge — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+361. **Patriarchs** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Patriarchs — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+362. **Peace** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Peace — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+363. **Prosperity** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Prosperity — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+364. **Rebuilding Jerusalem** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Rebuilding Jerusalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+365. **Redemption** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Redemption — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+366. **Repentance** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Repentance — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+367. **Response to Prayer** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Response to Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+368. **Temple Service** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+369. **Thanksgiving** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, Thanksgiving — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+370. **The Righteous** — Siddur Ashkenaz, Weekday, Shacharit, Amidah, The Righteous — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+371. **Barchu** — Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Barchu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+372. **Blessing after Shema** — Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Blessing after Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+373. **First Blessing before Shema** — Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, First Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+374. **Second Blessing before Shema** — Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Second Blessing before Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+375. **Shema** — Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+376. **Alenu** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Alenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+377. **Ashrei** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+378. **Barchi Nafshi** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Barchi Nafshi — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+379. **Kaddish Shalem** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Kaddish Shalem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+380. **Barchu** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Barchu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+381. **Ein Kelohenu** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Ein Kelohenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+382. **Mourner's Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+383. **Pitum HaKetoret** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Pitum HaKetoret — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+384. **Lamenatze'ach** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Lamenatze'ach — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+385. **LeDavid** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, LeDavid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+386. **Mourner's Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+387. **Song of the Day** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Song of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+388. **Uva Letzion** — Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Uva Letzion — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+389. **Ashrei** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+390. **Ata Hu** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Ata Hu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+391. **Az Yashir** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Az Yashir — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+392. **Barukh She'amar** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Barukh She'amar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+393. **Closing Verses** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Closing Verses — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+394. **Half Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+395. **Hodu** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Hodu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+396. **Introductory Psalm** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Introductory Psalm — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+397. **Mizmor Letoda** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mizmor Letoda — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+398. **Mourner's Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+399. **Psalm 130** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 130 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+400. **Psalm 146** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 146 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+401. **Psalm 147** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 147 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+402. **Psalm 148** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 148 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+403. **Psalm 149** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 149 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+404. **Psalm 150** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 150 — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+405. **Vayevarech David** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Vayevarech David — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+406. **Yehi Chevod** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Yehi Chevod — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+407. **Yishtabach** — Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Yishtabach — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+408. **Avinu Malkenu** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Avinu Malkenu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+409. **For Monday and Thursday** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, For Monday and Thursday — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+410. **God of Israel** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, God of Israel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+411. **Half Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+412. **Nefilat Apayim** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Nefilat Apayim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+413. **Shomer Yisrael** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Shomer Yisrael — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+414. **Vidui and 13 Middot** — Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Vidui and 13 Middot — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+415. **Six Remembrances** — Siddur Ashkenaz, Weekday, Shacharit, Post Service, Six Remembrances — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+416. **Ten Commandments** — Siddur Ashkenaz, Weekday, Shacharit, Post Service, Ten Commandments — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+417. **Thirteen Principles** — Siddur Ashkenaz, Weekday, Shacharit, Post Service, Thirteen Principles — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+418. **Adon Olam** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Adon Olam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+419. **Akedah** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Akedah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+420. **Asher Yatzar** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Asher Yatzar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+421. **Elokai Neshama** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Elokai Neshama — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+422. **Baraita of Rabbi Yishmael** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Baraita of Rabbi Yishmael — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+423. **Kaddish DeRabbanan** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+424. **Ketoret** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Ketoret — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+425. **Kiyor** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Kiyor — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+426. **Korban HaTamid** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Korban HaTamid — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+427. **Laws of Sacrifices** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Laws of Sacrifices — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+428. **Order of the Temple Service** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Order of the Temple Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+429. **Terumat HaDeshen** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Terumat HaDeshen — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+430. **Ma Tovu** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Ma Tovu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+431. **Modeh Ani** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Modeh Ani — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+432. **Morning Blessings** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Morning Blessings — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+433. **Netilat Yadayim** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Netilat Yadayim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+434. **Sovereignty of Heaven** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Sovereignty of Heaven — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+435. **Tallit** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tallit — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+436. **Tefillin** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+437. **Torah Blessings** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Blessings — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+438. **Torah Study** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Study — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+439. **Tzitzit** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tzitzit — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+440. **Yigdal** — Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Yigdal — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+441. **Birkat Hagomel** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+442. **Birkat HaTorah** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+443. **Half Kaddish** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+444. **Prayers for Welfare of the People** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Prayers for Welfare of the People — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+445. **Raising the Torah** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+446. **Av Harachamim** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Av Harachamim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+447. **Berich Shmei** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Berich Shmei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+448. **El Erech Appayim** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, El Erech Appayim — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+449. **Lekha Hashem** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Lekha Hashem — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+450. **Vayehi Binsoa** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+451. **Vetigaleh Veteraeh** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+452. **LeDavid Mizmor** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, LeDavid Mizmor — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+453. **Uvenucho Yomar** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+454. **Yehalelu** — Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Yehalelu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+
+## Siddur Edot HaMizrach
+
+- **Tradition:** Edot Hamizrach
+- **Sections indexed:** 129
+- **Sections with reusable Hebrew editions:** 129
+- **Sections restricted to source links:** 0
+
+1. **Ten Remembrances** — Siddur Edot HaMizrach, Additions for Shacharit, Ten Remembrances — In-app source:  Shaliehsaboo Edition; CC0
+2. **Thirteen Principles of Faith** — Siddur Edot HaMizrach, Additions for Shacharit, Thirteen Principles of Faith — In-app source:  Shaliehsaboo Edition; CC0
+3. **Al Hamihya** — Siddur Edot HaMizrach, Al Hamihya — In-app source:  Shaliehsaboo Edition; CC0
+4. **Blessings on Lighting and Thunder** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Blessings on Lighting and Thunder — In-app source:  Shaliehsaboo Edition; CC0
+5. **Brit Mila** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Brit Mila — In-app source:  Shaliehsaboo Edition; CC0
+6. **Building a Fence** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Building a Fence — In-app source:  Shaliehsaboo Edition; CC0
+7. **Marriage** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Marriage — In-app source:  Shaliehsaboo Edition; CC0
+8. **Mezuza** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Mezuza — In-app source:  Shaliehsaboo Edition; CC0
+9. **Prayer for Taking Medicine** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Prayer for Taking Medicine — In-app source:  Shaliehsaboo Edition; CC0
+10. **Rainbow** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Rainbow — In-app source:  Shaliehsaboo Edition; CC0
+11. **Redeeming the First Born** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Redeeming the First Born — In-app source:  Shaliehsaboo Edition; CC0
+12. **Separating Hallah** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Separating Hallah — In-app source:  Shaliehsaboo Edition; CC0
+13. **Separating Tithes** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Separating Tithes — In-app source:  Shaliehsaboo Edition; CC0
+14. **Sheva Berachot** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Sheva Berachot — In-app source:  Shaliehsaboo Edition; CC0
+15. **Tevillat Kelim** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Tevillat Kelim — In-app source:  Shaliehsaboo Edition; CC0
+16. **Traveler's Prayer** — Siddur Edot HaMizrach, Assorted Blessings and Prayers, Traveler's Prayer — In-app source:  Shaliehsaboo Edition; CC0
+17. **Bedtime Shema** — Siddur Edot HaMizrach, Bedtime Shema — In-app source:  Shaliehsaboo Edition; CC0
+18. **Blessing of the Moon** — Siddur Edot HaMizrach, Blessing of the Moon — In-app source:  Shaliehsaboo Edition; CC0
+19. **Blessings on Enjoyments** — Siddur Edot HaMizrach, Blessings on Enjoyments — In-app source:  Shaliehsaboo Edition; CC0
+20. **Counting of the Omer** — Siddur Edot HaMizrach, Counting of the Omer — In-app source:  Shaliehsaboo Edition; CC0
+21. **Daytime Meal** — Siddur Edot HaMizrach, Daytime Meal, Daytime Meal — In-app source:  Shaliehsaboo Edition; CC0
+22. **Kiddush** — Siddur Edot HaMizrach, Daytime Meal, Kiddush — In-app source:  Shaliehsaboo Edition; CC0
+23. **Fast of Esther** — Siddur Edot HaMizrach, Fast Days and Mourning, Fast of Esther — In-app source:  Shaliehsaboo Edition; CC0
+24. **Fast of Gedalya** — Siddur Edot HaMizrach, Fast Days and Mourning, Fast of Gedalya — In-app source:  Shaliehsaboo Edition; CC0
+25. **Mourning** — Siddur Edot HaMizrach, Fast Days and Mourning, Mourning — In-app source:  Shaliehsaboo Edition; CC0
+26. **Seventeenth of Tammuz** — Siddur Edot HaMizrach, Fast Days and Mourning, Seventeenth of Tammuz — In-app source:  Shaliehsaboo Edition; CC0
+27. **Tenth of Tevet** — Siddur Edot HaMizrach, Fast Days and Mourning, Tenth of Tevet — In-app source:  Shaliehsaboo Edition; CC0
+28. **Torah Reading for Fast Days** — Siddur Edot HaMizrach, Fast Days and Mourning, Torah Reading for Fast Days — In-app source:  Shaliehsaboo Edition; CC0
+29. **Menorah Lighting** — Siddur Edot HaMizrach, Hanukkah, Menorah Lighting — In-app source:  Shaliehsaboo Edition; CC0
+30. **Shacharit** — Siddur Edot HaMizrach, Hanukkah, Shacharit — In-app source:  Shaliehsaboo Edition; CC0
+31. **Before Havdalah** — Siddur Edot HaMizrach, Havdalah, Before Havdalah — In-app source:  Shaliehsaboo Edition; CC0
+32. **Fourth Meal** — Siddur Edot HaMizrach, Havdalah, Fourth Meal — In-app source:  Shaliehsaboo Edition; CC0
+33. **Havdala** — Siddur Edot HaMizrach, Havdalah, Havdala — In-app source:  Shaliehsaboo Edition; CC0
+34. **Motzei Shabbat Songs** — Siddur Edot HaMizrach, Havdalah, Motzei Shabbat Songs — In-app source:  Shaliehsaboo Edition; CC0
+35. **Veyiten Lecha** — Siddur Edot HaMizrach, Havdalah, Veyiten Lecha — In-app source:  Shaliehsaboo Edition; CC0
+36. **Kabbalat Shabbat** — Siddur Edot HaMizrach, Kabbalat Shabbat — In-app source:  Shaliehsaboo Edition; CC0
+37. **First Meal** — Siddur Edot HaMizrach, Mishna Study for Shabbat, First Meal — In-app source:  Shaliehsaboo Edition; CC0
+38. **Pirkei Avot** — Siddur Edot HaMizrach, Mishna Study for Shabbat, Pirkei Avot — In-app source:  Shaliehsaboo Edition; CC0
+39. **Second Meal** — Siddur Edot HaMizrach, Mishna Study for Shabbat, Second Meal — In-app source:  Shaliehsaboo Edition; CC0
+40. **Third Meal** — Siddur Edot HaMizrach, Mishna Study for Shabbat, Third Meal — In-app source:  Shaliehsaboo Edition; CC0
+41. **Blessing of the Trees** — Siddur Edot HaMizrach, Nissan, Blessing of the Trees — In-app source:  Shaliehsaboo Edition; CC0
+42. **Learning of the Day** — Siddur Edot HaMizrach, Nissan, Learning of the Day — In-app source:  Shaliehsaboo Edition; CC0
+43. **Post Meal Blessing** — Siddur Edot HaMizrach, Post Meal Blessing — In-app source:  Shaliehsaboo Edition; CC0
+44. **Amidah** — Siddur Edot HaMizrach, Prayers for Three Festivals, Amidah — In-app source:  Shaliehsaboo Edition; CC0
+45. **Mussaf** — Siddur Edot HaMizrach, Prayers for Three Festivals, Mussaf — In-app source:  Shaliehsaboo Edition; CC0
+46. **Prayers for Three Festivals** — Siddur Edot HaMizrach, Prayers for Three Festivals, Prayers for Three Festivals — In-app source:  Shaliehsaboo Edition; CC0
+47. **Song for Passover** — Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Passover — In-app source:  Shaliehsaboo Edition; CC0
+48. **Song for Shavuot** — Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Shavuot — In-app source:  Shaliehsaboo Edition; CC0
+49. **Song for Shemini Atzeret** — Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Shemini Atzeret — In-app source:  Shaliehsaboo Edition; CC0
+50. **Song for Sukkot** — Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Sukkot — In-app source:  Shaliehsaboo Edition; CC0
+51. **Modeh Ani** — Siddur Edot HaMizrach, Preparatory Prayers, Modeh Ani — In-app source:  Shaliehsaboo Edition; CC0
+52. **Morning Blessings** — Siddur Edot HaMizrach, Preparatory Prayers, Morning Blessings — In-app source:  Shaliehsaboo Edition; CC0
+53. **Torah Blessings** — Siddur Edot HaMizrach, Preparatory Prayers, Torah Blessings — In-app source:  Shaliehsaboo Edition; CC0
+54. **Megillah Reading** — Siddur Edot HaMizrach, Purim, Megillah Reading — In-app source:  Shaliehsaboo Edition; CC0
+55. **Purim Day** — Siddur Edot HaMizrach, Purim, Purim Day — In-app source:  Shaliehsaboo Edition; CC0
+56. **Shabbat Zachor** — Siddur Edot HaMizrach, Purim, Shabbat Zachor — In-app source:  Shaliehsaboo Edition; CC0
+57. **Alenu** — Siddur Edot HaMizrach, Rosh Hodesh, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+58. **Barchi Nafshi** — Siddur Edot HaMizrach, Rosh Hodesh, Barchi Nafshi — In-app source:  Shaliehsaboo Edition; CC0
+59. **Hallel** — Siddur Edot HaMizrach, Rosh Hodesh, Hallel — In-app source:  Shaliehsaboo Edition; CC0
+60. **Incense Offering** — Siddur Edot HaMizrach, Rosh Hodesh, Incense Offering — In-app source:  Shaliehsaboo Edition; CC0
+61. **Kaveh** — Siddur Edot HaMizrach, Rosh Hodesh, Kaveh — In-app source:  Shaliehsaboo Edition; CC0
+62. **Mussaf** — Siddur Edot HaMizrach, Rosh Hodesh, Mussaf — In-app source:  Shaliehsaboo Edition; CC0
+63. **Rosh Hodesh** — Siddur Edot HaMizrach, Rosh Hodesh, Rosh Hodesh — In-app source:  Shaliehsaboo Edition; CC0
+64. **Song of the Day** — Siddur Edot HaMizrach, Rosh Hodesh, Song of the Day — In-app source:  Shaliehsaboo Edition; CC0
+65. **Uva LeSion** — Siddur Edot HaMizrach, Rosh Hodesh, Uva LeSion — In-app source:  Shaliehsaboo Edition; CC0
+66. **Alenu** — Siddur Edot HaMizrach, Shabbat Arvit, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+67. **Barchu** — Siddur Edot HaMizrach, Shabbat Arvit, Barchu — In-app source:  Shaliehsaboo Edition; CC0
+68. **Magen Avot** — Siddur Edot HaMizrach, Shabbat Arvit, Magen Avot — In-app source:  Shaliehsaboo Edition; CC0
+69. **The Shema** — Siddur Edot HaMizrach, Shabbat Arvit, The Shema — In-app source:  Shaliehsaboo Edition; CC0
+70. **Shabbat Candle Lighting** — Siddur Edot HaMizrach, Shabbat Candle Lighting — In-app source:  Shaliehsaboo Edition; CC0
+71. **Atkenu Seudata** — Siddur Edot HaMizrach, Shabbat Evening, Atkenu Seudata — In-app source:  Shaliehsaboo Edition; CC0
+72. **Blessing of Children** — Siddur Edot HaMizrach, Shabbat Evening, Blessing of Children — In-app source:  Shaliehsaboo Edition; CC0
+73. **Eshet Hayil** — Siddur Edot HaMizrach, Shabbat Evening, Eshet Hayil — In-app source:  Shaliehsaboo Edition; CC0
+74. **First Meal** — Siddur Edot HaMizrach, Shabbat Evening, First Meal — In-app source:  Shaliehsaboo Edition; CC0
+75. **Kiddush** — Siddur Edot HaMizrach, Shabbat Evening, Kiddush — In-app source:  Shaliehsaboo Edition; CC0
+76. **Shalom Alekhem** — Siddur Edot HaMizrach, Shabbat Evening, Shalom Alekhem — In-app source:  Shaliehsaboo Edition; CC0
+77. **Songs for Shabbat** — Siddur Edot HaMizrach, Shabbat Evening, Songs for Shabbat — In-app source:  Shaliehsaboo Edition; CC0
+78. **Zohar** — Siddur Edot HaMizrach, Shabbat Evening, Zohar — In-app source:  Shaliehsaboo Edition; CC0
+79. **Alenu** — Siddur Edot HaMizrach, Shabbat Mincha, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+80. **Amida** — Siddur Edot HaMizrach, Shabbat Mincha, Amida — In-app source:  Shaliehsaboo Edition; CC0
+81. **Offerings** — Siddur Edot HaMizrach, Shabbat Mincha, Offerings — In-app source:  Shaliehsaboo Edition; CC0
+82. **Uva LeSion** — Siddur Edot HaMizrach, Shabbat Mincha, Uva LeSion — In-app source:  Shaliehsaboo Edition; CC0
+83. **Alenu** — Siddur Edot HaMizrach, Shabbat Mussaf, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+84. **Amida** — Siddur Edot HaMizrach, Shabbat Mussaf, Amida — In-app source:  Shaliehsaboo Edition; CC0
+85. **Incense Offering** — Siddur Edot HaMizrach, Shabbat Mussaf, Incense Offering — In-app source:  Shaliehsaboo Edition; CC0
+86. **Amidah** — Siddur Edot HaMizrach, Shabbat Shacharit, Amidah — In-app source:  Shaliehsaboo Edition; CC0
+87. **Announcement of Fast** — Siddur Edot HaMizrach, Shabbat Shacharit, Announcement of Fast — In-app source:  Shaliehsaboo Edition; CC0
+88. **Ashrei** — Siddur Edot HaMizrach, Shabbat Shacharit, Ashrei — In-app source:  Shaliehsaboo Edition; CC0
+89. **Birkat HaChodesh** — Siddur Edot HaMizrach, Shabbat Shacharit, Birkat HaChodesh — In-app source:  Shaliehsaboo Edition; CC0
+90. **Haftarah** — Siddur Edot HaMizrach, Shabbat Shacharit, Haftarah — In-app source:  Shaliehsaboo Edition; CC0
+91. **HaGomel** — Siddur Edot HaMizrach, Shabbat Shacharit, HaGomel — In-app source:  Shaliehsaboo Edition; CC0
+92. **Mi Sheberach** — Siddur Edot HaMizrach, Shabbat Shacharit, Mi Sheberach — In-app source:  Shaliehsaboo Edition; CC0
+93. **Pesukei D'Zimra** — Siddur Edot HaMizrach, Shabbat Shacharit, Pesukei D'Zimra — In-app source:  Shaliehsaboo Edition; CC0
+94. **Psalms for Shabbat** — Siddur Edot HaMizrach, Shabbat Shacharit, Psalms for Shabbat — In-app source:  Shaliehsaboo Edition; CC0
+95. **Shabbat Chatan** — Siddur Edot HaMizrach, Shabbat Shacharit, Shabbat Chatan — In-app source:  Shaliehsaboo Edition; CC0
+96. **The Shema** — Siddur Edot HaMizrach, Shabbat Shacharit, The Shema — In-app source:  Shaliehsaboo Edition; CC0
+97. **Torah Reading** — Siddur Edot HaMizrach, Shabbat Shacharit, Torah Reading — In-app source:  Shaliehsaboo Edition; CC0
+98. **Zeved HaBat** — Siddur Edot HaMizrach, Shabbat Shacharit, Zeved HaBat — In-app source:  Shaliehsaboo Edition; CC0
+99. **Song of Songs** — Siddur Edot HaMizrach, Song of Songs — In-app source:  Shaliehsaboo Edition; CC0
+100. **LeShem Yichud** — Siddur Edot HaMizrach, The Midnight Rite, LeShem Yichud — In-app source:  Shaliehsaboo Edition; CC0
+101. **Tikkun Leah** — Siddur Edot HaMizrach, The Midnight Rite, Tikkun Leah — In-app source:  Shaliehsaboo Edition; CC0
+102. **Tikkun Rachel** — Siddur Edot HaMizrach, The Midnight Rite, Tikkun Rachel — In-app source:  Shaliehsaboo Edition; CC0
+103. **Third Meal** — Siddur Edot HaMizrach, Third Meal — In-app source:  Shaliehsaboo Edition; CC0
+104. **Alenu** — Siddur Edot HaMizrach, Weekday Arvit, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+105. **Amidah** — Siddur Edot HaMizrach, Weekday Arvit, Amidah — In-app source:  Shaliehsaboo Edition; CC0
+106. **Barchu** — Siddur Edot HaMizrach, Weekday Arvit, Barchu — In-app source:  Shaliehsaboo Edition; CC0
+107. **The Shema** — Siddur Edot HaMizrach, Weekday Arvit, The Shema — In-app source:  Shaliehsaboo Edition; CC0
+108. **Alenu** — Siddur Edot HaMizrach, Weekday Mincha, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+109. **Amida** — Siddur Edot HaMizrach, Weekday Mincha, Amida — In-app source:  Shaliehsaboo Edition; CC0
+110. **Offerings** — Siddur Edot HaMizrach, Weekday Mincha, Offerings — In-app source:  Shaliehsaboo Edition; CC0
+111. **Vidui** — Siddur Edot HaMizrach, Weekday Mincha, Vidui — In-app source:  Shaliehsaboo Edition; CC0
+112. **Alenu** — Siddur Edot HaMizrach, Weekday Shacharit, Alenu — In-app source:  Shaliehsaboo Edition; CC0
+113. **Amida** — Siddur Edot HaMizrach, Weekday Shacharit, Amida — In-app source:  Shaliehsaboo Edition; CC0
+114. **Ashrei** — Siddur Edot HaMizrach, Weekday Shacharit, Ashrei — In-app source:  Shaliehsaboo Edition; CC0
+115. **Beit Yaakov** — Siddur Edot HaMizrach, Weekday Shacharit, Beit Yaakov — In-app source:  Shaliehsaboo Edition; CC0
+116. **Hanna's Prayer** — Siddur Edot HaMizrach, Weekday Shacharit, Hanna's Prayer — In-app source:  Shaliehsaboo Edition; CC0
+117. **Hodu** — Siddur Edot HaMizrach, Weekday Shacharit, Hodu — In-app source:  Shaliehsaboo Edition; CC0
+118. **Incense Offering** — Siddur Edot HaMizrach, Weekday Shacharit, Incense Offering — In-app source:  Shaliehsaboo Edition; CC0
+119. **Kaveh** — Siddur Edot HaMizrach, Weekday Shacharit, Kaveh — In-app source:  Shaliehsaboo Edition; CC0
+120. **Morning Prayer** — Siddur Edot HaMizrach, Weekday Shacharit, Morning Prayer — In-app source:  Shaliehsaboo Edition; CC0
+121. **Order of Talit** — Siddur Edot HaMizrach, Weekday Shacharit, Order of Talit — In-app source:  Shaliehsaboo Edition; CC0
+122. **Order of Tefillin** — Siddur Edot HaMizrach, Weekday Shacharit, Order of Tefillin — In-app source:  Shaliehsaboo Edition; CC0
+123. **Pesukei D'Zimra** — Siddur Edot HaMizrach, Weekday Shacharit, Pesukei D'Zimra — In-app source:  Shaliehsaboo Edition; CC0
+124. **Petichat Eliyahu** — Siddur Edot HaMizrach, Weekday Shacharit, Petichat Eliyahu — In-app source:  Shaliehsaboo Edition; CC0
+125. **Song of the Day** — Siddur Edot HaMizrach, Weekday Shacharit, Song of the Day — In-app source:  Shaliehsaboo Edition; CC0
+126. **The Shema** — Siddur Edot HaMizrach, Weekday Shacharit, The Shema — In-app source:  Shaliehsaboo Edition; CC0
+127. **Torah Reading** — Siddur Edot HaMizrach, Weekday Shacharit, Torah Reading — In-app source:  Shaliehsaboo Edition; CC0
+128. **Uva LeSion** — Siddur Edot HaMizrach, Weekday Shacharit, Uva LeSion — In-app source:  Shaliehsaboo Edition; CC0
+129. **Vidui** — Siddur Edot HaMizrach, Weekday Shacharit, Vidui — In-app source:  Shaliehsaboo Edition; CC0
+
+## Siddur Sefard
+
+- **Tradition:** Sefard
+- **Sections indexed:** 214
+- **Sections with reusable Hebrew editions:** 214
+- **Sections restricted to source links:** 0
+
+1. **Chapter of Fear of God** — Siddur Sefard, Additional Prayers , Chapter of Fear of God — In-app source: The Metsudah siddur, 1981; CC-BY
+2. **Chapter of Manna** — Siddur Sefard, Additional Prayers , Chapter of Manna — In-app source: The Metsudah siddur, 1981; CC-BY
+3. **Chapter of Repentance** — Siddur Sefard, Additional Prayers , Chapter of Repentance — In-app source: The Metsudah siddur, 1981; CC-BY
+4. **Chapter of Song** — Siddur Sefard, Additional Prayers , Chapter of Song — In-app source: The Metsudah siddur, 1981; CC-BY
+5. **Six Rememberances** — Siddur Sefard, Additional Prayers , Six Rememberances — In-app source: The Metsudah siddur, 1981; CC-BY
+6. **Supplications After Prayers** — Siddur Sefard, Additional Prayers , Supplications After Prayers — In-app source: The Metsudah siddur, 1981; CC-BY
+7. **Thirteen Principles** — Siddur Sefard, Additional Prayers , Thirteen Principles — In-app source: The Metsudah siddur, 1981; CC-BY
+8. **Bedtime Shema** — Siddur Sefard, Bedtime Shema — In-app source: The Metsudah siddur, 1981; CC-BY
+9. **Birchat HaMazon** — Siddur Sefard, Birchat HaMazon, Birchat HaMazon — In-app source: The Metsudah siddur, 1981; CC-BY
+10. **Blessing on Foods** — Siddur Sefard, Birchat HaMazon, Blessing on Foods — In-app source: The Metsudah siddur, 1981; CC-BY
+11. **Brit Milah** — Siddur Sefard, Birchat HaMazon, Brit Milah — In-app source: The Metsudah siddur, 1981; CC-BY
+12. **Air Traveler's Prayer** — Siddur Sefard, Blessings, Air Traveler's Prayer — In-app source: The Metsudah siddur, 1981; CC-BY
+13. **Blossoming Fruit Tree** — Siddur Sefard, Blessings, Blossoming Fruit Tree — In-app source: The Metsudah siddur, 1981; CC-BY
+14. **Borei Nefashot** — Siddur Sefard, Blessings, Borei Nefashot — In-app source: The Metsudah siddur, 1981; CC-BY
+15. **Fragrant Fruit** — Siddur Sefard, Blessings, Fragrant Fruit — In-app source: The Metsudah siddur, 1981; CC-BY
+16. **Fragrant Herbs** — Siddur Sefard, Blessings, Fragrant Herbs — In-app source: The Metsudah siddur, 1981; CC-BY
+17. **Fragrant Oils** — Siddur Sefard, Blessings, Fragrant Oils — In-app source: The Metsudah siddur, 1981; CC-BY
+18. **Fragrant Shrubs** — Siddur Sefard, Blessings, Fragrant Shrubs — In-app source: The Metsudah siddur, 1981; CC-BY
+19. **Fragrant Spices** — Siddur Sefard, Blessings, Fragrant Spices — In-app source: The Metsudah siddur, 1981; CC-BY
+20. **Ha'adamah** — Siddur Sefard, Blessings, Ha'adamah — In-app source: The Metsudah siddur, 1981; CC-BY
+21. **Ha'etz** — Siddur Sefard, Blessings, Ha'etz — In-app source: The Metsudah siddur, 1981; CC-BY
+22. **Immersing Utensils** — Siddur Sefard, Blessings, Immersing Utensils — In-app source: The Metsudah siddur, 1981; CC-BY
+23. **Lightning & Thunder** — Siddur Sefard, Blessings, Lightning & Thunder — In-app source: The Metsudah siddur, 1981; CC-BY
+24. **Me'ein Shalosh** — Siddur Sefard, Blessings, Me'ein Shalosh — In-app source: The Metsudah siddur, 1981; CC-BY
+25. **Mezuzah** — Siddur Sefard, Blessings, Mezuzah — In-app source: The Metsudah siddur, 1981; CC-BY
+26. **Seeing Ocean** — Siddur Sefard, Blessings, Seeing Ocean — In-app source: The Metsudah siddur, 1981; CC-BY
+27. **Seeing Rainbow** — Siddur Sefard, Blessings, Seeing Rainbow — In-app source: The Metsudah siddur, 1981; CC-BY
+28. **Separating Challah** — Siddur Sefard, Blessings, Separating Challah — In-app source: The Metsudah siddur, 1981; CC-BY
+29. **Separating Terumot & Maasrot** — Siddur Sefard, Blessings, Separating Terumot & Maasrot — In-app source: The Metsudah siddur, 1981; CC-BY
+30. **Shehakol** — Siddur Sefard, Blessings, Shehakol — In-app source: The Metsudah siddur, 1981; CC-BY
+31. **Shehecheyanu** — Siddur Sefard, Blessings, Shehecheyanu — In-app source: The Metsudah siddur, 1981; CC-BY
+32. **Traveler's Prayer** — Siddur Sefard, Blessings, Traveler's Prayer — In-app source: The Metsudah siddur, 1981; CC-BY
+33. **Various Blessings of Praise** — Siddur Sefard, Blessings, Various Blessings of Praise — In-app source: The Metsudah siddur, 1981; CC-BY
+34. **Menorah Lighting** — Siddur Sefard, Chanukah, Menorah Lighting — In-app source: The Metsudah siddur, 1981; CC-BY
+35. **Song for Shabbat Chanuka** — Siddur Sefard, Chanukah, Song for Shabbat Chanuka — In-app source: The Metsudah siddur, 1981; CC-BY
+36. **Torah Reading** — Siddur Sefard, Chanukah, Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+37. **Eruv Tavshilin** — Siddur Sefard, Eruv Tavshilin — In-app source: The Metsudah siddur, 1981; CC-BY
+38. **El Maleh Prayer** — Siddur Sefard, Fast Days, El Maleh Prayer — In-app source: The Metsudah siddur, 1981; CC-BY
+39. **Selichot for 17 Tamuz** — Siddur Sefard, Fast Days, Selichot for 17 Tamuz — In-app source: The Metsudah siddur, 1981; CC-BY
+40. **Selichot for 20 Sivan** — Siddur Sefard, Fast Days, Selichot for 20 Sivan — In-app source: The Metsudah siddur, 1981; CC-BY
+41. **Selichot for Asara B'Tevet** — Siddur Sefard, Fast Days, Selichot for Asara B'Tevet — In-app source: The Metsudah siddur, 1981; CC-BY
+42. **Selichot for BaHaB** — Siddur Sefard, Fast Days, Selichot for BaHaB — In-app source: The Metsudah siddur, 1981; CC-BY
+43. **Selichot for Childrens' Illness** — Siddur Sefard, Fast Days, Selichot for Childrens' Illness — In-app source: The Metsudah siddur, 1981; CC-BY
+44. **Selichot for Concluding Monday** — Siddur Sefard, Fast Days, Selichot for Concluding Monday — In-app source: The Metsudah siddur, 1981; CC-BY
+45. **Selichot for First Monday** — Siddur Sefard, Fast Days, Selichot for First Monday — In-app source: The Metsudah siddur, 1981; CC-BY
+46. **Selichot for Taanit Esther** — Siddur Sefard, Fast Days, Selichot for Taanit Esther — In-app source: The Metsudah siddur, 1981; CC-BY
+47. **Selichot for Thursday** — Siddur Sefard, Fast Days, Selichot for Thursday — In-app source: The Metsudah siddur, 1981; CC-BY
+48. **Yom Kippur Katan** — Siddur Sefard, Fast Days, Yom Kippur Katan — In-app source: The Metsudah siddur, 1981; CC-BY
+49. **Kaddish Before Maariv Amidah** — Siddur Sefard, Holidays, Kaddish Before Maariv Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+50. **Maariv, Shacharit & Mincha Amidah** — Siddur Sefard, Holidays, Maariv, Shacharit & Mincha Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+51. **Prayer for Dew** — Siddur Sefard, Holidays, Prayer for Dew — In-app source: The Metsudah siddur, 1981; CC-BY
+52. **Prayer for Rain** — Siddur Sefard, Holidays, Prayer for Rain — In-app source: The Metsudah siddur, 1981; CC-BY
+53. **Prayer Upon Entering Sukkah** — Siddur Sefard, Holidays, Prayer Upon Entering Sukkah — In-app source: The Metsudah siddur, 1981; CC-BY
+54. **Yizkor** — Siddur Sefard, Holidays, Yizkor — In-app source: The Metsudah siddur, 1981; CC-BY
+55. **Yom Tov Daytime Kiddush** — Siddur Sefard, Holidays, Yom Tov Daytime Kiddush — In-app source: The Metsudah siddur, 1981; CC-BY
+56. **Yom Tov Eve Kiddush** — Siddur Sefard, Holidays, Yom Tov Eve Kiddush — In-app source: The Metsudah siddur, 1981; CC-BY
+57. **Yom Tov Musaf Amidah** — Siddur Sefard, Holidays, Yom Tov Musaf Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+58. **Kabbalat Shabbat** — Siddur Sefard, Kabbalat Shabbat — In-app source: The Metsudah siddur, 1981; CC-BY
+59. **Kiddush Levanah** — Siddur Sefard, Kiddush Levanah — In-app source: The Metsudah siddur, 1981; CC-BY
+60. **Amar Rabbi Akiva** — Siddur Sefard, Lag BaOmer Songs, Amar Rabbi Akiva — In-app source: The Metsudah siddur, 1981; CC-BY
+61. **Ashreinu Ma Tov** — Siddur Sefard, Lag BaOmer Songs, Ashreinu Ma Tov — In-app source: The Metsudah siddur, 1981; CC-BY
+62. **Ashreinu Uma Naim** — Siddur Sefard, Lag BaOmer Songs, Ashreinu Uma Naim — In-app source: The Metsudah siddur, 1981; CC-BY
+63. **Bar Yochai** — Siddur Sefard, Lag BaOmer Songs, Bar Yochai — In-app source: The Metsudah siddur, 1981; CC-BY
+64. **Bar Yochai Butzina Kadisha** — Siddur Sefard, Lag BaOmer Songs, Bar Yochai Butzina Kadisha — In-app source: The Metsudah siddur, 1981; CC-BY
+65. **Bar Yochai Hashem Imcha** — Siddur Sefard, Lag BaOmer Songs, Bar Yochai Hashem Imcha — In-app source: The Metsudah siddur, 1981; CC-BY
+66. **Bar Yochai Tagel Yoladetecha** — Siddur Sefard, Lag BaOmer Songs, Bar Yochai Tagel Yoladetecha — In-app source: The Metsudah siddur, 1981; CC-BY
+67. **Bar Yochai Yesod Olam** — Siddur Sefard, Lag BaOmer Songs, Bar Yochai Yesod Olam — In-app source: The Metsudah siddur, 1981; CC-BY
+68. **Lichvod HaTanna** — Siddur Sefard, Lag BaOmer Songs, Lichvod HaTanna — In-app source: The Metsudah siddur, 1981; CC-BY
+69. **Naaleh V'Navo** — Siddur Sefard, Lag BaOmer Songs, Naaleh V'Navo — In-app source: The Metsudah siddur, 1981; CC-BY
+70. **Va'amartem Ko Lechai** — Siddur Sefard, Lag BaOmer Songs, Va'amartem Ko Lechai — In-app source: The Metsudah siddur, 1981; CC-BY
+71. **Mealtime Blessings** — Siddur Sefard, Mealtime Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+72. **Hamavdil** — Siddur Sefard, Motzaei Shabbat , Hamavdil — In-app source: The Metsudah siddur, 1981; CC-BY
+73. **Havdala** — Siddur Sefard, Motzaei Shabbat , Havdala — In-app source: The Metsudah siddur, 1981; CC-BY
+74. **Melava Malka Zemirot** — Siddur Sefard, Motzaei Shabbat , Melava Malka Zemirot — In-app source: The Metsudah siddur, 1981; CC-BY
+75. **Musaf** — Siddur Sefard, Musaf — In-app source: The Metsudah siddur, 1981; CC-BY
+76. **Burning Hametz** — Siddur Sefard, Nissan, Burning Hametz — In-app source: The Metsudah siddur, 1981; CC-BY
+77. **Letter of Rav Shimshon of Ostropol** — Siddur Sefard, Nissan, Letter of Rav Shimshon of Ostropol — In-app source: The Metsudah siddur, 1981; CC-BY
+78. **Pesach Offering** — Siddur Sefard, Nissan, Pesach Offering — In-app source: The Metsudah siddur, 1981; CC-BY
+79. **Search for Hametz** — Siddur Sefard, Nissan, Search for Hametz — In-app source: The Metsudah siddur, 1981; CC-BY
+80. **The'Nasi' Readings** — Siddur Sefard, Nissan, The'Nasi' Readings — In-app source: The Metsudah siddur, 1981; CC-BY
+81. **Barech** — Siddur Sefard, Pesach Haggadah, Barech — In-app source: The Metsudah siddur, 1981; CC-BY
+82. **Hallel** — Siddur Sefard, Pesach Haggadah, Hallel — In-app source: The Metsudah siddur, 1981; CC-BY
+83. **Kadesh** — Siddur Sefard, Pesach Haggadah, Kadesh — In-app source: The Metsudah siddur, 1981; CC-BY
+84. **Karpas** — Siddur Sefard, Pesach Haggadah, Karpas — In-app source: The Metsudah siddur, 1981; CC-BY
+85. **Korech** — Siddur Sefard, Pesach Haggadah, Korech — In-app source: The Metsudah siddur, 1981; CC-BY
+86. **Maggid** — Siddur Sefard, Pesach Haggadah, Maggid — In-app source: The Metsudah siddur, 1981; CC-BY
+87. **Maror** — Siddur Sefard, Pesach Haggadah, Maror — In-app source: The Metsudah siddur, 1981; CC-BY
+88. **Motzi, Matzah** — Siddur Sefard, Pesach Haggadah, Motzi, Matzah — In-app source: The Metsudah siddur, 1981; CC-BY
+89. **Nirtzah** — Siddur Sefard, Pesach Haggadah, Nirtzah — In-app source: The Metsudah siddur, 1981; CC-BY
+90. **Rochtzoh** — Siddur Sefard, Pesach Haggadah, Rochtzoh — In-app source: The Metsudah siddur, 1981; CC-BY
+91. **Shir HaShirim** — Siddur Sefard, Pesach Haggadah, Shir HaShirim — In-app source: The Metsudah siddur, 1981; CC-BY
+92. **Shulchan Orech** — Siddur Sefard, Pesach Haggadah, Shulchan Orech — In-app source: The Metsudah siddur, 1981; CC-BY
+93. **Tzafun** — Siddur Sefard, Pesach Haggadah, Tzafun — In-app source: The Metsudah siddur, 1981; CC-BY
+94. **Urchatz** — Siddur Sefard, Pesach Haggadah, Urchatz — In-app source: The Metsudah siddur, 1981; CC-BY
+95. **Yachatz** — Siddur Sefard, Pesach Haggadah, Yachatz — In-app source: The Metsudah siddur, 1981; CC-BY
+96. **Priestly Blessing** — Siddur Sefard, Priestly Blessing — In-app source: The Metsudah siddur, 1981; CC-BY
+97. **Krovetz L'Purim** — Siddur Sefard, Purim, Krovetz L'Purim — In-app source: The Metsudah siddur, 1981; CC-BY
+98. **Megillah Reading** — Siddur Sefard, Purim, Megillah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+99. **Order of Purim Day** — Siddur Sefard, Purim, Order of Purim Day — In-app source: The Metsudah siddur, 1981; CC-BY
+100. **Parashat Zachor** — Siddur Sefard, Purim, Parashat Zachor — In-app source: The Metsudah siddur, 1981; CC-BY
+101. **Torah Reading** — Siddur Sefard, Purim, Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+102. **Ashrei Uva L'Tziyon** — Siddur Sefard, Rosh Chodesh, Ashrei Uva L'Tziyon — In-app source: The Metsudah siddur, 1981; CC-BY
+103. **Barchi Nafshi** — Siddur Sefard, Rosh Chodesh, Barchi Nafshi — In-app source: The Metsudah siddur, 1981; CC-BY
+104. **Hallel** — Siddur Sefard, Rosh Chodesh, Hallel — In-app source: The Metsudah siddur, 1981; CC-BY
+105. **Mussaf** — Siddur Sefard, Rosh Chodesh, Mussaf — In-app source: The Metsudah siddur, 1981; CC-BY
+106. **Returning Sefer Torah** — Siddur Sefard, Rosh Chodesh, Returning Sefer Torah — In-app source: The Metsudah siddur, 1981; CC-BY
+107. **Song of the Day** — Siddur Sefard, Rosh Chodesh, Song of the Day — In-app source: The Metsudah siddur, 1981; CC-BY
+108. **Torah Reading** — Siddur Sefard, Rosh Chodesh, Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+109. **Shabbat Candle Lighting** — Siddur Sefard, Shabbat Candle Lighting — In-app source: The Metsudah siddur, 1981; CC-BY
+110. **Seder Tikunei Shabbat** — Siddur Sefard, Shabbat Day Meal, Seder Tikunei Shabbat — In-app source: The Metsudah siddur, 1981; CC-BY
+111. **Shabbat Day Kiddush** — Siddur Sefard, Shabbat Day Meal, Shabbat Day Kiddush — In-app source: The Metsudah siddur, 1981; CC-BY
+112. **Zemirot** — Siddur Sefard, Shabbat Day Meal, Zemirot — In-app source: The Metsudah siddur, 1981; CC-BY
+113. **Amidah** — Siddur Sefard, Shabbat Eve Maariv, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+114. **Shabbat Eve Maariv** — Siddur Sefard, Shabbat Eve Maariv, Shabbat Eve Maariv — In-app source: The Metsudah siddur, 1981; CC-BY
+115. **Shema & Blessings** — Siddur Sefard, Shabbat Eve Maariv, Shema & Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+116. **Vayechulu** — Siddur Sefard, Shabbat Eve Maariv, Vayechulu — In-app source: The Metsudah siddur, 1981; CC-BY
+117. **Amidah** — Siddur Sefard, Shabbat Eve Mincha, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+118. **Mincha** — Siddur Sefard, Shabbat Eve Mincha, Mincha — In-app source: The Metsudah siddur, 1981; CC-BY
+119. **Song of Songs** — Siddur Sefard, Shabbat Eve Mincha, Song of Songs — In-app source: The Metsudah siddur, 1981; CC-BY
+120. **Atkinu Seudata** — Siddur Sefard, Shabbat Evening Meal, Atkinu Seudata — In-app source: The Metsudah siddur, 1981; CC-BY
+121. **Blessing the Children** — Siddur Sefard, Shabbat Evening Meal, Blessing the Children — In-app source: The Metsudah siddur, 1981; CC-BY
+122. **Eishet Chayil** — Siddur Sefard, Shabbat Evening Meal, Eishet Chayil — In-app source: The Metsudah siddur, 1981; CC-BY
+123. **Shabbat Eve Kiddush** — Siddur Sefard, Shabbat Evening Meal, Shabbat Eve Kiddush — In-app source: The Metsudah siddur, 1981; CC-BY
+124. **Shalom Aleichem** — Siddur Sefard, Shabbat Evening Meal, Shalom Aleichem — In-app source: The Metsudah siddur, 1981; CC-BY
+125. **Zemirot** — Siddur Sefard, Shabbat Evening Meal, Zemirot — In-app source: The Metsudah siddur, 1981; CC-BY
+126. **Amidah** — Siddur Sefard, Shabbat Mincha, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+127. **Korbanot** — Siddur Sefard, Shabbat Mincha, Korbanot — In-app source: The Metsudah siddur, 1981; CC-BY
+128. **Pirkei Avot** — Siddur Sefard, Shabbat Mincha, Pirkei Avot — In-app source: The Metsudah siddur, 1981; CC-BY
+129. **Amidah** — Siddur Sefard, Shabbat Morning Services, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+130. **Av HaRachamim** — Siddur Sefard, Shabbat Morning Services, Av HaRachamim — In-app source: The Metsudah siddur, 1981; CC-BY
+131. **BaHaB Blessing** — Siddur Sefard, Shabbat Morning Services, BaHaB Blessing — In-app source: The Metsudah siddur, 1981; CC-BY
+132. **Bar Mitzva** — Siddur Sefard, Shabbat Morning Services, Bar Mitzva — In-app source: The Metsudah siddur, 1981; CC-BY
+133. **Blessing of New Month** — Siddur Sefard, Shabbat Morning Services, Blessing of New Month — In-app source: The Metsudah siddur, 1981; CC-BY
+134. **Blessings on Torah Reading** — Siddur Sefard, Shabbat Morning Services, Blessings on Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+135. **Haftarah Blessings** — Siddur Sefard, Shabbat Morning Services, Haftarah Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+136. **Hagbahah** — Siddur Sefard, Shabbat Morning Services, Hagbahah — In-app source: The Metsudah siddur, 1981; CC-BY
+137. **Pesukei D'Zimrah** — Siddur Sefard, Shabbat Morning Services, Pesukei D'Zimrah — In-app source: The Metsudah siddur, 1981; CC-BY
+138. **Prayer for Deceased** — Siddur Sefard, Shabbat Morning Services, Prayer for Deceased — In-app source: The Metsudah siddur, 1981; CC-BY
+139. **Prayer for Mother after Chilbirth** — Siddur Sefard, Shabbat Morning Services, Prayer for Mother after Chilbirth — In-app source: The Metsudah siddur, 1981; CC-BY
+140. **Prayer for Oleh** — Siddur Sefard, Shabbat Morning Services, Prayer for Oleh — In-app source: The Metsudah siddur, 1981; CC-BY
+141. **Prayer for Sick** — Siddur Sefard, Shabbat Morning Services, Prayer for Sick — In-app source: The Metsudah siddur, 1981; CC-BY
+142. **Shabbat Torah Reading** — Siddur Sefard, Shabbat Morning Services, Shabbat Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+143. **Shema & Blessings** — Siddur Sefard, Shabbat Morning Services, Shema & Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+144. **Thanksgiving Blessing** — Siddur Sefard, Shabbat Morning Services, Thanksgiving Blessing — In-app source: The Metsudah siddur, 1981; CC-BY
+145. **Shaking Lulav** — Siddur Sefard, Shaking Lulav — In-app source: The Metsudah siddur, 1981; CC-BY
+146. **Shavuot** — Siddur Sefard, Shavuot — In-app source: The Metsudah siddur, 1981; CC-BY
+147. **Evening Torah Reading** — Siddur Sefard, Simchat Torah, Evening Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+148. **Hakafot** — Siddur Sefard, Simchat Torah, Hakafot — In-app source: The Metsudah siddur, 1981; CC-BY
+149. **First Day & Chol HaMoed** — Siddur Sefard, Sukkot, First Day & Chol HaMoed — In-app source: The Metsudah siddur, 1981; CC-BY
+150. **Hoshana Rabba** — Siddur Sefard, Sukkot, Hoshana Rabba — In-app source: The Metsudah siddur, 1981; CC-BY
+151. **Order of Hoshanot** — Siddur Sefard, Sukkot, Order of Hoshanot — In-app source: The Metsudah siddur, 1981; CC-BY
+152. **Sabbath** — Siddur Sefard, Sukkot, Sabbath — In-app source: The Metsudah siddur, 1981; CC-BY
+153. **Gott Fun Avraham** — Siddur Sefard, Third Meal, Gott Fun Avraham — In-app source: The Metsudah siddur, 1981; CC-BY
+154. **Motzaei Shabbat Prayers** — Siddur Sefard, Third Meal, Motzaei Shabbat Prayers — In-app source: The Metsudah siddur, 1981; CC-BY
+155. **Zemirot** — Siddur Sefard, Third Meal, Zemirot — In-app source: The Metsudah siddur, 1981; CC-BY
+156. **Fast Day Mincha Haftara** — Siddur Sefard, Torah Readings, Fast Day Mincha Haftara — In-app source: The Metsudah siddur, 1981; CC-BY
+157. **Fast Day Torah Reading** — Siddur Sefard, Torah Readings, Fast Day Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+158. **Torah Reading for Chol Hamoed Pesach** — Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Pesach — In-app source: The Metsudah siddur, 1981; CC-BY
+159. **Torah Reading for Chol Hamoed Sukkot** — Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Sukkot — In-app source: The Metsudah siddur, 1981; CC-BY
+160. **Torah Reading for Rosh Chodesh** — Siddur Sefard, Torah Readings, Torah Reading for Rosh Chodesh — In-app source: The Metsudah siddur, 1981; CC-BY
+161. **Torah Reading for Shabbat Mincha & Monday, Thursday** — Siddur Sefard, Torah Readings, Torah Reading for Shabbat Mincha & Monday, Thursday — In-app source: The Metsudah siddur, 1981; CC-BY
+162. **Introductory Prayers** — Siddur Sefard, Upon Arising, Introductory Prayers — In-app source: The Metsudah siddur, 1981; CC-BY
+163. **Modeh Ani** — Siddur Sefard, Upon Arising, Modeh Ani — In-app source: The Metsudah siddur, 1981; CC-BY
+164. **Tallit** — Siddur Sefard, Upon Arising, Tallit — In-app source: The Metsudah siddur, 1981; CC-BY
+165. **Tefilin** — Siddur Sefard, Upon Arising, Tefilin — In-app source: The Metsudah siddur, 1981; CC-BY
+166. **Upon Entering Synagogue** — Siddur Sefard, Upon Arising, Upon Entering Synagogue — In-app source: The Metsudah siddur, 1981; CC-BY
+167. **Circumcision** — Siddur Sefard, Various Blessings, Circumcision — In-app source: The Metsudah siddur, 1981; CC-BY
+168. **Geula LeBrit Milah** — Siddur Sefard, Various Blessings, Geula LeBrit Milah — In-app source: The Metsudah siddur, 1981; CC-BY
+169. **Marriage Blessings** — Siddur Sefard, Various Blessings, Marriage Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+170. **Redeeming Firstborn** — Siddur Sefard, Various Blessings, Redeeming Firstborn — In-app source: The Metsudah siddur, 1981; CC-BY
+171. **Sheva Berachot** — Siddur Sefard, Various Blessings, Sheva Berachot — In-app source: The Metsudah siddur, 1981; CC-BY
+172. **Awesome Prayer of Rabbeinu Tam** — Siddur Sefard, Various Prayers & Segulot, Awesome Prayer of Rabbeinu Tam — In-app source: The Metsudah siddur, 1981; CC-BY
+173. **Formula Against Evil Eye** — Siddur Sefard, Various Prayers & Segulot, Formula Against Evil Eye — In-app source: The Metsudah siddur, 1981; CC-BY
+174. **Letter of Ramban** — Siddur Sefard, Various Prayers & Segulot, Letter of Ramban — In-app source: The Metsudah siddur, 1981; CC-BY
+175. **Parashat Haman Reading for Tuesday Beshalach** — Siddur Sefard, Various Prayers & Segulot, Parashat Haman Reading for Tuesday Beshalach — In-app source: The Metsudah siddur, 1981; CC-BY
+176. **Prayer for Livelihood** — Siddur Sefard, Various Prayers & Segulot, Prayer for Livelihood — In-app source: The Metsudah siddur, 1981; CC-BY
+177. **Prayer of the Shelah** — Siddur Sefard, Various Prayers & Segulot, Prayer of the Shelah — In-app source: The Metsudah siddur, 1981; CC-BY
+178. **Amidah** — Siddur Sefard, Weekday Maariv, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+179. **Motzaei Shabbat** — Siddur Sefard, Weekday Maariv, Motzaei Shabbat — In-app source: The Metsudah siddur, 1981; CC-BY
+180. **Sefirat HaOmer** — Siddur Sefard, Weekday Maariv, Sefirat HaOmer — In-app source: The Metsudah siddur, 1981; CC-BY
+181. **The Shema** — Siddur Sefard, Weekday Maariv, The Shema — In-app source: The Metsudah siddur, 1981; CC-BY
+182. **Amidah** — Siddur Sefard, Weekday Mincha, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+183. **Avinu Malkeinu** — Siddur Sefard, Weekday Mincha, Avinu Malkeinu — In-app source: The Metsudah siddur, 1981; CC-BY
+184. **Korbanot** — Siddur Sefard, Weekday Mincha, Korbanot — In-app source: The Metsudah siddur, 1981; CC-BY
+185. **Tachanun** — Siddur Sefard, Weekday Mincha, Tachanun — In-app source: The Metsudah siddur, 1981; CC-BY
+186. **Torah Reading for Fast Day** — Siddur Sefard, Weekday Mincha, Torah Reading for Fast Day — In-app source: The Metsudah siddur, 1981; CC-BY
+187. **Aleinu** — Siddur Sefard, Weekday Shacharit, Aleinu — In-app source: The Metsudah siddur, 1981; CC-BY
+188. **Amidah** — Siddur Sefard, Weekday Shacharit, Amidah — In-app source: The Metsudah siddur, 1981; CC-BY
+189. **Ashrei** — Siddur Sefard, Weekday Shacharit, Ashrei — In-app source: The Metsudah siddur, 1981; CC-BY
+190. **Avinu Malkeinu** — Siddur Sefard, Weekday Shacharit, Avinu Malkeinu — In-app source: The Metsudah siddur, 1981; CC-BY
+191. **B'raita d'Rabi Yishmael** — Siddur Sefard, Weekday Shacharit, B'raita d'Rabi Yishmael — In-app source: The Metsudah siddur, 1981; CC-BY
+192. **Barchi Nafshi** — Siddur Sefard, Weekday Shacharit, Barchi Nafshi — In-app source: The Metsudah siddur, 1981; CC-BY
+193. **Beit Yaakov** — Siddur Sefard, Weekday Shacharit, Beit Yaakov — In-app source: The Metsudah siddur, 1981; CC-BY
+194. **Blessings on Torah** — Siddur Sefard, Weekday Shacharit, Blessings on Torah — In-app source: The Metsudah siddur, 1981; CC-BY
+195. **For Monday & Thursday** — Siddur Sefard, Weekday Shacharit, For Monday & Thursday — In-app source: The Metsudah siddur, 1981; CC-BY
+196. **Hodu** — Siddur Sefard, Weekday Shacharit, Hodu — In-app source: The Metsudah siddur, 1981; CC-BY
+197. **Kaveh** — Siddur Sefard, Weekday Shacharit, Kaveh — In-app source: The Metsudah siddur, 1981; CC-BY
+198. **Korbanot** — Siddur Sefard, Weekday Shacharit, Korbanot — In-app source: The Metsudah siddur, 1981; CC-BY
+199. **L'David Hashem** — Siddur Sefard, Weekday Shacharit, L'David Hashem — In-app source: The Metsudah siddur, 1981; CC-BY
+200. **Morning Blessings** — Siddur Sefard, Weekday Shacharit, Morning Blessings — In-app source: The Metsudah siddur, 1981; CC-BY
+201. **Morning Prayer** — Siddur Sefard, Weekday Shacharit, Morning Prayer — In-app source: The Metsudah siddur, 1981; CC-BY
+202. **Song of the Day** — Siddur Sefard, Weekday Shacharit, Song of the Day — In-app source: The Metsudah siddur, 1981; CC-BY
+203. **Tachanun** — Siddur Sefard, Weekday Shacharit, Tachanun — In-app source: The Metsudah siddur, 1981; CC-BY
+204. **The Shema** — Siddur Sefard, Weekday Shacharit, The Shema — In-app source: The Metsudah siddur, 1981; CC-BY
+205. **Torah Reading** — Siddur Sefard, Weekday Shacharit, Torah Reading — In-app source: The Metsudah siddur, 1981; CC-BY
+206. **Yishtabach** — Siddur Sefard, Weekday Shacharit, Yishtabach — In-app source: The Metsudah siddur, 1981; CC-BY
+207. **Haggadah for Shabbat Hagadol** — Siddur Sefard, Yotzerot, Haggadah for Shabbat Hagadol — In-app source: The Metsudah siddur, 1981; CC-BY
+208. **Musaf for Hachodesh** — Siddur Sefard, Yotzerot, Musaf for Hachodesh — In-app source: The Metsudah siddur, 1981; CC-BY
+209. **Musaf for Shekalim** — Siddur Sefard, Yotzerot, Musaf for Shekalim — In-app source: The Metsudah siddur, 1981; CC-BY
+210. **Parashat HaChodesh** — Siddur Sefard, Yotzerot, Parashat HaChodesh — In-app source: The Metsudah siddur, 1981; CC-BY
+211. **Parashat Parah** — Siddur Sefard, Yotzerot, Parashat Parah — In-app source: The Metsudah siddur, 1981; CC-BY
+212. **Parashat Sekalim** — Siddur Sefard, Yotzerot, Parashat Sekalim — In-app source: The Metsudah siddur, 1981; CC-BY
+213. **Parashat Zachor** — Siddur Sefard, Yotzerot, Parashat Zachor — In-app source: The Metsudah siddur, 1981; CC-BY
+214. **Shabbat HaGadol** — Siddur Sefard, Yotzerot, Shabbat HaGadol — In-app source: The Metsudah siddur, 1981; CC-BY
+
+## The Koren Rosh HaShana Mahzor; Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 66
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 66
+
+1. **Additional Piyutim for First Day** — The Koren Rosh HaShana Mahzor; Ashkenaz, Additional Piyutim for First Day — Source link only: no reusable Hebrew edition is currently listed
+2. **Additional Piyutim for Second Day** — The Koren Rosh HaShana Mahzor; Ashkenaz, Additional Piyutim for Second Day — Source link only: no reusable Hebrew edition is currently listed
+3. **Ahot Ketana** — The Koren Rosh HaShana Mahzor; Ashkenaz, Ahot Ketana — Source link only: no reusable Hebrew edition is currently listed
+4. **Annulment of Vows** — The Koren Rosh HaShana Mahzor; Ashkenaz, Annulment of Vows — Source link only: no reusable Hebrew edition is currently listed
+5. **Blessing the Children** — The Koren Rosh HaShana Mahzor; Ashkenaz, Blessing the Children — Source link only: no reusable Hebrew edition is currently listed
+6. **Brit Mila** — The Koren Rosh HaShana Mahzor; Ashkenaz, Brit Mila — Source link only: no reusable Hebrew edition is currently listed
+7. **Candle Lighting** — The Koren Rosh HaShana Mahzor; Ashkenaz, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+8. **Eiruvin** — The Koren Rosh HaShana Mahzor; Ashkenaz, Eiruvin — Source link only: no reusable Hebrew edition is currently listed
+9. **Avinu Malkenu** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+10. **Kiddush and Al HaMihya** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Kiddush and Al HaMihya — Source link only: no reusable Hebrew edition is currently listed
+11. **Leader's Prayer** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Prayer — Source link only: no reusable Hebrew edition is currently listed
+12. **Leader's Repetition for Musaf** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Repetition for Musaf — Source link only: no reusable Hebrew edition is currently listed
+13. **Leader's Repetition for Shaharit** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Repetition for Shaharit — Source link only: no reusable Hebrew edition is currently listed
+14. **Musaf** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Musaf — Source link only: no reusable Hebrew edition is currently listed
+15. **Reading of the Torah** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+16. **The Blowing of the Shofar** — The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, The Blowing of the Shofar — Source link only: no reusable Hebrew edition is currently listed
+17. **Full Kaddish** — The Koren Rosh HaShana Mahzor; Ashkenaz, Full Kaddish — Source link only: no reusable Hebrew edition is currently listed
+18. **Grace After Meals** — The Koren Rosh HaShana Mahzor; Ashkenaz, Grace After Meals — Source link only: no reusable Hebrew edition is currently listed
+19. **Halakha Guide** — The Koren Rosh HaShana Mahzor; Ashkenaz, Halakha Guide — Source link only: no reusable Hebrew edition is currently listed
+20. **Introduction** — The Koren Rosh HaShana Mahzor; Ashkenaz, Introduction — Source link only: no reusable Hebrew edition is currently listed
+21. **Kabbalat Shabbat** — The Koren Rosh HaShana Mahzor; Ashkenaz, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+22. **Kiddush for Rosh HaShana Evening** — The Koren Rosh HaShana Mahzor; Ashkenaz, Kiddush for Rosh HaShana Evening — Source link only: no reusable Hebrew edition is currently listed
+23. **Ma'ariv for Motza'ei Rosh HaShana** — The Koren Rosh HaShana Mahzor; Ashkenaz, Ma'ariv for Motza'ei Rosh HaShana — Source link only: no reusable Hebrew edition is currently listed
+24. **Ma'ariv for Rosh HaShana** — The Koren Rosh HaShana Mahzor; Ashkenaz, Ma'ariv for Rosh HaShana — Source link only: no reusable Hebrew edition is currently listed
+25. **Massekhet Rosh HaShana** — The Koren Rosh HaShana Mahzor; Ashkenaz, Massekhet Rosh HaShana — Source link only: no reusable Hebrew edition is currently listed
+26. **Minha** — The Koren Rosh HaShana Mahzor; Ashkenaz, Minha — Source link only: no reusable Hebrew edition is currently listed
+27. **Minha for Erev Rosh HaShana** — The Koren Rosh HaShana Mahzor; Ashkenaz, Minha for Erev Rosh HaShana — Source link only: no reusable Hebrew edition is currently listed
+28. **Mourner's Kaddish Transliterated** — The Koren Rosh HaShana Mahzor; Ashkenaz, Mourner's Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+29. **Prozbul** — The Koren Rosh HaShana Mahzor; Ashkenaz, Prozbul — Source link only: no reusable Hebrew edition is currently listed
+30. **Rabbis' Kaddish Transliterated** — The Koren Rosh HaShana Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+31. **Avinu Malkenu** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+32. **Kiddush and Al HaMihya** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Kiddush and Al HaMihya — Source link only: no reusable Hebrew edition is currently listed
+33. **Leader's Prayer** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Prayer — Source link only: no reusable Hebrew edition is currently listed
+34. **Leader's Repetition for Musaf** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Repetition for Musaf — Source link only: no reusable Hebrew edition is currently listed
+35. **Leader's Repetition for Shaharit** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Repetition for Shaharit — Source link only: no reusable Hebrew edition is currently listed
+36. **Musaf** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Musaf — Source link only: no reusable Hebrew edition is currently listed
+37. **Reading of the Torah** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+38. **The Blowing of the Shofar** — The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, The Blowing of the Shofar — Source link only: no reusable Hebrew edition is currently listed
+39. **A Psalm Before Verses of Praise** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise — Source link only: no reusable Hebrew edition is currently listed
+40. **Accepting the Sovereignty of Heaven** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Accepting the Sovereignty of Heaven — Source link only: no reusable Hebrew edition is currently listed
+41. **Blessings of the Shema** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+42. **Blessings over the Torah** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Blessings over the Torah — Source link only: no reusable Hebrew edition is currently listed
+43. **Daily Psalm** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Daily Psalm — Source link only: no reusable Hebrew edition is currently listed
+44. **HaMelekh** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, HaMelekh — Source link only: no reusable Hebrew edition is currently listed
+45. **Morning Blessings** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Morning Blessings — Source link only: no reusable Hebrew edition is currently listed
+46. **Nishmat** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+47. **Offerings** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Offerings — Source link only: no reusable Hebrew edition is currently listed
+48. **On Waking** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, On Waking — Source link only: no reusable Hebrew edition is currently listed
+49. **Pesukei DeZimra** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Pesukei DeZimra — Source link only: no reusable Hebrew edition is currently listed
+50. **Preparation for Prayer** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Preparation for Prayer — Source link only: no reusable Hebrew edition is currently listed
+51. **Shir HaKavod** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaKavod — Source link only: no reusable Hebrew edition is currently listed
+52. **Both Days** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Both Days — Source link only: no reusable Hebrew edition is currently listed
+53. **Friday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Friday — Source link only: no reusable Hebrew edition is currently listed
+54. **Monday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Monday — Source link only: no reusable Hebrew edition is currently listed
+55. **Shabbat** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Shabbat — Source link only: no reusable Hebrew edition is currently listed
+56. **Sunday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Sunday — Source link only: no reusable Hebrew edition is currently listed
+57. **Thursday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Thursday — Source link only: no reusable Hebrew edition is currently listed
+58. **Tuesday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Tuesday — Source link only: no reusable Hebrew edition is currently listed
+59. **Wednesday** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Wednesday — Source link only: no reusable Hebrew edition is currently listed
+60. **Tallit** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Tallit — Source link only: no reusable Hebrew edition is currently listed
+61. **The Amida** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Amida — Source link only: no reusable Hebrew edition is currently listed
+62. **The Binding of Isaac** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Binding of Isaac — Source link only: no reusable Hebrew edition is currently listed
+63. **The Interpretive Principles of Rabbi Yishmael** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Interpretive Principles of Rabbi Yishmael — Source link only: no reusable Hebrew edition is currently listed
+64. **The Rabbis' Kaddish** — The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish — Source link only: no reusable Hebrew edition is currently listed
+65. **Simanim** — The Koren Rosh HaShana Mahzor; Ashkenaz, Simanim — Source link only: no reusable Hebrew edition is currently listed
+66. **Tashlikh** — The Koren Rosh HaShana Mahzor; Ashkenaz, Tashlikh — Source link only: no reusable Hebrew edition is currently listed
+
+## The Koren Shalem Siddur; Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 135
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 135
+
+1. **Additions to Ma'ariv for Yom HaAtzma'ut** — The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Ma'ariv for Yom HaAtzma'ut — Source link only: no reusable Hebrew edition is currently listed
+2. **Additions to Shaharit for Yom HaAtzma'ut** — The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Shaharit for Yom HaAtzma'ut — Source link only: no reusable Hebrew edition is currently listed
+3. **Additions to Shaharit for Yom HaZikaron** — The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Shaharit for Yom HaZikaron — Source link only: no reusable Hebrew edition is currently listed
+4. **Akdamut** — The Koren Shalem Siddur; Ashkenaz, Festivals, Akdamut — Source link only: no reusable Hebrew edition is currently listed
+5. **Amida for Yom Tov** — The Koren Shalem Siddur; Ashkenaz, Festivals, Amida for Yom Tov — Source link only: no reusable Hebrew edition is currently listed
+6. **Annulment of Vows before Rosh HaShana** — The Koren Shalem Siddur; Ashkenaz, Festivals, Annulment of Vows before Rosh HaShana — Source link only: no reusable Hebrew edition is currently listed
+7. **Birkat Kohanim** — The Koren Shalem Siddur; Ashkenaz, Festivals, Birkat Kohanim — Source link only: no reusable Hebrew edition is currently listed
+8. **Blessing on Taking the Lulav** — The Koren Shalem Siddur; Ashkenaz, Festivals, Blessing on Taking the Lulav — Source link only: no reusable Hebrew edition is currently listed
+9. **Candle Lighting for Hanukka** — The Koren Shalem Siddur; Ashkenaz, Festivals, Candle Lighting for Hanukka — Source link only: no reusable Hebrew edition is currently listed
+10. **Eiruv Tavshilin** — The Koren Shalem Siddur; Ashkenaz, Festivals, Eiruv Tavshilin — Source link only: no reusable Hebrew edition is currently listed
+11. **Hakafot for Simhat Torah** — The Koren Shalem Siddur; Ashkenaz, Festivals, Hakafot for Simhat Torah — Source link only: no reusable Hebrew edition is currently listed
+12. **Hallel** — The Koren Shalem Siddur; Ashkenaz, Festivals, Hallel — Source link only: no reusable Hebrew edition is currently listed
+13. **Hoshanot** — The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot — Source link only: no reusable Hebrew edition is currently listed
+14. **Hoshanot for Hoshana Raba** — The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot for Hoshana Raba — Source link only: no reusable Hebrew edition is currently listed
+15. **Hoshanot for Shabbat Hol HaMo'ed** — The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot for Shabbat Hol HaMo'ed — Source link only: no reusable Hebrew edition is currently listed
+16. **Ka Keli** — The Koren Shalem Siddur; Ashkenaz, Festivals, Ka Keli — Source link only: no reusable Hebrew edition is currently listed
+17. **Kaparot** — The Koren Shalem Siddur; Ashkenaz, Festivals, Kaparot — Source link only: no reusable Hebrew edition is currently listed
+18. **Kiddush for Rosh HaShana Day** — The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Rosh HaShana Day — Source link only: no reusable Hebrew edition is currently listed
+19. **Kiddush for Rosh HaShana Evening** — The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Rosh HaShana Evening — Source link only: no reusable Hebrew edition is currently listed
+20. **Kiddush for Yom Tov Evening** — The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Evening — Source link only: no reusable Hebrew edition is currently listed
+21. **Kiddush for Yom Tov Morning** — The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Morning — Source link only: no reusable Hebrew edition is currently listed
+22. **Musaf for Festivals** — The Koren Shalem Siddur; Ashkenaz, Festivals, Musaf for Festivals — Source link only: no reusable Hebrew edition is currently listed
+23. **Musaf for Rosh Hodesh** — The Koren Shalem Siddur; Ashkenaz, Festivals, Musaf for Rosh Hodesh — Source link only: no reusable Hebrew edition is currently listed
+24. **On Entering the Sukka** — The Koren Shalem Siddur; Ashkenaz, Festivals, On Entering the Sukka — Source link only: no reusable Hebrew edition is currently listed
+25. **Prayer for Dew** — The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Dew — Source link only: no reusable Hebrew edition is currently listed
+26. **Prayer for Rain** — The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Rain — Source link only: no reusable Hebrew edition is currently listed
+27. **Removal of Hametz** — The Koren Shalem Siddur; Ashkenaz, Festivals, Removal of Hametz — Source link only: no reusable Hebrew edition is currently listed
+28. **Selihot for the Fast of Esther** — The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Fast of Esther — Source link only: no reusable Hebrew edition is currently listed
+29. **Selihot for the Seventeenth of Tammuz** — The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Seventeenth of Tammuz — Source link only: no reusable Hebrew edition is currently listed
+30. **Selihot for the Tenth of Tevet** — The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Tenth of Tevet — Source link only: no reusable Hebrew edition is currently listed
+31. **Selihot; All Days** — The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot; All Days — Source link only: no reusable Hebrew edition is currently listed
+32. **Service for Purim** — The Koren Shalem Siddur; Ashkenaz, Festivals, Service for Purim — Source link only: no reusable Hebrew edition is currently listed
+33. **Tashlikh** — The Koren Shalem Siddur; Ashkenaz, Festivals, Tashlikh — Source link only: no reusable Hebrew edition is currently listed
+34. **Ushpizin** — The Koren Shalem Siddur; Ashkenaz, Festivals, Ushpizin — Source link only: no reusable Hebrew edition is currently listed
+35. **Viduy for Minha of Erev Yom Kippur** — The Koren Shalem Siddur; Ashkenaz, Festivals, Viduy for Minha of Erev Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+36. **Yizkor** — The Koren Shalem Siddur; Ashkenaz, Festivals, Yizkor — Source link only: no reusable Hebrew edition is currently listed
+37. **Yom Yerushalayim** — The Koren Shalem Siddur; Ashkenaz, Festivals, Yom Yerushalayim — Source link only: no reusable Hebrew edition is currently listed
+38. **Foreword** — The Koren Shalem Siddur; Ashkenaz, Foreword — Source link only: no reusable Hebrew edition is currently listed
+39. **Daily Prayer** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Daily Prayer — Source link only: no reusable Hebrew edition is currently listed
+40. **Guide for Visitors to Israel** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Guide for Visitors to Israel — Source link only: no reusable Hebrew edition is currently listed
+41. **Guide to the Jewish Year** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Guide to the Jewish Year — Source link only: no reusable Hebrew edition is currently listed
+42. **Jewish Leap Years** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Jewish Leap Years — Source link only: no reusable Hebrew edition is currently listed
+43. **Mourner's Kaddish Transliterated** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Mourner's Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+44. **Rabbis' Kaddish Transliterated** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Rabbis' Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+45. **Shabbat Prayer** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Shabbat Prayer — Source link only: no reusable Hebrew edition is currently listed
+46. **Table of Permitted Responses** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Table of Permitted Responses — Source link only: no reusable Hebrew edition is currently listed
+47. **Textual Variants** — The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Textual Variants — Source link only: no reusable Hebrew edition is currently listed
+48. **Birkat HaMazon; Grace after Meals** — The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Birkat HaMazon; Grace after Meals — Source link only: no reusable Hebrew edition is currently listed
+49. **Blessings on Mitzvot** — The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Blessings on Mitzvot — Source link only: no reusable Hebrew edition is currently listed
+50. **Blessings on Pleasures, Sights and Sounds** — The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Blessings on Pleasures, Sights and Sounds — Source link only: no reusable Hebrew edition is currently listed
+51. **Consecration of a House** — The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Consecration of a House — Source link only: no reusable Hebrew edition is currently listed
+52. **The Traveler's Prayer** — The Koren Shalem Siddur; Ashkenaz, Giving Thanks, The Traveler's Prayer — Source link only: no reusable Hebrew edition is currently listed
+53. **Guide to the Reader** — The Koren Shalem Siddur; Ashkenaz, Guide to the Reader — Source link only: no reusable Hebrew edition is currently listed
+54. **Preface** — The Koren Shalem Siddur; Ashkenaz, Preface — Source link only: no reusable Hebrew edition is currently listed
+55. **Barekhi Nafshi** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Barekhi Nafshi — Source link only: no reusable Hebrew edition is currently listed
+56. **Blessing of the New Moon** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessing of the New Moon — Source link only: no reusable Hebrew edition is currently listed
+57. **Blessing the New Month** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessing the New Month — Source link only: no reusable Hebrew edition is currently listed
+58. **Blessings of the Shema** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+59. **Candle Lighting** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+60. **Eiruvin** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Eiruvin — Source link only: no reusable Hebrew edition is currently listed
+61. **Ethics of the Fathers** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Ethics of the Fathers — Source link only: no reusable Hebrew edition is currently listed
+62. **Havdala at Home** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Havdala at Home — Source link only: no reusable Hebrew edition is currently listed
+63. **Kabbalat Shabbat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+64. **Kiddush and Zemirot for Shabbat Evening** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Evening — Source link only: no reusable Hebrew edition is currently listed
+65. **Kiddush and Zemirot for Shabbat Morning** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Morning — Source link only: no reusable Hebrew edition is currently listed
+66. **Ma'ariv for Motza'ei Shabbat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Ma'ariv for Motza'ei Shabbat — Source link only: no reusable Hebrew edition is currently listed
+67. **Ma'ariv for Shabbat and Yom Tov** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Ma'ariv for Shabbat and Yom Tov — Source link only: no reusable Hebrew edition is currently listed
+68. **Minha for Shabbat and Yom Tov** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Minha for Shabbat and Yom Tov — Source link only: no reusable Hebrew edition is currently listed
+69. **Musaf for Shabbat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Musaf for Shabbat — Source link only: no reusable Hebrew edition is currently listed
+70. **Nishmat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+71. **Pesukei DeZimra** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Pesukei DeZimra — Source link only: no reusable Hebrew edition is currently listed
+72. **Prayer for Israel's Defense Forces** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for Israel's Defense Forces — Source link only: no reusable Hebrew edition is currently listed
+73. **Prayer for the State of Israel** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the State of Israel — Source link only: no reusable Hebrew edition is currently listed
+74. **Prayer for the Welfare of the Government** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the Welfare of the Government — Source link only: no reusable Hebrew edition is currently listed
+75. **Reading of the Torah** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+76. **Se'uda Shelishit for Shabbat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Se'uda Shelishit for Shabbat — Source link only: no reusable Hebrew edition is currently listed
+77. **Shaharit for Shabbat and Yom Tov** — The Koren Shalem Siddur; Ashkenaz, Shabbat, Shaharit for Shabbat and Yom Tov — Source link only: no reusable Hebrew edition is currently listed
+78. **The Amida for Shabbat** — The Koren Shalem Siddur; Ashkenaz, Shabbat, The Amida for Shabbat — Source link only: no reusable Hebrew edition is currently listed
+79. **Birkat HaMazon in a House of Mourning** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Birkat HaMazon in a House of Mourning — Source link only: no reusable Hebrew edition is currently listed
+80. **Brit Mila** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Brit Mila — Source link only: no reusable Hebrew edition is currently listed
+81. **Confession before Death** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Confession before Death — Source link only: no reusable Hebrew edition is currently listed
+82. **Funeral Service** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Funeral Service — Source link only: no reusable Hebrew edition is currently listed
+83. **Marriage Service** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Marriage Service — Source link only: no reusable Hebrew edition is currently listed
+84. **Pidyon HaBen** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Pidyon HaBen — Source link only: no reusable Hebrew edition is currently listed
+85. **Prayer after Childbirth** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer after Childbirth — Source link only: no reusable Hebrew edition is currently listed
+86. **Prayer after Recovery from Illness** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer after Recovery from Illness — Source link only: no reusable Hebrew edition is currently listed
+87. **Prayer for Recovery from Illness** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer for Recovery from Illness — Source link only: no reusable Hebrew edition is currently listed
+88. **Prayer in a House of Mourning** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer in a House of Mourning — Source link only: no reusable Hebrew edition is currently listed
+89. **Sheva Berakhot** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Sheva Berakhot — Source link only: no reusable Hebrew edition is currently listed
+90. **Zeved HaBat** — The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Zeved HaBat — Source link only: no reusable Hebrew edition is currently listed
+91. **Fast Days** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Fast Days — Source link only: no reusable Hebrew edition is currently listed
+92. **Hanukka** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hanukka — Source link only: no reusable Hebrew edition is currently listed
+93. **Hatan Torah and Hatan Bereshit** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hatan Torah and Hatan Bereshit — Source link only: no reusable Hebrew edition is currently listed
+94. **Hol HaMo'ed Pesah** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hol HaMo'ed Pesah — Source link only: no reusable Hebrew edition is currently listed
+95. **Hol HaMo'ed Sukkot** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hol HaMo'ed Sukkot — Source link only: no reusable Hebrew edition is currently listed
+96. **Pesah** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Pesah — Source link only: no reusable Hebrew edition is currently listed
+97. **Piyutei Geula; Berah Dodi** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Piyutei Geula; Berah Dodi — Source link only: no reusable Hebrew edition is currently listed
+98. **Purim** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Purim — Source link only: no reusable Hebrew edition is currently listed
+99. **Rosh Hodesh** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Rosh Hodesh — Source link only: no reusable Hebrew edition is currently listed
+100. **Seventh Day of Pesah** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Seventh Day of Pesah — Source link only: no reusable Hebrew edition is currently listed
+101. **Shabbat Hol HaMo'ed** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shabbat Hol HaMo'ed — Source link only: no reusable Hebrew edition is currently listed
+102. **Shavuot** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shavuot — Source link only: no reusable Hebrew edition is currently listed
+103. **Shemini Atzeret** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shemini Atzeret — Source link only: no reusable Hebrew edition is currently listed
+104. **Simhat Torah** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Simhat Torah — Source link only: no reusable Hebrew edition is currently listed
+105. **Sukkot** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Sukkot — Source link only: no reusable Hebrew edition is currently listed
+106. **Tisha B'Av** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Tisha B'Av — Source link only: no reusable Hebrew edition is currently listed
+107. **Weekly Portions for Mondays, Thursdays and Shabbat Minha** — The Koren Shalem Siddur; Ashkenaz, Torah Readings, Weekly Portions for Mondays, Thursdays and Shabbat Minha — Source link only: no reusable Hebrew edition is currently listed
+108. **Understanding Jewish Prayer** — The Koren Shalem Siddur; Ashkenaz, Understanding Jewish Prayer — Source link only: no reusable Hebrew edition is currently listed
+109. **A Psalm Before Verses of Praise** — The Koren Shalem Siddur; Ashkenaz, Weekdays, A Psalm Before Verses of Praise — Source link only: no reusable Hebrew edition is currently listed
+110. **Accepting the Sovereignty of Heaven** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Accepting the Sovereignty of Heaven — Source link only: no reusable Hebrew edition is currently listed
+111. **Avinu Malkenu** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+112. **Blessings of the Shema** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+113. **Blessings Over the Torah** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Blessings Over the Torah — Source link only: no reusable Hebrew edition is currently listed
+114. **Conclusion of the Service** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Conclusion of the Service — Source link only: no reusable Hebrew edition is currently listed
+115. **Counting of the Omer** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Counting of the Omer — Source link only: no reusable Hebrew edition is currently listed
+116. **Ma'ariv for Weekdays** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Ma'ariv for Weekdays — Source link only: no reusable Hebrew edition is currently listed
+117. **Minha for Weekdays** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Minha for Weekdays — Source link only: no reusable Hebrew edition is currently listed
+118. **Morning Blessings** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Morning Blessings — Source link only: no reusable Hebrew edition is currently listed
+119. **Offerings** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Offerings — Source link only: no reusable Hebrew edition is currently listed
+120. **On Waking** — The Koren Shalem Siddur; Ashkenaz, Weekdays, On Waking — Source link only: no reusable Hebrew edition is currently listed
+121. **Personal Supplications** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Personal Supplications — Source link only: no reusable Hebrew edition is currently listed
+122. **Pesukei DeZimra** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Pesukei DeZimra — Source link only: no reusable Hebrew edition is currently listed
+123. **Preparation for Prayer** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Preparation for Prayer — Source link only: no reusable Hebrew edition is currently listed
+124. **Reading of the Torah** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+125. **Readings after the Service** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Readings after the Service — Source link only: no reusable Hebrew edition is currently listed
+126. **Shema before Sleep at Night** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Shema before Sleep at Night — Source link only: no reusable Hebrew edition is currently listed
+127. **Tahanun** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Tahanun — Source link only: no reusable Hebrew edition is currently listed
+128. **Tallit** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Tallit — Source link only: no reusable Hebrew edition is currently listed
+129. **Tefillin** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Tefillin — Source link only: no reusable Hebrew edition is currently listed
+130. **The Amida** — The Koren Shalem Siddur; Ashkenaz, Weekdays, The Amida — Source link only: no reusable Hebrew edition is currently listed
+131. **The Binding of Isaac** — The Koren Shalem Siddur; Ashkenaz, Weekdays, The Binding of Isaac — Source link only: no reusable Hebrew edition is currently listed
+132. **The Daily Psalm** — The Koren Shalem Siddur; Ashkenaz, Weekdays, The Daily Psalm — Source link only: no reusable Hebrew edition is currently listed
+133. **The Interpretive Principles of Rabbi Yishmael** — The Koren Shalem Siddur; Ashkenaz, Weekdays, The Interpretive Principles of Rabbi Yishmael — Source link only: no reusable Hebrew edition is currently listed
+134. **The Rabbis' Kaddish** — The Koren Shalem Siddur; Ashkenaz, Weekdays, The Rabbis' Kaddish — Source link only: no reusable Hebrew edition is currently listed
+135. **Viduy** — The Koren Shalem Siddur; Ashkenaz, Weekdays, Viduy — Source link only: no reusable Hebrew edition is currently listed
+
+## The Koren Yom Kippur Mahzor; Ashkenaz
+
+- **Tradition:** Ashkenaz
+- **Sections indexed:** 67
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 67
+
+1. **Additional Piyutim** — The Koren Yom Kippur Mahzor; Ashkenaz, Additional Piyutim — Source link only: no reusable Hebrew edition is currently listed
+2. **Annotated Viduy** — The Koren Yom Kippur Mahzor; Ashkenaz, Annotated Viduy — Source link only: no reusable Hebrew edition is currently listed
+3. **Birkat Kohanim In Israel** — The Koren Yom Kippur Mahzor; Ashkenaz, Birkat Kohanim In Israel — Source link only: no reusable Hebrew edition is currently listed
+4. **Full Kaddish** — The Koren Yom Kippur Mahzor; Ashkenaz, Full Kaddish — Source link only: no reusable Hebrew edition is currently listed
+5. **Halakha Guide** — The Koren Yom Kippur Mahzor; Ashkenaz, Halakha Guide — Source link only: no reusable Hebrew edition is currently listed
+6. **Havdala** — The Koren Yom Kippur Mahzor; Ashkenaz, Havdala — Source link only: no reusable Hebrew edition is currently listed
+7. **Introduction** — The Koren Yom Kippur Mahzor; Ashkenaz, Introduction — Source link only: no reusable Hebrew edition is currently listed
+8. **Kiddush Levana** — The Koren Yom Kippur Mahzor; Ashkenaz, Kiddush Levana — Source link only: no reusable Hebrew edition is currently listed
+9. **Ma'ariv for Motza'ei Yom Kippur** — The Koren Yom Kippur Mahzor; Ashkenaz, Ma'ariv for Motza'ei Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+10. **Avinu Malkenu** — The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+11. **Haftara; The Book of Jonah** — The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Haftara; The Book of Jonah — Source link only: no reusable Hebrew edition is currently listed
+12. **Leader's Repetition for Mincha** — The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Leader's Repetition for Mincha — Source link only: no reusable Hebrew edition is currently listed
+13. **Reading of the Torah** — The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+14. **The Amida** — The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, The Amida — Source link only: no reusable Hebrew edition is currently listed
+15. **Mourner's Kaddish Transliterated** — The Koren Yom Kippur Mahzor; Ashkenaz, Mourner's Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+16. **Birkat Kohanim** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Birkat Kohanim — Source link only: no reusable Hebrew edition is currently listed
+17. **Eleh Ezkera** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Eleh Ezkera — Source link only: no reusable Hebrew edition is currently listed
+18. **Leader's Prayer** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Leader's Prayer — Source link only: no reusable Hebrew edition is currently listed
+19. **Leader's Repetition for Musaf** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Leader's Repetition for Musaf — Source link only: no reusable Hebrew edition is currently listed
+20. **Seder HaAvoda** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Seder HaAvoda — Source link only: no reusable Hebrew edition is currently listed
+21. **The Amida** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, The Amida — Source link only: no reusable Hebrew edition is currently listed
+22. **Viduy** — The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Viduy — Source link only: no reusable Hebrew edition is currently listed
+23. **Avinu Malkenu** — The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+24. **Leader's Repetition for Ne'ila** — The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Leader's Repetition for Ne'ila — Source link only: no reusable Hebrew edition is currently listed
+25. **The Amida** — The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, The Amida — Source link only: no reusable Hebrew edition is currently listed
+26. **Verses of Unity** — The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Verses of Unity — Source link only: no reusable Hebrew edition is currently listed
+27. **Rabbis' Kaddish Transliterated** — The Koren Yom Kippur Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated — Source link only: no reusable Hebrew edition is currently listed
+28. **Seder HaAvoda Nusah Sepharad** — The Koren Yom Kippur Mahzor; Ashkenaz, Seder HaAvoda Nusah Sepharad — Source link only: no reusable Hebrew edition is currently listed
+29. **A Psalm Before Verses of Praise** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise — Source link only: no reusable Hebrew edition is currently listed
+30. **Accepting the Sovereignty of Heaven** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Accepting the Sovereignty of Heaven — Source link only: no reusable Hebrew edition is currently listed
+31. **Avinu Malkenu** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+32. **Blessings of the Shema** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+33. **Blessings over the Torah** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Blessings over the Torah — Source link only: no reusable Hebrew edition is currently listed
+34. **Daily Psalm** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Daily Psalm — Source link only: no reusable Hebrew edition is currently listed
+35. **HaMelekh** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, HaMelekh — Source link only: no reusable Hebrew edition is currently listed
+36. **Leader's Repetition for Shaharit** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Leader's Repetition for Shaharit — Source link only: no reusable Hebrew edition is currently listed
+37. **Morning Blessings** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Morning Blessings — Source link only: no reusable Hebrew edition is currently listed
+38. **Nishmat** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Nishmat — Source link only: no reusable Hebrew edition is currently listed
+39. **Offerings** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Offerings — Source link only: no reusable Hebrew edition is currently listed
+40. **On Waking** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, On Waking — Source link only: no reusable Hebrew edition is currently listed
+41. **Pesukei DeZimra** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Pesukei DeZimra — Source link only: no reusable Hebrew edition is currently listed
+42. **Preparation for Prayer** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Preparation for Prayer — Source link only: no reusable Hebrew edition is currently listed
+43. **Reading of the Torah** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Reading of the Torah — Source link only: no reusable Hebrew edition is currently listed
+44. **Tallit** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Tallit — Source link only: no reusable Hebrew edition is currently listed
+45. **The Amida** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Amida — Source link only: no reusable Hebrew edition is currently listed
+46. **The Binding of Isaac** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Binding of Isaac — Source link only: no reusable Hebrew edition is currently listed
+47. **The Interpretive Principles of Rabbi Yishmael** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Interpretive Principles of Rabbi Yishmael — Source link only: no reusable Hebrew edition is currently listed
+48. **The Rabbis' Kaddish** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish — Source link only: no reusable Hebrew edition is currently listed
+49. **Yekum Purkan** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Yekum Purkan — Source link only: no reusable Hebrew edition is currently listed
+50. **Yizkor** — The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Yizkor — Source link only: no reusable Hebrew edition is currently listed
+51. **Blessing the Children** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Blessing the Children — Source link only: no reusable Hebrew edition is currently listed
+52. **Candle Lighting** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Candle Lighting — Source link only: no reusable Hebrew edition is currently listed
+53. **Eiruvin** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Eiruvin — Source link only: no reusable Hebrew edition is currently listed
+54. **Kabbalat Shabbat** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kabbalat Shabbat — Source link only: no reusable Hebrew edition is currently listed
+55. **Kaparot** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kaparot — Source link only: no reusable Hebrew edition is currently listed
+56. **Kol Nidrei** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kol Nidrei — Source link only: no reusable Hebrew edition is currently listed
+57. **Mincha** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Mincha — Source link only: no reusable Hebrew edition is currently listed
+58. **Tallit** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Tallit — Source link only: no reusable Hebrew edition is currently listed
+59. **Tefilla Zaka** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Tefilla Zaka — Source link only: no reusable Hebrew edition is currently listed
+60. **Avinu Malkenu** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Avinu Malkenu — Source link only: no reusable Hebrew edition is currently listed
+61. **Ma'ariv for Yom Kippur** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Ma'ariv for Yom Kippur — Source link only: no reusable Hebrew edition is currently listed
+62. **Massekhet Yoma** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma — Source link only: no reusable Hebrew edition is currently listed
+63. **Appendix** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma, Appendix — Source link only: no reusable Hebrew edition is currently listed
+64. **Selihot** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Selihot — Source link only: no reusable Hebrew edition is currently listed
+65. **Shir HaKavod** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaKavod — Source link only: no reusable Hebrew edition is currently listed
+66. **Shir HaYichud** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaYichud — Source link only: no reusable Hebrew edition is currently listed
+67. **Viduy** — The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Viduy — Source link only: no reusable Hebrew edition is currently listed
+
+## Tikkun HaKlali
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Tikkun HaKlali** — Tikkun HaKlali — Source link only: no reusable Hebrew edition is currently listed
+
+## Unetaneh Tokef
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Unetaneh Tokef** — Unetaneh Tokef — Source link only: no reusable Hebrew edition is currently listed
+
+## Weekday Siddur Chabad
+
+- **Tradition:** Chabad
+- **Sections indexed:** 47
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 47
+
+1. **Annulment of Vows** — Weekday Siddur Chabad, Annulment of Vows — Source link only: no reusable Hebrew edition is currently listed
+2. **Bedtime Shema** — Weekday Siddur Chabad, Bedtime Shema — Source link only: no reusable Hebrew edition is currently listed
+3. **Blessings of Marriage Ceremony** — Weekday Siddur Chabad, Blessings of Marriage Ceremony — Source link only: no reusable Hebrew edition is currently listed
+4. **Berakha Acharona** — Weekday Siddur Chabad, Blessings, Berakha Acharona — Source link only: no reusable Hebrew edition is currently listed
+5. **Birkat HaMazon** — Weekday Siddur Chabad, Blessings, Birkat HaMazon — Source link only: no reusable Hebrew edition is currently listed
+6. **Birkat HaMazon for Circumcision** — Weekday Siddur Chabad, Blessings, Birkat HaMazon for Circumcision — Source link only: no reusable Hebrew edition is currently listed
+7. **Sheva Berakhot** — Weekday Siddur Chabad, Blessings, Sheva Berakhot — Source link only: no reusable Hebrew edition is currently listed
+8. **The Travelers' Prayer** — Weekday Siddur Chabad, Blessings, The Travelers' Prayer — Source link only: no reusable Hebrew edition is currently listed
+9. **Various Blessings** — Weekday Siddur Chabad, Blessings, Various Blessings — Source link only: no reusable Hebrew edition is currently listed
+10. **Chanukah** — Weekday Siddur Chabad, Chanukah — Source link only: no reusable Hebrew edition is currently listed
+11. **Hallel** — Weekday Siddur Chabad, Hallel — Source link only: no reusable Hebrew edition is currently listed
+12. **Kapparot** — Weekday Siddur Chabad, Kapparot — Source link only: no reusable Hebrew edition is currently listed
+13. **Kiddush Levanah** — Weekday Siddur Chabad, Kiddush Levanah — Source link only: no reusable Hebrew edition is currently listed
+14. **Lulav** — Weekday Siddur Chabad, Lulav — Source link only: no reusable Hebrew edition is currently listed
+15. **Maariv** — Weekday Siddur Chabad, Maariv — Source link only: no reusable Hebrew edition is currently listed
+16. **Aleinu** — Weekday Siddur Chabad, Mincha, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+17. **Amidah** — Weekday Siddur Chabad, Mincha, Amidah — Source link only: no reusable Hebrew edition is currently listed
+18. **Ashrei** — Weekday Siddur Chabad, Mincha, Ashrei — Source link only: no reusable Hebrew edition is currently listed
+19. **Korbanot** — Weekday Siddur Chabad, Mincha, Korbanot — Source link only: no reusable Hebrew edition is currently listed
+20. **Tachanun** — Weekday Siddur Chabad, Mincha, Tachanun — Source link only: no reusable Hebrew edition is currently listed
+21. **Mishnayot for a Mourner** — Weekday Siddur Chabad, Mishnayot for a Mourner — Source link only: no reusable Hebrew edition is currently listed
+22. **Musaf for Festivals** — Weekday Siddur Chabad, Musaf for Festivals — Source link only: no reusable Hebrew edition is currently listed
+23. **Order of a Circumcision** — Weekday Siddur Chabad, Order of a Circumcision — Source link only: no reusable Hebrew edition is currently listed
+24. **Pidyon HaBen** — Weekday Siddur Chabad, Pidyon HaBen — Source link only: no reusable Hebrew edition is currently listed
+25. **Purim** — Weekday Siddur Chabad, Purim — Source link only: no reusable Hebrew edition is currently listed
+26. **Reading of the Nassi** — Weekday Siddur Chabad, Reading of the Nassi — Source link only: no reusable Hebrew edition is currently listed
+27. **Rosh Chodesh** — Weekday Siddur Chabad, Rosh Chodesh — Source link only: no reusable Hebrew edition is currently listed
+28. **Sefirat HaOmer** — Weekday Siddur Chabad, Sefirat HaOmer — Source link only: no reusable Hebrew edition is currently listed
+29. **Aleinu** — Weekday Siddur Chabad, Shacharit, Aleinu — Source link only: no reusable Hebrew edition is currently listed
+30. **Ashrei Uva LeZion** — Weekday Siddur Chabad, Shacharit, Ashrei Uva LeZion — Source link only: no reusable Hebrew edition is currently listed
+31. **Blessings of the Shema** — Weekday Siddur Chabad, Shacharit, Blessings of the Shema — Source link only: no reusable Hebrew edition is currently listed
+32. **Hodu** — Weekday Siddur Chabad, Shacharit, Hodu — Source link only: no reusable Hebrew edition is currently listed
+33. **Kaddish DeRabbanan** — Weekday Siddur Chabad, Shacharit, Kaddish DeRabbanan — Source link only: no reusable Hebrew edition is currently listed
+34. **Kaveh** — Weekday Siddur Chabad, Shacharit, Kaveh — Source link only: no reusable Hebrew edition is currently listed
+35. **Morning Blessings** — Weekday Siddur Chabad, Shacharit, Morning Blessings — Source link only: no reusable Hebrew edition is currently listed
+36. **Morning Prayer** — Weekday Siddur Chabad, Shacharit, Morning Prayer — Source link only: no reusable Hebrew edition is currently listed
+37. **Mourner's Kaddish** — Weekday Siddur Chabad, Shacharit, Mourner's Kaddish — Source link only: no reusable Hebrew edition is currently listed
+38. **Pesukei Dezimra** — Weekday Siddur Chabad, Shacharit, Pesukei Dezimra — Source link only: no reusable Hebrew edition is currently listed
+39. **Rabbenu Tam** — Weekday Siddur Chabad, Shacharit, Rabbenu Tam — Source link only: no reusable Hebrew edition is currently listed
+40. **Six Remembrances** — Weekday Siddur Chabad, Shacharit, Six Remembrances — Source link only: no reusable Hebrew edition is currently listed
+41. **Song of the Day** — Weekday Siddur Chabad, Shacharit, Song of the Day — Source link only: no reusable Hebrew edition is currently listed
+42. **Tachnun** — Weekday Siddur Chabad, Shacharit, Tachnun — Source link only: no reusable Hebrew edition is currently listed
+43. **Tefillin** — Weekday Siddur Chabad, Shacharit, Tefillin — Source link only: no reusable Hebrew edition is currently listed
+44. **The Amidah** — Weekday Siddur Chabad, Shacharit, The Amidah — Source link only: no reusable Hebrew edition is currently listed
+45. **Torah Reading** — Weekday Siddur Chabad, Shacharit, Torah Reading — Source link only: no reusable Hebrew edition is currently listed
+46. **Tzitzit and Tallit** — Weekday Siddur Chabad, Shacharit, Tzitzit and Tallit — Source link only: no reusable Hebrew edition is currently listed
+47. **Upon Arising** — Weekday Siddur Chabad, Shacharit, Upon Arising — Source link only: no reusable Hebrew edition is currently listed
+
+## Weekday Siddur Sefard Linear
+
+- **Tradition:** Sefard
+- **Sections indexed:** 81
+- **Sections with reusable Hebrew editions:** 81
+- **Sections restricted to source links:** 0
+
+1. **Berachos on Lulav** — Weekday Siddur Sefard Linear, Berachos on Lulav — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+2. **Berachos Said Before Eating or Drinking** — Weekday Siddur Sefard Linear, Berachos Said Before Eating or Drinking — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+3. **Berachos Said Before Performing Mitzvos** — Weekday Siddur Sefard Linear, Berachos Said Before Performing Mitzvos — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+4. **Berachos Said Upon Witnessing Phenomenal Sights** — Weekday Siddur Sefard Linear, Berachos Said Upon Witnessing Phenomenal Sights — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+5. **Birchas Hamazon for Sheva Berachos** — Weekday Siddur Sefard Linear, Birchas Hamazon for Sheva Berachos — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+6. **Birkas Hamazon** — Weekday Siddur Sefard Linear, Birkas Hamazon — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+7. **Birkas Hamzon for Bris Milah** — Weekday Siddur Sefard Linear, Birkas Hamzon for Bris Milah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+8. **Chanukah Service** — Weekday Siddur Sefard Linear, Chanukah Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+9. **Concluding Blessings** — Weekday Siddur Sefard Linear, Concluding Blessings — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+10. **Counting the Omer** — Weekday Siddur Sefard Linear, Counting the Omer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+11. **Hallel** — Weekday Siddur Sefard Linear, Hallel — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+12. **Hoshanos** — Weekday Siddur Sefard Linear, Hoshanos — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+13. **Aleinu** — Weekday Siddur Sefard Linear, Maariv, Aleinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+14. **Berachos Following Shema** — Weekday Siddur Sefard Linear, Maariv, Berachos Following Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+15. **Berachos Preceding Shema** — Weekday Siddur Sefard Linear, Maariv, Berachos Preceding Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+16. **Motzei Shabbos Prayers** — Weekday Siddur Sefard Linear, Maariv, Motzei Shabbos Prayers — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+17. **Shema** — Weekday Siddur Sefard Linear, Maariv, Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+18. **Shemoneh Esrei** — Weekday Siddur Sefard Linear, Maariv, Shemoneh Esrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+19. **Marriage Service** — Weekday Siddur Sefard Linear, Marriage Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+20. **Aleinu** — Weekday Siddur Sefard Linear, Mincha, Aleinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+21. **Ashrei** — Weekday Siddur Sefard Linear, Mincha, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+22. **Shemoneh Esrei** — Weekday Siddur Sefard Linear, Mincha, Shemoneh Esrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+23. **Tachanun** — Weekday Siddur Sefard Linear, Mincha, Tachanun — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+24. **Musaf for Chol Hamo'ed** — Weekday Siddur Sefard Linear, Musaf for Chol Hamo'ed — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+25. **Musaf for Rosh Chodesh** — Weekday Siddur Sefard Linear, Musaf for Rosh Chodesh — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+26. **Prayer Before Retiring at Night** — Weekday Siddur Sefard Linear, Prayer Before Retiring at Night — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+27. **Purim Service** — Weekday Siddur Sefard Linear, Purim Service — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+28. **Redemption of the Firstborn** — Weekday Siddur Sefard Linear, Redemption of the Firstborn — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+29. **Fast of Esther** — Weekday Siddur Sefard Linear, Selichos, Fast of Esther — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+30. **Monday (1)** — Weekday Siddur Sefard Linear, Selichos, Monday (1) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+31. **Monday (2)** — Weekday Siddur Sefard Linear, Selichos, Monday (2) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+32. **Seventeenth of Tamuz** — Weekday Siddur Sefard Linear, Selichos, Seventeenth of Tamuz — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+33. **Tenth of Teves** — Weekday Siddur Sefard Linear, Selichos, Tenth of Teves — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+34. **Thursday** — Weekday Siddur Sefard Linear, Selichos, Thursday — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+35. **Service at a Circumcision** — Weekday Siddur Sefard Linear, Service at a Circumcision — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+36. **Adon Olam** — Weekday Siddur Sefard Linear, The Morning Prayers, Adon Olam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+37. **Akeidah (The Binding of Isaac)** — Weekday Siddur Sefard Linear, The Morning Prayers, Akeidah (The Binding of Isaac) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+38. **Aleinu** — Weekday Siddur Sefard Linear, The Morning Prayers, Aleinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+39. **Ashrei** — Weekday Siddur Sefard Linear, The Morning Prayers, Ashrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+40. **Ashrei U'va L'Tzion** — Weekday Siddur Sefard Linear, The Morning Prayers, Ashrei U'va L'Tzion — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+41. **Avinu Malkeinu** — Weekday Siddur Sefard Linear, The Morning Prayers, Avinu Malkeinu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+42. **Baruch She'amar** — Weekday Siddur Sefard Linear, The Morning Prayers, Baruch She'amar — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+43. **Berachah for Father of Bar Mitzvah** — Weekday Siddur Sefard Linear, The Morning Prayers, Berachah for Father of Bar Mitzvah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+44. **Birchas Hagomeil** — Weekday Siddur Sefard Linear, The Morning Prayers, Birchas Hagomeil — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+45. **Blessings of the Torah** — Weekday Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+46. **Blessings Upon Arising** — Weekday Siddur Sefard Linear, The Morning Prayers, Blessings Upon Arising — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+47. **Hodu** — Weekday Siddur Sefard Linear, The Morning Prayers, Hodu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+48. **Kaddish d'Rabanan** — Weekday Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+49. **Ketores (Incense Offering)** — Weekday Siddur Sefard Linear, The Morning Prayers, Ketores (Incense Offering) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+50. **Korban Tamid (Daily Offering)** — Weekday Siddur Sefard Linear, The Morning Prayers, Korban Tamid (Daily Offering) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+51. **Korbanos (Sacrificial Offerings)** — Weekday Siddur Sefard Linear, The Morning Prayers, Korbanos (Sacrificial Offerings) — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+52. **Ma Tovu** — Weekday Siddur Sefard Linear, The Morning Prayers, Ma Tovu — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+53. **Mizmor Lesodah** — Weekday Siddur Sefard Linear, The Morning Prayers, Mizmor Lesodah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+54. **Mizmor Shir** — Weekday Siddur Sefard Linear, The Morning Prayers, Mizmor Shir — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+55. **Morning Blessings** — Weekday Siddur Sefard Linear, The Morning Prayers, Morning Blessings — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+56. **Morning Supplications** — Weekday Siddur Sefard Linear, The Morning Prayers, Morning Supplications — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+57. **Mourner's Kaddish** — Weekday Siddur Sefard Linear, The Morning Prayers, Mourner's Kaddish — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+58. **My Soul Bless** — Weekday Siddur Sefard Linear, The Morning Prayers, My Soul Bless — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+59. **Psalm from Rosh Chodesh Elul** — Weekday Siddur Sefard Linear, The Morning Prayers, Psalm from Rosh Chodesh Elul — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+60. **Psalm in the House of a Mourner** — Weekday Siddur Sefard Linear, The Morning Prayers, Psalm in the House of a Mourner — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+61. **Psalm of the Day** — Weekday Siddur Sefard Linear, The Morning Prayers, Psalm of the Day — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+62. **Putting On the Tallis** — Weekday Siddur Sefard Linear, The Morning Prayers, Putting On the Tallis — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+63. **Putting on the Tefillin** — Weekday Siddur Sefard Linear, The Morning Prayers, Putting on the Tefillin — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+64. **Reading of the Torah** — Weekday Siddur Sefard Linear, The Morning Prayers, Reading of the Torah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+65. **Recitation of Shema** — Weekday Siddur Sefard Linear, The Morning Prayers, Recitation of Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+66. **Shemoneh Esrei** — Weekday Siddur Sefard Linear, The Morning Prayers, Shemoneh Esrei — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+67. **Shiras Hayam** — Weekday Siddur Sefard Linear, The Morning Prayers, Shiras Hayam — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+68. **Six Verses of Remembrance** — Weekday Siddur Sefard Linear, The Morning Prayers, Six Verses of Remembrance — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+69. **Tachanun** — Weekday Siddur Sefard Linear, The Morning Prayers, Tachanun — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+70. **The Blessings of Shema** — Weekday Siddur Sefard Linear, The Morning Prayers, The Blessings of Shema — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+71. **The Chapter of Mannah** — Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Mannah — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+72. **The Chapter of Repentance** — Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Repentance — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+73. **The Chapter of Reverence for God** — Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Reverence for God — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+74. **Thirteen Principles of Faith** — Weekday Siddur Sefard Linear, The Morning Prayers, Thirteen Principles of Faith — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+75. **Upon Arising in the Morning** — Weekday Siddur Sefard Linear, The Morning Prayers, Upon Arising in the Morning — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+76. **Vehu Rachum** — Weekday Siddur Sefard Linear, The Morning Prayers, Vehu Rachum — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+77. **Yehi Chevod** — Weekday Siddur Sefard Linear, The Morning Prayers, Yehi Chevod — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+78. **Yigdal** — Weekday Siddur Sefard Linear, The Morning Prayers, Yigdal — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+79. **Yishtabach** — Weekday Siddur Sefard Linear, The Morning Prayers, Yishtabach — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+80. **The Travelers' Prayer** — Weekday Siddur Sefard Linear, The Travelers' Prayer — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+81. **Various Other Berachos** — Weekday Siddur Sefard Linear, Various Other Berachos — In-app source: The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981; CC-BY
+
+## Yedid Nefesh
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 1
+- **Sections restricted to source links:** 0
+
+1. **Yedid Nefesh** — Yedid Nefesh — In-app source: Original version with nikkud; CC-BY-SA
+
+## Yizkor
+
+- **Tradition:** Varies
+- **Sections indexed:** 1
+- **Sections with reusable Hebrew editions:** 0
+- **Sections restricted to source links:** 1
+
+1. **Yizkor** — Yizkor — Source link only: no reusable Hebrew edition is currently listed

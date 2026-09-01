@@ -18,7 +18,9 @@ The project is pre-release (`0.2.0`). It is not yet ready for App Store submissi
 
 ## Content Status
 
-The bundled runtime catalog contains 33 entries. All Hebrew entries are currently marked `pending` for rabbinic review: 6 complete candidates, 21 excerpts, 3 service collections, and 3 entries with no bundled Hebrew. Source-backed Hebrew candidates and the review packet live in [docs/rabbinic-hebrew-review.md](docs/rabbinic-hebrew-review.md).
+The approved-core workflow currently contains 33 entries. All Hebrew entries are marked `pending` for rabbinic review: 6 complete candidates, 21 excerpts, 3 service collections, and 3 entries with no bundled Hebrew. Beyond that core, Kavanah indexes every available non-commentary section in Sefaria's Liturgy catalog plus all 150 Psalms: 2,263 searchable sections across 47 source works. Of those, 1,564 have a reusable Hebrew edition available for licensed in-app loading; 699 remain source links because no commercially reusable Hebrew edition is currently listed.
+
+Source-backed Hebrew candidates and the complete source-library inventory live in [docs/rabbinic-hebrew-review.md](docs/rabbinic-hebrew-review.md). The first section contains exact Hebrew candidates for approval. The comprehensive appendix is a coverage and triage index, not blanket rabbinic approval.
 
 For a rabbi reviewing on a phone, tablet, or printed copy, use the polished [Hebrew prayer review PDF](output/pdf/Kavanah-Hebrew-Prayer-Review.pdf). It contains 30 source-backed candidates with approval checkboxes and correction space; translations and transliterations are intentionally excluded.
 
