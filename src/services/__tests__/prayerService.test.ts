@@ -21,6 +21,7 @@ describe("prayer search", () => {
   it("finds simple intent matches across the complete liturgy index", async () => {
     const travel = await searchSefariaPrayerRefs("travel");
     const health = await searchSefariaPrayerRefs("health");
+    const psalm = await searchSefariaPrayerRefs("Psalm 91");
     const coverage = getLiturgyIndexCoverage();
 
     expect(coverage.entryCount).toBeGreaterThan(2_000);
@@ -28,6 +29,7 @@ describe("prayer search", () => {
     expect(travel.length).toBeLessThanOrEqual(16);
     expect(travel.some((prayer) => prayer.title === "Traveler's Prayer")).toBe(true);
     expect(health.some((prayer) => prayer.aliases.includes("health"))).toBe(true);
+    expect(psalm[0]?.sefariaRef).toBe("Psalms 91");
     expect([...travel, ...health].every((prayer) => prayer.source === "sefaria-search" && prayer.hebrewReview.contentKind === "remote-unreviewed")).toBe(true);
   });
 
