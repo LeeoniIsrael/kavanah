@@ -1,27 +1,27 @@
 import { Platform } from "react-native";
 
 export const colors = {
-  parchment: "#F2F3F1",
+  parchment: "#F3F5F3",
   parchmentLift: "#F8F9F7",
-  vellum: "#FCFCFA",
-  glass: "rgba(252, 252, 250, 0.92)",
-  ink: "#151715",
-  inkMuted: "#626762",
-  inkFaint: "rgba(21, 23, 21, 0.43)",
-  hairline: "rgba(21, 23, 21, 0.10)",
-  hairlineStrong: "rgba(21, 23, 21, 0.18)",
-  mineral: "#DDE2DF",
-  mineralDark: "#A8B0AB",
+  vellum: "#FEFEFC",
+  glass: "rgba(254, 254, 252, 0.94)",
+  ink: "#111412",
+  inkMuted: "#616A65",
+  inkFaint: "rgba(17, 20, 18, 0.42)",
+  hairline: "rgba(17, 20, 18, 0.09)",
+  hairlineStrong: "rgba(17, 20, 18, 0.16)",
+  mineral: "#E4E8E5",
+  mineralDark: "#9DA69F",
   gold: "#9B7B38",
   goldSoft: "#F0E9D7",
   olive: "#456050",
   oliveSoft: "#E3E9E5",
-  blue: "#255CFF",
-  blueSoft: "#E7ECFF",
+  blue: "#1F5EFF",
+  blueSoft: "#E8EEFF",
   rose: "#8B5359",
   roseSoft: "#F1E5E6",
   danger: "#B44343",
-  shadow: "rgba(21, 23, 21, 0.12)",
+  shadow: "rgba(17, 20, 18, 0.11)",
   white: "#FFFFFF"
 } as const;
 
@@ -58,42 +58,42 @@ export const grid = {
 
 export const type = {
   display: {
-    fontFamily: "IBMPlexSans_600SemiBold",
-    fontSize: 36,
-    lineHeight: 40,
+    fontFamily: "Manrope_600SemiBold",
+    fontSize: 34,
+    lineHeight: 39,
     fontWeight: "600" as const,
     letterSpacing: 0
   },
   title: {
-    fontFamily: "IBMPlexSans_600SemiBold",
-    fontSize: 28,
-    lineHeight: 32,
+    fontFamily: "Manrope_600SemiBold",
+    fontSize: 27,
+    lineHeight: 33,
     fontWeight: "600" as const,
     letterSpacing: 0
   },
   section: {
-    fontFamily: "IBMPlexSans_600SemiBold",
+    fontFamily: "Manrope_600SemiBold",
     fontSize: 17,
     lineHeight: 22,
     fontWeight: "600" as const,
     letterSpacing: 0
   },
   body: {
-    fontFamily: "IBMPlexSans_400Regular",
+    fontFamily: "Manrope_400Regular",
     fontSize: 16,
     lineHeight: 22,
     fontWeight: "400" as const,
     letterSpacing: 0
   },
   caption: {
-    fontFamily: "IBMPlexSans_500Medium",
+    fontFamily: "Manrope_500Medium",
     fontSize: 12,
     lineHeight: 16,
     fontWeight: "500" as const,
     letterSpacing: 0
   },
   data: {
-    fontFamily: "IBMPlexSans_500Medium",
+    fontFamily: "Manrope_600SemiBold",
     fontSize: 22,
     lineHeight: 26,
     fontWeight: "600" as const,
@@ -102,9 +102,10 @@ export const type = {
 } as const;
 
 export const fonts = {
-  regular: "IBMPlexSans_400Regular",
-  medium: "IBMPlexSans_500Medium",
-  semibold: "IBMPlexSans_600SemiBold",
+  regular: "Manrope_400Regular",
+  medium: "Manrope_500Medium",
+  semibold: "Manrope_600SemiBold",
+  bold: "Manrope_700Bold",
   hebrew: "NotoSansHebrew_400Regular",
   hebrewSemibold: "NotoSansHebrew_600SemiBold"
 } as const;

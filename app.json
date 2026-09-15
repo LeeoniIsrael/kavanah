@@ -46,6 +46,12 @@
           "color": "#111827"
         }
       ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose a photo to create a story image. Kavanah never uploads it."
+        }
+      ],
       "expo-font"
     ],
     "extra": {

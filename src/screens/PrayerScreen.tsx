@@ -471,11 +471,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.md,
     borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.hairline,
+    borderWidth: 0,
     backgroundColor: colors.vellum,
     paddingLeft: spacing.lg,
-    paddingRight: spacing.sm
+    paddingRight: spacing.sm,
+    ...shadows.pressed
   },
   searchInput: {
     ...type.body,
@@ -754,7 +754,7 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     padding: spacing.lg,
     borderRadius: radii.md,
-    backgroundColor: colors.mineral,
+    backgroundColor: colors.blueSoft,
     borderWidth: 0
   },
   askHeader: {

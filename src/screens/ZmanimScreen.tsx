@@ -103,14 +103,13 @@ const styles = StyleSheet.create({
   nextPanel: {
     position: "relative",
     borderRadius: radii.lg,
-    backgroundColor: colors.vellum,
+    backgroundColor: colors.ink,
     paddingVertical: spacing.xl,
     paddingLeft: spacing.xxxl,
     paddingRight: spacing.xl,
     gap: spacing.md,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.pressed
+    borderWidth: 0,
+    ...shadows.card
   },
   dayRail: {
     position: "absolute",
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
     bottom: spacing.xl,
     left: spacing.xl,
     width: 1,
-    backgroundColor: colors.mineral
+    backgroundColor: "rgba(255,255,255,0.18)"
   },
   dayMarker: {
     position: "absolute",
@@ -127,9 +126,9 @@ const styles = StyleSheet.create({
     width: 9,
     height: 9,
     borderRadius: radii.pill,
-    backgroundColor: colors.gold,
+    backgroundColor: colors.blue,
     borderWidth: 2,
-    borderColor: colors.vellum
+    borderColor: colors.ink
   },
   panelMetaRow: {
     flexDirection: "row",
@@ -140,23 +139,23 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: radii.pill,
-    backgroundColor: colors.gold
+    backgroundColor: colors.blue
   },
   panelMeta: {
     ...type.caption,
-    color: colors.gold
+    color: "rgba(255,255,255,0.68)"
   },
   panelTitle: {
-    color: colors.ink
+    color: colors.white
   },
   panelTime: {
     ...type.display,
     fontSize: 52,
     lineHeight: 55,
-    color: colors.ink
+    color: colors.white
   },
   panelBody: {
-    color: colors.inkMuted
+    color: "rgba(255,255,255,0.68)"
   },
   locationStrip: {
     minHeight: 58,
@@ -186,8 +185,9 @@ const styles = StyleSheet.create({
     color: colors.blue
   },
   list: {
-    borderTopWidth: 1,
-    borderTopColor: colors.hairlineStrong
+    overflow: "hidden",
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum
   },
   listLabel: {
     paddingHorizontal: spacing.xs,

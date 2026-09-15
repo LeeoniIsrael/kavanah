@@ -1,15 +1,16 @@
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
-import { CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Plus, Search, SlidersHorizontal } from "lucide-react-native";
-import { useMemo, useState } from "react";
-import { Modal, StyleSheet, Text, View } from "react-native";
+import { CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Plus, Search, Share2, SlidersHorizontal } from "lucide-react-native";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Animated, Easing, Modal, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
+import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
-import { colors, radii, shadows, spacing, type } from "@/design/theme";
+import { colors, motion, radii, shadows, spacing, type } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
@@ -52,17 +53,18 @@ export function HomeScreen(): React.JSX.Element {
   const navigation = useNavigation<Navigation>();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } = useStreakStore();
   const { upcomingZmanim, location, isLoading, error, refresh } = useZmanimStore();
-  const { prayers, bookmarkedPrayerIds, setQuery } = usePrayerStore();
+  const { setQuery } = usePrayerStore();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
+  const [shareHabit, setShareHabit] = useState<StreakHabit | null>(null);
   const reduceMotion = useReducedMotion();
   const now = useCurrentDate();
   const nextZman = useMemo(() => findNextZman(upcomingZmanim, now), [upcomingZmanim, now]);
   const nextMoment = nextZman ? prayerMomentByZman[nextZman.key] ?? { query: nextZman.title, label: nextZman.title, helper: "Next moment" } : null;
   const activeHabits = habits.filter((habit) => enabledHabits.includes(habit.habit));
   const completedToday = activeHabits.filter((habit) => habit.completedDates.includes(formatDateKey(now)));
+  const shareablePractice = completedToday.find((habit) => habit.habit === "tefillin") ?? completedToday[0];
   const practiceStats = useMemo(() => calculatePracticeStats(habits, now), [habits, now]);
-  const bookmark = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).find(Boolean);
 
   const openPrayerSearch = (query: string) => {
     setQuery(query);
@@ -103,7 +105,7 @@ export function HomeScreen(): React.JSX.Element {
         </View>
         <SectionTitle style={styles.panelTitle}>{nextZman ? nextZman.title : "Prayer times near you"}</SectionTitle>
         {nextZman ? <Text style={styles.panelTime}>{formatTime(nextZman.time)}</Text> : null}
-        <Body style={styles.panelBody}>{nextZman ? `${nextMoment?.helper ?? "Next prayer moment"} · ${location?.label ?? "local time"}` : error ?? "Enable location once to calculate prayer times and Shabbat reminders."}</Body>
+        <Body style={styles.panelBody}>{nextZman ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}` : error ?? "Enable location once to calculate prayer times and Shabbat reminders."}</Body>
         <View style={styles.panelActions}>
           {nextMoment ? (
             <AnimatedPressable accessibilityRole="button" onPress={() => openPrayerSearch(nextMoment.query)} style={styles.primaryAction}>
@@ -181,23 +183,12 @@ export function HomeScreen(): React.JSX.Element {
           </View>
           <ChevronRight size={17} color={colors.inkMuted} />
         </AnimatedPressable>
-      </View>
-
-      <View style={styles.infoGrid}>
-        <View style={styles.infoBlock}>
-          <Text style={styles.infoLabel}>Saved</Text>
-          <Text style={styles.infoTitle}>{bookmark?.title ?? "No prayer saved"}</Text>
-          <Text style={styles.infoBody} numberOfLines={2}>
-            {bookmark?.useCase ?? "Bookmark what you return to often."}
-          </Text>
-        </View>
-        <View style={styles.infoBlock}>
-          <Text style={styles.infoLabel}>Ask</Text>
-          <Text style={styles.infoTitle}>Today</Text>
-          <Text style={styles.infoBody} numberOfLines={2}>
-            Prayer, timing, or meaning.
-          </Text>
-        </View>
+        {shareablePractice ? (
+          <PracticeSharePrompt
+            label={habitDetails[shareablePractice.habit].name}
+            onPress={() => setShareHabit(shareablePractice.habit)}
+          />
+        ) : null}
       </View>
 
       <AnimatedPressable accessibilityRole="button" onPress={() => openPrayerSearch("today")} style={styles.commandStrip}>
@@ -268,7 +259,43 @@ export function HomeScreen(): React.JSX.Element {
           </SafeAreaView>
         </View>
       </Modal>
+
+      <PracticeStoryComposer
+        moment={shareHabit ? {
+          habit: shareHabit,
+          streak: calculateCurrentRun(habits.find((habit) => habit.habit === shareHabit)?.completedDates ?? [], now),
+          completedAt: now
+        } : null}
+        onClose={() => setShareHabit(null)}
+      />
     </Screen>
+  );
+}
+
+function PracticeSharePrompt({ label, onPress }: { label: string; onPress: () => void }): React.JSX.Element {
+  const reveal = useRef(new Animated.Value(0)).current;
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    Animated.timing(reveal, {
+      toValue: 1,
+      duration: reduceMotion ? 0 : motion.stateMs,
+      easing: Easing.bezier(...motion.standard),
+      useNativeDriver: true
+    }).start();
+  }, [reduceMotion, reveal]);
+
+  return (
+    <Animated.View style={{ opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [6, 0] }) }] }}>
+      <AnimatedPressable accessibilityLabel={`Share ${label} as a story`} accessibilityRole="button" haptic="confirm" onPress={onPress} style={styles.sharePracticeRow}>
+        <View style={styles.sharePracticeIcon}><Share2 size={17} color={colors.blue} /></View>
+        <View style={styles.sharePracticeCopy}>
+          <Text style={styles.sharePracticeTitle}>Share this moment</Text>
+          <Text style={styles.sharePracticeBody}>A private story for {label}</Text>
+        </View>
+        <ChevronRight size={17} color={colors.inkMuted} />
+      </AnimatedPressable>
+    </Animated.View>
   );
 }
 
@@ -317,7 +344,7 @@ function formatOverallSummary(stats: PracticeStats): string {
     return "No activity recorded yet";
   }
   const run = stats.currentRun > 0 ? `${stats.currentRun} ${stats.currentRun === 1 ? "day" : "days"} in a row` : "No current run";
-  return `${stats.thisWeek} this week · ${run}`;
+  return `${stats.thisWeek} this week, ${run}`;
 }
 
 function formatCount(value: number, noun: string): string {
@@ -347,14 +374,13 @@ const styles = StyleSheet.create({
   primaryPanel: {
     position: "relative",
     borderRadius: radii.lg,
-    backgroundColor: colors.vellum,
+    backgroundColor: colors.ink,
     paddingVertical: spacing.xl,
     paddingLeft: spacing.xxxl,
     paddingRight: spacing.xl,
     gap: spacing.md,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.pressed
+    borderWidth: 0,
+    ...shadows.card
   },
   timeRail: {
     position: "absolute",
@@ -362,7 +388,7 @@ const styles = StyleSheet.create({
     bottom: spacing.xl,
     left: spacing.xl,
     width: 1,
-    backgroundColor: colors.mineral
+    backgroundColor: "rgba(255,255,255,0.18)"
   },
   timeMarker: {
     position: "absolute",
@@ -371,9 +397,9 @@ const styles = StyleSheet.create({
     width: 9,
     height: 9,
     borderRadius: radii.pill,
-    backgroundColor: colors.gold,
+    backgroundColor: colors.blue,
     borderWidth: 2,
-    borderColor: colors.vellum
+    borderColor: colors.ink
   },
   panelTop: {
     flexDirection: "row",
@@ -384,23 +410,23 @@ const styles = StyleSheet.create({
     width: 6,
     height: 6,
     borderRadius: radii.pill,
-    backgroundColor: colors.gold
+    backgroundColor: colors.blue
   },
   panelMeta: {
     ...type.caption,
-    color: colors.gold
+    color: "rgba(255,255,255,0.68)"
   },
   panelTitle: {
-    color: colors.ink
+    color: colors.white
   },
   panelTime: {
     ...type.display,
     fontSize: 46,
     lineHeight: 49,
-    color: colors.ink
+    color: colors.white
   },
   panelBody: {
-    color: colors.inkMuted
+    color: "rgba(255,255,255,0.68)"
   },
   panelActions: {
     flexDirection: "row",
@@ -425,19 +451,21 @@ const styles = StyleSheet.create({
     minHeight: 44,
     borderRadius: radii.md,
     paddingHorizontal: spacing.lg,
-    backgroundColor: colors.mineral,
+    backgroundColor: "rgba(255,255,255,0.12)",
     alignItems: "center",
     justifyContent: "center"
   },
   secondaryActionText: {
     ...type.caption,
-    color: colors.ink
+    color: colors.white
   },
   shortcutRow: {
     flexDirection: "row",
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.hairline
+    overflow: "hidden",
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    backgroundColor: colors.vellum
   },
   shortcutSlot: {
     flex: 1
@@ -485,12 +513,13 @@ const styles = StyleSheet.create({
     borderColor: colors.hairline
   },
   habitList: {
-    borderTopWidth: 1,
-    borderTopColor: colors.hairlineStrong
+    overflow: "hidden",
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum
   },
   habitRow: {
     minHeight: 82,
-    paddingHorizontal: spacing.xs,
+    paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",
@@ -530,8 +559,8 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   checkCircleDone: {
-    backgroundColor: colors.olive,
-    borderColor: colors.olive
+    backgroundColor: colors.blue,
+    borderColor: colors.blue
   },
   emptyPractices: {
     minHeight: 92,
@@ -572,7 +601,7 @@ const styles = StyleSheet.create({
   },
   overallRow: {
     minHeight: 52,
-    paddingHorizontal: spacing.xs,
+    paddingHorizontal: spacing.lg,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
@@ -591,44 +620,46 @@ const styles = StyleSheet.create({
     ...type.caption,
     color: colors.inkMuted
   },
-  infoGrid: {
+  sharePracticeRow: {
+    minHeight: 66,
+    paddingHorizontal: spacing.sm,
     flexDirection: "row",
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.hairline
+    alignItems: "center",
+    gap: spacing.md,
+    borderRadius: radii.md,
+    backgroundColor: colors.blueSoft
   },
-  infoBlock: {
+  sharePracticeIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.vellum
+  },
+  sharePracticeCopy: {
     flex: 1,
-    minHeight: 120,
-    paddingVertical: spacing.lg,
-    paddingHorizontal: spacing.md,
-    borderRightWidth: 1,
-    borderRightColor: colors.hairline,
-    gap: spacing.xs
+    gap: 1
   },
-  infoLabel: {
-    ...type.caption,
-    color: colors.inkMuted
-  },
-  infoTitle: {
-    ...type.section,
+  sharePracticeTitle: {
+    ...type.body,
+    fontWeight: "600",
     color: colors.ink
   },
-  infoBody: {
+  sharePracticeBody: {
     ...type.caption,
-    color: colors.inkMuted,
-    lineHeight: 18
+    color: colors.inkMuted
   },
   commandStrip: {
     minHeight: 58,
     borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.hairline,
+    borderWidth: 0,
     backgroundColor: colors.vellum,
     paddingHorizontal: spacing.lg,
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md
+    gap: spacing.md,
+    ...shadows.pressed
   },
   commandText: {
     ...type.body,

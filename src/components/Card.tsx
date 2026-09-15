@@ -15,10 +15,9 @@ export function Card({ children, style, accent = "none" }: Props): React.JSX.Ele
 const styles = StyleSheet.create({
   card: {
     overflow: "hidden",
-    borderRadius: radii.md,
+    borderRadius: radii.lg,
     backgroundColor: colors.vellum,
-    borderWidth: 1,
-    borderColor: colors.hairline,
+    borderWidth: 0,
     padding: spacing.xl
   },
   accentCard: {

@@ -64,8 +64,8 @@ export function ProfileScreen(): React.JSX.Element {
       <View style={styles.localPanel}>
         <View style={styles.localIcon}><ShieldCheck size={21} color={colors.blue} /></View>
         <View style={styles.settingText}>
-          <Text style={styles.settingTitle}>Local by default</Text>
-          <Text style={styles.settingDetail}>Bookmarks, streaks, and location calculations stay on this device.</Text>
+          <Text style={styles.localTitle}>Local by default</Text>
+          <Text style={styles.localDetail}>Bookmarks, streaks, and location calculations stay on this device.</Text>
         </View>
       </View>
 
@@ -210,9 +210,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.md,
     borderRadius: radii.md,
-    backgroundColor: colors.oliveSoft,
-    borderLeftWidth: 2,
-    borderLeftColor: colors.olive
+    backgroundColor: colors.ink,
+    ...shadows.card
   },
   localIcon: {
     width: 42,
@@ -220,15 +219,18 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.vellum
+    backgroundColor: "rgba(255,255,255,0.1)"
   },
+  localTitle: { ...type.body, fontWeight: "600", color: colors.white },
+  localDetail: { ...type.caption, color: "rgba(255,255,255,0.64)", lineHeight: 18 },
   settingsList: {
-    borderTopWidth: 1,
-    borderTopColor: colors.hairlineStrong
+    overflow: "hidden",
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum
   },
   settingRow: {
     minHeight: 76,
-    paddingHorizontal: spacing.xs,
+    paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
     flexDirection: "row",
     alignItems: "center",

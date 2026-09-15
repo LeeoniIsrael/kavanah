@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
     gap: spacing.sm
   },
   ink: {
-    backgroundColor: colors.ink
+    backgroundColor: colors.blue
   },
   quiet: {
     backgroundColor: colors.vellum,
     borderWidth: 1,
-    borderColor: colors.hairline
+    borderColor: colors.hairlineStrong
   },
   gold: {
     backgroundColor: colors.goldSoft

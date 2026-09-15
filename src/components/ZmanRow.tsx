@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-import { colors, spacing, type } from "@/design/theme";
+import { colors, fonts, spacing, type } from "@/design/theme";
 import type { Zman } from "@/types/zmanim";
 
 export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   time: {
     ...type.section,
-    fontFamily: "IBMPlexSans_500Medium",
+    fontFamily: fonts.medium,
     color: colors.ink,
     minWidth: 84,
     textAlign: "right"

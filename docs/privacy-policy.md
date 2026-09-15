@@ -22,6 +22,10 @@ Assistant requests are processed for the purpose of answering the question, prev
 
 Notifications are optional and are requested only after you enable zmanim reminders. Reminder schedules are created locally on your device. You can disable reminders in Kavanah or device settings.
 
+## Story images
+
+Creating a practice story is optional. A photo you choose stays on your device while Kavanah combines it with a story layout. Kavanah does not upload the photo, add your name, location, or prayer text, or publish it automatically. The finished image is shared only with the destination you choose in your device's system share sheet, and that destination's privacy terms then apply.
+
 ## Accounts
 
 Kavanah does not currently provide cloud accounts or account synchronization. Sign-in will not be offered until server verification and complete in-app account deletion are available.

@@ -43,11 +43,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.parchment
   },
   content: {
-    paddingHorizontal: 20,
+    paddingHorizontal: spacing.lg,
     paddingTop: spacing.lg,
     paddingBottom: 132
   },
   stack: {
+    width: "100%",
+    maxWidth: 560,
+    alignSelf: "center",
     gap: spacing.xxl
   }
 });

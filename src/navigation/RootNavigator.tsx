@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BookOpenText, CalendarDays, CircleUserRound, House } from "lucide-react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { colors } from "@/design/theme";
+import { colors, fonts } from "@/design/theme";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
@@ -32,11 +32,11 @@ export function RootNavigator(): React.JSX.Element {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.blue,
-        tabBarInactiveTintColor: "#8A929B",
+        tabBarInactiveTintColor: colors.mineralDark,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           borderTopWidth: 1,
-          borderTopColor: colors.hairline,
+          borderTopColor: colors.hairlineStrong,
           elevation: 0,
           height: 62 + bottomInset,
           paddingBottom: bottomInset,
@@ -45,12 +45,12 @@ export function RootNavigator(): React.JSX.Element {
           marginBottom: 0,
           position: "absolute",
           borderRadius: 0,
-          backgroundColor: colors.vellum
+          backgroundColor: colors.glass
         },
         tabBarLabelStyle: {
           fontSize: 10,
           lineHeight: 13,
-          fontFamily: "IBMPlexSans_500Medium",
+          fontFamily: fonts.medium,
           fontWeight: "500",
           letterSpacing: 0,
           marginTop: 2
