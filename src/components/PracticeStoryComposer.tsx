@@ -2,7 +2,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
 import { BookOpenText, Check, ImagePlus, Share, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Image, Modal, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, Modal, ScrollView, StyleSheet, Text, useWindowDimensions, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { captureRef } from "react-native-view-shot";
 
@@ -48,6 +48,8 @@ export function PracticeStoryComposer({ moment, onClose }: Props): React.JSX.Ele
   const [isSharing, setIsSharing] = useState(false);
   const [error, setError] = useState("");
   const reduceMotion = useReducedMotion();
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
+  const previewWidth = Math.min(windowWidth - grid.margin * 2, windowHeight < 760 ? 232 : windowHeight < 900 ? 276 : 336);
 
   useEffect(() => {
     if (moment) {
@@ -130,7 +132,7 @@ export function PracticeStoryComposer({ moment, onClose }: Props): React.JSX.Ele
             </View>
 
             <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-              <View style={styles.previewFrame}>
+              <View style={[styles.previewFrame, { width: previewWidth }]}>
                 <View ref={storyRef} collapsable={false} style={styles.storyCapture}>
                   <StoryArtwork
                     layout={layout}
@@ -149,17 +151,18 @@ export function PracticeStoryComposer({ moment, onClose }: Props): React.JSX.Ele
                 {layoutOptions.map((option) => {
                   const selected = layout === option.id;
                   return (
-                    <AnimatedPressable
-                      key={option.id}
-                      accessibilityRole="tab"
-                      accessibilityState={{ selected }}
-                      haptic="selection"
-                      onPress={() => setLayout(option.id)}
-                      pressedScale={0.97}
-                      style={[styles.layoutOption, selected && styles.layoutOptionSelected]}
-                    >
-                      <Text style={[styles.layoutOptionText, selected && styles.layoutOptionTextSelected]}>{option.label}</Text>
-                    </AnimatedPressable>
+                    <View key={option.id} style={styles.layoutOptionSlot}>
+                      <AnimatedPressable
+                        accessibilityRole="tab"
+                        accessibilityState={{ selected }}
+                        haptic="selection"
+                        onPress={() => setLayout(option.id)}
+                        pressedScale={0.97}
+                        style={[styles.layoutOption, selected && styles.layoutOptionSelected]}
+                      >
+                        <Text style={[styles.layoutOptionText, selected && styles.layoutOptionTextSelected]}>{option.label}</Text>
+                      </AnimatedPressable>
+                    </View>
                   );
                 })}
               </View>
@@ -173,20 +176,24 @@ export function PracticeStoryComposer({ moment, onClose }: Props): React.JSX.Ele
             </ScrollView>
 
             <View style={styles.actions}>
-              <AnimatedPressable accessibilityRole="button" haptic="selection" onPress={() => void choosePhoto()} style={styles.photoButton}>
-                <ImagePlus size={18} color={colors.ink} />
-                <Text style={styles.photoButtonText}>{photoUri ? "Change photo" : "Choose photo"}</Text>
-              </AnimatedPressable>
-              <AnimatedPressable
-                accessibilityRole="button"
-                disabled={isSharing || !photoReady}
-                haptic="confirm"
-                onPress={() => void shareStory()}
-                style={[styles.shareButton, (isSharing || !photoReady) && styles.disabled]}
-              >
-                {isSharing || !photoReady ? <ActivityIndicator color={colors.white} size="small" /> : <Share size={18} color={colors.white} />}
-                <Text style={styles.shareButtonText}>{isSharing ? "Preparing" : "Share"}</Text>
-              </AnimatedPressable>
+              <View style={styles.actionSlot}>
+                <AnimatedPressable accessibilityRole="button" haptic="selection" onPress={() => void choosePhoto()} style={styles.photoButton}>
+                  <ImagePlus size={18} color={colors.ink} />
+                  <Text numberOfLines={1} style={styles.photoButtonText}>{photoUri ? "Change photo" : "Choose photo"}</Text>
+                </AnimatedPressable>
+              </View>
+              <View style={styles.actionSlot}>
+                <AnimatedPressable
+                  accessibilityRole="button"
+                  disabled={isSharing || !photoReady}
+                  haptic="confirm"
+                  onPress={() => void shareStory()}
+                  style={[styles.shareButton, (isSharing || !photoReady) && styles.disabled]}
+                >
+                  {isSharing || !photoReady ? <ActivityIndicator color={colors.white} size="small" /> : <Share size={18} color={colors.white} />}
+                  <Text style={styles.shareButtonText}>{isSharing ? "Preparing" : "Share"}</Text>
+                </AnimatedPressable>
+              </View>
             </View>
           </View>
         ) : null}
@@ -296,8 +303,6 @@ const styles = StyleSheet.create({
   headerBody: { fontSize: 13, lineHeight: 18 },
   scrollContent: { paddingHorizontal: grid.margin, paddingBottom: spacing.xl, gap: spacing.lg },
   previewFrame: {
-    width: "100%",
-    maxWidth: 348,
     aspectRatio: 9 / 16,
     alignSelf: "center",
     borderRadius: radii.xl,
@@ -365,15 +370,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.mineral
   },
   layoutOption: { flex: 1, alignItems: "center", justifyContent: "center", borderRadius: radii.sm },
+  layoutOptionSlot: { flex: 1 },
   layoutOptionSelected: { backgroundColor: colors.vellum, ...shadows.pressed },
   layoutOptionText: { ...type.caption, color: colors.inkMuted },
   layoutOptionTextSelected: { color: colors.ink },
   privacyNote: { flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingHorizontal: spacing.xs },
-  privacyText: { ...type.caption, flex: 1, color: colors.inkMuted, lineHeight: 18 },
+  privacyText: { ...type.caption, flex: 1, color: colors.inkMuted, lineHeight: 16 },
   error: { ...type.caption, color: colors.danger, paddingHorizontal: spacing.xs },
   actions: {
     paddingHorizontal: grid.margin,
-    paddingTop: spacing.md,
+    paddingTop: spacing.sm,
     paddingBottom: spacing.sm,
     flexDirection: "row",
     gap: spacing.md,
@@ -381,8 +387,9 @@ const styles = StyleSheet.create({
     borderTopColor: colors.hairline,
     backgroundColor: colors.glass
   },
+  actionSlot: { flex: 1 },
   photoButton: {
-    flex: 1,
+    width: "100%",
     minHeight: 50,
     borderRadius: radii.md,
     flexDirection: "row",
@@ -393,9 +400,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.hairlineStrong
   },
-  photoButtonText: { ...type.body, fontWeight: "600", color: colors.ink },
+  photoButtonText: { fontFamily: fonts.semibold, fontSize: 14, lineHeight: 19, color: colors.ink },
   shareButton: {
-    flex: 1,
+    width: "100%",
     minHeight: 50,
     borderRadius: radii.md,
     flexDirection: "row",
