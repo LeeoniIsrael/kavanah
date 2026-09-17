@@ -6,7 +6,7 @@ Kavanah is designed to provide prayer text, local Jewish times, reminders, bookm
 
 ## Information stored on your device
 
-Kavanah stores prayer bookmarks, streak history, language preferences, reminder preferences, assistant consent, and security settings on your device. Precise location is used on your device to calculate local zmanim. Kavanah does not sell this information or use it for advertising.
+Kavanah stores prayer bookmarks, streak history, language preferences, reminder and Prayer Focus preferences, assistant consent, and security settings on your device. Precise location is used on your device to calculate local zmanim. Kavanah does not sell this information or use it for advertising.
 
 ## Location
 

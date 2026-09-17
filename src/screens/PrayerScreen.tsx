@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkCheck, BookmarkMinus, BookOpenCheck, ChevronRight, ExternalLink, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
+import { Bookmark, BookmarkCheck, BookmarkMinus, BookOpenCheck, ChevronRight, ExternalLink, MessageCircle, MoonStar, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
 import { useNavigation, useRoute, type NavigationProp, type RouteProp } from "@react-navigation/native";
 import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Linking, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
@@ -18,6 +18,7 @@ import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
 import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
+import { getPrayerFocusSetup, openPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
 import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
 import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
@@ -56,7 +57,10 @@ export function PrayerScreen(): React.JSX.Element {
   const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
   const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
   const setAssistantConsent = useSettingsStore((state) => state.setAssistantConsent);
+  const prayerFocusEnabled = useSettingsStore((state) => state.prayerFocusEnabled);
   const [readerOpen, setReaderOpen] = useState(false);
+  const [focusPromptOpen, setFocusPromptOpen] = useState(false);
+  const [focusPromptMessage, setFocusPromptMessage] = useState("");
   const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
@@ -73,6 +77,7 @@ export function PrayerScreen(): React.JSX.Element {
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results.slice(0, 18) : [];
   const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
+  const focusSetup = getPrayerFocusSetup();
 
   useEffect(() => {
     const linkedQuery = route.params?.query?.trim();
@@ -85,8 +90,14 @@ export function PrayerScreen(): React.JSX.Element {
       setAssistantInput("");
       setAssistantMessages([]);
       setReaderOpen(true);
+      setFocusPromptMessage("");
+      setFocusPromptOpen(prayerFocusEnabled);
     }
-  }, [route.params?.prayerId, route.params?.query, selectPrayer, setQuery]);
+  }, [prayerFocusEnabled, route.params?.prayerId, route.params?.query, selectPrayer, setQuery]);
+
+  useEffect(() => {
+    if (focusPromptOpen) void confirmHaptic();
+  }, [focusPromptOpen]);
 
   useEffect(() => {
     const handle = setTimeout(() => {
@@ -145,14 +156,26 @@ export function PrayerScreen(): React.JSX.Element {
     setAssistantInput("");
     setAssistantMessages([]);
     setReaderOpen(true);
+    setFocusPromptMessage("");
+    setFocusPromptOpen(prayerFocusEnabled);
   };
 
   const closeReader = () => {
     setGuidedPrayerOpen(false);
+    setFocusPromptOpen(false);
     setReaderOpen(false);
     if (route.params?.prayerId) {
       navigation.setParams({ prayerId: "" });
     }
+  };
+
+  const openFocusSettings = async () => {
+    const opened = await openPrayerFocusSetup();
+    if (opened) {
+      setFocusPromptOpen(false);
+      return;
+    }
+    setFocusPromptMessage("Open your device settings and choose Focus or Do Not Disturb.");
   };
 
   const readerTokens = (localizedTokens.length > 0
@@ -444,6 +467,31 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
             ) : null}
           </ScrollView>
+          {focusPromptOpen ? (
+            <View accessibilityViewIsModal style={styles.focusBackdrop}>
+              <View style={styles.focusSheet}>
+                <View style={styles.focusMark}><MoonStar size={22} color={colors.white} /></View>
+                <View style={styles.focusCopy}>
+                  <Label>Prayer Focus</Label>
+                  <SectionTitle style={styles.focusTitle}>Begin without interruption</SectionTitle>
+                  <Body style={styles.focusBody}>Quiet the phone before the first word. Kavanah cannot change system Focus without your approval.</Body>
+                </View>
+                <View style={styles.focusActions}>
+                  <View style={styles.focusActionSlot}>
+                    <AnimatedPressable accessibilityRole="button" onPress={() => setFocusPromptOpen(false)} style={styles.focusSecondaryButton}>
+                      <Text style={styles.focusSecondaryText}>Continue</Text>
+                    </AnimatedPressable>
+                  </View>
+                  <View style={styles.focusActionSlot}>
+                    <AnimatedPressable accessibilityRole="button" haptic="confirm" onPress={() => void openFocusSettings()} style={styles.focusPrimaryButton}>
+                      <Text numberOfLines={2} style={styles.focusPrimaryText}>{focusSetup.actionLabel}</Text>
+                    </AnimatedPressable>
+                  </View>
+                </View>
+                {focusPromptMessage ? <Body style={styles.focusPromptMessage}>{focusPromptMessage}</Body> : null}
+              </View>
+            </View>
+          ) : null}
           {consentModalOpen ? (
             <View style={styles.consentBackdrop}>
               <View style={styles.consentSheet}>
@@ -589,6 +637,53 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.vellum
   },
+  focusBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 30,
+    justifyContent: "flex-end",
+    padding: spacing.md,
+    backgroundColor: "rgba(17,20,18,0.32)"
+  },
+  focusSheet: {
+    padding: spacing.xl,
+    gap: spacing.lg,
+    borderRadius: radii.lg,
+    backgroundColor: colors.vellum,
+    ...shadows.floating
+  },
+  focusMark: {
+    width: 44,
+    height: 44,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blue
+  },
+  focusCopy: { gap: spacing.xs },
+  focusTitle: { fontSize: 21, lineHeight: 27 },
+  focusBody: { color: colors.inkMuted },
+  focusActions: { flexDirection: "row", gap: spacing.md },
+  focusActionSlot: { flex: 1 },
+  focusSecondaryButton: {
+    minHeight: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    backgroundColor: colors.vellum
+  },
+  focusSecondaryText: { ...type.body, fontWeight: "600", color: colors.ink },
+  focusPrimaryButton: {
+    minHeight: 50,
+    paddingHorizontal: spacing.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: radii.md,
+    backgroundColor: colors.blue
+  },
+  focusPrimaryText: { ...type.caption, color: colors.white, textAlign: "center" },
+  focusPromptMessage: { color: colors.danger, fontSize: 13, lineHeight: 18 },
   readerChrome: {
     position: "absolute",
     left: grid.margin,

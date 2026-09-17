@@ -9,6 +9,7 @@ The project is pre-release (`0.2.0`). It is not yet ready for App Store submissi
 - Intent-based prayer search with plain-language descriptions and bookmarks.
 - Hebrew text, primary-language translation, and script-aware transliteration.
 - A full-screen prayer reader with a brief intention cue and unobtrusive close control.
+- An optional Prayer Focus pause before the siddur opens, with direct setup paths for iPhone Focus automation and Android Do Not Disturb.
 - On-device zmanim calculation for a seven-day window using the device location.
 - Local reminders for upcoming zmanim.
 - A private long-trip prompt that opens or schedules Tefilat HaDerech, with a `kavanah://prayer?query=travel&prayerId=tefilat-haderech` automation link.
@@ -83,6 +84,8 @@ The main layers are:
 Kavanah has no account system, analytics SDK, advertising, or cloud sync. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional and consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
 
 Travel reminders are intentionally user-triggered. Mobile operating systems do not let Kavanah inspect route duration inside Apple Maps, Google Maps, or Waze. The custom URL above can be used from iPhone Shortcuts or an Android automation, while route details remain outside Kavanah.
+
+Prayer Focus is also user-controlled. iOS does not let Kavanah silently switch system Focus; the app links to Shortcuts so the user can approve an app-open automation. Android links to the system Do Not Disturb controls. Kavanah never claims that system Focus changed unless the operating system did it.
 
 ## Release
 

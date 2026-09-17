@@ -1,4 +1,4 @@
-import { Bell, Check, ChevronRight, Languages, LockKeyhole, Navigation, ShieldCheck, Sparkles, X } from "lucide-react-native";
+import { Bell, Check, ChevronRight, Languages, LockKeyhole, MoonStar, Navigation, ShieldCheck, Sparkles, X } from "lucide-react-native";
 import { useState } from "react";
 import { Modal, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -11,11 +11,12 @@ import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
 import { cancelTravelPrayerNotification, initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
+import { getPrayerFocusSetup, openPrayerFocusSetup } from "@/services/prayerFocus";
 import { useAuthStore } from "@/store/authStore";
 import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 
-type ProfileModal = "language" | "privacy" | null;
+type ProfileModal = "focus" | "language" | "privacy" | null;
 
 export function ProfileScreen(): React.JSX.Element {
   const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
@@ -24,17 +25,26 @@ export function ProfileScreen(): React.JSX.Element {
     assistantConsentVersion,
     zmanNotificationsEnabled,
     travelNotificationsEnabled,
+    prayerFocusEnabled,
     setPrimaryLanguageCode,
     setAssistantConsent,
     setZmanNotificationsEnabled,
-    setTravelNotificationsEnabled
+    setTravelNotificationsEnabled,
+    setPrayerFocusEnabled
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
   const [travelNotificationMessage, setTravelNotificationMessage] = useState("");
+  const [focusSetupMessage, setFocusSetupMessage] = useState("");
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled = assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
+  const focusSetup = getPrayerFocusSetup();
+
+  const openFocusSetup = async () => {
+    const opened = await openPrayerFocusSetup();
+    setFocusSetupMessage(opened ? "Finish the setup there, then return to Kavanah." : "Open your device settings and choose Focus or Do Not Disturb.");
+  };
 
   const changeNotifications = async (enabled: boolean) => {
     void confirmHaptic();
@@ -112,6 +122,25 @@ export function ProfileScreen(): React.JSX.Element {
             <Text style={styles.settingDetail}>{travelNotificationMessage || "For long trips you start from Home or a phone automation. Maps routes stay private."}</Text>
           </View>
           <Switch value={travelNotificationsEnabled} onValueChange={(enabled) => void changeTravelNotifications(enabled)} {...switchColors(travelNotificationsEnabled)} />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}><MoonStar size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Prayer Focus</Text>
+            <Text style={styles.settingDetail}>Pause before each prayer so you can quiet the phone.</Text>
+          </View>
+          <Switch
+            accessibilityHint="Shows a quiet-phone prompt before each prayer"
+            accessibilityLabel="Prayer Focus"
+            value={prayerFocusEnabled}
+            onValueChange={(enabled) => {
+              void confirmHaptic();
+              setPrayerFocusEnabled(enabled);
+              if (enabled) setActiveModal("focus");
+            }}
+            {...switchColors(prayerFocusEnabled)}
+          />
         </View>
 
         <View style={styles.settingRow}>
@@ -195,6 +224,34 @@ export function ProfileScreen(): React.JSX.Element {
                   );
                 })}
               </View>
+            </ScrollView>
+          ) : activeModal === "focus" ? (
+            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
+              <View style={styles.modalHeader}>
+                <Label>Prayer Focus</Label>
+                <Display style={styles.modalTitle}>A quieter siddur</Display>
+                <Body>{focusSetup.body}</Body>
+              </View>
+              <View style={styles.focusPanel}>
+                <View style={styles.focusPanelMark}><MoonStar size={22} color={colors.white} /></View>
+                <View style={styles.focusPanelCopy}>
+                  <SectionTitle style={styles.focusPanelTitle}>Before the first word</SectionTitle>
+                  <Body style={styles.focusPanelBody}>Kavanah will pause when a prayer opens. Your phone keeps final control of calls, alarms, and notifications.</Body>
+                </View>
+              </View>
+              <View style={styles.focusSteps}>
+                {focusSetup.steps.map((step, index) => (
+                  <View key={step} style={styles.focusStep}>
+                    <Text style={styles.focusStepNumber}>{index + 1}</Text>
+                    <Body style={styles.focusStepText}>{step}</Body>
+                  </View>
+                ))}
+              </View>
+              <AnimatedPressable accessibilityRole="button" haptic="confirm" onPress={() => void openFocusSetup()} style={styles.focusSetupButton}>
+                <Text style={styles.focusSetupButtonText}>{focusSetup.actionLabel}</Text>
+                <ChevronRight size={17} color={colors.white} />
+              </AnimatedPressable>
+              {focusSetupMessage ? <Body style={styles.focusSetupMessage}>{focusSetupMessage}</Body> : null}
             </ScrollView>
           ) : (
             <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
@@ -296,5 +353,42 @@ const styles = StyleSheet.create({
   languageList: { borderTopWidth: 1, borderTopColor: colors.hairlineStrong },
   languageRow: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline, paddingHorizontal: spacing.xs, paddingVertical: spacing.md },
   languageRowSelected: { backgroundColor: colors.blueSoft },
-  privacySection: { gap: spacing.sm, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.hairline }
+  privacySection: { gap: spacing.sm, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.hairline },
+  focusPanel: {
+    minHeight: 112,
+    padding: spacing.lg,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    borderRadius: radii.md,
+    backgroundColor: colors.ink,
+    ...shadows.card
+  },
+  focusPanelMark: {
+    width: 44,
+    height: 44,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blue
+  },
+  focusPanelCopy: { flex: 1, gap: spacing.xs },
+  focusPanelTitle: { color: colors.white },
+  focusPanelBody: { color: "rgba(255,255,255,0.68)", fontSize: 14, lineHeight: 20 },
+  focusSteps: { borderTopWidth: 1, borderTopColor: colors.hairlineStrong },
+  focusStep: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline },
+  focusStepNumber: { ...type.caption, width: 24, color: colors.blue, textAlign: "center" },
+  focusStepText: { flex: 1 },
+  focusSetupButton: {
+    minHeight: 50,
+    paddingHorizontal: spacing.lg,
+    borderRadius: radii.md,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm,
+    backgroundColor: colors.blue
+  },
+  focusSetupButtonText: { ...type.body, fontWeight: "600", color: colors.white },
+  focusSetupMessage: { textAlign: "center", fontSize: 13, lineHeight: 19 }
 });

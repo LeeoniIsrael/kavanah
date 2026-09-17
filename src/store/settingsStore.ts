@@ -7,6 +7,7 @@ const LANGUAGE_KEY = "settings.primary-language";
 const ASSISTANT_CONSENT_KEY = "settings.assistant-consent-version";
 const ZMAN_NOTIFICATIONS_KEY = "settings.zman-notifications";
 const TRAVEL_NOTIFICATIONS_KEY = "settings.travel-notifications";
+const PRAYER_FOCUS_KEY = "settings.prayer-focus";
 export const CURRENT_ASSISTANT_CONSENT_VERSION = 1;
 
 type SettingsState = {
@@ -14,22 +15,26 @@ type SettingsState = {
   assistantConsentVersion: number;
   zmanNotificationsEnabled: boolean;
   travelNotificationsEnabled: boolean;
+  prayerFocusEnabled: boolean;
   setPrimaryLanguageCode: (code: string) => void;
   setAssistantConsent: (accepted: boolean) => void;
   setZmanNotificationsEnabled: (enabled: boolean) => void;
   setTravelNotificationsEnabled: (enabled: boolean) => void;
+  setPrayerFocusEnabled: (enabled: boolean) => void;
 };
 
 const initialLanguageCode = userStorage.getString(LANGUAGE_KEY) ?? "en";
 const initialAssistantConsentVersion = Number(userStorage.getString(ASSISTANT_CONSENT_KEY) ?? "0");
 const initialZmanNotificationsEnabled = userStorage.getString(ZMAN_NOTIFICATIONS_KEY) === "true";
 const initialTravelNotificationsEnabled = userStorage.getString(TRAVEL_NOTIFICATIONS_KEY) === "true";
+const initialPrayerFocusEnabled = userStorage.getString(PRAYER_FOCUS_KEY) === "true";
 
 export const useSettingsStore = create<SettingsState>((set) => ({
   primaryLanguageCode: findLanguage(initialLanguageCode).code,
   assistantConsentVersion: Number.isFinite(initialAssistantConsentVersion) ? initialAssistantConsentVersion : 0,
   zmanNotificationsEnabled: initialZmanNotificationsEnabled,
   travelNotificationsEnabled: initialTravelNotificationsEnabled,
+  prayerFocusEnabled: initialPrayerFocusEnabled,
   setPrimaryLanguageCode: (code) => {
     const language = findLanguage(code);
     userStorage.set(LANGUAGE_KEY, language.code);
@@ -47,5 +52,9 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   setTravelNotificationsEnabled: (enabled) => {
     userStorage.set(TRAVEL_NOTIFICATIONS_KEY, String(enabled));
     set({ travelNotificationsEnabled: enabled });
+  },
+  setPrayerFocusEnabled: (enabled) => {
+    userStorage.set(PRAYER_FOCUS_KEY, String(enabled));
+    set({ prayerFocusEnabled: enabled });
   }
 }));
