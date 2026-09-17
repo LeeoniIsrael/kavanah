@@ -4,6 +4,7 @@ import { AppState, StyleSheet, Text, View } from "react-native";
 
 import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { colors, radii, spacing, type } from "@/design/theme";
+import { configureNotificationCategories } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
 
 export function AppProviders({ children }: PropsWithChildren): React.JSX.Element {
@@ -14,6 +15,10 @@ export function AppProviders({ children }: PropsWithChildren): React.JSX.Element
   useEffect(() => {
     void hydrate().finally(() => setHydrated(true));
   }, [hydrate]);
+
+  useEffect(() => {
+    void configureNotificationCategories().catch(() => undefined);
+  }, []);
 
   useEffect(() => {
     if (!hydrated) return;

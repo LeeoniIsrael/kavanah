@@ -11,6 +11,7 @@ The project is pre-release (`0.2.0`). It is not yet ready for App Store submissi
 - A full-screen prayer reader with a brief intention cue and unobtrusive close control.
 - On-device zmanim calculation for a seven-day window using the device location.
 - Local reminders for upcoming zmanim.
+- A private long-trip prompt that opens or schedules Tefilat HaDerech, with a `kavanah://prayer?query=travel&prayerId=tefilat-haderech` automation link.
 - Optional daily-practice tracking with user-selected priorities and local statistics.
 - Optional biometric app lock.
 - A consent-gated, source-bounded prayer assistant through the Kavanah server.
@@ -80,6 +81,8 @@ The main layers are:
 ## Privacy
 
 Kavanah has no account system, analytics SDK, advertising, or cloud sync. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional and consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
+
+Travel reminders are intentionally user-triggered. Mobile operating systems do not let Kavanah inspect route duration inside Apple Maps, Google Maps, or Waze. The custom URL above can be used from iPhone Shortcuts or an Android automation, while route details remain outside Kavanah.
 
 ## Release
 

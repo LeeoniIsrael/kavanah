@@ -1,4 +1,4 @@
-import { Bell, Check, ChevronRight, Languages, LockKeyhole, ShieldCheck, Sparkles, X } from "lucide-react-native";
+import { Bell, Check, ChevronRight, Languages, LockKeyhole, Navigation, ShieldCheck, Sparkles, X } from "lucide-react-native";
 import { useState } from "react";
 import { Modal, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,7 +10,7 @@ import { findLanguage, languageOptions } from "@/data/languages";
 import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
-import { initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
+import { cancelTravelPrayerNotification, initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
 import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
 import { useZmanimStore } from "@/store/zmanimStore";
@@ -23,12 +23,15 @@ export function ProfileScreen(): React.JSX.Element {
     primaryLanguageCode,
     assistantConsentVersion,
     zmanNotificationsEnabled,
+    travelNotificationsEnabled,
     setPrimaryLanguageCode,
     setAssistantConsent,
-    setZmanNotificationsEnabled
+    setZmanNotificationsEnabled,
+    setTravelNotificationsEnabled
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
+  const [travelNotificationMessage, setTravelNotificationMessage] = useState("");
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled = assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
@@ -51,6 +54,20 @@ export function ProfileScreen(): React.JSX.Element {
         await refresh();
       }
     }
+  };
+
+  const changeTravelNotifications = async (enabled: boolean) => {
+    void confirmHaptic();
+    if (!enabled) {
+      await cancelTravelPrayerNotification();
+      setTravelNotificationsEnabled(false);
+      setTravelNotificationMessage("");
+      return;
+    }
+
+    const granted = await initializeNotifications();
+    setTravelNotificationsEnabled(granted);
+    setTravelNotificationMessage(granted ? "Ready for reminders you start from Home or a Shortcut." : "Notifications are disabled in device settings.");
   };
 
   return (
@@ -86,6 +103,15 @@ export function ProfileScreen(): React.JSX.Element {
             <Text style={styles.settingDetail}>{notificationMessage || "Alerts before selected local prayer times."}</Text>
           </View>
           <Switch value={zmanNotificationsEnabled} onValueChange={(enabled) => void changeNotifications(enabled)} {...switchColors(zmanNotificationsEnabled)} />
+        </View>
+
+        <View style={styles.settingRow}>
+          <View style={styles.settingIcon}><Navigation size={19} color={colors.blue} /></View>
+          <View style={styles.settingText}>
+            <Text style={styles.settingTitle}>Travel prayer reminders</Text>
+            <Text style={styles.settingDetail}>{travelNotificationMessage || "For long trips you start from Home or a phone automation. Maps routes stay private."}</Text>
+          </View>
+          <Switch value={travelNotificationsEnabled} onValueChange={(enabled) => void changeTravelNotifications(enabled)} {...switchColors(travelNotificationsEnabled)} />
         </View>
 
         <View style={styles.settingRow}>
@@ -176,7 +202,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <Label>Privacy</Label>
                 <Display style={styles.modalTitle}>Clear by design</Display>
               </View>
-              <PrivacySection title="Stored on this device" body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Precise coordinates are not sent to the prayer assistant." />
+              <PrivacySection title="Stored on this device" body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant." />
               <PrivacySection title="Prayer assistant" body="Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising." />
               <PrivacySection title="Religious guidance" body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service." />
               <PrivacySection title="Your choice" body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account." />

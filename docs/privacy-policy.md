@@ -20,7 +20,7 @@ Assistant requests are processed for the purpose of answering the question, prev
 
 ## Notifications
 
-Notifications are optional and are requested only after you enable zmanim reminders. Reminder schedules are created locally on your device. You can disable reminders in Kavanah or device settings.
+Notifications are optional and are requested only after you enable zmanim reminders or start a travel-prayer reminder. Reminder schedules are created locally on your device. Kavanah cannot read routes or route duration from Apple Maps, Google Maps, Waze, or other navigation apps. Travel reminders store only the pending local notification identifier, not a route, destination, or travel history. You can disable reminders in Kavanah or device settings.
 
 ## Story images
 

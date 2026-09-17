@@ -1,7 +1,7 @@
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
-import { CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Plus, Search, Share2, SlidersHorizontal } from "lucide-react-native";
+import { BellRing, CalendarDays, ChartColumn, Check, ChevronRight, MapPin, Navigation as NavigationIcon, Plus, Search, Share2, ShieldCheck, SlidersHorizontal, X } from "lucide-react-native";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, Modal, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,13 +10,15 @@ import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
-import { colors, motion, radii, shadows, spacing, type } from "@/design/theme";
+import { colors, fonts, motion, radii, shadows, spacing, type } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
-import { confirmHaptic } from "@/services/haptics";
+import { confirmHaptic, successHaptic } from "@/services/haptics";
+import { scheduleTravelPrayerNotification } from "@/services/notifications";
 import { calculateCurrentRun, calculatePracticeStats, type PracticeStats } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
@@ -56,7 +58,11 @@ export function HomeScreen(): React.JSX.Element {
   const { setQuery } = usePrayerStore();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
+  const [travelPromptOpen, setTravelPromptOpen] = useState(false);
+  const [travelScheduling, setTravelScheduling] = useState(false);
+  const [travelStatus, setTravelStatus] = useState("");
   const [shareHabit, setShareHabit] = useState<StreakHabit | null>(null);
+  const setTravelNotificationsEnabled = useSettingsStore((state) => state.setTravelNotificationsEnabled);
   const reduceMotion = useReducedMotion();
   const now = useCurrentDate();
   const nextZman = useMemo(() => findNextZman(upcomingZmanim, now), [upcomingZmanim, now]);
@@ -83,6 +89,33 @@ export function HomeScreen(): React.JSX.Element {
   const closePracticeStats = () => {
     void confirmHaptic();
     setPracticeStatsOpen(false);
+  };
+
+  const openTravelPrayer = () => {
+    setTravelPromptOpen(false);
+    setQuery("travel");
+    navigation.navigate("Prayer", { prayerId: "tefilat-haderech", query: "travel" });
+  };
+
+  const scheduleTravelReminder = async () => {
+    if (travelScheduling) return;
+    setTravelScheduling(true);
+    try {
+      const scheduled = await scheduleTravelPrayerNotification(5);
+      if (!scheduled) {
+        setTravelStatus("Enable notifications on a physical device to use reminders.");
+        return;
+      }
+
+      setTravelNotificationsEnabled(true);
+      setTravelStatus("Reminder set for 5 minutes from now.");
+      setTravelPromptOpen(false);
+      void successHaptic();
+    } catch {
+      setTravelStatus("The reminder could not be set. Check notification access and try again.");
+    } finally {
+      setTravelScheduling(false);
+    }
   };
 
   return (
@@ -196,6 +229,55 @@ export function HomeScreen(): React.JSX.Element {
         <Text style={styles.commandText}>Search prayers for today</Text>
         <ChevronRight size={18} color={colors.inkMuted} />
       </AnimatedPressable>
+
+      <AnimatedPressable accessibilityLabel="Long trip travel prayer" accessibilityRole="button" onPress={() => setTravelPromptOpen(true)} style={styles.travelCard}>
+        <View style={styles.travelIcon}><NavigationIcon size={19} color={colors.white} /></View>
+        <View style={styles.travelCopy}>
+          <Text style={styles.travelTitle}>Long trip?</Text>
+          <Text style={styles.travelBody}>{travelStatus || "Open or schedule the travel prayer without sharing your route."}</Text>
+        </View>
+        <ChevronRight size={18} color="rgba(255,255,255,0.58)" />
+      </AnimatedPressable>
+
+      <Modal animationType={reduceMotion ? "none" : "fade"} onRequestClose={() => setTravelPromptOpen(false)} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={travelPromptOpen}>
+        <View style={styles.editorRoot}>
+          <AnimatedPressable accessibilityLabel="Close travel reminder" accessibilityRole="button" haptic="selection" onPress={() => setTravelPromptOpen(false)} pressedScale={1} style={styles.editorBackdrop} />
+          <SafeAreaView edges={["bottom"]} style={styles.editorSafeArea}>
+            <View style={styles.travelSheet}>
+              <View style={styles.editorHandle} />
+              <View style={styles.travelSheetHeader}>
+                <View style={styles.travelMark}><NavigationIcon size={20} color={colors.blue} /></View>
+                <AnimatedPressable accessibilityLabel="Close" accessibilityRole="button" haptic="selection" onPress={() => setTravelPromptOpen(false)} style={styles.travelCloseButton}>
+                  <X size={18} color={colors.inkMuted} />
+                </AnimatedPressable>
+              </View>
+              <View style={styles.travelHeading}>
+                <Text style={styles.travelHebrew}>תפילת הדרך</Text>
+                <SectionTitle style={styles.travelQuestion}>Traveling for over an hour?</SectionTitle>
+                <Body>Maps cannot share route duration with Kavanah. Start this private reminder in one tap.</Body>
+              </View>
+              <View style={styles.travelActions}>
+                <View style={styles.travelActionSlot}>
+                  <AnimatedPressable accessibilityRole="button" haptic="confirm" onPress={openTravelPrayer} style={styles.travelSecondaryAction}>
+                    <NavigationIcon size={17} color={colors.ink} />
+                    <Text style={styles.travelSecondaryText}>Open now</Text>
+                  </AnimatedPressable>
+                </View>
+                <View style={styles.travelActionSlot}>
+                  <AnimatedPressable accessibilityRole="button" disabled={travelScheduling} haptic="confirm" onPress={() => void scheduleTravelReminder()} style={[styles.travelPrimaryAction, travelScheduling && styles.travelActionDisabled]}>
+                    <BellRing size={17} color={colors.white} />
+                    <Text style={styles.travelPrimaryText}>{travelScheduling ? "Setting" : "Remind in 5 min"}</Text>
+                  </AnimatedPressable>
+                </View>
+              </View>
+              <View style={styles.travelSafety}>
+                <ShieldCheck size={15} color={colors.olive} />
+                <Text style={styles.travelSafetyText}>Only read when stopped, or ask a passenger to read it.</Text>
+              </View>
+            </View>
+          </SafeAreaView>
+        </View>
+      </Modal>
 
       <Modal animationType={reduceMotion ? "none" : "fade"} onRequestClose={closePracticeEditor} onShow={() => void confirmHaptic()} statusBarTranslucent transparent visible={practiceEditorOpen}>
         <View style={styles.editorRoot}>
@@ -667,6 +749,28 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: colors.ink
   },
+  travelCard: {
+    minHeight: 76,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    borderRadius: radii.lg,
+    backgroundColor: colors.ink,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    ...shadows.card
+  },
+  travelIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blue
+  },
+  travelCopy: { flex: 1, gap: 2 },
+  travelTitle: { ...type.body, fontWeight: "600", color: colors.white },
+  travelBody: { ...type.caption, color: "rgba(255,255,255,0.66)", lineHeight: 18 },
   editorRoot: {
     flex: 1,
     justifyContent: "flex-end"
@@ -688,6 +792,72 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.lg,
     gap: spacing.lg
   },
+  travelSheet: {
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.lg,
+    gap: spacing.lg
+  },
+  travelSheetHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  travelMark: {
+    width: 42,
+    height: 42,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.blueSoft
+  },
+  travelCloseButton: {
+    width: 40,
+    height: 40,
+    borderRadius: radii.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.mineral
+  },
+  travelHeading: { gap: spacing.sm },
+  travelHebrew: {
+    fontFamily: fonts.hebrewSemibold,
+    fontSize: 28,
+    lineHeight: 38,
+    color: colors.ink,
+    textAlign: "right",
+    writingDirection: "rtl"
+  },
+  travelQuestion: { fontSize: 21, lineHeight: 27 },
+  travelActions: { flexDirection: "row", gap: spacing.md },
+  travelActionSlot: { flex: 1 },
+  travelSecondaryAction: {
+    width: "100%",
+    minHeight: 50,
+    borderRadius: radii.md,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    backgroundColor: colors.vellum
+  },
+  travelSecondaryText: { ...type.caption, color: colors.ink },
+  travelPrimaryAction: {
+    width: "100%",
+    minHeight: 50,
+    borderRadius: radii.md,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm,
+    backgroundColor: colors.blue
+  },
+  travelPrimaryText: { ...type.caption, color: colors.white },
+  travelActionDisabled: { opacity: 0.55 },
+  travelSafety: { flexDirection: "row", alignItems: "center", gap: spacing.sm },
+  travelSafetyText: { ...type.caption, flex: 1, color: colors.inkMuted, lineHeight: 17 },
   statsSheet: {
     paddingHorizontal: spacing.xl,
     paddingTop: spacing.sm,

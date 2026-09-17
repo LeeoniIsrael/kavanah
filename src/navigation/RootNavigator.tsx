@@ -11,7 +11,7 @@ import { tapHaptic } from "@/services/haptics";
 
 export type RootTabParamList = {
   Home: undefined;
-  Prayer: undefined;
+  Prayer: { prayerId?: string; query?: string } | undefined;
   Zmanim: undefined;
   Profile: undefined;
 };

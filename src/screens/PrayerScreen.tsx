@@ -1,4 +1,5 @@
 import { Bookmark, BookmarkCheck, BookmarkMinus, BookOpenCheck, ChevronRight, ExternalLink, MessageCircle, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
+import { useNavigation, useRoute, type NavigationProp, type RouteProp } from "@react-navigation/native";
 import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Linking, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -12,6 +13,7 @@ import { Screen } from "@/components/Screen";
 import { Body, Display, Label, SectionTitle } from "@/components/Text";
 import { colors, fonts, grid, radii, shadows, spacing, type } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
@@ -48,6 +50,8 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 
 export function PrayerScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation<NavigationProp<RootTabParamList, "Prayer">>();
+  const route = useRoute<RouteProp<RootTabParamList, "Prayer">>();
   const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, loadingPrayerId, prayerLoadError, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
   const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
   const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
@@ -69,6 +73,20 @@ export function PrayerScreen(): React.JSX.Element {
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results.slice(0, 18) : [];
   const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
+
+  useEffect(() => {
+    const linkedQuery = route.params?.query?.trim();
+    if (linkedQuery) setQuery(linkedQuery);
+    const linkedPrayerId = route.params?.prayerId?.trim();
+    if (linkedPrayerId) {
+      void selectPrayer(linkedPrayerId);
+      setGuidedPrayerOpen(false);
+      setAssistantOpen(false);
+      setAssistantInput("");
+      setAssistantMessages([]);
+      setReaderOpen(true);
+    }
+  }, [route.params?.prayerId, route.params?.query, selectPrayer, setQuery]);
 
   useEffect(() => {
     const handle = setTimeout(() => {
@@ -127,6 +145,14 @@ export function PrayerScreen(): React.JSX.Element {
     setAssistantInput("");
     setAssistantMessages([]);
     setReaderOpen(true);
+  };
+
+  const closeReader = () => {
+    setGuidedPrayerOpen(false);
+    setReaderOpen(false);
+    if (route.params?.prayerId) {
+      navigation.setParams({ prayerId: "" });
+    }
   };
 
   const readerTokens = (localizedTokens.length > 0
@@ -260,11 +286,11 @@ export function PrayerScreen(): React.JSX.Element {
         ) : null}
       </View>
 
-      <Modal visible={readerOpen && Boolean(selected)} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={() => setReaderOpen(false)}>
+      <Modal visible={readerOpen && Boolean(selected)} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={closeReader}>
         <SafeAreaView style={styles.readerSafeArea}>
           {selected ? (
             <View style={[styles.readerChrome, { top: insets.top + spacing.lg }]} pointerEvents="box-none">
-              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={() => { setGuidedPrayerOpen(false); setReaderOpen(false); }} pressedScale={0.94} style={styles.floatingClose}>
+              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={closeReader} pressedScale={0.94} style={styles.floatingClose}>
                 <X size={17} color={colors.ink} />
               </AnimatedPressable>
               <AnimatedPressable
