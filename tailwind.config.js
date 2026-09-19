@@ -1,21 +1,70 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./App.{js,jsx,ts,tsx}", "./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
       colors: {
-        ink: "#111827",
-        linen: "#F7F4EE",
-        mist: "#E8EEF1",
-        sage: "#7D927A",
-        clay: "#B9785F",
-        gold: "#C9A227"
+        parchment: "#F2EEE4",
+        parchmentLift: "#F8F5EE",
+        vellum: "#FFFFFF",
+        glass: "rgba(255,255,255,0.88)",
+        ink: "#0F0F14",
+        inkMuted: "#64666D",
+        inkFaint: "rgba(15,15,20,0.62)",
+        hairline: "rgba(11,26,59,0.12)",
+        hairlineStrong: "rgba(11,26,59,0.22)",
+        mineral: "#E5E1D8",
+        mineralDark: "#777B85",
+        gold: "#0B1A3B",
+        goldSoft: "#E3E7EF",
+        olive: "#0B1A3B",
+        oliveSoft: "#E3E7EF",
+        blue: "#0B1A3B",
+        blueSoft: "#E3E7EF",
+        rose: "#0B1A3B",
+        roseSoft: "#E3E7EF",
+        danger: "#B44343",
+        shadow: "rgba(17, 20, 18, 0.11)",
+        white: "#FFFFFF",
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        card: "hsl(var(--card) / <alpha-value>)",
+        "card-foreground": "hsl(var(--card-foreground) / <alpha-value>)",
+        popover: "hsl(var(--popover) / <alpha-value>)",
+        "popover-foreground": "hsl(var(--popover-foreground) / <alpha-value>)",
+        primary: "hsl(var(--primary) / <alpha-value>)",
+        "primary-foreground": "hsl(var(--primary-foreground) / <alpha-value>)",
+        secondary: "hsl(var(--secondary) / <alpha-value>)",
+        "secondary-foreground":
+          "hsl(var(--secondary-foreground) / <alpha-value>)",
+        muted: "hsl(var(--muted) / <alpha-value>)",
+        "muted-foreground": "hsl(var(--muted-foreground) / <alpha-value>)",
+        accent: "hsl(var(--accent) / <alpha-value>)",
+        "accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)",
+        destructive: "hsl(var(--destructive) / <alpha-value>)",
+        "destructive-foreground":
+          "hsl(var(--destructive-foreground) / <alpha-value>)",
+        border: "hsl(var(--border) / <alpha-value>)",
+        input: "hsl(var(--input) / <alpha-value>)",
+        ring: "hsl(var(--ring) / <alpha-value>)",
       },
+      borderRadius: { sm: "2px", md: "4px", lg: "4px", xl: "8px" },
       fontFamily: {
-        sans: ["System"]
-      }
-    }
+        sans: ["Manrope_400Regular"],
+        body: ["Manrope_400Regular"],
+        label: ["Manrope_500Medium"],
+        heading: ["Manrope_600SemiBold"],
+        strong: ["Manrope_700Bold"],
+        hebrew: ["NotoSansHebrew_400Regular"],
+        "hebrew-heading": ["NotoSansHebrew_600SemiBold"],
+      },
+      boxShadow: {
+        card: "0 0 0 rgba(0,0,0,0)",
+        floating: "0 4px 16px rgba(11,26,59,0.06)",
+      },
+    },
   },
-  plugins: []
+  plugins: [require("tailwindcss-animate")],
 };

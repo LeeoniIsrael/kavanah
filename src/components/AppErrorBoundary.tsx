@@ -1,9 +1,15 @@
-import { Component, Fragment, type ErrorInfo, type PropsWithChildren } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { BrandWordmark } from "@/components/BrandMark";
+import { Text } from "@/components/ui/text";
+import {
+  Component,
+  Fragment,
+  type ErrorInfo,
+  type PropsWithChildren,
+} from "react";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { colors, radii, spacing, type } from "@/design/theme";
+import { Button } from "@/components/ui/button";
 
 type State = {
   hasError: boolean;
@@ -22,73 +28,50 @@ export class AppErrorBoundary extends Component<PropsWithChildren, State> {
   }
 
   private retry = (): void => {
-    this.setState((state) => ({ hasError: false, recoveryKey: state.recoveryKey + 1 }));
+    this.setState((state) => ({
+      hasError: false,
+      recoveryKey: state.recoveryKey + 1,
+    }));
   };
 
   render(): React.JSX.Element {
     if (this.state.hasError) {
       return (
-        <SafeAreaView style={styles.safeArea}>
-          <View style={styles.content}>
-            <View style={styles.rule} />
-            <Text style={styles.eyebrow}>Kavanah</Text>
-            <Text accessibilityRole="header" style={styles.title}>Let&apos;s begin again</Text>
-            <Text style={styles.body}>Your saved prayers and practice history remain on this device.</Text>
-            <AnimatedPressable accessibilityLabel="Try opening Kavanah again" accessibilityRole="button" haptic="confirm" onPress={this.retry} style={styles.button}>
-              <Text style={styles.buttonText}>Try again</Text>
-            </AnimatedPressable>
+        <SafeAreaView className="flex-1 bg-background">
+          <View className="flex-1 justify-center items-start gap-3 p-6">
+            <BrandWordmark width={170} />
+            <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+              Kavanah
+            </Text>
+            <Text
+              accessibilityRole="header"
+              className="text-[27px] leading-[33px] font-semibold tracking-normal text-foreground font-heading"
+            >
+              Let&apos;s begin again
+            </Text>
+            <Text className="text-[16px] leading-[22px] font-normal tracking-normal text-muted-foreground max-w-[330px] font-body">
+              Your saved prayers and practice history remain on this device.
+            </Text>
+            <Button
+              variant="default"
+              size="content"
+              accessibilityLabel="Try opening Kavanah again"
+              accessibilityRole="button"
+              haptic="confirm"
+              onPress={this.retry}
+              className="min-h-12 justify-center items-center px-6 rounded-md bg-primary mt-2"
+            >
+              <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                Try again
+              </Text>
+            </Button>
           </View>
         </SafeAreaView>
       );
     }
 
-    return <Fragment key={this.state.recoveryKey}>{this.props.children}</Fragment>;
+    return (
+      <Fragment key={this.state.recoveryKey}>{this.props.children}</Fragment>
+    );
   }
 }
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: colors.parchment
-  },
-  content: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "flex-start",
-    gap: spacing.md,
-    padding: spacing.xl
-  },
-  rule: {
-    width: 32,
-    height: 2,
-    backgroundColor: colors.gold,
-    marginBottom: spacing.sm
-  },
-  eyebrow: {
-    ...type.caption,
-    color: colors.inkMuted
-  },
-  title: {
-    ...type.title,
-    color: colors.ink
-  },
-  body: {
-    ...type.body,
-    color: colors.inkMuted,
-    maxWidth: 330
-  },
-  button: {
-    minHeight: 48,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: spacing.xl,
-    borderRadius: radii.md,
-    backgroundColor: colors.blue,
-    marginTop: spacing.sm
-  },
-  buttonText: {
-    ...type.body,
-    color: colors.white,
-    fontWeight: "600"
-  }
-});

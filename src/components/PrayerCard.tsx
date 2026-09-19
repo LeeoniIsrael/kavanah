@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Badge } from "@/components/ui/badge";
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
+import { View } from "react-native";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { Body, SectionTitle } from "@/components/Text";
-import { ChevronRight } from "lucide-react-native";
-import { colors, spacing, type } from "@/design/theme";
+import { Button } from "@/components/ui/button";
+import { colors } from "@/design/theme";
 import type { PrayerText } from "@/types/prayer";
+import { ChevronRight } from "lucide-react-native";
 
 type Props = {
   prayer: PrayerText;
@@ -12,65 +14,55 @@ type Props = {
   onPress: () => void;
 };
 
-export function PrayerCard({ prayer, selected, onPress }: Props): React.JSX.Element {
+export function PrayerCard({
+  prayer,
+  selected,
+  onPress,
+}: Props): React.JSX.Element {
   return (
-    <AnimatedPressable onPress={onPress} style={[styles.card, selected && styles.selected]}>
-      <View style={styles.row}>
-        <View style={styles.text}>
-          <Text style={styles.meta}>{prayer.category} · {contentLabel(prayer.hebrewReview.contentKind)}</Text>
-          <SectionTitle style={styles.title}>{prayer.title}</SectionTitle>
-          <Body numberOfLines={3} style={styles.useCase}>
+    <Button
+      variant="ghost"
+      size="content"
+      onPress={onPress}
+      className={cn(
+        "rounded-lg border border-border bg-card p-4",
+        selected && "bg-accent border-primary",
+      )}
+    >
+      <View className="flex-row items-center gap-3">
+        <View className="flex-1 gap-1">
+          <View className="flex-row flex-wrap items-center gap-2">
+            <Text variant="caption">{prayer.category}</Text>
+            <Badge variant="outline">
+              <Text>{contentLabel(prayer.hebrewReview.contentKind)}</Text>
+            </Badge>
+          </View>
+          <Text variant="section" className="text-[18px] leading-[23px]">
+            {prayer.title}
+          </Text>
+          <Text
+            variant="body"
+            numberOfLines={3}
+            className="text-foreground text-[15px] leading-[21px]"
+          >
             {prayer.useCase || prayer.summary}
-          </Body>
-          <Body numberOfLines={1} style={styles.source}>
+          </Text>
+          <Text
+            variant="body"
+            numberOfLines={1}
+            className="text-muted-foreground text-[12px] leading-[17px]"
+          >
             {prayer.summary || prayer.sefariaRef}
-          </Body>
+          </Text>
         </View>
-        <ChevronRight size={18} color={selected ? colors.blue : colors.mineralDark} />
+        <ChevronRight
+          size={18}
+          color={selected ? colors.blue : colors.mineralDark}
+        />
       </View>
-    </AnimatedPressable>
+    </Button>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline,
-    paddingVertical: spacing.lg
-  },
-  selected: {
-    backgroundColor: colors.blueSoft
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md
-  },
-  text: {
-    flex: 1,
-    gap: spacing.xs
-  },
-  meta: {
-    ...type.caption,
-    color: colors.inkMuted
-  },
-  title: {
-    fontSize: 18,
-    lineHeight: 23
-  },
-  useCase: {
-    color: colors.ink,
-    fontSize: 15,
-    lineHeight: 21
-  },
-  source: {
-    color: colors.inkMuted,
-    fontSize: 12,
-    lineHeight: 17
-  },
-  dot: {},
-  selectedDot: {}
-});
 
 function contentLabel(kind: PrayerText["hebrewReview"]["contentKind"]): string {
   if (kind === "complete") return "complete Hebrew";

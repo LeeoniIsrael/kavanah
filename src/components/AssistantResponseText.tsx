@@ -1,43 +1,94 @@
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
 import { Fragment } from "react";
-import { StyleSheet, Text, View, type StyleProp, type TextStyle } from "react-native";
+import { View, type StyleProp, type TextStyle } from "react-native";
 
-import { colors, spacing, type } from "@/design/theme";
 import { parseAssistantContent } from "@/services/assistantFormatting";
 
 type AssistantResponseTextProps = {
   content: string;
   style?: StyleProp<TextStyle>;
+  className?: string;
 };
 
-export function AssistantResponseText({ content, style }: AssistantResponseTextProps): React.JSX.Element | null {
+export function AssistantResponseText({
+  content,
+  style,
+  className,
+}: AssistantResponseTextProps): React.JSX.Element | null {
   const blocks = parseAssistantContent(content);
   if (blocks.length === 0) {
     return null;
   }
 
   return (
-    <View style={styles.stack}>
+    <View className="gap-2">
       {blocks.map((block, index) => {
         if (block.kind === "section") {
           return (
-            <View key={`${block.kind}-${index}`} style={styles.section}>
-              <Text style={[styles.sectionTitle, style]}>{block.title}</Text>
-              {block.text ? <Text style={[styles.body, style]}>{renderInlineFormatting(block.text)}</Text> : null}
+            <View key={`${block.kind}-${index}`} className="gap-[3px]">
+              <Text
+                className={cn(
+                  "text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading",
+                  className,
+                )}
+                style={style}
+              >
+                {block.title}
+              </Text>
+              {block.text ? (
+                <Text
+                  className={cn(
+                    "text-[16px] leading-[22px] font-normal tracking-normal text-foreground font-body",
+                    className,
+                  )}
+                  style={style}
+                >
+                  {renderInlineFormatting(block.text)}
+                </Text>
+              ) : null}
             </View>
           );
         }
 
         if (block.kind === "bullet") {
           return (
-            <View key={`${block.kind}-${index}`} style={styles.bulletRow}>
-              <Text style={[styles.bullet, style]}>•</Text>
-              <Text style={[styles.body, styles.bulletText, style]}>{renderInlineFormatting(block.text)}</Text>
+            <View
+              key={`${block.kind}-${index}`}
+              className="flex-row items-start gap-2"
+            >
+              <Text
+                className={cn(
+                  "text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading",
+                  className,
+                )}
+                style={style}
+              >
+                •
+              </Text>
+              <Text
+                className={cn(
+                  "text-[16px] leading-[22px] font-normal tracking-normal text-foreground font-body",
+                  "flex-1",
+                  className,
+                )}
+                style={style}
+              >
+                {renderInlineFormatting(block.text)}
+              </Text>
             </View>
           );
         }
 
         return (
-          <Text key={`${block.kind}-${index}`} style={[styles.body, style]}>
+          <Text
+            key={`${block.kind}-${index}`}
+            className={cn(
+              "text-[16px] leading-[22px] font-normal tracking-normal text-foreground font-body",
+              className,
+            )}
+            style={style}
+          >
             {renderInlineFormatting(block.text)}
           </Text>
         );
@@ -47,46 +98,19 @@ export function AssistantResponseText({ content, style }: AssistantResponseTextP
 }
 
 function renderInlineFormatting(text: string): React.ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean).map((part, index) => {
-    const isBold = part.startsWith("**") && part.endsWith("**");
-    return (
-      <Fragment key={`${index}-${part}`}>
-        {isBold ? <Text style={styles.bold}>{part.slice(2, -2)}</Text> : part.replace(/\*\*/g, "")}
-      </Fragment>
-    );
-  });
+  return text
+    .split(/(\*\*[^*]+\*\*)/g)
+    .filter(Boolean)
+    .map((part, index) => {
+      const isBold = part.startsWith("**") && part.endsWith("**");
+      return (
+        <Fragment key={`${index}-${part}`}>
+          {isBold ? (
+            <Text className="font-semibold">{part.slice(2, -2)}</Text>
+          ) : (
+            part.replace(/\*\*/g, "")
+          )}
+        </Fragment>
+      );
+    });
 }
-
-const styles = StyleSheet.create({
-  stack: {
-    gap: spacing.sm
-  },
-  section: {
-    gap: 3
-  },
-  sectionTitle: {
-    ...type.body,
-    color: colors.ink,
-    fontWeight: "600"
-  },
-  body: {
-    ...type.body,
-    color: colors.ink
-  },
-  bold: {
-    fontWeight: "600"
-  },
-  bulletRow: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: spacing.sm
-  },
-  bullet: {
-    ...type.body,
-    color: colors.ink,
-    fontWeight: "600"
-  },
-  bulletText: {
-    flex: 1
-  }
-});

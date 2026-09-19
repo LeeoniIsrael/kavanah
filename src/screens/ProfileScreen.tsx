@@ -1,24 +1,53 @@
-import { Bell, Check, ChevronRight, Languages, LockKeyhole, MoonStar, Navigation, ShieldCheck, Sparkles, X } from "lucide-react-native";
+import { BrandWordmark } from "@/components/BrandMark";
+import { Card } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
+import {
+  Bell,
+  Check,
+  ChevronRight,
+  Languages,
+  LockKeyhole,
+  MoonStar,
+  Navigation,
+  ShieldCheck,
+  Sparkles,
+  X,
+} from "lucide-react-native";
 import { useState } from "react";
-import { Modal, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Modal, ScrollView, View } from "react-native";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Screen } from "@/components/Screen";
-import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { Button } from "@/components/ui/button";
 import { findLanguage, languageOptions } from "@/data/languages";
-import { colors, grid, radii, shadows, spacing, type } from "@/design/theme";
+import { colors } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
-import { cancelTravelPrayerNotification, initializeNotifications, scheduleZmanNotifications } from "@/services/notifications";
-import { getPrayerFocusSetup, openPrayerFocusSetup } from "@/services/prayerFocus";
+import {
+  cancelTravelPrayerNotification,
+  initializeNotifications,
+  scheduleZmanNotifications,
+} from "@/services/notifications";
+import {
+  getPrayerFocusSetup,
+  openPrayerFocusSetup,
+} from "@/services/prayerFocus";
 import { useAuthStore } from "@/store/authStore";
-import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
+import {
+  CURRENT_ASSISTANT_CONSENT_VERSION,
+  useSettingsStore,
+} from "@/store/settingsStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 
 type ProfileModal = "focus" | "language" | "privacy" | null;
 
 export function ProfileScreen(): React.JSX.Element {
+  const insets = useSafeAreaInsets();
   const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
   const {
     primaryLanguageCode,
@@ -30,20 +59,26 @@ export function ProfileScreen(): React.JSX.Element {
     setAssistantConsent,
     setZmanNotificationsEnabled,
     setTravelNotificationsEnabled,
-    setPrayerFocusEnabled
+    setPrayerFocusEnabled,
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
-  const [travelNotificationMessage, setTravelNotificationMessage] = useState("");
+  const [travelNotificationMessage, setTravelNotificationMessage] =
+    useState("");
   const [focusSetupMessage, setFocusSetupMessage] = useState("");
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
-  const assistantEnabled = assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
+  const assistantEnabled =
+    assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
   const focusSetup = getPrayerFocusSetup();
 
   const openFocusSetup = async () => {
     const opened = await openPrayerFocusSetup();
-    setFocusSetupMessage(opened ? "Finish the setup there, then return to Kavanah." : "Open your device settings and choose Focus or Do Not Disturb.");
+    setFocusSetupMessage(
+      opened
+        ? "Finish the setup there, then return to Kavanah."
+        : "Open your device settings and choose Focus or Do Not Disturb.",
+    );
   };
 
   const changeNotifications = async (enabled: boolean) => {
@@ -55,7 +90,11 @@ export function ProfileScreen(): React.JSX.Element {
     }
     const granted = await initializeNotifications();
     setZmanNotificationsEnabled(granted);
-    setNotificationMessage(granted ? "Reminders will follow your calculated local times." : "Notifications are disabled in device settings.");
+    setNotificationMessage(
+      granted
+        ? "Reminders will follow your calculated local times."
+        : "Notifications are disabled in device settings.",
+    );
     if (granted) {
       const { upcomingZmanim, refresh } = useZmanimStore.getState();
       if (upcomingZmanim.length > 0) {
@@ -77,135 +116,246 @@ export function ProfileScreen(): React.JSX.Element {
 
     const granted = await initializeNotifications();
     setTravelNotificationsEnabled(granted);
-    setTravelNotificationMessage(granted ? "Ready for reminders you start from Home or a Shortcut." : "Notifications are disabled in device settings.");
+    setTravelNotificationMessage(
+      granted
+        ? "Ready for reminders you start from Home or a Shortcut."
+        : "Notifications are disabled in device settings.",
+    );
   };
 
   return (
     <Screen>
-      <View style={styles.header}>
-        <Label>Settings</Label>
-        <Display>Your Kavanah</Display>
-        <Body style={styles.headerCopy}>Language, reminders, and privacy stay under your control.</Body>
+      <BrandWordmark width={128} />
+      <View className="gap-1">
+        <Text variant="caption">Settings</Text>
+        <Text variant="display">Your Kavanah</Text>
+        <Text variant="body" className="max-w-[330px]">
+          Language, reminders, and privacy stay under your control.
+        </Text>
       </View>
 
-      <View style={styles.localPanel}>
-        <View style={styles.localIcon}><ShieldCheck size={21} color={colors.blue} /></View>
-        <View style={styles.settingText}>
-          <Text style={styles.localTitle}>Local by default</Text>
-          <Text style={styles.localDetail}>Bookmarks, streaks, and location calculations stay on this device.</Text>
+      <View className="min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-md bg-primary">
+        <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-[rgba(255,255,255,0.1)]">
+          <ShieldCheck size={21} color={colors.white} />
+        </View>
+        <View className="flex-1 gap-[2px]">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+            Local by default
+          </Text>
+          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-[rgba(255,255,255,0.64)] font-label">
+            Bookmarks, streaks, and location calculations stay on this device.
+          </Text>
         </View>
       </View>
 
-      <View style={styles.settingsList}>
-        <AnimatedPressable accessibilityRole="button" onPress={() => setActiveModal("language")} style={styles.settingRow}>
-          <View style={styles.settingIcon}><Languages size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Primary language</Text>
-            <Text style={styles.settingDetail}>{primaryLanguage.name} · {primaryLanguage.nativeName}</Text>
+      <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityRole="button"
+          onPress={() => setActiveModal("language")}
+          className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline"
+        >
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <Languages size={19} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Primary language
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              {primaryLanguage.name} · {primaryLanguage.nativeName}
+            </Text>
           </View>
           <ChevronRight size={18} color={colors.inkMuted} />
-        </AnimatedPressable>
+        </Button>
 
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}><Bell size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Zmanim reminders</Text>
-            <Text style={styles.settingDetail}>{notificationMessage || "Alerts before selected local prayer times."}</Text>
+        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <Bell size={19} color={colors.blue} />
           </View>
-          <Switch value={zmanNotificationsEnabled} onValueChange={(enabled) => void changeNotifications(enabled)} {...switchColors(zmanNotificationsEnabled)} />
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Zmanim reminders
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              {notificationMessage ||
+                "Alerts before selected local prayer times."}
+            </Text>
+          </View>
+          <Switch
+            accessibilityLabel="Zmanim reminders"
+            checked={zmanNotificationsEnabled}
+            onCheckedChange={(enabled) => void changeNotifications(enabled)}
+          />
         </View>
 
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}><Navigation size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Travel prayer reminders</Text>
-            <Text style={styles.settingDetail}>{travelNotificationMessage || "For long trips you start from Home or a phone automation. Maps routes stay private."}</Text>
+        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <Navigation size={19} color={colors.blue} />
           </View>
-          <Switch value={travelNotificationsEnabled} onValueChange={(enabled) => void changeTravelNotifications(enabled)} {...switchColors(travelNotificationsEnabled)} />
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Travel prayer reminders
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              {travelNotificationMessage ||
+                "For long trips you start from Home or a phone automation. Maps routes stay private."}
+            </Text>
+          </View>
+          <Switch
+            accessibilityLabel="Travel prayer reminders"
+            checked={travelNotificationsEnabled}
+            onCheckedChange={(enabled) =>
+              void changeTravelNotifications(enabled)
+            }
+          />
         </View>
 
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}><MoonStar size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Prayer Focus</Text>
-            <Text style={styles.settingDetail}>Pause before each prayer so you can quiet the phone.</Text>
+        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <MoonStar size={19} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Prayer Focus
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              Pause before each prayer so you can quiet the phone.
+            </Text>
           </View>
           <Switch
             accessibilityHint="Shows a quiet-phone prompt before each prayer"
             accessibilityLabel="Prayer Focus"
-            value={prayerFocusEnabled}
-            onValueChange={(enabled) => {
+            checked={prayerFocusEnabled}
+            onCheckedChange={(enabled) => {
               void confirmHaptic();
               setPrayerFocusEnabled(enabled);
               if (enabled) setActiveModal("focus");
             }}
-            {...switchColors(prayerFocusEnabled)}
           />
         </View>
 
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}><LockKeyhole size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Biometric lock</Text>
-            <Text style={styles.settingDetail}>Lock Kavanah whenever the app leaves the foreground.</Text>
+        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <LockKeyhole size={19} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Biometric lock
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              Lock Kavanah whenever the app leaves the foreground.
+            </Text>
           </View>
           <Switch
-            value={biometricLockEnabled}
-            onValueChange={(enabled) => {
+            accessibilityLabel="Biometric lock"
+            checked={biometricLockEnabled}
+            onCheckedChange={(enabled) => {
               void confirmHaptic();
               void setBiometricLockEnabled(enabled);
             }}
-            {...switchColors(biometricLockEnabled)}
           />
         </View>
 
-        <View style={styles.settingRow}>
-          <View style={styles.settingIcon}><Sparkles size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Prayer assistant</Text>
-            <Text style={styles.settingDetail}>Allow prayer questions to be processed by OpenAI through Kavanah.</Text>
+        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <Sparkles size={19} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Prayer assistant
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              Allow prayer questions to be processed by OpenAI through Kavanah.
+            </Text>
           </View>
           <Switch
-            value={assistantEnabled}
-            onValueChange={(enabled) => {
+            accessibilityLabel="Prayer assistant"
+            checked={assistantEnabled}
+            onCheckedChange={(enabled) => {
               void confirmHaptic();
               setAssistantConsent(enabled);
             }}
-            {...switchColors(assistantEnabled)}
           />
         </View>
 
-        <AnimatedPressable accessibilityRole="button" onPress={() => setActiveModal("privacy")} style={[styles.settingRow, styles.lastRow]}>
-          <View style={styles.settingIcon}><ShieldCheck size={19} color={colors.blue} /></View>
-          <View style={styles.settingText}>
-            <Text style={styles.settingTitle}>Privacy and data use</Text>
-            <Text style={styles.settingDetail}>What stays here and what leaves this device.</Text>
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityRole="button"
+          onPress={() => setActiveModal("privacy")}
+          className={cn(
+            "min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline",
+            "border-b-[0px]",
+          )}
+        >
+          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+            <ShieldCheck size={19} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Privacy and data use
+            </Text>
+            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+              What stays here and what leaves this device.
+            </Text>
           </View>
           <ChevronRight size={18} color={colors.inkMuted} />
-        </AnimatedPressable>
-      </View>
+        </Button>
+      </Card>
 
-      <Body style={styles.accountNote}>Account sync is unavailable until secure server verification and complete account deletion are ready.</Body>
+      <Text variant="body" className="text-[12px] leading-[18px] px-1">
+        Account sync is unavailable until secure server verification and
+        complete account deletion are ready.
+      </Text>
 
-      <Modal visible={activeModal !== null} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={() => setActiveModal(null)}>
-        <SafeAreaView style={styles.modalSafeArea}>
-          <View style={styles.modalChrome} pointerEvents="box-none">
-            <AnimatedPressable accessibilityLabel="Close" accessibilityRole="button" onPress={() => setActiveModal(null)} pressedScale={0.94} style={styles.closeButton}>
+      <Modal
+        visible={activeModal !== null}
+        animationType={reduceMotion ? "none" : "slide"}
+        presentationStyle="fullScreen"
+        onRequestClose={() => setActiveModal(null)}
+      >
+        <SafeAreaView className="flex-1 bg-background">
+          <View
+            className="absolute right-6 z-[10]"
+            style={{ top: insets.top + 16 }}
+            pointerEvents="box-none"
+          >
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityLabel="Close"
+              accessibilityRole="button"
+              onPress={() => setActiveModal(null)}
+              pressedScale={0.94}
+              className="w-11 h-11 rounded-md items-center justify-center bg-white border border-hairline shadow-card"
+            >
               <X size={18} color={colors.ink} />
-            </AnimatedPressable>
+            </Button>
           </View>
           {activeModal === "language" ? (
-            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
-              <View style={styles.modalHeader}>
-                <Label>Language</Label>
-                <Display style={styles.modalTitle}>Prayer text</Display>
-                <Body>Hebrew remains visible. Translation and transliteration follow this choice.</Body>
+            <ScrollView
+              contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
+              showsVerticalScrollIndicator={false}
+            >
+              <View className="gap-1 pr-12">
+                <Text variant="caption">Language</Text>
+                <Text variant="display" className="text-[34px] leading-[39px]">
+                  Prayer text
+                </Text>
+                <Text variant="body">
+                  Hebrew remains visible. Translation and transliteration follow
+                  this choice.
+                </Text>
               </View>
-              <View style={styles.languageList}>
+              <View className="border-t border-t-hairlineStrong">
                 {languageOptions.map((language) => {
                   const selected = language.code === primaryLanguageCode;
                   return (
-                    <AnimatedPressable
+                    <Button
+                      variant="ghost"
+                      size="content"
                       key={language.code}
                       accessibilityRole="button"
                       onPress={() => {
@@ -213,56 +363,120 @@ export function ProfileScreen(): React.JSX.Element {
                         setPrimaryLanguageCode(language.code);
                         setActiveModal(null);
                       }}
-                      style={[styles.languageRow, selected && styles.languageRowSelected]}
+                      className={cn(
+                        "min-h-16 flex-row items-center gap-3 border-b border-b-hairline px-1 py-3",
+                        selected && "bg-accent",
+                      )}
                     >
-                      <View style={styles.settingText}>
-                        <Text style={styles.settingTitle}>{language.name}</Text>
-                        <Text style={styles.settingDetail}>{language.nativeName}</Text>
+                      <View className="flex-1 gap-[2px]">
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                          {language.name}
+                        </Text>
+                        <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+                          {language.nativeName}
+                        </Text>
                       </View>
-                      {selected ? <Check size={20} color={colors.blue} /> : null}
-                    </AnimatedPressable>
+                      {selected ? (
+                        <Check size={20} color={colors.blue} />
+                      ) : null}
+                    </Button>
                   );
                 })}
               </View>
             </ScrollView>
           ) : activeModal === "focus" ? (
-            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
-              <View style={styles.modalHeader}>
-                <Label>Prayer Focus</Label>
-                <Display style={styles.modalTitle}>A quieter siddur</Display>
-                <Body>{focusSetup.body}</Body>
+            <ScrollView
+              contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
+              showsVerticalScrollIndicator={false}
+            >
+              <View className="gap-1 pr-12">
+                <Text variant="caption">Prayer Focus</Text>
+                <Text variant="display" className="text-[34px] leading-[39px]">
+                  A quieter siddur
+                </Text>
+                <Text variant="body">{focusSetup.body}</Text>
               </View>
-              <View style={styles.focusPanel}>
-                <View style={styles.focusPanelMark}><MoonStar size={22} color={colors.white} /></View>
-                <View style={styles.focusPanelCopy}>
-                  <SectionTitle style={styles.focusPanelTitle}>Before the first word</SectionTitle>
-                  <Body style={styles.focusPanelBody}>Kavanah will pause when a prayer opens. Your phone keeps final control of calls, alarms, and notifications.</Body>
+              <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-md bg-primary">
+                <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
+                  <MoonStar size={22} color={colors.white} />
+                </View>
+                <View className="flex-1 gap-1">
+                  <Text variant="section" className="text-white">
+                    Before the first word
+                  </Text>
+                  <Text
+                    variant="body"
+                    className="text-[rgba(255,255,255,0.68)] text-[14px] leading-[20px]"
+                  >
+                    Kavanah will pause when a prayer opens. Your phone keeps
+                    final control of calls, alarms, and notifications.
+                  </Text>
                 </View>
               </View>
-              <View style={styles.focusSteps}>
+              <View className="border-t border-t-hairlineStrong">
                 {focusSetup.steps.map((step, index) => (
-                  <View key={step} style={styles.focusStep}>
-                    <Text style={styles.focusStepNumber}>{index + 1}</Text>
-                    <Body style={styles.focusStepText}>{step}</Body>
+                  <View
+                    key={step}
+                    className="min-h-16 flex-row items-center gap-3 border-b border-b-hairline"
+                  >
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal w-6 text-primary text-center font-label">
+                      {index + 1}
+                    </Text>
+                    <Text variant="body" className="flex-1">
+                      {step}
+                    </Text>
                   </View>
                 ))}
               </View>
-              <AnimatedPressable accessibilityRole="button" haptic="confirm" onPress={() => void openFocusSetup()} style={styles.focusSetupButton}>
-                <Text style={styles.focusSetupButtonText}>{focusSetup.actionLabel}</Text>
+              <Button
+                variant="default"
+                size="content"
+                accessibilityRole="button"
+                haptic="confirm"
+                onPress={() => void openFocusSetup()}
+                className="min-h-[50px] px-4 rounded-md flex-row items-center justify-center gap-2 bg-primary"
+              >
+                <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                  {focusSetup.actionLabel}
+                </Text>
                 <ChevronRight size={17} color={colors.white} />
-              </AnimatedPressable>
-              {focusSetupMessage ? <Body style={styles.focusSetupMessage}>{focusSetupMessage}</Body> : null}
+              </Button>
+              {focusSetupMessage ? (
+                <Text
+                  variant="body"
+                  className="text-center text-[13px] leading-[19px]"
+                >
+                  {focusSetupMessage}
+                </Text>
+              ) : null}
             </ScrollView>
           ) : (
-            <ScrollView contentContainerStyle={styles.modalContent} showsVerticalScrollIndicator={false}>
-              <View style={styles.modalHeader}>
-                <Label>Privacy</Label>
-                <Display style={styles.modalTitle}>Clear by design</Display>
+            <ScrollView
+              contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
+              showsVerticalScrollIndicator={false}
+            >
+              <View className="gap-1 pr-12">
+                <Text variant="caption">Privacy</Text>
+                <Text variant="display" className="text-[34px] leading-[39px]">
+                  Clear by design
+                </Text>
               </View>
-              <PrivacySection title="Stored on this device" body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant." />
-              <PrivacySection title="Prayer assistant" body="Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising." />
-              <PrivacySection title="Religious guidance" body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service." />
-              <PrivacySection title="Your choice" body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account." />
+              <PrivacySection
+                title="Stored on this device"
+                body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant."
+              />
+              <PrivacySection
+                title="Prayer assistant"
+                body="Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising."
+              />
+              <PrivacySection
+                title="Religious guidance"
+                body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service."
+              />
+              <PrivacySection
+                title="Your choice"
+                body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account."
+              />
             </ScrollView>
           )}
         </SafeAreaView>
@@ -271,124 +485,17 @@ export function ProfileScreen(): React.JSX.Element {
   );
 }
 
-function PrivacySection({ title, body }: { title: string; body: string }): React.JSX.Element {
-  return <View style={styles.privacySection}><SectionTitle>{title}</SectionTitle><Body>{body}</Body></View>;
+function PrivacySection({
+  title,
+  body,
+}: {
+  title: string;
+  body: string;
+}): React.JSX.Element {
+  return (
+    <View className="gap-2 pb-6 border-b border-b-hairline">
+      <Text variant="section">{title}</Text>
+      <Text variant="body">{body}</Text>
+    </View>
+  );
 }
-
-function switchColors(enabled: boolean) {
-  return {
-    trackColor: { false: colors.hairlineStrong, true: colors.blueSoft },
-    thumbColor: enabled ? colors.blue : colors.white
-  };
-}
-
-const styles = StyleSheet.create({
-  header: { gap: spacing.xs },
-  headerCopy: { maxWidth: 330 },
-  localPanel: {
-    minHeight: 94,
-    paddingVertical: spacing.lg,
-    paddingHorizontal: spacing.md,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderRadius: radii.md,
-    backgroundColor: colors.ink,
-    ...shadows.card
-  },
-  localIcon: {
-    width: 42,
-    height: 42,
-    borderRadius: radii.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(255,255,255,0.1)"
-  },
-  localTitle: { ...type.body, fontWeight: "600", color: colors.white },
-  localDetail: { ...type.caption, color: "rgba(255,255,255,0.64)", lineHeight: 18 },
-  settingsList: {
-    overflow: "hidden",
-    borderRadius: radii.lg,
-    backgroundColor: colors.vellum
-  },
-  settingRow: {
-    minHeight: 76,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline
-  },
-  lastRow: { borderBottomWidth: 0 },
-  settingIcon: {
-    width: 34,
-    height: 34,
-    borderRadius: radii.sm,
-    backgroundColor: colors.mineral,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  settingText: { flex: 1, gap: 2 },
-  settingTitle: { ...type.body, fontWeight: "600", color: colors.ink },
-  settingDetail: { ...type.caption, color: colors.inkMuted, lineHeight: 18 },
-  accountNote: { fontSize: 12, lineHeight: 18, paddingHorizontal: spacing.xs },
-  modalSafeArea: { flex: 1, backgroundColor: colors.parchment },
-  modalChrome: { position: "absolute", top: spacing.lg, right: grid.margin, zIndex: 10 },
-  closeButton: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.floating
-  },
-  modalContent: { paddingHorizontal: spacing.xl, paddingTop: spacing.xxxl + spacing.xl, paddingBottom: spacing.xxxl, gap: spacing.xl },
-  modalHeader: { gap: spacing.xs, paddingRight: spacing.xxxl },
-  modalTitle: { fontSize: 34, lineHeight: 39 },
-  languageList: { borderTopWidth: 1, borderTopColor: colors.hairlineStrong },
-  languageRow: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline, paddingHorizontal: spacing.xs, paddingVertical: spacing.md },
-  languageRowSelected: { backgroundColor: colors.blueSoft },
-  privacySection: { gap: spacing.sm, paddingBottom: spacing.xl, borderBottomWidth: 1, borderBottomColor: colors.hairline },
-  focusPanel: {
-    minHeight: 112,
-    padding: spacing.lg,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderRadius: radii.md,
-    backgroundColor: colors.ink,
-    ...shadows.card
-  },
-  focusPanelMark: {
-    width: 44,
-    height: 44,
-    borderRadius: radii.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blue
-  },
-  focusPanelCopy: { flex: 1, gap: spacing.xs },
-  focusPanelTitle: { color: colors.white },
-  focusPanelBody: { color: "rgba(255,255,255,0.68)", fontSize: 14, lineHeight: 20 },
-  focusSteps: { borderTopWidth: 1, borderTopColor: colors.hairlineStrong },
-  focusStep: { minHeight: 64, flexDirection: "row", alignItems: "center", gap: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.hairline },
-  focusStepNumber: { ...type.caption, width: 24, color: colors.blue, textAlign: "center" },
-  focusStepText: { flex: 1 },
-  focusSetupButton: {
-    minHeight: 50,
-    paddingHorizontal: spacing.lg,
-    borderRadius: radii.md,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
-    backgroundColor: colors.blue
-  },
-  focusSetupButtonText: { ...type.body, fontWeight: "600", color: colors.white },
-  focusSetupMessage: { textAlign: "center", fontSize: 13, lineHeight: 19 }
-});

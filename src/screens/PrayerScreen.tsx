@@ -1,26 +1,73 @@
-import { Bookmark, BookmarkCheck, BookmarkMinus, BookOpenCheck, ChevronRight, ExternalLink, MessageCircle, MoonStar, RefreshCw, Send, Search, ShieldCheck, X } from "lucide-react-native";
-import { useNavigation, useRoute, type NavigationProp, type RouteProp } from "@react-navigation/native";
+import { Input } from "@/components/ui/input";
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
+import {
+  useNavigation,
+  useRoute,
+  type NavigationProp,
+  type RouteProp,
+} from "@react-navigation/native";
+import {
+  Bookmark,
+  BookmarkCheck,
+  BookmarkMinus,
+  BookOpenCheck,
+  ChevronRight,
+  ExternalLink,
+  MoonStar,
+  RefreshCw,
+  Search,
+  Send,
+  ShieldCheck,
+  X,
+} from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Linking, Modal, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import {
+  ActivityIndicator,
+  Animated,
+  Easing,
+  Linking,
+  Modal,
+  ScrollView,
+  View,
+} from "react-native";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { AssistantResponseText } from "@/components/AssistantResponseText";
-import { Card } from "@/components/Card";
-import { GuidedPrayer, type GuidedPrayerToken } from "@/components/GuidedPrayer";
+import { AssistantMessageBubble } from "@/components/AssistantMessageBubble";
+import { BrandMark, BrandWordmark } from "@/components/BrandMark";
+import {
+  GuidedPrayer,
+  type GuidedPrayerToken,
+} from "@/components/GuidedPrayer";
 import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
-import { Body, Display, Label, SectionTitle } from "@/components/Text";
-import { colors, fonts, grid, radii, shadows, spacing, type } from "@/design/theme";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { colors, grid, spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
-import { createAssistantStream, type AssistantMessage } from "@/services/assistantService";
+import {
+  createAssistantStream,
+  type AssistantMessage,
+} from "@/services/assistantService";
 import { confirmHaptic } from "@/services/haptics";
-import { localizeHebrewTransliteration, translatePrayerText } from "@/services/localizationService";
-import { getPrayerFocusSetup, openPrayerFocusSetup } from "@/services/prayerFocus";
+import {
+  localizeHebrewTransliteration,
+  translatePrayerText,
+} from "@/services/localizationService";
+import {
+  getPrayerFocusSetup,
+  openPrayerFocusSetup,
+} from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
-import { CURRENT_ASSISTANT_CONSENT_VERSION, useSettingsStore } from "@/store/settingsStore";
+import {
+  CURRENT_ASSISTANT_CONSENT_VERSION,
+  useSettingsStore,
+} from "@/store/settingsStore";
 import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
 
 type LocalizedToken = PrayerToken & {
@@ -42,41 +89,82 @@ function hebrewContentLabel(kind: HebrewContentKind): string {
 }
 
 function hebrewReviewMessage(kind: HebrewContentKind): string {
-  if (kind === "complete") return "The full Hebrew is present and awaiting final rabbinic approval.";
-  if (kind === "excerpt") return "This is a clearly marked excerpt, not yet the complete prayer.";
-  if (kind === "collection") return "This entry represents a full service whose sections must be reviewed individually.";
-  if (kind === "missing") return "Kavanah will not invent or silently substitute sacred text while the canonical Hebrew is being prepared.";
+  if (kind === "complete")
+    return "The full Hebrew is present and awaiting final rabbinic approval.";
+  if (kind === "excerpt")
+    return "This is a clearly marked excerpt, not yet the complete prayer.";
+  if (kind === "collection")
+    return "This entry represents a full service whose sections must be reviewed individually.";
+  if (kind === "missing")
+    return "Kavanah will not invent or silently substitute sacred text while the canonical Hebrew is being prepared.";
   return "This text came from a live library search and is outside Kavanah's reviewed catalog.";
 }
 
 export function PrayerScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation<NavigationProp<RootTabParamList, "Prayer">>();
+  const navigation =
+    useNavigation<NavigationProp<RootTabParamList, "Prayer">>();
   const route = useRoute<RouteProp<RootTabParamList, "Prayer">>();
-  const { prayers, results, selectedPrayerId, query, isSyncing, isSearchingRemote, loadingPrayerId, prayerLoadError, bookmarkedPrayerIds, setQuery, searchRemote, selectPrayer, toggleBookmark, sync } = usePrayerStore();
-  const primaryLanguageCode = useSettingsStore((state) => state.primaryLanguageCode);
-  const assistantConsentVersion = useSettingsStore((state) => state.assistantConsentVersion);
-  const setAssistantConsent = useSettingsStore((state) => state.setAssistantConsent);
-  const prayerFocusEnabled = useSettingsStore((state) => state.prayerFocusEnabled);
+  const {
+    prayers,
+    results,
+    selectedPrayerId,
+    query,
+    isSyncing,
+    isSearchingRemote,
+    loadingPrayerId,
+    prayerLoadError,
+    bookmarkedPrayerIds,
+    setQuery,
+    searchRemote,
+    selectPrayer,
+    toggleBookmark,
+    sync,
+  } = usePrayerStore();
+  const primaryLanguageCode = useSettingsStore(
+    (state) => state.primaryLanguageCode,
+  );
+  const assistantConsentVersion = useSettingsStore(
+    (state) => state.assistantConsentVersion,
+  );
+  const setAssistantConsent = useSettingsStore(
+    (state) => state.setAssistantConsent,
+  );
+  const prayerFocusEnabled = useSettingsStore(
+    (state) => state.prayerFocusEnabled,
+  );
   const [readerOpen, setReaderOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
   const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
-  const [assistantMessages, setAssistantMessages] = useState<AssistantMessage[]>([]);
+  const [assistantMessages, setAssistantMessages] = useState<
+    AssistantMessage[]
+  >([]);
   const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
   const [consentModalOpen, setConsentModalOpen] = useState(false);
-  const [localizedPrayer, setLocalizedPrayer] = useState<LocalizedPrayer | null>(null);
+  const [localizedPrayer, setLocalizedPrayer] =
+    useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
-  const selected = prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
-  const bookmarkedPrayers = bookmarkedPrayerIds.map((id) => prayers.find((prayer) => prayer.id === id)).filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
-  const selectedBookmarked = selected ? bookmarkedPrayerIds.includes(selected.id) : false;
+  const selected =
+    prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
+  const bookmarkedPrayers = bookmarkedPrayerIds
+    .map((id) => prayers.find((prayer) => prayer.id === id))
+    .filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
+  const selectedBookmarked = selected
+    ? bookmarkedPrayerIds.includes(selected.id)
+    : false;
   const selectedLoading = selected ? loadingPrayerId === selected.id : false;
-  const localizedTokens = localizedPrayer && localizedPrayer.prayerId === selected?.id ? localizedPrayer.tokens : [];
+  const localizedTokens =
+    localizedPrayer && localizedPrayer.prayerId === selected?.id
+      ? localizedPrayer.tokens
+      : [];
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results.slice(0, 18) : [];
-  const bookmarkReveal = useRef(new Animated.Value(showResults ? 0 : 1)).current;
+  const bookmarkReveal = useRef(
+    new Animated.Value(showResults ? 0 : 1),
+  ).current;
   const focusSetup = getPrayerFocusSetup();
 
   useEffect(() => {
@@ -93,7 +181,13 @@ export function PrayerScreen(): React.JSX.Element {
       setFocusPromptMessage("");
       setFocusPromptOpen(prayerFocusEnabled);
     }
-  }, [prayerFocusEnabled, route.params?.prayerId, route.params?.query, selectPrayer, setQuery]);
+  }, [
+    prayerFocusEnabled,
+    route.params?.prayerId,
+    route.params?.query,
+    selectPrayer,
+    setQuery,
+  ]);
 
   useEffect(() => {
     if (focusPromptOpen) void confirmHaptic();
@@ -110,8 +204,10 @@ export function PrayerScreen(): React.JSX.Element {
     Animated.timing(bookmarkReveal, {
       toValue: showResults ? 0 : 1,
       duration: reduceMotion ? 0 : showResults ? 220 : 280,
-      easing: showResults ? Easing.out(Easing.cubic) : Easing.bezier(0.2, 0.9, 0.25, 1),
-      useNativeDriver: false
+      easing: showResults
+        ? Easing.out(Easing.cubic)
+        : Easing.bezier(0.2, 0.9, 0.25, 1),
+      useNativeDriver: false,
     }).start();
   }, [bookmarkReveal, reduceMotion, showResults]);
 
@@ -126,15 +222,28 @@ export function PrayerScreen(): React.JSX.Element {
 
       setLocalizedPrayer({
         prayerId: selected.id,
-        tokens: selected.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration }))
+        tokens: selected.tokens.map((token) => ({
+          ...token,
+          localizedTranslation: token.translation,
+          localizedTransliteration: token.transliteration,
+        })),
       });
 
       const tokens = await Promise.all(
         selected.tokens.map(async (token) => ({
           ...token,
-          localizedTransliteration: localizeHebrewTransliteration(token.transliteration, primaryLanguageCode),
-          localizedTranslation: primaryLanguageCode === "he" && token.hebrew ? token.hebrew : await translatePrayerText(token.translation, primaryLanguageCode)
-        }))
+          localizedTransliteration: localizeHebrewTransliteration(
+            token.transliteration,
+            primaryLanguageCode,
+          ),
+          localizedTranslation:
+            primaryLanguageCode === "he" && token.hebrew
+              ? token.hebrew
+              : await translatePrayerText(
+                  token.translation,
+                  primaryLanguageCode,
+                ),
+        })),
       );
 
       if (!cancelled) {
@@ -175,17 +284,24 @@ export function PrayerScreen(): React.JSX.Element {
       setFocusPromptOpen(false);
       return;
     }
-    setFocusPromptMessage("Open your device settings and choose Focus or Do Not Disturb.");
+    setFocusPromptMessage(
+      "Open your device settings and choose Focus or Do Not Disturb.",
+    );
   };
 
-  const readerTokens = (localizedTokens.length > 0
-    ? localizedTokens
-    : selected?.tokens.map((token) => ({ ...token, localizedTranslation: token.translation, localizedTransliteration: token.transliteration })) ?? []);
+  const readerTokens =
+    localizedTokens.length > 0
+      ? localizedTokens
+      : (selected?.tokens.map((token) => ({
+          ...token,
+          localizedTranslation: token.translation,
+          localizedTransliteration: token.transliteration,
+        })) ?? []);
   const guidedTokens: GuidedPrayerToken[] = readerTokens.map((token) => ({
     id: token.id,
     hebrew: token.hebrew,
     transliteration: token.localizedTransliteration,
-    translation: token.localizedTranslation
+    translation: token.localizedTranslation,
   }));
 
   const askAboutSelectedPrayer = async () => {
@@ -210,19 +326,50 @@ export function PrayerScreen(): React.JSX.Element {
     setAssistantOpen(true);
     setIsAssistantStreaming(true);
 
-    const userMessage: AssistantMessage = { id: `${Date.now()}-user`, role: "user", content: clean, createdAt: new Date().toISOString() };
+    const userMessage: AssistantMessage = {
+      id: `${Date.now()}-user`,
+      role: "user",
+      content: clean,
+      createdAt: new Date().toISOString(),
+    };
     const assistantId = `${Date.now()}-assistant`;
-    setAssistantMessages((current) => [...current, userMessage, { id: assistantId, role: "assistant", content: "", createdAt: new Date().toISOString() }]);
+    setAssistantMessages((current) => [
+      ...current,
+      userMessage,
+      {
+        id: assistantId,
+        role: "assistant",
+        content: "",
+        createdAt: new Date().toISOString(),
+      },
+    ]);
 
-    const context = buildPrayerAssistantContext(selected, primaryLanguageCode, localizedTokens);
+    const context = buildPrayerAssistantContext(
+      selected,
+      primaryLanguageCode,
+      localizedTokens,
+    );
 
     try {
       for await (const chunk of createAssistantStream(clean, context)) {
-        setAssistantMessages((current) => current.map((message) => (message.id === assistantId ? { ...message, content: `${message.content}${chunk}` } : message)));
+        setAssistantMessages((current) =>
+          current.map((message) =>
+            message.id === assistantId
+              ? { ...message, content: `${message.content}${chunk}` }
+              : message,
+          ),
+        );
       }
     } catch (error) {
-      const message = error instanceof Error ? error.message : "The assistant could not answer right now.";
-      setAssistantMessages((current) => current.map((item) => (item.id === assistantId ? { ...item, content: message } : item)));
+      const message =
+        error instanceof Error
+          ? error.message
+          : "The assistant could not answer right now.";
+      setAssistantMessages((current) =>
+        current.map((item) =>
+          item.id === assistantId ? { ...item, content: message } : item,
+        ),
+      );
     } finally {
       setIsAssistantStreaming(false);
     }
@@ -230,283 +377,548 @@ export function PrayerScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View style={styles.prayerDiscovery}>
-        <View style={styles.searchBox}>
-        <Search size={18} color={colors.inkMuted} />
-        <TextInput
-          accessibilityLabel="Search prayers"
-          value={query}
-          onChangeText={setQuery}
-          placeholder="travel, shema, protection..."
-          style={styles.searchInput}
-          placeholderTextColor={colors.inkMuted}
-        />
-        <AnimatedPressable accessibilityLabel="Refresh prayer library" accessibilityRole="button" onPress={() => void sync()} disabled={isSyncing} style={styles.refreshButton}>
-          <RefreshCw size={18} color={isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink} />
-        </AnimatedPressable>
+      <BrandWordmark width={128} />
+      <View className="flex-row items-center gap-3">
+        <View className="gap-0">
+          <Text variant="display" className="text-[28px] leading-[34px]">Prayers</Text>
+          <Text variant="body">Find a prayer for this moment.</Text>
+        </View>
+      </View>
+      <View className="gap-6">
+        <View className="min-h-[62px] flex-row items-center gap-3 rounded-lg border border-hairlineStrong bg-card pl-4 pr-2 shadow-floating">
+          <Search size={18} color={colors.inkMuted} />
+          <Input
+            accessibilityLabel="Search prayers"
+            value={query}
+            onChangeText={setQuery}
+            placeholder="travel, shema, protection..."
+            className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent px-0 shadow-none"
+            placeholderTextColor={colors.inkMuted}
+          />
+          <Button
+            variant="secondary"
+            size="content"
+            accessibilityLabel="Refresh prayer library"
+            accessibilityRole="button"
+            onPress={() => void sync()}
+            disabled={isSyncing}
+            className="w-[42px] h-[42px] rounded-md items-center justify-center bg-muted"
+          >
+            <RefreshCw
+              size={18}
+              color={
+                isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink
+              }
+            />
+          </Button>
         </View>
 
-      <Animated.View
-        pointerEvents={showResults ? "none" : "auto"}
-        style={[
-          styles.bookmarkMotion,
-          {
-            opacity: bookmarkReveal,
-            maxHeight: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [0, 320] }),
-            marginBottom: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [0, spacing.md] }),
-            transform: [{ translateY: bookmarkReveal.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }]
-          }
-        ]}
-      >
-        <Card accent="gold" style={styles.bookmarkShelf}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Label>Bookmarked</Label>
-              <SectionTitle>Saved prayers</SectionTitle>
+        <Animated.View
+          pointerEvents={showResults ? "none" : "auto"}
+          className="overflow-hidden"
+          style={[
+            {
+              opacity: bookmarkReveal,
+              maxHeight: bookmarkReveal.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, 320],
+              }),
+              marginBottom: bookmarkReveal.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, spacing.md],
+              }),
+              transform: [
+                {
+                  translateY: bookmarkReveal.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [-12, 0],
+                  }),
+                },
+              ],
+            },
+          ]}
+        >
+          <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
+            <View className="flex-row items-center justify-between gap-3">
+              <View>
+                <Text variant="caption">Bookmarked</Text>
+                <Text variant="section">Saved prayers</Text>
+              </View>
+              <BookmarkCheck size={20} color={colors.gold} />
             </View>
-            <BookmarkCheck size={20} color={colors.gold} />
-          </View>
-          <View style={styles.bookmarkList}>
-            {bookmarkedPrayers.length > 0 ? (
-              bookmarkedPrayers.map((prayer) => (
-                <View key={prayer.id} style={styles.bookmarkChip}>
-                  <View style={styles.bookmarkChipMainSlot}>
-                    <AnimatedPressable accessibilityLabel={`Open ${prayer.title}`} accessibilityRole="button" onPress={() => void openPrayer(prayer.id)} style={styles.bookmarkChipMain}>
-                      <SectionTitle style={styles.bookmarkChipText}>{prayer.title}</SectionTitle>
-                      <Body numberOfLines={2} style={styles.bookmarkChipMeta}>
-                        {prayer.useCase || prayer.category}
-                      </Body>
-                    </AnimatedPressable>
+            <View className="border-t border-t-hairlineStrong">
+              {bookmarkedPrayers.length > 0 ? (
+                bookmarkedPrayers.map((prayer) => (
+                  <View
+                    key={prayer.id}
+                    className="border-b border-b-hairline flex-row items-center overflow-hidden"
+                  >
+                    <View className="flex-1">
+                      <Button
+                        variant="ghost"
+                        size="content"
+                        accessibilityLabel={`Open ${prayer.title}`}
+                        accessibilityRole="button"
+                        onPress={() => void openPrayer(prayer.id)}
+                        className="px-1 py-4"
+                      >
+                        <Text
+                          variant="section"
+                          className="text-[16px] leading-[21px]"
+                        >
+                          {prayer.title}
+                        </Text>
+                        <Text
+                          variant="body"
+                          numberOfLines={2}
+                          className="text-[12px] leading-[17px]"
+                        >
+                          {prayer.useCase || prayer.category}
+                        </Text>
+                      </Button>
+                    </View>
+                    <View className="w-[52px] items-start">
+                      <Button
+                        variant="secondary"
+                        size="content"
+                        accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
+                        accessibilityRole="button"
+                        haptic="confirm"
+                        onPress={() => toggleBookmark(prayer.id)}
+                        pressedScale={0.96}
+                        className="w-11 h-11 rounded-full items-center justify-center bg-muted"
+                      >
+                        <BookmarkMinus size={18} color={colors.blue} />
+                      </Button>
+                    </View>
                   </View>
-                  <View style={styles.removeBookmarkSlot}>
-                    <AnimatedPressable accessibilityLabel={`Remove ${prayer.title} from bookmarks`} accessibilityRole="button" haptic="confirm" onPress={() => toggleBookmark(prayer.id)} pressedScale={0.96} style={styles.removeBookmarkButton}>
-                      <BookmarkMinus size={18} color={colors.blue} />
-                    </AnimatedPressable>
-                  </View>
-                </View>
-              ))
-            ) : (
-              <Body>Tap the bookmark on any prayer to keep it here.</Body>
-            )}
-          </View>
-        </Card>
-      </Animated.View>
+                ))
+              ) : (
+                <Text variant="body">
+                  Tap the bookmark on any prayer to keep it here.
+                </Text>
+              )}
+            </View>
+          </Card>
+        </Animated.View>
 
         {showResults ? (
-          <View style={styles.resultStack}>
-          <View style={styles.resultHeader}>
-            <Label>{isSearchingRemote ? "Searching Sefaria" : "Results"}</Label>
-            <Body style={styles.resultCount}>{visibleResults.length} found</Body>
-          </View>
-          {visibleResults.length > 0 ? (
-            visibleResults.map((result) => <PrayerCard key={result.prayer.id} prayer={result.prayer} selected={false} onPress={() => void openPrayer(result.prayer.id)} />)
-          ) : (
-            <Card accent="none">
-              <Body>Keep typing. Matches appear here as the search gets clearer.</Body>
-            </Card>
-          )}
+          <View className="gap-3">
+            <View className="flex-row items-center justify-between">
+              <Text variant="caption">
+                {isSearchingRemote ? "Searching Sefaria" : "Results"}
+              </Text>
+              <Text variant="body" className="text-[13px] leading-[18px]">
+                {visibleResults.length} found
+              </Text>
+            </View>
+            {visibleResults.length > 0 ? (
+              visibleResults.map((result) => (
+                <PrayerCard
+                  key={result.prayer.id}
+                  prayer={result.prayer}
+                  selected={false}
+                  onPress={() => void openPrayer(result.prayer.id)}
+                />
+              ))
+            ) : (
+              <Card>
+                <Text variant="body">
+                  Keep typing. Matches appear here as the search gets clearer.
+                </Text>
+              </Card>
+            )}
           </View>
         ) : null}
       </View>
 
-      <Modal visible={readerOpen && Boolean(selected)} animationType={reduceMotion ? "none" : "slide"} presentationStyle="fullScreen" onRequestClose={closeReader}>
-        <SafeAreaView style={styles.readerSafeArea}>
+      <Modal
+        visible={readerOpen && Boolean(selected)}
+        animationType={reduceMotion ? "none" : "slide"}
+        presentationStyle="fullScreen"
+        onRequestClose={closeReader}
+      >
+        <SafeAreaView className="flex-1 bg-background">
           {selected ? (
-            <View style={[styles.readerChrome, { top: insets.top + spacing.lg }]} pointerEvents="box-none">
-              <AnimatedPressable accessibilityLabel="Close prayer" accessibilityRole="button" onPress={closeReader} pressedScale={0.94} style={styles.floatingClose}>
+            <View
+              className="absolute left-6 right-6 z-[10] flex-row justify-between"
+              style={{ top: insets.top + spacing.lg }}
+              pointerEvents="box-none"
+            >
+              <Button
+                variant="ghost"
+                size="content"
+                accessibilityLabel="Close prayer"
+                accessibilityRole="button"
+                onPress={closeReader}
+                pressedScale={0.94}
+                className="w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card"
+              >
                 <X size={17} color={colors.ink} />
-              </AnimatedPressable>
-              <AnimatedPressable
-                accessibilityLabel={selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"}
+              </Button>
+              <Button
+                variant="default"
+                size="content"
+                accessibilityLabel={
+                  selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"
+                }
                 accessibilityRole="button"
                 haptic="confirm"
                 onPress={() => toggleBookmark(selected.id)}
                 pressedScale={0.94}
-                style={[styles.floatingBookmark, selectedBookmarked && styles.floatingBookmarkActive]}
+                className={cn(
+                  "w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card",
+                  selectedBookmarked && "bg-primary border-primary",
+                )}
               >
-                {selectedBookmarked ? <BookmarkCheck size={17} color={colors.white} /> : <Bookmark size={17} color={colors.gold} />}
-              </AnimatedPressable>
+                {selectedBookmarked ? (
+                  <BookmarkCheck size={17} color={colors.white} />
+                ) : (
+                  <Bookmark size={17} color={colors.gold} />
+                )}
+              </Button>
             </View>
           ) : null}
           <ScrollView
-            contentContainerStyle={[styles.readerContent, { paddingTop: insets.top + grid.touch + spacing.xxl }]}
+            contentContainerClassName={cn("px-[22px] pb-[72px]")}
+            contentContainerStyle={[
+              { paddingTop: insets.top + grid.touch + spacing.xxl },
+            ]}
             showsVerticalScrollIndicator={false}
           >
             {selected ? (
-              <View style={styles.reader}>
-                <View style={styles.readerHeader}>
-                  <Display style={styles.readerDisplay}>{selected.title}</Display>
-                  <Body style={styles.readerSummary}>{selected.summary}</Body>
+              <View className="gap-8">
+                <View className="gap-3 pb-4 border-b border-b-hairline">
+                  <Text
+                    variant="display"
+                    className="text-[38px] leading-[42px]"
+                  >
+                    {selected.title}
+                  </Text>
+                  <Text variant="body" className="text-inkFaint max-w-80">
+                    {selected.summary}
+                  </Text>
                 </View>
                 {selected.hebrewReview.status !== "approved" ? (
-                  <View style={styles.hebrewReviewNotice}>
-                    <View style={styles.hebrewReviewRule} />
-                    <View style={styles.hebrewReviewCopy}>
-                      <Label>{hebrewContentLabel(selected.hebrewReview.contentKind)}</Label>
-                      <Body style={styles.hebrewReviewText}>{hebrewReviewMessage(selected.hebrewReview.contentKind)}</Body>
-                      <Text style={styles.hebrewReviewSource}>{selected.hebrewReview.sourceTitle} · {selected.hebrewReview.sourceRef}</Text>
+                  <View className="flex-row gap-3 py-2">
+                    <View className="w-[2px] bg-gold" />
+                    <View className="flex-1 gap-1">
+                      <Text variant="caption">
+                        {hebrewContentLabel(selected.hebrewReview.contentKind)}
+                      </Text>
+                      <Text
+                        variant="body"
+                        className="text-muted-foreground text-[14px] leading-[20px]"
+                      >
+                        {hebrewReviewMessage(selected.hebrewReview.contentKind)}
+                      </Text>
+                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                        {selected.hebrewReview.sourceTitle} ·{" "}
+                        {selected.hebrewReview.sourceRef}
+                      </Text>
                     </View>
                   </View>
                 ) : null}
-                <View style={styles.intentionCue}>
-                  <Label>Kavanah</Label>
-                  <Body style={styles.intentionText}>Pause for one breath. Bring to mind why you opened this prayer.</Body>
+                <View className="gap-1 border-l-[2px] border-l-gold pl-3 py-1">
+                  <Text variant="caption">Kavanah</Text>
+                  <Text
+                    variant="body"
+                    className="text-foreground max-w-[330px]"
+                  >
+                    Pause for one breath. Bring to mind why you opened this
+                    prayer.
+                  </Text>
                 </View>
                 {!selectedLoading && guidedTokens.length > 0 ? (
-                  <AnimatedPressable
+                  <Button
+                    variant="ghost"
+                    size="content"
                     accessibilityHint="Shows one prayer line at a time"
                     accessibilityLabel="Start guided reading"
                     accessibilityRole="button"
                     haptic="confirm"
                     onPress={() => setGuidedPrayerOpen(true)}
-                    style={styles.guidedEntry}
+                    className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
                   >
-                    <View style={styles.guidedEntryIcon}><BookOpenCheck size={19} color={colors.blue} /></View>
-                    <View style={styles.guidedEntryCopy}>
-                      <SectionTitle style={styles.guidedEntryTitle}>Read line by line</SectionTitle>
-                      <Body style={styles.guidedEntryBody}>Hebrew, pronunciation, and meaning at your pace.</Body>
+                    <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
+                      <BookOpenCheck size={19} color={colors.blue} />
+                    </View>
+                    <View className="flex-1 gap-[2px]">
+                      <Text
+                        variant="section"
+                        className="text-[17px] leading-[22px]"
+                      >
+                        Read line by line
+                      </Text>
+                      <Text
+                        variant="body"
+                        className="text-[13px] leading-[18px] text-muted-foreground"
+                      >
+                        Hebrew, pronunciation, and meaning at your pace.
+                      </Text>
                     </View>
                     <ChevronRight size={18} color={colors.inkMuted} />
-                  </AnimatedPressable>
+                  </Button>
                 ) : null}
                 {selectedLoading ? (
-                  <View style={styles.sourceLoading}>
+                  <View className="min-h-24 flex-row items-center gap-3 border-t border-t-hairline border-b border-b-hairline py-4">
                     <ActivityIndicator size="small" color={colors.blue} />
-                    <View style={styles.sourceLoadingCopy}>
-                      <SectionTitle style={styles.sourceLoadingTitle}>Preparing the text</SectionTitle>
-                      <Body style={styles.sourceLoadingText}>Loading a reusable Hebrew edition and translation from Sefaria.</Body>
+                    <View className="flex-1 gap-1">
+                      <Text
+                        variant="section"
+                        className="text-[17px] leading-[22px]"
+                      >
+                        Preparing the text
+                      </Text>
+                      <Text
+                        variant="body"
+                        className="text-[14px] leading-[20px] text-muted-foreground"
+                      >
+                        Loading a reusable Hebrew edition and translation from
+                        Sefaria.
+                      </Text>
                     </View>
                   </View>
                 ) : null}
                 {!selectedLoading && prayerLoadError ? (
-                  <View style={styles.sourceUnavailable}>
-                    <Label>Source access</Label>
-                    <SectionTitle>This text stays with its publisher</SectionTitle>
-                    <Body style={styles.sourceUnavailableText}>{prayerLoadError}</Body>
-                    <AnimatedPressable
+                  <View className="gap-2 border-l-[2px] border-l-gold pl-4 py-2">
+                    <Text variant="caption">Source access</Text>
+                    <Text variant="section">
+                      This text stays with its publisher
+                    </Text>
+                    <Text variant="body" className="text-muted-foreground">
+                      {prayerLoadError}
+                    </Text>
+                    <Button
+                      variant="default"
+                      size="content"
                       accessibilityLabel={`Open ${selected.title} on Sefaria`}
                       accessibilityRole="link"
-                      onPress={() => void Linking.openURL(selected.hebrewReview.sourceUrl)}
-                      style={styles.sourceButton}
+                      onPress={() =>
+                        void Linking.openURL(selected.hebrewReview.sourceUrl)
+                      }
+                      className="min-h-11 self-start flex-row items-center gap-2 rounded-md bg-primary px-4 py-2"
                     >
-                      <Text style={styles.sourceButtonText}>Open on Sefaria</Text>
+                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                        Open on Sefaria
+                      </Text>
                       <ExternalLink size={16} color={colors.white} />
-                    </AnimatedPressable>
+                    </Button>
                   </View>
                 ) : null}
                 {readerTokens.map((token) => (
-                  <View key={token.id} style={styles.token}>
-                    {token.hebrew ? <SectionTitle style={styles.hebrew}>{token.hebrew}</SectionTitle> : null}
+                  <View
+                    key={token.id}
+                    className="gap-6 border-t border-t-hairline pt-6"
+                  >
+                    {token.hebrew ? (
+                      <Text
+                        variant="section"
+                        className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
+                      >
+                        {token.hebrew}
+                      </Text>
+                    ) : null}
                     {token.localizedTransliteration ? (
-                      <View style={styles.transliterationBlock}>
-                        <Text style={styles.readerMeta}>Transliteration</Text>
-                        <SectionTitle style={styles.transliteration}>{token.localizedTransliteration}</SectionTitle>
+                      <View className="gap-1 border-l-[2px] border-l-gold pl-3">
+                        <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                          Transliteration
+                        </Text>
+                        <Text
+                          variant="section"
+                          className="text-[17px] leading-[24px] text-foreground"
+                        >
+                          {token.localizedTransliteration}
+                        </Text>
                       </View>
                     ) : null}
-                    <View style={styles.translationBlock}>
-                      <Text style={styles.readerMeta}>Translation</Text>
-                      <Body>{token.localizedTranslation}</Body>
+                    <View className="gap-1">
+                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                        Translation
+                      </Text>
+                      <Text variant="body">{token.localizedTranslation}</Text>
                     </View>
                   </View>
                 ))}
                 {selected.sourceMetadata?.sourceVersion ? (
-                  <View style={styles.sourceAttribution}>
-                    <Label>Text source</Label>
-                    <Body style={styles.sourceAttributionText}>{selected.sourceMetadata.work}</Body>
-                    <Text style={styles.sourceAttributionMeta}>{selected.sourceMetadata.sourceVersion.versionTitle} · {selected.sourceMetadata.sourceVersion.license}</Text>
+                  <View className="gap-1 border-t border-t-hairline pt-4">
+                    <Text variant="caption">Text source</Text>
+                    <Text variant="body" className="text-foreground">
+                      {selected.sourceMetadata.work}
+                    </Text>
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+                      {selected.sourceMetadata.sourceVersion.versionTitle} ·{" "}
+                      {selected.sourceMetadata.sourceVersion.license}
+                    </Text>
                   </View>
                 ) : null}
-                <View style={styles.askCard}>
-                  <View style={styles.askHeader}>
-                    <View style={styles.askIcon}>
-                      <MessageCircle size={18} color={colors.blue} />
+                <View className="gap-4 p-5 rounded-xl bg-card border border-hairlineStrong shadow-floating overflow-hidden">
+                  <View className="absolute -right-12 -top-12 h-32 w-32 rounded-full border border-hairline" />
+                  <View className="flex-row items-center gap-3">
+                    <View className="w-[42px] h-[42px] rounded-md items-center justify-center bg-foreground overflow-hidden">
+                      <BrandMark size={32} inverted />
                     </View>
-                    <View style={styles.askTitle}>
-                      <SectionTitle style={styles.askTitleText}>Questions about this prayer</SectionTitle>
-                      <Body style={styles.askSubtitle}>Educational guidance using this text as context.</Body>
+                    <View className="flex-1 gap-[2px]">
+                      <Text
+                        variant="section"
+                        className="text-[17px] leading-[22px]"
+                      >
+                        Questions about this prayer
+                      </Text>
+                      <Text
+                        variant="body"
+                        className="text-[13px] leading-[18px]"
+                      >
+                        Educational guidance using this text as context.
+                      </Text>
                     </View>
                   </View>
                   {assistantOpen ? (
-                    <View style={styles.assistantThread}>
+                    <View className="gap-2">
                       {assistantMessages.length > 0 ? (
                         assistantMessages.map((message) => (
-                          <View key={message.id} style={[styles.assistantBubble, message.role === "user" ? styles.assistantUserBubble : styles.assistantAnswerBubble]}>
-                            {message.role === "user" ? (
-                              <Body style={styles.assistantUserText}>{message.content}</Body>
-                            ) : (
-                              <AssistantResponseText content={message.content} style={styles.assistantAnswerText} />
-                            )}
-                          </View>
+                          <AssistantMessageBubble key={message.id} message={message} />
                         ))
                       ) : (
-                        <Body>Ask for meaning, context, how it is used, or a simple two-sentence takeaway.</Body>
+                        <Text variant="body">
+                          Ask for meaning, context, how it is used, or a simple
+                          two-sentence takeaway.
+                        </Text>
                       )}
                     </View>
                   ) : null}
-                  <View style={styles.askComposer}>
-                    <TextInput
+                  <View className="flex-row items-end gap-2 rounded-lg border border-hairlineStrong bg-background p-2 shadow-card">
+                    <Input
                       accessibilityLabel="Question about this prayer"
                       value={assistantInput}
                       onChangeText={setAssistantInput}
                       placeholder="What does this mean?"
                       placeholderTextColor={colors.inkMuted}
-                      style={styles.askInput}
+                      className="h-auto min-h-11 max-h-[116px] w-auto flex-1 border-0 bg-transparent px-2 py-1 shadow-none"
                       multiline
                     />
-                    <AnimatedPressable
+                    <Button
+                      variant="default"
+                      size="content"
                       accessibilityLabel="Ask question"
                       accessibilityRole="button"
                       onPress={() => void askAboutSelectedPrayer()}
                       disabled={!assistantInput.trim() || isAssistantStreaming}
-                      style={[styles.askSend, (!assistantInput.trim() || isAssistantStreaming) && styles.askSendDisabled]}
+                      className={cn(
+                        "w-11 h-11 rounded-md items-center justify-center bg-primary",
+                        (!assistantInput.trim() || isAssistantStreaming) &&
+                          "opacity-[0.42]",
+                      )}
                     >
                       <Send size={17} color={colors.white} />
-                    </AnimatedPressable>
+                    </Button>
                   </View>
                 </View>
               </View>
             ) : null}
           </ScrollView>
           {focusPromptOpen ? (
-            <View accessibilityViewIsModal style={styles.focusBackdrop}>
-              <View style={styles.focusSheet}>
-                <View style={styles.focusMark}><MoonStar size={22} color={colors.white} /></View>
-                <View style={styles.focusCopy}>
-                  <Label>Prayer Focus</Label>
-                  <SectionTitle style={styles.focusTitle}>Begin without interruption</SectionTitle>
-                  <Body style={styles.focusBody}>Quiet the phone before the first word. Kavanah cannot change system Focus without your approval.</Body>
+            <View
+              accessibilityViewIsModal
+              className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 bg-[rgba(17,20,18,0.32)]"
+            >
+              <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
+                <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
+                  <MoonStar size={22} color={colors.white} />
                 </View>
-                <View style={styles.focusActions}>
-                  <View style={styles.focusActionSlot}>
-                    <AnimatedPressable accessibilityRole="button" onPress={() => setFocusPromptOpen(false)} style={styles.focusSecondaryButton}>
-                      <Text style={styles.focusSecondaryText}>Continue</Text>
-                    </AnimatedPressable>
+                <View className="gap-1">
+                  <Text variant="caption">Prayer Focus</Text>
+                  <Text
+                    variant="section"
+                    className="text-[21px] leading-[27px]"
+                  >
+                    Begin without interruption
+                  </Text>
+                  <Text variant="body" className="text-muted-foreground">
+                    Quiet the phone before the first word. Kavanah cannot change
+                    system Focus without your approval.
+                  </Text>
+                </View>
+                <View className="flex-row gap-3">
+                  <View className="flex-1">
+                    <Button
+                      variant="outline"
+                      size="content"
+                      accessibilityRole="button"
+                      onPress={() => setFocusPromptOpen(false)}
+                      className="min-h-[50px] items-center justify-center rounded-md border border-hairlineStrong bg-card"
+                    >
+                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                        Continue
+                      </Text>
+                    </Button>
                   </View>
-                  <View style={styles.focusActionSlot}>
-                    <AnimatedPressable accessibilityRole="button" haptic="confirm" onPress={() => void openFocusSettings()} style={styles.focusPrimaryButton}>
-                      <Text numberOfLines={2} style={styles.focusPrimaryText}>{focusSetup.actionLabel}</Text>
-                    </AnimatedPressable>
+                  <View className="flex-1">
+                    <Button
+                      variant="default"
+                      size="content"
+                      accessibilityRole="button"
+                      haptic="confirm"
+                      onPress={() => void openFocusSettings()}
+                      className="min-h-[50px] px-2 items-center justify-center rounded-md bg-primary"
+                    >
+                      <Text
+                        numberOfLines={2}
+                        className="text-[12px] leading-[16px] font-medium tracking-normal text-white text-center font-label"
+                      >
+                        {focusSetup.actionLabel}
+                      </Text>
+                    </Button>
                   </View>
                 </View>
-                {focusPromptMessage ? <Body style={styles.focusPromptMessage}>{focusPromptMessage}</Body> : null}
-              </View>
+                {focusPromptMessage ? (
+                  <Text
+                    variant="body"
+                    className="text-danger text-[13px] leading-[18px]"
+                  >
+                    {focusPromptMessage}
+                  </Text>
+                ) : null}
+              </Card>
             </View>
           ) : null}
           {consentModalOpen ? (
-            <View style={styles.consentBackdrop}>
-              <View style={styles.consentSheet}>
-                <View style={styles.consentMark}><ShieldCheck size={21} color={colors.blue} /></View>
-                <SectionTitle>Before your first question</SectionTitle>
-                <Body>Your question, this prayer text, language, source reference, and review status are sent to OpenAI through Kavanah. Display translations are identified as unreviewed. Contact details are removed first. Do not include anything private.</Body>
-                <Body style={styles.consentNote}>Answers are educational and are not binding halachic rulings.</Body>
-                <View style={styles.consentActions}>
-                  <View style={styles.consentSecondarySlot}>
-                    <AnimatedPressable accessibilityRole="button" onPress={() => setConsentModalOpen(false)} style={styles.consentSecondary}>
-                      <Text style={styles.consentSecondaryText}>Not now</Text>
-                    </AnimatedPressable>
+            <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
+              <View className="p-4 pb-6 gap-2 rounded-lg bg-white shadow-card">
+                <View className="w-[42px] h-[42px] rounded-md items-center justify-center bg-accent">
+                  <ShieldCheck size={21} color={colors.blue} />
+                </View>
+                <Text variant="section">Before your first question</Text>
+                <Text variant="body">
+                  Your question, this prayer text, language, source reference,
+                  and review status are sent to OpenAI through Kavanah. Display
+                  translations are identified as unreviewed. Contact details are
+                  removed first. Do not include anything private.
+                </Text>
+                <Text
+                  variant="body"
+                  className="text-[13px] leading-[19px] text-muted-foreground"
+                >
+                  Answers are educational and are not binding halachic rulings.
+                </Text>
+                <View className="flex-row items-stretch gap-2 mt-2">
+                  <View className="flex-1">
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      accessibilityRole="button"
+                      onPress={() => setConsentModalOpen(false)}
+                      className="min-h-12 items-center justify-center rounded-md border border-hairlineStrong"
+                    >
+                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                        Not now
+                      </Text>
+                    </Button>
                   </View>
-                  <View style={styles.consentPrimarySlot}>
-                    <AnimatedPressable
+                  <View className="flex-[1.4]">
+                    <Button
+                      variant="default"
+                      size="content"
                       accessibilityRole="button"
                       onPress={() => {
                         const question = assistantInput.trim();
@@ -514,10 +926,12 @@ export function PrayerScreen(): React.JSX.Element {
                         setConsentModalOpen(false);
                         void submitAssistantQuestion(question);
                       }}
-                      style={styles.consentPrimary}
+                      className="min-h-12 items-center justify-center rounded-full bg-primary"
                     >
-                      <Text style={styles.consentPrimaryText}>Allow and ask</Text>
-                    </AnimatedPressable>
+                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                        Allow and ask
+                      </Text>
+                    </Button>
                   </View>
                 </View>
               </View>
@@ -534,524 +948,3 @@ export function PrayerScreen(): React.JSX.Element {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  prayerDiscovery: {
-    gap: spacing.xl
-  },
-  searchBox: {
-    minHeight: 60,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderRadius: radii.lg,
-    borderWidth: 0,
-    backgroundColor: colors.vellum,
-    paddingLeft: spacing.lg,
-    paddingRight: spacing.sm,
-    ...shadows.pressed
-  },
-  searchInput: {
-    ...type.body,
-    flex: 1,
-    minHeight: 56,
-    color: colors.ink
-  },
-  refreshButton: {
-    width: 42,
-    height: 42,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.mineral
-  },
-  resultStack: {
-    gap: spacing.md
-  },
-  resultHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
-  },
-  resultCount: {
-    fontSize: 13,
-    lineHeight: 18
-  },
-  bookmarkMotion: {
-    overflow: "hidden"
-  },
-  bookmarkShelf: {
-    gap: spacing.lg,
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    paddingHorizontal: 0,
-    paddingVertical: spacing.sm,
-    shadowOpacity: 0,
-    elevation: 0
-  },
-  sectionHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: spacing.md
-  },
-  bookmarkList: {
-    borderTopWidth: 1,
-    borderTopColor: colors.hairlineStrong
-  },
-  bookmarkChip: {
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline,
-    flexDirection: "row",
-    alignItems: "center",
-    overflow: "hidden"
-  },
-  bookmarkChipMainSlot: {
-    flex: 1
-  },
-  bookmarkChipMain: {
-    paddingHorizontal: spacing.xs,
-    paddingVertical: spacing.lg
-  },
-  bookmarkChipText: {
-    fontSize: 16,
-    lineHeight: 21
-  },
-  bookmarkChipMeta: {
-    fontSize: 12,
-    lineHeight: 17
-  },
-  removeBookmarkButton: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.pill,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.mineral
-  },
-  removeBookmarkSlot: {
-    width: grid.touch + spacing.sm,
-    alignItems: "flex-start"
-  },
-  readerSafeArea: {
-    flex: 1,
-    backgroundColor: colors.vellum
-  },
-  focusBackdrop: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 30,
-    justifyContent: "flex-end",
-    padding: spacing.md,
-    backgroundColor: "rgba(17,20,18,0.32)"
-  },
-  focusSheet: {
-    padding: spacing.xl,
-    gap: spacing.lg,
-    borderRadius: radii.lg,
-    backgroundColor: colors.vellum,
-    ...shadows.floating
-  },
-  focusMark: {
-    width: 44,
-    height: 44,
-    borderRadius: radii.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blue
-  },
-  focusCopy: { gap: spacing.xs },
-  focusTitle: { fontSize: 21, lineHeight: 27 },
-  focusBody: { color: colors.inkMuted },
-  focusActions: { flexDirection: "row", gap: spacing.md },
-  focusActionSlot: { flex: 1 },
-  focusSecondaryButton: {
-    minHeight: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-    backgroundColor: colors.vellum
-  },
-  focusSecondaryText: { ...type.body, fontWeight: "600", color: colors.ink },
-  focusPrimaryButton: {
-    minHeight: 50,
-    paddingHorizontal: spacing.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: radii.md,
-    backgroundColor: colors.blue
-  },
-  focusPrimaryText: { ...type.caption, color: colors.white, textAlign: "center" },
-  focusPromptMessage: { color: colors.danger, fontSize: 13, lineHeight: 18 },
-  readerChrome: {
-    position: "absolute",
-    left: grid.margin,
-    right: grid.margin,
-    zIndex: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    pointerEvents: "box-none"
-  },
-  readerContent: {
-    paddingHorizontal: 22,
-    paddingBottom: 72
-  },
-  reader: {
-    gap: spacing.xxl
-  },
-  readerHeader: {
-    gap: spacing.md,
-    paddingBottom: spacing.lg,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline
-  },
-  floatingClose: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.glass,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.floating
-  },
-  floatingBookmark: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.glass,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.floating
-  },
-  floatingBookmarkActive: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue
-  },
-  readerMeta: {
-    ...type.caption,
-    color: colors.inkFaint
-  },
-  readerDisplay: {
-    fontSize: 38,
-    lineHeight: 42
-  },
-  readerSummary: {
-    color: colors.inkFaint,
-    maxWidth: 320
-  },
-  hebrewReviewNotice: {
-    flexDirection: "row",
-    gap: spacing.md,
-    paddingVertical: spacing.sm
-  },
-  hebrewReviewRule: {
-    width: 2,
-    backgroundColor: colors.gold
-  },
-  hebrewReviewCopy: {
-    flex: 1,
-    gap: spacing.xs
-  },
-  hebrewReviewText: {
-    color: colors.inkMuted,
-    fontSize: 14,
-    lineHeight: 20
-  },
-  hebrewReviewSource: {
-    ...type.caption,
-    color: colors.inkFaint
-  },
-  intentionCue: {
-    gap: spacing.xs,
-    borderLeftWidth: 2,
-    borderLeftColor: colors.gold,
-    paddingLeft: spacing.md,
-    paddingVertical: spacing.xs
-  },
-  intentionText: {
-    color: colors.ink,
-    maxWidth: 330
-  },
-  guidedEntry: {
-    minHeight: 74,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    paddingVertical: spacing.md,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.hairline
-  },
-  guidedEntryIcon: {
-    width: 42,
-    height: 42,
-    borderRadius: radii.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blueSoft
-  },
-  guidedEntryCopy: {
-    flex: 1,
-    gap: 2
-  },
-  guidedEntryTitle: {
-    fontSize: 17,
-    lineHeight: 22
-  },
-  guidedEntryBody: {
-    fontSize: 13,
-    lineHeight: 18,
-    color: colors.inkMuted
-  },
-  sourceLoading: {
-    minHeight: 96,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderTopWidth: 1,
-    borderTopColor: colors.hairline,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline,
-    paddingVertical: spacing.lg
-  },
-  sourceLoadingCopy: {
-    flex: 1,
-    gap: spacing.xs
-  },
-  sourceLoadingTitle: {
-    fontSize: 17,
-    lineHeight: 22
-  },
-  sourceLoadingText: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: colors.inkMuted
-  },
-  sourceUnavailable: {
-    gap: spacing.sm,
-    borderLeftWidth: 2,
-    borderLeftColor: colors.gold,
-    paddingLeft: spacing.lg,
-    paddingVertical: spacing.sm
-  },
-  sourceUnavailableText: {
-    color: colors.inkMuted
-  },
-  sourceButton: {
-    minHeight: 44,
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    borderRadius: radii.md,
-    backgroundColor: colors.blue,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm
-  },
-  sourceButtonText: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.white
-  },
-  sourceAttribution: {
-    gap: spacing.xs,
-    borderTopWidth: 1,
-    borderTopColor: colors.hairline,
-    paddingTop: spacing.lg
-  },
-  sourceAttributionText: {
-    color: colors.ink
-  },
-  sourceAttributionMeta: {
-    ...type.caption,
-    color: colors.inkMuted
-  },
-  askCard: {
-    gap: spacing.md,
-    padding: spacing.lg,
-    borderRadius: radii.md,
-    backgroundColor: colors.blueSoft,
-    borderWidth: 0
-  },
-  askHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md
-  },
-  askIcon: {
-    width: 42,
-    height: 42,
-    borderRadius: radii.sm,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.vellum
-  },
-  askTitle: {
-    flex: 1,
-    gap: 2
-  },
-  askTitleText: {
-    fontSize: 17,
-    lineHeight: 22
-  },
-  askSubtitle: {
-    fontSize: 13,
-    lineHeight: 18
-  },
-  assistantThread: {
-    gap: spacing.sm
-  },
-  assistantBubble: {
-    maxWidth: "94%",
-    borderRadius: radii.sm,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm
-  },
-  assistantUserBubble: {
-    alignSelf: "flex-end",
-    backgroundColor: colors.ink
-  },
-  assistantAnswerBubble: {
-    alignSelf: "flex-start",
-    backgroundColor: colors.vellum
-  },
-  assistantUserText: {
-    color: colors.white,
-    fontSize: 14,
-    lineHeight: 20
-  },
-  assistantAnswerText: {
-    color: colors.ink,
-    fontSize: 14,
-    lineHeight: 20
-  },
-  askComposer: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    gap: spacing.sm,
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    backgroundColor: colors.vellum,
-    padding: spacing.sm
-  },
-  askInput: {
-    ...type.body,
-    flex: 1,
-    minHeight: 40,
-    maxHeight: 116,
-    color: colors.ink,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs
-  },
-  askSend: {
-    width: 40,
-    height: 40,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blue
-  },
-  askSendDisabled: {
-    opacity: 0.42
-  },
-  token: {
-    gap: spacing.xl,
-    borderTopWidth: 1,
-    borderTopColor: colors.hairline,
-    paddingTop: spacing.xl
-  },
-  hebrew: {
-    fontFamily: fonts.hebrewSemibold,
-    fontWeight: "600",
-    textAlign: "right",
-    fontSize: 33,
-    lineHeight: 50,
-    color: colors.ink
-  },
-  transliterationBlock: {
-    gap: spacing.xs,
-    borderLeftWidth: 2,
-    borderLeftColor: colors.gold,
-    paddingLeft: spacing.md
-  },
-  transliteration: {
-    fontSize: 17,
-    lineHeight: 24,
-    color: colors.ink
-  },
-  translationBlock: {
-    gap: spacing.xs
-  },
-  consentBackdrop: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 30,
-    justifyContent: "flex-end",
-    padding: spacing.md,
-    paddingBottom: spacing.xxxl,
-    backgroundColor: "rgba(11, 13, 16, 0.28)"
-  },
-  consentSheet: {
-    padding: spacing.lg,
-    paddingBottom: spacing.xl,
-    gap: spacing.sm,
-    borderRadius: radii.lg,
-    backgroundColor: colors.white,
-    ...shadows.floating
-  },
-  consentMark: {
-    width: 42,
-    height: 42,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blueSoft
-  },
-  consentNote: {
-    fontSize: 13,
-    lineHeight: 19,
-    color: colors.inkMuted
-  },
-  consentActions: {
-    flexDirection: "row",
-    alignItems: "stretch",
-    gap: spacing.sm,
-    marginTop: spacing.sm
-  },
-  consentSecondarySlot: {
-    flex: 1
-  },
-  consentPrimarySlot: {
-    flex: 1.4
-  },
-  consentSecondary: {
-    minHeight: 48,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong
-  },
-  consentSecondaryText: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.ink
-  },
-  consentPrimary: {
-    minHeight: 48,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: radii.pill,
-    backgroundColor: colors.blue
-  },
-  consentPrimaryText: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.white
-  }
-});

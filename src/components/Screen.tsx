@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from "react";
 import { useEffect, useRef } from "react";
-import { Animated, Easing, ScrollView, StyleSheet } from "react-native";
+import { Animated, Easing, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { colors, motion, spacing } from "@/design/theme";
+import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export function Screen({ children }: PropsWithChildren): React.JSX.Element {
@@ -17,40 +17,30 @@ export function Screen({ children }: PropsWithChildren): React.JSX.Element {
         toValue: 1,
         duration: reduceMotion ? 0 : motion.navigationMs,
         easing: Easing.bezier(...motion.standard),
-        useNativeDriver: true
+        useNativeDriver: true,
       }),
       Animated.timing(translateY, {
         toValue: 0,
         duration: reduceMotion ? 0 : motion.navigationMs,
         easing: Easing.bezier(...motion.standard),
         useNativeDriver: true,
-      })
+      }),
     ]).start();
   }, [opacity, reduceMotion, translateY]);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <Animated.View style={[styles.stack, { opacity, transform: [{ translateY }] }]}>{children}</Animated.View>
+    <SafeAreaView className="flex-1 bg-background">
+      <ScrollView
+        contentContainerClassName="px-4 pt-4 pb-[120px]"
+        showsVerticalScrollIndicator={false}
+      >
+        <Animated.View
+          className="w-full max-w-[600px] self-center gap-5"
+          style={[{ opacity, transform: [{ translateY }] }]}
+        >
+          {children}
+        </Animated.View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: colors.parchment
-  },
-  content: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.lg,
-    paddingBottom: 132
-  },
-  stack: {
-    width: "100%",
-    maxWidth: 560,
-    alignSelf: "center",
-    gap: spacing.xxl
-  }
-});

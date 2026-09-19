@@ -31,32 +31,38 @@ export function RootNavigator(): React.JSX.Element {
       }}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.blue,
-        tabBarInactiveTintColor: colors.mineralDark,
+        tabBarActiveTintColor: colors.white,
+        tabBarActiveBackgroundColor: colors.blue,
+        tabBarInactiveTintColor: colors.inkMuted,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          borderTopWidth: 1,
-          borderTopColor: colors.hairlineStrong,
-          elevation: 0,
-          height: 62 + bottomInset,
+          borderTopWidth: 0,
+          height: 74 + bottomInset,
           paddingBottom: bottomInset,
-          paddingTop: 6,
-          marginHorizontal: 0,
-          marginBottom: 0,
+          paddingTop: 8,
+          marginHorizontal: 16,
+          marginBottom: 8,
           position: "absolute",
-          borderRadius: 0,
-          backgroundColor: colors.glass
+          borderRadius: 4,
+          backgroundColor: colors.mineral,
+          shadowColor: colors.ink,
+          shadowOpacity: 0.04,
+          shadowRadius: 8,
+          shadowOffset: { width: 0, height: 10 },
+          elevation: 2,
         },
         tabBarLabelStyle: {
-          fontSize: 10,
+          fontSize: 11,
           lineHeight: 13,
           fontFamily: fonts.medium,
           fontWeight: "500",
           letterSpacing: 0,
-          marginTop: 2
+          marginTop: 3
         },
         tabBarItemStyle: {
-          height: 50,
+          height: 58,
+          marginHorizontal: 4,
+          borderRadius: 2,
           paddingVertical: 3
         },
         tabBarIconStyle: {
@@ -74,7 +80,7 @@ export function RootNavigator(): React.JSX.Element {
 
 function tabIcon(Icon: typeof House) {
   function TabBarIcon({ color, size, focused }: { color: string; size: number; focused: boolean }): React.JSX.Element {
-    return <Icon color={focused ? colors.blue : color} size={size} strokeWidth={focused ? 2.2 : 1.8} />;
+    return <Icon color={color} size={size} strokeWidth={focused ? 2 : 1.5} />;
   }
 
   return TabBarIcon;

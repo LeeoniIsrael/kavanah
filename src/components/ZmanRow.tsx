@@ -1,48 +1,25 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text } from "@/components/ui/text";
+import { View } from "react-native";
 
-import { colors, fonts, spacing, type } from "@/design/theme";
 import type { Zman } from "@/types/zmanim";
 
 export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
   return (
-    <View style={styles.row}>
-      <View style={styles.copy}>
-        <Text style={styles.name}>{zman.title}</Text>
-        <Text style={styles.lead}>{zman.method} · {zman.notificationLeadMinutes} min reminder</Text>
+    <View className="min-h-[72px] flex-row items-center justify-between gap-4 border-b border-b-hairline px-1 py-3">
+      <View className="flex-1">
+        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+          {zman.title}
+        </Text>
+        <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
+          {zman.method} · {zman.notificationLeadMinutes} min reminder
+        </Text>
       </View>
-      <Text style={styles.time}>{zman.time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</Text>
+      <Text className="text-[17px] leading-[22px] font-semibold tracking-normal text-foreground min-w-[84px] text-right font-heading">
+        {zman.time.toLocaleTimeString([], {
+          hour: "numeric",
+          minute: "2-digit",
+        })}
+      </Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  row: {
-    minHeight: 72,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: spacing.lg,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.hairline,
-    paddingHorizontal: spacing.xs,
-    paddingVertical: spacing.md
-  },
-  copy: { flex: 1 },
-  name: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.ink
-  },
-  lead: {
-    ...type.caption,
-    color: colors.inkMuted,
-    marginTop: 2
-  },
-  time: {
-    ...type.section,
-    fontFamily: fonts.medium,
-    color: colors.ink,
-    minWidth: 84,
-    textAlign: "right"
-  }
-});

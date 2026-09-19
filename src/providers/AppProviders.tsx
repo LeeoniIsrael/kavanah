@@ -1,14 +1,19 @@
+import { BrandWordmark } from "@/components/BrandMark";
+import { Text } from "@/components/ui/text";
 import { LockKeyhole } from "lucide-react-native";
 import { useEffect, useState, type PropsWithChildren } from "react";
-import { AppState, StyleSheet, Text, View } from "react-native";
+import { AppState, View } from "react-native";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { colors, radii, spacing, type } from "@/design/theme";
+import { Button } from "@/components/ui/button";
+import { colors } from "@/design/theme";
 import { configureNotificationCategories } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
 
-export function AppProviders({ children }: PropsWithChildren): React.JSX.Element {
-  const { biometricLockEnabled, hydrate, unlockWithBiometrics } = useAuthStore();
+export function AppProviders({
+  children,
+}: PropsWithChildren): React.JSX.Element {
+  const { biometricLockEnabled, hydrate, unlockWithBiometrics } =
+    useAuthStore();
   const [hydrated, setHydrated] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
 
@@ -38,89 +43,45 @@ export function AppProviders({ children }: PropsWithChildren): React.JSX.Element
 
   if (!hydrated) {
     return (
-      <View accessibilityLabel="Opening Kavanah" accessibilityRole="progressbar" style={styles.loadingScreen}>
-        <Text style={styles.loadingTitle}>Kavanah</Text>
-        <View style={styles.loadingRule} />
+      <View
+        accessibilityLabel="Opening Kavanah"
+        accessibilityRole="progressbar"
+        className="flex-1 items-center justify-center bg-background gap-3"
+      >
+        <BrandWordmark width={190} />
+        <View className="w-7 h-[2px] bg-gold" />
       </View>
     );
   }
 
   if (biometricLockEnabled && !unlocked) {
     return (
-      <View style={styles.lockScreen}>
-        <View style={styles.lockMark}>
+      <View className="flex-1 items-center justify-center p-6 bg-background gap-3">
+        <BrandWordmark width={170} />
+        <View className="w-[54px] h-[54px] rounded-md items-center justify-center bg-muted border border-hairline">
           <LockKeyhole size={25} color={colors.ink} />
         </View>
-        <Text style={styles.lockTitle}>Kavanah is locked</Text>
-        <Text style={styles.lockBody}>Your saved prayers and personal progress stay private.</Text>
-        <AnimatedPressable accessibilityLabel="Unlock Kavanah" accessibilityRole="button" onPress={() => void unlockWithBiometrics().then(setUnlocked)} style={styles.unlockButton}>
-          <Text style={styles.unlockText}>Unlock</Text>
-        </AnimatedPressable>
+        <Text className="text-[27px] leading-[33px] font-semibold tracking-normal text-foreground text-center font-heading">
+          Kavanah is locked
+        </Text>
+        <Text className="text-[16px] leading-[22px] font-normal tracking-normal text-muted-foreground text-center max-w-[310px] font-body">
+          Your saved prayers and personal progress stay private.
+        </Text>
+        <Button
+          variant="default"
+          size="content"
+          accessibilityLabel="Unlock Kavanah"
+          accessibilityRole="button"
+          onPress={() => void unlockWithBiometrics().then(setUnlocked)}
+          className="min-h-12 min-w-[150px] rounded-md items-center justify-center bg-primary mt-2"
+        >
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+            Unlock
+          </Text>
+        </Button>
       </View>
     );
   }
 
   return <>{children}</>;
 }
-
-const styles = StyleSheet.create({
-  loadingScreen: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.parchment,
-    gap: spacing.md
-  },
-  loadingTitle: {
-    ...type.title,
-    color: colors.ink
-  },
-  loadingRule: {
-    width: 28,
-    height: 2,
-    backgroundColor: colors.gold
-  },
-  lockScreen: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: spacing.xl,
-    backgroundColor: colors.parchment,
-    gap: spacing.md
-  },
-  lockMark: {
-    width: 54,
-    height: 54,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.mineral,
-    borderWidth: 1,
-    borderColor: colors.hairline
-  },
-  lockTitle: {
-    ...type.title,
-    color: colors.ink,
-    textAlign: "center"
-  },
-  lockBody: {
-    ...type.body,
-    color: colors.inkMuted,
-    textAlign: "center",
-    maxWidth: 310
-  },
-  unlockButton: {
-    minHeight: 48,
-    minWidth: 150,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.blue,
-    marginTop: spacing.sm
-  },
-  unlockText: {
-    ...type.body,
-    color: colors.white,
-    fontWeight: "600"
-  }
-});

@@ -1,10 +1,12 @@
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
 import { Check, ChevronLeft, ChevronRight, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Animated, Easing, ScrollView, View } from "react-native";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
-import { Body, SectionTitle } from "@/components/Text";
-import { colors, fonts, grid, motion, radii, shadows, spacing, type } from "@/design/theme";
+import { Button } from "@/components/ui/button";
+import { colors, motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export type GuidedPrayerToken = {
@@ -21,7 +23,13 @@ type Props = {
   onClose: () => void;
 };
 
-export function GuidedPrayer({ prayerTitle, tokens, visible, onClose }: Props): React.JSX.Element | null {
+export function GuidedPrayer({
+  prayerTitle,
+  tokens,
+  visible,
+  onClose,
+}: Props): React.JSX.Element | null {
+  const insets = useSafeAreaInsets();
   const [index, setIndex] = useState(0);
   const reveal = useRef(new Animated.Value(1)).current;
   const reduceMotion = useReducedMotion();
@@ -40,7 +48,7 @@ export function GuidedPrayer({ prayerTitle, tokens, visible, onClose }: Props): 
       toValue: 1,
       duration: reduceMotion ? 0 : motion.stateMs,
       easing: Easing.bezier(...motion.standard),
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   }, [reduceMotion, reveal, safeIndex]);
 
@@ -56,201 +64,154 @@ export function GuidedPrayer({ prayerTitle, tokens, visible, onClose }: Props): 
   };
 
   return (
-    <View accessibilityViewIsModal style={styles.root}>
-      <View style={styles.header}>
-        <AnimatedPressable accessibilityLabel="Close guided reading" accessibilityRole="button" haptic="selection" onPress={onClose} pressedScale={0.94} style={styles.iconButton}>
+    <View
+      style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+      accessibilityViewIsModal
+      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-card"
+    >
+      <View className="min-h-[72px] px-6 flex-row items-center gap-3">
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityLabel="Close guided reading"
+          accessibilityRole="button"
+          haptic="selection"
+          onPress={onClose}
+          pressedScale={0.94}
+          className="w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card"
+        >
           <X size={18} color={colors.ink} />
-        </AnimatedPressable>
-        <View style={styles.headerCopy}>
-          <Text numberOfLines={1} style={styles.title}>{prayerTitle}</Text>
-          <Text style={styles.position}>{safeIndex + 1} of {tokens.length}</Text>
+        </Button>
+        <View className="flex-1 items-center gap-[2px]">
+          <Text
+            numberOfLines={1}
+            className="text-[12px] leading-[16px] font-medium tracking-normal max-w-full text-foreground font-label"
+          >
+            {prayerTitle}
+          </Text>
+          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+            {safeIndex + 1} of {tokens.length}
+          </Text>
         </View>
-        <View style={styles.headerBalance} />
+        <View className="w-11" />
       </View>
 
-      <View accessibilityLabel={`${Math.round(((safeIndex + 1) / tokens.length) * 100)} percent complete`} accessibilityRole="progressbar" style={styles.progressTrack}>
-        <View style={[styles.progressFill, { width: `${((safeIndex + 1) / tokens.length) * 100}%` }]} />
+      <View
+        accessibilityLabel={`${Math.round(((safeIndex + 1) / tokens.length) * 100)} percent complete`}
+        accessibilityRole="progressbar"
+        className="h-[2px] mx-6 bg-hairline"
+      >
+        <View
+          className="h-[2px] bg-primary"
+          style={[{ width: `${((safeIndex + 1) / tokens.length) * 100}%` }]}
+        />
       </View>
 
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerClassName="grow justify-center px-6 py-12"
+        showsVerticalScrollIndicator={false}
+      >
         <Animated.View
           accessibilityLiveRegion="polite"
+          className="gap-12"
           style={[
-            styles.phrase,
             {
               opacity: reveal,
-              transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [8, 0] }) }]
-            }
+              transform: [
+                {
+                  translateY: reveal.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [8, 0],
+                  }),
+                },
+              ],
+            },
           ]}
         >
-          {token.hebrew ? <Text selectable style={styles.hebrew}>{token.hebrew}</Text> : null}
+          {token.hebrew ? (
+            <Text
+              selectable
+              className="font-hebrew-heading font-semibold text-right text-[36px] leading-[55px] text-foreground"
+              style={styles.hebrew}
+            >
+              {token.hebrew}
+            </Text>
+          ) : null}
           {token.transliteration ? (
-            <View style={styles.supportingText}>
-              <Text style={styles.label}>Say it</Text>
-              <SectionTitle selectable style={styles.transliteration}>{token.transliteration}</SectionTitle>
+            <View className="gap-2">
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                Say it
+              </Text>
+              <Text
+                variant="section"
+                selectable
+                className="text-[20px] leading-[29px] text-foreground"
+              >
+                {token.transliteration}
+              </Text>
             </View>
           ) : null}
           {token.translation ? (
-            <View style={styles.supportingText}>
-              <Text style={styles.label}>Meaning</Text>
-              <Body selectable style={styles.translation}>{token.translation}</Body>
+            <View className="gap-2">
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                Meaning
+              </Text>
+              <Text
+                variant="body"
+                selectable
+                className="text-[18px] leading-[27px] text-muted-foreground"
+              >
+                {token.translation}
+              </Text>
             </View>
           ) : null}
         </Animated.View>
       </ScrollView>
 
-      <View style={styles.footer}>
-        <AnimatedPressable
+      <View className="min-h-[84px] px-6 pt-2 pb-4 flex-row items-center gap-3 border-t border-t-hairline bg-glass">
+        <Button
+          variant="outline"
+          size="content"
           accessibilityLabel="Previous line"
           accessibilityRole="button"
           disabled={isFirst}
           haptic="selection"
           onPress={goBack}
           pressedScale={0.94}
-          style={[styles.backButton, isFirst && styles.disabledButton]}
+          className={cn(
+            "w-11 h-11 rounded-md items-center justify-center border border-hairlineStrong bg-card",
+            isFirst && "opacity-[0.28]",
+          )}
         >
           <ChevronLeft size={20} color={colors.ink} />
-        </AnimatedPressable>
-        <AnimatedPressable
+        </Button>
+        <Button
+          variant="default"
+          size="content"
           accessibilityLabel={isLast ? "Finish guided reading" : "Next line"}
           accessibilityRole="button"
           haptic={isLast ? "success" : "selection"}
           onPress={goForward}
           pressedScale={0.98}
-          style={styles.nextButton}
+          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-primary shadow-card"
         >
-          <Text style={styles.nextText}>{isLast ? "Done" : "Next"}</Text>
-          {isLast ? <Check size={18} color={colors.white} /> : <ChevronRight size={18} color={colors.white} />}
-        </AnimatedPressable>
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+            {isLast ? "Done" : "Next"}
+          </Text>
+          {isLast ? (
+            <Check size={18} color={colors.white} />
+          ) : (
+            <ChevronRight size={18} color={colors.white} />
+          )}
+        </Button>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  root: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 40,
-    backgroundColor: colors.vellum
-  },
-  header: {
-    minHeight: 72,
-    paddingHorizontal: grid.margin,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md
-  },
-  iconButton: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.glass,
-    borderWidth: 1,
-    borderColor: colors.hairline,
-    ...shadows.floating
-  },
-  headerCopy: {
-    flex: 1,
-    alignItems: "center",
-    gap: 2
-  },
-  title: {
-    ...type.caption,
-    maxWidth: "100%",
-    color: colors.ink
-  },
-  position: {
-    ...type.caption,
-    color: colors.inkFaint
-  },
-  headerBalance: {
-    width: grid.touch
-  },
-  progressTrack: {
-    height: 2,
-    marginHorizontal: grid.margin,
-    backgroundColor: colors.hairline
-  },
-  progressFill: {
-    height: 2,
-    backgroundColor: colors.blue
-  },
-  content: {
-    flexGrow: 1,
-    justifyContent: "center",
-    paddingHorizontal: grid.margin,
-    paddingVertical: spacing.xxxl
-  },
-  phrase: {
-    gap: spacing.xxxl
-  },
+// Native text direction and platform-only values cannot be expressed as layout utilities.
+const styles = {
   hebrew: {
-    fontFamily: fonts.hebrewSemibold,
-    fontWeight: "600",
-    textAlign: "right",
     writingDirection: "rtl",
-    fontSize: 36,
-    lineHeight: 55,
-    color: colors.ink
   },
-  supportingText: {
-    gap: spacing.sm
-  },
-  label: {
-    ...type.caption,
-    color: colors.inkFaint
-  },
-  transliteration: {
-    fontSize: 20,
-    lineHeight: 29,
-    color: colors.ink
-  },
-  translation: {
-    fontSize: 18,
-    lineHeight: 27,
-    color: colors.inkMuted
-  },
-  footer: {
-    minHeight: 84,
-    paddingHorizontal: grid.margin,
-    paddingTop: spacing.sm,
-    paddingBottom: spacing.lg,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    borderTopWidth: 1,
-    borderTopColor: colors.hairline,
-    backgroundColor: colors.glass
-  },
-  backButton: {
-    width: grid.touch,
-    height: grid.touch,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-    backgroundColor: colors.vellum
-  },
-  disabledButton: {
-    opacity: 0.28
-  },
-  nextButton: {
-    flex: 1,
-    minHeight: 48,
-    borderRadius: radii.md,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
-    backgroundColor: colors.blue,
-    ...shadows.pressed
-  },
-  nextText: {
-    ...type.body,
-    fontWeight: "600",
-    color: colors.white
-  }
-});
+} as const;

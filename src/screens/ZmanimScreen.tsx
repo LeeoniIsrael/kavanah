@@ -1,16 +1,20 @@
+import { BrandWordmark } from "@/components/BrandMark";
+import { Card } from "@/components/ui/card";
+import { Text } from "@/components/ui/text";
 import { Bell, MapPin, RefreshCw } from "lucide-react-native";
 import { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 
-import { AnimatedPressable } from "@/components/AnimatedPressable";
 import { Screen } from "@/components/Screen";
-import { Body, Display, Label, SectionTitle } from "@/components/Text";
+import { ParametricField } from "@/components/ParametricField";
+import { Button } from "@/components/ui/button";
 import { ZmanRow } from "@/components/ZmanRow";
-import { colors, radii, shadows, spacing, type } from "@/design/theme";
+import { colors } from "@/design/theme";
 import { useZmanimStore } from "@/store/zmanimStore";
 
 export function ZmanimScreen(): React.JSX.Element {
-  const { location, zmanim, upcomingZmanim, isLoading, error, refresh } = useZmanimStore();
+  const { location, zmanim, upcomingZmanim, isLoading, error, refresh } =
+    useZmanimStore();
   const nextZman = upcomingZmanim[0];
 
   useEffect(() => {
@@ -19,52 +23,95 @@ export function ZmanimScreen(): React.JSX.Element {
 
   return (
     <Screen>
-      <View style={styles.header}>
+      <BrandWordmark width={128} />
+      <View className="flex-row items-start justify-between gap-4">
         <View>
-          <Label>Local time</Label>
-          <Display>Zmanim</Display>
+          <Text variant="caption">Local time</Text>
+          <Text variant="display">Zmanim</Text>
         </View>
-        <AnimatedPressable accessibilityLabel="Refresh local prayer times" accessibilityRole="button" onPress={() => void refresh()} disabled={isLoading} style={styles.iconButton}>
-          <RefreshCw size={19} color={isLoading ? colors.inkMuted : colors.ink} />
-        </AnimatedPressable>
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityLabel="Refresh local prayer times"
+          accessibilityRole="button"
+          onPress={() => void refresh()}
+          disabled={isLoading}
+          className="w-11 h-11 rounded-md items-center justify-center bg-white border border-hairline"
+        >
+          <RefreshCw
+            size={19}
+            color={isLoading ? colors.inkMuted : colors.ink}
+          />
+        </Button>
       </View>
 
-      <View style={styles.nextPanel}>
-        <View style={styles.dayRail}><View style={styles.dayMarker} /></View>
-        <View style={styles.panelMetaRow}>
-          <View style={styles.blueDot} />
-          <Text style={styles.panelMeta}>Next</Text>
+      <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
+        <ParametricField />
+        <View className="flex-row items-center gap-2">
+          <View className="w-2 h-2 rounded-full bg-white" />
+          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
+            Next
+          </Text>
         </View>
-        <SectionTitle style={styles.panelTitle}>{nextZman?.title ?? "Calculating times"}</SectionTitle>
-        <Text style={styles.panelTime}>{nextZman ? formatTime(nextZman.time) : "--:--"}</Text>
-        <Body style={styles.panelBody}>{nextZman ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}` : error ?? "Set location to calculate precise local zmanim."}</Body>
-      </View>
+        <Text variant="section" className="text-white">
+          {nextZman?.title ?? "Calculating times"}
+        </Text>
+        <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-white font-body">
+          {nextZman ? formatTime(nextZman.time) : "--:--"}
+        </Text>
+        <Text variant="body" className="text-[rgba(255,255,255,0.68)]">
+          {nextZman
+            ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}`
+            : (error ?? "Set location to calculate precise local zmanim.")}
+        </Text>
+      </Card>
 
-      <View style={styles.locationStrip}>
+      <View className="min-h-[58px] border-t border-b border-hairline px-1 flex-row items-center gap-3">
         <MapPin size={18} color={colors.blue} />
-        <Text style={styles.locationText}>{error ?? location?.label ?? "Location unavailable"}</Text>
-        <AnimatedPressable accessibilityRole="button" onPress={() => void refresh()} disabled={isLoading} style={styles.smallButton}>
-          <Text style={styles.smallButtonText}>{isLoading ? "Finding" : "Update"}</Text>
-        </AnimatedPressable>
+        <Text className="text-[16px] leading-[22px] font-normal tracking-normal flex-1 text-foreground font-body">
+          {error ?? location?.label ?? "Location unavailable"}
+        </Text>
+        <Button
+          variant="secondary"
+          size="content"
+          accessibilityRole="button"
+          onPress={() => void refresh()}
+          disabled={isLoading}
+          className="min-h-11 rounded-md bg-muted px-3 items-center justify-center"
+        >
+          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+            {isLoading ? "Finding" : "Update"}
+          </Text>
+        </Button>
       </View>
 
-      <View style={styles.list}>
+      <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
         {zmanim.length > 0 ? (
           <>
-            <Label style={styles.listLabel}>Today</Label>
-            {zmanim.map((zman) => <ZmanRow key={zman.key} zman={zman} />)}
+            <Text variant="caption" className="px-1 pt-3 pb-1">
+              Today
+            </Text>
+            {zmanim.map((zman) => (
+              <ZmanRow key={zman.key} zman={zman} />
+            ))}
           </>
         ) : (
-          <View style={styles.emptyState}>
-            <SectionTitle>Waiting for local times</SectionTitle>
-            <Body>{error ?? "Use your location once and Kavanah will calculate today’s zmanim on device."}</Body>
+          <View className="gap-2 p-6">
+            <Text variant="section">Waiting for local times</Text>
+            <Text variant="body">
+              {error ??
+                "Use your location once and Kavanah will calculate today’s zmanim on device."}
+            </Text>
           </View>
         )}
-      </View>
+      </Card>
 
-      <View style={styles.notice}>
+      <View className="min-h-[58px] border-l-[2px] border-l-gold px-3 flex-row items-center gap-3">
         <Bell size={18} color={colors.blue} />
-        <Body style={styles.noticeText}>Reminders stay on this device. Shabbat candle lighting appears on Friday; Havdalah appears on Saturday.</Body>
+        <Text variant="body" className="flex-1 text-[14px] leading-[20px]">
+          Reminders stay on this device. Shabbat candle lighting appears on
+          Friday; Havdalah appears on Saturday.
+        </Text>
       </View>
     </Screen>
   );
@@ -82,134 +129,3 @@ function formatDay(date: Date): string {
   if (date.toDateString() === tomorrow.toDateString()) return "Tomorrow";
   return date.toLocaleDateString([], { weekday: "long" });
 }
-
-const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    gap: spacing.lg
-  },
-  iconButton: {
-    width: 44,
-    height: 44,
-    borderRadius: radii.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.hairline
-  },
-  nextPanel: {
-    position: "relative",
-    borderRadius: radii.lg,
-    backgroundColor: colors.ink,
-    paddingVertical: spacing.xl,
-    paddingLeft: spacing.xxxl,
-    paddingRight: spacing.xl,
-    gap: spacing.md,
-    borderWidth: 0,
-    ...shadows.card
-  },
-  dayRail: {
-    position: "absolute",
-    top: spacing.xl,
-    bottom: spacing.xl,
-    left: spacing.xl,
-    width: 1,
-    backgroundColor: "rgba(255,255,255,0.18)"
-  },
-  dayMarker: {
-    position: "absolute",
-    top: 8,
-    left: -4,
-    width: 9,
-    height: 9,
-    borderRadius: radii.pill,
-    backgroundColor: colors.blue,
-    borderWidth: 2,
-    borderColor: colors.ink
-  },
-  panelMetaRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm
-  },
-  blueDot: {
-    width: 8,
-    height: 8,
-    borderRadius: radii.pill,
-    backgroundColor: colors.blue
-  },
-  panelMeta: {
-    ...type.caption,
-    color: "rgba(255,255,255,0.68)"
-  },
-  panelTitle: {
-    color: colors.white
-  },
-  panelTime: {
-    ...type.display,
-    fontSize: 52,
-    lineHeight: 55,
-    color: colors.white
-  },
-  panelBody: {
-    color: "rgba(255,255,255,0.68)"
-  },
-  locationStrip: {
-    minHeight: 58,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.hairline,
-    paddingHorizontal: spacing.xs,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md
-  },
-  locationText: {
-    ...type.body,
-    flex: 1,
-    color: colors.ink
-  },
-  smallButton: {
-    minHeight: 36,
-    borderRadius: radii.md,
-    backgroundColor: colors.mineral,
-    paddingHorizontal: spacing.md,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  smallButtonText: {
-    ...type.caption,
-    color: colors.blue
-  },
-  list: {
-    overflow: "hidden",
-    borderRadius: radii.lg,
-    backgroundColor: colors.vellum
-  },
-  listLabel: {
-    paddingHorizontal: spacing.xs,
-    paddingTop: spacing.md,
-    paddingBottom: spacing.xs
-  },
-  emptyState: {
-    gap: spacing.sm,
-    padding: spacing.xl
-  },
-  notice: {
-    minHeight: 58,
-    borderLeftWidth: 2,
-    borderLeftColor: colors.gold,
-    paddingHorizontal: spacing.md,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md
-  },
-  noticeText: {
-    flex: 1,
-    fontSize: 14,
-    lineHeight: 20
-  }
-});
