@@ -24,7 +24,8 @@ import { confirmHaptic, successHaptic, tapHaptic } from "@/services/haptics";
 import type { StreakHabit } from "@/store/streakStore";
 
 export type PracticeStoryMoment = {
-  habit: StreakHabit;
+  habit?: StreakHabit;
+  prayerTitle?: string;
   streak: number;
   completedAt: Date;
 };
@@ -323,7 +324,13 @@ function StoryArtwork({
   onPhotoReady: () => void;
   onPhotoError: () => void;
 }): React.JSX.Element {
-  const copy = practiceCopy[moment.habit];
+  const copy = moment.habit
+    ? practiceCopy[moment.habit]
+    : {
+        title: moment.prayerTitle ?? "Prayer",
+        subtitle: "Prayed with intention",
+        eyebrow: "Prayer complete",
+      };
   const date = moment.completedAt.toLocaleDateString([], {
     month: "long",
     day: "numeric",

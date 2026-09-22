@@ -21,6 +21,7 @@ type Props = {
   tokens: GuidedPrayerToken[];
   visible: boolean;
   onClose: () => void;
+  onComplete: () => void;
 };
 
 export function GuidedPrayer({
@@ -28,6 +29,7 @@ export function GuidedPrayer({
   tokens,
   visible,
   onClose,
+  onComplete,
 }: Props): React.JSX.Element | null {
   const insets = useSafeAreaInsets();
   const [index, setIndex] = useState(0);
@@ -57,7 +59,7 @@ export function GuidedPrayer({
   const goBack = () => setIndex((current) => Math.max(current - 1, 0));
   const goForward = () => {
     if (isLast) {
-      onClose();
+      onComplete();
       return;
     }
     setIndex((current) => Math.min(current + 1, tokens.length - 1));
@@ -67,9 +69,9 @@ export function GuidedPrayer({
     <View
       style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       accessibilityViewIsModal
-      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-card"
+      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-primary"
     >
-      <View className="min-h-[72px] px-6 flex-row items-center gap-3">
+      <View className="min-h-[76px] px-6 flex-row items-center gap-3">
         <Button
           variant="ghost"
           size="content"
@@ -78,19 +80,19 @@ export function GuidedPrayer({
           haptic="selection"
           onPress={onClose}
           pressedScale={0.94}
-          className="w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card"
+          className="w-11 h-11 rounded-md items-center justify-center border border-white/20 bg-white/10"
         >
-          <X size={18} color={colors.ink} />
+          <X size={18} color={colors.white} />
         </Button>
-        <View className="flex-1 items-center gap-[2px]">
+        <View className="flex-1 items-center gap-0.5">
+          <Text className="text-[11px] leading-[15px] font-medium text-white/60 font-label">
+            Guided reading
+          </Text>
           <Text
             numberOfLines={1}
-            className="text-[12px] leading-[16px] font-medium tracking-normal max-w-full text-foreground font-label"
+            className="text-[14px] leading-[18px] font-semibold max-w-full text-white font-heading"
           >
             {prayerTitle}
-          </Text>
-          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-            {safeIndex + 1} of {tokens.length}
           </Text>
         </View>
         <View className="w-11" />
@@ -99,21 +101,26 @@ export function GuidedPrayer({
       <View
         accessibilityLabel={`${Math.round(((safeIndex + 1) / tokens.length) * 100)} percent complete`}
         accessibilityRole="progressbar"
-        className="h-[2px] mx-6 bg-hairline"
+        className="mx-6 flex-row gap-1.5"
       >
-        <View
-          className="h-[2px] bg-primary"
-          style={[{ width: `${((safeIndex + 1) / tokens.length) * 100}%` }]}
-        />
+        {tokens.map((item, itemIndex) => (
+          <View
+            key={item.id}
+            className={cn(
+              "h-[3px] flex-1 rounded-full",
+              itemIndex <= safeIndex ? "bg-white" : "bg-white/20",
+            )}
+          />
+        ))}
       </View>
 
       <ScrollView
-        contentContainerClassName="grow justify-center px-6 py-12"
+        contentContainerClassName="grow justify-center px-6 py-10"
         showsVerticalScrollIndicator={false}
       >
         <Animated.View
           accessibilityLiveRegion="polite"
-          className="gap-12"
+          className="gap-8"
           style={[
             {
               opacity: reveal,
@@ -129,37 +136,44 @@ export function GuidedPrayer({
           ]}
         >
           {token.hebrew ? (
-            <Text
-              selectable
-              className="font-hebrew-heading font-semibold text-right text-[36px] leading-[55px] text-foreground"
-              style={styles.hebrew}
-            >
-              {token.hebrew}
-            </Text>
+            <View className="items-center gap-3">
+              <View className="self-center rounded-full border border-white/20 px-3 py-1">
+                <Text className="text-[11px] leading-[15px] font-medium text-white/60 font-label">
+                  Line {safeIndex + 1} of {tokens.length}
+                </Text>
+              </View>
+              <Text
+                selectable
+                className="font-hebrew-heading font-semibold text-center text-[38px] leading-[58px] text-white"
+                style={styles.hebrew}
+              >
+                {token.hebrew}
+              </Text>
+            </View>
           ) : null}
           {token.transliteration ? (
-            <View className="gap-2">
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-                Say it
+            <View className="gap-3 rounded-lg bg-white px-5 py-5">
+              <Text className="text-[12px] leading-[16px] font-semibold text-primary font-label">
+                Read aloud
               </Text>
               <Text
                 variant="section"
                 selectable
-                className="text-[20px] leading-[29px] text-foreground"
+                className="text-[22px] leading-[31px] text-foreground"
               >
                 {token.transliteration}
               </Text>
             </View>
           ) : null}
           {token.translation ? (
-            <View className="gap-2">
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-                Meaning
+            <View className="gap-2 border-l-2 border-l-white/40 pl-4">
+              <Text className="text-[12px] leading-[16px] font-semibold text-white/60 font-label">
+                Hold the meaning
               </Text>
               <Text
                 variant="body"
                 selectable
-                className="text-[18px] leading-[27px] text-muted-foreground"
+                className="text-[18px] leading-[27px] text-white"
               >
                 {token.translation}
               </Text>
@@ -168,7 +182,7 @@ export function GuidedPrayer({
         </Animated.View>
       </ScrollView>
 
-      <View className="min-h-[84px] px-6 pt-2 pb-4 flex-row items-center gap-3 border-t border-t-hairline bg-glass">
+      <View className="min-h-[88px] px-6 pt-3 pb-4 flex-row items-center gap-3 border-t border-t-white/10">
         <Button
           variant="outline"
           size="content"
@@ -179,11 +193,11 @@ export function GuidedPrayer({
           onPress={goBack}
           pressedScale={0.94}
           className={cn(
-            "w-11 h-11 rounded-md items-center justify-center border border-hairlineStrong bg-card",
+            "w-12 h-12 rounded-md items-center justify-center border border-white/20 bg-white/10",
             isFirst && "opacity-[0.28]",
           )}
         >
-          <ChevronLeft size={20} color={colors.ink} />
+          <ChevronLeft size={20} color={colors.white} />
         </Button>
         <Button
           variant="default"
@@ -193,15 +207,15 @@ export function GuidedPrayer({
           haptic={isLast ? "success" : "selection"}
           onPress={goForward}
           pressedScale={0.98}
-          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-primary shadow-card"
+          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-white"
         >
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
-            {isLast ? "Done" : "Next"}
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
+            {isLast ? "Finish" : "Next line"}
           </Text>
           {isLast ? (
-            <Check size={18} color={colors.white} />
+            <Check size={18} color={colors.blue} />
           ) : (
-            <ChevronRight size={18} color={colors.white} />
+            <ChevronRight size={18} color={colors.blue} />
           )}
         </Button>
       </View>

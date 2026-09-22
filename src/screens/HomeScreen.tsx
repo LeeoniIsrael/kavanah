@@ -31,6 +31,7 @@ import { Animated, Easing, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
+import { CommunityFeed } from "@/components/CommunityFeed";
 import { BrandWordmark } from "@/components/BrandMark";
 import { ParametricField } from "@/components/ParametricField";
 import { Screen } from "@/components/Screen";
@@ -336,7 +337,7 @@ export function HomeScreen(): React.JSX.Element {
           </View>
         </View>
         {activeHabits.length > 0 ? (
-          <Card className="p-0 gap-0 flex-row flex-wrap overflow-hidden rounded-lg bg-card">
+          <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
             {activeHabits.map((habit, index) => {
               const complete = habit.completedDates.includes(
                 formatDateKey(now),
@@ -363,19 +364,16 @@ export function HomeScreen(): React.JSX.Element {
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
-                    "w-1/2 min-h-[150px] px-4 py-4 flex-col items-start justify-between gap-3 border-r border-b border-hairline",
-                    index % 2 === 1 && "border-r-0",
+                    "min-h-[68px] px-4 py-3 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    index === activeHabits.length - 1 && "border-b-0",
                   )}
                 >
-                  <View className="flex-1">
+                  <View className="flex-1 flex-row items-center gap-3">
                     <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                       {details.name}
                     </Text>
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground mt-[1px] font-label">
-                      {details.description}
-                    </Text>
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
-                      {streakLabel} in a row
+                      {streakLabel}
                     </Text>
                   </View>
                   <View
@@ -440,6 +438,8 @@ export function HomeScreen(): React.JSX.Element {
           />
         ) : null}
       </View>
+
+      <CommunityFeed />
 
       <Button
         variant="outline"

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Keep every completed Kavanah commit backed up on GitHub.
+branch=$(git symbolic-ref --quiet --short HEAD) || {
+  echo "Kavanah auto-push skipped: detached HEAD." >&2
+  exit 0
+}
+
+remote_url=$(git remote get-url origin 2>/dev/null) || {
+  echo "Kavanah auto-push skipped: origin is not configured." >&2
+  exit 0
+}
+
+if [ -z "$remote_url" ]; then
+  echo "Kavanah auto-push skipped: origin has no URL." >&2
+  exit 0
+fi
+
+echo "Kavanah safeguard: pushing $branch to origin..."
+git push --set-upstream origin "HEAD:$branch"

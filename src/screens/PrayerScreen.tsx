@@ -17,7 +17,7 @@ import {
   MoonStar,
   RefreshCw,
   Search,
-  Send,
+  Share2,
   ShieldCheck,
   X,
 } from "lucide-react-native";
@@ -36,13 +36,17 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
-import { AssistantMessageBubble } from "@/components/AssistantMessageBubble";
 import { BrandMark, BrandWordmark } from "@/components/BrandMark";
 import {
   GuidedPrayer,
   type GuidedPrayerToken,
 } from "@/components/GuidedPrayer";
 import { PrayerCard } from "@/components/PrayerCard";
+import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
+import {
+  PracticeStoryComposer,
+  type PracticeStoryMoment,
+} from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -64,6 +68,8 @@ import {
   openPrayerFocusSetup,
 } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
+import { useStreakStore, type StreakHabit } from "@/store/streakStore";
+import { useSocialStore } from "@/store/socialStore";
 import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
   useSettingsStore,
@@ -119,8 +125,11 @@ export function PrayerScreen(): React.JSX.Element {
     searchRemote,
     selectPrayer,
     toggleBookmark,
+    recordCompletion,
     sync,
   } = usePrayerStore();
+  const completeHabit = useStreakStore((state) => state.completeHabit);
+  const publishMilestone = useSocialStore((state) => state.publishMilestone);
   const primaryLanguageCode = useSettingsStore(
     (state) => state.primaryLanguageCode,
   );
@@ -137,6 +146,11 @@ export function PrayerScreen(): React.JSX.Element {
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
   const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
+  const [completionMoment, setCompletionMoment] =
+    useState<PracticeStoryMoment | null>(null);
+  const [shareMoment, setShareMoment] = useState<PracticeStoryMoment | null>(
+    null,
+  );
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [assistantInput, setAssistantInput] = useState("");
   const [assistantMessages, setAssistantMessages] = useState<
@@ -179,7 +193,7 @@ export function PrayerScreen(): React.JSX.Element {
       setAssistantMessages([]);
       setReaderOpen(true);
       setFocusPromptMessage("");
-      setFocusPromptOpen(prayerFocusEnabled);
+      setFocusPromptOpen(false);
     }
   }, [
     prayerFocusEnabled,
@@ -266,7 +280,7 @@ export function PrayerScreen(): React.JSX.Element {
     setAssistantMessages([]);
     setReaderOpen(true);
     setFocusPromptMessage("");
-    setFocusPromptOpen(prayerFocusEnabled);
+    setFocusPromptOpen(false);
   };
 
   const closeReader = () => {
@@ -303,6 +317,34 @@ export function PrayerScreen(): React.JSX.Element {
     transliteration: token.localizedTransliteration,
     translation: token.localizedTranslation,
   }));
+
+  const startGuidedPrayer = () => {
+    setGuidedPrayerOpen(true);
+    if (prayerFocusEnabled) void openPrayerFocusSetup();
+  };
+
+  const completeGuidedPrayer = () => {
+    if (!selected) return;
+    const completedAt = new Date();
+    recordCompletion(selected, completedAt);
+    const habit = habitForPrayer(selected);
+    if (habit) completeHabit(habit, completedAt);
+    const streak = habit
+      ? (useStreakStore.getState().habits.find((item) => item.habit === habit)
+          ?.streak ?? 0)
+      : 0;
+    if (habit && [3, 7, 18, 40, 100].includes(streak)) {
+      publishMilestone(habit, streak);
+    }
+    setGuidedPrayerOpen(false);
+    setCompletionMoment({
+      habit,
+      prayerTitle: selected.title,
+      streak,
+      completedAt,
+    });
+    void confirmHaptic();
+  };
 
   const askAboutSelectedPrayer = async () => {
     if (!selected || !assistantInput.trim() || isAssistantStreaming) {
@@ -380,7 +422,9 @@ export function PrayerScreen(): React.JSX.Element {
       <BrandWordmark width={128} />
       <View className="flex-row items-center gap-3">
         <View className="gap-0">
-          <Text variant="display" className="text-[28px] leading-[34px]">Prayers</Text>
+          <Text variant="display" className="text-[28px] leading-[34px]">
+            Prayers
+          </Text>
           <Text variant="body">Find a prayer for this moment.</Text>
         </View>
       </View>
@@ -637,7 +681,7 @@ export function PrayerScreen(): React.JSX.Element {
                     accessibilityLabel="Start guided reading"
                     accessibilityRole="button"
                     haptic="confirm"
-                    onPress={() => setGuidedPrayerOpen(true)}
+                    onPress={startGuidedPrayer}
                     className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
                   >
                     <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
@@ -752,68 +796,14 @@ export function PrayerScreen(): React.JSX.Element {
                     </Text>
                   </View>
                 ) : null}
-                <View className="gap-4 p-5 rounded-xl bg-card border border-hairlineStrong shadow-floating overflow-hidden">
-                  <View className="absolute -right-12 -top-12 h-32 w-32 rounded-full border border-hairline" />
-                  <View className="flex-row items-center gap-3">
-                    <View className="w-[42px] h-[42px] rounded-md items-center justify-center bg-foreground overflow-hidden">
-                      <BrandMark size={32} inverted />
-                    </View>
-                    <View className="flex-1 gap-[2px]">
-                      <Text
-                        variant="section"
-                        className="text-[17px] leading-[22px]"
-                      >
-                        Questions about this prayer
-                      </Text>
-                      <Text
-                        variant="body"
-                        className="text-[13px] leading-[18px]"
-                      >
-                        Educational guidance using this text as context.
-                      </Text>
-                    </View>
-                  </View>
-                  {assistantOpen ? (
-                    <View className="gap-2">
-                      {assistantMessages.length > 0 ? (
-                        assistantMessages.map((message) => (
-                          <AssistantMessageBubble key={message.id} message={message} />
-                        ))
-                      ) : (
-                        <Text variant="body">
-                          Ask for meaning, context, how it is used, or a simple
-                          two-sentence takeaway.
-                        </Text>
-                      )}
-                    </View>
-                  ) : null}
-                  <View className="flex-row items-end gap-2 rounded-lg border border-hairlineStrong bg-background p-2 shadow-card">
-                    <Input
-                      accessibilityLabel="Question about this prayer"
-                      value={assistantInput}
-                      onChangeText={setAssistantInput}
-                      placeholder="What does this mean?"
-                      placeholderTextColor={colors.inkMuted}
-                      className="h-auto min-h-11 max-h-[116px] w-auto flex-1 border-0 bg-transparent px-2 py-1 shadow-none"
-                      multiline
-                    />
-                    <Button
-                      variant="default"
-                      size="content"
-                      accessibilityLabel="Ask question"
-                      accessibilityRole="button"
-                      onPress={() => void askAboutSelectedPrayer()}
-                      disabled={!assistantInput.trim() || isAssistantStreaming}
-                      className={cn(
-                        "w-11 h-11 rounded-md items-center justify-center bg-primary",
-                        (!assistantInput.trim() || isAssistantStreaming) &&
-                          "opacity-[0.42]",
-                      )}
-                    >
-                      <Send size={17} color={colors.white} />
-                    </Button>
-                  </View>
-                </View>
+                <PrayerAssistantPanel
+                  input={assistantInput}
+                  isOpen={assistantOpen}
+                  isStreaming={isAssistantStreaming}
+                  messages={assistantMessages}
+                  onChangeInput={setAssistantInput}
+                  onSubmit={() => void askAboutSelectedPrayer()}
+                />
               </View>
             ) : null}
           </ScrollView>
@@ -942,9 +932,104 @@ export function PrayerScreen(): React.JSX.Element {
             tokens={guidedTokens}
             visible={guidedPrayerOpen}
             onClose={() => setGuidedPrayerOpen(false)}
+            onComplete={completeGuidedPrayer}
           />
+          {completionMoment ? (
+            <View
+              accessibilityViewIsModal
+              className="absolute left-0 right-0 top-0 bottom-0 z-[50] justify-end p-3 bg-[rgba(17,20,18,0.36)]"
+            >
+              <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
+                <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
+                  <BookOpenCheck size={23} color={colors.white} />
+                </View>
+                <View className="gap-1">
+                  <Text variant="caption">Prayer complete</Text>
+                  <Text
+                    variant="section"
+                    className="text-[24px] leading-[30px]"
+                  >
+                    Beautiful work showing up.
+                  </Text>
+                  <Text variant="body" className="text-muted-foreground">
+                    {completionMoment.habit
+                      ? `Saved to your history and today's ${completionMoment.habit} practice.`
+                      : "Saved to your private prayer history."}
+                  </Text>
+                </View>
+                <View className="gap-3">
+                  <Button
+                    variant="default"
+                    size="content"
+                    accessibilityRole="button"
+                    onPress={() => {
+                      setShareMoment(completionMoment);
+                      setCompletionMoment(null);
+                      closeReader();
+                    }}
+                    className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
+                  >
+                    <Share2 size={18} color={colors.white} />
+                    <Text className="text-[16px] leading-[22px] font-semibold text-white font-heading">
+                      Share this moment
+                    </Text>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="content"
+                    accessibilityRole="button"
+                    onPress={() => {
+                      setCompletionMoment(null);
+                      closeReader();
+                    }}
+                    className="min-h-11 items-center justify-center"
+                  >
+                    <Text variant="section" className="text-[15px]">
+                      Done
+                    </Text>
+                  </Button>
+                </View>
+              </Card>
+            </View>
+          ) : null}
         </SafeAreaView>
       </Modal>
+      <PracticeStoryComposer
+        moment={shareMoment}
+        onClose={() => setShareMoment(null)}
+      />
     </Screen>
   );
+}
+
+function habitForPrayer(prayer: {
+  id: string;
+  title: string;
+  category: string;
+  tags: string[];
+}): StreakHabit | undefined {
+  const searchable =
+    `${prayer.id} ${prayer.title} ${prayer.tags.join(" ")}`.toLowerCase();
+  if (prayer.category === "tefillin" || searchable.includes("tefillin"))
+    return "tefillin";
+  if (
+    prayer.category === "study" ||
+    searchable.includes("study") ||
+    searchable.includes("learning")
+  )
+    return "study";
+  if (
+    searchable.includes("shacharit") ||
+    searchable.includes("morning service")
+  )
+    return "shacharit";
+  if (searchable.includes("mincha") || searchable.includes("afternoon service"))
+    return "mincha";
+  if (
+    searchable.includes("maariv") ||
+    searchable.includes("arvit") ||
+    searchable.includes("evening service")
+  )
+    return "maariv";
+  return undefined;
 }

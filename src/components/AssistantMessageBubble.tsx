@@ -6,7 +6,11 @@ import type { AssistantMessage } from "@/services/assistantService";
 import { useEffect, useRef } from "react";
 import { Animated, View } from "react-native";
 
-export function AssistantMessageBubble({ message }: { message: AssistantMessage }): React.JSX.Element {
+export function AssistantMessageBubble({
+  message,
+}: {
+  message: AssistantMessage;
+}): React.JSX.Element {
   const progress = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
   const isUser = message.role === "user";
@@ -25,27 +29,59 @@ export function AssistantMessageBubble({ message }: { message: AssistantMessage 
     <Animated.View
       style={{
         opacity: progress,
-        transform: [{
-          translateY: reduceMotion ? 0 : progress.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }),
-        }, { scale: reduceMotion ? 1 : progress.interpolate({ inputRange: [0, 1], outputRange: [0.97, 1] }) }],
+        transform: [
+          {
+            translateY: reduceMotion
+              ? 0
+              : progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [12, 0],
+                }),
+          },
+          {
+            scale: reduceMotion
+              ? 1
+              : progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0.97, 1],
+                }),
+          },
+        ],
       }}
       className={isUser ? "self-end max-w-[88%]" : "self-start w-full"}
     >
       {isUser ? (
-        <View className="rounded-lg rounded-br-sm bg-foreground px-4 py-3 shadow-card">
-          <Text variant="body" className="text-white text-[15px] leading-[22px]">{message.content}</Text>
+        <View className="rounded-lg rounded-br-sm bg-foreground px-4 py-3">
+          <Text
+            variant="body"
+            className="text-white text-[15px] leading-[22px]"
+          >
+            {message.content}
+          </Text>
         </View>
       ) : (
-        <View className="flex-row items-start gap-3 py-3">
-          <View className="mt-0.5 h-8 w-8 overflow-hidden rounded-md bg-foreground items-center justify-center">
-            <BrandMark size={25} inverted />
+        <View className="flex-row items-start gap-3 py-1">
+          <View className="mt-0.5 h-7 w-7 items-center justify-center">
+            <BrandMark size={27} />
           </View>
-          <View className="flex-1 border-l border-l-hairlineStrong pl-3">
+          <View className="flex-1 border-l-2 border-l-primary pl-3">
             {message.content ? (
-              <AssistantResponseText content={message.content} className="text-foreground text-[15px] leading-[23px]" />
+              <AssistantResponseText
+                content={message.content}
+                className="text-foreground text-[15px] leading-[23px]"
+              />
             ) : (
-              <View className="flex-row gap-1 py-2" accessibilityLabel="Thinking">
-                {[0.35, 0.6, 1].map((opacity) => <View key={opacity} className="h-1.5 w-1.5 rounded-full bg-primary" style={{ opacity }} />)}
+              <View
+                className="flex-row gap-1 py-2"
+                accessibilityLabel="Thinking"
+              >
+                {[0.35, 0.6, 1].map((opacity) => (
+                  <View
+                    key={opacity}
+                    className="h-1.5 w-1.5 rounded-full bg-primary"
+                    style={{ opacity }}
+                  />
+                ))}
               </View>
             )}
           </View>

@@ -31,8 +31,8 @@ export function RootNavigator(): React.JSX.Element {
       }}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.white,
-        tabBarActiveBackgroundColor: colors.blue,
+        tabBarActiveTintColor: colors.blue,
+        tabBarActiveBackgroundColor: colors.blueSoft,
         tabBarInactiveTintColor: colors.inkMuted,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
@@ -60,9 +60,11 @@ export function RootNavigator(): React.JSX.Element {
           marginTop: 3
         },
         tabBarItemStyle: {
-          height: 58,
+          height: 54,
           marginHorizontal: 4,
-          borderRadius: 2,
+          marginVertical: 2,
+          borderRadius: 8,
+          overflow: "hidden",
           paddingVertical: 3
         },
         tabBarIconStyle: {

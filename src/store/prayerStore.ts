@@ -1,10 +1,19 @@
 import { create } from "zustand";
 
-import { cacheStorage, readJson, writeJson } from "@/services/mmkv";
+import { cacheStorage, readJson, userStorage, writeJson } from "@/services/mmkv";
 import { getCachedPrayers, hydratePrayerFromSefaria, mergePrayerCollections, searchPrayers, searchSefariaPrayerRefs, syncCorePrayers } from "@/services/prayerService";
 import type { PrayerSearchResult, PrayerText } from "@/types/prayer";
 
 const BOOKMARKS_KEY = "prayers.bookmarks";
+const HISTORY_KEY = "prayers.history.v1";
+
+export type PrayerHistoryEntry = {
+  id: string;
+  prayerId: string;
+  prayerTitle: string;
+  completedAt: string;
+  source: "guided-reading";
+};
 
 type PrayerState = {
   prayers: PrayerText[];
@@ -16,15 +25,18 @@ type PrayerState = {
   loadingPrayerId: string | null;
   prayerLoadError: string | null;
   bookmarkedPrayerIds: string[];
+  history: PrayerHistoryEntry[];
   setQuery: (query: string) => void;
   searchRemote: (query?: string) => Promise<void>;
   selectPrayer: (id: string) => Promise<void>;
   toggleBookmark: (id: string) => void;
+  recordCompletion: (prayer: Pick<PrayerText, "id" | "title">, completedAt?: Date) => PrayerHistoryEntry;
   sync: () => Promise<void>;
 };
 
 const cached = getCachedPrayers();
 const persistedBookmarks = readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? ["tefillin-blessing"];
+const persistedHistory = readJson(userStorage, HISTORY_KEY, isPrayerHistoryArray) ?? [];
 
 export const usePrayerStore = create<PrayerState>((set, get) => ({
   prayers: cached,
@@ -36,6 +48,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
   loadingPrayerId: null,
   prayerLoadError: null,
   bookmarkedPrayerIds: persistedBookmarks,
+  history: persistedHistory,
   setQuery: (query) => {
     const prayers = get().prayers;
     set({ query, results: searchPrayers(query, prayers) });
@@ -90,6 +103,21 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
       return { bookmarkedPrayerIds };
     });
   },
+  recordCompletion: (prayer, completedAt = new Date()) => {
+    const entry: PrayerHistoryEntry = {
+      id: `${completedAt.toISOString()}-${prayer.id}`,
+      prayerId: prayer.id,
+      prayerTitle: prayer.title,
+      completedAt: completedAt.toISOString(),
+      source: "guided-reading",
+    };
+    set((state) => {
+      const history = [entry, ...state.history].slice(0, 500);
+      writeJson(userStorage, HISTORY_KEY, history);
+      return { history };
+    });
+    return entry;
+  },
   sync: async () => {
     set({ isSyncing: true });
     try {
@@ -107,4 +135,12 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function isPrayerHistoryArray(value: unknown): value is PrayerHistoryEntry[] {
+  return Array.isArray(value) && value.every((item) => {
+    if (typeof item !== "object" || item === null) return false;
+    const entry = item as Partial<PrayerHistoryEntry>;
+    return typeof entry.id === "string" && typeof entry.prayerId === "string" && typeof entry.prayerTitle === "string" && typeof entry.completedAt === "string" && entry.source === "guided-reading";
+  });
 }
