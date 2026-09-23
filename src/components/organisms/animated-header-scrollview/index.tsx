@@ -212,7 +212,7 @@ function AmbientGlow(): React.JSX.Element {
   return (
     <Svg
       pointerEvents="none"
-      style={StyleSheet.absoluteFillObject}
+      style={StyleSheet.absoluteFill}
       viewBox="0 0 600 900"
       preserveAspectRatio="xMidYMin slice"
     >
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     zIndex: 20,
   },
   chrome: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     height: config.barHeight + 18,
     overflow: "hidden",
   },
