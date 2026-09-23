@@ -97,6 +97,8 @@ export function ProfileScreen(): React.JSX.Element {
       setNotificationMessage("");
       return;
     }
+    setZmanNotificationsEnabled(true);
+    setNotificationMessage("Turning on local reminders…");
     const granted = await initializeNotifications();
     setZmanNotificationsEnabled(granted);
     setNotificationMessage(
@@ -123,6 +125,8 @@ export function ProfileScreen(): React.JSX.Element {
       return;
     }
 
+    setTravelNotificationsEnabled(true);
+    setTravelNotificationMessage("Turning on travel reminders…");
     const granted = await initializeNotifications();
     setTravelNotificationsEnabled(granted);
     setTravelNotificationMessage(
@@ -355,7 +359,7 @@ export function ProfileScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => setActiveModal(null)}
               pressedScale={0.94}
-              className="w-11 h-11 rounded-md items-center justify-center bg-white border border-hairline shadow-card"
+              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline shadow-card"
             >
               <X size={18} color={colors.ink} />
             </Button>

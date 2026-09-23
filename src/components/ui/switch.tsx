@@ -1,11 +1,28 @@
 import { cn } from "@/lib/utils";
+import { motion } from "@/design/theme";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import * as SwitchPrimitives from "@rn-primitives/switch";
-import { Platform } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, Easing, Platform } from "react-native";
+
+const AnimatedThumb = Animated.createAnimatedComponent(SwitchPrimitives.Thumb);
 
 function Switch({
   className,
   ...props
 }: React.ComponentProps<typeof SwitchPrimitives.Root>) {
+  const progress = useRef(new Animated.Value(props.checked ? 1 : 0)).current;
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    Animated.timing(progress, {
+      toValue: props.checked ? 1 : 0,
+      duration: reduceMotion ? 0 : motion.stateMs,
+      easing: Easing.bezier(...motion.snappy),
+      useNativeDriver: true,
+    }).start();
+  }, [progress, props.checked, reduceMotion]);
+
   return (
     <SwitchPrimitives.Root
       hitSlop={8}
@@ -20,16 +37,30 @@ function Switch({
       )}
       {...props}
     >
-      <SwitchPrimitives.Thumb
+      <AnimatedThumb
         className={cn(
-          "bg-white size-6 rounded-full transition-transform",
+          "bg-white size-6 rounded-full",
           Platform.select({
             web: "pointer-events-none block ring-0",
           }),
-          props.checked
-            ? "dark:bg-primary-foreground translate-x-5"
-            : "dark:bg-foreground translate-x-0",
+          props.checked ? "dark:bg-primary-foreground" : "dark:bg-foreground",
         )}
+        style={{
+          transform: [
+            {
+              translateX: progress.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, 20],
+              }),
+            },
+            {
+              scale: progress.interpolate({
+                inputRange: [0, 0.5, 1],
+                outputRange: [1, 0.9, 1],
+              }),
+            },
+          ],
+        }}
       />
     </SwitchPrimitives.Root>
   );

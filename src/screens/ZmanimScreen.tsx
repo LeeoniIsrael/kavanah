@@ -8,6 +8,7 @@ import { View } from "react-native";
 import { Screen } from "@/components/Screen";
 import { ParametricField } from "@/components/ParametricField";
 import { Button } from "@/components/ui/button";
+import { LoadingOrbit, StatusPulse } from "@/components/ui/motion-feedback";
 import { ZmanRow } from "@/components/ZmanRow";
 import { colors } from "@/design/theme";
 import { useZmanimStore } from "@/store/zmanimStore";
@@ -36,19 +37,23 @@ export function ZmanimScreen(): React.JSX.Element {
           accessibilityRole="button"
           onPress={() => void refresh()}
           disabled={isLoading}
-          className="w-11 h-11 rounded-md items-center justify-center bg-white border border-hairline"
+          className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
         >
-          <RefreshCw
-            size={19}
-            color={isLoading ? colors.inkMuted : colors.ink}
-          />
+          <LoadingOrbit active={isLoading}>
+            <RefreshCw
+              size={19}
+              color={isLoading ? colors.inkMuted : colors.ink}
+            />
+          </LoadingOrbit>
         </Button>
       </View>
 
       <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
         <ParametricField />
         <View className="flex-row items-center gap-2">
-          <View className="w-2 h-2 rounded-full bg-white" />
+          <StatusPulse active={Boolean(nextZman)}>
+            <View className="w-2 h-2 rounded-full bg-white" />
+          </StatusPulse>
           <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
             Next
           </Text>

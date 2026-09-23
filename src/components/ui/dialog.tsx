@@ -11,7 +11,14 @@ import {
   type GestureResponderEvent,
   type ViewProps,
 } from "react-native";
-import { FadeIn, FadeOut, ReduceMotion } from "react-native-reanimated";
+import {
+  Easing as ReanimatedEasing,
+  FadeIn,
+  FadeInDown,
+  FadeOut,
+  FadeOutDown,
+  ReduceMotion,
+} from "react-native-reanimated";
 import { FullWindowOverlay as RNFullWindowOverlay } from "react-native-screens";
 
 const Dialog = DialogPrimitive.Root;
@@ -57,14 +64,22 @@ function DialogOverlay({
         asChild={Platform.OS !== "web"}
       >
         <NativeOnlyAnimatedView
-          entering={FadeIn.duration(200).reduceMotion(ReduceMotion.System)}
-          exiting={FadeOut.duration(150).reduceMotion(ReduceMotion.System)}
+          entering={FadeIn.duration(180)
+            .easing(ReanimatedEasing.bezier(0.16, 1, 0.3, 1))
+            .reduceMotion(ReduceMotion.System)}
+          exiting={FadeOut.duration(130)
+            .easing(ReanimatedEasing.bezier(0.25, 1, 0.5, 1))
+            .reduceMotion(ReduceMotion.System)}
           as="Pressable"
         >
           <NativeOnlyAnimatedView
             className="w-full"
-            entering={FadeIn.delay(50).reduceMotion(ReduceMotion.System)}
-            exiting={FadeOut.duration(150).reduceMotion(ReduceMotion.System)}
+            entering={FadeInDown.duration(280)
+              .easing(ReanimatedEasing.bezier(0.16, 1, 0.3, 1))
+              .reduceMotion(ReduceMotion.System)}
+            exiting={FadeOutDown.duration(180)
+              .easing(ReanimatedEasing.bezier(0.25, 1, 0.5, 1))
+              .reduceMotion(ReduceMotion.System)}
           >
             <>{children}</>
           </NativeOnlyAnimatedView>
@@ -90,7 +105,7 @@ function DialogContent({
       <DialogOverlay className={cn(overlayClassName)}>
         <DialogPrimitive.Content
           className={cn(
-            "bg-background border-border z-50 mx-auto flex w-full max-w-lg flex-col gap-4 rounded-lg border p-6 shadow-lg shadow-black/5 ",
+            "bg-popover border-hairline z-50 mx-auto flex w-full max-w-lg flex-col gap-4 rounded-lg border p-6 shadow-floating ",
             Platform.select({
               web: "animate-in fade-in-0 zoom-in-95 duration-200",
             }),

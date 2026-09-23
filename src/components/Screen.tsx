@@ -1,7 +1,8 @@
 import type { PropsWithChildren } from "react";
 import { useEffect, useRef } from "react";
-import { Animated, Easing, ScrollView } from "react-native";
+import { Animated, Easing, ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
 
 import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -30,6 +31,21 @@ export function Screen({ children }: PropsWithChildren): React.JSX.Element {
 
   return (
     <SafeAreaView className="flex-1 bg-background">
+      <Svg
+        pointerEvents="none"
+        style={StyleSheet.absoluteFillObject}
+        viewBox="0 0 600 900"
+        preserveAspectRatio="xMidYMin slice"
+      >
+        <Defs>
+          <RadialGradient id="ambient" cx="50%" cy="0%" r="68%">
+            <Stop offset="0" stopColor="#7C8CFF" stopOpacity="0.11" />
+            <Stop offset="0.55" stopColor="#7C8CFF" stopOpacity="0.025" />
+            <Stop offset="1" stopColor="#121214" stopOpacity="0" />
+          </RadialGradient>
+        </Defs>
+        <Rect width="600" height="520" fill="url(#ambient)" />
+      </Svg>
       <ScrollView
         contentContainerClassName="px-5 pt-5 pb-[120px]"
         showsVerticalScrollIndicator={false}

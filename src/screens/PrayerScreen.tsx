@@ -874,7 +874,7 @@ export function PrayerScreen(): React.JSX.Element {
           ) : null}
           {consentModalOpen ? (
             <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
-              <View className="p-4 pb-6 gap-2 rounded-lg bg-white shadow-card">
+              <View className="p-4 pb-6 gap-2 rounded-lg bg-card shadow-card border border-hairline">
                 <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
                   <ShieldCheck size={21} color={colors.blue} />
                 </View>

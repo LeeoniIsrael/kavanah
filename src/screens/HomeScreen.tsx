@@ -41,6 +41,7 @@ import { CommunityFeed } from "@/components/CommunityFeed";
 import { BrandWordmark } from "@/components/BrandMark";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
+import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
 import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -245,9 +246,11 @@ export function HomeScreen(): React.JSX.Element {
         </Button>
       </View>
 
-      <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-white">
+      <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
         <View className="flex-row items-center gap-2">
-          <View className="w-[6px] h-[6px] rounded-full bg-primary" />
+          <StatusPulse active={Boolean(nextZman)}>
+            <View className="w-[6px] h-[6px] rounded-full bg-primary" />
+          </StatusPulse>
           <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
             {nextZman ? timeUntil(nextZman.time) : "Location needed"}
           </Text>
@@ -274,7 +277,7 @@ export function HomeScreen(): React.JSX.Element {
               size="content"
               accessibilityRole="button"
               onPress={() => openPrayerSearch(nextMoment.query)}
-              className="min-h-11 rounded-full px-4 bg-white flex-row items-center gap-1"
+              className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
             >
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
                 {nextMoment.label}
@@ -288,7 +291,7 @@ export function HomeScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => void refresh()}
               disabled={isLoading}
-              className="min-h-11 rounded-full px-4 bg-white flex-row items-center gap-1"
+              className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
             >
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
                 {isLoading ? "Finding" : "Use location"}
@@ -301,7 +304,7 @@ export function HomeScreen(): React.JSX.Element {
             size="content"
             accessibilityRole="button"
             onPress={() => navigation.navigate("Zmanim")}
-            className="min-h-11 rounded-full px-4 bg-white/60 items-center justify-center"
+            className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
           >
             <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
               Times
@@ -348,7 +351,7 @@ export function HomeScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => setPracticeEditorOpen(true)}
               pressedScale={0.94}
-              className="w-11 h-11 rounded-md items-center justify-center bg-white border border-hairline"
+              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
             >
               <SlidersHorizontal size={16} color={colors.ink} />
             </Button>
@@ -400,7 +403,9 @@ export function HomeScreen(): React.JSX.Element {
                       complete && "bg-primary border-primary",
                     )}
                   >
-                    {complete ? <Check size={14} color={colors.white} /> : null}
+                    <StateBounce trigger={complete}>
+                      {complete ? <Check size={14} color={colors.white} /> : null}
+                    </StateBounce>
                   </View>
                 </Button>
               );
@@ -504,7 +509,7 @@ export function HomeScreen(): React.JSX.Element {
         >
           <SafeAreaView
             edges={["bottom"]}
-            className="bg-white rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
           >
             <View className="px-6 pt-2 pb-4 gap-4">
               <View className="flex-row items-center justify-between">
@@ -593,7 +598,7 @@ export function HomeScreen(): React.JSX.Element {
         >
           <SafeAreaView
             edges={["bottom"]}
-            className="bg-white rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
           >
             <View className="px-6 pt-2 pb-4 gap-4">
               <View className="flex-row items-start gap-4">
@@ -675,7 +680,7 @@ export function HomeScreen(): React.JSX.Element {
         >
           <SafeAreaView
             edges={["bottom"]}
-            className="bg-white rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
           >
             <View className="px-6 pt-2 pb-4 gap-4">
               <View className="flex-row items-start gap-4">
@@ -814,7 +819,7 @@ function ShareMomentPrompt({
           className="absolute inset-0 bg-[rgba(18,31,52,0.14)]"
           style={{ opacity: progress }}
         >
-          <BlurView intensity={38} tint="light" className="flex-1" />
+          <BlurView intensity={38} tint="dark" className="flex-1" />
         </Animated.View>
         <Pressable
           accessibilityLabel="Dismiss share prompt"
@@ -823,7 +828,7 @@ function ShareMomentPrompt({
           onPress={() => close()}
         />
         <Animated.View
-          className="w-full max-w-[368px] overflow-hidden rounded-xl shadow-card"
+          className="w-full max-w-[368px] overflow-hidden rounded-xl shadow-floating"
           style={{
             transform: [
               {
@@ -844,19 +849,19 @@ function ShareMomentPrompt({
           {nativeGlassAvailable ? (
             <GlassView
               className="absolute inset-0"
-              colorScheme="light"
+              colorScheme="dark"
               glassEffectStyle={{
                 style: "regular",
                 animate: true,
                 animationDuration: 0.35,
               }}
-              tintColor="rgba(239, 246, 255, 0.72)"
+              tintColor="rgba(24, 24, 27, 0.76)"
             />
           ) : (
-            <View className="absolute inset-0 bg-card border border-white" />
+            <View className="absolute inset-0 bg-card border border-hairline" />
           )}
           <View className="items-center px-6 pt-7 pb-5 gap-3">
-            <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-white">
+            <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-hairline">
               <Share2 size={21} color={colors.blue} />
             </View>
             <View className="items-center gap-1">

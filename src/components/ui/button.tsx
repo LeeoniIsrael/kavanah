@@ -144,17 +144,38 @@ function Button({
   const lift = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
   const animateTo = (value: number) => {
+    scale.stopAnimation();
+    lift.stopAnimation();
+    if (value === 1 && !reduceMotion) {
+      Animated.parallel([
+        Animated.spring(scale, {
+          toValue: 1,
+          stiffness: 520,
+          damping: 28,
+          mass: 0.72,
+          useNativeDriver: true,
+        }),
+        Animated.spring(lift, {
+          toValue: 0,
+          stiffness: 520,
+          damping: 30,
+          mass: 0.72,
+          useNativeDriver: true,
+        }),
+      ]).start();
+      return;
+    }
     Animated.parallel([
       Animated.timing(scale, {
         toValue: reduceMotion ? 1 : value,
         duration: motion.pressMs,
-        easing: Easing.bezier(...motion.standard),
+        easing: Easing.bezier(...motion.snappy),
         useNativeDriver: true,
       }),
       Animated.timing(lift, {
-        toValue: reduceMotion || value === 1 ? 0 : 1.5,
+        toValue: reduceMotion ? 0 : 1.5,
         duration: motion.pressMs,
-        easing: Easing.bezier(...motion.standard),
+        easing: Easing.bezier(...motion.snappy),
         useNativeDriver: true,
       }),
     ]).start();
@@ -177,8 +198,8 @@ function Button({
           className,
         )}
         style={[style, { transform: [{ scale }, { translateY: lift }] }]}
-        onPress={async (event) => {
-          await playHaptic();
+        onPress={(event) => {
+          void playHaptic();
           onPress?.(event);
         }}
         onPressIn={(event) => {

@@ -8,6 +8,7 @@ import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
 import { ZmanimScreen } from "@/screens/ZmanimScreen";
 import { tapHaptic } from "@/services/haptics";
+import { StateBounce } from "@/components/ui/motion-feedback";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -44,9 +45,9 @@ export function RootNavigator(): React.JSX.Element {
           bottom: bottomInset,
           position: "absolute",
           borderRadius: 38,
-          backgroundColor: "rgba(255, 255, 255, 0.94)",
+          backgroundColor: colors.glass,
           borderWidth: 1,
-          borderColor: colors.white,
+          borderColor: colors.hairline,
           shadowColor: colors.ink,
           shadowOpacity: 0.1,
           shadowRadius: 24,
@@ -84,7 +85,11 @@ export function RootNavigator(): React.JSX.Element {
 
 function tabIcon(Icon: typeof House) {
   function TabBarIcon({ color, size, focused }: { color: string; size: number; focused: boolean }): React.JSX.Element {
-    return <Icon color={color} size={size} strokeWidth={focused ? 2 : 1.5} />;
+    return (
+      <StateBounce trigger={focused}>
+        <Icon color={color} size={size} strokeWidth={focused ? 2.2 : 1.5} />
+      </StateBounce>
+    );
   }
 
   return TabBarIcon;

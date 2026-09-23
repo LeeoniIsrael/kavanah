@@ -83,7 +83,7 @@ export default function App(): React.JSX.Element {
       <AppErrorBoundary>
         <AppProviders>
           <NavigationContainer linking={linking} theme={NAV_THEME.light}>
-            <StatusBar style="dark" />
+            <StatusBar style="light" />
             <RootNavigator />
             <PortalHost />
           </NavigationContainer>
