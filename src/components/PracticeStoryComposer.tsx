@@ -1,4 +1,5 @@
 import { BrandWordmark } from "@/components/BrandMark";
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
@@ -7,7 +8,6 @@ import * as Sharing from "expo-sharing";
 import { Check, ImagePlus, Share, X } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Image,
   Modal,
   ScrollView,
@@ -285,21 +285,27 @@ export function PracticeStoryComposer({
                   variant="default"
                   size="content"
                   accessibilityRole="button"
-                  disabled={isSharing || !photoReady}
+                  disabled={!photoReady}
+                  isLoading={isSharing}
+                  loadingLabel="Preparing"
                   haptic="confirm"
                   onPress={() => void shareStory()}
                   className={cn(
                     "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
-                    (isSharing || !photoReady) && "opacity-[0.5]",
+                    !photoReady && "opacity-[0.5]",
                   )}
                 >
-                  {isSharing || !photoReady ? (
-                    <ActivityIndicator color={colors.white} size="small" />
+                  {!photoReady ? (
+                    <CircleLoadingIndicator
+                      dotColor={colors.white}
+                      dotRadius={2.5}
+                      dotSpacing={4}
+                    />
                   ) : (
                     <Share size={18} color={colors.white} />
                   )}
                   <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
-                    {isSharing ? "Preparing" : "Share"}
+                    Share
                   </Text>
                 </Button>
               </View>
