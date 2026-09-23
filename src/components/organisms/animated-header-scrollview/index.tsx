@@ -2,7 +2,10 @@ import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import Animated, {
   Extrapolation,
   interpolate,
@@ -50,6 +53,7 @@ export function AnimatedHeaderScrollView({
   smallHeaderTitleStyle,
   smallHeaderSubtitleStyle,
 }: AnimatedHeaderScrollViewProps): React.JSX.Element {
+  const insets = useSafeAreaInsets();
   const scrollY = useSharedValue(0);
   const reduceMotion = useReducedMotion();
   const gradient = useMemo(
@@ -166,8 +170,14 @@ export function AnimatedHeaderScrollView({
         </View>
       </Animated.ScrollView>
 
-      <View pointerEvents="box-none" style={styles.stickyHeader}>
-        <Animated.View pointerEvents="none" style={[styles.chrome, chromeStyle]}>
+      <View
+        pointerEvents="box-none"
+        style={[styles.stickyHeader, { top: insets.top }]}
+      >
+        <Animated.View
+          pointerEvents="none"
+          style={[styles.chrome, chromeStyle]}
+        >
           <BlurView
             intensity={blurIntensity}
             tint={blurTint}

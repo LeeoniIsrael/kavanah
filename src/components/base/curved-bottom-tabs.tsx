@@ -3,8 +3,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import React, {
   cloneElement,
   isValidElement,
-  useEffect,
-  useState,
   type ReactElement,
   type ReactNode,
 } from "react";
@@ -13,22 +11,11 @@ import {
   StyleSheet,
   Text,
   View,
-  type LayoutChangeEvent,
   type ViewStyle,
 } from "react-native";
-import Animated, {
-  Easing,
-  createAnimatedComponent,
-  useAnimatedProps,
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
-import Svg, { Path } from "react-native-svg";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { colors, fonts, motion } from "@/design/theme";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { colors, fonts } from "@/design/theme";
 
 export type CurvedTab = {
   id: string;
@@ -53,15 +40,12 @@ export type CurvedBottomTabsProps = {
   shadow?: ViewStyle;
 };
 
-const AnimatedPath = createAnimatedComponent(Path);
 const FLOATING_BUTTON_SIZE = 58;
-const BAR_TOP = 25;
-const NOTCH_DEPTH = 32;
-const NOTCH_HALF_WIDTH = 36;
-const BAR_RADIUS = 22;
+const BAR_TOP = 18;
+const BAR_RADIUS = 26;
 
 /**
- * An animated bottom bar whose active destination sits in a moving curved cradle.
+ * A floating bottom bar whose active destination rises above the dock.
  * The component is navigation-agnostic so it can also be reused outside React Navigation.
  */
 export function CurvedBottomTabs({
@@ -79,80 +63,18 @@ export function CurvedBottomTabs({
   fontFamily = fonts.medium,
   shadow,
 }: CurvedBottomTabsProps): React.JSX.Element {
-  const [width, setWidth] = useState(0);
-  const animatedIndex = useSharedValue(currentIndex);
-  const reduceMotion = useReducedMotion();
-  const segmentWidth = tabs.length > 0 ? width / tabs.length : 0;
   const totalHeight = BAR_TOP + barHeight;
-  const activeTab = tabs[currentIndex];
-
-  useEffect(() => {
-    animatedIndex.value = reduceMotion
-      ? currentIndex
-      : withTiming(currentIndex, {
-          duration: motion.navigationMs,
-          easing: Easing.bezier(...motion.snappy),
-        });
-  }, [animatedIndex, currentIndex, reduceMotion]);
-
-  const animatedPathProps = useAnimatedProps(() => {
-    const center = segmentWidth * (animatedIndex.value + 0.5);
-    const left = center - NOTCH_HALF_WIDTH;
-    const right = center + NOTCH_HALF_WIDTH;
-    const leftRadius = Math.min(BAR_RADIUS, Math.max(0, left));
-    const rightRadius = Math.min(BAR_RADIUS, Math.max(0, width - right));
-    const d = [
-      `M 0 ${leftRadius}`,
-      `Q 0 0 ${leftRadius} 0`,
-      `H ${left}`,
-      `C ${center - 29} 0 ${center - 34} ${NOTCH_DEPTH} ${center} ${NOTCH_DEPTH}`,
-      `C ${center + 34} ${NOTCH_DEPTH} ${center + 29} 0 ${right} 0`,
-      `H ${width - rightRadius}`,
-      `Q ${width} 0 ${width} ${rightRadius}`,
-      `V ${barHeight - BAR_RADIUS}`,
-      `Q ${width} ${barHeight} ${width - BAR_RADIUS} ${barHeight}`,
-      `H ${BAR_RADIUS}`,
-      `Q 0 ${barHeight} 0 ${barHeight - BAR_RADIUS}`,
-      "Z",
-    ].join(" ");
-    return { d };
-  });
-
-  const floatingButtonStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: segmentWidth * animatedIndex.value },
-      { scale: buttonScale },
-    ],
-  }));
-
-  const handleLayout = (event: LayoutChangeEvent) => {
-    setWidth(event.nativeEvent.layout.width);
-  };
-
-  if (tabs.length === 0 || !activeTab) return <></>;
+  if (tabs.length === 0 || !tabs[currentIndex]) return <></>;
 
   return (
     <View
-      onLayout={handleLayout}
       pointerEvents="box-none"
-      style={[styles.container, { height: totalHeight }]}
+      style={[styles.container, { height: totalHeight }, shadow]}
     >
-      {width > 0 ? (
-        <Svg
-          height={barHeight + 1}
-          pointerEvents="none"
-          style={[styles.bar, { top: BAR_TOP }, shadow]}
-          viewBox={`0 0 ${width} ${barHeight}`}
-          width={width}
-        >
-          <AnimatedPath
-            animatedProps={animatedPathProps}
-            fill={colors.glass}
-            stroke={colors.hairlineStrong}
-            strokeWidth={1}
-          />
-        </Svg>
-      ) : null}
+      <View
+        pointerEvents="none"
+        style={[styles.bar, { height: barHeight, top: BAR_TOP }]}
+      />
 
       <View style={styles.items}>
         {tabs.map((tab, index) => {
@@ -171,6 +93,21 @@ export function CurvedBottomTabs({
               ]}
               testID={`tab-${tab.id}`}
             >
+              {selected ? (
+                <LinearGradient
+                  colors={gradient}
+                  pointerEvents="none"
+                  style={[
+                    styles.floatingButton,
+                    { transform: [{ scale: buttonScale }] },
+                  ]}
+                >
+                  {tintIcon(tab.icon, activeColor, true)}
+                  {typeof tab.badge === "number" && tab.badge > 0 ? (
+                    <Badge count={tab.badge} floating />
+                  ) : null}
+                </LinearGradient>
+              ) : null}
               <View style={[styles.inlineIcon, selected && styles.hiddenIcon]}>
                 {tintIcon(tab.icon, inactiveColor, false)}
                 {typeof tab.badge === "number" && tab.badge > 0 ? (
@@ -194,24 +131,6 @@ export function CurvedBottomTabs({
           );
         })}
       </View>
-
-      {width > 0 ? (
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            styles.floatingSlot,
-            { width: segmentWidth },
-            floatingButtonStyle,
-          ]}
-        >
-          <LinearGradient colors={gradient} style={styles.floatingButton}>
-            {tintIcon(activeTab.icon, activeColor, true)}
-            {typeof activeTab.badge === "number" && activeTab.badge > 0 ? (
-              <Badge count={activeTab.badge} floating />
-            ) : null}
-          </LinearGradient>
-        </Animated.View>
-      ) : null}
     </View>
   );
 }
@@ -272,7 +191,7 @@ export function CurvedTabBarNavigation({
       pointerEvents="box-none"
       style={[
         styles.navigationPosition,
-        { bottom: Math.max(insets.bottom, 12) },
+        { bottom: Math.max(insets.bottom, 10) },
       ]}
     >
       <CurvedBottomTabs
@@ -302,31 +221,44 @@ export function CurvedTabBarNavigation({
 
 const styles = StyleSheet.create({
   navigationPosition: {
+    alignItems: "center",
+    alignSelf: "center",
     position: "absolute",
     left: 18,
     right: 18,
   },
   container: {
+    alignSelf: "center",
+    maxWidth: 600,
     width: "100%",
-  },
-  bar: {
-    left: 0,
-    position: "absolute",
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.55,
     shadowRadius: 22,
     elevation: 12,
   },
+  bar: {
+    backgroundColor: colors.glass,
+    borderColor: colors.hairlineStrong,
+    borderRadius: BAR_RADIUS,
+    borderWidth: 1,
+    left: 0,
+    position: "absolute",
+    right: 0,
+  },
   items: {
     flexDirection: "row",
+    height: "100%",
     width: "100%",
   },
   item: {
     alignItems: "center",
-    flex: 1,
+    flexBasis: 0,
+    flexGrow: 1,
+    flexShrink: 1,
     justifyContent: "flex-end",
     paddingBottom: 11,
+    position: "relative",
   },
   inlineIcon: {
     alignItems: "center",
@@ -341,12 +273,6 @@ const styles = StyleSheet.create({
   label: {
     lineHeight: 14,
   },
-  floatingSlot: {
-    alignItems: "center",
-    left: 0,
-    position: "absolute",
-    top: 0,
-  },
   floatingButton: {
     alignItems: "center",
     borderColor: "rgba(255,255,255,0.20)",
@@ -358,6 +284,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.38,
     shadowRadius: 16,
+    position: "absolute",
+    top: 0,
     width: FLOATING_BUTTON_SIZE,
     elevation: 10,
   },
