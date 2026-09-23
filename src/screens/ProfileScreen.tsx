@@ -1,4 +1,3 @@
-import { BrandWordmark } from "@/components/BrandMark";
 import { Card } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
@@ -137,15 +136,13 @@ export function ProfileScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen>
-      <BrandWordmark width={128} />
-      <View className="gap-1">
-        <Text variant="caption">Profile</Text>
-        <Text variant="display">{profile?.displayName ?? "Your Kavanah"}</Text>
-        <Text variant="body" className="max-w-[330px]">
-          {profile?.bio || "Make a profile, choose what people can see, and practice with your circle."}
-        </Text>
-      </View>
+    <Screen
+      largeTitle={profile?.displayName ?? "Your Kavanah"}
+      subtitle={
+        profile?.bio ||
+        "Make a profile, choose what people can see, and practice with your circle."
+      }
+    >
 
       <Button
         variant="ghost"

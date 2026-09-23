@@ -23,7 +23,6 @@ import {
 } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Animated,
   Easing,
   Linking,
@@ -36,7 +35,6 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
-import { BrandWordmark } from "@/components/BrandMark";
 import {
   GuidedPrayer,
   type GuidedPrayerToken,
@@ -48,6 +46,7 @@ import {
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { colors, grid, spacing } from "@/design/theme";
@@ -418,16 +417,7 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen>
-      <BrandWordmark width={128} />
-      <View className="flex-row items-center gap-3">
-        <View className="gap-0">
-          <Text variant="display" className="text-[28px] leading-[34px]">
-            Prayers
-          </Text>
-          <Text variant="body">Find a prayer for this moment.</Text>
-        </View>
-      </View>
+    <Screen largeTitle="Prayers" subtitle="Find a prayer for this moment.">
       <View className="gap-6">
         <View className="min-h-[62px] flex-row items-center gap-3 rounded-lg border border-hairline bg-card pl-5 pr-2">
           <Search size={18} color={colors.inkMuted} />
@@ -450,6 +440,7 @@ export function PrayerScreen(): React.JSX.Element {
             accessibilityRole="button"
             onPress={() => void sync()}
             disabled={isSyncing}
+            isLoading={isSyncing}
             className="w-11 h-11 rounded-full items-center justify-center bg-muted"
           >
             <RefreshCw
@@ -553,9 +544,14 @@ export function PrayerScreen(): React.JSX.Element {
         {showResults ? (
           <View className="gap-3">
             <View className="flex-row items-center justify-between">
-              <Text variant="caption">
-                {isSearchingRemote ? "Searching Sefaria" : "Results"}
-              </Text>
+              <View className="flex-row items-center gap-2">
+                {isSearchingRemote ? (
+                  <CircleLoadingIndicator dotRadius={2} dotSpacing={3} />
+                ) : null}
+                <Text variant="caption">
+                  {isSearchingRemote ? "Searching Sefaria" : "Results"}
+                </Text>
+              </View>
               <Text variant="body" className="text-[13px] leading-[18px]">
                 {visibleResults.length} found
               </Text>
@@ -710,7 +706,7 @@ export function PrayerScreen(): React.JSX.Element {
                 ) : null}
                 {selectedLoading ? (
                   <View className="min-h-24 flex-row items-center gap-3 border-t border-t-hairline border-b border-b-hairline py-4">
-                    <ActivityIndicator size="small" color={colors.blue} />
+                    <CircleLoadingIndicator dotRadius={3} dotSpacing={5} />
                     <View className="flex-1 gap-1">
                       <Text
                         variant="section"

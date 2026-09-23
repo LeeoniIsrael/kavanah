@@ -38,7 +38,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { CommunityFeed } from "@/components/CommunityFeed";
-import { BrandWordmark } from "@/components/BrandMark";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
@@ -225,15 +224,10 @@ export function HomeScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen>
-      <BrandWordmark width={128} />
-      <View className="flex-row items-center justify-between gap-4">
-        <View className="flex-row items-center gap-3">
-          <View className="gap-0">
-          <Text variant="caption">{formatHebrewDate(now)}</Text>
-          <Text variant="display" className="text-[28px] leading-[34px]">Today</Text>
-          </View>
-        </View>
+    <Screen
+      largeTitle="Today"
+      subtitle={formatHebrewDate(now)}
+      rightComponent={
         <Button
           variant="outline"
           size="content"
@@ -244,8 +238,8 @@ export function HomeScreen(): React.JSX.Element {
         >
           <CalendarDays size={19} color={colors.ink} />
         </Button>
-      </View>
-
+      }
+    >
       <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
         <View className="flex-row items-center gap-2">
           <StatusPulse active={Boolean(nextZman)}>

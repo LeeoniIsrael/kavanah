@@ -1,4 +1,3 @@
-import { BrandWordmark } from "@/components/BrandMark";
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { Bell, MapPin, RefreshCw } from "lucide-react-native";
@@ -23,13 +22,10 @@ export function ZmanimScreen(): React.JSX.Element {
   }, [refresh]);
 
   return (
-    <Screen>
-      <BrandWordmark width={128} />
-      <View className="flex-row items-start justify-between gap-4">
-        <View>
-          <Text variant="caption">Local time</Text>
-          <Text variant="display">Zmanim</Text>
-        </View>
+    <Screen
+      largeTitle="Zmanim"
+      subtitle="Local prayer times"
+      rightComponent={
         <Button
           variant="ghost"
           size="content"
@@ -46,8 +42,8 @@ export function ZmanimScreen(): React.JSX.Element {
             />
           </LoadingOrbit>
         </Button>
-      </View>
-
+      }
+    >
       <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
         <ParametricField />
         <View className="flex-row items-center gap-2">
