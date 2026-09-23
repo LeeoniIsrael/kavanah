@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
+import { BlurView } from "expo-blur";
 import {
   BellRing,
   CalendarDays,
@@ -27,7 +28,7 @@ import {
   X,
 } from "lucide-react-native";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, View } from "react-native";
+import { Animated, Easing, Modal, Pressable, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
@@ -112,12 +113,16 @@ export function HomeScreen(): React.JSX.Element {
   const { upcomingZmanim, location, isLoading, error, refresh } =
     useZmanimStore();
   const { setQuery } = usePrayerStore();
+  const reduceMotion = useReducedMotion();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
   const [travelPromptOpen, setTravelPromptOpen] = useState(false);
   const [travelScheduling, setTravelScheduling] = useState(false);
   const [travelStatus, setTravelStatus] = useState("");
   const [shareHabit, setShareHabit] = useState<StreakHabit | null>(null);
+  const [sharePromptHabit, setSharePromptHabit] = useState<StreakHabit | null>(
+    null,
+  );
   const setTravelNotificationsEnabled = useSettingsStore(
     (state) => state.setTravelNotificationsEnabled,
   );
@@ -157,7 +162,16 @@ export function HomeScreen(): React.JSX.Element {
   };
 
   const togglePractice = (habit: StreakHabit) => {
+    const wasComplete = habits
+      .find((item) => item.habit === habit)
+      ?.completedDates.includes(formatDateKey(now));
     toggleHabit(habit);
+    if (!wasComplete) setSharePromptHabit(habit);
+  };
+
+  const openStoryComposer = (habit: StreakHabit) => {
+    setSharePromptHabit(null);
+    setTimeout(() => setShareHabit(habit), reduceMotion ? 0 : 80);
   };
 
   const closePracticeEditor = () => {
@@ -433,7 +447,7 @@ export function HomeScreen(): React.JSX.Element {
         {shareablePractice ? (
           <PracticeSharePrompt
             label={habitDetails[shareablePractice.habit].name}
-            onPress={() => setShareHabit(shareablePractice.habit)}
+            onPress={() => setSharePromptHabit(shareablePractice.habit)}
           />
         ) : null}
       </View>
@@ -728,7 +742,142 @@ export function HomeScreen(): React.JSX.Element {
         }
         onClose={() => setShareHabit(null)}
       />
+      <ShareMomentPrompt
+        habit={sharePromptHabit}
+        onDismiss={() => setSharePromptHabit(null)}
+        onShare={openStoryComposer}
+      />
     </Screen>
+  );
+}
+
+function ShareMomentPrompt({
+  habit,
+  onDismiss,
+  onShare,
+}: {
+  habit: StreakHabit | null;
+  onDismiss: () => void;
+  onShare: (habit: StreakHabit) => void;
+}): React.JSX.Element | null {
+  const progress = useRef(new Animated.Value(0)).current;
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!habit) return;
+    progress.setValue(0);
+    Animated.spring(progress, {
+      toValue: 1,
+      damping: 19,
+      stiffness: 230,
+      mass: 0.8,
+      useNativeDriver: true,
+    }).start();
+  }, [habit, progress]);
+
+  const close = (afterClose = onDismiss) => {
+    if (reduceMotion) {
+      afterClose();
+      return;
+    }
+    Animated.timing(progress, {
+      toValue: 0,
+      duration: 160,
+      easing: Easing.bezier(...motion.standard),
+      useNativeDriver: true,
+    }).start(({ finished }) => {
+      if (finished) afterClose();
+    });
+  };
+
+  if (!habit) return null;
+  const label = habitDetails[habit].name;
+
+  return (
+    <Modal
+      transparent
+      animationType="none"
+      onRequestClose={() => close()}
+      statusBarTranslucent
+      visible
+    >
+      <View className="flex-1 items-center justify-center px-6">
+        <Animated.View
+          pointerEvents="none"
+          className="absolute inset-0 bg-[rgba(18,31,52,0.14)]"
+          style={{ opacity: progress }}
+        >
+          <BlurView intensity={38} tint="light" className="flex-1" />
+        </Animated.View>
+        <Pressable
+          accessibilityLabel="Dismiss share prompt"
+          accessibilityRole="button"
+          className="absolute inset-0"
+          onPress={() => close()}
+        />
+        <Animated.View
+          className="w-full max-w-[368px] overflow-hidden rounded-xl bg-card border border-white shadow-card"
+          style={{
+            opacity: progress,
+            transform: [
+              {
+                translateY: progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [18, 0],
+                }),
+              },
+              {
+                scale: progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0.94, 1],
+                }),
+              },
+            ],
+          }}
+        >
+          <View className="items-center px-6 pt-7 pb-5 gap-3">
+            <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-white">
+              <Share2 size={21} color={colors.blue} />
+            </View>
+            <View className="items-center gap-1">
+              <Text className="text-[21px] leading-[27px] font-semibold tracking-normal text-foreground font-heading">
+                Share this moment
+              </Text>
+              <Text className="text-[13px] leading-[19px] text-center text-muted-foreground font-body">
+                You completed {label}. Turn it into a private story, only if it
+                feels right.
+              </Text>
+            </View>
+          </View>
+          <View className="px-4 pb-4 gap-2">
+            <Button
+              variant="default"
+              size="content"
+              accessibilityLabel={`Create a story for ${label}`}
+              haptic="confirm"
+              onPress={() => close(() => onShare(habit))}
+              className="min-h-[52px] rounded-md bg-primary items-center justify-center"
+            >
+              <Text className="text-[15px] leading-[20px] font-semibold text-white font-heading">
+                Create story
+              </Text>
+            </Button>
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityLabel="Not now"
+              haptic="selection"
+              onPress={() => close()}
+              className="min-h-[44px] rounded-md items-center justify-center"
+            >
+              <Text className="text-[14px] leading-[19px] font-medium text-muted-foreground font-heading">
+                Not now
+              </Text>
+            </Button>
+          </View>
+        </Animated.View>
+      </View>
+    </Modal>
   );
 }
 
