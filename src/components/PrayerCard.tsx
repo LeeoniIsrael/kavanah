@@ -25,15 +25,15 @@ export function PrayerCard({
       size="content"
       onPress={onPress}
       className={cn(
-        "rounded-lg border border-border bg-card p-4",
+        "rounded-lg border border-hairline bg-card p-5",
         selected && "bg-accent border-primary",
       )}
     >
       <View className="flex-row items-center gap-3">
-        <View className="flex-1 gap-1">
+        <View className="flex-1 gap-2">
           <View className="flex-row flex-wrap items-center gap-2">
-            <Text variant="caption">{prayer.category}</Text>
-            <Badge variant="outline">
+            <Text variant="caption" className="font-label text-muted-foreground">{prayer.category}</Text>
+            <Badge variant="secondary">
               <Text>{contentLabel(prayer.hebrewReview.contentKind)}</Text>
             </Badge>
           </View>
@@ -43,16 +43,9 @@ export function PrayerCard({
           <Text
             variant="body"
             numberOfLines={3}
-            className="text-foreground text-[15px] leading-[21px]"
+            className="font-body text-muted-foreground text-[14px] leading-[21px]"
           >
             {prayer.useCase || prayer.summary}
-          </Text>
-          <Text
-            variant="body"
-            numberOfLines={1}
-            className="text-muted-foreground text-[12px] leading-[17px]"
-          >
-            {prayer.summary || prayer.sefariaRef}
           </Text>
         </View>
         <ChevronRight

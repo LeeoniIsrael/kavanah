@@ -20,7 +20,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export function RootNavigator(): React.JSX.Element {
   const insets = useSafeAreaInsets();
-  const bottomInset = Math.max(insets.bottom, 10);
+  const bottomInset = Math.max(insets.bottom, 12);
 
   return (
     <Tab.Navigator
@@ -37,17 +37,19 @@ export function RootNavigator(): React.JSX.Element {
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           borderTopWidth: 0,
-          height: 74 + bottomInset,
-          paddingBottom: bottomInset,
+          height: 76,
+          paddingBottom: 8,
           paddingTop: 8,
-          marginHorizontal: 16,
-          marginBottom: 8,
+          marginHorizontal: 24,
+          bottom: bottomInset,
           position: "absolute",
-          borderRadius: 4,
-          backgroundColor: colors.mineral,
+          borderRadius: 38,
+          backgroundColor: "rgba(255, 255, 255, 0.94)",
+          borderWidth: 1,
+          borderColor: colors.white,
           shadowColor: colors.ink,
-          shadowOpacity: 0.04,
-          shadowRadius: 8,
+          shadowOpacity: 0.1,
+          shadowRadius: 24,
           shadowOffset: { width: 0, height: 10 },
           elevation: 2,
         },
@@ -60,10 +62,10 @@ export function RootNavigator(): React.JSX.Element {
           marginTop: 3
         },
         tabBarItemStyle: {
-          height: 54,
+          height: 58,
           marginHorizontal: 4,
-          marginVertical: 2,
-          borderRadius: 8,
+          marginVertical: 0,
+          borderRadius: 29,
           overflow: "hidden",
           paddingVertical: 3
         },

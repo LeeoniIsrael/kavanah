@@ -31,11 +31,11 @@ export function Screen({ children }: PropsWithChildren): React.JSX.Element {
   return (
     <SafeAreaView className="flex-1 bg-background">
       <ScrollView
-        contentContainerClassName="px-4 pt-4 pb-[120px]"
+        contentContainerClassName="px-5 pt-5 pb-[120px]"
         showsVerticalScrollIndicator={false}
       >
         <Animated.View
-          className="w-full max-w-[600px] self-center gap-5"
+          className="w-full max-w-[600px] self-center gap-6"
           style={[{ opacity, transform: [{ translateY }] }]}
         >
           {children}

@@ -33,7 +33,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { CommunityFeed } from "@/components/CommunityFeed";
 import { BrandWordmark } from "@/components/BrandMark";
-import { ParametricField } from "@/components/ParametricField";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { colors, motion } from "@/design/theme";
@@ -227,27 +226,27 @@ export function HomeScreen(): React.JSX.Element {
         </Button>
       </View>
 
-      <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
-        <ParametricField />
+      <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-white">
         <View className="flex-row items-center gap-2">
-          <View className="w-[6px] h-[6px] rounded-full bg-white" />
-          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
+          <View className="w-[6px] h-[6px] rounded-full bg-primary" />
+          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
             {nextZman ? timeUntil(nextZman.time) : "Location needed"}
           </Text>
         </View>
-        <Text variant="section" className="text-white">
+        <Text variant="section" className="text-foreground">
           {nextZman ? nextZman.title : "Prayer times near you"}
         </Text>
         {nextZman ? (
-          <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-white font-body">
+          <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-foreground font-body">
             {formatTime(nextZman.time)}
           </Text>
         ) : null}
-        <Text variant="body" className="text-[rgba(255,255,255,0.68)]">
+        <Text variant="body" className="text-muted-foreground">
           {nextZman
             ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}`
-            : (error ??
-              "Enable location once to calculate prayer times and Shabbat reminders.")}
+            : (error
+              ? "Prayer times are unavailable. Try your location again."
+              : "Find local prayer times and Shabbat reminders.")}
         </Text>
         <View className="flex-row gap-2 flex-wrap mt-1">
           {nextMoment ? (
@@ -256,7 +255,7 @@ export function HomeScreen(): React.JSX.Element {
               size="content"
               accessibilityRole="button"
               onPress={() => openPrayerSearch(nextMoment.query)}
-              className="min-h-11 rounded-md px-4 bg-white flex-row items-center gap-1"
+              className="min-h-11 rounded-full px-4 bg-white flex-row items-center gap-1"
             >
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
                 {nextMoment.label}
@@ -270,7 +269,7 @@ export function HomeScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => void refresh()}
               disabled={isLoading}
-              className="min-h-11 rounded-md px-4 bg-white flex-row items-center gap-1"
+              className="min-h-11 rounded-full px-4 bg-white flex-row items-center gap-1"
             >
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
                 {isLoading ? "Finding" : "Use location"}
@@ -283,16 +282,16 @@ export function HomeScreen(): React.JSX.Element {
             size="content"
             accessibilityRole="button"
             onPress={() => navigation.navigate("Zmanim")}
-            className="min-h-11 rounded-md px-4 bg-[rgba(255,255,255,0.12)] items-center justify-center"
+            className="min-h-11 rounded-full px-4 bg-white/60 items-center justify-center"
           >
-            <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-white font-label">
+            <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
               Times
             </Text>
           </Button>
         </View>
       </Card>
 
-      <Card className="p-0 gap-0 flex-row overflow-hidden rounded-lg border border-hairline bg-card">
+      <View className="gap-3 flex-row">
         {shortcuts.map((shortcut) => (
           <View key={shortcut.label} className="flex-1">
             <Button
@@ -300,7 +299,7 @@ export function HomeScreen(): React.JSX.Element {
               size="content"
               accessibilityRole="button"
               onPress={() => openPrayerSearch(shortcut.query)}
-              className="min-h-[52px] border-r border-r-hairline items-center justify-center"
+              className="min-h-[52px] rounded-full bg-card items-center justify-center"
             >
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
                 {shortcut.label}
@@ -308,7 +307,7 @@ export function HomeScreen(): React.JSX.Element {
             </Button>
           </View>
         ))}
-      </Card>
+      </View>
 
       <View className="gap-3">
         <View className="flex-row items-center justify-between">
@@ -364,11 +363,11 @@ export function HomeScreen(): React.JSX.Element {
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
-                    "min-h-[68px] px-4 py-3 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    "min-h-[76px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
                     index === activeHabits.length - 1 && "border-b-0",
                   )}
                 >
-                  <View className="flex-1 flex-row items-center gap-3">
+                  <View className="flex-1 gap-1">
                     <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                       {details.name}
                     </Text>
@@ -378,7 +377,7 @@ export function HomeScreen(): React.JSX.Element {
                   </View>
                   <View
                     className={cn(
-                      "w-7 h-7 rounded-full border border-hairlineStrong items-center justify-center",
+                      "w-8 h-8 rounded-full border border-hairlineStrong items-center justify-center",
                       complete && "bg-primary border-primary",
                     )}
                   >

@@ -36,7 +36,7 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
-import { BrandMark, BrandWordmark } from "@/components/BrandMark";
+import { BrandWordmark } from "@/components/BrandMark";
 import {
   GuidedPrayer,
   type GuidedPrayerToken,
@@ -338,7 +338,7 @@ export function PrayerScreen(): React.JSX.Element {
     }
     setGuidedPrayerOpen(false);
     setCompletionMoment({
-      habit,
+      ...(habit ? { habit } : {}),
       prayerTitle: selected.title,
       streak,
       completedAt,
@@ -429,7 +429,7 @@ export function PrayerScreen(): React.JSX.Element {
         </View>
       </View>
       <View className="gap-6">
-        <View className="min-h-[62px] flex-row items-center gap-3 rounded-lg border border-hairlineStrong bg-card pl-4 pr-2 shadow-floating">
+        <View className="min-h-[62px] flex-row items-center gap-3 rounded-lg border border-hairline bg-card pl-5 pr-2">
           <Search size={18} color={colors.inkMuted} />
           <Input
             accessibilityLabel="Search prayers"
@@ -446,7 +446,7 @@ export function PrayerScreen(): React.JSX.Element {
             accessibilityRole="button"
             onPress={() => void sync()}
             disabled={isSyncing}
-            className="w-[42px] h-[42px] rounded-md items-center justify-center bg-muted"
+            className="w-11 h-11 rounded-full items-center justify-center bg-muted"
           >
             <RefreshCw
               size={18}
@@ -875,7 +875,7 @@ export function PrayerScreen(): React.JSX.Element {
           {consentModalOpen ? (
             <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
               <View className="p-4 pb-6 gap-2 rounded-lg bg-white shadow-card">
-                <View className="w-[42px] h-[42px] rounded-md items-center justify-center bg-accent">
+                <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
                   <ShieldCheck size={21} color={colors.blue} />
                 </View>
                 <Text variant="section">Before your first question</Text>
