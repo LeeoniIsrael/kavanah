@@ -5,15 +5,14 @@ import {
   CircleUserRound,
   House,
 } from "lucide-react-native";
+import { StyleSheet } from "react-native";
 
-import { CurvedTabBarNavigation } from "@/components/base/curved-bottom-tabs";
-import { colors } from "@/design/theme";
+import { colors, fonts } from "@/design/theme";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { PrayerScreen } from "@/screens/PrayerScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
 import { ZmanimScreen } from "@/screens/ZmanimScreen";
 import { tapHaptic } from "@/services/haptics";
-import { StateBounce } from "@/components/ui/motion-feedback";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -27,7 +26,6 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 export function RootNavigator(): React.JSX.Element {
   return (
     <Tab.Navigator
-      tabBar={(props) => <CurvedTabBarNavigation {...props} />}
       screenListeners={{
         tabPress: () => {
           void tapHaptic();
@@ -38,6 +36,11 @@ export function RootNavigator(): React.JSX.Element {
         tabBarActiveTintColor: colors.blue,
         tabBarInactiveTintColor: colors.inkMuted,
         tabBarHideOnKeyboard: true,
+        tabBarIconStyle: styles.tabBarIcon,
+        tabBarItemStyle: styles.tabBarItem,
+        tabBarLabelPosition: "below-icon",
+        tabBarLabelStyle: styles.tabBarLabel,
+        tabBarStyle: styles.tabBar,
       }}
     >
       <Tab.Screen
@@ -74,12 +77,28 @@ function tabIcon(Icon: typeof House) {
     size: number;
     focused: boolean;
   }): React.JSX.Element {
-    return (
-      <StateBounce trigger={focused}>
-        <Icon color={color} size={size} strokeWidth={focused ? 2.2 : 1.5} />
-      </StateBounce>
-    );
+    return <Icon color={color} size={size} strokeWidth={focused ? 2.2 : 1.5} />;
   }
 
   return TabBarIcon;
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: colors.glass,
+    borderTopColor: colors.hairlineStrong,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    elevation: 0,
+  },
+  tabBarItem: {
+    paddingTop: 5,
+  },
+  tabBarIcon: {
+    marginTop: 1,
+  },
+  tabBarLabel: {
+    fontFamily: fonts.medium,
+    fontSize: 11,
+    lineHeight: 14,
+  },
+});
