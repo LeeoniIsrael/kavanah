@@ -13,6 +13,11 @@ import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
 import { BlurView } from "expo-blur";
 import {
+  GlassView,
+  isGlassEffectAPIAvailable,
+  isLiquidGlassAvailable,
+} from "expo-glass-effect";
+import {
   BellRing,
   CalendarDays,
   ChartColumn,
@@ -762,6 +767,8 @@ function ShareMomentPrompt({
 }): React.JSX.Element | null {
   const progress = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
+  const nativeGlassAvailable =
+    isLiquidGlassAvailable() && isGlassEffectAPIAvailable();
 
   useEffect(() => {
     if (!habit) return;
@@ -816,9 +823,8 @@ function ShareMomentPrompt({
           onPress={() => close()}
         />
         <Animated.View
-          className="w-full max-w-[368px] overflow-hidden rounded-xl bg-card border border-white shadow-card"
+          className="w-full max-w-[368px] overflow-hidden rounded-xl shadow-card"
           style={{
-            opacity: progress,
             transform: [
               {
                 translateY: progress.interpolate({
@@ -835,6 +841,20 @@ function ShareMomentPrompt({
             ],
           }}
         >
+          {nativeGlassAvailable ? (
+            <GlassView
+              className="absolute inset-0"
+              colorScheme="light"
+              glassEffectStyle={{
+                style: "regular",
+                animate: true,
+                animationDuration: 0.35,
+              }}
+              tintColor="rgba(239, 246, 255, 0.72)"
+            />
+          ) : (
+            <View className="absolute inset-0 bg-card border border-white" />
+          )}
           <View className="items-center px-6 pt-7 pb-5 gap-3">
             <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-white">
               <Share2 size={21} color={colors.blue} />
