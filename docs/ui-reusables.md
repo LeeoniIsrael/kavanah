@@ -10,6 +10,7 @@ Kavanah uses NativeWind v4 / Tailwind v3 and locally owned React Native Reusable
 - `global.css` defines the semantic light-theme variables. `tailwind.config.js` maps those variables, existing Kavanah colors, Manrope/Hebrew font families, spacing, radii, and shadows to utilities. The app retains its configured light appearance.
 - `Text` includes Kavanah display, title, section, body, and caption variants. `Button` preserves action haptics and reduced-motion support; `size="content"` supports compound rows and stacked content. Use ordinary sizes for standard actions.
 - Cards group surfaces; badges describe practice progress and prayer review metadata; switches expose controlled settings; tabs select a story layout. Home sheets use controlled Reusables dialogs. Full-screen reader/settings/story presentations retain native modals and their original state.
+- `BouncyAccordion` provides controlled or uncontrolled single-item disclosure with spring opening, a collapsible mode, custom spacing/radius, reduced-motion support, and compound trigger/icon/label/content parts. Profile privacy details use it to keep long explanations scannable.
 - Native `View`, `ScrollView`, and safe-area containers remain layout primitives. Native styles are limited to animated/interpolated values, viewport/safe-area dimensions, and Hebrew writing direction. React Navigation retains its native tab-bar style API.
 
 Add a component with:

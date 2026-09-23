@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
+import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
 import {
@@ -524,42 +525,60 @@ export function ProfileScreen(): React.JSX.Element {
                 <Text variant="display" className="text-[34px] leading-[39px]">
                   Clear by design
                 </Text>
+                <Text variant="body">
+                  Open each section to see exactly how Kavanah handles your data.
+                </Text>
               </View>
-              <PrivacySection
-                title="Stored on this device"
-                body="Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant."
-              />
-              <PrivacySection
-                title="Prayer assistant"
-                body="Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising."
-              />
-              <PrivacySection
-                title="Religious guidance"
-                body="Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service."
-              />
-              <PrivacySection
-                title="Your choice"
-                body="You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account."
-              />
+              <BouncyAccordion.Root defaultValue="device" gap={6}>
+                <BouncyAccordion.Item value="device">
+                  <BouncyAccordion.Trigger accessibilityLabel="Stored on this device">
+                    <BouncyAccordion.Trigger.Icon>
+                      <LockKeyhole size={18} color={colors.blue} />
+                    </BouncyAccordion.Trigger.Icon>
+                    <BouncyAccordion.Trigger.Label>Stored on this device</BouncyAccordion.Trigger.Label>
+                  </BouncyAccordion.Trigger>
+                  <BouncyAccordion.Content>
+                    Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant.
+                  </BouncyAccordion.Content>
+                </BouncyAccordion.Item>
+                <BouncyAccordion.Item value="assistant">
+                  <BouncyAccordion.Trigger accessibilityLabel="Prayer assistant data use">
+                    <BouncyAccordion.Trigger.Icon>
+                      <Sparkles size={18} color={colors.blue} />
+                    </BouncyAccordion.Trigger.Icon>
+                    <BouncyAccordion.Trigger.Label>Prayer assistant</BouncyAccordion.Trigger.Label>
+                  </BouncyAccordion.Trigger>
+                  <BouncyAccordion.Content>
+                    Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising.
+                  </BouncyAccordion.Content>
+                </BouncyAccordion.Item>
+                <BouncyAccordion.Item value="guidance">
+                  <BouncyAccordion.Trigger accessibilityLabel="Religious guidance">
+                    <BouncyAccordion.Trigger.Icon>
+                      <ShieldCheck size={18} color={colors.blue} />
+                    </BouncyAccordion.Trigger.Icon>
+                    <BouncyAccordion.Trigger.Label>Religious guidance</BouncyAccordion.Trigger.Label>
+                  </BouncyAccordion.Trigger>
+                  <BouncyAccordion.Content>
+                    Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service.
+                  </BouncyAccordion.Content>
+                </BouncyAccordion.Item>
+                <BouncyAccordion.Item value="choice">
+                  <BouncyAccordion.Trigger accessibilityLabel="Your choice">
+                    <BouncyAccordion.Trigger.Icon>
+                      <Check size={18} color={colors.blue} />
+                    </BouncyAccordion.Trigger.Icon>
+                    <BouncyAccordion.Trigger.Label>Your choice</BouncyAccordion.Trigger.Label>
+                  </BouncyAccordion.Trigger>
+                  <BouncyAccordion.Content>
+                    You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account.
+                  </BouncyAccordion.Content>
+                </BouncyAccordion.Item>
+              </BouncyAccordion.Root>
             </ScrollView>
           )}
         </SafeAreaView>
       </Modal>
     </Screen>
-  );
-}
-
-function PrivacySection({
-  title,
-  body,
-}: {
-  title: string;
-  body: string;
-}): React.JSX.Element {
-  return (
-    <View className="gap-2 pb-6 border-b border-b-hairline">
-      <Text variant="section">{title}</Text>
-      <Text variant="body">{body}</Text>
-    </View>
   );
 }
