@@ -21,7 +21,6 @@ import {
   BellRing,
   CalendarDays,
   ChartColumn,
-  Check,
   ChevronRight,
   MapPin,
   Navigation as NavigationIcon,
@@ -40,6 +39,7 @@ import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { CommunityFeed } from "@/components/CommunityFeed";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/organisms/check-box";
 import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
 import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
@@ -391,16 +391,9 @@ export function HomeScreen(): React.JSX.Element {
                       {streakLabel}
                     </Text>
                   </View>
-                  <View
-                    className={cn(
-                      "w-8 h-8 rounded-full border border-hairlineStrong items-center justify-center",
-                      complete && "bg-primary border-primary",
-                    )}
-                  >
-                    <StateBounce trigger={complete}>
-                      {complete ? <Check size={14} color={colors.white} /> : null}
-                    </StateBounce>
-                  </View>
+                  <StateBounce trigger={complete}>
+                    <Checkbox checked={complete} size={32} stroke={2.5} />
+                  </StateBounce>
                 </Button>
               );
             })}
@@ -647,16 +640,7 @@ export function HomeScreen(): React.JSX.Element {
                           {details.description}
                         </Text>
                       </View>
-                      <View
-                        className={cn(
-                          "w-[26px] h-[26px] rounded-full border border-hairlineStrong items-center justify-center",
-                          selected && "bg-primary border-primary",
-                        )}
-                      >
-                        {selected ? (
-                          <Check size={14} color={colors.white} />
-                        ) : null}
-                      </View>
+                      <Checkbox checked={selected} size={26} stroke={2.25} />
                     </Button>
                   );
                 })}
