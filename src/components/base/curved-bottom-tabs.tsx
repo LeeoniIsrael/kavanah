@@ -65,6 +65,7 @@ export function CurvedBottomTabs({
 }: CurvedBottomTabsProps): React.JSX.Element {
   const totalHeight = BAR_TOP + barHeight;
   if (tabs.length === 0 || !tabs[currentIndex]) return <></>;
+  const itemWidth = `${100 / tabs.length}%` as `${number}%`;
 
   return (
     <View
@@ -89,7 +90,11 @@ export function CurvedBottomTabs({
               onPress={() => onPress(index, tab)}
               style={({ pressed }) => [
                 styles.item,
-                { height: totalHeight, opacity: pressed ? 0.66 : 1 },
+                {
+                  height: totalHeight,
+                  opacity: pressed ? 0.66 : 1,
+                  width: itemWidth,
+                },
               ]}
               testID={`tab-${tab.id}`}
             >
@@ -247,15 +252,16 @@ const styles = StyleSheet.create({
     right: 0,
   },
   items: {
+    bottom: 0,
     flexDirection: "row",
     height: "100%",
-    width: "100%",
+    left: 0,
+    position: "absolute",
+    right: 0,
+    top: 0,
   },
   item: {
     alignItems: "center",
-    flexBasis: 0,
-    flexGrow: 1,
-    flexShrink: 1,
     justifyContent: "flex-end",
     paddingBottom: 11,
     position: "relative",
