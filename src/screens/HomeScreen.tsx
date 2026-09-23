@@ -37,9 +37,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { CommunityFeed } from "@/components/CommunityFeed";
+import { HomeNextMomentSkeleton } from "@/components/LoadingSkeletons";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/organisms/check-box";
+import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
 import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
@@ -241,70 +243,78 @@ export function HomeScreen(): React.JSX.Element {
       }
     >
       <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
-        <View className="flex-row items-center gap-2">
-          <StatusPulse active={Boolean(nextZman)}>
-            <View className="w-[6px] h-[6px] rounded-full bg-primary" />
-          </StatusPulse>
-          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-            {nextZman ? timeUntil(nextZman.time) : "Location needed"}
-          </Text>
-        </View>
-        <Text variant="section" className="text-foreground">
-          {nextZman ? nextZman.title : "Prayer times near you"}
-        </Text>
-        {nextZman ? (
-          <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-foreground font-body">
-            {formatTime(nextZman.time)}
-          </Text>
-        ) : null}
-        <Text variant="body" className="text-muted-foreground">
-          {nextZman
-            ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}`
-            : (error
-              ? "Prayer times are unavailable. Try your location again."
-              : "Find local prayer times and Shabbat reminders.")}
-        </Text>
-        <View className="flex-row gap-2 flex-wrap mt-1">
-          {nextMoment ? (
-            <Button
-              variant="default"
-              size="content"
-              accessibilityRole="button"
-              onPress={() => openPrayerSearch(nextMoment.query)}
-              className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
-            >
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-                {nextMoment.label}
+        {isLoading && !nextZman && !error ? (
+          <HomeNextMomentSkeleton />
+        ) : (
+          <>
+            <View className="flex-row items-center gap-2">
+              <StatusPulse active={Boolean(nextZman)}>
+                <View className="w-[6px] h-[6px] rounded-full bg-primary" />
+              </StatusPulse>
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+                {nextZman ? timeUntil(nextZman.time) : "Location needed"}
               </Text>
-              <ChevronRight size={17} color={colors.blue} />
-            </Button>
-          ) : (
-            <Button
-              variant="default"
-              size="content"
-              accessibilityRole="button"
-              onPress={() => void refresh()}
-              disabled={isLoading}
-              className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
-            >
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-                {isLoading ? "Finding" : "Use location"}
-              </Text>
-              <MapPin size={17} color={colors.blue} />
-            </Button>
-          )}
-          <Button
-            variant="ghost"
-            size="content"
-            accessibilityRole="button"
-            onPress={() => navigation.navigate("Zmanim")}
-            className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
-          >
-            <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
-              Times
+            </View>
+            <Text variant="section" className="text-foreground">
+              {nextZman ? nextZman.title : "Prayer times near you"}
             </Text>
-          </Button>
-        </View>
+            {nextZman ? (
+              <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-foreground font-body">
+                {formatTime(nextZman.time)}
+              </Text>
+            ) : null}
+            <Text variant="body" className="text-muted-foreground">
+              {nextZman
+                ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}`
+                : error
+                  ? "Prayer times are unavailable. Try your location again."
+                  : "Find local prayer times and Shabbat reminders."}
+            </Text>
+            <View className="flex-row gap-2 flex-wrap mt-1">
+              {nextMoment ? (
+                <Button
+                  variant="default"
+                  size="content"
+                  accessibilityRole="button"
+                  onPress={() => openPrayerSearch(nextMoment.query)}
+                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
+                >
+                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+                    {nextMoment.label}
+                  </Text>
+                  <ChevronRight size={17} color={colors.blue} />
+                </Button>
+              ) : (
+                <Button
+                  variant="default"
+                  size="content"
+                  accessibilityRole="button"
+                  onPress={() => void refresh()}
+                  disabled={isLoading}
+                  isLoading={isLoading}
+                  loadingLabel="Finding"
+                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
+                >
+                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+                    Use location
+                  </Text>
+                  <MapPin size={17} color={colors.blue} />
+                </Button>
+              )}
+              <Button
+                variant="ghost"
+                size="content"
+                accessibilityRole="button"
+                onPress={() => navigation.navigate("Zmanim")}
+                className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
+              >
+                <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
+                  Times
+                </Text>
+              </Button>
+            </View>
+          </>
+        )}
       </Card>
 
       <View className="gap-3 flex-row">
@@ -326,18 +336,29 @@ export function HomeScreen(): React.JSX.Element {
       </View>
 
       <View className="gap-3">
-        <View className="flex-row items-center justify-between">
+        <View className="z-20 flex-row items-center justify-between">
           <Text variant="section" className="text-[20px] leading-[26px]">
             Daily practice
           </Text>
           <View className="flex-row items-center gap-2">
-            <Badge variant="secondary">
-              <Text>
-                {activeHabits.length > 0
-                  ? `${completedToday.length}/${activeHabits.length} today`
-                  : "Optional"}
-              </Text>
-            </Badge>
+            <GooeyInfoPopover
+              accessibilityLabel="About today’s practice count"
+              title="A gentle count, not a score"
+              body="This resets each day and stays on this device. Choose only the practices that help you return with intention."
+              side="bottom"
+              align="end"
+              color={colors.blueSoft}
+              triggerStyle={{ minHeight: 44, justifyContent: "center" }}
+              trigger={
+                <Badge variant="secondary">
+                  <Text>
+                    {activeHabits.length > 0
+                      ? `${completedToday.length}/${activeHabits.length} today`
+                      : "Optional"}
+                  </Text>
+                </Badge>
+              }
+            />
             <Button
               variant="ghost"
               size="content"
@@ -552,6 +573,8 @@ export function HomeScreen(): React.JSX.Element {
                     size="content"
                     accessibilityRole="button"
                     disabled={travelScheduling}
+                    isLoading={travelScheduling}
+                    loadingLabel="Setting"
                     haptic="confirm"
                     onPress={() => void scheduleTravelReminder()}
                     className={cn(
@@ -561,7 +584,7 @@ export function HomeScreen(): React.JSX.Element {
                   >
                     <BellRing size={17} color={colors.white} />
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-white font-label">
-                      {travelScheduling ? "Setting" : "Remind in 5 min"}
+                      Remind in 5 min
                     </Text>
                   </Button>
                 </View>

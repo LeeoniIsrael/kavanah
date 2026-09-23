@@ -165,6 +165,7 @@ export function PrayerAssistantPanel({
           accessibilityState={{ disabled: !canSend, busy: isStreaming }}
           onPress={submit}
           disabled={!canSend}
+          isLoading={isStreaming}
           haptic="none"
           pressedScale={0.9}
           className="h-11 w-11 items-center justify-center rounded-lg bg-primary"

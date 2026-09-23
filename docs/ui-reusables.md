@@ -11,6 +11,7 @@ Kavanah uses NativeWind v4 / Tailwind v3 and locally owned React Native Reusable
 - `Text` includes Kavanah display, title, section, body, and caption variants. `Button` preserves action haptics and reduced-motion support; `size="content"` supports compound rows and stacked content. Use ordinary sizes for standard actions.
 - Cards group surfaces; badges describe practice progress and prayer review metadata; switches expose controlled settings; tabs select a story layout. Home sheets use controlled Reusables dialogs. Full-screen reader/settings/story presentations retain native modals and their original state.
 - `BouncyAccordion` provides controlled or uncontrolled single-item disclosure with spring opening, a collapsible mode, custom spacing/radius, reduced-motion support, and compound trigger/icon/label/content parts. Profile privacy details use it to keep long explanations scannable.
+- `Shimmer` and `ShimmerGroup` provide theme-aware content skeletons with shared presets, direction, timing, custom colors, pulse support, one accessible loading announcement per group, and a static reduced-motion state. Home, Zmanim, prayer search, and the prayer reader use content-shaped skeleton compositions.
 - Native `View`, `ScrollView`, and safe-area containers remain layout primitives. Native styles are limited to animated/interpolated values, viewport/safe-area dimensions, and Hebrew writing direction. React Navigation retains its native tab-bar style API.
 
 Add a component with:

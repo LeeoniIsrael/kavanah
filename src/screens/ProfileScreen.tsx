@@ -26,6 +26,7 @@ import {
 
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
+import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { findLanguage, languageOptions } from "@/data/languages";
 import { colors } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -73,8 +74,12 @@ export function ProfileScreen(): React.JSX.Element {
   const [displayName, setDisplayName] = useState(profile?.displayName ?? "");
   const [handle, setHandle] = useState(profile?.handle.replace(/^@/, "") ?? "");
   const [bio, setBio] = useState(profile?.bio ?? "");
-  const [profilePrivate, setProfilePrivate] = useState(profile?.isPrivate ?? true);
-  const [shareMilestones, setShareMilestones] = useState(profile?.shareMilestones ?? false);
+  const [profilePrivate, setProfilePrivate] = useState(
+    profile?.isPrivate ?? true,
+  );
+  const [shareMilestones, setShareMilestones] = useState(
+    profile?.shareMilestones ?? false,
+  );
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
@@ -144,7 +149,6 @@ export function ProfileScreen(): React.JSX.Element {
         "Make a profile, choose what people can see, and practice with your circle."
       }
     >
-
       <Button
         variant="ghost"
         size="content"
@@ -153,19 +157,45 @@ export function ProfileScreen(): React.JSX.Element {
         className="min-h-[92px] p-4 rounded-lg bg-card border border-hairline flex-row items-center gap-4"
       >
         <View className="w-14 h-14 rounded-full bg-primary items-center justify-center">
-          {profile ? <Text className="text-white font-heading text-[20px]">{profile.displayName.charAt(0).toUpperCase()}</Text> : <UserRound size={24} color={colors.white} />}
+          {profile ? (
+            <Text className="text-white font-heading text-[20px]">
+              {profile.displayName.charAt(0).toUpperCase()}
+            </Text>
+          ) : (
+            <UserRound size={24} color={colors.white} />
+          )}
         </View>
         <View className="flex-1 gap-1">
-          <Text variant="section">{profile ? "Edit social profile" : "Create your profile"}</Text>
-          <Text variant="body" className="text-[13px] leading-[18px]">{profile ? `${profile.handle} · ${profile.isPrivate ? "Private" : "Visible to your circle"}` : "Add a name, handle, bio, and privacy choice."}</Text>
+          <Text variant="section">
+            {profile ? "Edit social profile" : "Create your profile"}
+          </Text>
+          <Text variant="body" className="text-[13px] leading-[18px]">
+            {profile
+              ? `${profile.handle} · ${profile.isPrivate ? "Private" : "Visible to your circle"}`
+              : "Add a name, handle, bio, and privacy choice."}
+          </Text>
         </View>
         <ChevronRight size={18} color={colors.inkMuted} />
       </Button>
 
-      <View className="min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-md bg-primary">
-        <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-[rgba(255,255,255,0.1)]">
-          <ShieldCheck size={21} color={colors.white} />
-        </View>
+      <View className="z-20 min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-md bg-primary">
+        <GooeyInfoPopover
+          accessibilityLabel="What stays on this device"
+          title="Local by default"
+          body="Prayer history, bookmarks, streaks, settings, and location calculations remain here unless you explicitly choose a connected feature."
+          side="bottom"
+          align="start"
+          color={colors.blueSoft}
+          triggerStyle={{
+            alignItems: "center",
+            backgroundColor: colors.blueSoft,
+            borderRadius: 13,
+            height: 44,
+            justifyContent: "center",
+            width: 44,
+          }}
+          trigger={<ShieldCheck size={21} color={colors.white} />}
+        />
         <View className="flex-1 gap-[2px]">
           <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
             Local by default
@@ -479,41 +509,107 @@ export function ProfileScreen(): React.JSX.Element {
               ) : null}
             </ScrollView>
           ) : activeModal === "social" ? (
-            <ScrollView contentContainerClassName="px-6 py-4 gap-5" keyboardShouldPersistTaps="handled">
+            <ScrollView
+              contentContainerClassName="px-6 py-4 gap-5"
+              keyboardShouldPersistTaps="handled"
+            >
               <View className="flex-row items-center justify-between">
-                <Text variant="section" className="text-[22px]">Your profile</Text>
-                <Button variant="ghost" size="content" onPress={() => setActiveModal(null)} className="w-11 h-11 items-center justify-center"><X size={18} color={colors.ink} /></Button>
+                <Text variant="section" className="text-[22px]">
+                  Your profile
+                </Text>
+                <Button
+                  variant="ghost"
+                  size="content"
+                  onPress={() => setActiveModal(null)}
+                  className="w-11 h-11 items-center justify-center"
+                >
+                  <X size={18} color={colors.ink} />
+                </Button>
               </View>
               <View className="gap-2">
                 <Text variant="caption">Display name</Text>
-                <Input value={displayName} onChangeText={setDisplayName} placeholders={["Your name", "How should your circle know you?"]} className="min-h-12" />
+                <Input
+                  value={displayName}
+                  onChangeText={setDisplayName}
+                  placeholders={[
+                    "Your name",
+                    "How should your circle know you?",
+                  ]}
+                  className="min-h-12"
+                />
               </View>
               <View className="gap-2">
                 <Text variant="caption">Handle</Text>
-                <Input value={handle} onChangeText={(value) => setHandle(value.replace(/[^a-zA-Z0-9_]/g, ""))} autoCapitalize="none" placeholders={["yourhandle", "choose_a_handle"]} className="min-h-12" />
+                <Input
+                  value={handle}
+                  onChangeText={(value) =>
+                    setHandle(value.replace(/[^a-zA-Z0-9_]/g, ""))
+                  }
+                  autoCapitalize="none"
+                  placeholders={["yourhandle", "choose_a_handle"]}
+                  className="min-h-12"
+                />
               </View>
               <View className="gap-2">
                 <Text variant="caption">Bio</Text>
-                <Input value={bio} onChangeText={setBio} multiline placeholders={["What are you practicing toward?", "What brings you back to prayer?", "Share what guides your practice…"]} className="min-h-24 p-3" />
+                <Input
+                  value={bio}
+                  onChangeText={setBio}
+                  multiline
+                  placeholders={[
+                    "What are you practicing toward?",
+                    "What brings you back to prayer?",
+                    "Share what guides your practice…",
+                  ]}
+                  className="min-h-24 p-3"
+                />
               </View>
               <View className="min-h-[72px] flex-row items-center gap-3 border-t border-b border-hairline">
-                <View className="flex-1"><Text variant="section">Private profile</Text><Text variant="body" className="text-[12px] leading-[17px]">Approve people before they see your activity.</Text></View>
-                <Switch accessibilityLabel="Private profile" checked={profilePrivate} onCheckedChange={setProfilePrivate} />
+                <View className="flex-1">
+                  <Text variant="section">Private profile</Text>
+                  <Text variant="body" className="text-[12px] leading-[17px]">
+                    Approve people before they see your activity.
+                  </Text>
+                </View>
+                <Switch
+                  accessibilityLabel="Private profile"
+                  checked={profilePrivate}
+                  onCheckedChange={setProfilePrivate}
+                />
               </View>
               <View className="min-h-[72px] flex-row items-center gap-3 border-b border-hairline">
-                <View className="flex-1"><Text variant="section">Post milestones</Text><Text variant="body" className="text-[12px] leading-[17px]">Share 3, 7, 18, 40, and 100-day streaks automatically.</Text></View>
-                <Switch accessibilityLabel="Post milestones" checked={shareMilestones} onCheckedChange={setShareMilestones} />
+                <View className="flex-1">
+                  <Text variant="section">Post milestones</Text>
+                  <Text variant="body" className="text-[12px] leading-[17px]">
+                    Share 3, 7, 18, 40, and 100-day streaks automatically.
+                  </Text>
+                </View>
+                <Switch
+                  accessibilityLabel="Post milestones"
+                  checked={shareMilestones}
+                  onCheckedChange={setShareMilestones}
+                />
               </View>
               <Button
                 variant="default"
                 size="content"
                 disabled={!displayName.trim() || !handle.trim()}
                 onPress={() => {
-                  saveProfile({ displayName: displayName.trim(), handle: `@${handle.trim().toLowerCase()}`, bio: bio.trim(), isPrivate: profilePrivate, shareMilestones });
+                  saveProfile({
+                    displayName: displayName.trim(),
+                    handle: `@${handle.trim().toLowerCase()}`,
+                    bio: bio.trim(),
+                    isPrivate: profilePrivate,
+                    shareMilestones,
+                  });
                   setActiveModal(null);
                 }}
                 className="min-h-[52px] rounded-md items-center justify-center bg-primary"
-              ><Text className="text-white font-heading text-[16px]">Save profile</Text></Button>
+              >
+                <Text className="text-white font-heading text-[16px]">
+                  Save profile
+                </Text>
+              </Button>
             </ScrollView>
           ) : (
             <ScrollView
@@ -526,7 +622,8 @@ export function ProfileScreen(): React.JSX.Element {
                   Clear by design
                 </Text>
                 <Text variant="body">
-                  Open each section to see exactly how Kavanah handles your data.
+                  Open each section to see exactly how Kavanah handles your
+                  data.
                 </Text>
               </View>
               <BouncyAccordion.Root defaultValue="device" gap={6}>
@@ -535,10 +632,15 @@ export function ProfileScreen(): React.JSX.Element {
                     <BouncyAccordion.Trigger.Icon>
                       <LockKeyhole size={18} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>Stored on this device</BouncyAccordion.Trigger.Label>
+                    <BouncyAccordion.Trigger.Label>
+                      Stored on this device
+                    </BouncyAccordion.Trigger.Label>
                   </BouncyAccordion.Trigger>
                   <BouncyAccordion.Content>
-                    Bookmarks, streaks, language preferences, reminder settings, and the coordinates used to calculate zmanim. Travel reminders do not read or store routes from Maps. Precise coordinates are not sent to the prayer assistant.
+                    Bookmarks, streaks, language preferences, reminder settings,
+                    and the coordinates used to calculate zmanim. Travel
+                    reminders do not read or store routes from Maps. Precise
+                    coordinates are not sent to the prayer assistant.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="assistant">
@@ -546,10 +648,17 @@ export function ProfileScreen(): React.JSX.Element {
                     <BouncyAccordion.Trigger.Icon>
                       <Sparkles size={18} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>Prayer assistant</BouncyAccordion.Trigger.Label>
+                    <BouncyAccordion.Trigger.Label>
+                      Prayer assistant
+                    </BouncyAccordion.Trigger.Label>
                   </BouncyAccordion.Trigger>
                   <BouncyAccordion.Content>
-                    Only after you allow it, your question, selected prayer text, language, source reference, and review status are sent through Kavanah's server to OpenAI. Display translations are identified as unreviewed. Email addresses, phone numbers, and street addresses are removed first. Questions are not used for advertising.
+                    Only after you allow it, your question, selected prayer
+                    text, language, source reference, and review status are sent
+                    through Kavanah's server to OpenAI. Display translations are
+                    identified as unreviewed. Email addresses, phone numbers,
+                    and street addresses are removed first. Questions are not
+                    used for advertising.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="guidance">
@@ -557,10 +666,14 @@ export function ProfileScreen(): React.JSX.Element {
                     <BouncyAccordion.Trigger.Icon>
                       <ShieldCheck size={18} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>Religious guidance</BouncyAccordion.Trigger.Label>
+                    <BouncyAccordion.Trigger.Label>
+                      Religious guidance
+                    </BouncyAccordion.Trigger.Label>
                   </BouncyAccordion.Trigger>
                   <BouncyAccordion.Content>
-                    Assistant answers are educational and may be incomplete. They are not binding halachic rulings and do not replace a qualified rabbi, doctor, or emergency service.
+                    Assistant answers are educational and may be incomplete.
+                    They are not binding halachic rulings and do not replace a
+                    qualified rabbi, doctor, or emergency service.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="choice">
@@ -568,10 +681,14 @@ export function ProfileScreen(): React.JSX.Element {
                     <BouncyAccordion.Trigger.Icon>
                       <Check size={18} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>Your choice</BouncyAccordion.Trigger.Label>
+                    <BouncyAccordion.Trigger.Label>
+                      Your choice
+                    </BouncyAccordion.Trigger.Label>
                   </BouncyAccordion.Trigger>
                   <BouncyAccordion.Content>
-                    You can turn off the prayer assistant or reminders here at any time. Kavanah can still be used for prayer search, reading, bookmarks, and local zmanim without an account.
+                    You can turn off the prayer assistant or reminders here at
+                    any time. Kavanah can still be used for prayer search,
+                    reading, bookmarks, and local zmanim without an account.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
               </BouncyAccordion.Root>

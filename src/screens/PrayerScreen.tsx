@@ -13,6 +13,7 @@ import {
   BookmarkMinus,
   BookOpenCheck,
   ChevronRight,
+  CircleHelp,
   ExternalLink,
   MoonStar,
   RefreshCw,
@@ -23,7 +24,6 @@ import {
 } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Animated,
   Easing,
   Linking,
@@ -47,8 +47,14 @@ import {
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
+import {
+  PrayerSearchSkeleton,
+  PrayerTextSkeleton,
+} from "@/components/LoadingSkeletons";
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { colors, grid, spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { RootTabParamList } from "@/navigation/RootNavigator";
@@ -440,6 +446,7 @@ export function PrayerScreen(): React.JSX.Element {
             accessibilityRole="button"
             onPress={() => void sync()}
             disabled={isSyncing}
+            isLoading={isSyncing}
             className="w-11 h-11 rounded-full items-center justify-center bg-muted"
           >
             <RefreshCw
@@ -543,14 +550,21 @@ export function PrayerScreen(): React.JSX.Element {
         {showResults ? (
           <View className="gap-3">
             <View className="flex-row items-center justify-between">
-              <Text variant="caption">
-                {isSearchingRemote ? "Searching Sefaria" : "Results"}
-              </Text>
+              <View className="flex-row items-center gap-2">
+                {isSearchingRemote ? (
+                  <CircleLoadingIndicator dotRadius={2} dotSpacing={3} />
+                ) : null}
+                <Text variant="caption">
+                  {isSearchingRemote ? "Searching Sefaria" : "Results"}
+                </Text>
+              </View>
               <Text variant="body" className="text-[13px] leading-[18px]">
                 {visibleResults.length} found
               </Text>
             </View>
-            {visibleResults.length > 0 ? (
+            {isSearchingRemote && visibleResults.length === 0 ? (
+              <PrayerSearchSkeleton />
+            ) : visibleResults.length > 0 ? (
               visibleResults.map((result) => (
                 <PrayerCard
                   key={result.prayer.id}
@@ -641,9 +655,29 @@ export function PrayerScreen(): React.JSX.Element {
                   <View className="flex-row gap-3 py-2">
                     <View className="w-[2px] bg-gold" />
                     <View className="flex-1 gap-1">
-                      <Text variant="caption">
-                        {hebrewContentLabel(selected.hebrewReview.contentKind)}
-                      </Text>
+                      <View className="z-20 flex-row items-center justify-between gap-3">
+                        <Text variant="caption" className="flex-1">
+                          {hebrewContentLabel(
+                            selected.hebrewReview.contentKind,
+                          )}
+                        </Text>
+                        <GooeyInfoPopover
+                          accessibilityLabel="About Hebrew text review"
+                          title="Why this label appears"
+                          body="Sacred text is shown with its review status and source. Kavanah never fills missing Hebrew with generated text."
+                          side="bottom"
+                          align="end"
+                          triggerStyle={{
+                            alignItems: "center",
+                            backgroundColor: colors.mineral,
+                            borderRadius: 22,
+                            height: 44,
+                            justifyContent: "center",
+                            width: 44,
+                          }}
+                          trigger={<CircleHelp size={17} color={colors.blue} />}
+                        />
+                      </View>
                       <Text
                         variant="body"
                         className="text-muted-foreground text-[14px] leading-[20px]"
@@ -699,23 +733,8 @@ export function PrayerScreen(): React.JSX.Element {
                   </Button>
                 ) : null}
                 {selectedLoading ? (
-                  <View className="min-h-24 flex-row items-center gap-3 border-t border-t-hairline border-b border-b-hairline py-4">
-                    <ActivityIndicator size="small" color={colors.blue} />
-                    <View className="flex-1 gap-1">
-                      <Text
-                        variant="section"
-                        className="text-[17px] leading-[22px]"
-                      >
-                        Preparing the text
-                      </Text>
-                      <Text
-                        variant="body"
-                        className="text-[14px] leading-[20px] text-muted-foreground"
-                      >
-                        Loading a reusable Hebrew edition and translation from
-                        Sefaria.
-                      </Text>
-                    </View>
+                  <View className="min-h-24 border-t border-t-hairline border-b border-b-hairline">
+                    <PrayerTextSkeleton />
                   </View>
                 ) : null}
                 {!selectedLoading && prayerLoadError ? (

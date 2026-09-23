@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, act } from "@testing-library/react-native";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Shimmer, ShimmerGroup } from "@/components/molecules/shimmer";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -47,6 +48,54 @@ test("practice buttons retain checkbox semantics and their checked state", () =>
     </Button>,
   );
   expect(screen.getByRole("checkbox", { checked: true })).toBeTruthy();
+});
+
+test("loading buttons expose busy state and block duplicate submissions", async () => {
+  const onPress = jest.fn();
+  render(
+    <Button
+      accessibilityLabel="Save reflection"
+      isLoading
+      loadingLabel="Saving"
+      onPress={onPress}
+    >
+      <Text>Save</Text>
+    </Button>,
+  );
+
+  const button = screen.getByRole("button", { name: "Save reflection" });
+  expect(button.props.accessibilityState).toEqual({
+    busy: true,
+    disabled: true,
+  });
+  expect(screen.getByText("Saving")).toBeTruthy();
+  await act(async () => {
+    fireEvent.press(button);
+  });
+  expect(onPress).not.toHaveBeenCalled();
+});
+
+test("shimmer groups expose one accessible loading status", () => {
+  render(
+    <ShimmerGroup accessibilityLabel="Loading prayer times">
+      <Shimmer style={{ height: 18, width: 120 }} />
+      <Shimmer style={{ height: 12, width: 80 }} />
+    </ShimmerGroup>,
+  );
+
+  expect(
+    screen.getByRole("progressbar", { name: "Loading prayer times" }),
+  ).toBeTruthy();
+  expect(screen.getAllByRole("progressbar")).toHaveLength(1);
+});
+
+test("shimmer reveals its child when loading finishes", () => {
+  render(
+    <Shimmer isLoading={false}>
+      <Text>Prayer text ready</Text>
+    </Shimmer>,
+  );
+  expect(screen.getByText("Prayer text ready")).toBeTruthy();
 });
 
 test("search input preserves controlled query updates", () => {

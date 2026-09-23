@@ -5,9 +5,14 @@ import { useEffect } from "react";
 import { View } from "react-native";
 
 import { Screen } from "@/components/Screen";
+import {
+  ZmanimHeroSkeleton,
+  ZmanimListSkeleton,
+} from "@/components/LoadingSkeletons";
 import { ParametricField } from "@/components/ParametricField";
 import { Button } from "@/components/ui/button";
-import { LoadingOrbit, StatusPulse } from "@/components/ui/motion-feedback";
+import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
+import { StatusPulse } from "@/components/ui/motion-feedback";
 import { ZmanRow } from "@/components/ZmanRow";
 import { colors } from "@/design/theme";
 import { useZmanimStore } from "@/store/zmanimStore";
@@ -16,6 +21,7 @@ export function ZmanimScreen(): React.JSX.Element {
   const { location, zmanim, upcomingZmanim, isLoading, error, refresh } =
     useZmanimStore();
   const nextZman = upcomingZmanim[0];
+  const showInitialLoading = isLoading && zmanim.length === 0 && !error;
 
   useEffect(() => {
     void refresh();
@@ -33,42 +39,59 @@ export function ZmanimScreen(): React.JSX.Element {
           accessibilityRole="button"
           onPress={() => void refresh()}
           disabled={isLoading}
+          isLoading={isLoading}
           className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
         >
-          <LoadingOrbit active={isLoading}>
-            <RefreshCw
-              size={19}
-              color={isLoading ? colors.inkMuted : colors.ink}
-            />
-          </LoadingOrbit>
+          <RefreshCw size={19} color={colors.ink} />
         </Button>
       }
     >
       <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
         <ParametricField />
-        <View className="flex-row items-center gap-2">
-          <StatusPulse active={Boolean(nextZman)}>
-            <View className="w-2 h-2 rounded-full bg-white" />
-          </StatusPulse>
-          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
-            Next
-          </Text>
-        </View>
-        <Text variant="section" className="text-white">
-          {nextZman?.title ?? "Calculating times"}
-        </Text>
-        <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-white font-body">
-          {nextZman ? formatTime(nextZman.time) : "--:--"}
-        </Text>
-        <Text variant="body" className="text-[rgba(255,255,255,0.68)]">
-          {nextZman
-            ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}`
-            : (error ?? "Set location to calculate precise local zmanim.")}
-        </Text>
+        {showInitialLoading ? (
+          <ZmanimHeroSkeleton />
+        ) : (
+          <>
+            <View className="flex-row items-center gap-2">
+              <StatusPulse active={Boolean(nextZman)}>
+                <View className="w-2 h-2 rounded-full bg-white" />
+              </StatusPulse>
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
+                Next
+              </Text>
+            </View>
+            <Text variant="section" className="text-white">
+              {nextZman?.title ?? "Calculating times"}
+            </Text>
+            <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-white font-body">
+              {nextZman ? formatTime(nextZman.time) : "--:--"}
+            </Text>
+            <Text variant="body" className="text-[rgba(255,255,255,0.68)]">
+              {nextZman
+                ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}`
+                : (error ?? "Set location to calculate precise local zmanim.")}
+            </Text>
+          </>
+        )}
       </Card>
 
-      <View className="min-h-[58px] border-t border-b border-hairline px-1 flex-row items-center gap-3">
-        <MapPin size={18} color={colors.blue} />
+      <View className="z-20 min-h-[58px] border-t border-b border-hairline px-1 flex-row items-center gap-3">
+        <GooeyInfoPopover
+          accessibilityLabel="How Kavanah uses your location"
+          title="Calculated here"
+          body="Your coordinates are used on this device to calculate today’s prayer times. They are not sent to the prayer assistant."
+          side="bottom"
+          align="start"
+          triggerStyle={{
+            alignItems: "center",
+            backgroundColor: colors.mineral,
+            borderRadius: 22,
+            height: 44,
+            justifyContent: "center",
+            width: 44,
+          }}
+          trigger={<MapPin size={18} color={colors.blue} />}
+        />
         <Text className="text-[16px] leading-[22px] font-normal tracking-normal flex-1 text-foreground font-body">
           {error ?? location?.label ?? "Location unavailable"}
         </Text>
@@ -77,17 +100,20 @@ export function ZmanimScreen(): React.JSX.Element {
           size="content"
           accessibilityRole="button"
           onPress={() => void refresh()}
-          disabled={isLoading}
+          isLoading={isLoading}
+          loadingLabel="Finding"
           className="min-h-11 rounded-md bg-muted px-3 items-center justify-center"
         >
           <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-            {isLoading ? "Finding" : "Update"}
+            Update
           </Text>
         </Button>
       </View>
 
       <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
-        {zmanim.length > 0 ? (
+        {showInitialLoading ? (
+          <ZmanimListSkeleton />
+        ) : zmanim.length > 0 ? (
           <>
             <Text variant="caption" className="px-1 pt-3 pb-1">
               Today

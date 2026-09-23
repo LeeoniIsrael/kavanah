@@ -31,9 +31,8 @@ function WaveDot({
       return;
     }
 
-    const animation = Animated.loop(
+    const wave = Animated.loop(
       Animated.sequence([
-        Animated.delay(delay),
         Animated.timing(progress, {
           duration: duration / 2,
           easing: Easing.out(Easing.cubic),
@@ -46,9 +45,9 @@ function WaveDot({
           toValue: 0,
           useNativeDriver: true,
         }),
-        Animated.delay(duration - delay),
       ]),
     );
+    const animation = Animated.sequence([Animated.delay(delay), wave]);
     animation.start();
 
     return () => animation.stop();
