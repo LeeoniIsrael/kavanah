@@ -66,7 +66,11 @@ export function CommunityFeed(): React.JSX.Element {
               onChangeText={setDraft}
               multiline
               autoFocus
-              placeholder="What stayed with you from your prayer or learning?"
+              placeholders={[
+                "What stayed with you from prayer?",
+                "What did you notice in your learning?",
+                "Share one thought you want to carry forward…",
+              ]}
               className="h-48 p-4 text-[18px] leading-[26px] bg-card"
             />
           ) : (

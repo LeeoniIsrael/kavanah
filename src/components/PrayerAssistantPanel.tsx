@@ -147,7 +147,11 @@ export function PrayerAssistantPanel({
           onBlur={() => setFocused(false)}
           onSubmitEditing={submit}
           blurOnSubmit={false}
-          placeholder="Ask what this means…"
+          placeholders={[
+            "Ask what this means…",
+            "Ask about a phrase…",
+            "Ask how to carry this into your day…",
+          ]}
           placeholderTextColor={colors.inkMuted}
           className="h-auto min-h-11 max-h-[116px] w-auto flex-1 border-0 bg-transparent px-0 py-2 shadow-none"
           multiline

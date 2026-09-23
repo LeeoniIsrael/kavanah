@@ -488,15 +488,15 @@ export function ProfileScreen(): React.JSX.Element {
               </View>
               <View className="gap-2">
                 <Text variant="caption">Display name</Text>
-                <Input value={displayName} onChangeText={setDisplayName} placeholder="Your name" className="min-h-12" />
+                <Input value={displayName} onChangeText={setDisplayName} placeholders={["Your name", "How should your circle know you?"]} className="min-h-12" />
               </View>
               <View className="gap-2">
                 <Text variant="caption">Handle</Text>
-                <Input value={handle} onChangeText={(value) => setHandle(value.replace(/[^a-zA-Z0-9_]/g, ""))} autoCapitalize="none" placeholder="yourhandle" className="min-h-12" />
+                <Input value={handle} onChangeText={(value) => setHandle(value.replace(/[^a-zA-Z0-9_]/g, ""))} autoCapitalize="none" placeholders={["yourhandle", "choose_a_handle"]} className="min-h-12" />
               </View>
               <View className="gap-2">
                 <Text variant="caption">Bio</Text>
-                <Input value={bio} onChangeText={setBio} multiline placeholder="What are you practicing toward?" className="min-h-24 p-3" />
+                <Input value={bio} onChangeText={setBio} multiline placeholders={["What are you practicing toward?", "What brings you back to prayer?", "Share what guides your practice…"]} className="min-h-24 p-3" />
               </View>
               <View className="min-h-[72px] flex-row items-center gap-3 border-t border-b border-hairline">
                 <View className="flex-1"><Text variant="section">Private profile</Text><Text variant="body" className="text-[12px] leading-[17px]">Approve people before they see your activity.</Text></View>

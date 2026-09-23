@@ -65,6 +65,18 @@ test("search input preserves controlled query updates", () => {
   expect(screen.getByDisplayValue("shema")).toBeTruthy();
 });
 
+test("input keeps the first placeholder static when reduced motion is enabled", () => {
+  render(
+    <Input
+      accessibilityLabel="Reflection"
+      placeholders={["What stayed with you?", "What will you carry forward?"]}
+    />,
+  );
+  expect(screen.getByLabelText("Reflection").props.placeholder).toBe(
+    "What stayed with you?",
+  );
+});
+
 test("settings switches and story tabs preserve controlled selection", () => {
   function Controls() {
     const [checked, setChecked] = useState(false);

@@ -435,7 +435,11 @@ export function PrayerScreen(): React.JSX.Element {
             accessibilityLabel="Search prayers"
             value={query}
             onChangeText={setQuery}
-            placeholder="travel, shema, protection..."
+            placeholders={[
+              "Search for travel…",
+              "Search for Shema…",
+              "Search for protection…",
+            ]}
             className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent px-0 shadow-none"
             placeholderTextColor={colors.inkMuted}
           />
