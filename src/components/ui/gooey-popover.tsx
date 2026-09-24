@@ -572,7 +572,10 @@ const styles = StyleSheet.create({
   },
   trigger: { zIndex: 1 },
   triggerText: { color: colors.ink, fontSize: 15, fontWeight: "600" },
-  gooLayer: { position: "absolute", zIndex: 10 },
+  // Keep the goo behind the trigger content. The trigger is intentionally
+  // visible while it morphs so labels and icons do not disappear beneath the
+  // animated canvas.
+  gooLayer: { position: "absolute", zIndex: 0 },
   contentLayer: { position: "absolute", zIndex: 30 },
   clip: { position: "absolute", overflow: "hidden" },
   panel: {

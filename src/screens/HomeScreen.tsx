@@ -32,7 +32,14 @@ import {
   X,
 } from "lucide-react-native";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, Modal, Pressable, View } from "react-native";
+import {
+  Animated,
+  Easing,
+  Modal,
+  Pressable,
+  StyleSheet,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
@@ -817,10 +824,21 @@ function ShareMomentPrompt({
       <View className="flex-1 items-center justify-center px-6">
         <Animated.View
           pointerEvents="none"
-          className="absolute inset-0 bg-[rgba(18,31,52,0.14)]"
+          className="absolute inset-0"
           style={{ opacity: progress }}
         >
-          <BlurView intensity={38} tint="dark" className="flex-1" />
+          <BlurView
+            intensity={55}
+            tint="dark"
+            style={StyleSheet.absoluteFillObject}
+          />
+          <View
+            pointerEvents="none"
+            style={[
+              StyleSheet.absoluteFillObject,
+              { backgroundColor: "rgba(18, 31, 52, 0.2)" },
+            ]}
+          />
         </Animated.View>
         <Pressable
           accessibilityLabel="Dismiss share prompt"
