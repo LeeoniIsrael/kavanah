@@ -825,11 +825,12 @@ function ShareMomentPrompt({
         <Animated.View
           pointerEvents="none"
           className="absolute inset-0"
-          style={{ opacity: progress }}
+          style={[StyleSheet.absoluteFillObject, { opacity: progress }]}
         >
           <BlurView
-            intensity={55}
+            intensity={80}
             tint="dark"
+            experimentalBlurMethod="dimezisBlurView"
             style={StyleSheet.absoluteFillObject}
           />
           <View
@@ -917,6 +918,17 @@ function ShareMomentPrompt({
               <Text className="text-[14px] leading-[19px] font-medium text-muted-foreground font-heading">
                 Not now
               </Text>
+            </Button>
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityLabel="Close share prompt"
+              accessibilityRole="button"
+              haptic="selection"
+              onPress={() => close()}
+              className="self-center mt-1 w-11 h-11 rounded-full items-center justify-center bg-black/10 border border-hairline"
+            >
+              <X size={18} color={colors.inkMuted} />
             </Button>
           </View>
         </Animated.View>
