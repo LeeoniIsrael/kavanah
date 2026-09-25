@@ -14,6 +14,8 @@ type SettingsState = {
   assistantConsentVersion: number;
   zmanNotificationsEnabled: boolean;
   prayerFocusEnabled: boolean;
+  calendarInIsrael: boolean;
+  setCalendarInIsrael: (value: boolean) => void;
   setPrimaryLanguageCode: (code: string) => void;
   setAssistantConsent: (accepted: boolean) => void;
   setZmanNotificationsEnabled: (enabled: boolean) => void;
@@ -36,6 +38,12 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     : 0,
   zmanNotificationsEnabled: initialZmanNotificationsEnabled,
   prayerFocusEnabled: initialPrayerFocusEnabled,
+  calendarInIsrael:
+    userStorage.getString("settings.calendar-israel") === "true",
+  setCalendarInIsrael: (value) => {
+    userStorage.set("settings.calendar-israel", String(value));
+    set({ calendarInIsrael: value });
+  },
   setPrimaryLanguageCode: (code) => {
     const language = findLanguage(code);
     userStorage.set(LANGUAGE_KEY, language.code);
