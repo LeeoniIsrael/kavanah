@@ -1,3 +1,4 @@
+import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
 import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Screen } from "@/components/Screen";
@@ -121,6 +122,7 @@ const shortcuts = [
 ];
 
 export function HomeScreen(): React.JSX.Element {
+  const availability = usePracticeAvailability();
   const colors = useThemeColors();
   const homeStyles = useThemedStyles(makehomeStyles);
   const ui = useInterfaceStyles();
@@ -176,6 +178,7 @@ export function HomeScreen(): React.JSX.Element {
     const wasComplete = habits
       .find((item) => item.habit === habit)
       ?.completedDates.includes(formatDateKey(now));
+    if (!wasComplete && !availability(habit).allowed) return;
     toggleHabit(habit);
     if (!wasComplete) setSharePromptHabit(habit);
   };
@@ -336,6 +339,7 @@ export function HomeScreen(): React.JSX.Element {
               const complete = habit.completedDates.includes(
                 formatDateKey(now),
               );
+              const eligibility = availability(habit.habit);
               const details = habitDetails[habit.habit];
               const currentStreak = calculateCurrentRun(
                 habit.completedDates,
@@ -354,7 +358,11 @@ export function HomeScreen(): React.JSX.Element {
                       ? "Marks this practice incomplete"
                       : "Marks this practice complete"
                   }
-                  accessibilityState={{ checked: complete }}
+                  disabled={!complete && !eligibility.allowed}
+                  accessibilityState={{
+                    checked: complete,
+                    disabled: !complete && !eligibility.allowed,
+                  }}
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
@@ -369,9 +377,11 @@ export function HomeScreen(): React.JSX.Element {
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
                       {complete
                         ? "Completed today"
-                        : currentStreak > 0
-                          ? `${streakLabel} of practice`
-                          : details.description}
+                        : !eligibility.allowed
+                          ? eligibility.reason
+                          : currentStreak > 0
+                            ? `${streakLabel} of practice`
+                            : details.description}
                     </Text>
                   </View>
                   <StateBounce trigger={complete}>

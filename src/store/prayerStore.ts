@@ -1,3 +1,5 @@
+import { currentPrayerAvailability } from "@/services/currentPrayerAvailability";
+import { timedPracticeForPrayer } from "@/services/prayerAvailability";
 import { recoverPrayerHistory } from "@/services/activityCalendar";
 import { useSocialStore } from "@/store/socialStore";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
@@ -47,7 +49,7 @@ type PrayerState = {
     completedAt?: Date,
     startedAt?: Date,
     source?: PrayerHistoryEntry["source"],
-  ) => PrayerHistoryEntry;
+  ) => PrayerHistoryEntry | null;
   sync: () => Promise<void>;
 };
 
@@ -143,6 +145,11 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     startedAt,
     source = "guided-reading",
   ) => {
+    if (
+      !currentPrayerAvailability(timedPracticeForPrayer(prayer), completedAt)
+        .allowed
+    )
+      return null;
     const entry: PrayerHistoryEntry = {
       id: `${completedAt.toISOString()}-${prayer.id}`,
       prayerId: prayer.id,

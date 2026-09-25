@@ -39,3 +39,17 @@ export function jewishCalendarDay(date: Date, inIsrael: boolean) {
     omer: calendar.getDayOfOmer(),
   };
 }
+
+/** Upcoming summary only; past days remain selectable in the calendar. */
+export function remainingHolidayDays<
+  T extends { date: Date; events: string[] },
+>(days: T[], month: Date, now: Date): T[] {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return days.filter(
+    (day) =>
+      day.date.getFullYear() === month.getFullYear() &&
+      day.date.getMonth() === month.getMonth() &&
+      day.date >= today &&
+      day.events.length > 0,
+  );
+}

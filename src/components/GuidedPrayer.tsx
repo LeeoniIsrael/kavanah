@@ -27,6 +27,7 @@ export type GuidedPrayerToken = {
   translationLanguage?: string;
 };
 type Props = {
+  completionBlockedReason?: string | undefined;
   prayerTitle: string;
   guide?: ReadingGuide | undefined;
   scopeNote?: string | undefined;
@@ -44,6 +45,7 @@ type Props = {
   onQuote: (token: GuidedPrayerToken) => void;
 };
 export function GuidedPrayer({
+  completionBlockedReason,
   prayerTitle,
   guide,
   scopeNote,
@@ -352,12 +354,14 @@ export function GuidedPrayer({
             variant="caption"
             style={{ color: colors.inkMuted, textAlign: "center" }}
           >
-            Finish saves this prayer. Closing won’t log it.
+            {completionBlockedReason ??
+              "Finish saves this prayer. Closing won’t log it."}
           </Text>
           <Button
             style={{ alignSelf: "stretch", minHeight: 52 }}
             accessibilityLabel="Finish prayer and save to activity"
             haptic="none"
+            disabled={Boolean(completionBlockedReason)}
             onPress={onComplete}
           >
             <Text style={{ color: colors.onAccent }}>Finish prayer</Text>

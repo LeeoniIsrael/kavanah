@@ -6,6 +6,7 @@ import type { GeoPoint, Zman } from "@/types/zmanim";
 
 type ZmanimState = {
   location: GeoPoint | null;
+  locationCheckedAt: number | null;
   zmanim: Zman[];
   upcomingZmanim: Zman[];
   isLoading: boolean;
@@ -13,13 +14,15 @@ type ZmanimState = {
   refresh: () => Promise<void>;
 };
 
-export const useZmanimStore = create<ZmanimState>((set) => ({
+export const useZmanimStore = create<ZmanimState>((set, get) => ({
   location: null,
+  locationCheckedAt: null,
   zmanim: [],
   upcomingZmanim: [],
   isLoading: false,
   error: null,
   refresh: async () => {
+    if (get().isLoading) return;
     set({ isLoading: true, error: null });
     try {
       const location = await requestZmanimLocation();
@@ -32,7 +35,12 @@ export const useZmanimStore = create<ZmanimState>((set) => ({
       const upcomingZmanim = schedule.filter(
         (zman) => zman.time.getTime() > now.getTime(),
       );
-      set({ location, zmanim, upcomingZmanim });
+      set({
+        location,
+        locationCheckedAt: now.getTime(),
+        zmanim,
+        upcomingZmanim,
+      });
     } catch {
       set({
         error:

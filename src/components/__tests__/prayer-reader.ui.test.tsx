@@ -39,7 +39,7 @@ const tokens = [
     translation: "Second meaning",
   },
 ];
-function setup() {
+function setup(completionBlockedReason?: string) {
   const callbacks = {
     onClose: jest.fn(),
     onComplete: jest.fn(),
@@ -50,6 +50,7 @@ function setup() {
   return {
     ...render(
       <GuidedPrayer
+        completionBlockedReason={completionBlockedReason}
         prayerTitle="Test prayer"
         tokens={tokens}
         visible
@@ -85,4 +86,14 @@ test("bookmarking and opening details do not log a prayer", () => {
   expect(view.onBookmark).toHaveBeenCalledTimes(1);
   expect(view.onDetails).toHaveBeenCalledTimes(1);
   expect(view.onComplete).not.toHaveBeenCalled();
+});
+
+test("closed timing window keeps the text and exit available but disables Finish", () => {
+  const view = setup("Today’s logging window closed at local sunset.");
+  expect(view.getByText("Today’s logging window closed at local sunset.")).toBeTruthy();
+  expect(view.getByText("First pronunciation")).toBeTruthy();
+  fireEvent.press(view.getByLabelText("Finish prayer and save to activity"));
+  expect(view.onComplete).not.toHaveBeenCalled();
+  fireEvent.press(view.getByLabelText("Close without logging a prayer"));
+  expect(view.onClose).toHaveBeenCalledTimes(1);
 });

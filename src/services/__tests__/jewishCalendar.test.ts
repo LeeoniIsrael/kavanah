@@ -28,3 +28,32 @@ describe("Jewish calendar", () => {
     );
   });
 });
+
+import { remainingHolidayDays } from "../jewishCalendar";
+it("shows only remaining September dates, retaining today", () => {
+  const now = new Date(2026, 8, 25, 23);
+  const days = [
+    day("2026-09-21"),
+    day("2026-09-25"),
+    day("2026-09-26"),
+    day("2026-10-03"),
+  ];
+  const result = remainingHolidayDays(days, now, now);
+  expect(result.some((d) => d.events.includes("Yom Kippur"))).toBe(false);
+  expect(result.map((d) => d.date.getDate())).toContain(26);
+  const today = { date: new Date(2026, 8, 25), events: ["Today"] };
+  expect(remainingHolidayDays([today], now, now)).toEqual([today]);
+});
+it("keeps future-month holidays and leaves past months out of the upcoming list", () => {
+  const now = new Date(2026, 8, 25);
+  expect(
+    remainingHolidayDays([day("2026-10-03")], new Date(2026, 9, 1), now),
+  ).toHaveLength(1);
+  expect(
+    remainingHolidayDays(
+      [day("2026-09-21")],
+      new Date(2026, 8, 1),
+      new Date(2026, 9, 1),
+    ),
+  ).toHaveLength(0);
+});

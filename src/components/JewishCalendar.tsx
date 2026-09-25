@@ -18,7 +18,10 @@ import { useInterfaceStyles } from "@/design/layout";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useSettingsStore } from "@/store/settingsStore";
 import { calendarDayKey, calendarWeeks } from "@/services/activityCalendar";
-import { jewishCalendarDay } from "@/services/jewishCalendar";
+import {
+  jewishCalendarDay,
+  remainingHolidayDays,
+} from "@/services/jewishCalendar";
 
 export function JewishCalendarView() {
   const router = useRouter();
@@ -46,9 +49,7 @@ export function JewishCalendarView() {
     [month, inIsrael],
   );
   const day = jewishCalendarDay(selected, inIsrael);
-  const holidays = weeks
-    .flat()
-    .filter((d) => isSameMonth(d.date, month) && d.events.length);
+  const holidays = remainingHolidayDays(weeks.flat(), month, now);
   const cell = Math.max(44, 34 * fontScale + 10, width / 7);
   const select = (date: Date) => {
     setSelected(date);
@@ -227,7 +228,7 @@ export function JewishCalendarView() {
       ) : null}
       <View style={ui.surface}>
         <Text accessibilityRole="header" style={ui.sectionTitle}>
-          This month
+          {isSameMonth(month, now) ? "This month" : format(month, "MMMM yyyy")}
         </Text>
         {holidays.length ? (
           holidays.map((d) => (
@@ -244,7 +245,7 @@ export function JewishCalendarView() {
             </Button>
           ))
         ) : (
-          <Text style={ui.body}>No holidays this month.</Text>
+          <Text style={ui.body}>No upcoming holidays in this month.</Text>
         )}
       </View>
       <View style={ui.surface}>

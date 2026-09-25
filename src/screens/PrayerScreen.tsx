@@ -1,3 +1,5 @@
+import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
+import { timedPracticeForPrayer } from "@/services/prayerAvailability";
 import { prayerReadingGuide, prayerScopeNote } from "@/data/prayerReadingGuide";
 import { findLanguage } from "@/data/languages";
 import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
@@ -102,6 +104,7 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 }
 
 export function PrayerScreen(): React.JSX.Element {
+  const availability = usePracticeAvailability();
   const colors = useThemeColors();
 
   const router = useRouter();
@@ -354,13 +357,15 @@ export function PrayerScreen(): React.JSX.Element {
       return;
     const completedAt = new Date();
     const startedAt = prayerSession.current?.startedAt;
-    if (prayerSession.current) prayerSession.current.completed = true;
+
     const completion = recordCompletion(
       selected,
       completedAt,
       startedAt,
       "reader",
     );
+    if (!completion) return;
+    if (prayerSession.current) prayerSession.current.completed = true;
     const habit = habitForPrayer(selected);
     if (habit) completeHabit(habit, completedAt);
     const streak = habit
@@ -637,12 +642,13 @@ export function PrayerScreen(): React.JSX.Element {
                   variant="ghost"
                   size="content"
                   accessibilityLabel="Finish prayer"
-                  disabled={selectedLoading}
-                  onPress={() => {
-                    completeGuidedPrayer();
-                    setCompletionMoment(null);
-                    closeReader();
-                  }}
+                  disabled={
+                    selectedLoading ||
+                    !availability(
+                      selected ? timedPracticeForPrayer(selected) : undefined,
+                    ).allowed
+                  }
+                  onPress={completeGuidedPrayer}
                   style={{
                     minHeight: 44,
                     alignItems: "center",
@@ -1019,6 +1025,11 @@ export function PrayerScreen(): React.JSX.Element {
               onBookmark={() => selected && toggleBookmark(selected.id)}
               bookmarked={selectedBookmarked}
               reviewPending={selected?.hebrewReview.status !== "approved"}
+              completionBlockedReason={
+                availability(
+                  selected ? timedPracticeForPrayer(selected) : undefined,
+                ).reason
+              }
               onComplete={completeGuidedPrayer}
               onQuote={(token) => {
                 if (selected)

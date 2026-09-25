@@ -1,3 +1,4 @@
+import { currentPrayerAvailability } from "@/services/currentPrayerAvailability";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { formatISO, isSameDay, parseISO, subDays } from "date-fns";
 import { useSocialStore } from "@/store/socialStore";
@@ -6,11 +7,7 @@ import { create } from "zustand";
 import { readJson, userStorage, writeJson } from "@/services/mmkv";
 
 export type StreakHabit =
-  | "shacharit"
-  | "mincha"
-  | "maariv"
-  | "tefillin"
-  | "study";
+  "shacharit" | "mincha" | "maariv" | "tefillin" | "study";
 
 export type HabitProgress = {
   habit: StreakHabit;
@@ -79,8 +76,10 @@ writeSocialData(STORAGE_KEY, persisted);
 export const useStreakStore = create<StreakState>((set, get) => ({
   habits: persisted,
   enabledHabits: persistedEnabledHabits,
-  completeHabit: (habit, date = new Date()) =>
-    set((state) => persist(updateHabit(state.habits, habit, date, false))),
+  completeHabit: (habit, date = new Date()) => {
+    if (!currentPrayerAvailability(habit, date).allowed) return;
+    set((state) => persist(updateHabit(state.habits, habit, date, false)));
+  },
   setHabitEnabled: (habit, enabled) =>
     set((state) =>
       persistEnabledHabits(
@@ -92,6 +91,7 @@ export const useStreakStore = create<StreakState>((set, get) => ({
     const wasComplete = get()
       .habits.find((item) => item.habit === habit)
       ?.completedDates.includes(day);
+    if (!wasComplete && !currentPrayerAvailability(habit, date).allowed) return;
     set((state) => persist(toggleHabit(state.habits, habit, date)));
     if (!wasComplete && habit !== "study") {
       const names = {

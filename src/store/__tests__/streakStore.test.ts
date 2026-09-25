@@ -1,3 +1,4 @@
+jest.mock("@/services/location", () => ({ requestZmanimLocation: jest.fn() }));
 import { useStreakStore } from "@/store/streakStore";
 
 describe("streak store", () => {
@@ -59,4 +60,17 @@ describe("streak store", () => {
 
     expect(useStreakStore.getState().enabledHabits).toEqual([]);
   });
+});
+
+
+it("blocks timed check-ins without verified local times and still allows undo", () => {
+  const date = new Date();
+  const day = [date.getFullYear(), String(date.getMonth() + 1).padStart(2, "0"), String(date.getDate()).padStart(2, "0")].join("-");
+  useStreakStore.setState({ habits: [{ habit: "tefillin", streak: 0, freezes: 2, completedDates: [], badges: [] }] });
+  useStreakStore.getState().completeHabit("tefillin", date);
+  useStreakStore.getState().toggleHabit("tefillin", date);
+  expect(useStreakStore.getState().habits[0]?.completedDates).toEqual([]);
+  useStreakStore.setState({ habits: [{ habit: "tefillin", streak: 1, freezes: 2, completedDates: [day], badges: [] }] });
+  useStreakStore.getState().toggleHabit("tefillin", date);
+  expect(useStreakStore.getState().habits[0]?.completedDates).toEqual([]);
 });
