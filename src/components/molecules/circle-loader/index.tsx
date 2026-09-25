@@ -1,8 +1,12 @@
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
 import { useEffect, useRef } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
-import { colors } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 import type { CircleLoadingIndicatorProps } from "./types";
@@ -75,7 +79,11 @@ function WaveDot({
         width: diameter,
       }}
     >
-      <Svg height={diameter} width={diameter} viewBox={`0 0 ${diameter} ${diameter}`}>
+      <Svg
+        height={diameter}
+        width={diameter}
+        viewBox={`0 0 ${diameter} ${diameter}`}
+      >
         <Circle
           cx={diameter / 2}
           cy={diameter / 2}
@@ -89,12 +97,16 @@ function WaveDot({
 
 /** Three dots rising in sequence to communicate indeterminate progress. */
 export function CircleLoadingIndicator({
-  dotColor = colors.blue,
+  dotColor,
   dotRadius = 3,
   dotSpacing = 5,
   duration = 500,
   style,
 }: CircleLoadingIndicatorProps): React.JSX.Element {
+  const colors = useThemeColors();
+  dotColor ??= colors.blue;
+  const styles = useThemedStyles(makestyles);
+
   const reduceMotion = useReducedMotion();
   const safeRadius = Math.max(1, dotRadius);
   const safeDuration = Math.max(180, duration);
@@ -125,12 +137,13 @@ export function CircleLoadingIndicator({
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    container: {
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "center",
+    },
+  });
 
 export type { CircleLoadingIndicatorProps } from "./types";

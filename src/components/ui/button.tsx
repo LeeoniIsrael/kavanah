@@ -1,6 +1,11 @@
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Text, TextClassContext } from "@/components/ui/text";
-import { colors, motion } from "@/design/theme";
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 import {
@@ -92,7 +97,7 @@ const buttonTextVariants = cva(
     variants: {
       variant: {
         default: "text-primary-foreground",
-        destructive: "text-white",
+        destructive: "text-destructive-foreground",
         outline: cn(
           "group-active:text-accent-foreground",
           Platform.select({ web: "group-hover:text-accent-foreground" }),
@@ -165,6 +170,9 @@ function Button({
   borderRadius,
   ...props
 }: ButtonProps) {
+  const colors = useThemeColors();
+  const styles = useThemedStyles(makestyles);
+
   const [scale] = useState(() => new Animated.Value(1));
   const [lift] = useState(() => new Animated.Value(0));
   const [loadingOpacity] = useState(
@@ -239,7 +247,7 @@ function Button({
   const disabled = Boolean(props.disabled || isLoading);
   const indicatorColor =
     variant === "default" || variant === "destructive"
-      ? colors.white
+      ? colors.onAccent
       : colors.blue;
 
   return (
@@ -325,15 +333,16 @@ function Button({
   );
 }
 
-const styles = StyleSheet.create({
-  loadingContent: {
-    alignItems: "center",
-    flexDirection: "row",
-    flexShrink: 1,
-    gap: 8,
-    justifyContent: "center",
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    loadingContent: {
+      alignItems: "center",
+      flexDirection: "row",
+      flexShrink: 1,
+      gap: 8,
+      justifyContent: "center",
+    },
+  });
 
 export { Button, buttonTextVariants, buttonVariants };
 export type { ButtonProps };

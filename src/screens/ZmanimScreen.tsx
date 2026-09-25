@@ -1,22 +1,24 @@
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { Bell, MapPin } from "lucide-react-native";
 import { useEffect } from "react";
 import { View } from "react-native";
 
-import { Screen } from "@/components/Screen";
 import {
   ZmanimHeroSkeleton,
   ZmanimListSkeleton,
 } from "@/components/LoadingSkeletons";
+import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { StatusPulse } from "@/components/ui/motion-feedback";
 import { ZmanRow } from "@/components/ZmanRow";
-import { colors } from "@/design/theme";
 import { useZmanimStore } from "@/store/zmanimStore";
 
 export function ZmanimScreen(): React.JSX.Element {
+  const colors = useThemeColors();
+
   const { location, zmanim, upcomingZmanim, isLoading, error, refresh } =
     useZmanimStore();
   const nextZman = upcomingZmanim[0];
@@ -41,10 +43,10 @@ export function ZmanimScreen(): React.JSX.Element {
                 Next
               </Text>
             </View>
-            <Text variant="section" className="text-white">
+            <Text variant="section" className="text-foreground">
               {nextZman?.title ?? "Calculating times"}
             </Text>
-            <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-white font-body">
+            <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-foreground font-body">
               {nextZman ? formatTime(nextZman.time) : "--:--"}
             </Text>
             <Text variant="body" className="text-inkMuted">

@@ -1,3 +1,8 @@
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
 // Adapted from Reacticx's Gooey Popover (MIT), customized for Kavanah.
 // See docs/third-party-notices.md for the upstream copyright and license.
 import {
@@ -19,9 +24,9 @@ import React, {
 } from "react";
 import {
   Dimensions,
+  Text as NativeText,
   Pressable,
   StyleSheet,
-  Text as NativeText,
   View,
   type LayoutChangeEvent,
   type StyleProp,
@@ -30,16 +35,15 @@ import {
 } from "react-native";
 import Animated, {
   interpolate,
-  type SharedValue,
-  type WithSpringConfig,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
   withSpring,
+  type SharedValue,
+  type WithSpringConfig,
 } from "react-native-reanimated";
 
 import { Text } from "@/components/ui/text";
-import { colors } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { softHaptic } from "@/services/haptics";
 
@@ -213,12 +217,16 @@ function Root({
   sideOffset = 12,
   panelRadius = 20,
   gooStrength = 8,
-  color = colors.mineral,
+  color,
   dismissOnOutsidePress = true,
   closeSpringConfig = CLOSE_SPRING,
   openSpringConfig = OPEN_SPRING,
   style,
 }: GooeyPopoverRootProps): React.JSX.Element {
+  const colors = useThemeColors();
+  color ??= colors.mineral;
+  const styles = useThemedStyles(makestyles);
+
   const isControlled = controlledOpen !== undefined;
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const open = isControlled ? controlledOpen : uncontrolledOpen;
@@ -308,6 +316,8 @@ function Trigger({
   accessibilityHint,
   disabled = false,
 }: GooeyPopoverTriggerProps): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   const { toggle, open, setTriggerSize, triggerScale, reduceMotion } =
     usePopoverContext("GooeyPopover.Trigger");
   const animatedStyle = useAnimatedStyle(() => ({
@@ -357,6 +367,8 @@ function Content({
   style,
   textStyle,
 }: GooeyPopoverContentProps): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   const {
     progress,
     side,
@@ -536,9 +548,13 @@ function GooeyInfoPopover({
   accessibilityLabel,
   side = "bottom",
   align = "center",
-  color = colors.mineral,
+  color,
   triggerStyle,
 }: GooeyInfoPopoverProps): React.JSX.Element {
+  const colors = useThemeColors();
+  color ??= colors.mineral;
+  const styles = useThemedStyles(makestyles);
+
   return (
     <Root side={side} align={align} color={color} gooStrength={7}>
       <Trigger
@@ -560,52 +576,53 @@ function GooeyInfoPopover({
 
 const GooeyPopover = { Root, Trigger, Content };
 
-const styles = StyleSheet.create({
-  root: { position: "relative" },
-  backdrop: {
-    position: "absolute",
-    left: -SCREEN_WIDTH,
-    top: -SCREEN_HEIGHT,
-    width: SCREEN_WIDTH * 3,
-    height: SCREEN_HEIGHT * 3,
-    zIndex: 20,
-  },
-  trigger: { zIndex: 1 },
-  triggerText: { color: colors.ink, fontSize: 15, fontWeight: "600" },
-  // Keep the goo behind the trigger content. The trigger is intentionally
-  // visible while it morphs so labels and icons do not disappear beneath the
-  // animated canvas.
-  gooLayer: { position: "absolute", zIndex: 0 },
-  contentLayer: { position: "absolute", zIndex: 30 },
-  clip: { position: "absolute", overflow: "hidden" },
-  panel: {
-    position: "absolute",
-    maxWidth: MAX_PANEL_WIDTH,
-    padding: 16,
-  },
-  contentText: { color: colors.ink, fontSize: 14, lineHeight: 20 },
-  measure: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    opacity: 0,
-    zIndex: -2,
-  },
-  infoPanel: { width: 272, padding: 18 },
-  infoContent: { gap: 5 },
-  infoTitle: {
-    color: colors.ink,
-    fontFamily: "Manrope_700Bold",
-    fontSize: 15,
-    lineHeight: 20,
-  },
-  infoBody: {
-    color: colors.inkMuted,
-    fontFamily: "Manrope_400Regular",
-    fontSize: 13,
-    lineHeight: 19,
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    root: { position: "relative" },
+    backdrop: {
+      position: "absolute",
+      left: -SCREEN_WIDTH,
+      top: -SCREEN_HEIGHT,
+      width: SCREEN_WIDTH * 3,
+      height: SCREEN_HEIGHT * 3,
+      zIndex: 20,
+    },
+    trigger: { zIndex: 1 },
+    triggerText: { color: colors.ink, fontSize: 15, fontWeight: "600" },
+    // Keep the goo behind the trigger content. The trigger is intentionally
+    // visible while it morphs so labels and icons do not disappear beneath the
+    // animated canvas.
+    gooLayer: { position: "absolute", zIndex: 0 },
+    contentLayer: { position: "absolute", zIndex: 30 },
+    clip: { position: "absolute", overflow: "hidden" },
+    panel: {
+      position: "absolute",
+      maxWidth: MAX_PANEL_WIDTH,
+      padding: 16,
+    },
+    contentText: { color: colors.ink, fontSize: 14, lineHeight: 20 },
+    measure: {
+      position: "absolute",
+      left: 0,
+      top: 0,
+      opacity: 0,
+      zIndex: -2,
+    },
+    infoPanel: { width: 272, padding: 18 },
+    infoContent: { gap: 5 },
+    infoTitle: {
+      color: colors.ink,
+      fontFamily: "Manrope_700Bold",
+      fontSize: 15,
+      lineHeight: 20,
+    },
+    infoBody: {
+      color: colors.inkMuted,
+      fontFamily: "Manrope_400Regular",
+      fontSize: 13,
+      lineHeight: 19,
+    },
+  });
 
 export { GooeyInfoPopover, GooeyPopover };
 export type {

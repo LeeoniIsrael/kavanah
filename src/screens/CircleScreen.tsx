@@ -1,14 +1,15 @@
-import { memo, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
 import {
-  FlatList,
-  Modal,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Switch,
-  View,
-} from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { fonts } from "@/design/theme";
+import { useCurrentDate } from "@/hooks/useCurrentDate";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
+import { useSocialStore, type FeedPost } from "@/store/socialStore";
 import { useRouter } from "expo-router";
 import {
   BookOpen,
@@ -20,13 +21,17 @@ import {
   Sparkles,
   X,
 } from "lucide-react-native";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
-import { colors, fonts } from "@/design/theme";
-import { useSocialStore, type FeedPost } from "@/store/socialStore";
-import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
-import { useCurrentDate } from "@/hooks/useCurrentDate";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { memo, useState } from "react";
+import {
+  FlatList,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  View,
+} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const modes: { id: PrayerSharing; title: string; detail: string }[] = [
   {
@@ -46,6 +51,9 @@ const modes: { id: PrayerSharing; title: string; detail: string }[] = [
   },
 ];
 export function CircleScreen(): React.JSX.Element {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const router = useRouter();
   const posts = useSocialStore((s) => s.posts);
   const profile = useSocialStore((s) => s.profile);
@@ -118,7 +126,7 @@ export function CircleScreen(): React.JSX.Element {
             </View>
             <View style={s.quoteCard}>
               <View style={s.row}>
-                <Quote size={20} color="#C3CAFF" />
+                <Quote size={20} color={colors.blue} />
                 <Text style={s.quoteLabel}>Your quote of the week</Text>
               </View>
               <Text
@@ -222,6 +230,9 @@ export function SharingSettings({
   visible: boolean;
   onClose: () => void;
 }) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const preferences = useSocialStore((s) => s.preferences);
   const setPreferences = useSocialStore((s) => s.setPreferences);
   const reduceMotion = useReducedMotion();
@@ -293,7 +304,7 @@ export function SharingSettings({
                       ]}
                     >
                       {preferences.prayers === mode.id && (
-                        <Check size={16} color={colors.parchment} />
+                        <Check size={16} color={colors.onAccent} />
                       )}
                     </View>
                   </Button>
@@ -341,6 +352,9 @@ export function SharingSettings({
   );
 }
 const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const router = useRouter();
   const removePost = useSocialStore((s) => s.removePost);
   const quote = post.kind === "quote";
@@ -423,189 +437,190 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
     </View>
   );
 });
-const s = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.parchment },
-  content: {
-    padding: 24,
-    paddingTop: 12,
-    paddingBottom: 32,
-    width: "100%",
-    maxWidth: 620,
-    alignSelf: "center",
-  },
-  row: { flexDirection: "row", alignItems: "center", gap: 12 },
-  title: {
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-    fontSize: 38,
-    lineHeight: 46,
-    color: colors.ink,
-  },
-  section: {
-    fontFamily: fonts.semibold,
-    fontSize: 21,
-    lineHeight: 28,
-    color: colors.ink,
-  },
-  heading: {
-    fontFamily: fonts.semibold,
-    fontSize: 17,
-    lineHeight: 24,
-    color: colors.ink,
-  },
-  label: {
-    fontFamily: fonts.semibold,
-    fontSize: 14,
-    lineHeight: 20,
-    color: colors.ink,
-  },
-  muted: { fontSize: 14, lineHeight: 22, color: colors.inkMuted },
-  small: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
-  iconButton: {
-    width: 44,
-    minHeight: 44,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  intro: { gap: 18 },
-  avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: colors.mineral,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  initial: { color: colors.ink, fontSize: 14, fontFamily: fonts.semibold },
-  settingsRow: {
-    padding: 16,
-    backgroundColor: colors.vellum,
-    borderRadius: 18,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  quoteCard: {
-    backgroundColor: colors.blueSoft,
-    borderRadius: 24,
-    padding: 22,
-    gap: 16,
-  },
-  quoteLabel: { color: "#C3CAFF", fontSize: 13, lineHeight: 20 },
-  quoteTitle: {
-    color: colors.ink,
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-    fontSize: 28,
-    lineHeight: 36,
-  },
-  quoteDescription: { color: "#C2C7D5", fontSize: 14, lineHeight: 22 },
-  quoteAction: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-    minHeight: 48,
-    backgroundColor: "#363C55",
-    borderRadius: 14,
-    padding: 10,
-  },
-  quoteFootnote: { color: "#C2C7D5", fontSize: 11, lineHeight: 17 },
-  empty: {
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    alignItems: "center",
-    gap: 12,
-  },
-  emptyIcon: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    backgroundColor: colors.blueSoft,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  primary: {
-    backgroundColor: colors.blue,
-    borderRadius: 16,
-    minHeight: 50,
-    paddingHorizontal: 18,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  primaryText: {
-    color: colors.parchment,
-    fontFamily: fonts.semibold,
-    fontSize: 15,
-    lineHeight: 22,
-  },
-  notice: {
-    marginTop: 24,
-    paddingTop: 20,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.hairlineStrong,
-    flexDirection: "row",
-    gap: 10,
-  },
-  options: { gap: 10 },
-  option: {
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-    backgroundColor: colors.vellum,
-    borderRadius: 18,
-    padding: 18,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 16,
-  },
-  selectedOption: {
-    backgroundColor: colors.blueSoft,
-    borderColor: colors.blue,
-  },
-  radio: {
-    width: 24,
-    height: 24,
-    borderWidth: 1.5,
-    borderColor: colors.inkMuted,
-    borderRadius: 12,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  milestoneOption: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 16,
-    paddingVertical: 20,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: colors.hairline,
-  },
-  rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
-  activity: {
-    padding: 18,
-    borderRadius: 20,
-    backgroundColor: colors.vellum,
-    gap: 14,
-  },
-  activityIcon: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: colors.mineral,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  activityQuote: {
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-    fontSize: 23,
-    lineHeight: 33,
-    color: colors.ink,
-  },
-  postSource: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    minHeight: 44,
-  },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    screen: { flex: 1, backgroundColor: colors.parchment },
+    content: {
+      padding: 24,
+      paddingTop: 12,
+      paddingBottom: 32,
+      width: "100%",
+      maxWidth: 620,
+      alignSelf: "center",
+    },
+    row: { flexDirection: "row", alignItems: "center", gap: 12 },
+    title: {
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+      fontSize: 38,
+      lineHeight: 46,
+      color: colors.ink,
+    },
+    section: {
+      fontFamily: fonts.semibold,
+      fontSize: 21,
+      lineHeight: 28,
+      color: colors.ink,
+    },
+    heading: {
+      fontFamily: fonts.semibold,
+      fontSize: 17,
+      lineHeight: 24,
+      color: colors.ink,
+    },
+    label: {
+      fontFamily: fonts.semibold,
+      fontSize: 14,
+      lineHeight: 20,
+      color: colors.ink,
+    },
+    muted: { fontSize: 14, lineHeight: 22, color: colors.inkMuted },
+    small: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
+    iconButton: {
+      width: 44,
+      minHeight: 44,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    intro: { gap: 18 },
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      backgroundColor: colors.mineral,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    initial: { color: colors.ink, fontSize: 14, fontFamily: fonts.semibold },
+    settingsRow: {
+      padding: 16,
+      backgroundColor: colors.vellum,
+      borderRadius: 18,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
+    },
+    quoteCard: {
+      backgroundColor: colors.blueSoft,
+      borderRadius: 24,
+      padding: 22,
+      gap: 16,
+    },
+    quoteLabel: { color: colors.blue, fontSize: 13, lineHeight: 20 },
+    quoteTitle: {
+      color: colors.ink,
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+      fontSize: 28,
+      lineHeight: 36,
+    },
+    quoteDescription: { color: colors.inkMuted, fontSize: 14, lineHeight: 22 },
+    quoteAction: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      minHeight: 48,
+      backgroundColor: colors.mineral,
+      borderRadius: 14,
+      padding: 10,
+    },
+    quoteFootnote: { color: colors.inkMuted, fontSize: 11, lineHeight: 17 },
+    empty: {
+      paddingVertical: 12,
+      paddingHorizontal: 16,
+      alignItems: "center",
+      gap: 12,
+    },
+    emptyIcon: {
+      width: 52,
+      height: 52,
+      borderRadius: 26,
+      backgroundColor: colors.blueSoft,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    primary: {
+      backgroundColor: colors.blue,
+      borderRadius: 16,
+      minHeight: 50,
+      paddingHorizontal: 18,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    primaryText: {
+      color: colors.onAccent,
+      fontFamily: fonts.semibold,
+      fontSize: 15,
+      lineHeight: 22,
+    },
+    notice: {
+      marginTop: 24,
+      paddingTop: 20,
+      borderTopWidth: StyleSheet.hairlineWidth,
+      borderTopColor: colors.hairlineStrong,
+      flexDirection: "row",
+      gap: 10,
+    },
+    options: { gap: 10 },
+    option: {
+      borderWidth: 1,
+      borderColor: colors.hairlineStrong,
+      backgroundColor: colors.vellum,
+      borderRadius: 18,
+      padding: 18,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 16,
+    },
+    selectedOption: {
+      backgroundColor: colors.blueSoft,
+      borderColor: colors.blue,
+    },
+    radio: {
+      width: 24,
+      height: 24,
+      borderWidth: 1.5,
+      borderColor: colors.inkMuted,
+      borderRadius: 12,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    milestoneOption: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 16,
+      paddingVertical: 20,
+      borderTopWidth: 1,
+      borderBottomWidth: 1,
+      borderColor: colors.hairline,
+    },
+    rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
+    activity: {
+      padding: 18,
+      borderRadius: 20,
+      backgroundColor: colors.vellum,
+      gap: 14,
+    },
+    activityIcon: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      backgroundColor: colors.mineral,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    activityQuote: {
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+      fontSize: 23,
+      lineHeight: 33,
+      color: colors.ink,
+    },
+    postSource: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
+      minHeight: 44,
+    },
+  });
 
 function formatDuration(seconds: number): string {
   if (seconds < 60) return `${seconds}s`;

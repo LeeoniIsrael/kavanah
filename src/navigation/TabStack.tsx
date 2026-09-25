@@ -1,7 +1,10 @@
-import { colors, fonts } from "@/design/theme";
+import { useThemeColors } from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import { Stack } from "expo-router";
 
 export function TabStack({ title }: { title: string }): React.JSX.Element {
+  const colors = useThemeColors();
+
   return (
     <Stack
       screenOptions={{

@@ -1,13 +1,18 @@
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
 import { ChevronDown } from "lucide-react-native";
 import {
   createContext,
-  type PropsWithChildren,
-  type ReactNode,
   useContext,
   useEffect,
   useMemo,
   useRef,
   useState,
+  type PropsWithChildren,
+  type ReactNode,
 } from "react";
 import {
   Animated,
@@ -22,7 +27,7 @@ import {
   type ViewStyle,
 } from "react-native";
 
-import { colors, fonts, geometry, spacing } from "@/design/theme";
+import { fonts, geometry, spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export type TBouncyAccordionValue = string | null;
@@ -81,6 +86,8 @@ function Root({
   radius = geometry.radius.surface,
   style,
 }: RootProps): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   const [internalValue, setInternalValue] =
     useState<TBouncyAccordionValue>(defaultValue);
   const isControlled = value !== undefined;
@@ -115,6 +122,8 @@ type ItemProps = PropsWithChildren<{
 }>;
 
 function Item({ children, value, style }: ItemProps): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   const { gap, openValue, radius, toggle } = useRootContext();
   const isOpen = openValue === value;
   const reduceMotion = useReducedMotion();
@@ -174,6 +183,9 @@ function TriggerBase({
   style,
   ...props
 }: TriggerProps): React.JSX.Element {
+  const colors = useThemeColors();
+  const styles = useThemedStyles(makestyles);
+
   const { isOpen, progress, toggle } = useItemContext();
   const rotate = progress.interpolate({
     inputRange: [0, 1],
@@ -205,6 +217,8 @@ function TriggerIcon({
   children,
   style,
 }: PropsWithChildren<{ style?: StyleProp<ViewStyle> }>): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   return <View style={[styles.icon, style]}>{children}</View>;
 }
 
@@ -215,12 +229,16 @@ function TriggerLabel({
   children: ReactNode;
   style?: StyleProp<TextStyle>;
 }): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   return <Text style={[styles.label, style]}>{children}</Text>;
 }
 
 type ContentProps = PropsWithChildren<{ style?: StyleProp<ViewStyle> }>;
 
 function Content({ children, style }: ContentProps): React.JSX.Element {
+  const styles = useThemedStyles(makestyles);
+
   const { isOpen, progress } = useItemContext();
   const [contentHeight, setContentHeight] = useState(0);
   const handleLayout = (event: LayoutChangeEvent) => {
@@ -269,60 +287,61 @@ const Trigger = Object.assign(TriggerBase, {
 
 export const BouncyAccordion = { Root, Item, Trigger, Content };
 
-const styles = StyleSheet.create({
-  root: {
-    overflow: "hidden",
-    backgroundColor: colors.parchment,
-    borderColor: colors.hairlineStrong,
-    borderWidth: StyleSheet.hairlineWidth,
-  },
-  item: {
-    overflow: "hidden",
-    backgroundColor: colors.vellum,
-    borderBottomColor: colors.hairline,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  trigger: {
-    minHeight: 66,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: 14,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-  },
-  triggerPressed: { opacity: 0.72 },
-  triggerContent: {
-    flex: 1,
-    minWidth: 0,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-  },
-  icon: {
-    width: 34,
-    height: 34,
-    borderRadius: geometry.radius.control - 8,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.goldSoft,
-  },
-  label: {
-    flex: 1,
-    color: colors.ink,
-    fontFamily: fonts.semibold,
-    fontSize: 16,
-    lineHeight: 22,
-  },
-  contentClip: { overflow: "hidden" },
-  content: {
-    paddingHorizontal: spacing.lg,
-    paddingBottom: spacing.lg,
-    paddingLeft: 62,
-  },
-  body: {
-    color: colors.inkMuted,
-    fontFamily: fonts.regular,
-    fontSize: 14,
-    lineHeight: 21,
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    root: {
+      overflow: "hidden",
+      backgroundColor: colors.parchment,
+      borderColor: colors.hairlineStrong,
+      borderWidth: StyleSheet.hairlineWidth,
+    },
+    item: {
+      overflow: "hidden",
+      backgroundColor: colors.vellum,
+      borderBottomColor: colors.hairline,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+    },
+    trigger: {
+      minHeight: 66,
+      paddingHorizontal: spacing.lg,
+      paddingVertical: 14,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.md,
+    },
+    triggerPressed: { opacity: 0.72 },
+    triggerContent: {
+      flex: 1,
+      minWidth: 0,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.md,
+    },
+    icon: {
+      width: 34,
+      height: 34,
+      borderRadius: geometry.radius.control - 8,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: colors.goldSoft,
+    },
+    label: {
+      flex: 1,
+      color: colors.ink,
+      fontFamily: fonts.semibold,
+      fontSize: 16,
+      lineHeight: 22,
+    },
+    contentClip: { overflow: "hidden" },
+    content: {
+      paddingHorizontal: spacing.lg,
+      paddingBottom: spacing.lg,
+      paddingLeft: 62,
+    },
+    body: {
+      color: colors.inkMuted,
+      fontFamily: fonts.regular,
+      fontSize: 14,
+      lineHeight: 21,
+    },
+  });

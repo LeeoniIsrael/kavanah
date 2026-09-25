@@ -1,12 +1,14 @@
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { useRouter } from "expo-router";
 import { ChevronRight, Users } from "lucide-react-native";
 import { View } from "react-native";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
-import { colors } from "@/design/theme";
 
 /** Home entry point. The virtualized activity feed lives in its own tab. */
 export function CommunityFeed() {
+  const colors = useThemeColors();
+
   const router = useRouter();
   return (
     <Button

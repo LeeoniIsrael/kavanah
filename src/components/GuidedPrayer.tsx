@@ -1,5 +1,5 @@
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import {
   Check,
@@ -10,9 +10,10 @@ import {
 } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, ScrollView, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button } from "@/components/ui/button";
-import { colors, motion } from "@/design/theme";
+import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export type GuidedPrayerToken = {
@@ -39,6 +40,8 @@ export function GuidedPrayer({
   onComplete,
   onQuote,
 }: Props): React.JSX.Element | null {
+  const colors = useThemeColors();
+
   const insets = useSafeAreaInsets();
   const [index, setIndex] = useState(0);
   const reveal = useRef(new Animated.Value(1)).current;
@@ -88,9 +91,9 @@ export function GuidedPrayer({
           haptic="selection"
           onPress={onClose}
           pressedScale={0.94}
-          className="w-11 h-11 rounded-md items-center justify-center border border-white/20 bg-white/10"
+          className="w-11 h-11 rounded-md items-center justify-center border border-hairlineStrong bg-mineral"
         >
-          <X size={18} color={colors.white} />
+          <X size={18} color={colors.ink} />
         </Button>
         <View className="flex-1 items-center gap-0.5">
           <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
@@ -98,7 +101,7 @@ export function GuidedPrayer({
           </Text>
           <Text
             numberOfLines={1}
-            className="text-[14px] leading-[18px] font-semibold max-w-full text-white font-heading"
+            className="text-[14px] leading-[18px] font-semibold max-w-full text-foreground font-heading"
           >
             {prayerTitle}
           </Text>
@@ -116,7 +119,7 @@ export function GuidedPrayer({
             key={item.id}
             className={cn(
               "h-[3px] flex-1 rounded-full",
-              itemIndex <= safeIndex ? "bg-white" : "bg-white/20",
+              itemIndex <= safeIndex ? "bg-primary" : "bg-mineral",
             )}
           />
         ))}
@@ -145,14 +148,14 @@ export function GuidedPrayer({
         >
           {token.hebrew ? (
             <View className="items-center gap-3">
-              <View className="self-center rounded-full border border-white/20 px-3 py-1">
+              <View className="self-center rounded-full border border-hairlineStrong px-3 py-1">
                 <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
                   Line {safeIndex + 1} of {tokens.length}
                 </Text>
               </View>
               <Text
                 selectable
-                className="font-hebrew-heading font-semibold text-center text-[38px] leading-[58px] text-white"
+                className="font-hebrew-heading font-semibold text-center text-[38px] leading-[58px] text-foreground"
                 style={styles.hebrew}
               >
                 {token.hebrew}
@@ -174,14 +177,14 @@ export function GuidedPrayer({
             </View>
           ) : null}
           {token.translation ? (
-            <View className="gap-2 border-l-2 border-l-white/40 pl-4">
+            <View className="gap-2 border-l-2 border-l-hairlineStrong pl-4">
               <Text className="text-[12px] leading-[16px] font-semibold text-muted-foreground font-label">
                 Hold the meaning
               </Text>
               <Text
                 variant="body"
                 selectable
-                className="text-[18px] leading-[27px] text-white"
+                className="text-[18px] leading-[27px] text-foreground"
               >
                 {token.translation}
               </Text>
@@ -201,7 +204,7 @@ export function GuidedPrayer({
               gap: 8,
             }}
           >
-            <Quote size={18} color={colors.white} />
+            <Quote size={18} color={colors.ink} />
             <Text style={{ color: colors.white }}>
               Choose a quote from this line
             </Text>
@@ -209,7 +212,7 @@ export function GuidedPrayer({
         </Animated.View>
       </ScrollView>
 
-      <View className="min-h-[88px] px-6 pt-3 pb-4 flex-row items-center gap-3 border-t border-t-white/10">
+      <View className="min-h-[88px] px-6 pt-3 pb-4 flex-row items-center gap-3 border-t border-t-hairline">
         <Button
           variant="outline"
           size="content"
@@ -220,11 +223,11 @@ export function GuidedPrayer({
           onPress={goBack}
           pressedScale={0.94}
           className={cn(
-            "w-12 h-12 rounded-md items-center justify-center border border-white/20 bg-white/10",
+            "w-12 h-12 rounded-md items-center justify-center border border-hairlineStrong bg-mineral",
             isFirst && "opacity-[0.28]",
           )}
         >
-          <ChevronLeft size={20} color={colors.white} />
+          <ChevronLeft size={20} color={colors.ink} />
         </Button>
         <Button
           variant="default"
@@ -240,9 +243,9 @@ export function GuidedPrayer({
             {isLast ? "Finish" : "Next line"}
           </Text>
           {isLast ? (
-            <Check size={18} color={colors.parchment} />
+            <Check size={18} color={colors.onAccent} />
           ) : (
-            <ChevronRight size={18} color={colors.parchment} />
+            <ChevronRight size={18} color={colors.onAccent} />
           )}
         </Button>
       </View>

@@ -2,6 +2,7 @@ import { BrandWordmark } from "@/components/BrandMark";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import * as Device from "expo-device";
 import * as ImagePicker from "expo-image-picker";
@@ -20,7 +21,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { captureRef } from "react-native-view-shot";
 
 import { Button } from "@/components/ui/button";
-import { colors, grid } from "@/design/theme";
+import { grid } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, successHaptic, tapHaptic } from "@/services/haptics";
 import type { StreakHabit } from "@/store/streakStore";
@@ -91,6 +92,8 @@ function StoryComposerSession({
   moment,
   onClose,
 }: Props & { moment: PracticeStoryMoment }): React.JSX.Element {
+  const colors = useThemeColors();
+
   const storyRef = useRef<View>(null);
   const [layout, setLayout] = useState<StoryLayout>("focus");
   const [photoUri, setPhotoUri] = useState<string | null>(null);
@@ -388,11 +391,11 @@ function StoryComposerSession({
                         dotSpacing={4}
                       />
                     ) : (
-                      <Share size={18} color={colors.parchment} />
+                      <Share size={18} color={colors.onAccent} />
                     )}
                     <Text
                       className="text-[14px] leading-[22px] font-semibold tracking-normal font-heading"
-                      style={{ color: colors.parchment }}
+                      style={{ color: colors.onAccent }}
                     >
                       Share
                     </Text>
@@ -441,7 +444,7 @@ function StoryArtwork({
   return (
     <View
       className="flex-1 relative overflow-hidden"
-      style={{ backgroundColor: light ? "#F2F2F5" : colors.blue }}
+      style={{ backgroundColor: light ? "#F2F2F5" : "#0B1A3B" }}
     >
       {photoUri ? (
         <Image
@@ -476,7 +479,7 @@ function StoryArtwork({
 
       {layout === "focus" ? (
         <View className="absolute left-[7%] right-[7%] bottom-[7.5%]">
-          <View className="w-[3px] h-[42px] bg-primary mb-[18px]" />
+          <View className="w-[3px] h-[42px] bg-[#8DB6E8] mb-[18px]" />
           <Text className="font-heading text-[10px] leading-[14px] text-[rgba(255,255,255,0.74)]">
             {copy.eyebrow}
           </Text>
@@ -517,7 +520,7 @@ function StoryArtwork({
             {copy.title}
           </Text>
           <View className="gap-2">
-            <View className="w-8 h-[2px] bg-primary mb-[5px]" />
+            <View className="w-8 h-[2px] bg-[#8DB6E8] mb-[5px]" />
             <Text className="font-label text-[15px] leading-[21px] text-white">
               {copy.subtitle}
             </Text>
@@ -533,7 +536,7 @@ function StoryArtwork({
           <Text
             className={cn(
               "font-heading text-[10px] leading-[14px] text-[rgba(255,255,255,0.74)]",
-              "text-primary",
+              "text-[#0B1A3B]",
             )}
           >
             {copy.eyebrow}
@@ -543,7 +546,7 @@ function StoryArtwork({
               "font-heading text-[36px] leading-[41px] mt-1",
               "text-foreground",
             )}
-            style={{ color: colors.parchment }}
+            style={{ color: "#0B1A3B" }}
           >
             {copy.title}
           </Text>
@@ -558,7 +561,7 @@ function StoryArtwork({
             className="mt-auto pt-3 border-t flex-row justify-between gap-3"
           >
             <Text
-              style={{ color: colors.parchment }}
+              style={{ color: "#0B1A3B" }}
               className="flex-1 font-heading text-[11px] leading-[15px]"
             >
               {streak} in practice

@@ -1,3 +1,8 @@
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
 import { LinearGradient } from "expo-linear-gradient";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { StyleSheet, View, type LayoutChangeEvent } from "react-native";
@@ -79,6 +84,9 @@ export function Shimmer({
   children,
   accessibilityLabel = "Loading content",
 }: ShimmerProps): React.JSX.Element | null {
+  const colors = useThemeColors();
+  const styles = useThemedStyles(makestyles);
+
   const group = useContext(ShimmerGroupContext);
   const reduceMotion = useReducedMotion();
   const progress = useSharedValue(0);
@@ -235,16 +243,17 @@ export function ShimmerGroup({
   );
 }
 
-const styles = StyleSheet.create({
-  placeholder: {
-    overflow: "hidden",
-  },
-  sweep: {
-    left: 0,
-    position: "absolute",
-    top: 0,
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    placeholder: {
+      overflow: "hidden",
+    },
+    sweep: {
+      left: 0,
+      position: "absolute",
+      top: 0,
+    },
+  });
 
 export type {
   ShimmerDirection,

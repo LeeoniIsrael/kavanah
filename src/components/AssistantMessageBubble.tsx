@@ -1,6 +1,7 @@
 import { AssistantResponseText } from "@/components/AssistantResponseText";
 import { Text } from "@/components/ui/text";
-import { colors, fonts } from "@/design/theme";
+import { useThemedStyles, type ThemeColors } from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { AssistantMessage } from "@/services/assistantService";
 import { useEffect, useState } from "react";
@@ -11,6 +12,8 @@ export function AssistantMessageBubble({
 }: {
   message: AssistantMessage;
 }) {
+  const s = useThemedStyles(makes);
+
   const [progress] = useState(() => new Animated.Value(0));
   const reduced = useReducedMotion();
   const isUser = message.role === "user";
@@ -43,16 +46,17 @@ export function AssistantMessageBubble({
     </Animated.View>
   );
 }
-const s = StyleSheet.create({
-  question: {
-    backgroundColor: colors.blueSoft,
-    borderRadius: 20,
-    borderBottomRightRadius: 6,
-    borderCurve: "continuous",
-    paddingHorizontal: 18,
-    paddingVertical: 14,
-  },
-  answer: { gap: 10, paddingVertical: 4 },
-  label: { color: colors.inkMuted, fontSize: 12, fontFamily: fonts.semibold },
-  body: { color: colors.ink, fontSize: 16, lineHeight: 25 },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    question: {
+      backgroundColor: colors.blueSoft,
+      borderRadius: 20,
+      borderBottomRightRadius: 6,
+      borderCurve: "continuous",
+      paddingHorizontal: 18,
+      paddingVertical: 14,
+    },
+    answer: { gap: 10, paddingVertical: 4 },
+    label: { color: colors.inkMuted, fontSize: 12, fontFamily: fonts.semibold },
+    body: { color: colors.ink, fontSize: 16, lineHeight: 25 },
+  });

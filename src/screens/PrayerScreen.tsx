@@ -1,8 +1,9 @@
 import { QuoteSelector } from "@/components/QuoteSelector";
-import type { QuoteSource } from "@/store/socialStore";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
+import type { QuoteSource } from "@/store/socialStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
@@ -13,8 +14,8 @@ import {
   CircleHelp,
   ExternalLink,
   MoonStar,
-  RefreshCw,
   Quote,
+  RefreshCw,
   Search,
   Share2,
   ShieldCheck,
@@ -29,29 +30,29 @@ import {
   ScrollView,
   View,
 } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
+import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   GuidedPrayer,
   type GuidedPrayerToken,
 } from "@/components/GuidedPrayer";
-import { PrayerCard } from "@/components/PrayerCard";
-import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
-import {
-  PracticeStoryComposer,
-  type PracticeStoryMoment,
-} from "@/components/PracticeStoryComposer";
-import { Screen } from "@/components/Screen";
-import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   PrayerSearchSkeleton,
   PrayerTextSkeleton,
 } from "@/components/LoadingSkeletons";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
+import {
+  PracticeStoryComposer,
+  type PracticeStoryMoment,
+} from "@/components/PracticeStoryComposer";
+import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
+import { PrayerCard } from "@/components/PrayerCard";
+import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
-import { colors, spacing } from "@/design/theme";
+import { spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import {
@@ -68,12 +69,12 @@ import {
   openPrayerFocusSetup,
 } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
-import { useStreakStore, type StreakHabit } from "@/store/streakStore";
-import { useSocialStore } from "@/store/socialStore";
 import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
   useSettingsStore,
 } from "@/store/settingsStore";
+import { useSocialStore } from "@/store/socialStore";
+import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
 
 type LocalizedToken = PrayerToken & {
@@ -107,6 +108,8 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 }
 
 export function PrayerScreen(): React.JSX.Element {
+  const colors = useThemeColors();
+
   const router = useRouter();
   const params = useLocalSearchParams<{
     prayerId?: string;
@@ -670,7 +673,7 @@ export function PrayerScreen(): React.JSX.Element {
                   )}
                 >
                   {selectedBookmarked ? (
-                    <BookmarkCheck size={17} color={colors.parchment} />
+                    <BookmarkCheck size={17} color={colors.onAccent} />
                   ) : (
                     <Bookmark size={17} color={colors.gold} />
                   )}
@@ -810,7 +813,7 @@ export function PrayerScreen(): React.JSX.Element {
                         <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                           Open on Sefaria
                         </Text>
-                        <ExternalLink size={16} color={colors.parchment} />
+                        <ExternalLink size={16} color={colors.onAccent} />
                       </Button>
                     </View>
                   ) : null}
@@ -932,7 +935,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
                   <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
-                    <MoonStar size={22} color={colors.parchment} />
+                    <MoonStar size={22} color={colors.onAccent} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer Focus</Text>
@@ -1071,7 +1074,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
                   <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-                    <BookOpenCheck size={23} color={colors.parchment} />
+                    <BookOpenCheck size={23} color={colors.onAccent} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer complete</Text>
@@ -1099,7 +1102,7 @@ export function PrayerScreen(): React.JSX.Element {
                       }}
                       className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
                     >
-                      <Share2 size={18} color={colors.parchment} />
+                      <Share2 size={18} color={colors.onAccent} />
                       <Text className="text-[16px] leading-[22px] font-semibold text-primary-foreground font-heading">
                         Share this moment
                       </Text>

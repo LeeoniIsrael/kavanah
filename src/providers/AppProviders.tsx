@@ -1,17 +1,19 @@
 import { BrandWordmark } from "@/components/BrandMark";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { LockKeyhole } from "lucide-react-native";
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { AppState, View } from "react-native";
 
 import { Button } from "@/components/ui/button";
-import { colors } from "@/design/theme";
 import { configureNotificationCategories } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
 
 export function AppProviders({
   children,
 }: PropsWithChildren): React.JSX.Element {
+  const colors = useThemeColors();
+
   const { biometricLockEnabled, hydrate, unlockWithBiometrics } =
     useAuthStore();
   const [hydrated, setHydrated] = useState(false);
@@ -75,7 +77,7 @@ export function AppProviders({
           onPress={() => void unlockWithBiometrics().then(setUnlocked)}
           className="min-h-12 min-w-[150px] rounded-md items-center justify-center bg-primary mt-2"
         >
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
             Unlock
           </Text>
         </Button>

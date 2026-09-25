@@ -4,11 +4,12 @@ Use this contract for every UI change, including modals and secondary screens. T
 
 ## Direction
 
-Prayer content comes first. Keep the dark reading environment, warm editorial headings, clear Manrope controls, and restrained periwinkle accents. Motion should answer interaction or communicate real work, rather than decorate an idle screen.
+Prayer content comes first. Use the logo’s navy, warm editorial headings, and clear Manrope controls. Light is airy and calm; dark is focused and quiet. Motion should answer interaction or communicate real work, rather than decorate an idle screen.
 
-- Canvas `#121214`; surface `#1A1A1E`; raised surface `#242429`.
-- Primary text `#F4F4F5`; secondary text `#A1A1AA`; action `#7C8CFF`.
-- Text contrast on the standard surface: 15.78:1 primary, 6.77:1 secondary. Dark action text on periwinkle: 6.28:1.
+- Light: canvas `#F7F8FA`, white surfaces, ink `#152137`, logo navy action `#0B1A3B`.
+- Dark: canvas `#0E141C`, surfaces `#17212D`, ink `#E9EEF4`, readable blue action `#8DB6E8`.
+- Use `useThemeColors` and `useThemedStyles` for native styles; utilities derive from the same semantic palettes. Use `onAccent` for content on an accent fill.
+- Primary/secondary text and button labels must meet 4.5:1 contrast in both themes. Palette tests guard these pairs.
 - Screen titles use Georgia at 38/46 on iOS. Input text uses Manrope at 17/25; supporting text uses 13–14/20–22. Preserve system text scaling.
 - Standard page inset: 24. Controls: 44-point minimum target. Control radius: 18; content surface: 26; feature surface: 32. Circular icon controls remain circular.
 
@@ -60,8 +61,10 @@ Do not add model pickers, microphones, attachment buttons, or other controls unl
 
 Inspect the actual iOS preview from the checkout being edited. Check idle, focus, selected, loading, failure, and completed states relevant to the change. Verify a real source edit arrives through Fast Refresh. Check the screen bottom, long text, keyboard behavior, and larger text. Restore any test-only preview preferences. Do not substitute web screenshots for native verification.
 
-September 24 verification: language selection, Profile header/settings, Home travel/action contrast, Zmanim single header and hero, prayer library search, reader safe areas and input, focus beam, controlled loading/idle transitions, and reduced-motion behavior inspected in the visible iPhone 17 Pro preview. No AI request or consent setting was changed for the visual loading test; the temporary loading override was removed. Native dependencies were unchanged. Existing app-wide dark-only appearance and older reader lint issues are separate limitations, not hidden by this pass.
+September 24 verification: language selection, Profile header/settings, Home travel/action contrast, Zmanim single header and hero, prayer library search, reader safe areas and input, focus beam, controlled loading/idle transitions, and reduced-motion behavior inspected in the visible iPhone 17 Pro preview. No AI request or consent setting was changed for the visual loading test; the temporary loading override was removed. Native dependencies were unchanged. Older reader lint issues remain separate limitations.
 
 ## Prayer activity
 
 Opening a reader starts elapsed wall-clock timing; Done records completion and closes the reader without an extra confirmation. Guided reading is optional and uses the same session. Store start, completion, and elapsed seconds; never invent durations for older entries or manual check-ins. First prayer means once ever, even across days, deleted posts, or bounded history. Milestones remain independently opt-in. Sharing choices save immediately.
+
+Appearance defaults to System, persists on device, and may be overridden with Light or Dark in Profile. Native chrome, utility colors, SVG marks, modals, and inline styles must follow the same resolved scheme. Share artwork has its own fixed palette so exports do not change with device appearance.

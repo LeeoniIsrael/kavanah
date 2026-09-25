@@ -1,12 +1,17 @@
-import { useState } from "react";
-import { Keyboard, StyleSheet, TextInput, View } from "react-native";
-import { ArrowUp, CornerDownLeft } from "lucide-react-native";
 import { AssistantMessageBubble } from "@/components/AssistantMessageBubble";
 import { AssistantBeam, AssistantMark } from "@/components/AssistantMotion";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import { colors, fonts } from "@/design/theme";
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import type { AssistantMessage } from "@/services/assistantService";
+import { ArrowUp, CornerDownLeft } from "lucide-react-native";
+import { useState } from "react";
+import { Keyboard, StyleSheet, TextInput, View } from "react-native";
 
 type PrayerAssistantPanelProps = {
   input: string;
@@ -28,6 +33,9 @@ export function PrayerAssistantPanel({
   onChangeInput,
   onSubmit,
 }: PrayerAssistantPanelProps) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const [focused, setFocused] = useState(false);
   const canSend = !!input.trim() && !isStreaming;
   const submit = () => {
@@ -116,58 +124,59 @@ export function PrayerAssistantPanel({
     </View>
   );
 }
-const s = StyleSheet.create({
-  section: { gap: 16, paddingVertical: 12 },
-  heading: { flexDirection: "row", gap: 12, alignItems: "center" },
-  title: {
-    fontFamily: fonts.semibold,
-    color: colors.ink,
-    fontSize: 21,
-    lineHeight: 29,
-  },
-  subtitle: { color: colors.inkMuted, fontSize: 13, lineHeight: 20 },
-  messages: { gap: 18, paddingVertical: 8 },
-  input: {
-    minHeight: 106,
-    maxHeight: 190,
-    padding: 20,
-    paddingBottom: 12,
-    color: colors.ink,
-    fontFamily: fonts.regular,
-    fontSize: 17,
-    lineHeight: 25,
-  },
-  toolbar: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    paddingHorizontal: 16,
-    paddingBottom: 14,
-  },
-  status: { flex: 1, color: colors.inkMuted, fontSize: 12, lineHeight: 19 },
-  send: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: colors.blue,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  sendInactive: { backgroundColor: colors.mineral },
-  suggestions: { gap: 4 },
-  suggestion: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    minHeight: 44,
-    paddingHorizontal: 8,
-    gap: 12,
-  },
-  prompt: { color: colors.inkMuted, fontSize: 14, lineHeight: 22, flex: 1 },
-  footnote: {
-    color: colors.inkMuted,
-    fontSize: 11,
-    lineHeight: 17,
-    paddingHorizontal: 4,
-  },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    section: { gap: 16, paddingVertical: 12 },
+    heading: { flexDirection: "row", gap: 12, alignItems: "center" },
+    title: {
+      fontFamily: fonts.semibold,
+      color: colors.ink,
+      fontSize: 21,
+      lineHeight: 29,
+    },
+    subtitle: { color: colors.inkMuted, fontSize: 13, lineHeight: 20 },
+    messages: { gap: 18, paddingVertical: 8 },
+    input: {
+      minHeight: 106,
+      maxHeight: 190,
+      padding: 20,
+      paddingBottom: 12,
+      color: colors.ink,
+      fontFamily: fonts.regular,
+      fontSize: 17,
+      lineHeight: 25,
+    },
+    toolbar: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
+      paddingHorizontal: 16,
+      paddingBottom: 14,
+    },
+    status: { flex: 1, color: colors.inkMuted, fontSize: 12, lineHeight: 19 },
+    send: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      backgroundColor: colors.blue,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    sendInactive: { backgroundColor: colors.mineral },
+    suggestions: { gap: 4 },
+    suggestion: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      minHeight: 44,
+      paddingHorizontal: 8,
+      gap: 12,
+    },
+    prompt: { color: colors.inkMuted, fontSize: 14, lineHeight: 22, flex: 1 },
+    footnote: {
+      color: colors.inkMuted,
+      fontSize: 11,
+      lineHeight: 17,
+      paddingHorizontal: 4,
+    },
+  });

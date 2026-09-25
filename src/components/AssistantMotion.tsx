@@ -1,3 +1,10 @@
+import { BrandMark } from "@/components/BrandMark";
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useEffect, useState, type ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
 import Animated, {
@@ -11,14 +18,13 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import Svg, { Rect } from "react-native-svg";
-import { BrandMark } from "@/components/BrandMark";
-import { colors } from "@/design/theme";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
 /** UI-thread motion, with a quiet resting state and no simulated progress. */
 export function AssistantMark({ busy }: { busy: boolean }) {
+  const s = useThemedStyles(makes);
+
   const reduced = useReducedMotion();
   const turn = useSharedValue(0);
   const activity = useSharedValue(0);
@@ -90,6 +96,9 @@ export function AssistantBeam({
   active: boolean;
   children: ReactNode;
 }) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const [size, setSize] = useState({ width: 0, height: 0 });
   const reduced = useReducedMotion();
   const phase = useSharedValue(0);
@@ -164,7 +173,7 @@ export function AssistantBeam({
             height={size.height - 2}
             rx={radius}
             fill="none"
-            stroke="#D9DEFF"
+            stroke={colors.blue}
             strokeWidth={1.2}
             strokeLinecap="round"
             strokeDasharray={[perimeter * 0.035, perimeter * 0.965]}
@@ -174,33 +183,34 @@ export function AssistantBeam({
     </View>
   );
 }
-const s = StyleSheet.create({
-  mark: {
-    width: 44,
-    height: 44,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  orbit: {
-    position: "absolute",
-    width: 40,
-    height: 40,
-    borderWidth: 1.8,
-    borderColor: colors.blue,
-    borderCurve: "continuous",
-  },
-  inner: {
-    position: "absolute",
-    width: 29,
-    height: 29,
-    borderWidth: 1.2,
-    borderColor: "#D9DEFF",
-    borderCurve: "continuous",
-  },
-  composer: {
-    borderRadius: 25,
-    borderCurve: "continuous",
-    backgroundColor: colors.vellum,
-    overflow: "hidden",
-  },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    mark: {
+      width: 44,
+      height: 44,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    orbit: {
+      position: "absolute",
+      width: 40,
+      height: 40,
+      borderWidth: 1.8,
+      borderColor: colors.blue,
+      borderCurve: "continuous",
+    },
+    inner: {
+      position: "absolute",
+      width: 29,
+      height: 29,
+      borderWidth: 1.2,
+      borderColor: colors.blue,
+      borderCurve: "continuous",
+    },
+    composer: {
+      borderRadius: 25,
+      borderCurve: "continuous",
+      backgroundColor: colors.vellum,
+      overflow: "hidden",
+    },
+  });

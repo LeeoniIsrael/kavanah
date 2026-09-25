@@ -1,9 +1,15 @@
+import {
+  useAppColorScheme,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
 import { BlurView } from "expo-blur";
 import {
   GlassView,
   isGlassEffectAPIAvailable,
   isLiquidGlassAvailable,
 } from "expo-glass-effect";
+import { useEffect, useState, type ComponentProps } from "react";
 import {
   AccessibilityInfo,
   Platform,
@@ -13,10 +19,8 @@ import {
   type ViewProps,
   type ViewStyle,
 } from "react-native";
-import { useEffect, useState, type ComponentProps } from "react";
 
 import { cn } from "@/lib/utils";
-import { colors } from "@/design/theme";
 
 type AppGlassSurfaceProps = ViewProps & {
   children?: React.ReactNode;
@@ -38,6 +42,9 @@ export function AppGlassSurface({
   style,
   ...props
 }: AppGlassSurfaceProps): React.JSX.Element {
+  const scheme = useAppColorScheme();
+  const styles = useThemedStyles(makestyles);
+
   const reduceTransparency = useReduceTransparency();
   const canUseNativeGlass =
     Platform.OS === "ios" &&
@@ -62,7 +69,7 @@ export function AppGlassSurface({
       {canUseNativeGlass ? (
         <GlassView
           pointerEvents="none"
-          colorScheme="dark"
+          colorScheme={scheme}
           glassEffectStyle={glassEffectStyle}
           isInteractive={isInteractive}
           style={StyleSheet.absoluteFill}
@@ -71,7 +78,7 @@ export function AppGlassSurface({
         <BlurView
           pointerEvents="none"
           intensity={64}
-          tint="dark"
+          tint={scheme}
           style={StyleSheet.absoluteFill}
         />
       ) : null}
@@ -96,8 +103,9 @@ function useReduceTransparency(): boolean {
   return enabled;
 }
 
-const styles = StyleSheet.create({
-  opaque: {
-    backgroundColor: colors.vellum,
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    opaque: {
+      backgroundColor: colors.vellum,
+    },
+  });

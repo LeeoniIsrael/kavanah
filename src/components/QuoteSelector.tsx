@@ -1,15 +1,20 @@
-import type { GestureResponderEvent } from "react-native";
-import { useEffect, useRef, useState } from "react";
-import { Animated, Platform, ScrollView, StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Check, Quote, X } from "lucide-react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import { colors, fonts } from "@/design/theme";
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
 import { selectedQuote } from "@/services/socialPolicy";
 import { useSocialStore, type QuoteSource } from "@/store/socialStore";
+import { Check, Quote, X } from "lucide-react-native";
+import { useEffect, useRef, useState } from "react";
+import type { GestureResponderEvent } from "react-native";
+import { Animated, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type Box = { x: number; y: number; width: number; height: number };
 export function QuoteSelector({
@@ -21,6 +26,9 @@ export function QuoteSelector({
   onClose: () => void;
   onViewCircle: () => void;
 }) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   const insets = useSafeAreaInsets();
   const words = source.text.trim().split(/\s+/u);
   const [range, setRange] = useState<[number, number]>([
@@ -265,86 +273,87 @@ export function QuoteSelector({
     </Animated.View>
   );
 }
-const s = StyleSheet.create({
-  overlay: { zIndex: 80, backgroundColor: colors.parchment },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    paddingHorizontal: 24,
-    paddingTop: 8,
-  },
-  heading: {
-    flex: 1,
-    color: colors.ink,
-    fontFamily: fonts.semibold,
-    fontSize: 17,
-  },
-  iconButton: {
-    backgroundColor: colors.mineral,
-    borderRadius: 22,
-    flexShrink: 0,
-    width: 44,
-    height: 44,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  content: { padding: 24, gap: 18 },
-  title: {
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-    color: colors.ink,
-    fontSize: 32,
-    lineHeight: 40,
-  },
-  help: { color: colors.inkMuted, fontSize: 14, lineHeight: 23 },
-  words: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 4,
-    paddingVertical: 16,
-  },
-  word: {
-    paddingHorizontal: 5,
-    paddingVertical: 7,
-    fontSize: 22,
-    lineHeight: 30,
-    borderRadius: 7,
-    color: colors.ink,
-    backgroundColor: colors.vellum,
-  },
-  selected: { backgroundColor: colors.blue, color: colors.parchment },
-  row: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 10,
-    alignItems: "center",
-  },
-  meta: { fontSize: 12, lineHeight: 19, color: colors.inkMuted },
-  source: { color: colors.ink, fontSize: 15, fontFamily: fonts.semibold },
-  footer: { padding: 24, paddingTop: 12 },
-  primary: {
-    minHeight: 52,
-    borderRadius: 16,
-    backgroundColor: colors.blue,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 12,
-  },
-  primaryText: {
-    fontFamily: fonts.semibold,
-    color: colors.parchment,
-    fontSize: 15,
-  },
-  confirmed: {
-    padding: 24,
-    backgroundColor: colors.blueSoft,
-    borderRadius: 24,
-    gap: 20,
-  },
-  savedQuote: {
-    color: colors.ink,
-    fontSize: 25,
-    lineHeight: 36,
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-  },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    overlay: { zIndex: 80, backgroundColor: colors.parchment },
+    header: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
+      paddingHorizontal: 24,
+      paddingTop: 8,
+    },
+    heading: {
+      flex: 1,
+      color: colors.ink,
+      fontFamily: fonts.semibold,
+      fontSize: 17,
+    },
+    iconButton: {
+      backgroundColor: colors.mineral,
+      borderRadius: 22,
+      flexShrink: 0,
+      width: 44,
+      height: 44,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    content: { padding: 24, gap: 18 },
+    title: {
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+      color: colors.ink,
+      fontSize: 32,
+      lineHeight: 40,
+    },
+    help: { color: colors.inkMuted, fontSize: 14, lineHeight: 23 },
+    words: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: 4,
+      paddingVertical: 16,
+    },
+    word: {
+      paddingHorizontal: 5,
+      paddingVertical: 7,
+      fontSize: 22,
+      lineHeight: 30,
+      borderRadius: 7,
+      color: colors.ink,
+      backgroundColor: colors.vellum,
+    },
+    selected: { backgroundColor: colors.blue, color: colors.onAccent },
+    row: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      gap: 10,
+      alignItems: "center",
+    },
+    meta: { fontSize: 12, lineHeight: 19, color: colors.inkMuted },
+    source: { color: colors.ink, fontSize: 15, fontFamily: fonts.semibold },
+    footer: { padding: 24, paddingTop: 12 },
+    primary: {
+      minHeight: 52,
+      borderRadius: 16,
+      backgroundColor: colors.blue,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 12,
+    },
+    primaryText: {
+      fontFamily: fonts.semibold,
+      color: colors.onAccent,
+      fontSize: 15,
+    },
+    confirmed: {
+      padding: 24,
+      backgroundColor: colors.blueSoft,
+      borderRadius: 24,
+      gap: 20,
+    },
+    savedQuote: {
+      color: colors.ink,
+      fontSize: 25,
+      lineHeight: 36,
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+    },
+  });

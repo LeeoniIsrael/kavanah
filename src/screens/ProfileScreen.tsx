@@ -1,9 +1,10 @@
-import { ChoiceRow } from "@/components/ui/choice-row";
-import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
-import { Input } from "@/components/ui/input";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
+import { Card } from "@/components/ui/card";
+import { ChoiceRow } from "@/components/ui/choice-row";
+import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Text } from "@/components/ui/text";
+import { useAppearanceStore, useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import {
   Bell,
@@ -29,7 +30,6 @@ import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { findLanguage, languageOptions } from "@/data/languages";
-import { colors } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
 import {
@@ -46,12 +46,15 @@ import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
   useSettingsStore,
 } from "@/store/settingsStore";
-import { useZmanimStore } from "@/store/zmanimStore";
 import { useSocialStore } from "@/store/socialStore";
+import { useZmanimStore } from "@/store/zmanimStore";
 
 type ProfileModal = "focus" | "language" | "privacy" | "social" | null;
 
 export function ProfileScreen(): React.JSX.Element {
+  const colors = useThemeColors();
+  const { preference, setPreference } = useAppearanceStore();
+
   const insets = useSafeAreaInsets();
   const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
   const { profile, saveProfile } = useSocialStore();
@@ -148,6 +151,54 @@ export function ProfileScreen(): React.JSX.Element {
         "Make a profile, choose what people can see, and practice with your circle."
       }
     >
+      <View style={{ gap: 10 }}>
+        <Text variant="section">Appearance</Text>
+        <View
+          accessibilityRole="radiogroup"
+          style={{
+            flexDirection: "row",
+            gap: 6,
+            backgroundColor: colors.mineral,
+            borderRadius: 20,
+            padding: 5,
+          }}
+        >
+          {(["system", "light", "dark"] as const).map((mode) => (
+            <Button
+              key={mode}
+              variant="ghost"
+              size="content"
+              accessibilityRole="radio"
+              accessibilityState={{ checked: preference === mode }}
+              onPress={() => setPreference(mode)}
+              style={{
+                flex: 1,
+                minHeight: 44,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 16,
+                backgroundColor:
+                  preference === mode ? colors.blue : "transparent",
+              }}
+            >
+              <Text
+                style={{
+                  color: preference === mode ? colors.onAccent : colors.ink,
+                }}
+              >
+                {mode.charAt(0).toUpperCase() + mode.slice(1)}
+              </Text>
+            </Button>
+          ))}
+        </View>
+        <Text variant="caption">
+          {preference === "system"
+            ? "Follows your device’s appearance."
+            : preference === "light"
+              ? "A little light. Room to breathe."
+              : "Quiet surroundings. Space to focus."}
+        </Text>
+      </View>
       <Button
         variant="ghost"
         size="content"
@@ -157,11 +208,11 @@ export function ProfileScreen(): React.JSX.Element {
       >
         <View className="w-14 h-14 rounded-full bg-blueSoft items-center justify-center">
           {profile ? (
-            <Text className="text-white font-heading text-[20px]">
+            <Text className="text-foreground font-heading text-[20px]">
               {profile.displayName.charAt(0).toUpperCase()}
             </Text>
           ) : (
-            <UserRound size={24} color={colors.white} />
+            <UserRound size={24} color={colors.ink} />
           )}
         </View>
         <View className="flex-1 gap-1">
@@ -193,10 +244,10 @@ export function ProfileScreen(): React.JSX.Element {
             justifyContent: "center",
             width: 44,
           }}
-          trigger={<ShieldCheck size={21} color={colors.white} />}
+          trigger={<ShieldCheck size={21} color={colors.ink} />}
         />
         <View className="flex-1 gap-[2px]">
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
             Local by default
           </Text>
           <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
@@ -435,10 +486,10 @@ export function ProfileScreen(): React.JSX.Element {
               </View>
               <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-lg bg-blueSoft">
                 <View className="w-11 h-11 rounded-sm items-center justify-center bg-blueSoft">
-                  <MoonStar size={22} color={colors.white} />
+                  <MoonStar size={22} color={colors.ink} />
                 </View>
                 <View className="flex-1 gap-1">
-                  <Text variant="section" className="text-white">
+                  <Text variant="section" className="text-foreground">
                     Before the first word
                   </Text>
                   <Text
@@ -476,7 +527,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                   {focusSetup.actionLabel}
                 </Text>
-                <ChevronRight size={17} color={colors.parchment} />
+                <ChevronRight size={17} color={colors.onAccent} />
               </Button>
               {focusSetupMessage ? (
                 <Text

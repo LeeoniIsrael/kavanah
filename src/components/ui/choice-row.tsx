@@ -1,8 +1,13 @@
-import { View, StyleSheet } from "react-native";
-import { Check } from "lucide-react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import { colors, fonts, geometry } from "@/design/theme";
+import {
+  useThemeColors,
+  useThemedStyles,
+  type ThemeColors,
+} from "@/design/appearance";
+import { fonts, geometry } from "@/design/theme";
+import { Check } from "lucide-react-native";
+import { StyleSheet, View } from "react-native";
 
 /** A standalone choice keeps its selection inside the same continuous corners. */
 export function ChoiceRow({
@@ -16,6 +21,9 @@ export function ChoiceRow({
   selected: boolean;
   onPress: () => void;
 }) {
+  const colors = useThemeColors();
+  const s = useThemedStyles(makes);
+
   return (
     <Button
       variant="ghost"
@@ -36,27 +44,28 @@ export function ChoiceRow({
     </Button>
   );
 }
-const s = StyleSheet.create({
-  row: {
-    minHeight: 72,
-    paddingHorizontal: 18,
-    paddingVertical: 14,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 16,
-    borderRadius: geometry.radius.control,
-    borderCurve: "continuous",
-    backgroundColor: colors.vellum,
-    overflow: "hidden",
-  },
-  selected: { backgroundColor: colors.blueSoft },
-  copy: { flex: 1, gap: 4 },
-  title: {
-    fontFamily: fonts.semibold,
-    color: colors.ink,
-    fontSize: 17,
-    lineHeight: 24,
-  },
-  detail: { color: colors.inkMuted, fontSize: 14, lineHeight: 21 },
-  check: { width: 24, alignItems: "center" },
-});
+const makes = (colors: ThemeColors) =>
+  StyleSheet.create({
+    row: {
+      minHeight: 72,
+      paddingHorizontal: 18,
+      paddingVertical: 14,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 16,
+      borderRadius: geometry.radius.control,
+      borderCurve: "continuous",
+      backgroundColor: colors.vellum,
+      overflow: "hidden",
+    },
+    selected: { backgroundColor: colors.blueSoft },
+    copy: { flex: 1, gap: 4 },
+    title: {
+      fontFamily: fonts.semibold,
+      color: colors.ink,
+      fontSize: 17,
+      lineHeight: 24,
+    },
+    detail: { color: colors.inkMuted, fontSize: 14, lineHeight: 21 },
+    check: { width: 24, alignItems: "center" },
+  });

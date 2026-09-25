@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Text } from "@/components/ui/text";
+import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import { View } from "react-native";
 
 import { Button } from "@/components/ui/button";
-import { colors } from "@/design/theme";
 import type { PrayerText } from "@/types/prayer";
 import { ChevronRight } from "lucide-react-native";
 
@@ -19,6 +19,8 @@ export function PrayerCard({
   selected,
   onPress,
 }: Props): React.JSX.Element {
+  const colors = useThemeColors();
+
   return (
     <Button
       variant="ghost"

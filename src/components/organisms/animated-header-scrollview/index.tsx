@@ -1,7 +1,8 @@
+import { useThemedStyles, type ThemeColors } from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Animated from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors, fonts } from "@/design/theme";
 import { animatedHeaderConfig as config } from "./conf";
 import type { AnimatedHeaderScrollViewProps } from "./types";
 export type {
@@ -13,6 +14,8 @@ export type {
 
 /** One title, one inset owner, and one scroll surface across the library/settings. */
 export function AnimatedHeaderScrollView(props: AnimatedHeaderScrollViewProps) {
+  const styles = useThemedStyles(makestyles);
+
   return (
     <SafeAreaView edges={["top", "left", "right"]} style={styles.screen}>
       <Animated.ScrollView
@@ -48,29 +51,30 @@ export function AnimatedHeaderScrollView(props: AnimatedHeaderScrollViewProps) {
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.parchment },
-  content: {
-    width: "100%",
-    maxWidth: config.contentMaxWidth,
-    alignSelf: "center",
-    gap: 24,
-    paddingHorizontal: 24,
-    paddingTop: 12,
-    paddingBottom: 40,
-  },
-  header: { flexDirection: "row", alignItems: "center", gap: 12 },
-  titles: { flex: 1, gap: 8 },
-  title: {
-    color: colors.ink,
-    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-    fontSize: 38,
-    lineHeight: 46,
-  },
-  subtitle: {
-    color: colors.inkMuted,
-    fontFamily: fonts.regular,
-    fontSize: 14,
-    lineHeight: 22,
-  },
-});
+const makestyles = (colors: ThemeColors) =>
+  StyleSheet.create({
+    screen: { flex: 1, backgroundColor: colors.parchment },
+    content: {
+      width: "100%",
+      maxWidth: config.contentMaxWidth,
+      alignSelf: "center",
+      gap: 24,
+      paddingHorizontal: 24,
+      paddingTop: 12,
+      paddingBottom: 40,
+    },
+    header: { flexDirection: "row", alignItems: "center", gap: 12 },
+    titles: { flex: 1, gap: 8 },
+    title: {
+      color: colors.ink,
+      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+      fontSize: 38,
+      lineHeight: 46,
+    },
+    subtitle: {
+      color: colors.inkMuted,
+      fontFamily: fonts.regular,
+      fontSize: 14,
+      lineHeight: 22,
+    },
+  });

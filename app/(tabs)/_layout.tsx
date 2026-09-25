@@ -1,4 +1,5 @@
-import { colors, fonts } from "@/design/theme";
+import { useThemeColors } from "@/design/appearance";
+import { fonts } from "@/design/theme";
 import { tapHaptic } from "@/services/haptics";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 import type { ComponentProps, ComponentType, PropsWithChildren } from "react";
@@ -8,6 +9,8 @@ const SystemTabs = NativeTabs as ComponentType<
 >;
 
 export default function TabsLayout(): React.JSX.Element {
+  const colors = useThemeColors();
+
   return (
     <SystemTabs
       disableTransparentOnScrollEdge

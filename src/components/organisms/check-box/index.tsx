@@ -1,3 +1,4 @@
+import { useThemeColors } from "@/design/appearance";
 import { colors, motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useEffect } from "react";
@@ -26,6 +27,8 @@ export function Checkbox({
   size = checkboxConfig.defaultSize,
   stroke = checkboxConfig.defaultStroke,
 }: CheckboxProps): React.JSX.Element {
+  const colors = useThemeColors();
+
   const reduceMotion = useReducedMotion();
   const pathLength = size;
   const progress = useSharedValue(checked ? 1 : 0);
