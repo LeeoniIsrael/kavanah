@@ -1,4 +1,7 @@
-import { PrayerExplanation } from "@/components/PrayerExplanation";
+import {
+  PrayerConversation,
+  PrayerExplanation,
+} from "@/components/PrayerExplanation";
 import type { ReadingGuide } from "@/data/prayerReadingGuide";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, FlatList, StyleSheet, View } from "react-native";
@@ -76,133 +79,108 @@ export function GuidedPrayer({
   }, [reduceMotion, reveal, prayerTitle, visible]);
   if (!visible || !tokens.length) return null;
   return (
-    <View
-      accessibilityViewIsModal
-      style={[
-        StyleSheet.absoluteFill,
-        {
-          zIndex: 40,
-          paddingTop: insets.top,
-          backgroundColor: colors.parchment,
-        },
-      ]}
+    <PrayerConversation
+      key={explanationContext?.[7] ?? prayerTitle}
+      context={explanationContext ?? []}
+      language={language}
+      title={prayerTitle}
     >
       <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          gap: 12,
-          paddingHorizontal: 24,
-          paddingVertical: 12,
-        }}
+        accessibilityViewIsModal
+        style={[
+          StyleSheet.absoluteFill,
+          {
+            zIndex: 40,
+            paddingTop: insets.top,
+            backgroundColor: colors.parchment,
+          },
+        ]}
       >
-        <Button
-          variant="ghost"
-          size="icon"
-          accessibilityLabel="Close without logging a prayer"
-          onPress={onClose}
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 12,
+            paddingHorizontal: 24,
+            paddingVertical: 12,
+          }}
         >
-          <X size={20} color={colors.ink} />
-        </Button>
-        <View style={{ flex: 1, alignItems: "center", gap: 3 }}>
-          <Text variant="caption" style={{ color: colors.inkMuted }}>
-            Prayer
-          </Text>
-          <Text
-            style={{
-              fontFamily: fonts.semibold,
-              fontSize: 17,
-              lineHeight: 24,
-              textAlign: "center",
-              color: colors.ink,
-            }}
+          <Button
+            variant="ghost"
+            size="icon"
+            accessibilityLabel="Close without logging a prayer"
+            onPress={onClose}
           >
-            {prayerTitle}
-          </Text>
+            <X size={20} color={colors.ink} />
+          </Button>
+          <View style={{ flex: 1, alignItems: "center", gap: 3 }}>
+            <Text variant="caption" style={{ color: colors.inkMuted }}>
+              Prayer
+            </Text>
+            <Text
+              style={{
+                fontFamily: fonts.semibold,
+                fontSize: 17,
+                lineHeight: 24,
+                textAlign: "center",
+                color: colors.ink,
+              }}
+            >
+              {prayerTitle}
+            </Text>
+          </View>
+          <Button
+            variant="ghost"
+            size="icon"
+            accessibilityLabel={
+              bookmarked ? "Remove bookmark" : "Bookmark prayer"
+            }
+            onPress={onBookmark}
+          >
+            {bookmarked ? (
+              <BookmarkCheck size={20} color={colors.blue} />
+            ) : (
+              <Bookmark size={20} color={colors.ink} />
+            )}
+          </Button>
         </View>
         <Button
           variant="ghost"
-          size="icon"
-          accessibilityLabel={
-            bookmarked ? "Remove bookmark" : "Bookmark prayer"
-          }
-          onPress={onBookmark}
+          size="content"
+          onPress={onDetails}
+          style={{ alignSelf: "center", minHeight: 44, marginBottom: 4 }}
         >
-          {bookmarked ? (
-            <BookmarkCheck size={20} color={colors.blue} />
-          ) : (
-            <Bookmark size={20} color={colors.ink} />
-          )}
+          <Text variant="caption" style={{ color: colors.inkMuted }}>
+            {reviewPending
+              ? "Text review pending · Source & options"
+              : "Source & options"}
+          </Text>
         </Button>
-      </View>
-      <Button
-        variant="ghost"
-        size="content"
-        onPress={onDetails}
-        style={{ alignSelf: "center", minHeight: 44, marginBottom: 4 }}
-      >
-        <Text variant="caption" style={{ color: colors.inkMuted }}>
-          {reviewPending
-            ? "Text review pending · Source & options"
-            : "Source & options"}
-        </Text>
-      </Button>
-      <Animated.View style={{ flex: 1, opacity: reveal }}>
-        <FlatList
-          ref={scroll}
-          data={tokens}
-          keyExtractor={(item) => item.id}
-          initialNumToRender={3}
-          windowSize={5}
-          contentContainerStyle={{
-            paddingHorizontal: 24,
-            paddingTop: 16,
-            paddingBottom: 28,
-          }}
-          ListHeaderComponent={
-            <View style={{ gap: 16, paddingBottom: 24 }}>
-              {guide?.before ? (
-                <View style={{ gap: 8 }}>
-                  <Text
-                    style={{ color: colors.blue, fontFamily: fonts.semibold }}
-                  >
-                    Before you say it
-                  </Text>
-                  <Text
-                    style={{ color: colors.ink, fontSize: 16, lineHeight: 25 }}
-                  >
-                    {guide.before}
-                  </Text>
-                </View>
-              ) : null}
-              {scopeNote ? (
-                <Text
-                  style={{
-                    color: colors.inkMuted,
-                    fontSize: 14,
-                    lineHeight: 22,
-                  }}
-                >
-                  {scopeNote}
-                </Text>
-              ) : null}
-              {explanationContext && tokens.length > 1 ? (
-                <PrayerExplanation
-                  context={explanationContext}
-                  language={language}
-                />
-              ) : null}
-            </View>
-          }
-          ListFooterComponent={
-            guide?.after || guide?.source ? (
-              <View style={{ gap: 10, paddingTop: 24 }}>
-                {guide.after ? (
-                  <>
+        {explanationContext ? (
+          <View style={{ paddingHorizontal: 24 }}>
+            <PrayerExplanation />
+          </View>
+        ) : null}
+        <Animated.View style={{ flex: 1, opacity: reveal }}>
+          <FlatList
+            ref={scroll}
+            data={tokens}
+            keyExtractor={(item) => item.id}
+            initialNumToRender={3}
+            windowSize={5}
+            contentContainerStyle={{
+              paddingHorizontal: 24,
+              paddingTop: 16,
+              paddingBottom: 28,
+            }}
+            ListHeaderComponent={
+              <View style={{ gap: 16, paddingBottom: 24 }}>
+                {guide?.before ? (
+                  <View style={{ gap: 8 }}>
                     <Text
                       style={{ color: colors.blue, fontFamily: fonts.semibold }}
                     >
-                      After you say it
+                      Before you say it
                     </Text>
                     <Text
                       style={{
@@ -211,146 +189,182 @@ export function GuidedPrayer({
                         lineHeight: 25,
                       }}
                     >
-                      {guide.after}
+                      {guide.before}
                     </Text>
-                  </>
+                  </View>
                 ) : null}
-                {guide.source && onGuideSource ? (
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    onPress={onGuideSource}
-                    style={{ minHeight: 44, justifyContent: "flex-start" }}
+                {scopeNote ? (
+                  <Text
+                    style={{
+                      color: colors.inkMuted,
+                      fontSize: 14,
+                      lineHeight: 22,
+                    }}
                   >
-                    <Text style={{ color: colors.blue }}>
-                      Instructions & source
-                    </Text>
-                  </Button>
+                    {scopeNote}
+                  </Text>
                 ) : null}
               </View>
-            ) : null
-          }
-          ItemSeparatorComponent={() => <View style={{ height: 36 }} />}
-          renderItem={({ item: token }) => (
-            <View style={{ gap: 24 }}>
-              {token.transliteration ? (
-                <View
+            }
+            ListFooterComponent={
+              guide?.after || guide?.source ? (
+                <View style={{ gap: 10, paddingTop: 24 }}>
+                  {guide.after ? (
+                    <>
+                      <Text
+                        style={{
+                          color: colors.blue,
+                          fontFamily: fonts.semibold,
+                        }}
+                      >
+                        After you say it
+                      </Text>
+                      <Text
+                        style={{
+                          color: colors.ink,
+                          fontSize: 16,
+                          lineHeight: 25,
+                        }}
+                      >
+                        {guide.after}
+                      </Text>
+                    </>
+                  ) : null}
+                  {guide.source && onGuideSource ? (
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      onPress={onGuideSource}
+                      style={{ minHeight: 44, justifyContent: "flex-start" }}
+                    >
+                      <Text style={{ color: colors.blue }}>
+                        Instructions & source
+                      </Text>
+                    </Button>
+                  ) : null}
+                </View>
+              ) : null
+            }
+            ItemSeparatorComponent={() => <View style={{ height: 36 }} />}
+            renderItem={({ item: token }) => (
+              <View style={{ gap: 24 }}>
+                {token.transliteration ? (
+                  <View
+                    style={{
+                      padding: 20,
+                      borderRadius: 26,
+                      backgroundColor: colors.vellum,
+                      gap: 10,
+                    }}
+                  >
+                    <Text variant="caption" style={{ color: colors.inkMuted }}>
+                      Say these words
+                    </Text>
+                    <Text
+                      selectable
+                      style={{
+                        fontFamily: fonts.regular,
+                        fontSize: 25,
+                        lineHeight: 39,
+                        color: colors.ink,
+                      }}
+                    >
+                      {token.transliteration}
+                    </Text>
+                  </View>
+                ) : null}
+                {token.translation ? (
+                  <View style={{ gap: 10 }}>
+                    <Text variant="caption" style={{ color: colors.inkMuted }}>
+                      Translation · {token.translationLanguage ?? language}
+                    </Text>
+                    <Text
+                      selectable
+                      style={{
+                        fontFamily: fonts.regular,
+                        fontSize: 17,
+                        lineHeight: 28,
+                        color: colors.ink,
+                      }}
+                    >
+                      {token.translation}
+                    </Text>
+                  </View>
+                ) : null}
+                {token.hebrew ? (
+                  <Text
+                    selectable
+                    style={{
+                      fontFamily: fonts.hebrew,
+                      fontSize: 25,
+                      lineHeight: 40,
+                      fontWeight: "400",
+                      writingDirection: "rtl",
+                      textAlign: "right",
+                      color: colors.ink,
+                    }}
+                  >
+                    {token.hebrew}
+                  </Text>
+                ) : null}
+                {explanationContext && tokens.length > 1 ? (
+                  <PrayerExplanation
+                    passage={
+                      tokens.length > 1
+                        ? token.translation || token.hebrew
+                        : undefined
+                    }
+                  />
+                ) : null}
+                <Button
+                  variant="ghost"
+                  size="content"
+                  onPress={() => onQuote(token)}
                   style={{
-                    padding: 20,
-                    borderRadius: 26,
-                    backgroundColor: colors.vellum,
+                    minHeight: 44,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
                     gap: 10,
                   }}
                 >
-                  <Text variant="caption" style={{ color: colors.inkMuted }}>
-                    Say these words
-                  </Text>
-                  <Text
-                    selectable
-                    style={{
-                      fontFamily: fonts.regular,
-                      fontSize: 25,
-                      lineHeight: 39,
-                      color: colors.ink,
-                    }}
-                  >
-                    {token.transliteration}
-                  </Text>
-                </View>
-              ) : null}
-              {token.translation ? (
-                <View style={{ gap: 10 }}>
-                  <Text variant="caption" style={{ color: colors.inkMuted }}>
-                    Translation · {token.translationLanguage ?? language}
-                  </Text>
-                  <Text
-                    selectable
-                    style={{
-                      fontFamily: fonts.regular,
-                      fontSize: 17,
-                      lineHeight: 28,
-                      color: colors.ink,
-                    }}
-                  >
-                    {token.translation}
-                  </Text>
-                </View>
-              ) : null}
-              {token.hebrew ? (
-                <Text
-                  selectable
-                  style={{
-                    fontFamily: fonts.hebrew,
-                    fontSize: 25,
-                    lineHeight: 40,
-                    fontWeight: "400",
-                    writingDirection: "rtl",
-                    textAlign: "right",
-                    color: colors.ink,
-                  }}
-                >
-                  {token.hebrew}
-                </Text>
-              ) : null}
-              {explanationContext ? (
-                <PrayerExplanation
-                  context={explanationContext}
-                  language={language}
-                  passage={
-                    tokens.length > 1
-                      ? token.translation || token.hebrew
-                      : undefined
-                  }
-                />
-              ) : null}
-              <Button
-                variant="ghost"
-                size="content"
-                onPress={() => onQuote(token)}
-                style={{
-                  minHeight: 44,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: 10,
-                }}
-              >
-                <Quote size={20} color={colors.blue} />
-                <Text style={{ color: colors.blue }}>Choose a quote</Text>
-              </Button>
-            </View>
-          )}
-        />
-      </Animated.View>
-      <View
-        style={{
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 12,
-          paddingHorizontal: 24,
-          paddingTop: 12,
-          paddingBottom: Math.max(insets.bottom, 16),
-          borderTopWidth: StyleSheet.hairlineWidth,
-          borderTopColor: colors.hairline,
-          backgroundColor: colors.parchment,
-        }}
-      >
-        <Text
-          variant="caption"
-          style={{ color: colors.inkMuted, textAlign: "center" }}
+                  <Quote size={20} color={colors.blue} />
+                  <Text style={{ color: colors.blue }}>Choose a quote</Text>
+                </Button>
+              </View>
+            )}
+          />
+        </Animated.View>
+        <View
+          style={{
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 12,
+            paddingHorizontal: 24,
+            paddingTop: 12,
+            paddingBottom: Math.max(insets.bottom, 16),
+            borderTopWidth: StyleSheet.hairlineWidth,
+            borderTopColor: colors.hairline,
+            backgroundColor: colors.parchment,
+          }}
         >
-          Finish saves this prayer. Closing won’t log it.
-        </Text>
-        <Button
-          style={{ alignSelf: "stretch", minHeight: 52 }}
-          accessibilityLabel="Finish prayer and save to activity"
-          haptic="none"
-          onPress={onComplete}
-        >
-          <Text style={{ color: colors.onAccent }}>Finish prayer</Text>
-          <Check size={20} color={colors.onAccent} />
-        </Button>
+          <Text
+            variant="caption"
+            style={{ color: colors.inkMuted, textAlign: "center" }}
+          >
+            Finish saves this prayer. Closing won’t log it.
+          </Text>
+          <Button
+            style={{ alignSelf: "stretch", minHeight: 52 }}
+            accessibilityLabel="Finish prayer and save to activity"
+            haptic="none"
+            onPress={onComplete}
+          >
+            <Text style={{ color: colors.onAccent }}>Finish prayer</Text>
+            <Check size={20} color={colors.onAccent} />
+          </Button>
+        </View>
       </View>
-    </View>
+    </PrayerConversation>
   );
 }

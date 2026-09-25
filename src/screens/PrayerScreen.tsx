@@ -26,7 +26,6 @@ import {
   Quote,
   RefreshCw,
   Search,
-  ShieldCheck,
   X,
 } from "@/components/ui/icons";
 import { useEffect, useRef, useState } from "react";
@@ -53,7 +52,6 @@ import {
   PracticeStoryComposer,
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
-import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -61,10 +59,6 @@ import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
-import {
-  createAssistantStream,
-  type AssistantMessage,
-} from "@/services/assistantService";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
 import {
   localizeHebrewTransliteration,
@@ -72,10 +66,7 @@ import {
 } from "@/services/localizationService";
 import { getPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
-import {
-  CURRENT_ASSISTANT_CONSENT_VERSION,
-  useSettingsStore,
-} from "@/store/settingsStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { useSocialStore } from "@/store/socialStore";
 import { useStreakStore } from "@/store/streakStore";
 import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
@@ -146,12 +137,6 @@ export function PrayerScreen(): React.JSX.Element {
   const primaryLanguageCode = useSettingsStore(
     (state) => state.primaryLanguageCode,
   );
-  const assistantConsentVersion = useSettingsStore(
-    (state) => state.assistantConsentVersion,
-  );
-  const setAssistantConsent = useSettingsStore(
-    (state) => state.setAssistantConsent,
-  );
   const prayerFocusEnabled = useSettingsStore(
     (state) => state.prayerFocusEnabled,
   );
@@ -167,13 +152,6 @@ export function PrayerScreen(): React.JSX.Element {
   const [shareMoment, setShareMoment] = useState<PracticeStoryMoment | null>(
     null,
   );
-  const [assistantOpen, setAssistantOpen] = useState(false);
-  const [assistantInput, setAssistantInput] = useState("");
-  const [assistantMessages, setAssistantMessages] = useState<
-    AssistantMessage[]
-  >([]);
-  const [isAssistantStreaming, setIsAssistantStreaming] = useState(false);
-  const [consentModalOpen, setConsentModalOpen] = useState(false);
   const [localizedPrayer, setLocalizedPrayer] =
     useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
@@ -212,9 +190,7 @@ export function PrayerScreen(): React.JSX.Element {
       void selectPrayer(linkedPrayerId);
       // Deep-link navigation resets the reader and assistant as one transition.
       setGuidedPrayerOpen(true);
-      setAssistantOpen(false);
-      setAssistantInput("");
-      setAssistantMessages([]);
+
       prayerSession.current = { startedAt: new Date(), completed: false };
       setReaderOpen(true);
       setFocusPromptMessage("");
@@ -300,9 +276,7 @@ export function PrayerScreen(): React.JSX.Element {
   const openPrayer = (id: string) => {
     void selectPrayer(id);
     setGuidedPrayerOpen(true);
-    setAssistantOpen(false);
-    setAssistantInput("");
-    setAssistantMessages([]);
+
     prayerSession.current = { startedAt: new Date(), completed: false };
     setReaderOpen(true);
     setFocusPromptMessage("");
@@ -414,77 +388,6 @@ export function PrayerScreen(): React.JSX.Element {
       closeReader();
     }
     void successHaptic();
-  };
-
-  const askAboutSelectedPrayer = async () => {
-    if (!selected || !assistantInput.trim() || isAssistantStreaming) {
-      return;
-    }
-
-    if (assistantConsentVersion !== CURRENT_ASSISTANT_CONSENT_VERSION) {
-      void confirmHaptic();
-      setConsentModalOpen(true);
-      return;
-    }
-
-    await submitAssistantQuestion(assistantInput.trim());
-  };
-
-  const submitAssistantQuestion = async (clean: string) => {
-    if (!selected || !clean || isAssistantStreaming) return;
-
-    void confirmHaptic();
-    setAssistantInput("");
-    setAssistantOpen(true);
-    setIsAssistantStreaming(true);
-
-    const userMessage: AssistantMessage = {
-      id: `${Date.now()}-user`,
-      role: "user",
-      content: clean,
-      createdAt: new Date().toISOString(),
-    };
-    const assistantId = `${Date.now()}-assistant`;
-    setAssistantMessages((current) => [
-      ...current,
-      userMessage,
-      {
-        id: assistantId,
-        role: "assistant",
-        content: "",
-        createdAt: new Date().toISOString(),
-      },
-    ]);
-
-    const context = buildPrayerAssistantContext(
-      selected,
-      primaryLanguageCode,
-      localizedTokens,
-    );
-
-    try {
-      for await (const chunk of createAssistantStream(clean, context)) {
-        setAssistantMessages((current) =>
-          current.map((message) =>
-            message.id === assistantId
-              ? { ...message, content: `${message.content}${chunk}` }
-              : message,
-          ),
-        );
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : "The assistant could not answer right now.";
-      setAssistantMessages((current) =>
-        current.map((item) =>
-          item.id === assistantId ? { ...item, content: message } : item,
-        ),
-      );
-    } finally {
-      setIsAssistantStreaming(false);
-    }
   };
 
   return (
@@ -1021,14 +924,6 @@ export function PrayerScreen(): React.JSX.Element {
                       </Text>
                     </View>
                   ) : null}
-                  <PrayerAssistantPanel
-                    input={assistantInput}
-                    isOpen={assistantOpen}
-                    isStreaming={isAssistantStreaming}
-                    messages={assistantMessages}
-                    onChangeInput={setAssistantInput}
-                    onSubmit={() => void askAboutSelectedPrayer()}
-                  />
                 </View>
               ) : null}
             </ScrollView>
@@ -1095,62 +990,6 @@ export function PrayerScreen(): React.JSX.Element {
                     </Text>
                   ) : null}
                 </Card>
-              </View>
-            ) : null}
-            {consentModalOpen ? (
-              <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
-                <View className="p-4 pb-6 gap-2 rounded-lg bg-card shadow-card border border-hairline">
-                  <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
-                    <ShieldCheck size={20} color={colors.blue} />
-                  </View>
-                  <Text variant="section">Before your first question</Text>
-                  <Text variant="body">
-                    Your question, this prayer text, language, source reference,
-                    and review status are sent to OpenAI through Kavanah.
-                    Display translations are identified as unreviewed. Contact
-                    details are removed first. Do not include anything private.
-                  </Text>
-                  <Text
-                    variant="body"
-                    className="text-[13px] leading-[19px] text-muted-foreground"
-                  >
-                    Answers are educational and are not binding halachic
-                    rulings.
-                  </Text>
-                  <View className="flex-row items-stretch gap-2 mt-2">
-                    <View className="flex-1">
-                      <Button
-                        variant="ghost"
-                        size="content"
-                        accessibilityRole="button"
-                        onPress={() => setConsentModalOpen(false)}
-                        className="min-h-12 items-center justify-center rounded-md border border-hairlineStrong"
-                      >
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                          Not now
-                        </Text>
-                      </Button>
-                    </View>
-                    <View className="flex-[1.4]">
-                      <Button
-                        variant="default"
-                        size="content"
-                        accessibilityRole="button"
-                        onPress={() => {
-                          const question = assistantInput.trim();
-                          setAssistantConsent(true);
-                          setConsentModalOpen(false);
-                          void submitAssistantQuestion(question);
-                        }}
-                        className="min-h-12 items-center justify-center rounded-full bg-primary"
-                      >
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
-                          Allow and ask
-                        </Text>
-                      </Button>
-                    </View>
-                  </View>
-                </View>
               </View>
             ) : null}
             <GuidedPrayer

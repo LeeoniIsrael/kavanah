@@ -2,6 +2,8 @@ import { act, fireEvent, render } from "@testing-library/react-native";
 import { GuidedPrayer } from "../GuidedPrayer";
 jest.mock("@/design/appearance", () => ({
   useThemeColors: () => require("@/design/theme").palettes.light,
+  useThemedStyles: (factory: any) =>
+    factory(require("@/design/theme").palettes.light),
 }));
 jest.mock("@/hooks/useReducedMotion", () => ({ useReducedMotion: () => true }));
 jest.mock("react-native-safe-area-context", () => ({
