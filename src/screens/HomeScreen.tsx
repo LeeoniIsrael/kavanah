@@ -1,3 +1,4 @@
+import { Screen } from "@/components/Screen";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
 import { Card } from "@/components/ui/card";
 import {
@@ -41,7 +42,6 @@ import {
   Modal,
   Platform,
   Pressable,
-  ScrollView,
   StyleSheet,
   View,
 } from "react-native";
@@ -235,544 +235,529 @@ export function HomeScreen(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView
-      edges={["top", "left", "right"]}
-      style={{ flex: 1, backgroundColor: colors.parchment }}
+    <Screen
+      largeTitle="Today"
+      subtitle={formatHebrewDate(now)}
+      rightComponent={
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityLabel="Open local prayer times"
+          onPress={() => router.push("/zmanim")}
+          style={homeStyles.calendar}
+        >
+          <CalendarDays size={20} color={colors.inkMuted} />
+        </Button>
+      }
     >
-      <ScrollView
-        accessibilityLabel="Today screen"
-        contentInsetAdjustmentBehavior="automatic"
-        showsVerticalScrollIndicator={false}
-        style={{ flex: 1, backgroundColor: colors.parchment }}
-        contentContainerStyle={homeStyles.content}
+      <View style={homeStyles.moment}>
+        <View style={homeStyles.momentTop}>
+          <Text style={homeStyles.momentLabel}>
+            {nextZman ? `In ${timeUntil(nextZman.time)}` : "Prayer for today"}
+          </Text>
+        </View>
+        <Text variant="title" style={homeStyles.momentTitle}>
+          {nextZman ? nextZman.title : "A moment of intention."}
+        </Text>
+        {nextZman ? (
+          <Text style={homeStyles.time}>{formatTime(nextZman.time)}</Text>
+        ) : null}
+        <Text style={homeStyles.momentDescription}>
+          {nextZman
+            ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
+            : "Find your words. Begin where you are."}
+        </Text>
+        <Button
+          size="content"
+          onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
+          style={homeStyles.primaryAction}
+          backgroundColor={colors.ink}
+          borderRadius={16}
+        >
+          <BookOpen size={20} color={colors.onAccent} />
+          <Text style={homeStyles.primaryLabel}>
+            {nextMoment?.label ?? "Find a prayer"}
+          </Text>
+          <ChevronRight size={16} color={colors.onAccent} />
+        </Button>
+      </View>
+
+      <Button
+        variant="ghost"
+        size="content"
+        accessibilityLabel={
+          nextZman
+            ? "View all local prayer times"
+            : "Set location for local prayer times"
+        }
+        onPress={() => (nextZman ? router.push("/zmanim") : void refresh())}
+        disabled={isLoading}
+        style={homeStyles.locationRow}
       >
-        <View style={homeStyles.header}>
-          <View style={{ gap: 6, flex: 1 }}>
-            <Text variant="title" style={homeStyles.title}>
-              Today
-            </Text>
-            <Text style={homeStyles.date}>{formatHebrewDate(now)}</Text>
-          </View>
+        <MapPin size={16} color={colors.inkMuted} />
+        <View style={{ flex: 1, gap: 3 }}>
+          <Text style={homeStyles.locationTitle}>
+            {nextZman
+              ? (location?.label ?? "Local prayer times")
+              : "Prayer times, wherever you are"}
+          </Text>
+          <Text style={homeStyles.locationCaption}>
+            {isLoading
+              ? "Finding your location…"
+              : nextZman
+                ? "View today’s times"
+                : error
+                  ? "Location unavailable. Tap to try again."
+                  : "Set your location to see local times"}
+          </Text>
+        </View>
+        <ChevronRight size={16} color={colors.inkMuted} />
+      </Button>
+
+      <View style={homeStyles.shortcuts}>
+        {shortcuts.map(({ label, query, icon: Icon }) => (
           <Button
+            key={label}
             variant="ghost"
             size="content"
-            accessibilityLabel="Open local prayer times"
-            onPress={() => router.push("/zmanim")}
-            style={homeStyles.calendar}
-          >
-            <CalendarDays size={20} color={colors.inkMuted} />
-          </Button>
-        </View>
-
-        <View style={homeStyles.moment}>
-          <View style={homeStyles.momentTop}>
-            <Text style={homeStyles.momentLabel}>
-              {nextZman ? `In ${timeUntil(nextZman.time)}` : "Prayer for today"}
-            </Text>
-          </View>
-          <Text variant="title" style={homeStyles.momentTitle}>
-            {nextZman ? nextZman.title : "A moment of intention."}
-          </Text>
-          {nextZman ? (
-            <Text style={homeStyles.time}>{formatTime(nextZman.time)}</Text>
-          ) : null}
-          <Text style={homeStyles.momentDescription}>
-            {nextZman
-              ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
-              : "Find your words. Begin where you are."}
-          </Text>
-          <Button
-            size="content"
-            onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
-            style={homeStyles.primaryAction}
-            backgroundColor={colors.ink}
+            onPress={() => openPrayerSearch(query)}
+            style={homeStyles.shortcut}
+            backgroundColor={colors.vellum}
             borderRadius={16}
           >
-            <BookOpen size={20} color={colors.onAccent} />
-            <Text style={homeStyles.primaryLabel}>
-              {nextMoment?.label ?? "Find a prayer"}
-            </Text>
-            <ChevronRight size={16} color={colors.onAccent} />
+            <Icon size={20} color={colors.inkMuted} />
+            <Text style={homeStyles.shortcutLabel}>{label}</Text>
           </Button>
-        </View>
+        ))}
+      </View>
 
-        <Button
-          variant="ghost"
-          size="content"
-          accessibilityLabel={
-            nextZman
-              ? "View all local prayer times"
-              : "Set location for local prayer times"
-          }
-          onPress={() => (nextZman ? router.push("/zmanim") : void refresh())}
-          disabled={isLoading}
-          style={homeStyles.locationRow}
-        >
-          <MapPin size={16} color={colors.inkMuted} />
-          <View style={{ flex: 1, gap: 3 }}>
-            <Text style={homeStyles.locationTitle}>
-              {nextZman
-                ? (location?.label ?? "Local prayer times")
-                : "Prayer times, wherever you are"}
-            </Text>
-            <Text style={homeStyles.locationCaption}>
-              {isLoading
-                ? "Finding your location…"
-                : nextZman
-                  ? "View today’s times"
-                  : error
-                    ? "Location unavailable. Tap to try again."
-                    : "Set your location to see local times"}
-            </Text>
-          </View>
-          <ChevronRight size={16} color={colors.inkMuted} />
-        </Button>
-
-        <View style={homeStyles.shortcuts}>
-          {shortcuts.map(({ label, query, icon: Icon }) => (
+      <View className="gap-3">
+        <View className="z-20 flex-row items-center justify-between">
+          <Text variant="section" className="text-[20px] leading-[26px]">
+            Daily practice
+          </Text>
+          <View className="flex-row items-center gap-2">
             <Button
-              key={label}
               variant="ghost"
               size="content"
-              onPress={() => openPrayerSearch(query)}
-              style={homeStyles.shortcut}
-              backgroundColor={colors.vellum}
-              borderRadius={16}
+              accessibilityLabel={`View practice summary, ${completedToday.length} of ${activeHabits.length} completed today`}
+              onPress={() => setPracticeStatsOpen(true)}
+              style={{
+                minHeight: 44,
+                justifyContent: "center",
+                paddingHorizontal: 8,
+              }}
             >
-              <Icon size={20} color={colors.inkMuted} />
-              <Text style={homeStyles.shortcutLabel}>{label}</Text>
+              <Text style={homeStyles.practiceCount}>
+                {activeHabits.length > 0
+                  ? `${completedToday.length} of ${activeHabits.length}`
+                  : "Optional"}
+              </Text>
             </Button>
-          ))}
-        </View>
-
-        <View className="gap-3">
-          <View className="z-20 flex-row items-center justify-between">
-            <Text variant="section" className="text-[20px] leading-[26px]">
-              Daily practice
-            </Text>
-            <View className="flex-row items-center gap-2">
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityLabel={`View practice summary, ${completedToday.length} of ${activeHabits.length} completed today`}
-                onPress={() => setPracticeStatsOpen(true)}
-                style={{
-                  minHeight: 44,
-                  justifyContent: "center",
-                  paddingHorizontal: 8,
-                }}
-              >
-                <Text style={homeStyles.practiceCount}>
-                  {activeHabits.length > 0
-                    ? `${completedToday.length} of ${activeHabits.length}`
-                    : "Optional"}
-                </Text>
-              </Button>
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityLabel="Choose daily practices"
-                accessibilityRole="button"
-                onPress={() => setPracticeEditorOpen(true)}
-                pressedScale={0.96}
-                className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
-              >
-                <SlidersHorizontal size={16} color={colors.ink} />
-              </Button>
-            </View>
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityLabel="Choose daily practices"
+              accessibilityRole="button"
+              onPress={() => setPracticeEditorOpen(true)}
+              pressedScale={0.96}
+              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
+            >
+              <SlidersHorizontal size={16} color={colors.ink} />
+            </Button>
           </View>
-          {activeHabits.length > 0 ? (
-            <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
-              {activeHabits.map((habit, index) => {
-                const complete = habit.completedDates.includes(
-                  formatDateKey(now),
-                );
-                const details = habitDetails[habit.habit];
-                const currentStreak = calculateCurrentRun(
-                  habit.completedDates,
-                  now,
-                );
-                const streakLabel = `${currentStreak} ${currentStreak === 1 ? "day" : "days"}`;
-                return (
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    key={habit.habit}
-                    accessibilityRole="checkbox"
-                    accessibilityLabel={`${details.name}. ${details.description}`}
-                    accessibilityHint={
-                      complete
-                        ? "Marks this practice incomplete"
-                        : "Marks this practice complete"
-                    }
-                    accessibilityState={{ checked: complete }}
-                    haptic={complete ? "selection" : "success"}
-                    onPress={() => togglePractice(habit.habit)}
-                    className={cn(
-                      "min-h-[72px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
-                      index === activeHabits.length - 1 && "border-b-0",
-                    )}
-                  >
-                    <View className="flex-1 gap-1">
-                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                        {details.name}
-                      </Text>
-                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
-                        {complete
-                          ? "Completed today"
-                          : currentStreak > 0
-                            ? `${streakLabel} of practice`
-                            : details.description}
-                      </Text>
-                    </View>
-                    <StateBounce trigger={complete}>
-                      <Checkbox checked={complete} size={24} stroke={1.75} />
-                    </StateBounce>
-                  </Button>
-                );
-              })}
-            </Card>
-          ) : (
-            <View className="min-h-[92px] px-4 py-3 flex-row items-center gap-4 border-t border-b border-hairline">
-              <View className="flex-1 gap-[2px]">
-                <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                  Nothing to keep up with
-                </Text>
-                <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-                  Add a practice whenever it feels useful.
-                </Text>
-              </View>
-              <Button
-                variant="secondary"
-                size="content"
-                accessibilityRole="button"
-                onPress={() => setPracticeEditorOpen(true)}
-                className="min-h-10 px-3 rounded-md flex-row items-center gap-1 bg-accent"
-              >
-                <Plus size={16} color={colors.blue} />
-                <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-                  Choose
-                </Text>
-              </Button>
-            </View>
-          )}
-          <Button
-            variant="ghost"
-            size="content"
-            accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`}
-            accessibilityRole="button"
-            onPress={() => setPracticeStatsOpen(true)}
-            className="min-h-[60px] px-1 flex-row items-center gap-3"
-          >
-            <ChartColumn size={20} color={colors.blue} />
-            <View className="flex-1">
+        </View>
+        {activeHabits.length > 0 ? (
+          <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
+            {activeHabits.map((habit, index) => {
+              const complete = habit.completedDates.includes(
+                formatDateKey(now),
+              );
+              const details = habitDetails[habit.habit];
+              const currentStreak = calculateCurrentRun(
+                habit.completedDates,
+                now,
+              );
+              const streakLabel = `${currentStreak} ${currentStreak === 1 ? "day" : "days"}`;
+              return (
+                <Button
+                  variant="ghost"
+                  size="content"
+                  key={habit.habit}
+                  accessibilityRole="checkbox"
+                  accessibilityLabel={`${details.name}. ${details.description}`}
+                  accessibilityHint={
+                    complete
+                      ? "Marks this practice incomplete"
+                      : "Marks this practice complete"
+                  }
+                  accessibilityState={{ checked: complete }}
+                  haptic={complete ? "selection" : "success"}
+                  onPress={() => togglePractice(habit.habit)}
+                  className={cn(
+                    "min-h-[72px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    index === activeHabits.length - 1 && "border-b-0",
+                  )}
+                >
+                  <View className="flex-1 gap-1">
+                    <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                      {details.name}
+                    </Text>
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
+                      {complete
+                        ? "Completed today"
+                        : currentStreak > 0
+                          ? `${streakLabel} of practice`
+                          : details.description}
+                    </Text>
+                  </View>
+                  <StateBounce trigger={complete}>
+                    <Checkbox checked={complete} size={24} stroke={1.75} />
+                  </StateBounce>
+                </Button>
+              );
+            })}
+          </Card>
+        ) : (
+          <View className="min-h-[92px] px-4 py-3 flex-row items-center gap-4 border-t border-b border-hairline">
+            <View className="flex-1 gap-[2px]">
               <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                Your practice
+                Nothing to keep up with
               </Text>
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-                {formatOverallSummary(practiceStats)}
+                Add a practice whenever it feels useful.
               </Text>
             </View>
-            <ChevronRight size={16} color={colors.inkMuted} />
-          </Button>
-          {shareablePractice ? (
-            <PracticeSharePrompt
-              label={habitDetails[shareablePractice.habit].name}
-              onPress={() => setSharePromptHabit(shareablePractice.habit)}
-            />
-          ) : null}
-        </View>
-
-        <CommunityFeed />
-
-        <Button
-          variant="outline"
-          size="content"
-          accessibilityRole="button"
-          onPress={() => openPrayerSearch("")}
-          className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
-        >
-          <Search size={20} color={colors.blue} />
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
-            Browse the prayer library
-          </Text>
-          <ChevronRight size={16} color={colors.inkMuted} />
-        </Button>
-
+            <Button
+              variant="secondary"
+              size="content"
+              accessibilityRole="button"
+              onPress={() => setPracticeEditorOpen(true)}
+              className="min-h-10 px-3 rounded-md flex-row items-center gap-1 bg-accent"
+            >
+              <Plus size={16} color={colors.blue} />
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+                Choose
+              </Text>
+            </Button>
+          </View>
+        )}
         <Button
           variant="ghost"
           size="content"
-          accessibilityLabel="Long trip travel prayer"
+          accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`}
           accessibilityRole="button"
-          onPress={() => setTravelPromptOpen(true)}
-          className="min-h-[76px] px-4 py-3 rounded-lg bg-blueSoft flex-row items-center gap-3"
+          onPress={() => setPracticeStatsOpen(true)}
+          className="min-h-[60px] px-1 flex-row items-center gap-3"
         >
-          <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
-            <NavigationIcon size={20} color={colors.onAccent} />
-          </View>
-          <View className="flex-1 gap-[2px]">
+          <ChartColumn size={20} color={colors.blue} />
+          <View className="flex-1">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-              Long trip?
+              Your practice
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
-              {travelStatus ||
-                "Open or schedule the travel prayer without sharing your route."}
+            <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+              {formatOverallSummary(practiceStats)}
             </Text>
           </View>
           <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
+        {shareablePractice ? (
+          <PracticeSharePrompt
+            label={habitDetails[shareablePractice.habit].name}
+            onPress={() => setSharePromptHabit(shareablePractice.habit)}
+          />
+        ) : null}
+      </View>
 
-        <Dialog open={travelPromptOpen} onOpenChange={setTravelPromptOpen}>
-          <DialogContent
-            overlayClassName="justify-end p-0"
-            className="max-w-[560px] rounded-b-none border-b-0 p-0"
-            showClose={false}
+      <CommunityFeed />
+
+      <Button
+        variant="outline"
+        size="content"
+        accessibilityRole="button"
+        onPress={() => openPrayerSearch("")}
+        className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
+      >
+        <Search size={20} color={colors.blue} />
+        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
+          Browse the prayer library
+        </Text>
+        <ChevronRight size={16} color={colors.inkMuted} />
+      </Button>
+
+      <Button
+        variant="ghost"
+        size="content"
+        accessibilityLabel="Long trip travel prayer"
+        accessibilityRole="button"
+        onPress={() => setTravelPromptOpen(true)}
+        className="min-h-[76px] px-4 py-3 rounded-lg bg-blueSoft flex-row items-center gap-3"
+      >
+        <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
+          <NavigationIcon size={20} color={colors.onAccent} />
+        </View>
+        <View className="flex-1 gap-[2px]">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            Long trip?
+          </Text>
+          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
+            {travelStatus ||
+              "Open or schedule the travel prayer without sharing your route."}
+          </Text>
+        </View>
+        <ChevronRight size={16} color={colors.inkMuted} />
+      </Button>
+
+      <Dialog open={travelPromptOpen} onOpenChange={setTravelPromptOpen}>
+        <DialogContent
+          overlayClassName="justify-end p-0"
+          className="max-w-[560px] rounded-b-none border-b-0 p-0"
+          showClose={false}
+        >
+          <SafeAreaView
+            edges={["bottom"]}
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
           >
-            <SafeAreaView
-              edges={["bottom"]}
-              className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
-            >
-              <View className="px-6 pt-2 pb-4 gap-4">
-                <View className="flex-row items-center justify-between">
-                  <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
-                    <NavigationIcon size={20} color={colors.blue} />
-                  </View>
-                  <Button
-                    variant="secondary"
-                    size="content"
-                    accessibilityLabel="Close"
-                    accessibilityRole="button"
-                    haptic="selection"
-                    onPress={() => setTravelPromptOpen(false)}
-                    className="w-11 h-11 rounded-sm items-center justify-center bg-muted"
-                  >
-                    <X size={20} color={colors.inkMuted} />
-                  </Button>
+            <View className="px-6 pt-2 pb-4 gap-4">
+              <View className="flex-row items-center justify-between">
+                <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
+                  <NavigationIcon size={20} color={colors.blue} />
                 </View>
-                <View className="gap-2">
-                  <Text
-                    className="font-hebrew-heading text-[28px] leading-[38px] text-foreground text-right"
-                    style={styles.travelHebrew}
-                  >
-                    תפילת הדרך
-                  </Text>
-                  <DialogTitle className="text-[21px] leading-[27px]">
-                    Traveling for over an hour?
-                  </DialogTitle>
-                  <DialogDescription>
-                    Maps cannot share route duration with Kavanah. Start this
-                    private reminder in one tap.
-                  </DialogDescription>
-                </View>
-                <View className="flex-row gap-3">
-                  <View className="flex-1">
-                    <Button
-                      variant="outline"
-                      size="content"
-                      accessibilityRole="button"
-                      haptic="confirm"
-                      onPress={openTravelPrayer}
-                      className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 border border-hairlineStrong bg-card"
-                    >
-                      <NavigationIcon size={16} color={colors.ink} />
-                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
-                        Open now
-                      </Text>
-                    </Button>
-                  </View>
-                  <View className="flex-1">
-                    <Button
-                      variant="default"
-                      size="content"
-                      accessibilityRole="button"
-                      disabled={travelScheduling}
-                      isLoading={travelScheduling}
-                      loadingLabel="Setting"
-                      haptic="confirm"
-                      onPress={() => void scheduleTravelReminder()}
-                      className={cn(
-                        "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
-                        travelScheduling && "opacity-[0.55]",
-                      )}
-                    >
-                      <BellRing size={16} color={colors.onAccent} />
-                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground font-label">
-                        Remind in 5 min
-                      </Text>
-                    </Button>
-                  </View>
-                </View>
-                <View className="flex-row items-center gap-2">
-                  <ShieldCheck size={16} color={colors.olive} />
-                  <Text className="text-[12px] leading-[17px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
-                    Only read when stopped, or ask a passenger to read it.
-                  </Text>
-                </View>
+                <Button
+                  variant="secondary"
+                  size="content"
+                  accessibilityLabel="Close"
+                  accessibilityRole="button"
+                  haptic="selection"
+                  onPress={() => setTravelPromptOpen(false)}
+                  className="w-11 h-11 rounded-sm items-center justify-center bg-muted"
+                >
+                  <X size={20} color={colors.inkMuted} />
+                </Button>
               </View>
-            </SafeAreaView>
-          </DialogContent>
-        </Dialog>
-
-        <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
-          <DialogContent
-            overlayClassName="justify-end p-0"
-            className="max-w-[560px] rounded-b-none border-b-0 p-0"
-            showClose={false}
-          >
-            <SafeAreaView
-              edges={["bottom"]}
-              className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
-            >
-              <View className="px-6 pt-2 pb-4 gap-4">
-                <View className="flex-row items-start gap-4">
-                  <View className="flex-1 gap-1">
-                    <DialogTitle>Choose your practices</DialogTitle>
-                    <DialogDescription>
-                      Keep only what feels meaningful right now. You can change
-                      this anytime.
-                    </DialogDescription>
-                  </View>
+              <View className="gap-2">
+                <Text
+                  className="font-hebrew-heading text-[28px] leading-[38px] text-foreground text-right"
+                  style={styles.travelHebrew}
+                >
+                  תפילת הדרך
+                </Text>
+                <DialogTitle className="text-[21px] leading-[27px]">
+                  Traveling for over an hour?
+                </DialogTitle>
+                <DialogDescription>
+                  Maps cannot share route duration with Kavanah. Start this
+                  private reminder in one tap.
+                </DialogDescription>
+              </View>
+              <View className="flex-row gap-3">
+                <View className="flex-1">
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     size="content"
                     accessibilityRole="button"
-                    haptic="selection"
-                    onPress={closePracticeEditor}
-                    className="min-h-11 justify-center px-2"
+                    haptic="confirm"
+                    onPress={openTravelPrayer}
+                    className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 border border-hairlineStrong bg-card"
                   >
-                    <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
-                      Done
+                    <NavigationIcon size={16} color={colors.ink} />
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
+                      Open now
                     </Text>
                   </Button>
                 </View>
-                <View className="border-t border-t-hairline">
-                  {habits.map((habit, index) => {
-                    const details = habitDetails[habit.habit];
-                    const selected = enabledHabits.includes(habit.habit);
-                    return (
-                      <Button
-                        variant="ghost"
-                        size="content"
-                        key={habit.habit}
-                        accessibilityHint={
-                          selected
-                            ? "Removes this from Today"
-                            : "Adds this to Today"
-                        }
-                        accessibilityLabel={`${details.name}. ${details.description}`}
-                        accessibilityRole="checkbox"
-                        accessibilityState={{ checked: selected }}
-                        onPress={() => setHabitEnabled(habit.habit, !selected)}
-                        className={cn(
-                          "min-h-[68px] py-2 flex-row items-center gap-4 border-b border-b-hairline",
-                          index === habits.length - 1 && "border-b-[0px]",
-                        )}
-                      >
-                        <View className="flex-1">
-                          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                            {details.name}
-                          </Text>
-                          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-                            {details.description}
-                          </Text>
-                        </View>
-                        <Checkbox checked={selected} size={24} stroke={1.75} />
-                      </Button>
-                    );
-                  })}
-                </View>
-              </View>
-            </SafeAreaView>
-          </DialogContent>
-        </Dialog>
-
-        <Dialog open={practiceStatsOpen} onOpenChange={setPracticeStatsOpen}>
-          <DialogContent
-            overlayClassName="justify-end p-0"
-            className="max-w-[560px] rounded-b-none border-b-0 p-0"
-            showClose={false}
-          >
-            <SafeAreaView
-              edges={["bottom"]}
-              className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
-            >
-              <View className="px-6 pt-2 pb-4 gap-4">
-                <View className="flex-row items-start gap-4">
-                  <View className="flex-1 gap-1">
-                    <DialogTitle>Your practice</DialogTitle>
-                    <DialogDescription>
-                      Every practice you mark complete counts here, even if it
-                      is no longer on Today.
-                    </DialogDescription>
-                  </View>
+                <View className="flex-1">
                   <Button
-                    variant="ghost"
+                    variant="default"
                     size="content"
                     accessibilityRole="button"
-                    haptic="selection"
-                    onPress={closePracticeStats}
-                    className="min-h-11 justify-center px-2"
+                    disabled={travelScheduling}
+                    isLoading={travelScheduling}
+                    loadingLabel="Setting"
+                    haptic="confirm"
+                    onPress={() => void scheduleTravelReminder()}
+                    className={cn(
+                      "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
+                      travelScheduling && "opacity-[0.55]",
+                    )}
                   >
-                    <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
-                      Done
+                    <BellRing size={16} color={colors.onAccent} />
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground font-label">
+                      Remind in 5 min
                     </Text>
                   </Button>
                 </View>
-                <View className="border-t border-t-hairline">
-                  <PracticeStatRow
-                    label="Current run"
-                    value={formatCount(practiceStats.currentRun, "day")}
-                  />
-                  <PracticeStatRow
-                    label="This week"
-                    value={formatCount(practiceStats.thisWeek, "practice")}
-                  />
-                  <PracticeStatRow
-                    label="This month"
-                    value={formatCount(practiceStats.thisMonth, "practice")}
-                  />
-                  <PracticeStatRow
-                    label="This year"
-                    value={formatCount(practiceStats.thisYear, "practice")}
-                  />
-                  <PracticeStatRow
-                    label="All time"
-                    value={formatCount(practiceStats.allTime, "practice")}
-                    last
-                  />
-                </View>
-                <Text variant="body" className="text-[12px] leading-[18px]">
-                  A run counts consecutive days with at least one completed
-                  practice. The current day remains open until midnight.
+              </View>
+              <View className="flex-row items-center gap-2">
+                <ShieldCheck size={16} color={colors.olive} />
+                <Text className="text-[12px] leading-[17px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
+                  Only read when stopped, or ask a passenger to read it.
                 </Text>
               </View>
-            </SafeAreaView>
-          </DialogContent>
-        </Dialog>
+            </View>
+          </SafeAreaView>
+        </DialogContent>
+      </Dialog>
 
-        <PracticeStoryComposer
-          moment={
-            shareHabit
-              ? {
-                  habit: shareHabit,
-                  streak: calculateCurrentRun(
-                    habits.find((habit) => habit.habit === shareHabit)
-                      ?.completedDates ?? [],
-                    now,
-                  ),
-                  completedAt: now,
-                }
-              : null
-          }
-          onClose={() => setShareHabit(null)}
-        />
-        <ShareMomentPrompt
-          habit={sharePromptHabit}
-          onDismiss={() => setSharePromptHabit(null)}
-          onShare={openStoryComposer}
-        />
-      </ScrollView>
-    </SafeAreaView>
+      <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
+        <DialogContent
+          overlayClassName="justify-end p-0"
+          className="max-w-[560px] rounded-b-none border-b-0 p-0"
+          showClose={false}
+        >
+          <SafeAreaView
+            edges={["bottom"]}
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+          >
+            <View className="px-6 pt-2 pb-4 gap-4">
+              <View className="flex-row items-start gap-4">
+                <View className="flex-1 gap-1">
+                  <DialogTitle>Choose your practices</DialogTitle>
+                  <DialogDescription>
+                    Keep only what feels meaningful right now. You can change
+                    this anytime.
+                  </DialogDescription>
+                </View>
+                <Button
+                  variant="ghost"
+                  size="content"
+                  accessibilityRole="button"
+                  haptic="selection"
+                  onPress={closePracticeEditor}
+                  className="min-h-11 justify-center px-2"
+                >
+                  <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
+                    Done
+                  </Text>
+                </Button>
+              </View>
+              <View className="border-t border-t-hairline">
+                {habits.map((habit, index) => {
+                  const details = habitDetails[habit.habit];
+                  const selected = enabledHabits.includes(habit.habit);
+                  return (
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      key={habit.habit}
+                      accessibilityHint={
+                        selected
+                          ? "Removes this from Today"
+                          : "Adds this to Today"
+                      }
+                      accessibilityLabel={`${details.name}. ${details.description}`}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: selected }}
+                      onPress={() => setHabitEnabled(habit.habit, !selected)}
+                      className={cn(
+                        "min-h-[68px] py-2 flex-row items-center gap-4 border-b border-b-hairline",
+                        index === habits.length - 1 && "border-b-[0px]",
+                      )}
+                    >
+                      <View className="flex-1">
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                          {details.name}
+                        </Text>
+                        <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+                          {details.description}
+                        </Text>
+                      </View>
+                      <Checkbox checked={selected} size={24} stroke={1.75} />
+                    </Button>
+                  );
+                })}
+              </View>
+            </View>
+          </SafeAreaView>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={practiceStatsOpen} onOpenChange={setPracticeStatsOpen}>
+        <DialogContent
+          overlayClassName="justify-end p-0"
+          className="max-w-[560px] rounded-b-none border-b-0 p-0"
+          showClose={false}
+        >
+          <SafeAreaView
+            edges={["bottom"]}
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+          >
+            <View className="px-6 pt-2 pb-4 gap-4">
+              <View className="flex-row items-start gap-4">
+                <View className="flex-1 gap-1">
+                  <DialogTitle>Your practice</DialogTitle>
+                  <DialogDescription>
+                    Every practice you mark complete counts here, even if it is
+                    no longer on Today.
+                  </DialogDescription>
+                </View>
+                <Button
+                  variant="ghost"
+                  size="content"
+                  accessibilityRole="button"
+                  haptic="selection"
+                  onPress={closePracticeStats}
+                  className="min-h-11 justify-center px-2"
+                >
+                  <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
+                    Done
+                  </Text>
+                </Button>
+              </View>
+              <View className="border-t border-t-hairline">
+                <PracticeStatRow
+                  label="Current run"
+                  value={formatCount(practiceStats.currentRun, "day")}
+                />
+                <PracticeStatRow
+                  label="This week"
+                  value={formatCount(practiceStats.thisWeek, "practice")}
+                />
+                <PracticeStatRow
+                  label="This month"
+                  value={formatCount(practiceStats.thisMonth, "practice")}
+                />
+                <PracticeStatRow
+                  label="This year"
+                  value={formatCount(practiceStats.thisYear, "practice")}
+                />
+                <PracticeStatRow
+                  label="All time"
+                  value={formatCount(practiceStats.allTime, "practice")}
+                  last
+                />
+              </View>
+              <Text variant="body" className="text-[12px] leading-[18px]">
+                A run counts consecutive days with at least one completed
+                practice. The current day remains open until midnight.
+              </Text>
+            </View>
+          </SafeAreaView>
+        </DialogContent>
+      </Dialog>
+
+      <PracticeStoryComposer
+        moment={
+          shareHabit
+            ? {
+                habit: shareHabit,
+                streak: calculateCurrentRun(
+                  habits.find((habit) => habit.habit === shareHabit)
+                    ?.completedDates ?? [],
+                  now,
+                ),
+                completedAt: now,
+              }
+            : null
+        }
+        onClose={() => setShareHabit(null)}
+      />
+      <ShareMomentPrompt
+        habit={sharePromptHabit}
+        onDismiss={() => setSharePromptHabit(null)}
+        onShare={openStoryComposer}
+      />
+    </Screen>
   );
 }
 
@@ -1085,29 +1070,6 @@ const styles = {
 // Home uses an editorial title and a single emphasized prayer surface.
 const makehomeStyles = (colors: ThemeColors) =>
   StyleSheet.create({
-    content: {
-      paddingHorizontal: 24,
-      paddingTop: 12,
-      paddingBottom: 40,
-      gap: 20,
-      width: "100%",
-      maxWidth: 600,
-      alignSelf: "center",
-    },
-    header: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 16,
-      paddingBottom: 4,
-    },
-    title: {
-      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-      fontSize: 38,
-      lineHeight: 46,
-      letterSpacing: -1,
-      color: colors.ink,
-    },
-    date: { fontSize: 13, lineHeight: 19, color: colors.inkMuted },
     calendar: {
       width: 44,
       height: 44,

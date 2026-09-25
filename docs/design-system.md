@@ -78,3 +78,11 @@ Appearance defaults to System, persists on device, and may be overridden with Li
 - Checkbox outlines use readable secondary ink. Selected checkmarks use `onAccent`, never a hardcoded white that disappears against the dark theme's light blue.
 
 September 25 icon pass: typecheck, targeted lint, and both-theme text/control contrast tests passed. Native dark captures inspected Home, Profile, Circle, and Prayer. Fast Refresh visibly updated the prayer search surface and shared glyphs from the live checkout. Interactive tap/scroll checks and a fresh light appearance capture remain pending because Device Hub reported the Mac locked. The user's Dark preference and device dark appearance were preserved. No native dependencies changed.
+
+## Scrolling titles
+
+Home, Prayer, Zmanim, Profile, and Circle use the shared large-to-compact header. `Screen` supplies the scroll view; Circle supplies its virtualized FlatList through `AnimatedHeaderSurface`. Do not nest these scroll containers. Reader and modal toolbars keep fixed close/Done actions.
+
+The large editorial title scrolls with content and hands off to a centered 17-point compact title. The measured title height determines the handoff, including larger text. Compact chrome owns the top safe area, uses the resolved theme, and retains header actions. Scroll-linked transforms run on the UI thread; React updates only when the accessible header changes. Reduced Motion switches headers without translation or fading. The opaque surface also remains readable with reduced transparency.
+
+September 25 verification: typecheck and targeted lint passed. Native expanded and programmatically scrolled compact states inspected on Home, Circle, and Profile in the live Expo preview. Temporary scroll offsets were removed and Home restored to its expanded state. Device Hub remained locked, so finger-driven scrolling and on-device accessibility toggles still need manual verification. No native dependency or rebuild was required.

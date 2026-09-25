@@ -1,3 +1,5 @@
+import { AnimatedHeaderSurface } from "@/components/organisms/animated-header-scrollview";
+import Animated from "react-native-reanimated";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import {
@@ -24,7 +26,6 @@ import {
 } from "@/components/ui/icons";
 import { memo, useState } from "react";
 import {
-  FlatList,
   Modal,
   Platform,
   ScrollView,
@@ -69,159 +70,162 @@ export function CircleScreen(): React.JSX.Element {
   const openPrayers = () =>
     router.push({ pathname: "/prayer", params: { prayerId: "modeh-ani" } });
   return (
-    <SafeAreaView edges={["top", "left", "right"]} style={s.screen}>
-      <FlatList
-        contentInsetAdjustmentBehavior="automatic"
-        data={posts}
-        keyExtractor={(post) => post.id}
-        renderItem={({ item }) => <ActivityCard post={item} />}
-        contentContainerStyle={s.content}
-        ItemSeparatorComponent={() => <View style={{ height: 14 }} />}
-        showsVerticalScrollIndicator={false}
-        initialNumToRender={6}
-        windowSize={5}
-        ListHeaderComponent={
-          <View style={{ gap: 24, paddingBottom: 24 }}>
-            <View style={s.row}>
-              <View style={{ flex: 1, gap: 6 }}>
-                <Text style={s.title}>Circle</Text>
-                <Text style={s.muted}>Prayer, shared simply.</Text>
-              </View>
-            </View>
-            <View style={s.intro}>
-              <View style={s.row}>
-                <View style={s.avatar}>
-                  <Text style={s.initial}>
-                    {profile?.displayName.charAt(0).toUpperCase() || "You"}
+    <View style={s.screen}>
+      <AnimatedHeaderSurface
+        largeTitle="Circle"
+        subtitle="Prayer, shared simply."
+        contentContainerStyle={{ gap: 0 }}
+        renderScroll={(header, scrollProps) => (
+          <Animated.FlatList
+            {...scrollProps}
+            data={posts}
+            keyExtractor={(post) => post.id}
+            renderItem={({ item }) => <ActivityCard post={item} />}
+            ItemSeparatorComponent={() => <View style={{ height: 14 }} />}
+            showsVerticalScrollIndicator={false}
+            initialNumToRender={6}
+            windowSize={5}
+            ListHeaderComponent={
+              <View style={{ gap: 24, paddingBottom: 24 }}>
+                {header}
+                <View style={s.intro}>
+                  <View style={s.row}>
+                    <View style={s.avatar}>
+                      <Text style={s.initial}>
+                        {profile?.displayName.charAt(0).toUpperCase() || "You"}
+                      </Text>
+                    </View>
+                    <View style={{ flex: 1, gap: 3 }}>
+                      <Text style={s.heading}>
+                        {profile?.displayName || "Your practice, your pace"}
+                      </Text>
+                      <Text style={s.small}>
+                        Your profile shares only what you choose.
+                      </Text>
+                    </View>
+                  </View>
+                  <Button
+                    variant="ghost"
+                    size="content"
+                    accessibilityLabel="Choose automatic sharing"
+                    onPress={() => setSettingsOpen(true)}
+                    style={s.settingsRow}
+                  >
+                    <View style={{ flex: 1, gap: 5 }}>
+                      <Text style={s.label}>Automatic updates</Text>
+                      <Text style={s.small}>
+                        {preferences.prayers === "off"
+                          ? "Prayers stay private"
+                          : preferences.prayers === "every"
+                            ? "Every completed prayer"
+                            : "Your first prayer ever"}
+                        {preferences.milestones ? " · Milestones on" : ""}
+                      </Text>
+                    </View>
+                    <ChevronRight size={16} color={colors.inkMuted} />
+                  </Button>
+                </View>
+                <View style={s.quoteCard}>
+                  <View style={s.row}>
+                    <Quote size={20} color={colors.blue} />
+                    <Text style={s.quoteLabel}>Your quote of the week</Text>
+                  </View>
+                  <Text
+                    style={[
+                      s.quoteTitle,
+                      weeklyQuote?.language === "he" && {
+                        fontFamily: fonts.hebrew,
+                        writingDirection: "rtl",
+                        textAlign: "right",
+                      },
+                    ]}
+                  >
+                    {weeklyQuote
+                      ? `“${weeklyQuote.quote}”`
+                      : "A line worth carrying."}
+                  </Text>
+                  <Text style={s.quoteDescription}>
+                    {weeklyQuote
+                      ? weeklyQuote.practice
+                      : "Find a line in a prayer. Hold it, choose your words, and add it here."}
+                  </Text>
+                  <Button
+                    variant="ghost"
+                    size="content"
+                    onPress={openPrayers}
+                    style={s.quoteAction}
+                  >
+                    <BookOpen size={16} color={colors.ink} />
+                    <Text style={s.label}>
+                      {weeklyQuote
+                        ? "Choose a different quote"
+                        : "Choose in prayer"}
+                    </Text>
+                    <ChevronRight size={16} color={colors.ink} />
+                  </Button>
+                  <Text style={s.quoteFootnote}>
+                    One quote each week. Replace it anytime. No caption.
                   </Text>
                 </View>
-                <View style={{ flex: 1, gap: 3 }}>
-                  <Text style={s.heading}>
-                    {profile?.displayName || "Your practice, your pace"}
-                  </Text>
+                <View style={s.row}>
+                  <Text style={s.section}>Your activity</Text>
+                  <View style={{ flex: 1 }} />
                   <Text style={s.small}>
-                    Your profile shares only what you choose.
+                    {posts.length
+                      ? `${posts.length} update${posts.length === 1 ? "" : "s"}`
+                      : "A fresh start"}
                   </Text>
                 </View>
               </View>
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityLabel="Choose automatic sharing"
-                onPress={() => setSettingsOpen(true)}
-                style={s.settingsRow}
-              >
-                <View style={{ flex: 1, gap: 5 }}>
-                  <Text style={s.label}>Automatic updates</Text>
-                  <Text style={s.small}>
-                    {preferences.prayers === "off"
-                      ? "Prayers stay private"
-                      : preferences.prayers === "every"
-                        ? "Every completed prayer"
-                        : "Your first prayer ever"}
-                    {preferences.milestones ? " · Milestones on" : ""}
-                  </Text>
+            }
+            ListEmptyComponent={
+              <View style={s.empty}>
+                <View style={s.emptyIcon}>
+                  <CircleDot size={24} color={colors.blue} />
                 </View>
-                <ChevronRight size={16} color={colors.inkMuted} />
-              </Button>
-            </View>
-            <View style={s.quoteCard}>
-              <View style={s.row}>
-                <Quote size={20} color={colors.blue} />
-                <Text style={s.quoteLabel}>Your quote of the week</Text>
-              </View>
-              <Text
-                style={[
-                  s.quoteTitle,
-                  weeklyQuote?.language === "he" && {
-                    fontFamily: fonts.hebrew,
-                    writingDirection: "rtl",
-                    textAlign: "right",
-                  },
-                ]}
-              >
-                {weeklyQuote
-                  ? `“${weeklyQuote.quote}”`
-                  : "A line worth carrying."}
-              </Text>
-              <Text style={s.quoteDescription}>
-                {weeklyQuote
-                  ? weeklyQuote.practice
-                  : "Find a line in a prayer. Hold it, choose your words, and add it here."}
-              </Text>
-              <Button
-                variant="ghost"
-                size="content"
-                onPress={openPrayers}
-                style={s.quoteAction}
-              >
-                <BookOpen size={16} color={colors.ink} />
-                <Text style={s.label}>
-                  {weeklyQuote
-                    ? "Choose a different quote"
-                    : "Choose in prayer"}
+                <Text style={s.heading}>
+                  {automaticEnabled
+                    ? "You’re ready. Just pray."
+                    : "Nothing to compose."}
                 </Text>
-                <ChevronRight size={16} color={colors.ink} />
-              </Button>
-              <Text style={s.quoteFootnote}>
-                One quote each week. Replace it anytime. No caption.
-              </Text>
-            </View>
-            <View style={s.row}>
-              <Text style={s.section}>Your activity</Text>
-              <View style={{ flex: 1 }} />
-              <Text style={s.small}>
-                {posts.length
-                  ? `${posts.length} update${posts.length === 1 ? "" : "s"}`
-                  : "A fresh start"}
-              </Text>
-            </View>
-          </View>
-        }
-        ListEmptyComponent={
-          <View style={s.empty}>
-            <View style={s.emptyIcon}>
-              <CircleDot size={24} color={colors.blue} />
-            </View>
-            <Text style={s.heading}>
-              {automaticEnabled
-                ? "You’re ready. Just pray."
-                : "Nothing to compose."}
-            </Text>
-            <Text style={[s.muted, { textAlign: "center", lineHeight: 23 }]}>
-              {automaticEnabled
-                ? "Your next matching completion will appear here automatically."
-                : "Choose your automatic updates, then pray. Your practice creates the post."}
-            </Text>
-            <Button
-              variant="default"
-              size="content"
-              onPress={
-                automaticEnabled ? openPrayers : () => setSettingsOpen(true)
-              }
-              style={s.primary}
-            >
-              <Text style={s.primaryText}>
-                {automaticEnabled ? "Open a prayer" : "Choose my updates"}
-              </Text>
-            </Button>
-          </View>
-        }
-        ListFooterComponent={
-          <View style={s.notice}>
-            <ShieldCheck size={16} color={colors.inkMuted} />
-            <Text style={[s.small, { flex: 1, lineHeight: 19 }]}>
-              Only you can see this for now. Circle is not connected to other
-              accounts; these updates stay on this device.
-            </Text>
-          </View>
-        }
+                <Text
+                  style={[s.muted, { textAlign: "center", lineHeight: 23 }]}
+                >
+                  {automaticEnabled
+                    ? "Your next matching completion will appear here automatically."
+                    : "Choose your automatic updates, then pray. Your practice creates the post."}
+                </Text>
+                <Button
+                  variant="default"
+                  size="content"
+                  onPress={
+                    automaticEnabled ? openPrayers : () => setSettingsOpen(true)
+                  }
+                  style={s.primary}
+                >
+                  <Text style={s.primaryText}>
+                    {automaticEnabled ? "Open a prayer" : "Choose my updates"}
+                  </Text>
+                </Button>
+              </View>
+            }
+            ListFooterComponent={
+              <View style={s.notice}>
+                <ShieldCheck size={16} color={colors.inkMuted} />
+                <Text style={[s.small, { flex: 1, lineHeight: 19 }]}>
+                  Only you can see this for now. Circle is not connected to
+                  other accounts; these updates stay on this device.
+                </Text>
+              </View>
+            }
+          />
+        )}
       />
       <SharingSettings
         visible={settingsOpen}
         onClose={() => setSettingsOpen(false)}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 export function SharingSettings({
@@ -442,21 +446,7 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
 const makes = (colors: ThemeColors) =>
   StyleSheet.create({
     screen: { flex: 1, backgroundColor: colors.parchment },
-    content: {
-      padding: 24,
-      paddingTop: 12,
-      paddingBottom: 32,
-      width: "100%",
-      maxWidth: 620,
-      alignSelf: "center",
-    },
     row: { flexDirection: "row", alignItems: "center", gap: 12 },
-    title: {
-      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-      fontSize: 38,
-      lineHeight: 46,
-      color: colors.ink,
-    },
     section: {
       fontFamily: fonts.semibold,
       fontSize: 21,
