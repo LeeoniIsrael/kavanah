@@ -14,7 +14,6 @@ import {
   Languages,
   LockKeyhole,
   MoonStar,
-  Navigation,
   ShieldCheck,
   MessageCircle,
   UserRound,
@@ -34,7 +33,6 @@ import { findLanguage, languageOptions } from "@/data/languages";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
 import {
-  cancelTravelPrayerNotification,
   initializeNotifications,
   scheduleZmanNotifications,
 } from "@/services/notifications";
@@ -63,18 +61,14 @@ export function ProfileScreen(): React.JSX.Element {
     primaryLanguageCode,
     assistantConsentVersion,
     zmanNotificationsEnabled,
-    travelNotificationsEnabled,
     prayerFocusEnabled,
     setPrimaryLanguageCode,
     setAssistantConsent,
     setZmanNotificationsEnabled,
-    setTravelNotificationsEnabled,
     setPrayerFocusEnabled,
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
-  const [travelNotificationMessage, setTravelNotificationMessage] =
-    useState("");
   const [focusSetupMessage, setFocusSetupMessage] = useState("");
   const [displayName, setDisplayName] = useState(profile?.displayName ?? "");
   const [handle, setHandle] = useState(profile?.handle.replace(/^@/, "") ?? "");
@@ -122,26 +116,6 @@ export function ProfileScreen(): React.JSX.Element {
         await refresh();
       }
     }
-  };
-
-  const changeTravelNotifications = async (enabled: boolean) => {
-    void confirmHaptic();
-    if (!enabled) {
-      await cancelTravelPrayerNotification();
-      setTravelNotificationsEnabled(false);
-      setTravelNotificationMessage("");
-      return;
-    }
-
-    setTravelNotificationsEnabled(true);
-    setTravelNotificationMessage("Turning on travel reminders…");
-    const granted = await initializeNotifications();
-    setTravelNotificationsEnabled(granted);
-    setTravelNotificationMessage(
-      granted
-        ? "Ready for reminders you start from Home or a Shortcut."
-        : "Notifications are disabled in device settings.",
-    );
   };
 
   return (
@@ -297,28 +271,6 @@ export function ProfileScreen(): React.JSX.Element {
             accessibilityLabel="Zmanim reminders"
             checked={zmanNotificationsEnabled}
             onCheckedChange={(enabled) => void changeNotifications(enabled)}
-          />
-        </View>
-
-        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
-            <Navigation size={20} color={colors.blue} />
-          </View>
-          <View className="flex-1 gap-[2px]">
-            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
-              Travel prayer reminders
-            </Text>
-            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
-              {travelNotificationMessage ||
-                "For long trips you start from Home or a phone automation. Maps routes stay private."}
-            </Text>
-          </View>
-          <Switch
-            accessibilityLabel="Travel prayer reminders"
-            checked={travelNotificationsEnabled}
-            onCheckedChange={(enabled) =>
-              void changeTravelNotifications(enabled)
-            }
           />
         </View>
 
@@ -661,8 +613,7 @@ export function ProfileScreen(): React.JSX.Element {
                   </BouncyAccordion.Trigger>
                   <BouncyAccordion.Content>
                     Bookmarks, streaks, language preferences, reminder settings,
-                    and the coordinates used to calculate zmanim. Travel
-                    reminders do not read or store routes from Maps. Precise
+                    and the coordinates used to calculate zmanim. Precise
                     coordinates are not sent to the prayer assistant.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>

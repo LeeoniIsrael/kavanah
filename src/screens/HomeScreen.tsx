@@ -20,14 +20,12 @@ import { formatISO } from "date-fns";
 import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
 import {
-  BellRing,
   BookOpen,
   CalendarDays,
   ChartColumn,
   ChevronRight,
   Heart,
   MapPin,
-  Navigation as NavigationIcon,
   Plus,
   Search,
   Share2,
@@ -55,15 +53,13 @@ import { StateBounce } from "@/components/ui/motion-feedback";
 import { motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { confirmHaptic, successHaptic } from "@/services/haptics";
-import { scheduleTravelPrayerNotification } from "@/services/notifications";
+import { confirmHaptic } from "@/services/haptics";
 import {
   calculateCurrentRun,
   calculatePracticeStats,
   type PracticeStats,
 } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
-import { useSettingsStore } from "@/store/settingsStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
@@ -133,20 +129,13 @@ export function HomeScreen(): React.JSX.Element {
   const reduceMotion = useReducedMotion();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
-  const [travelPromptOpen, setTravelPromptOpen] = useState(false);
-  const [travelScheduling, setTravelScheduling] = useState(false);
-  const [travelStatus, setTravelStatus] = useState("");
   const [shareHabit, setShareHabit] = useState<StreakHabit | null>(null);
   const [sharePromptHabit, setSharePromptHabit] = useState<StreakHabit | null>(
     null,
   );
-  const setTravelNotificationsEnabled = useSettingsStore(
-    (state) => state.setTravelNotificationsEnabled,
-  );
   useEffect(() => {
-    if (travelPromptOpen || practiceEditorOpen || practiceStatsOpen)
-      void confirmHaptic();
-  }, [travelPromptOpen, practiceEditorOpen, practiceStatsOpen]);
+    if (practiceEditorOpen || practiceStatsOpen) void confirmHaptic();
+  }, [practiceEditorOpen, practiceStatsOpen]);
   const now = useCurrentDate();
   const nextZman = useMemo(
     () => findNextZman(upcomingZmanim, now),
@@ -199,40 +188,6 @@ export function HomeScreen(): React.JSX.Element {
   const closePracticeStats = () => {
     void confirmHaptic();
     setPracticeStatsOpen(false);
-  };
-
-  const openTravelPrayer = () => {
-    setTravelPromptOpen(false);
-    setQuery("travel");
-    router.push({
-      pathname: "/prayer",
-      params: { prayerId: "tefilat-haderech", query: "travel" },
-    });
-  };
-
-  const scheduleTravelReminder = async () => {
-    if (travelScheduling) return;
-    setTravelScheduling(true);
-    try {
-      const scheduled = await scheduleTravelPrayerNotification(5);
-      if (!scheduled) {
-        setTravelStatus(
-          "Enable notifications on a physical device to use reminders.",
-        );
-        return;
-      }
-
-      setTravelNotificationsEnabled(true);
-      setTravelStatus("Reminder set for 5 minutes from now.");
-      setTravelPromptOpen(false);
-      void successHaptic();
-    } catch {
-      setTravelStatus(
-        "The reminder could not be set. Check notification access and try again.",
-      );
-    } finally {
-      setTravelScheduling(false);
-    }
   };
 
   return (
@@ -485,120 +440,6 @@ export function HomeScreen(): React.JSX.Element {
         </Text>
         <ChevronRight size={16} color={colors.inkMuted} />
       </Button>
-
-      <Button
-        variant="ghost"
-        size="content"
-        accessibilityLabel="Long trip travel prayer"
-        accessibilityRole="button"
-        onPress={() => setTravelPromptOpen(true)}
-        className="min-h-[76px] px-4 py-3 rounded-lg bg-blueSoft flex-row items-center gap-3"
-      >
-        <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
-          <NavigationIcon size={20} color={colors.onAccent} />
-        </View>
-        <View className="flex-1 gap-[2px]">
-          <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
-            Long trip?
-          </Text>
-          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
-            {travelStatus ||
-              "Open or schedule the travel prayer without sharing your route."}
-          </Text>
-        </View>
-        <ChevronRight size={16} color={colors.inkMuted} />
-      </Button>
-
-      <Dialog open={travelPromptOpen} onOpenChange={setTravelPromptOpen}>
-        <DialogContent
-          overlayClassName="justify-end p-0"
-          className="max-w-[560px] rounded-b-none border-b-0 p-0"
-          showClose={false}
-        >
-          <SafeAreaView
-            edges={["bottom"]}
-            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
-          >
-            <View className="px-6 pt-2 pb-4 gap-4">
-              <View className="flex-row items-center justify-between">
-                <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
-                  <NavigationIcon size={20} color={colors.blue} />
-                </View>
-                <Button
-                  variant="secondary"
-                  size="content"
-                  accessibilityLabel="Close"
-                  accessibilityRole="button"
-                  haptic="selection"
-                  onPress={() => setTravelPromptOpen(false)}
-                  className="w-11 h-11 rounded-sm items-center justify-center bg-muted"
-                >
-                  <X size={20} color={colors.inkMuted} />
-                </Button>
-              </View>
-              <View className="gap-2">
-                <Text
-                  className="font-hebrew-heading text-[28px] leading-[38px] text-foreground text-right"
-                  style={styles.travelHebrew}
-                >
-                  תפילת הדרך
-                </Text>
-                <DialogTitle className="text-[21px] leading-[27px]">
-                  Traveling for over an hour?
-                </DialogTitle>
-                <DialogDescription>
-                  Maps cannot share route duration with Kavanah. Start this
-                  private reminder in one tap.
-                </DialogDescription>
-              </View>
-              <View className="flex-row gap-3">
-                <View className="flex-1">
-                  <Button
-                    variant="outline"
-                    size="content"
-                    accessibilityRole="button"
-                    haptic="confirm"
-                    onPress={openTravelPrayer}
-                    className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 border border-hairlineStrong bg-card"
-                  >
-                    <NavigationIcon size={16} color={colors.ink} />
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
-                      Open now
-                    </Text>
-                  </Button>
-                </View>
-                <View className="flex-1">
-                  <Button
-                    variant="default"
-                    size="content"
-                    accessibilityRole="button"
-                    disabled={travelScheduling}
-                    isLoading={travelScheduling}
-                    loadingLabel="Setting"
-                    haptic="confirm"
-                    onPress={() => void scheduleTravelReminder()}
-                    className={cn(
-                      "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
-                      travelScheduling && "opacity-[0.55]",
-                    )}
-                  >
-                    <BellRing size={16} color={colors.onAccent} />
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground font-label">
-                      Remind in 5 min
-                    </Text>
-                  </Button>
-                </View>
-              </View>
-              <View className="flex-row items-center gap-2">
-                <ShieldCheck size={16} color={colors.olive} />
-                <Text className="text-[12px] leading-[17px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
-                  Only read when stopped, or ask a passenger to read it.
-                </Text>
-              </View>
-            </View>
-          </SafeAreaView>
-        </DialogContent>
-      </Dialog>
 
       <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
         <DialogContent
@@ -1060,13 +901,6 @@ function formatOverallSummary(stats: PracticeStats): string {
 function formatCount(value: number, noun: string): string {
   return `${value} ${noun}${value === 1 ? "" : "s"}`;
 }
-
-// Native text direction and platform-only values cannot be expressed as layout utilities.
-const styles = {
-  travelHebrew: {
-    writingDirection: "rtl",
-  },
-} as const;
 
 // Home uses an editorial title and a single emphasized prayer surface.
 const makehomeStyles = (colors: ThemeColors) =>

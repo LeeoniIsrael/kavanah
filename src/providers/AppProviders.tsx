@@ -6,7 +6,7 @@ import { useEffect, useState, type PropsWithChildren } from "react";
 import { AppState, View } from "react-native";
 
 import { Button } from "@/components/ui/button";
-import { configureNotificationCategories } from "@/services/notifications";
+import { retireTravelPrayerReminders } from "@/services/notifications";
 import { useAuthStore } from "@/store/authStore";
 
 export function AppProviders({
@@ -24,7 +24,7 @@ export function AppProviders({
   }, [hydrate]);
 
   useEffect(() => {
-    void configureNotificationCategories().catch(() => undefined);
+    void retireTravelPrayerReminders().catch(() => undefined);
   }, []);
 
   useEffect(() => {
