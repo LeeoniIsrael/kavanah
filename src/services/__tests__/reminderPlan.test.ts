@@ -75,6 +75,7 @@ describe("custom reminders", () => {
     const rh = plan.find((n) => n.title === "Rosh Hashanah")!;
     expect(rh.date.getDate()).toBe(10);
     expect(rh.body).toContain("Sep 11 evening");
+    expect(rh.url).toBe("kavanah://zmanim?section=calendar&date=2026-09-12");
     const fast = holidayOn(day("2026-09-14"), false)!;
     expect(fast.kind).toBe("fast");
     expect(fast.beginsEvening).toBe(false);

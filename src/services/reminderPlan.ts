@@ -359,7 +359,7 @@ export function buildReminderPlan(
         atTime(addDays(anchor, -prefs.holidays.lead), prefs.holidays.time),
         h.title,
         `${h.title} ${h.beginsEvening ? "begins" : "is"} ${format(anchor, "EEE, MMM d")}${h.beginsEvening ? " evening" : ""}.`,
-        "kavanah://zmanim?section=calendar",
+        `kavanah://zmanim?section=calendar&date=${h.key}`,
       );
     if (
       prefs.checklist.enabled &&

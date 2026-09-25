@@ -22,7 +22,10 @@ import { useZmanimStore } from "@/store/zmanimStore";
 export function ZmanimScreen(): React.JSX.Element {
   const colors = useThemeColors();
   const router = useRouter();
-  const { section } = useLocalSearchParams<{ section?: string }>();
+  const { section, date } = useLocalSearchParams<{
+    section?: string;
+    date?: string;
+  }>();
   const calendar = section === "calendar";
   const ui = useInterfaceStyles();
 
@@ -97,7 +100,7 @@ export function ZmanimScreen(): React.JSX.Element {
         })}
       </View>
       {calendar ? (
-        <JewishCalendarView />
+        <JewishCalendarView key={date ?? "current"} />
       ) : (
         <>
           <Card style={ui.feature}>

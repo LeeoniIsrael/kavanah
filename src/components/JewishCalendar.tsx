@@ -1,8 +1,15 @@
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { holidayOn } from "@/services/reminderPlan";
 import { useMemo, useState } from "react";
 import { ScrollView, Switch, View, useWindowDimensions } from "react-native";
-import { addMonths, format, isSameMonth, startOfMonth } from "date-fns";
+import {
+  addMonths,
+  format,
+  isSameMonth,
+  startOfMonth,
+  isValid,
+  parseISO,
+} from "date-fns";
 import { Button } from "./ui/button";
 import { Text } from "./ui/text";
 import { ChevronLeft, ChevronRight } from "./ui/icons";
@@ -19,8 +26,15 @@ export function JewishCalendarView() {
     ui = useInterfaceStyles(),
     now = useCurrentDate();
   const { fontScale } = useWindowDimensions();
-  const [month, setMonth] = useState(() => startOfMonth(now));
-  const [selected, setSelected] = useState(now);
+  const { date: linkedDate } = useLocalSearchParams<{ date?: string }>();
+  const target =
+    linkedDate &&
+    /^\d{4}-\d{2}-\d{2}$/.test(linkedDate) &&
+    isValid(parseISO(linkedDate))
+      ? parseISO(linkedDate)
+      : now;
+  const [month, setMonth] = useState(() => startOfMonth(target));
+  const [selected, setSelected] = useState(target);
   const [width, setWidth] = useState(308);
   const inIsrael = useSettingsStore((s) => s.calendarInIsrael);
   const setInIsrael = useSettingsStore((s) => s.setCalendarInIsrael);
