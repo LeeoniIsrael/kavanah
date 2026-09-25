@@ -1,7 +1,7 @@
 import type { GestureResponderEvent } from "react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Platform, ScrollView, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Check, Quote, X } from "lucide-react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
@@ -21,6 +21,7 @@ export function QuoteSelector({
   onClose: () => void;
   onViewCircle: () => void;
 }) {
+  const insets = useSafeAreaInsets();
   const words = source.text.trim().split(/\s+/u);
   const [range, setRange] = useState<[number, number]>([
     0,
@@ -113,7 +114,18 @@ export function QuoteSelector({
         },
       ]}
     >
-      <SafeAreaView style={{ flex: 1 }}>
+      {/* The overlay fills the reader's entire frame, including its padding.
+          Read the modal provider's insets explicitly; a nested native SafeAreaView
+          can report zero for this absolute overlay and place Close under the clock. */}
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        }}
+      >
         <View style={s.header}>
           <Quote size={22} color={colors.blue} />
           <Text style={s.heading}>Quote of the week</Text>
@@ -121,6 +133,8 @@ export function QuoteSelector({
             variant="ghost"
             size="content"
             accessibilityLabel="Close quote selection"
+            accessibilityHint="Returns to the prayer without adding this selection"
+            hitSlop={4}
             onPress={onClose}
             style={s.iconButton}
           >
@@ -213,20 +227,20 @@ export function QuoteSelector({
           )}
         </ScrollView>
         <View style={s.footer}>
-          {saved && (
-            <Button
-              variant="ghost"
-              size="content"
-              onPress={onClose}
-              style={{
-                minHeight: 44,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Text style={{ color: colors.inkMuted }}>Keep praying</Text>
-            </Button>
-          )}
+          <Button
+            variant="ghost"
+            size="content"
+            onPress={onClose}
+            style={{
+              minHeight: 44,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: colors.ink }}>
+              {saved ? "Keep praying" : "Cancel"}
+            </Text>
+          </Button>
           <Button
             size="content"
             disabled={!quote}
@@ -247,7 +261,7 @@ export function QuoteSelector({
             </Text>
           </Button>
         </View>
-      </SafeAreaView>
+      </View>
     </Animated.View>
   );
 }
@@ -267,6 +281,9 @@ const s = StyleSheet.create({
     fontSize: 17,
   },
   iconButton: {
+    backgroundColor: colors.mineral,
+    borderRadius: 22,
+    flexShrink: 0,
     width: 44,
     height: 44,
     justifyContent: "center",
