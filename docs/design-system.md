@@ -86,3 +86,11 @@ Home, Prayer, Zmanim, Profile, and Circle use the shared large-to-compact header
 The large editorial title scrolls with content and hands off to a centered 17-point compact title. The measured title height determines the handoff, including larger text. Compact chrome owns the top safe area, uses the resolved theme, and retains header actions. Scroll-linked transforms run on the UI thread; React updates only when the accessible header changes. Reduced Motion switches headers without translation or fading. The opaque surface also remains readable with reduced transparency.
 
 September 25 verification: typecheck and targeted lint passed. Native expanded and programmatically scrolled compact states inspected on Home, Circle, and Profile in the live Expo preview. Temporary scroll offsets were removed and Home restored to its expanded state. Device Hub remained locked, so finger-driven scrolling and on-device accessibility toggles still need manual verification. No native dependency or rebuild was required.
+
+## Cross-screen layout roles
+
+Use `useInterfaceStyles` from `src/design/layout.ts` for neutral cards, emphasized cards, row spacing, section titles, item titles, body text, captions, and prominent time values. Neutral cards use 20-point padding and 26-point corners; emphasized cards use 24-point padding and 32-point corners. Section gaps are 24; list gaps are 12. Grouped rows share the outer card's corners and use straight internal separators. Card children do not add a second horizontal inset.
+
+Typography roles are section 20/28, item title 17/24, body 14/22, caption 13/20, editorial feature 28/36, and prominent time 48/56. Explicit Text variants take precedence over inherited button typography; otherwise tappable descriptions become bold and headings shrink. Standard button labels still inherit their button context. Long prayer descriptions remain readable without a three-line cutoff.
+
+September 25 consistency pass: compared native dark captures of all five main tabs, including the removed empty bookmarks gap in search results, aligned Zmanim rows, corrected Profile text inheritance, and shared Home/Circle feature geometry. Typecheck, targeted lint, and four light/dark contrast tests passed. Interactive testing remains limited by the locked Mac. Preview, appearance preference, and user activity were preserved.

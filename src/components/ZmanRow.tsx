@@ -1,20 +1,30 @@
 import { Text } from "@/components/ui/text";
+import { useInterfaceStyles } from "@/design/layout";
 import { View } from "react-native";
-
 import type { Zman } from "@/types/zmanim";
 
-export function ZmanRow({ zman }: { zman: Zman }): React.JSX.Element {
+export function ZmanRow({
+  zman,
+  last = false,
+}: {
+  zman: Zman;
+  last?: boolean;
+}): React.JSX.Element {
+  const ui = useInterfaceStyles();
   return (
-    <View className="min-h-[72px] flex-row items-center justify-between gap-4 border-b border-b-hairline px-1 py-3">
-      <View className="flex-1">
-        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-          {zman.title}
-        </Text>
-        <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
+    <View style={[ui.row, !last && ui.separator]}>
+      <View style={{ flex: 1, gap: 4 }}>
+        <Text style={ui.itemTitle}>{zman.title}</Text>
+        <Text style={ui.caption}>
           {zman.method} · {zman.notificationLeadMinutes} min reminder
         </Text>
       </View>
-      <Text className="text-[17px] leading-[22px] font-semibold tracking-normal text-foreground min-w-[84px] text-right font-heading">
+      <Text
+        style={[
+          ui.itemTitle,
+          { textAlign: "right", fontVariant: ["tabular-nums"], flexShrink: 0 },
+        ]}
+      >
         {zman.time.toLocaleTimeString([], {
           hour: "numeric",
           minute: "2-digit",

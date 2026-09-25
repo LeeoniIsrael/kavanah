@@ -1,3 +1,4 @@
+import { useInterfaceStyles } from "@/design/layout";
 import { AnimatedHeaderSurface } from "@/components/organisms/animated-header-scrollview";
 import Animated from "react-native-reanimated";
 import { Button } from "@/components/ui/button";
@@ -55,6 +56,7 @@ const modes: { id: PrayerSharing; title: string; detail: string }[] = [
 export function CircleScreen(): React.JSX.Element {
   const colors = useThemeColors();
   const s = useThemedStyles(makes);
+  const ui = useInterfaceStyles();
 
   const router = useRouter();
   const posts = useSocialStore((s) => s.posts);
@@ -81,7 +83,7 @@ export function CircleScreen(): React.JSX.Element {
             data={posts}
             keyExtractor={(post) => post.id}
             renderItem={({ item }) => <ActivityCard post={item} />}
-            ItemSeparatorComponent={() => <View style={{ height: 14 }} />}
+            ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
             showsVerticalScrollIndicator={false}
             initialNumToRender={6}
             windowSize={5}
@@ -99,7 +101,7 @@ export function CircleScreen(): React.JSX.Element {
                       <Text style={s.heading}>
                         {profile?.displayName || "Your practice, your pace"}
                       </Text>
-                      <Text style={s.small}>
+                      <Text style={ui.caption}>
                         Your profile shares only what you choose.
                       </Text>
                     </View>
@@ -109,11 +111,11 @@ export function CircleScreen(): React.JSX.Element {
                     size="content"
                     accessibilityLabel="Choose automatic sharing"
                     onPress={() => setSettingsOpen(true)}
-                    style={s.settingsRow}
+                    style={[ui.surface, s.settingsRow]}
                   >
                     <View style={{ flex: 1, gap: 5 }}>
-                      <Text style={s.label}>Automatic updates</Text>
-                      <Text style={s.small}>
+                      <Text style={ui.itemTitle}>Automatic updates</Text>
+                      <Text style={ui.caption}>
                         {preferences.prayers === "off"
                           ? "Prayers stay private"
                           : preferences.prayers === "every"
@@ -125,14 +127,14 @@ export function CircleScreen(): React.JSX.Element {
                     <ChevronRight size={16} color={colors.inkMuted} />
                   </Button>
                 </View>
-                <View style={s.quoteCard}>
+                <View style={ui.feature}>
                   <View style={s.row}>
                     <Quote size={20} color={colors.blue} />
                     <Text style={s.quoteLabel}>Your quote of the week</Text>
                   </View>
                   <Text
                     style={[
-                      s.quoteTitle,
+                      ui.editorial,
                       weeklyQuote?.language === "he" && {
                         fontFamily: fonts.hebrew,
                         writingDirection: "rtl",
@@ -156,21 +158,21 @@ export function CircleScreen(): React.JSX.Element {
                     style={s.quoteAction}
                   >
                     <BookOpen size={16} color={colors.ink} />
-                    <Text style={s.label}>
+                    <Text style={ui.itemTitle}>
                       {weeklyQuote
                         ? "Choose a different quote"
                         : "Choose in prayer"}
                     </Text>
                     <ChevronRight size={16} color={colors.ink} />
                   </Button>
-                  <Text style={s.quoteFootnote}>
+                  <Text style={ui.caption}>
                     One quote each week. Replace it anytime. No caption.
                   </Text>
                 </View>
                 <View style={s.row}>
-                  <Text style={s.section}>Your activity</Text>
+                  <Text style={ui.sectionTitle}>Your activity</Text>
                   <View style={{ flex: 1 }} />
-                  <Text style={s.small}>
+                  <Text style={ui.caption}>
                     {posts.length
                       ? `${posts.length} update${posts.length === 1 ? "" : "s"}`
                       : "A fresh start"}
@@ -212,7 +214,7 @@ export function CircleScreen(): React.JSX.Element {
             ListFooterComponent={
               <View style={s.notice}>
                 <ShieldCheck size={16} color={colors.inkMuted} />
-                <Text style={[s.small, { flex: 1, lineHeight: 19 }]}>
+                <Text style={[ui.caption, { flex: 1, lineHeight: 19 }]}>
                   Only you can see this for now. Circle is not connected to
                   other accounts; these updates stay on this device.
                 </Text>
@@ -237,6 +239,7 @@ export function SharingSettings({
 }) {
   const colors = useThemeColors();
   const s = useThemedStyles(makes);
+  const ui = useInterfaceStyles();
 
   const preferences = useSocialStore((s) => s.preferences);
   const setPreferences = useSocialStore((s) => s.setPreferences);
@@ -297,8 +300,8 @@ export function SharingSettings({
                     ]}
                   >
                     <View style={{ flex: 1, gap: 6 }}>
-                      <Text style={s.label}>{mode.title}</Text>
-                      <Text style={s.small}>{mode.detail}</Text>
+                      <Text style={ui.itemTitle}>{mode.title}</Text>
+                      <Text style={ui.caption}>{mode.detail}</Text>
                     </View>
                     <View
                       style={[
@@ -320,7 +323,7 @@ export function SharingSettings({
             <View style={s.milestoneOption}>
               <View style={{ flex: 1, gap: 7 }}>
                 <Text style={s.heading}>Streak milestones</Text>
-                <Text style={s.small}>
+                <Text style={ui.caption}>
                   After your first prayer, share milestones at 3, 7, 18, 40, and
                   100 days.
                 </Text>
@@ -342,7 +345,7 @@ export function SharingSettings({
                 never posts your past activity.
               </Text>
             </View>
-            <Text style={s.small}>
+            <Text style={ui.caption}>
               Weekly quotes are always your choice. Select exact words in a
               prayer; captions and free-form posts are not part of Circle.
             </Text>
@@ -360,12 +363,13 @@ export function SharingSettings({
 const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
   const colors = useThemeColors();
   const s = useThemedStyles(makes);
+  const ui = useInterfaceStyles();
 
   const router = useRouter();
   const removePost = useSocialStore((s) => s.removePost);
   const quote = post.kind === "quote";
   return (
-    <View style={s.activity}>
+    <View style={ui.surface}>
       <View style={s.row}>
         <View style={s.activityIcon}>
           {quote ? (
@@ -377,14 +381,14 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
           )}
         </View>
         <View style={{ flex: 1, gap: 3 }}>
-          <Text style={s.label}>
+          <Text style={ui.itemTitle}>
             {quote
               ? "Quote of the week"
               : post.kind === "milestone"
                 ? `${post.streak} days of practice`
                 : post.practice}
           </Text>
-          <Text style={s.small}>
+          <Text style={ui.caption}>
             {new Date(post.createdAt).toLocaleDateString([], {
               month: "short",
               day: "numeric",
@@ -403,7 +407,7 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
         </Button>
       </View>
       {!quote && (
-        <Text style={[s.small, { color: colors.ink }]}>
+        <Text style={[ui.caption, { color: colors.ink }]}>
           {post.durationSeconds != null
             ? `Started ${new Date(post.startedAt!).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}  ·  ${formatDuration(post.durationSeconds)}`
             : `Completed ${new Date(post.createdAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · Duration not recorded`}
@@ -449,7 +453,7 @@ const makes = (colors: ThemeColors) =>
     row: { flexDirection: "row", alignItems: "center", gap: 12 },
     section: {
       fontFamily: fonts.semibold,
-      fontSize: 21,
+      fontSize: 20,
       lineHeight: 28,
       color: colors.ink,
     },
@@ -459,14 +463,7 @@ const makes = (colors: ThemeColors) =>
       lineHeight: 24,
       color: colors.ink,
     },
-    label: {
-      fontFamily: fonts.semibold,
-      fontSize: 14,
-      lineHeight: 20,
-      color: colors.ink,
-    },
     muted: { fontSize: 14, lineHeight: 22, color: colors.inkMuted },
-    small: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
     iconButton: {
       width: 44,
       minHeight: 44,
@@ -484,26 +481,11 @@ const makes = (colors: ThemeColors) =>
     },
     initial: { color: colors.ink, fontSize: 14, fontFamily: fonts.semibold },
     settingsRow: {
-      padding: 16,
-      backgroundColor: colors.vellum,
-      borderRadius: 18,
       flexDirection: "row",
       alignItems: "center",
       gap: 12,
     },
-    quoteCard: {
-      backgroundColor: colors.blueSoft,
-      borderRadius: 26,
-      padding: 22,
-      gap: 16,
-    },
     quoteLabel: { color: colors.blue, fontSize: 13, lineHeight: 20 },
-    quoteTitle: {
-      color: colors.ink,
-      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-      fontSize: 28,
-      lineHeight: 36,
-    },
     quoteDescription: { color: colors.inkMuted, fontSize: 14, lineHeight: 22 },
     quoteAction: {
       flexDirection: "row",
@@ -515,7 +497,6 @@ const makes = (colors: ThemeColors) =>
       borderRadius: 18,
       padding: 10,
     },
-    quoteFootnote: { color: colors.inkMuted, fontSize: 11, lineHeight: 17 },
     empty: {
       paddingVertical: 12,
       paddingHorizontal: 16,
@@ -534,7 +515,7 @@ const makes = (colors: ThemeColors) =>
       backgroundColor: colors.blue,
       borderRadius: 18,
       minHeight: 50,
-      paddingHorizontal: 18,
+      paddingHorizontal: 20,
       alignItems: "center",
       justifyContent: "center",
     },
@@ -586,12 +567,6 @@ const makes = (colors: ThemeColors) =>
       borderColor: colors.hairline,
     },
     rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
-    activity: {
-      padding: 18,
-      borderRadius: 26,
-      backgroundColor: colors.vellum,
-      gap: 14,
-    },
     activityIcon: {
       width: 36,
       height: 36,

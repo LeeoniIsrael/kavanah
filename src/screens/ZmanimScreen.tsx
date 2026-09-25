@@ -1,3 +1,4 @@
+import { useInterfaceStyles } from "@/design/layout";
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
@@ -18,6 +19,7 @@ import { useZmanimStore } from "@/store/zmanimStore";
 
 export function ZmanimScreen(): React.JSX.Element {
   const colors = useThemeColors();
+  const ui = useInterfaceStyles();
 
   const { location, zmanim, upcomingZmanim, isLoading, error, refresh } =
     useZmanimStore();
@@ -30,26 +32,26 @@ export function ZmanimScreen(): React.JSX.Element {
 
   return (
     <Screen largeTitle="Zmanim" subtitle="Local prayer times">
-      <Card className="relative overflow-hidden rounded-lg bg-blueSoft p-6 gap-3 border-[0px]">
+      <Card style={ui.feature}>
         {showInitialLoading ? (
           <ZmanimHeroSkeleton />
         ) : (
           <>
             <View className="flex-row items-center gap-2">
               <StatusPulse active={Boolean(nextZman)}>
-                <View className="w-2 h-2 rounded-full bg-white" />
+                <View className="w-2 h-2 rounded-full bg-primary" />
               </StatusPulse>
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkMuted font-label">
                 Next
               </Text>
             </View>
-            <Text variant="section" className="text-foreground">
+            <Text style={ui.editorial}>
               {nextZman?.title ?? "Calculating times"}
             </Text>
-            <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-foreground font-body">
+            <Text style={ui.time}>
               {nextZman ? formatTime(nextZman.time) : "--:--"}
             </Text>
-            <Text variant="body" className="text-inkMuted">
+            <Text style={ui.body}>
               {nextZman
                 ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}`
                 : (error ?? "Set location to calculate precise local zmanim.")}
@@ -58,7 +60,7 @@ export function ZmanimScreen(): React.JSX.Element {
         )}
       </Card>
 
-      <View className="z-20 min-h-[64px] rounded-lg bg-card px-4 py-3 flex-row items-center gap-3">
+      <View className="z-20 min-h-[76px] rounded-lg bg-card p-5 flex-row items-center gap-3">
         <GooeyInfoPopover
           accessibilityLabel="How Kavanah uses your location"
           title="Calculated here"
@@ -98,11 +100,18 @@ export function ZmanimScreen(): React.JSX.Element {
           <ZmanimListSkeleton />
         ) : zmanim.length > 0 ? (
           <>
-            <Text variant="caption" className="px-1 pt-3 pb-1">
+            <Text
+              variant="caption"
+              className="px-5 pt-5 pb-2 text-[13px] leading-[20px]"
+            >
               Today
             </Text>
-            {zmanim.map((zman) => (
-              <ZmanRow key={zman.key} zman={zman} />
+            {zmanim.map((zman, index) => (
+              <ZmanRow
+                key={zman.key}
+                zman={zman}
+                last={index === zmanim.length - 1}
+              />
             ))}
           </>
         ) : (
@@ -116,7 +125,7 @@ export function ZmanimScreen(): React.JSX.Element {
         )}
       </Card>
 
-      <View className="min-h-[58px] border-l-[2px] border-l-gold px-3 flex-row items-center gap-3">
+      <View className="min-h-[58px] flex-row items-start gap-3">
         <Bell size={20} color={colors.blue} />
         <Text variant="body" className="flex-1 text-[14px] leading-[20px]">
           Reminders stay on this device. Shabbat candle lighting appears on

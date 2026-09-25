@@ -1,7 +1,6 @@
-import { Badge } from "@/components/ui/badge";
+import { useInterfaceStyles } from "@/design/layout";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
-import { cn } from "@/lib/utils";
 import { View } from "react-native";
 
 import { Button } from "@/components/ui/button";
@@ -20,37 +19,28 @@ export function PrayerCard({
   onPress,
 }: Props): React.JSX.Element {
   const colors = useThemeColors();
+  const ui = useInterfaceStyles();
 
   return (
     <Button
       variant="ghost"
       size="content"
       onPress={onPress}
-      className={cn("rounded-lg bg-card p-5", selected && "bg-accent")}
+      style={[ui.surface, selected && { backgroundColor: colors.blueSoft }]}
     >
       <View className="flex-row items-center gap-3">
         <View className="flex-1 gap-2">
+          <Text style={ui.itemTitle}>{prayer.title}</Text>
+
           <View className="flex-row flex-wrap items-center gap-2">
-            <Text
-              variant="caption"
-              className="font-label text-muted-foreground"
-            >
+            <Text style={[ui.caption, { textTransform: "capitalize" }]}>
               {prayer.category}
             </Text>
-            <Badge variant="secondary">
-              <Text>{contentLabel(prayer.hebrewReview.contentKind)}</Text>
-            </Badge>
+            <Text style={ui.caption}>
+              · {contentLabel(prayer.hebrewReview.contentKind)}
+            </Text>
           </View>
-          <Text variant="section" className="text-[18px] leading-[23px]">
-            {prayer.title}
-          </Text>
-          <Text
-            variant="body"
-            numberOfLines={3}
-            className="font-body text-muted-foreground text-[14px] leading-[21px]"
-          >
-            {prayer.useCase || prayer.summary}
-          </Text>
+          <Text style={ui.body}>{prayer.useCase || prayer.summary}</Text>
         </View>
         <ChevronRight
           size={16}

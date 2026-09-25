@@ -1,3 +1,4 @@
+import { SectionHeading } from "@/components/ui/section-heading";
 import { QuoteSelector } from "@/components/QuoteSelector";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
@@ -479,110 +480,103 @@ export function PrayerScreen(): React.JSX.Element {
           </Button>
         </View>
 
-        <Animated.View
-          pointerEvents={showResults ? "none" : "auto"}
-          className="overflow-hidden"
-          style={[
-            {
-              opacity: bookmarkReveal,
-              maxHeight: bookmarkReveal.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, 320],
-              }),
-              marginBottom: bookmarkReveal.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, spacing.md],
-              }),
-              transform: [
-                {
-                  translateY: bookmarkReveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [-12, 0],
-                  }),
-                },
-              ],
-            },
-          ]}
-        >
-          <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
-            <View className="flex-row items-center justify-between gap-3">
-              <View>
-                <Text variant="caption">Bookmarked</Text>
-                <Text variant="section">Saved prayers</Text>
+        {!showResults && (
+          <Animated.View
+            pointerEvents="auto"
+            className="overflow-hidden"
+            style={[
+              {
+                opacity: bookmarkReveal,
+                maxHeight: bookmarkReveal.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, 320],
+                }),
+                marginBottom: bookmarkReveal.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, spacing.md],
+                }),
+                transform: [
+                  {
+                    translateY: bookmarkReveal.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [-12, 0],
+                    }),
+                  },
+                ],
+              },
+            ]}
+          >
+            <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
+              <View className="flex-row items-center justify-between gap-3">
+                <View>
+                  <Text variant="caption">Bookmarked</Text>
+                  <Text variant="section">Saved prayers</Text>
+                </View>
+                <BookmarkCheck size={20} color={colors.gold} />
               </View>
-              <BookmarkCheck size={20} color={colors.gold} />
-            </View>
-            <View className="gap-2">
-              {bookmarkedPrayers.length > 0 ? (
-                bookmarkedPrayers.map((prayer) => (
-                  <View
-                    key={prayer.id}
-                    className="rounded-md bg-card flex-row items-center overflow-hidden"
-                  >
-                    <View className="flex-1">
-                      <Button
-                        variant="ghost"
-                        size="content"
-                        accessibilityLabel={`Open ${prayer.title}`}
-                        accessibilityRole="button"
-                        onPress={() => void openPrayer(prayer.id)}
-                        className="px-4 py-4"
-                      >
-                        <Text
-                          variant="section"
-                          className="text-[16px] leading-[21px]"
+              <View className="gap-2">
+                {bookmarkedPrayers.length > 0 ? (
+                  bookmarkedPrayers.map((prayer) => (
+                    <View
+                      key={prayer.id}
+                      className="rounded-md bg-card flex-row items-center overflow-hidden"
+                    >
+                      <View className="flex-1">
+                        <Button
+                          variant="ghost"
+                          size="content"
+                          accessibilityLabel={`Open ${prayer.title}`}
+                          accessibilityRole="button"
+                          onPress={() => void openPrayer(prayer.id)}
+                          className="px-4 py-4"
                         >
-                          {prayer.title}
-                        </Text>
-                        <Text
-                          variant="body"
-                          numberOfLines={2}
-                          className="text-[12px] leading-[17px]"
+                          <Text
+                            variant="section"
+                            className="text-[16px] leading-[21px]"
+                          >
+                            {prayer.title}
+                          </Text>
+                          <Text
+                            variant="body"
+                            numberOfLines={2}
+                            className="text-[12px] leading-[17px]"
+                          >
+                            {prayer.useCase || prayer.category}
+                          </Text>
+                        </Button>
+                      </View>
+                      <View className="w-[52px] items-start">
+                        <Button
+                          variant="secondary"
+                          size="content"
+                          accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
+                          accessibilityRole="button"
+                          haptic="confirm"
+                          onPress={() => toggleBookmark(prayer.id)}
+                          pressedScale={0.96}
+                          className="w-11 h-11 rounded-full items-center justify-center bg-muted"
                         >
-                          {prayer.useCase || prayer.category}
-                        </Text>
-                      </Button>
+                          <BookmarkMinus size={20} color={colors.blue} />
+                        </Button>
+                      </View>
                     </View>
-                    <View className="w-[52px] items-start">
-                      <Button
-                        variant="secondary"
-                        size="content"
-                        accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
-                        accessibilityRole="button"
-                        haptic="confirm"
-                        onPress={() => toggleBookmark(prayer.id)}
-                        pressedScale={0.96}
-                        className="w-11 h-11 rounded-full items-center justify-center bg-muted"
-                      >
-                        <BookmarkMinus size={20} color={colors.blue} />
-                      </Button>
-                    </View>
-                  </View>
-                ))
-              ) : (
-                <Text variant="body">
-                  Tap the bookmark on any prayer to keep it here.
-                </Text>
-              )}
-            </View>
-          </Card>
-        </Animated.View>
+                  ))
+                ) : (
+                  <Text variant="body">
+                    Tap the bookmark on any prayer to keep it here.
+                  </Text>
+                )}
+              </View>
+            </Card>
+          </Animated.View>
+        )}
 
         {showResults ? (
           <View className="gap-3">
-            <View className="flex-row items-center justify-between">
-              <View className="flex-row items-center gap-2">
-                {isSearchingRemote ? (
-                  <CircleLoadingIndicator dotRadius={2} dotSpacing={3} />
-                ) : null}
-                <Text variant="caption">
-                  {isSearchingRemote ? "Searching Sefaria" : "Results"}
-                </Text>
-              </View>
-              <Text variant="body" className="text-[13px] leading-[18px]">
-                {visibleResults.length} found
-              </Text>
-            </View>
+            <SectionHeading
+              title={isSearchingRemote ? "Searching prayers" : "Results"}
+              detail={`${visibleResults.length} found`}
+            />
             {isSearchingRemote && visibleResults.length === 0 ? (
               <PrayerSearchSkeleton />
             ) : visibleResults.length > 0 ? (

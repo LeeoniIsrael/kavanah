@@ -1,3 +1,4 @@
+import { SectionHeading } from "@/components/ui/section-heading";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Card } from "@/components/ui/card";
 import { ChoiceRow } from "@/components/ui/choice-row";
@@ -151,8 +152,8 @@ export function ProfileScreen(): React.JSX.Element {
         "Make a profile, choose what people can see, and practice with your circle."
       }
     >
-      <View style={{ gap: 10 }}>
-        <Text variant="section">Appearance</Text>
+      <View style={{ gap: 12 }}>
+        <SectionHeading title="Appearance" />
         <View
           accessibilityRole="radiogroup"
           style={{
@@ -205,7 +206,7 @@ export function ProfileScreen(): React.JSX.Element {
         size="content"
         accessibilityRole="button"
         onPress={() => setActiveModal("social")}
-        className="min-h-[92px] p-4 rounded-lg bg-card flex-row items-center gap-4"
+        className="min-h-[92px] p-5 rounded-lg bg-card flex-row items-center gap-4"
       >
         <View className="w-14 h-14 rounded-full bg-blueSoft items-center justify-center">
           {profile ? (
@@ -220,7 +221,7 @@ export function ProfileScreen(): React.JSX.Element {
           <Text variant="section">
             {profile ? "Edit social profile" : "Create your profile"}
           </Text>
-          <Text variant="body" className="text-[13px] leading-[18px]">
+          <Text variant="body" className="text-[14px] leading-[22px]">
             {profile
               ? `${profile.handle} · ${profile.isPrivate ? "Private" : "Visible to your circle"}`
               : "Add a name, handle, bio, and privacy choice."}
@@ -229,7 +230,7 @@ export function ProfileScreen(): React.JSX.Element {
         <ChevronRight size={16} color={colors.inkMuted} />
       </Button>
 
-      <View className="z-20 min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-lg bg-card">
+      <View className="z-20 min-h-[94px] p-5 flex-row items-center gap-3 rounded-lg bg-card">
         <GooeyInfoPopover
           accessibilityLabel="What stays on this device"
           title="Local by default"
@@ -248,10 +249,10 @@ export function ProfileScreen(): React.JSX.Element {
           trigger={<ShieldCheck size={20} color={colors.ink} />}
         />
         <View className="flex-1 gap-[2px]">
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+          <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
             Local by default
           </Text>
-          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
+          <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-inkMuted font-label">
             Bookmarks, streaks, and location calculations stay on this device.
           </Text>
         </View>
@@ -263,31 +264,31 @@ export function ProfileScreen(): React.JSX.Element {
           size="content"
           accessibilityRole="button"
           onPress={() => setActiveModal("language")}
-          className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline"
+          className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline"
         >
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <Languages size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Primary language
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               {primaryLanguage.name} · {primaryLanguage.nativeName}
             </Text>
           </View>
           <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
 
-        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <Bell size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Zmanim reminders
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               {notificationMessage ||
                 "Alerts before selected local prayer times."}
             </Text>
@@ -299,15 +300,15 @@ export function ProfileScreen(): React.JSX.Element {
           />
         </View>
 
-        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <Navigation size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Travel prayer reminders
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               {travelNotificationMessage ||
                 "For long trips you start from Home or a phone automation. Maps routes stay private."}
             </Text>
@@ -321,15 +322,15 @@ export function ProfileScreen(): React.JSX.Element {
           />
         </View>
 
-        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <MoonStar size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Prayer Focus
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               Pause before each prayer so you can quiet the phone.
             </Text>
           </View>
@@ -345,15 +346,15 @@ export function ProfileScreen(): React.JSX.Element {
           />
         </View>
 
-        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <LockKeyhole size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Biometric lock
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               Lock Kavanah whenever the app leaves the foreground.
             </Text>
           </View>
@@ -367,15 +368,15 @@ export function ProfileScreen(): React.JSX.Element {
           />
         </View>
 
-        <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <MessageCircle size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Prayer assistant
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               Allow prayer questions to be processed by OpenAI through Kavanah.
             </Text>
           </View>
@@ -395,18 +396,18 @@ export function ProfileScreen(): React.JSX.Element {
           accessibilityRole="button"
           onPress={() => setActiveModal("privacy")}
           className={cn(
-            "min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline",
+            "min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline",
             "border-b-[0px]",
           )}
         >
-          <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <ShieldCheck size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Privacy and data use
             </Text>
-            <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
+            <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               What stays here and what leaves this device.
             </Text>
           </View>
@@ -414,7 +415,7 @@ export function ProfileScreen(): React.JSX.Element {
         </Button>
       </Card>
 
-      <Text variant="body" className="text-[12px] leading-[18px] px-1">
+      <Text variant="body" className="text-[13px] leading-[20px] px-1">
         Account sync is unavailable until secure server verification and
         complete account deletion are ready.
       </Text>
@@ -525,7 +526,7 @@ export function ProfileScreen(): React.JSX.Element {
                 onPress={() => void openFocusSetup()}
                 className="min-h-[50px] px-4 rounded-md flex-row items-center justify-center gap-2 bg-primary"
               >
-                <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
+                <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-primary-foreground font-heading">
                   {focusSetup.actionLabel}
                 </Text>
                 <ChevronRight size={16} color={colors.onAccent} />

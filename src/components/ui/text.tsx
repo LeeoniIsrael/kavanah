@@ -101,10 +101,15 @@ function Text({
   // retains stale line breaks and clips paragraphs in already-open sheets.
   const { fontScale } = useWindowDimensions();
   const Component = asChild ? Slot : RNText;
+  // Explicit semantic variants outrank inherited button typography.
   return (
     <Component
       key={fontScale}
-      className={cn(textVariants({ variant }), textClass, className)}
+      className={
+        variant === "default"
+          ? cn(textVariants({ variant }), textClass, className)
+          : cn(textClass, textVariants({ variant }), className)
+      }
       role={variant ? ROLE[variant] : undefined}
       aria-level={variant ? ARIA_LEVEL[variant] : undefined}
       {...props}

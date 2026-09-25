@@ -1,3 +1,4 @@
+import { useInterfaceStyles } from "@/design/layout";
 import { Screen } from "@/components/Screen";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
 import { Card } from "@/components/ui/card";
@@ -40,7 +41,6 @@ import {
   Animated,
   Easing,
   Modal,
-  Platform,
   Pressable,
   StyleSheet,
   View,
@@ -122,6 +122,7 @@ const shortcuts = [
 export function HomeScreen(): React.JSX.Element {
   const colors = useThemeColors();
   const homeStyles = useThemedStyles(makehomeStyles);
+  const ui = useInterfaceStyles();
 
   const router = useRouter();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } =
@@ -250,19 +251,19 @@ export function HomeScreen(): React.JSX.Element {
         </Button>
       }
     >
-      <View style={homeStyles.moment}>
+      <View style={ui.feature}>
         <View style={homeStyles.momentTop}>
           <Text style={homeStyles.momentLabel}>
             {nextZman ? `In ${timeUntil(nextZman.time)}` : "Prayer for today"}
           </Text>
         </View>
-        <Text variant="title" style={homeStyles.momentTitle}>
+        <Text variant="title" style={ui.editorial}>
           {nextZman ? nextZman.title : "A moment of intention."}
         </Text>
         {nextZman ? (
-          <Text style={homeStyles.time}>{formatTime(nextZman.time)}</Text>
+          <Text style={ui.time}>{formatTime(nextZman.time)}</Text>
         ) : null}
-        <Text style={homeStyles.momentDescription}>
+        <Text style={ui.body}>
           {nextZman
             ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
             : "Find your words. Begin where you are."}
@@ -272,7 +273,7 @@ export function HomeScreen(): React.JSX.Element {
           onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
           style={homeStyles.primaryAction}
           backgroundColor={colors.ink}
-          borderRadius={16}
+          borderRadius={18}
         >
           <BookOpen size={20} color={colors.onAccent} />
           <Text style={homeStyles.primaryLabel}>
@@ -323,7 +324,7 @@ export function HomeScreen(): React.JSX.Element {
             onPress={() => openPrayerSearch(query)}
             style={homeStyles.shortcut}
             backgroundColor={colors.vellum}
-            borderRadius={16}
+            borderRadius={18}
           >
             <Icon size={20} color={colors.inkMuted} />
             <Text style={homeStyles.shortcutLabel}>{label}</Text>
@@ -333,7 +334,7 @@ export function HomeScreen(): React.JSX.Element {
 
       <View className="gap-3">
         <View className="z-20 flex-row items-center justify-between">
-          <Text variant="section" className="text-[20px] leading-[26px]">
+          <Text accessibilityRole="header" style={ui.sectionTitle}>
             Daily practice
           </Text>
           <View className="flex-row items-center gap-2">
@@ -361,7 +362,7 @@ export function HomeScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => setPracticeEditorOpen(true)}
               pressedScale={0.96}
-              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
+              className="w-11 h-11 rounded-md items-center justify-center bg-card"
             >
               <SlidersHorizontal size={16} color={colors.ink} />
             </Button>
@@ -395,12 +396,12 @@ export function HomeScreen(): React.JSX.Element {
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
-                    "min-h-[72px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    "min-h-[76px] rounded-none px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
                     index === activeHabits.length - 1 && "border-b-0",
                   )}
                 >
                   <View className="flex-1 gap-1">
-                    <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                    <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
                       {details.name}
                     </Text>
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
@@ -421,7 +422,7 @@ export function HomeScreen(): React.JSX.Element {
         ) : (
           <View className="min-h-[92px] px-4 py-3 flex-row items-center gap-4 border-t border-b border-hairline">
             <View className="flex-1 gap-[2px]">
-              <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
                 Nothing to keep up with
               </Text>
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
@@ -452,7 +453,7 @@ export function HomeScreen(): React.JSX.Element {
         >
           <ChartColumn size={20} color={colors.blue} />
           <View className="flex-1">
-            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
               Your practice
             </Text>
             <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
@@ -497,7 +498,7 @@ export function HomeScreen(): React.JSX.Element {
           <NavigationIcon size={20} color={colors.onAccent} />
         </View>
         <View className="flex-1 gap-[2px]">
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+          <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
             Long trip?
           </Text>
           <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
@@ -655,7 +656,7 @@ export function HomeScreen(): React.JSX.Element {
                       )}
                     >
                       <View className="flex-1">
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                        <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
                           {details.name}
                         </Text>
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
@@ -967,7 +968,7 @@ function PracticeSharePrompt({
           <Share2 size={16} color={colors.blue} />
         </View>
         <View className="flex-1 gap-[1px]">
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+          <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
             Share this moment
           </Text>
           <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
@@ -999,7 +1000,7 @@ function PracticeStatRow({
       <Text className="text-[16px] leading-[22px] font-normal tracking-normal text-foreground font-body">
         {label}
       </Text>
-      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+      <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
         {value}
       </Text>
     </View>
@@ -1076,12 +1077,6 @@ const makehomeStyles = (colors: ThemeColors) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    moment: {
-      padding: 24,
-      borderRadius: 24,
-      backgroundColor: colors.blueSoft,
-      gap: 14,
-    },
     momentTop: {
       flexDirection: "row",
       alignItems: "center",
@@ -1094,21 +1089,6 @@ const makehomeStyles = (colors: ThemeColors) =>
       color: colors.inkMuted,
       flex: 1,
     },
-    momentTitle: {
-      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-      fontSize: 32,
-      lineHeight: 38,
-      letterSpacing: -0.7,
-      color: colors.ink,
-    },
-    time: {
-      fontSize: 42,
-      lineHeight: 50,
-      letterSpacing: -1.5,
-      color: colors.ink,
-      fontVariant: ["tabular-nums"],
-    },
-    momentDescription: { fontSize: 15, lineHeight: 23, color: colors.inkMuted },
     primaryAction: {
       minHeight: 52,
       paddingHorizontal: 16,
