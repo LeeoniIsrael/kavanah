@@ -15,9 +15,7 @@ export function ZmanRow({
     <View style={[ui.row, !last && ui.separator]}>
       <View style={{ flex: 1, gap: 4 }}>
         <Text style={ui.itemTitle}>{zman.title}</Text>
-        <Text style={ui.caption}>
-          {zman.method} · {zman.notificationLeadMinutes} min reminder
-        </Text>
+        <Text style={ui.caption}>{zman.method}</Text>
       </View>
       <Text
         style={[

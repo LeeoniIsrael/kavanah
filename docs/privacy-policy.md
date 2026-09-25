@@ -45,3 +45,7 @@ Kavanah is not directed to children under 13 and does not knowingly collect pers
 ## Changes and contact
 
 Material changes will be reflected in this policy and, when necessary, presented in the app for renewed consent. Privacy questions and deletion concerns can be submitted through the [Kavanah support page](https://github.com/LeeoniIsrael/kavanah/issues).
+
+## Local reminders and preparation lists
+
+Notification choices, a saved location for calculating times, and holiday checklist completion are stored on your device. Kavanah schedules these reminders locally and does not upload this information to a notification service. You can disable reminders or change their categories, times, quiet hours, and sound in Profile → Notifications. Changing or disabling a reminder reconciles its pending local alerts. Update the saved location when traveling, and open Kavanah regularly to renew the finite local schedule. System notification and Focus settings control delivery. An explicitly requested test notification is separate from automatic reminders.

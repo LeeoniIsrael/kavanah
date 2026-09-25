@@ -1,3 +1,4 @@
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 
 import { findLanguage } from "@/data/languages";
@@ -39,9 +40,12 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   zmanNotificationsEnabled: initialZmanNotificationsEnabled,
   prayerFocusEnabled: initialPrayerFocusEnabled,
   calendarInIsrael:
-    userStorage.getString("settings.calendar-israel") === "true",
+    readSocialData(
+      "settings.calendar-israel",
+      (v): v is boolean => typeof v === "boolean",
+    ) ?? userStorage.getString("settings.calendar-israel") === "true",
   setCalendarInIsrael: (value) => {
-    userStorage.set("settings.calendar-israel", String(value));
+    writeSocialData("settings.calendar-israel", value);
     set({ calendarInIsrael: value });
   },
   setPrimaryLanguageCode: (code) => {

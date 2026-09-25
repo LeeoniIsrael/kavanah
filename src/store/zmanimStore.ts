@@ -1,9 +1,7 @@
 import { create } from "zustand";
 
 import { requestZmanimLocation } from "@/services/location";
-import { scheduleZmanNotifications } from "@/services/notifications";
 import { calculateZmanimRange } from "@/services/zmanimService";
-import { useSettingsStore } from "@/store/settingsStore";
 import type { GeoPoint, Zman } from "@/types/zmanim";
 
 type ZmanimState = {
@@ -28,18 +26,24 @@ export const useZmanimStore = create<ZmanimState>((set) => ({
       const now = new Date();
       const schedule = await calculateZmanimRange(location, now, 7);
       const dateKey = toDateKey(now);
-      const zmanim = schedule.filter((zman) => toDateKey(zman.time) === dateKey);
-      const upcomingZmanim = schedule.filter((zman) => zman.time.getTime() > now.getTime());
-      if (useSettingsStore.getState().zmanNotificationsEnabled) {
-        await scheduleZmanNotifications(schedule);
-      }
+      const zmanim = schedule.filter(
+        (zman) => toDateKey(zman.time) === dateKey,
+      );
+      const upcomingZmanim = schedule.filter(
+        (zman) => zman.time.getTime() > now.getTime(),
+      );
       set({ location, zmanim, upcomingZmanim });
     } catch (error) {
-      set({ error: error instanceof Error ? error.message : "Local times could not be calculated right now." });
+      set({
+        error:
+          error instanceof Error
+            ? error.message
+            : "Local times could not be calculated right now.",
+      });
     } finally {
       set({ isLoading: false });
     }
-  }
+  },
 }));
 
 function toDateKey(date: Date): string {

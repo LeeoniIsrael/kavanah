@@ -118,3 +118,11 @@ Verified both selected subtab states and the legacy `/people` redirect in native
 ### Zmanim calendar
 
 Zmanim uses Times / Calendar subtabs with the same segmented control treatment as Circle. Times retains today's local calculations and reminders. Calendar is an offline Gregorian month grid with Hebrew date details, holidays/fasts, Rosh Chodesh, modern Israeli observances, Shabbat readings and Omer counts from the existing kosher-zmanim library. Holiday dots are accompanied by accessible event labels and a textual monthly agenda. Previous/next month and Today provide navigation; adjacent-month days are selectable. Israel/diaspora observance is an explicit persisted preference (diaspora by default), independent of device location. Civil dates represent the daytime Hebrew date; the UI explains the previous-evening boundary and varying fast start times. Calendar browsing does not schedule notifications. Holiday candle-lighting/end times are not supplied by this calendar.
+
+### Personal reminders
+
+Profile → Notifications and the bell in Zmanim lead to one settings screen. All new categories default off; choices can be saved before enabling delivery. Morning, Daily prayers, and Holidays presets select categories without requesting permissions. Enabled categories reveal their time/day or advance-notice controls. Clock fields use explicit 24-hour labels and validation; deadline offsets accept 0–120 minutes, holiday notice 0–14 days. Switches, icon buttons, surfaces, typography, haptics, and motion reuse the shared system.
+
+Notifications use short, neutral wording without streak pressure or captions. Sound is off by default. Quiet hours skip notifications instead of postponing time-sensitive alerts. Shabbat/major-holiday quiet runs from sunset until 8.5° nightfall. Tefillin always excludes Shabbat/major holidays and non-daylight clock times; Chol HaMoed exclusion is configurable. A user's fixed prayer times remain their choice. Astronomical alerts skip unavailable calculations rather than substitute estimated times.
+
+Holiday preparation opens an occurrence-specific, locally saved checklist; completed lists suppress their preparation reminder. It is a personal planning aid, not a complete halachic guide. The calendar links festival starts to their checklists. Notification taps open only allowlisted in-app routes.

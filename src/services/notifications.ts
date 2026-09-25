@@ -11,8 +11,8 @@ export const TRAVEL_PRAYER_URL =
   "kavanah://prayer?query=travel&prayerId=tefilat-haderech";
 
 Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldPlaySound: false,
+  handleNotification: async (notification) => ({
+    shouldPlaySound: Boolean(notification.request.content.sound),
     shouldSetBadge: false,
     shouldShowBanner: true,
     shouldShowList: true,
@@ -98,6 +98,20 @@ export function getNotificationNavigationUrl(
 ): string | null {
   const type = response.notification.request.content.data?.type;
   const action = response.actionIdentifier;
+  if (
+    type === "practice-reminder" &&
+    action === Notifications.DEFAULT_ACTION_IDENTIFIER
+  ) {
+    const url = response.notification.request.content.data?.url;
+    if (
+      typeof url === "string" &&
+      /^kavanah:\/\/(?:prayer|zmanim|holiday-checklist|notifications)(?:\?|$)/.test(
+        url,
+      )
+    )
+      return url;
+    return null;
+  }
   if (
     type !== "travel-prayer" ||
     (action !== Notifications.DEFAULT_ACTION_IDENTIFIER &&

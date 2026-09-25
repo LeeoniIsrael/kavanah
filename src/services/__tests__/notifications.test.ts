@@ -120,6 +120,23 @@ describe("notifications", () => {
     ).toBe(TRAVEL_PRAYER_URL);
   });
 
+  it("opens only internal reminder destinations", () => {
+    const response = notificationResponse(
+      "expo.modules.notifications.actions.DEFAULT",
+      "practice-reminder",
+    );
+    response.notification.request.content.data!.url =
+      "kavanah://holiday-checklist?date=2026-09-26";
+    expect(getNotificationNavigationUrl(response)).toBe(
+      "kavanah://holiday-checklist?date=2026-09-26",
+    );
+    response.notification.request.content.data!.url = "https://outside.example";
+    expect(getNotificationNavigationUrl(response)).toBeNull();
+    response.notification.request.content.data!.url = "kavanah://notifications";
+    response.actionIdentifier = "NOT_NOW";
+    expect(getNotificationNavigationUrl(response)).toBeNull();
+  });
+
   it("keeps Not now dismissive and ignores unrelated notifications", () => {
     expect(
       getNotificationNavigationUrl(notificationResponse("NOT_NOW")),

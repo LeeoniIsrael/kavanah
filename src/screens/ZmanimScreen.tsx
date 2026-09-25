@@ -36,7 +36,20 @@ export function ZmanimScreen(): React.JSX.Element {
   }, [refresh]);
 
   return (
-    <Screen largeTitle="Zmanim" subtitle="Prayer times & Jewish calendar">
+    <Screen
+      largeTitle="Zmanim"
+      subtitle="Prayer times & Jewish calendar"
+      rightComponent={
+        <Button
+          variant="ghost"
+          size="icon"
+          accessibilityLabel="Customize reminders"
+          onPress={() => router.push("/notifications")}
+        >
+          <Bell size={20} color={colors.blue} />
+        </Button>
+      }
+    >
       <View
         accessibilityRole="tablist"
         style={{

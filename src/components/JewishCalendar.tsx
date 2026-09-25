@@ -1,3 +1,5 @@
+import { useRouter } from "expo-router";
+import { holidayOn } from "@/services/reminderPlan";
 import { useMemo, useState } from "react";
 import { ScrollView, Switch, View, useWindowDimensions } from "react-native";
 import { addMonths, format, isSameMonth, startOfMonth } from "date-fns";
@@ -12,6 +14,7 @@ import { calendarDayKey, calendarWeeks } from "@/services/activityCalendar";
 import { jewishCalendarDay } from "@/services/jewishCalendar";
 
 export function JewishCalendarView() {
+  const router = useRouter();
   const colors = useThemeColors(),
     ui = useInterfaceStyles(),
     now = useCurrentDate();
@@ -198,6 +201,16 @@ export function JewishCalendarView() {
           daytime; fast start times vary.
         </Text>
       </View>
+      {holidayOn(selected, inIsrael)?.kind === "festival" ? (
+        <Button
+          variant="secondary"
+          onPress={() =>
+            router.push(`/holiday-checklist?date=${calendarDayKey(selected)}`)
+          }
+        >
+          <Text>Prepare for this holiday</Text>
+        </Button>
+      ) : null}
       <View style={ui.surface}>
         <Text accessibilityRole="header" style={ui.sectionTitle}>
           This month

@@ -1,3 +1,4 @@
+import { startReminderScheduling } from "@/services/reminderScheduler";
 import { startCircleAccount } from "@/store/circleAccountStore";
 import { circleClient } from "@/services/network/client";
 import { flushCircle } from "@/services/network/outbox";
@@ -16,6 +17,7 @@ export function AppProviders({
   children,
 }: PropsWithChildren): React.JSX.Element {
   const colors = useThemeColors();
+  useEffect(() => startReminderScheduling(), []);
   useEffect(() => {
     const stop = startCircleAccount();
     const subscription = AppState.addEventListener("change", (state) => {

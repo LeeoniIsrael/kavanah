@@ -34,10 +34,6 @@ import { findLanguage, languageOptions } from "@/data/languages";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
 import {
-  initializeNotifications,
-  scheduleZmanNotifications,
-} from "@/services/notifications";
-import {
   getPrayerFocusSetup,
   openPrayerFocusSetup,
 } from "@/services/prayerFocus";
@@ -46,7 +42,6 @@ import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
   useSettingsStore,
 } from "@/store/settingsStore";
-import { useZmanimStore } from "@/store/zmanimStore";
 
 type ProfileModal = "focus" | "language" | "privacy" | null;
 
@@ -61,15 +56,12 @@ export function ProfileScreen(): React.JSX.Element {
   const {
     primaryLanguageCode,
     assistantConsentVersion,
-    zmanNotificationsEnabled,
     prayerFocusEnabled,
     setPrimaryLanguageCode,
     setAssistantConsent,
-    setZmanNotificationsEnabled,
     setPrayerFocusEnabled,
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
-  const [notificationMessage, setNotificationMessage] = useState("");
   const [focusSetupMessage, setFocusSetupMessage] = useState("");
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
@@ -84,32 +76,6 @@ export function ProfileScreen(): React.JSX.Element {
         ? "Finish the setup there, then return to Kavanah."
         : "Open your device settings and choose Focus or Do Not Disturb.",
     );
-  };
-
-  const changeNotifications = async (enabled: boolean) => {
-    void confirmHaptic();
-    if (!enabled) {
-      setZmanNotificationsEnabled(false);
-      setNotificationMessage("");
-      return;
-    }
-    setZmanNotificationsEnabled(true);
-    setNotificationMessage("Turning on local reminders…");
-    const granted = await initializeNotifications();
-    setZmanNotificationsEnabled(granted);
-    setNotificationMessage(
-      granted
-        ? "Reminders will follow your calculated local times."
-        : "Notifications are disabled in device settings.",
-    );
-    if (granted) {
-      const { upcomingZmanim, refresh } = useZmanimStore.getState();
-      if (upcomingZmanim.length > 0) {
-        await scheduleZmanNotifications(upcomingZmanim);
-      } else {
-        await refresh();
-      }
-    }
   };
 
   return (
@@ -245,25 +211,24 @@ export function ProfileScreen(): React.JSX.Element {
           <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
 
-        <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+        <Button
+          variant="ghost"
+          onPress={() => router.push("/notifications")}
+          className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline"
+        >
           <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
             <Bell size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
-              Zmanim reminders
+              Notifications
             </Text>
             <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
-              {notificationMessage ||
-                "Alerts before selected local prayer times."}
+              Prayer, tefillin and holiday reminders.
             </Text>
           </View>
-          <Switch
-            accessibilityLabel="Zmanim reminders"
-            checked={zmanNotificationsEnabled}
-            onCheckedChange={(enabled) => void changeNotifications(enabled)}
-          />
-        </View>
+          <ChevronRight size={16} color={colors.inkMuted} />
+        </Button>
 
         <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
