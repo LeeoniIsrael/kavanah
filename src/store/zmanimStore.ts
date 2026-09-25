@@ -33,12 +33,10 @@ export const useZmanimStore = create<ZmanimState>((set) => ({
         (zman) => zman.time.getTime() > now.getTime(),
       );
       set({ location, zmanim, upcomingZmanim });
-    } catch (error) {
+    } catch {
       set({
         error:
-          error instanceof Error
-            ? error.message
-            : "Local times could not be calculated right now.",
+          "Couldn’t get local prayer times. Check location access in Settings, then tap Update.",
       });
     } finally {
       set({ isLoading: false });

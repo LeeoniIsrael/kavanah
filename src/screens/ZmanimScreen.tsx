@@ -1,3 +1,4 @@
+import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
@@ -40,8 +41,8 @@ export function ZmanimScreen(): React.JSX.Element {
 
   return (
     <Screen
-      largeTitle="Zmanim"
-      subtitle="Prayer times & Jewish calendar"
+      largeTitle="Prayer times"
+      subtitle="Zmanim · Times for prayer and observance"
       rightComponent={
         <Button
           variant="ghost"
@@ -117,8 +118,17 @@ export function ZmanimScreen(): React.JSX.Element {
                   </Text>
                 </View>
                 <Text style={ui.editorial}>
-                  {nextZman?.title ?? "Calculating times"}
+                  {nextZman
+                    ? zmanimGuide[nextZman.key].title
+                    : error
+                      ? "Location needed"
+                      : "Calculating times"}
                 </Text>
+                {nextZman ? (
+                  <Text style={ui.body}>
+                    {zmanimGuide[nextZman.key].summary}
+                  </Text>
+                ) : null}
                 <Text style={ui.time}>
                   {nextZman ? formatTime(nextZman.time) : "--:--"}
                 </Text>
@@ -167,6 +177,9 @@ export function ZmanimScreen(): React.JSX.Element {
             </Button>
           </View>
 
+          <Text style={ui.body}>
+            Plain-English names first. Tap a time to learn what it means.
+          </Text>
           <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
             {showInitialLoading ? (
               <ZmanimListSkeleton />

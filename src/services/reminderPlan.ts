@@ -39,10 +39,26 @@ export const prayerReminders = [
 ] as const;
 export type PrayerReminderId = (typeof prayerReminders)[number]["id"];
 export const timedReminders = [
-  { id: "shema", title: "Latest Shema", method: "GRA deadline" },
-  { id: "tefilah", title: "Latest morning prayer", method: "GRA deadline" },
-  { id: "mincha", title: "Mincha opens", method: "Mincha Gedolah · GRA" },
-  { id: "maariv", title: "Nightfall", method: "8.5° below the horizon" },
+  {
+    id: "shema",
+    title: "Morning Shema deadline",
+    method: "Morning declaration of faith · Sunrise-to-sunset calculation",
+  },
+  {
+    id: "tefilah",
+    title: "Morning prayer deadline",
+    method: "Morning Amidah (standing prayer) · Sunrise-to-sunset calculation",
+  },
+  {
+    id: "mincha",
+    title: "Afternoon prayer begins",
+    method: "Earliest Mincha · Opens after midday",
+  },
+  {
+    id: "maariv",
+    title: "Nightfall",
+    method: "After sunset, when evening prayer can begin · 8.5° calculation",
+  },
   {
     id: "candles",
     title: "Shabbat candle lighting",

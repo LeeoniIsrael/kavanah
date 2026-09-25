@@ -37,7 +37,7 @@ export default function TabsLayout(): React.JSX.Element {
           sf={{ default: "calendar", selected: "calendar" }}
           md={{ default: "calendar_today", selected: "calendar_month" }}
         />
-        <NativeTabs.Trigger.Label>Zmanim</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>Times</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="circle">
         <NativeTabs.Trigger.Icon

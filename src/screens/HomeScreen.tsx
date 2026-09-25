@@ -1,3 +1,4 @@
+import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Screen } from "@/components/Screen";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
@@ -84,20 +85,24 @@ const prayerMomentByZman: Partial<
 > = {
   alotHashachar: { query: "modeh ani", label: "Begin", helper: "Modeh Ani" },
   sunrise: { query: "shacharit", label: "Morning prayer", helper: "Shacharit" },
-  latestShema: { query: "shema", label: "Say Shema", helper: "Latest Shema" },
+  latestShema: {
+    query: "shema",
+    label: "Say Shema",
+    helper: "Morning Shema deadline",
+  },
   latestTefilah: {
     query: "shacharit",
-    label: "Open Shacharit",
-    helper: "Latest Tefilah",
+    label: "Morning prayer",
+    helper: "Morning prayer deadline",
   },
   minchaGedolah: {
     query: "mincha",
-    label: "Open Mincha",
+    label: "Afternoon prayer",
     helper: "Afternoon prayer",
   },
   minchaKetana: {
     query: "mincha",
-    label: "Open Mincha",
+    label: "Afternoon prayer",
     helper: "Preferred window",
   },
   sunset: { query: "maariv", label: "Evening prayer", helper: "Maariv" },
@@ -143,8 +148,8 @@ export function HomeScreen(): React.JSX.Element {
   );
   const nextMoment = nextZman
     ? (prayerMomentByZman[nextZman.key] ?? {
-        query: nextZman.title,
-        label: nextZman.title,
+        query: zmanimGuide[nextZman.key].title,
+        label: zmanimGuide[nextZman.key].title,
         helper: "Next moment",
       })
     : null;
@@ -213,7 +218,9 @@ export function HomeScreen(): React.JSX.Element {
           </Text>
         </View>
         <Text variant="title" style={ui.editorial}>
-          {nextZman ? nextZman.title : "A moment of intention."}
+          {nextZman
+            ? zmanimGuide[nextZman.key].title
+            : "A moment of intention."}
         </Text>
         {nextZman ? (
           <Text style={ui.time}>{formatTime(nextZman.time)}</Text>
