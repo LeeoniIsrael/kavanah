@@ -146,3 +146,11 @@ The existing source-backed reader loads licensed sections on demand. This is a l
 Prayer-history cards use one uninterrupted leading text column: title, date, then timing. Every card uses the shared 20-point surface inset, 6-point internal text gaps, and the list's 12-point spacing. A single 16-point trailing chevron indicates that the whole card opens a known prayer; non-navigable check-ins have no false affordance. Avoid icon-led titles with independently aligned footers or redundant Read prayer buttons.
 
 Calendar details, history and connected prayer posts share ActivityTiming. Start time is shown when recorded; legacy completions retain their actual completion time. Missing durations are omitted rather than rendered as repeated failure text. Metadata wraps at large text sizes; durations use tabular figures and a shared trailing alignment. No stored timing or activity was changed. Native scrolled history with existing data was inspected; typecheck, targeted lint and six activity-calendar tests passed. Temporary preview scroll positioning was removed.
+
+### Guided reader
+
+Guided reading uses the resolved parchment surface, never a full-screen accent fill. Hebrew is regular-weight 30/49 in the shared Hebrew font with right-to-left alignment. Pronunciation uses 18/29 primary ink on the neutral surface; meaning uses 17/28 primary ink on parchment. One 24-point outer inset and 28-point section rhythm organize the reading column. Labels describe content directly: Pronunciation and Meaning.
+
+The fixed header and footer sit outside a flexing ScrollView so long passages and Dynamic Type can scroll without being obscured by Finish. Every passage change resets scroll position. A single passage omits redundant progress chrome and the disabled previous control. Multi-passage prayers use a constant-size progress track and passage count. Reduced Motion removes the transition; ordinary passage changes use a short fade without translation. Close, quote selection and completion callbacks remain unchanged.
+
+Modeh Ani was inspected in the native iPhone 17 Pro preview in both light and dark modes. Hebrew, pronunciation, meaning and the footer remained readable. Existing four theme contrast tests, typecheck and targeted lint passed. Temporary appearance/auto-open overrides were removed; saved appearance and prayer text were not changed.

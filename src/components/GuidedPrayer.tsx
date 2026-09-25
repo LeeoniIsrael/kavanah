@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from "react";
+import { Animated, Easing, ScrollView, StyleSheet, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/text";
-import { useThemeColors } from "@/design/appearance";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Check,
   ChevronLeft,
@@ -8,12 +10,8 @@ import {
   Quote,
   X,
 } from "@/components/ui/icons";
-import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, ScrollView, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-
-import { Button } from "@/components/ui/button";
-import { motion } from "@/design/theme";
+import { useThemeColors } from "@/design/appearance";
+import { fonts, motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export type GuidedPrayerToken = {
@@ -22,7 +20,6 @@ export type GuidedPrayerToken = {
   transliteration: string;
   translation: string;
 };
-
 type Props = {
   prayerTitle: string;
   tokens: GuidedPrayerToken[];
@@ -31,7 +28,6 @@ type Props = {
   onComplete: () => void;
   onQuote: (token: GuidedPrayerToken) => void;
 };
-
 export function GuidedPrayer({
   prayerTitle,
   tokens,
@@ -40,151 +36,178 @@ export function GuidedPrayer({
   onComplete,
   onQuote,
 }: Props): React.JSX.Element | null {
-  const colors = useThemeColors();
-
-  const insets = useSafeAreaInsets();
+  const colors = useThemeColors(),
+    insets = useSafeAreaInsets();
   const [index, setIndex] = useState(0);
-  const reveal = useRef(new Animated.Value(1)).current;
+  const [reveal] = useState(() => new Animated.Value(1));
+  const scroll = useRef<ScrollView>(null);
   const reduceMotion = useReducedMotion();
   const safeIndex = Math.min(index, Math.max(tokens.length - 1, 0));
-  const token = tokens[safeIndex];
-  const isFirst = safeIndex === 0;
-  const isLast = safeIndex === tokens.length - 1;
-
+  const token = tokens[safeIndex],
+    isLast = safeIndex === tokens.length - 1;
   useEffect(() => {
+    // A newly opened prayer always starts at its first source passage.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (visible) setIndex(0);
   }, [prayerTitle, visible]);
-
   useEffect(() => {
+    scroll.current?.scrollTo({ y: 0, animated: false });
     reveal.setValue(reduceMotion ? 1 : 0);
-    Animated.timing(reveal, {
+    const animation = Animated.timing(reveal, {
       toValue: 1,
       duration: reduceMotion ? 0 : motion.stateMs,
       easing: Easing.bezier(...motion.standard),
       useNativeDriver: true,
-    }).start();
-  }, [reduceMotion, reveal, safeIndex]);
-
+    });
+    animation.start();
+    return () => animation.stop();
+  }, [reduceMotion, reveal, safeIndex, visible]);
   if (!visible || !token) return null;
-
-  const goBack = () => setIndex((current) => Math.max(current - 1, 0));
-  const goForward = () => {
-    if (isLast) {
-      onComplete();
-      return;
-    }
-    setIndex((current) => Math.min(current + 1, tokens.length - 1));
-  };
-
   return (
     <View
-      style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       accessibilityViewIsModal
-      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-background"
+      style={[
+        StyleSheet.absoluteFill,
+        {
+          zIndex: 40,
+          paddingTop: insets.top,
+          backgroundColor: colors.parchment,
+        },
+      ]}
     >
-      <View className="min-h-[76px] px-6 flex-row items-center gap-3">
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 12,
+          paddingHorizontal: 24,
+          paddingVertical: 12,
+        }}
+      >
         <Button
           variant="ghost"
-          size="content"
+          size="icon"
           accessibilityLabel="Close guided reading"
-          accessibilityRole="button"
-          haptic="selection"
           onPress={onClose}
-          pressedScale={0.96}
-          className="w-11 h-11 rounded-md items-center justify-center border border-hairlineStrong bg-mineral"
         >
           <X size={20} color={colors.ink} />
         </Button>
-        <View className="flex-1 items-center gap-0.5">
-          <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
+        <View style={{ flex: 1, alignItems: "center", gap: 3 }}>
+          <Text variant="caption" style={{ color: colors.inkMuted }}>
             Guided reading
           </Text>
           <Text
-            numberOfLines={1}
-            className="text-[14px] leading-[18px] font-semibold max-w-full text-foreground font-heading"
+            style={{
+              fontFamily: fonts.semibold,
+              fontSize: 17,
+              lineHeight: 24,
+              textAlign: "center",
+              color: colors.ink,
+            }}
           >
             {prayerTitle}
           </Text>
         </View>
-        <View className="w-11" />
+        <View style={{ width: 44 }} />
       </View>
-
-      <View
-        accessibilityLabel={`${Math.round(((safeIndex + 1) / tokens.length) * 100)} percent complete`}
-        accessibilityRole="progressbar"
-        className="mx-6 flex-row gap-1.5"
-      >
-        {tokens.map((item, itemIndex) => (
+      {tokens.length > 1 ? (
+        <View style={{ paddingHorizontal: 24, paddingBottom: 12, gap: 8 }}>
+          <Text variant="caption" style={{ color: colors.inkMuted }}>
+            Passage {safeIndex + 1} of {tokens.length}
+          </Text>
           <View
-            key={item.id}
-            className={cn(
-              "h-[3px] flex-1 rounded-full",
-              itemIndex <= safeIndex ? "bg-primary" : "bg-mineral",
-            )}
-          />
-        ))}
-      </View>
-
+            accessibilityRole="progressbar"
+            accessibilityValue={{
+              min: 1,
+              max: tokens.length,
+              now: safeIndex + 1,
+            }}
+            accessibilityLabel="Reading position"
+            style={{
+              height: 3,
+              borderRadius: 2,
+              backgroundColor: colors.mineral,
+            }}
+          >
+            <View
+              style={{
+                height: 3,
+                borderRadius: 2,
+                width: `${((safeIndex + 1) / tokens.length) * 100}%`,
+                backgroundColor: colors.blue,
+              }}
+            />
+          </View>
+        </View>
+      ) : null}
       <ScrollView
-        contentContainerClassName="grow justify-center px-6 py-10"
-        showsVerticalScrollIndicator={false}
+        ref={scroll}
+        style={{ flex: 1 }}
+        contentContainerStyle={{
+          paddingHorizontal: 24,
+          paddingTop: 24,
+          paddingBottom: 28,
+        }}
+        showsVerticalScrollIndicator
       >
         <Animated.View
+          style={{ opacity: reveal, gap: 28 }}
           accessibilityLiveRegion="polite"
-          className="gap-8"
-          style={[
-            {
-              opacity: reveal,
-              transform: [
-                {
-                  translateY: reveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [8, 0],
-                  }),
-                },
-              ],
-            },
-          ]}
         >
           {token.hebrew ? (
-            <View className="items-center gap-3">
-              <View className="self-center rounded-full border border-hairlineStrong px-3 py-1">
-                <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
-                  Line {safeIndex + 1} of {tokens.length}
-                </Text>
-              </View>
-              <Text
-                selectable
-                className="font-hebrew-heading font-semibold text-center text-[38px] leading-[58px] text-foreground"
-                style={styles.hebrew}
-              >
-                {token.hebrew}
-              </Text>
-            </View>
+            <Text
+              selectable
+              style={{
+                fontFamily: fonts.hebrew,
+                fontSize: 30,
+                lineHeight: 49,
+                fontWeight: "400",
+                writingDirection: "rtl",
+                textAlign: "right",
+                color: colors.ink,
+              }}
+            >
+              {token.hebrew}
+            </Text>
           ) : null}
           {token.transliteration ? (
-            <View className="gap-3 rounded-lg bg-card px-5 py-5">
-              <Text className="text-[12px] leading-[16px] font-semibold text-primary font-label">
-                Read aloud
+            <View
+              style={{
+                padding: 20,
+                borderRadius: 26,
+                backgroundColor: colors.vellum,
+                gap: 10,
+              }}
+            >
+              <Text variant="caption" style={{ color: colors.inkMuted }}>
+                Pronunciation
               </Text>
               <Text
-                variant="section"
                 selectable
-                className="text-[22px] leading-[31px] text-foreground"
+                style={{
+                  fontFamily: fonts.regular,
+                  fontSize: 18,
+                  lineHeight: 29,
+                  color: colors.ink,
+                }}
               >
                 {token.transliteration}
               </Text>
             </View>
           ) : null}
           {token.translation ? (
-            <View className="gap-2 border-l-2 border-l-hairlineStrong pl-4">
-              <Text className="text-[12px] leading-[16px] font-semibold text-muted-foreground font-label">
-                Hold the meaning
+            <View style={{ gap: 10 }}>
+              <Text variant="caption" style={{ color: colors.inkMuted }}>
+                Meaning
               </Text>
               <Text
-                variant="body"
                 selectable
-                className="text-[18px] leading-[27px] text-foreground"
+                style={{
+                  fontFamily: fonts.regular,
+                  fontSize: 17,
+                  lineHeight: 28,
+                  color: colors.ink,
+                }}
               >
                 {token.translation}
               </Text>
@@ -195,67 +218,62 @@ export function GuidedPrayer({
             size="content"
             onPress={() => onQuote(token)}
             style={{
-              minHeight: 48,
-              borderRadius: 16,
-              backgroundColor: "rgba(0,0,0,0.25)",
+              minHeight: 44,
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "center",
-              gap: 8,
+              justifyContent: "flex-start",
+              gap: 10,
             }}
           >
-            <Quote size={20} color={colors.ink} />
-            <Text style={{ color: colors.white }}>
-              Choose a quote from this line
-            </Text>
+            <Quote size={20} color={colors.blue} />
+            <Text style={{ color: colors.blue }}>Choose a quote</Text>
           </Button>
         </Animated.View>
       </ScrollView>
-
-      <View className="min-h-[88px] px-6 pt-3 pb-4 flex-row items-center gap-3 border-t border-t-hairline">
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 12,
+          paddingHorizontal: 24,
+          paddingTop: 12,
+          paddingBottom: Math.max(insets.bottom, 16),
+          borderTopWidth: StyleSheet.hairlineWidth,
+          borderTopColor: colors.hairline,
+          backgroundColor: colors.parchment,
+        }}
+      >
+        {safeIndex > 0 ? (
+          <Button
+            variant="secondary"
+            size="icon"
+            accessibilityLabel="Previous passage"
+            haptic="selection"
+            onPress={() => setIndex((value) => Math.max(value - 1, 0))}
+          >
+            <ChevronLeft size={20} color={colors.ink} />
+          </Button>
+        ) : null}
         <Button
-          variant="outline"
-          size="content"
-          accessibilityLabel="Previous line"
-          accessibilityRole="button"
-          disabled={isFirst}
-          haptic="selection"
-          onPress={goBack}
-          pressedScale={0.96}
-          className={cn(
-            "w-12 h-12 rounded-md items-center justify-center border border-hairlineStrong bg-mineral",
-            isFirst && "opacity-[0.28]",
-          )}
-        >
-          <ChevronLeft size={16} color={colors.ink} />
-        </Button>
-        <Button
-          variant="default"
-          size="content"
-          accessibilityLabel={isLast ? "Finish guided reading" : "Next line"}
-          accessibilityRole="button"
+          style={{ flex: 1, minHeight: 52 }}
+          accessibilityLabel={isLast ? "Finish guided reading" : "Next passage"}
           haptic={isLast ? "none" : "selection"}
-          onPress={goForward}
-          pressedScale={0.98}
-          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-primary"
+          onPress={() =>
+            isLast
+              ? onComplete()
+              : setIndex((value) => Math.min(value + 1, tokens.length - 1))
+          }
         >
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
-            {isLast ? "Finish" : "Next line"}
+          <Text style={{ color: colors.onAccent }}>
+            {isLast ? "Finish prayer" : "Next passage"}
           </Text>
           {isLast ? (
             <Check size={20} color={colors.onAccent} />
           ) : (
-            <ChevronRight size={16} color={colors.onAccent} />
+            <ChevronRight size={20} color={colors.onAccent} />
           )}
         </Button>
       </View>
     </View>
   );
 }
-
-// Native text direction and platform-only values cannot be expressed as layout utilities.
-const styles = {
-  hebrew: {
-    writingDirection: "rtl",
-  },
-} as const;
