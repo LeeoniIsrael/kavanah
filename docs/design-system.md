@@ -154,3 +154,11 @@ Guided reading uses the resolved parchment surface, never a full-screen accent f
 The fixed header and footer sit outside a flexing ScrollView so long passages and Dynamic Type can scroll without being obscured by Finish. Every passage change resets scroll position. A single passage omits redundant progress chrome and the disabled previous control. Multi-passage prayers use a constant-size progress track and passage count. Reduced Motion removes the transition; ordinary passage changes use a short fade without translation. Close, quote selection and completion callbacks remain unchanged.
 
 Modeh Ani was inspected in the native iPhone 17 Pro preview in both light and dark modes. Hebrew, pronunciation, meaning and the footer remained readable. Existing four theme contrast tests, typecheck and targeted lint passed. Temporary appearance/auto-open overrides were removed; saved appearance and prayer text were not changed.
+
+### Direct prayer flow and completion intent
+
+Opening a prayer from search, bookmarks, history or a deep link now opens the readable prayer immediately. The former guided layout is the primary reader; passages form a virtualized continuous list instead of requiring a tap per line. Its bookmark, persistent close, source/options link and footer remain accessible. Source review status stays visible; source details, the assistant and section navigation remain in the secondary options view with Return to prayer.
+
+Timing starts on opening. Only Finish prayer explicitly records completion; opening, elapsed time, scrolling, bookmarking, source details and closing do not infer prayer. Finish uses the existing duplicate-completion guard, updates activity and exits without a second confirmation or share prompt. Source loading/error/empty states cannot log completion. The footer explains the distinction: Finish saves this prayer; closing does not log it. No time threshold hides the exit.
+
+The native direct-open Modeh Ani screen was inspected. Three reader interaction tests verify no completion after waiting, close without completion, direct access to multiple passages, explicit finish, and bookmark/details without completion. Typecheck and targeted lint pass. The test renderer was aligned to the installed React version; production/native dependencies were unchanged.

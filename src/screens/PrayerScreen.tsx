@@ -16,7 +16,6 @@ import {
   BookmarkCheck,
   BookmarkMinus,
   BookOpenCheck,
-  ChevronRight,
   CircleHelp,
   ExternalLink,
   MoonStar,
@@ -199,7 +198,7 @@ export function PrayerScreen(): React.JSX.Element {
       void selectPrayer(linkedPrayerId);
       // Deep-link navigation resets the reader and assistant as one transition.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setGuidedPrayerOpen(false);
+      setGuidedPrayerOpen(true);
       setAssistantOpen(false);
       setAssistantInput("");
       setAssistantMessages([]);
@@ -287,7 +286,7 @@ export function PrayerScreen(): React.JSX.Element {
 
   const openPrayer = (id: string) => {
     void selectPrayer(id);
-    setGuidedPrayerOpen(false);
+    setGuidedPrayerOpen(true);
     setAssistantOpen(false);
     setAssistantInput("");
     setAssistantMessages([]);
@@ -352,7 +351,13 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   const completeGuidedPrayer = () => {
-    if (!selected || prayerSession.current?.completed) return;
+    if (
+      !selected ||
+      selectedLoading ||
+      !readerTokens.length ||
+      prayerSession.current?.completed
+    )
+      return;
     const completedAt = new Date();
     const startedAt = prayerSession.current?.startedAt;
     if (prayerSession.current) prayerSession.current.completed = true;
@@ -360,7 +365,7 @@ export function PrayerScreen(): React.JSX.Element {
       selected,
       completedAt,
       startedAt,
-      guidedPrayerOpen ? "guided-reading" : "reader",
+      "reader",
     );
     const habit = habitForPrayer(selected);
     if (habit) completeHabit(habit, completedAt);
@@ -377,13 +382,8 @@ export function PrayerScreen(): React.JSX.Element {
       streak,
       ...(habit ? { practiceKey: habit } : {}),
     });
-    setGuidedPrayerOpen(false);
-    setCompletionMoment({
-      ...(habit ? { habit } : {}),
-      prayerTitle: selected.title,
-      streak,
-      completedAt,
-    });
+    setCompletionMoment(null);
+    closeReader();
     void successHaptic();
   };
 
@@ -716,7 +716,7 @@ export function PrayerScreen(): React.JSX.Element {
                     marginRight: 12,
                   }}
                 >
-                  <Text style={{ color: colors.ink }}>Done</Text>
+                  <Text style={{ color: colors.ink }}>Finish prayer</Text>
                 </Button>
                 <Button
                   variant="default"
@@ -852,34 +852,8 @@ export function PrayerScreen(): React.JSX.Element {
                     </Text>
                   </View>
                   {!selectedLoading && guidedTokens.length > 0 ? (
-                    <Button
-                      variant="ghost"
-                      size="content"
-                      accessibilityHint="Shows one prayer line at a time"
-                      accessibilityLabel="Start guided reading"
-                      accessibilityRole="button"
-                      haptic="confirm"
-                      onPress={startGuidedPrayer}
-                      className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
-                    >
-                      <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
-                        <BookOpenCheck size={20} color={colors.blue} />
-                      </View>
-                      <View className="flex-1 gap-[2px]">
-                        <Text
-                          variant="section"
-                          className="text-[17px] leading-[22px]"
-                        >
-                          Read line by line
-                        </Text>
-                        <Text
-                          variant="body"
-                          className="text-[13px] leading-[18px] text-muted-foreground"
-                        >
-                          Hebrew, pronunciation, and meaning at your pace.
-                        </Text>
-                      </View>
-                      <ChevronRight size={16} color={colors.inkMuted} />
+                    <Button onPress={startGuidedPrayer}>
+                      <Text>Return to prayer</Text>
                     </Button>
                   ) : null}
                   {selectedLoading ? (
@@ -1148,8 +1122,12 @@ export function PrayerScreen(): React.JSX.Element {
             <GuidedPrayer
               prayerTitle={selected?.title ?? "Prayer"}
               tokens={guidedTokens}
-              visible={guidedPrayerOpen}
-              onClose={() => setGuidedPrayerOpen(false)}
+              visible={guidedPrayerOpen && !selectedLoading && !prayerLoadError}
+              onClose={closeReader}
+              onDetails={() => setGuidedPrayerOpen(false)}
+              onBookmark={() => selected && toggleBookmark(selected.id)}
+              bookmarked={selectedBookmarked}
+              reviewPending={selected?.hebrewReview.status !== "approved"}
               onComplete={completeGuidedPrayer}
               onQuote={(token) => {
                 if (selected)
