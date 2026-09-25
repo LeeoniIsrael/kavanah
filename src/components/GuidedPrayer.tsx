@@ -1,3 +1,5 @@
+import { PrayerExplanation } from "@/components/PrayerExplanation";
+import type { ReadingGuide } from "@/data/prayerReadingGuide";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, FlatList, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -19,9 +21,15 @@ export type GuidedPrayerToken = {
   hebrew: string;
   transliteration: string;
   translation: string;
+  translationLanguage?: string;
 };
 type Props = {
   prayerTitle: string;
+  guide?: ReadingGuide | undefined;
+  scopeNote?: string | undefined;
+  explanationContext?: string[] | undefined;
+  language?: string;
+  onGuideSource?: () => void;
   tokens: GuidedPrayerToken[];
   visible: boolean;
   onClose: () => void;
@@ -34,6 +42,11 @@ type Props = {
 };
 export function GuidedPrayer({
   prayerTitle,
+  guide,
+  scopeNote,
+  explanationContext,
+  language = "English",
+  onGuideSource,
   tokens,
   visible,
   onClose,
@@ -146,25 +159,80 @@ export function GuidedPrayer({
             paddingTop: 16,
             paddingBottom: 28,
           }}
+          ListHeaderComponent={
+            <View style={{ gap: 16, paddingBottom: 24 }}>
+              {guide?.before ? (
+                <View style={{ gap: 8 }}>
+                  <Text
+                    style={{ color: colors.blue, fontFamily: fonts.semibold }}
+                  >
+                    Before you say it
+                  </Text>
+                  <Text
+                    style={{ color: colors.ink, fontSize: 16, lineHeight: 25 }}
+                  >
+                    {guide.before}
+                  </Text>
+                </View>
+              ) : null}
+              {scopeNote ? (
+                <Text
+                  style={{
+                    color: colors.inkMuted,
+                    fontSize: 14,
+                    lineHeight: 22,
+                  }}
+                >
+                  {scopeNote}
+                </Text>
+              ) : null}
+              {explanationContext && tokens.length > 1 ? (
+                <PrayerExplanation
+                  context={explanationContext}
+                  language={language}
+                />
+              ) : null}
+            </View>
+          }
+          ListFooterComponent={
+            guide?.after || guide?.source ? (
+              <View style={{ gap: 10, paddingTop: 24 }}>
+                {guide.after ? (
+                  <>
+                    <Text
+                      style={{ color: colors.blue, fontFamily: fonts.semibold }}
+                    >
+                      After you say it
+                    </Text>
+                    <Text
+                      style={{
+                        color: colors.ink,
+                        fontSize: 16,
+                        lineHeight: 25,
+                      }}
+                    >
+                      {guide.after}
+                    </Text>
+                  </>
+                ) : null}
+                {guide.source && onGuideSource ? (
+                  <Button
+                    variant="ghost"
+                    size="content"
+                    onPress={onGuideSource}
+                    style={{ minHeight: 44, justifyContent: "flex-start" }}
+                  >
+                    <Text style={{ color: colors.blue }}>
+                      Instructions & source
+                    </Text>
+                  </Button>
+                ) : null}
+              </View>
+            ) : null
+          }
           ItemSeparatorComponent={() => <View style={{ height: 36 }} />}
           renderItem={({ item: token }) => (
             <View style={{ gap: 24 }}>
-              {token.hebrew ? (
-                <Text
-                  selectable
-                  style={{
-                    fontFamily: fonts.hebrew,
-                    fontSize: 30,
-                    lineHeight: 49,
-                    fontWeight: "400",
-                    writingDirection: "rtl",
-                    textAlign: "right",
-                    color: colors.ink,
-                  }}
-                >
-                  {token.hebrew}
-                </Text>
-              ) : null}
               {token.transliteration ? (
                 <View
                   style={{
@@ -175,14 +243,14 @@ export function GuidedPrayer({
                   }}
                 >
                   <Text variant="caption" style={{ color: colors.inkMuted }}>
-                    Pronunciation
+                    Say these words
                   </Text>
                   <Text
                     selectable
                     style={{
                       fontFamily: fonts.regular,
-                      fontSize: 18,
-                      lineHeight: 29,
+                      fontSize: 25,
+                      lineHeight: 39,
                       color: colors.ink,
                     }}
                   >
@@ -193,7 +261,7 @@ export function GuidedPrayer({
               {token.translation ? (
                 <View style={{ gap: 10 }}>
                   <Text variant="caption" style={{ color: colors.inkMuted }}>
-                    Meaning
+                    Translation · {token.translationLanguage ?? language}
                   </Text>
                   <Text
                     selectable
@@ -207,6 +275,33 @@ export function GuidedPrayer({
                     {token.translation}
                   </Text>
                 </View>
+              ) : null}
+              {token.hebrew ? (
+                <Text
+                  selectable
+                  style={{
+                    fontFamily: fonts.hebrew,
+                    fontSize: 25,
+                    lineHeight: 40,
+                    fontWeight: "400",
+                    writingDirection: "rtl",
+                    textAlign: "right",
+                    color: colors.ink,
+                  }}
+                >
+                  {token.hebrew}
+                </Text>
+              ) : null}
+              {explanationContext ? (
+                <PrayerExplanation
+                  context={explanationContext}
+                  language={language}
+                  passage={
+                    tokens.length > 1
+                      ? token.translation || token.hebrew
+                      : undefined
+                  }
+                />
               ) : null}
               <Button
                 variant="ghost"

@@ -1,3 +1,5 @@
+import { prayerReadingGuide, prayerScopeNote } from "@/data/prayerReadingGuide";
+import { findLanguage } from "@/data/languages";
 import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
 import { groupPrayerSearchResults } from "@/services/prayerSearchGroups";
 import { PrayerSearchGroupCard } from "@/components/PrayerSearchGroupCard";
@@ -356,6 +358,12 @@ export function PrayerScreen(): React.JSX.Element {
     hebrew: token.hebrew,
     transliteration: token.localizedTransliteration,
     translation: token.localizedTranslation,
+    translationLanguage:
+      primaryLanguageCode !== "en" &&
+      primaryLanguageCode !== "he" &&
+      token.localizedTranslation === token.translation
+        ? "English (translation unavailable)"
+        : findLanguage(primaryLanguageCode).name,
   }));
 
   const startGuidedPrayer = () => {
@@ -1147,6 +1155,24 @@ export function PrayerScreen(): React.JSX.Element {
             ) : null}
             <GuidedPrayer
               prayerTitle={selected?.title ?? "Prayer"}
+              guide={selected ? prayerReadingGuide(selected) : undefined}
+              scopeNote={selected ? prayerScopeNote(selected) : undefined}
+              language={findLanguage(primaryLanguageCode).name}
+              explanationContext={
+                selected
+                  ? buildPrayerAssistantContext(
+                      selected,
+                      primaryLanguageCode,
+                      readerTokens,
+                    )
+                  : undefined
+              }
+              onGuideSource={() => {
+                const url = selected
+                  ? prayerReadingGuide(selected).source
+                  : undefined;
+                if (url) void Linking.openURL(url);
+              }}
               tokens={guidedTokens}
               visible={guidedPrayerOpen && !selectedLoading && !prayerLoadError}
               onClose={closeReader}
