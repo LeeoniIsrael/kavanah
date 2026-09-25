@@ -3,18 +3,20 @@ import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
+import * as Device from "expo-device";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
-import { Check, ImagePlus, Share, X } from "lucide-react-native";
-import { useEffect, useRef, useState } from "react";
+import { Camera, Check, ImagePlus, Share, X } from "lucide-react-native";
+import { useRef, useState } from "react";
 import {
   Image,
   Modal,
+  Platform,
   ScrollView,
   useWindowDimensions,
   View,
 } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { captureRef } from "react-native-view-shot";
 
 import { Button } from "@/components/ui/button";
@@ -78,42 +80,76 @@ export function PracticeStoryComposer({
   moment,
   onClose,
 }: Props): React.JSX.Element {
-  const insets = useSafeAreaInsets();
+  return moment ? (
+    <StoryComposerSession moment={moment} onClose={onClose} />
+  ) : (
+    <></>
+  );
+}
+
+function StoryComposerSession({
+  moment,
+  onClose,
+}: Props & { moment: PracticeStoryMoment }): React.JSX.Element {
   const storyRef = useRef<View>(null);
   const [layout, setLayout] = useState<StoryLayout>("focus");
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [photoReady, setPhotoReady] = useState(true);
+  const [isPickingPhoto, setIsPickingPhoto] = useState(false);
+  const [bodyHeight, setBodyHeight] = useState(500);
   const [isSharing, setIsSharing] = useState(false);
   const [error, setError] = useState("");
   const reduceMotion = useReducedMotion();
-  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
+  const { width: windowWidth } = useWindowDimensions();
   const previewWidth = Math.min(
     windowWidth - grid.margin * 2,
-    windowHeight < 760 ? 232 : windowHeight < 900 ? 276 : 336,
+    336,
+    Math.max(180, ((bodyHeight - 148) * 9) / 16),
   );
 
-  useEffect(() => {
-    if (moment) {
-      setLayout("focus");
-      setPhotoUri(null);
-      setPhotoReady(true);
-      setError("");
-    }
-  }, [moment]);
-
-  const choosePhoto = async () => {
+  const choosePhoto = async (source: "camera" | "library") => {
+    if (isPickingPhoto || isSharing) return;
     setError("");
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ["images"],
-      allowsEditing: true,
-      aspect: [9, 16],
-      quality: 0.92,
-    });
-
-    if (!result.canceled && result.assets[0]?.uri) {
-      setPhotoReady(false);
-      setPhotoUri(result.assets[0].uri);
-      void confirmHaptic();
+    setIsPickingPhoto(true);
+    try {
+      if (source === "camera") {
+        if (Platform.OS === "ios" && !Device.isDevice) {
+          setError(
+            "The iOS simulator has no camera. Take a photo on your iPhone, or choose one from Photos here.",
+          );
+          return;
+        }
+        const permission = await ImagePicker.requestCameraPermissionsAsync();
+        if (!permission.granted) {
+          setError(
+            "Camera access is off. Enable it in Settings to take a photo, or choose one from Photos.",
+          );
+          return;
+        }
+      }
+      const options: ImagePicker.ImagePickerOptions = {
+        mediaTypes: ["images"],
+        allowsEditing: true,
+        aspect: [9, 16],
+        quality: 0.92,
+      };
+      const result =
+        source === "camera"
+          ? await ImagePicker.launchCameraAsync(options)
+          : await ImagePicker.launchImageLibraryAsync(options);
+      if (!result.canceled && result.assets[0]?.uri) {
+        setPhotoReady(false);
+        setPhotoUri(result.assets[0].uri);
+        void confirmHaptic();
+      }
+    } catch {
+      setError(
+        source === "camera"
+          ? "The camera could not open. Try again or choose a photo from Photos."
+          : "Photos could not open. Please try again.",
+      );
+    } finally {
+      setIsPickingPhoto(false);
     }
   };
 
@@ -163,156 +199,210 @@ export function PracticeStoryComposer({
       presentationStyle="fullScreen"
       visible={moment !== null}
     >
-      <View
-        style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
-        className="flex-1 bg-background"
-      >
-        {moment ? (
-          <View className="flex-1">
-            <View className="px-6 py-3 flex-row items-center gap-3">
-              <Button
-                variant="outline"
-                size="content"
-                accessibilityLabel="Close story composer"
-                accessibilityRole="button"
-                haptic="selection"
-                onPress={close}
-                pressedScale={0.94}
-                className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
-              >
-                <X size={18} color={colors.ink} />
-              </Button>
-              <View className="flex-1 gap-[2px]">
-                <Text variant="section">Share your practice</Text>
-                <Text variant="body" className="text-[13px] leading-[18px]">
-                  A private photo becomes a story-ready image.
-                </Text>
-              </View>
-            </View>
-
-            <ScrollView
-              contentContainerClassName="px-6 pb-6 gap-4"
-              showsVerticalScrollIndicator={false}
-            >
-              <View
-                className="aspect-[0.5625] self-center rounded-xl overflow-hidden bg-foreground shadow-card"
-                style={[{ width: previewWidth }]}
-              >
-                <View ref={storyRef} collapsable={false} className="flex-1">
-                  <StoryArtwork
-                    layout={layout}
-                    moment={moment}
-                    photoUri={photoUri}
-                    onPhotoReady={() => setPhotoReady(true)}
-                    onPhotoError={() => {
-                      setPhotoReady(true);
-                      setError(
-                        "This photo could not be opened. Choose another photo to continue.",
-                      );
-                    }}
-                  />
+      <SafeAreaProvider>
+        <SafeAreaView
+          edges={["top", "bottom", "left", "right"]}
+          style={{ flex: 1, backgroundColor: colors.parchment }}
+        >
+          {moment ? (
+            <View className="flex-1">
+              <View className="px-6 py-3 flex-row items-center gap-3">
+                <Button
+                  variant="outline"
+                  size="content"
+                  accessibilityLabel="Close story composer"
+                  accessibilityRole="button"
+                  haptic="selection"
+                  onPress={close}
+                  pressedScale={0.94}
+                  className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
+                >
+                  <X size={18} color={colors.ink} />
+                </Button>
+                <View className="flex-1 gap-[2px]">
+                  <Text variant="section">Share your practice</Text>
+                  <Text variant="body" className="text-[13px] leading-[18px]">
+                    A private photo becomes a story-ready image.
+                  </Text>
                 </View>
               </View>
 
-              <Tabs
-                value={layout}
-                onValueChange={(value) => {
-                  if (
-                    value === "focus" ||
-                    value === "quiet" ||
-                    value === "light"
-                  ) {
-                    void tapHaptic();
-                    setLayout(value);
-                  }
+              <ScrollView
+                style={{ flex: 1 }}
+                onLayout={(event) =>
+                  setBodyHeight(event.nativeEvent.layout.height)
+                }
+                contentContainerStyle={{
+                  paddingHorizontal: grid.margin,
+                  paddingTop: 8,
+                  paddingBottom: 24,
+                  gap: 16,
                 }}
+                showsVerticalScrollIndicator
               >
-                <TabsList
-                  accessibilityLabel="Story layout"
-                  className="mr-0 h-12 w-full"
+                <View
+                  className="aspect-[0.5625] self-center rounded-xl overflow-hidden bg-foreground shadow-card"
+                  style={[{ width: previewWidth }]}
                 >
-                  {layoutOptions.map((option) => (
-                    <TabsTrigger
-                      key={option.id}
-                      value={option.id}
-                      className="h-full flex-1"
-                    >
-                      <Text>{option.label}</Text>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </Tabs>
+                  <View
+                    ref={storyRef}
+                    collapsable={false}
+                    style={{
+                      width: 300,
+                      height: (300 * 16) / 9,
+                      transformOrigin: "top left",
+                      transform: [{ scale: previewWidth / 300 }],
+                    }}
+                  >
+                    <StoryArtwork
+                      layout={layout}
+                      moment={moment}
+                      photoUri={photoUri}
+                      onPhotoReady={() => setPhotoReady(true)}
+                      onPhotoError={() => {
+                        setPhotoUri(null);
+                        setPhotoReady(true);
+                        setError(
+                          "This photo could not be opened. Choose another photo to continue.",
+                        );
+                      }}
+                    />
+                  </View>
+                </View>
 
-              <View className="flex-row items-start gap-2 px-1">
-                <Check size={15} color={colors.olive} />
-                <Text className="text-[12px] leading-[16px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
-                  Your photo stays on this device. Kavanah adds no name, prayer
-                  text, or location.
-                </Text>
-              </View>
+                <Tabs
+                  value={layout}
+                  onValueChange={(value) => {
+                    if (
+                      value === "focus" ||
+                      value === "quiet" ||
+                      value === "light"
+                    ) {
+                      void tapHaptic();
+                      setLayout(value);
+                    }
+                  }}
+                >
+                  <TabsList
+                    accessibilityLabel="Story layout"
+                    className="mr-0 h-12 w-full"
+                  >
+                    {layoutOptions.map((option) => (
+                      <TabsTrigger
+                        key={option.id}
+                        value={option.id}
+                        className="h-full flex-1"
+                      >
+                        <Text
+                          style={{
+                            color:
+                              layout === option.id
+                                ? colors.parchment
+                                : colors.ink,
+                            fontFamily: "Manrope_600SemiBold",
+                          }}
+                        >
+                          {option.label}
+                        </Text>
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </Tabs>
+
+                <View className="flex-row items-start gap-2 px-1">
+                  <Check size={15} color={colors.olive} />
+                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
+                    Your photo stays on this device. Kavanah adds no name,
+                    prayer text, or location.
+                  </Text>
+                </View>
+              </ScrollView>
 
               {error ? (
                 <Text
                   accessibilityRole="alert"
-                  className="text-[12px] leading-[16px] font-medium tracking-normal text-danger px-1 font-label"
+                  className="text-[12px] leading-[16px] font-medium tracking-normal text-danger px-6 py-2 font-label"
                 >
                   {error}
                 </Text>
               ) : null}
-            </ScrollView>
-
-            <View className="px-6 pt-2 pb-2 flex-row gap-3 border-t border-t-hairline bg-glass">
-              <View className="flex-1">
-                <Button
-                  variant="outline"
-                  size="content"
-                  accessibilityRole="button"
-                  haptic="selection"
-                  onPress={() => void choosePhoto()}
-                  className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-card border border-hairlineStrong"
-                >
-                  <ImagePlus size={18} color={colors.ink} />
-                  <Text
-                    numberOfLines={1}
-                    className="font-heading text-[14px] leading-[19px] text-foreground"
+              <View className="px-6 pt-3 pb-2 flex-row gap-2 border-t border-t-hairline bg-background">
+                <View className="flex-1">
+                  <Button
+                    variant="outline"
+                    size="content"
+                    accessibilityLabel="Take a photo"
+                    disabled={isPickingPhoto || isSharing}
+                    onPress={() => void choosePhoto("camera")}
+                    className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-card border border-hairlineStrong"
                   >
-                    {photoUri ? "Change photo" : "Choose photo"}
-                  </Text>
-                </Button>
-              </View>
-              <View className="flex-1">
-                <Button
-                  variant="default"
-                  size="content"
-                  accessibilityRole="button"
-                  disabled={!photoReady}
-                  isLoading={isSharing}
-                  loadingLabel="Preparing"
-                  haptic="confirm"
-                  onPress={() => void shareStory()}
-                  className={cn(
-                    "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
-                    !photoReady && "opacity-[0.5]",
-                  )}
-                >
-                  {!photoReady ? (
-                    <CircleLoadingIndicator
-                      dotColor={colors.white}
-                      dotRadius={2.5}
-                      dotSpacing={4}
-                    />
-                  ) : (
-                    <Share size={18} color={colors.white} />
-                  )}
-                  <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
-                    Share
-                  </Text>
-                </Button>
+                    <Camera size={18} color={colors.ink} />
+                    <Text className="font-heading text-[13px] text-foreground">
+                      Camera
+                    </Text>
+                  </Button>
+                </View>
+                <View className="flex-1">
+                  <Button
+                    variant="outline"
+                    size="content"
+                    accessibilityRole="button"
+                    haptic="selection"
+                    accessibilityLabel={
+                      photoUri
+                        ? "Change photo from library"
+                        : "Choose photo from library"
+                    }
+                    disabled={isPickingPhoto || isSharing}
+                    onPress={() => void choosePhoto("library")}
+                    className="w-full min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-card border border-hairlineStrong"
+                  >
+                    <ImagePlus size={18} color={colors.ink} />
+                    <Text
+                      numberOfLines={1}
+                      className="font-heading text-[14px] leading-[19px] text-foreground"
+                    >
+                      Photos
+                    </Text>
+                  </Button>
+                </View>
+                <View className="flex-1">
+                  <Button
+                    variant="default"
+                    size="content"
+                    accessibilityRole="button"
+                    disabled={!photoReady || isPickingPhoto}
+                    isLoading={isSharing}
+                    loadingLabel="Preparing"
+                    haptic="confirm"
+                    onPress={() => void shareStory()}
+                    className={cn(
+                      "w-full min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
+                      !photoReady && "opacity-[0.5]",
+                    )}
+                  >
+                    {!photoReady ? (
+                      <CircleLoadingIndicator
+                        dotColor={colors.white}
+                        dotRadius={2.5}
+                        dotSpacing={4}
+                      />
+                    ) : (
+                      <Share size={18} color={colors.parchment} />
+                    )}
+                    <Text
+                      className="text-[14px] leading-[22px] font-semibold tracking-normal font-heading"
+                      style={{ color: colors.parchment }}
+                    >
+                      Share
+                    </Text>
+                  </Button>
+                </View>
               </View>
             </View>
-          </View>
-        ) : null}
-      </View>
+          ) : null}
+        </SafeAreaView>
+      </SafeAreaProvider>
     </Modal>
   );
 }
@@ -350,10 +440,8 @@ function StoryArtwork({
 
   return (
     <View
-      className={cn(
-        "flex-1 relative overflow-hidden",
-        light ? "bg-background" : "bg-primary",
-      )}
+      className="flex-1 relative overflow-hidden"
+      style={{ backgroundColor: light ? "#F2F2F5" : colors.blue }}
     >
       {photoUri ? (
         <Image
@@ -455,17 +543,30 @@ function StoryArtwork({
               "font-heading text-[36px] leading-[41px] mt-1",
               "text-foreground",
             )}
+            style={{ color: colors.parchment }}
           >
             {copy.title}
           </Text>
-          <Text className="font-body text-[14px] leading-[20px] text-muted-foreground mt-[5px]">
+          <Text
+            style={{ color: "#51515B" }}
+            className="font-body text-[14px] leading-[20px] mt-[5px]"
+          >
             {copy.subtitle}
           </Text>
-          <View className="mt-auto pt-3 border-t border-t-hairline flex-row justify-between gap-3">
-            <Text className="flex-1 font-heading text-[11px] leading-[15px] text-foreground">
+          <View
+            style={{ borderTopColor: "#D7D7DE" }}
+            className="mt-auto pt-3 border-t flex-row justify-between gap-3"
+          >
+            <Text
+              style={{ color: colors.parchment }}
+              className="flex-1 font-heading text-[11px] leading-[15px]"
+            >
               {streak} in practice
             </Text>
-            <Text className="font-label text-[10px] leading-[15px] text-muted-foreground">
+            <Text
+              style={{ color: "#51515B" }}
+              className="font-label text-[10px] leading-[15px]"
+            >
               {date}
             </Text>
           </View>

@@ -7,9 +7,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.leeoniisrael.kavanah",
@@ -50,7 +48,9 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Choose a photo to create a story image. Kavanah never uploads it."
+          "photosPermission": "Choose a photo to create a story image. Kavanah never uploads it.",
+          "cameraPermission": "Take a photo for your practice story. Kavanah never uploads it.",
+          "microphonePermission": false
         }
       ],
       "expo-font",
