@@ -108,7 +108,7 @@ describe("custom reminders", () => {
     expect(buildReminderPlan(p, location, false, day("2026-09-01"))).toEqual(
       [],
     );
-    p.prayers.maariv = { enabled: true, time: "23:00", days: [5] };
+    p.prayers.maariv = { enabled: true, time: "23:59", days: [5] };
     expect(buildReminderPlan(p, location, false, day("2026-09-01"))).toEqual(
       [],
     );
