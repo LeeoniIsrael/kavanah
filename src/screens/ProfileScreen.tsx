@@ -77,9 +77,7 @@ export function ProfileScreen(): React.JSX.Element {
   const [profilePrivate, setProfilePrivate] = useState(
     profile?.isPrivate ?? true,
   );
-  const [shareMilestones, setShareMilestones] = useState(
-    profile?.shareMilestones ?? false,
-  );
+  const sharingPreferences = useSocialStore((state) => state.preferences);
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
@@ -577,19 +575,10 @@ export function ProfileScreen(): React.JSX.Element {
                   onCheckedChange={setProfilePrivate}
                 />
               </View>
-              <View className="min-h-[72px] flex-row items-center gap-3 border-b border-hairline">
-                <View className="flex-1">
-                  <Text variant="section">Post milestones</Text>
-                  <Text variant="body" className="text-[12px] leading-[17px]">
-                    Share 3, 7, 18, 40, and 100-day streaks automatically.
-                  </Text>
-                </View>
-                <Switch
-                  accessibilityLabel="Post milestones"
-                  checked={shareMilestones}
-                  onCheckedChange={setShareMilestones}
-                />
-              </View>
+              <Text variant="body" className="text-[13px] leading-[20px]">
+                Choose automatic prayer updates and streak milestones in Circle.
+                Your weekly quote comes directly from a prayer.
+              </Text>
               <Button
                 variant="default"
                 size="content"
@@ -600,7 +589,7 @@ export function ProfileScreen(): React.JSX.Element {
                     handle: `@${handle.trim().toLowerCase()}`,
                     bio: bio.trim(),
                     isPrivate: profilePrivate,
-                    shareMilestones,
+                    shareMilestones: sharingPreferences.milestones,
                   });
                   setActiveModal(null);
                 }}

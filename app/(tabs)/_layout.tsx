@@ -39,6 +39,13 @@ export default function TabsLayout(): React.JSX.Element {
         />
         <NativeTabs.Trigger.Label>Zmanim</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="circle">
+        <NativeTabs.Trigger.Icon
+          sf={{ default: "person.2", selected: "person.2.fill" }}
+          md="groups"
+        />
+        <NativeTabs.Trigger.Label>Circle</NativeTabs.Trigger.Label>
+      </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
         <NativeTabs.Trigger.Icon
           sf={{ default: "person", selected: "person.fill" }}

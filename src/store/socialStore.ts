@@ -1,6 +1,13 @@
 import { create } from "zustand";
-
-import { readJson, userStorage, writeJson } from "@/services/mmkv";
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
+import {
+  dayKey,
+  selectedQuote,
+  shouldSharePrayer,
+  STREAK_MILESTONES,
+  weekKey,
+  type SharingPreferences,
+} from "@/services/socialPolicy";
 
 export type SocialProfile = {
   displayName: string;
@@ -9,137 +16,197 @@ export type SocialProfile = {
   isPrivate: boolean;
   shareMilestones: boolean;
 };
-
 export type FeedPost = {
   id: string;
-  authorName: string;
-  authorHandle: string;
-  kind: "reflection" | "milestone" | "lesson";
-  body: string;
+  kind: "prayer" | "milestone" | "quote";
   createdAt: string;
-  practice?: string;
+  prayerId: string;
+  practice: string;
   streak?: number;
-  likes: number;
-  liked: boolean;
+  quote?: string;
+  sourceRef?: string;
+  sourceUrl?: string;
+  language?: string;
+  week?: string;
 };
-
-type SocialState = {
-  profile: SocialProfile | null;
+export type PrayerActivity = {
+  id: string;
+  prayerId: string;
+  title: string;
+  completedAt: Date;
+  streak: number;
+  practiceKey?: string;
+};
+export type QuoteSource = {
+  prayerId: string;
+  title: string;
+  text: string;
+  sourceRef: string;
+  sourceUrl: string;
+  language: string;
+};
+type SavedSocial = {
+  preferences: SharingPreferences;
   posts: FeedPost[];
-  saveProfile: (profile: SocialProfile) => void;
-  publishPost: (body: string, kind?: FeedPost["kind"]) => void;
-  publishMilestone: (practice: string, streak: number) => void;
-  toggleLike: (id: string) => void;
+  seenEvents: string[];
+  seenDays: string[];
 };
-
+type SocialState = SavedSocial & {
+  profile: SocialProfile | null;
+  saveProfile: (profile: SocialProfile) => void;
+  setPreferences: (preferences: SharingPreferences) => void;
+  recordPrayer: (activity: PrayerActivity) => void;
+  setWeeklyQuote: (
+    source: QuoteSource,
+    start: number,
+    end: number,
+    now?: Date,
+  ) => boolean;
+  removePost: (id: string) => void;
+};
 const PROFILE_KEY = "social.profile.v1";
-const POSTS_KEY = "social.posts.v1";
-
-const communityPosts: FeedPost[] = [
-  {
-    id: "community-miriam",
-    authorName: "Miriam L.",
-    authorHandle: "@miriaml",
-    kind: "reflection",
-    body: "I slowed down for one line of Modeh Ani this morning: gratitude before momentum.",
-    createdAt: "2026-09-20T12:10:00.000Z",
-    practice: "Morning prayer",
-    likes: 18,
-    liked: false,
+// Keep legacy free-form posts intact in v1; they are not part of the new feed.
+const STORAGE_KEY = "social.activity.v2";
+const profile = readSocialData(PROFILE_KEY, isSocialProfile);
+const saved = readSocialData(STORAGE_KEY, isSavedSocial);
+function persist(state: SavedSocial): SavedSocial {
+  const data = {
+    preferences: state.preferences,
+    posts: state.posts.slice(0, 200),
+    seenEvents: state.seenEvents.slice(0, 1000),
+    seenDays: state.seenDays.slice(0, 366),
+  };
+  writeSocialData(STORAGE_KEY, data);
+  return data;
+}
+export const useSocialStore = create<SocialState>((set) => ({
+  profile,
+  preferences: saved?.preferences ?? {
+    prayers: "off",
+    milestones: profile?.shareMilestones ?? false,
   },
-  {
-    id: "community-avi",
-    authorName: "Avi R.",
-    authorHandle: "@avir",
-    kind: "milestone",
-    body: "One hundred mornings of wrapping. The streak matters less than who I became by returning.",
-    createdAt: "2026-09-19T13:30:00.000Z",
-    practice: "Tefillin",
-    streak: 100,
-    likes: 64,
-    liked: false,
-  },
-  {
-    id: "community-noa",
-    authorName: "Noa S.",
-    authorHandle: "@noalearns",
-    kind: "lesson",
-    body: "A lesson I’m carrying today: fixed words can still hold a new intention each time.",
-    createdAt: "2026-09-18T22:05:00.000Z",
-    practice: "Daily learning",
-    likes: 27,
-    liked: false,
-  },
-];
-
-const persistedProfile = readJson(userStorage, PROFILE_KEY, isSocialProfile);
-const persistedPosts = readJson(userStorage, POSTS_KEY, isFeedPostArray) ?? [];
-
-export const useSocialStore = create<SocialState>((set, get) => ({
-  profile: persistedProfile,
-  posts: [...persistedPosts, ...communityPosts],
+  posts: saved?.posts ?? [],
+  seenEvents: saved?.seenEvents ?? [],
+  seenDays: saved?.seenDays ?? [],
   saveProfile: (profile) => {
-    writeJson(userStorage, PROFILE_KEY, profile);
+    writeSocialData(PROFILE_KEY, profile);
     set({ profile });
   },
-  publishPost: (body, kind = "reflection") => {
-    const clean = body.trim();
-    const profile = get().profile;
-    if (!clean || !profile) return;
-    const post: FeedPost = {
-      id: `local-${Date.now()}`,
-      authorName: profile.displayName,
-      authorHandle: profile.handle,
-      kind,
-      body: clean,
-      createdAt: new Date().toISOString(),
-      likes: 0,
-      liked: false,
-    };
+  setPreferences: (preferences) =>
+    set((state) => persist({ ...state, preferences })),
+  recordPrayer: (activity) =>
     set((state) => {
-      const localPosts = [post, ...state.posts.filter((item) => item.id.startsWith("local-"))];
-      writeJson(userStorage, POSTS_KEY, localPosts);
-      return { posts: [post, ...state.posts] };
-    });
+      if (state.seenEvents.includes(activity.id)) return state;
+      const date = dayKey(activity.completedAt);
+      const base = {
+        createdAt: activity.completedAt.toISOString(),
+        prayerId: activity.prayerId,
+        practice: activity.title,
+      };
+      const additions: FeedPost[] = [];
+      if (
+        shouldSharePrayer(
+          state.preferences.prayers,
+          !state.seenDays.includes(date),
+        )
+      ) {
+        additions.push({
+          ...base,
+          id: `prayer:${activity.id}`,
+          kind: "prayer",
+        });
+      }
+      const milestoneId = `milestone:${activity.practiceKey ?? activity.prayerId}:${activity.streak}:${date}`;
+      if (
+        state.preferences.milestones &&
+        STREAK_MILESTONES.some((n) => n === activity.streak) &&
+        !state.posts.some((p) => p.id === milestoneId) &&
+        !state.seenEvents.includes(milestoneId)
+      ) {
+        additions.unshift({
+          ...base,
+          id: milestoneId,
+          kind: "milestone",
+          streak: activity.streak,
+        });
+      }
+      return persist({
+        ...state,
+        posts: [...additions, ...state.posts],
+        seenEvents: [
+          activity.id,
+          ...(additions.some((p) => p.kind === "milestone")
+            ? [milestoneId]
+            : []),
+          ...state.seenEvents,
+        ],
+        seenDays: [date, ...state.seenDays.filter((d) => d !== date)],
+      });
+    }),
+  setWeeklyQuote: (source, start, end, now = new Date()) => {
+    const quote = selectedQuote(source.text, start, end);
+    if (!quote) return false;
+    const week = weekKey(now);
+    set((state) =>
+      persist({
+        ...state,
+        posts: [
+          {
+            id: `quote:${week}`,
+            kind: "quote",
+            quote,
+            week,
+            prayerId: source.prayerId,
+            practice: source.title,
+            sourceRef: source.sourceRef,
+            sourceUrl: source.sourceUrl,
+            language: source.language,
+            createdAt: now.toISOString(),
+          },
+          ...state.posts.filter((p) => p.id !== `quote:${week}`),
+        ],
+      }),
+    );
+    return true;
   },
-  publishMilestone: (practice, streak) => {
-    const profile = get().profile;
-    if (!profile || !profile.shareMilestones) return;
-    const post: FeedPost = {
-      id: `local-${Date.now()}`,
-      authorName: profile.displayName,
-      authorHandle: profile.handle,
-      kind: "milestone",
-      body: `${streak} days of ${practice}. Grateful to keep returning.`,
-      createdAt: new Date().toISOString(),
-      practice,
-      streak,
-      likes: 0,
-      liked: false,
-    };
-    set((state) => {
-      const localPosts = [post, ...state.posts.filter((item) => item.id.startsWith("local-"))];
-      writeJson(userStorage, POSTS_KEY, localPosts);
-      return { posts: [post, ...state.posts] };
-    });
-  },
-  toggleLike: (id) => set((state) => ({
-    posts: state.posts.map((post) => post.id === id
-      ? { ...post, liked: !post.liked, likes: post.likes + (post.liked ? -1 : 1) }
-      : post),
-  })),
+  removePost: (id) =>
+    set((state) =>
+      persist({ ...state, posts: state.posts.filter((p) => p.id !== id) }),
+    ),
 }));
-
 function isSocialProfile(value: unknown): value is SocialProfile {
-  if (typeof value !== "object" || value === null) return false;
-  const profile = value as Partial<SocialProfile>;
-  return typeof profile.displayName === "string" && typeof profile.handle === "string" && typeof profile.bio === "string" && typeof profile.isPrivate === "boolean" && typeof profile.shareMilestones === "boolean";
+  if (typeof value !== "object" || !value) return false;
+  const p = value as SocialProfile;
+  return (
+    typeof p.displayName === "string" &&
+    typeof p.handle === "string" &&
+    typeof p.bio === "string" &&
+    typeof p.isPrivate === "boolean" &&
+    typeof p.shareMilestones === "boolean"
+  );
 }
-
-function isFeedPostArray(value: unknown): value is FeedPost[] {
-  return Array.isArray(value) && value.every((item) => {
-    if (typeof item !== "object" || item === null) return false;
-    const post = item as Partial<FeedPost>;
-    return typeof post.id === "string" && typeof post.body === "string" && typeof post.authorName === "string" && typeof post.createdAt === "string";
-  });
+function isSavedSocial(value: unknown): value is SavedSocial {
+  if (typeof value !== "object" || !value) return false;
+  const s = value as SavedSocial;
+  return (
+    !!s.preferences &&
+    ["off", "first-daily", "every"].includes(s.preferences.prayers) &&
+    typeof s.preferences.milestones === "boolean" &&
+    Array.isArray(s.posts) &&
+    s.posts.every(
+      (p) =>
+        p &&
+        ["prayer", "milestone", "quote"].includes(p.kind) &&
+        typeof p.id === "string" &&
+        typeof p.practice === "string" &&
+        typeof p.prayerId === "string" &&
+        typeof p.createdAt === "string" &&
+        Number.isFinite(Date.parse(p.createdAt)) &&
+        (p.kind !== "quote" || typeof p.quote === "string"),
+    ) &&
+    Array.isArray(s.seenEvents) &&
+    s.seenEvents.every((x) => typeof x === "string") &&
+    Array.isArray(s.seenDays) &&
+    s.seenDays.every((x) => typeof x === "string")
+  );
 }

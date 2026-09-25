@@ -1,9 +1,15 @@
 import { formatISO, isSameDay, parseISO, subDays } from "date-fns";
+import { useSocialStore } from "@/store/socialStore";
 import { create } from "zustand";
 
 import { readJson, userStorage, writeJson } from "@/services/mmkv";
 
-export type StreakHabit = "shacharit" | "mincha" | "maariv" | "tefillin" | "study";
+export type StreakHabit =
+  | "shacharit"
+  | "mincha"
+  | "maariv"
+  | "tefillin"
+  | "study";
 
 export type HabitProgress = {
   habit: StreakHabit;
@@ -24,40 +30,96 @@ type StreakState = {
 
 const STORAGE_KEY = "streaks.v1";
 const ENABLED_HABITS_KEY = "streaks.enabled.v1";
-const habitKeys: StreakHabit[] = ["shacharit", "mincha", "maariv", "tefillin", "study"];
+const habitKeys: StreakHabit[] = [
+  "shacharit",
+  "mincha",
+  "maariv",
+  "tefillin",
+  "study",
+];
 
 const initialHabits: HabitProgress[] = habitKeys.map((habit) => ({
   habit,
   streak: 0,
   freezes: 2,
   completedDates: [],
-  badges: []
+  badges: [],
 }));
 
 function isHabitProgressArray(value: unknown): value is HabitProgress[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "object" && item !== null && typeof (item as { habit?: unknown }).habit === "string");
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        typeof item === "object" &&
+        item !== null &&
+        typeof (item as { habit?: unknown }).habit === "string",
+    )
+  );
 }
 
 function isStreakHabitArray(value: unknown): value is StreakHabit[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string" && habitKeys.includes(item as StreakHabit));
+  return (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        typeof item === "string" && habitKeys.includes(item as StreakHabit),
+    )
+  );
 }
 
-const persisted = readJson(userStorage, STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
-const persistedEnabledHabits = readJson(userStorage, ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
+const persisted =
+  readJson(userStorage, STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
+const persistedEnabledHabits =
+  readJson(userStorage, ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
 
-export const useStreakStore = create<StreakState>((set) => ({
+export const useStreakStore = create<StreakState>((set, get) => ({
   habits: persisted,
   enabledHabits: persistedEnabledHabits,
   completeHabit: (habit, date = new Date()) =>
     set((state) => persist(updateHabit(state.habits, habit, date, false))),
-  setHabitEnabled: (habit, enabled) => set((state) => persistEnabledHabits(updateHabitVisibility(state.enabledHabits, habit, enabled))),
-  toggleHabit: (habit, date = new Date()) =>
-    set((state) => persist(toggleHabit(state.habits, habit, date))),
+  setHabitEnabled: (habit, enabled) =>
+    set((state) =>
+      persistEnabledHabits(
+        updateHabitVisibility(state.enabledHabits, habit, enabled),
+      ),
+    ),
+  toggleHabit: (habit, date = new Date()) => {
+    const day = formatISO(date, { representation: "date" });
+    const wasComplete = get()
+      .habits.find((item) => item.habit === habit)
+      ?.completedDates.includes(day);
+    set((state) => persist(toggleHabit(state.habits, habit, date)));
+    if (!wasComplete && habit !== "study") {
+      const names = {
+        shacharit: "Shacharit",
+        mincha: "Mincha",
+        maariv: "Maariv",
+        tefillin: "Tefillin",
+      };
+      useSocialStore
+        .getState()
+        .recordPrayer({
+          id: `checkin:${habit}:${day}`,
+          prayerId: habit === "tefillin" ? "tefillin-blessing" : habit,
+          title: names[habit],
+          completedAt: date,
+          streak:
+            get().habits.find((item) => item.habit === habit)?.streak ?? 0,
+          practiceKey: habit,
+        });
+    }
+  },
   useFreeze: (habit, date = new Date()) =>
-    set((state) => persist(updateHabit(state.habits, habit, date, true)))
+    set((state) => persist(updateHabit(state.habits, habit, date, true))),
 }));
 
-function updateHabit(habits: HabitProgress[], habit: StreakHabit, date: Date, consumeFreeze: boolean): { habits: HabitProgress[] } {
+function updateHabit(
+  habits: HabitProgress[],
+  habit: StreakHabit,
+  date: Date,
+  consumeFreeze: boolean,
+): { habits: HabitProgress[] } {
   const iso = formatISO(date, { representation: "date" });
   const updated = habits.map((entry) => {
     if (entry.habit !== habit) {
@@ -68,14 +130,22 @@ function updateHabit(habits: HabitProgress[], habit: StreakHabit, date: Date, co
     }
     const completedDates = [...entry.completedDates, iso].sort();
     const streak = calculateStreak(completedDates);
-    const freezes = consumeFreeze ? Math.max(entry.freezes - 1, 0) : entry.freezes;
-    const badges = Array.from(new Set([...entry.badges, ...milestones(streak)]));
+    const freezes = consumeFreeze
+      ? Math.max(entry.freezes - 1, 0)
+      : entry.freezes;
+    const badges = Array.from(
+      new Set([...entry.badges, ...milestones(streak)]),
+    );
     return { ...entry, streak, freezes, badges, completedDates };
   });
   return { habits: updated };
 }
 
-function toggleHabit(habits: HabitProgress[], habit: StreakHabit, date: Date): { habits: HabitProgress[] } {
+function toggleHabit(
+  habits: HabitProgress[],
+  habit: StreakHabit,
+  date: Date,
+): { habits: HabitProgress[] } {
   const iso = formatISO(date, { representation: "date" });
   const entry = habits.find((item) => item.habit === habit);
 
@@ -88,9 +158,15 @@ function toggleHabit(habits: HabitProgress[], habit: StreakHabit, date: Date): {
       if (item.habit !== habit) {
         return item;
       }
-      const completedDates = item.completedDates.filter((completedDate) => completedDate !== iso);
-      return { ...item, completedDates, streak: calculateStreak(completedDates) };
-    })
+      const completedDates = item.completedDates.filter(
+        (completedDate) => completedDate !== iso,
+      );
+      return {
+        ...item,
+        completedDates,
+        streak: calculateStreak(completedDates),
+      };
+    }),
   };
 }
 
@@ -117,7 +193,11 @@ function calculateStreak(completedDates: string[]): number {
   return streak;
 }
 
-function updateHabitVisibility(enabledHabits: StreakHabit[], habit: StreakHabit, enabled: boolean): { enabledHabits: StreakHabit[] } {
+function updateHabitVisibility(
+  enabledHabits: StreakHabit[],
+  habit: StreakHabit,
+  enabled: boolean,
+): { enabledHabits: StreakHabit[] } {
   const nextEnabledHabits = new Set(enabledHabits);
   if (enabled) {
     nextEnabledHabits.add(habit);
@@ -125,20 +205,28 @@ function updateHabitVisibility(enabledHabits: StreakHabit[], habit: StreakHabit,
     nextEnabledHabits.delete(habit);
   }
   return {
-    enabledHabits: habitKeys.filter((habitKey) => nextEnabledHabits.has(habitKey))
+    enabledHabits: habitKeys.filter((habitKey) =>
+      nextEnabledHabits.has(habitKey),
+    ),
   };
 }
 
-function persist(state: { habits: HabitProgress[] }): { habits: HabitProgress[] } {
+function persist(state: { habits: HabitProgress[] }): {
+  habits: HabitProgress[];
+} {
   writeJson(userStorage, STORAGE_KEY, state.habits);
   return state;
 }
 
-function persistEnabledHabits(state: { enabledHabits: StreakHabit[] }): { enabledHabits: StreakHabit[] } {
+function persistEnabledHabits(state: { enabledHabits: StreakHabit[] }): {
+  enabledHabits: StreakHabit[];
+} {
   writeJson(userStorage, ENABLED_HABITS_KEY, state.enabledHabits);
   return state;
 }
 
 function milestones(streak: number): string[] {
-  return [3, 7, 18, 40, 100].filter((milestone) => streak >= milestone).map((milestone) => `${milestone} days`);
+  return [3, 7, 18, 40, 100]
+    .filter((milestone) => streak >= milestone)
+    .map((milestone) => `${milestone} days`);
 }

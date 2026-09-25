@@ -1,7 +1,13 @@
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
-import { Check, ChevronLeft, ChevronRight, X } from "lucide-react-native";
+import {
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  X,
+} from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, ScrollView, View } from "react-native";
 
@@ -22,6 +28,7 @@ type Props = {
   visible: boolean;
   onClose: () => void;
   onComplete: () => void;
+  onQuote: (token: GuidedPrayerToken) => void;
 };
 
 export function GuidedPrayer({
@@ -30,6 +37,7 @@ export function GuidedPrayer({
   visible,
   onClose,
   onComplete,
+  onQuote,
 }: Props): React.JSX.Element | null {
   const insets = useSafeAreaInsets();
   const [index, setIndex] = useState(0);
@@ -179,6 +187,25 @@ export function GuidedPrayer({
               </Text>
             </View>
           ) : null}
+          <Button
+            variant="ghost"
+            size="content"
+            onPress={() => onQuote(token)}
+            style={{
+              minHeight: 48,
+              borderRadius: 16,
+              backgroundColor: "rgba(0,0,0,0.25)",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
+            }}
+          >
+            <Quote size={18} color={colors.white} />
+            <Text style={{ color: colors.white }}>
+              Choose a quote from this line
+            </Text>
+          </Button>
         </Animated.View>
       </ScrollView>
 
