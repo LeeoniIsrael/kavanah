@@ -1,6 +1,4 @@
 import { useThemeColors } from "@/design/appearance";
-import { fonts } from "@/design/theme";
-import { tapHaptic } from "@/services/haptics";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 import type { ComponentProps, ComponentType, PropsWithChildren } from "react";
 
@@ -14,10 +12,9 @@ export default function TabsLayout(): React.JSX.Element {
   return (
     <SystemTabs
       disableTransparentOnScrollEdge
-      iconColor={{ default: colors.inkMuted, selected: colors.blue }}
-      labelStyle={{ fontFamily: fonts.medium }}
-      minimizeBehavior="onScrollDown"
-      screenListeners={{ tabPress: () => void tapHaptic() }}
+      // UIKit owns the glass material, symbol sizing, type, and selection motion.
+      // Keep every destination visible rather than collapsing to a single icon.
+      minimizeBehavior="never"
       tabBarRespectsIMEInsets
       tintColor={colors.blue}
     >

@@ -162,3 +162,13 @@ Opening a prayer from search, bookmarks, history or a deep link now opens the re
 Timing starts on opening. Only Finish prayer explicitly records completion; opening, elapsed time, scrolling, bookmarking, source details and closing do not infer prayer. Finish uses the existing duplicate-completion guard, updates activity and exits without a second confirmation or share prompt. Source loading/error/empty states cannot log completion. The footer explains the distinction: Finish saves this prayer; closing does not log it. No time threshold hides the exit.
 
 The native direct-open Modeh Ani screen was inspected. Three reader interaction tests verify no completion after waiting, close without completion, direct access to multiple passages, explicit finish, and bookmark/details without completion. Typecheck and targeted lint pass. The test renderer was aligned to the installed React version; production/native dependencies were unchanged.
+
+### Native Liquid Glass navigation
+
+Keep Expo Router NativeTabs, backed by react-native-screens' UITabBarController. On iOS 26 the system renders the real Liquid Glass tab material and selection animation. Do not replace it with an SVG curve, gradient, blur overlay or painted glass imitation. The Reacticx curved/floating-button geometry is not reproduced by the system tab bar; that is an intentional, disclosed limitation.
+
+UIKit owns label typography, inactive symbol colors, geometry and animation. Only the selected tint follows Kavanah's palette. All five destinations remain visible (`minimizeBehavior="never"`) rather than collapsing during reading. Remove the additional JS tab-press haptic; native interaction owns its feedback. The legacy scroll-edge background option remains for older iOS, where this prop applies; it does not customize iOS 26 glass. Older OS versions use their native platform appearance and must not be advertised as Liquid Glass.
+
+Native source verified in react-native-screens/ios/tabs/host; iPhone 17 Pro iOS 26 preview inspected. Typecheck and targeted lint pass. No native dependencies or rebuild required. Apple Reduce Transparency and Reduce Motion preferences remain system-controlled.
+
+Reference: https://docs.expo.dev/router/advanced/native-tabs/
