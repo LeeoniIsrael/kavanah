@@ -126,3 +126,11 @@ Profile → Notifications and the bell in Zmanim lead to one settings screen. Al
 Notifications use short, neutral wording without streak pressure or captions. Sound is off by default. Quiet hours skip notifications instead of postponing time-sensitive alerts. Shabbat/major-holiday quiet runs from sunset until 8.5° nightfall. Tefillin always excludes Shabbat/major holidays and non-daylight clock times; Chol HaMoed exclusion is configurable. A user's fixed prayer times remain their choice. Astronomical alerts skip unavailable calculations rather than substitute estimated times.
 
 Holiday preparation opens an occurrence-specific, locally saved checklist; completed lists suppress their preparation reminder. It is a personal planning aid, not a complete halachic guide. The calendar links festival starts to their checklists. Notification taps open only allowlisted in-app routes.
+
+### Profile photo
+
+Profile begins with a single portrait control. Its native action sheet offers Take photo, Choose photo, and Remove photo when present. The system picker provides a square crop; the portrait renders circularly. Loading and failures are explicit. Camera permission is requested only after Take photo; simulators explain their missing camera. Cancel leaves the saved portrait intact.
+
+Photos are currently private to this device, explicitly labeled, and stored separately for each Circle account (or a local guest). A staged file is copied into durable app documents before replacing the previous photo. Removal deletes that file. No photo is uploaded or represented as visible to friends. Hosted avatar storage and cross-device synchronization are not implemented.
+
+The live iPhone 17 Pro Profile layout and Fast Refresh were inspected. Typecheck and targeted lint passed. Camera capture, interactive picker cropping, and selection still need physical-device acceptance testing; the simulator cannot capture a live camera photo. Existing native image-picker dependency is reused.

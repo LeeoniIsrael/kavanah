@@ -1,3 +1,4 @@
+import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
 import { useCircleAccount } from "@/store/circleAccountStore";
@@ -69,6 +70,11 @@ export function ProfileScreen(): React.JSX.Element {
       largeTitle="Profile"
       subtitle="Your practice, preferences, and privacy."
     >
+      <ProfilePhoto
+        key={profile?.id ?? "local"}
+        owner={profile?.id ?? "local"}
+        name={profile?.display_name ?? "Your profile"}
+      />
       <View style={{ gap: 12 }}>
         <SectionHeading title="Appearance" />
         <View
