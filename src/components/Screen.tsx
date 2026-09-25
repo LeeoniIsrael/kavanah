@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 
-import { BrandWordmark } from "@/components/BrandMark";
 import {
   AnimatedHeaderScrollView,
   type AnimatedHeaderScrollViewProps,
@@ -15,10 +14,7 @@ type ScreenProps = Omit<
 
 export function Screen({ children, ...props }: ScreenProps): React.JSX.Element {
   return (
-    <AnimatedHeaderScrollView
-      leftComponent={<BrandWordmark width={104} />}
-      {...props}
-    >
+    <AnimatedHeaderScrollView {...props}>
       {children}
     </AnimatedHeaderScrollView>
   );

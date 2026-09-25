@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   Dialog,
   DialogContent,
@@ -8,18 +9,11 @@ import {
 } from "@/components/ui/dialog";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
-import type { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { useNavigation } from "@react-navigation/native";
 import { formatISO } from "date-fns";
 import { BlurView } from "expo-blur";
-import {
-  GlassView,
-  isGlassEffectAPIAvailable,
-  isLiquidGlassAvailable,
-} from "expo-glass-effect";
+import { useRouter } from "expo-router";
 import {
   BellRing,
-  CalendarDays,
   ChartColumn,
   ChevronRight,
   MapPin,
@@ -53,7 +47,6 @@ import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
 import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
 import { scheduleTravelPrayerNotification } from "@/services/notifications";
 import {
@@ -66,8 +59,6 @@ import { useSettingsStore } from "@/store/settingsStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
-
-type Navigation = BottomTabNavigationProp<RootTabParamList>;
 
 const habitDetails: Record<StreakHabit, { name: string; description: string }> =
   {
@@ -121,7 +112,7 @@ const shortcuts = [
 ];
 
 export function HomeScreen(): React.JSX.Element {
-  const navigation = useNavigation<Navigation>();
+  const router = useRouter();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } =
     useStreakStore();
   const { upcomingZmanim, location, isLoading, error, refresh } =
@@ -172,7 +163,7 @@ export function HomeScreen(): React.JSX.Element {
 
   const openPrayerSearch = (query: string) => {
     setQuery(query);
-    navigation.navigate("Prayer");
+    router.push({ pathname: "/prayer", params: { query } });
   };
 
   const togglePractice = (habit: StreakHabit) => {
@@ -201,9 +192,9 @@ export function HomeScreen(): React.JSX.Element {
   const openTravelPrayer = () => {
     setTravelPromptOpen(false);
     setQuery("travel");
-    navigation.navigate("Prayer", {
-      prayerId: "tefilat-haderech",
-      query: "travel",
+    router.push({
+      pathname: "/prayer",
+      params: { prayerId: "tefilat-haderech", query: "travel" },
     });
   };
 
@@ -236,18 +227,6 @@ export function HomeScreen(): React.JSX.Element {
     <Screen
       largeTitle="Today"
       subtitle={formatHebrewDate(now)}
-      rightComponent={
-        <Button
-          variant="outline"
-          size="content"
-          accessibilityLabel="Open local prayer times"
-          accessibilityRole="button"
-          onPress={() => navigation.navigate("Zmanim")}
-          className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
-        >
-          <CalendarDays size={19} color={colors.ink} />
-        </Button>
-      }
     >
       <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
         {isLoading && !nextZman && !error ? (
@@ -312,7 +291,7 @@ export function HomeScreen(): React.JSX.Element {
                 variant="ghost"
                 size="content"
                 accessibilityRole="button"
-                onPress={() => navigation.navigate("Zmanim")}
+                onPress={() => router.push("/zmanim")}
                 className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
               >
                 <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
@@ -780,9 +759,6 @@ function ShareMomentPrompt({
 }): React.JSX.Element | null {
   const progress = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
-  const nativeGlassAvailable =
-    isLiquidGlassAvailable() && isGlassEffectAPIAvailable();
-
   useEffect(() => {
     if (!habit) return;
     progress.setValue(0);
@@ -825,18 +801,18 @@ function ShareMomentPrompt({
         <Animated.View
           pointerEvents="none"
           className="absolute inset-0"
-          style={[StyleSheet.absoluteFillObject, { opacity: progress }]}
+          style={[StyleSheet.absoluteFill, { opacity: progress }]}
         >
           <BlurView
             intensity={80}
             tint="dark"
             experimentalBlurMethod="dimezisBlurView"
-            style={StyleSheet.absoluteFillObject}
+            style={StyleSheet.absoluteFill}
           />
           <View
             pointerEvents="none"
             style={[
-              StyleSheet.absoluteFillObject,
+              StyleSheet.absoluteFill,
               { backgroundColor: "rgba(18, 31, 52, 0.2)" },
             ]}
           />
@@ -866,20 +842,10 @@ function ShareMomentPrompt({
             ],
           }}
         >
-          {nativeGlassAvailable ? (
-            <GlassView
-              className="absolute inset-0"
-              colorScheme="dark"
-              glassEffectStyle={{
-                style: "regular",
-                animate: true,
-                animationDuration: 0.35,
-              }}
-              tintColor="rgba(24, 24, 27, 0.76)"
-            />
-          ) : (
-            <View className="absolute inset-0 bg-card border border-hairline" />
-          )}
+          <AppGlassSurface
+            pointerEvents="none"
+            style={StyleSheet.absoluteFill}
+          />
           <View className="items-center px-6 pt-7 pb-5 gap-3">
             <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-hairline">
               <Share2 size={21} color={colors.blue} />

@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
-import { Bell, MapPin, RefreshCw } from "lucide-react-native";
+import { Bell, MapPin } from "lucide-react-native";
 import { useEffect } from "react";
 import { View } from "react-native";
 
@@ -28,24 +28,7 @@ export function ZmanimScreen(): React.JSX.Element {
   }, [refresh]);
 
   return (
-    <Screen
-      largeTitle="Zmanim"
-      subtitle="Local prayer times"
-      rightComponent={
-        <Button
-          variant="ghost"
-          size="content"
-          accessibilityLabel="Refresh local prayer times"
-          accessibilityRole="button"
-          onPress={() => void refresh()}
-          disabled={isLoading}
-          isLoading={isLoading}
-          className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
-        >
-          <RefreshCw size={19} color={colors.ink} />
-        </Button>
-      }
-    >
+    <Screen largeTitle="Zmanim" subtitle="Local prayer times">
       <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
         <ParametricField />
         {showInitialLoading ? (

@@ -1,4 +1,6 @@
 node_modules/
+node_modules.broken-*/
+node_modules.stale-*/
 .expo/
 dist/
 web-build/

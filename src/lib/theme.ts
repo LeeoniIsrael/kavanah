@@ -1,12 +1,13 @@
 import { colors, fonts } from "@/design/theme";
-import { DefaultTheme, type Theme } from "@react-navigation/native";
+import { DarkTheme } from "expo-router";
 
-// Kavanah intentionally follows its configured light appearance on every screen.
-export const NAV_THEME: { light: Theme } = {
-  light: {
-    ...DefaultTheme,
+// Kavanah is a dark interface. Matching the native color scheme prevents white
+// flashes and gives iOS navigation glass the correct content to sample.
+export const NAV_THEME: { dark: typeof DarkTheme } = {
+  dark: {
+    ...DarkTheme,
     colors: {
-      ...DefaultTheme.colors,
+      ...DarkTheme.colors,
       background: colors.parchment,
       card: colors.vellum,
       text: colors.ink,

@@ -19,7 +19,7 @@ React Native screens and components
         HTTPS external services
 ```
 
-`App.tsx` loads fonts, safe-area context, the app error boundary, privacy providers, and the tab navigator. `RootNavigator` exposes Home, Prayer, Zmanim, and Profile. The assistant intentionally lives inside a selected prayer instead of occupying its own tab.
+Expo Router's root layout loads fonts, safe-area context, the app error boundary, privacy providers, and the navigation theme. The `(tabs)` route group exposes Home, Prayer, Zmanim, and Profile through platform-native tabs, with a native stack inside each tab. The assistant intentionally lives inside a selected prayer instead of occupying its own tab.
 
 ## State and Storage
 

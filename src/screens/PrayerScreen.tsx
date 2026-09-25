@@ -1,12 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
-import {
-  useNavigation,
-  useRoute,
-  type NavigationProp,
-  type RouteProp,
-} from "@react-navigation/native";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
   BookmarkCheck,
@@ -47,6 +42,7 @@ import {
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
+import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   PrayerSearchSkeleton,
   PrayerTextSkeleton,
@@ -57,7 +53,6 @@ import { Card } from "@/components/ui/card";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { colors, grid, spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import type { RootTabParamList } from "@/navigation/RootNavigator";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import {
   createAssistantStream,
@@ -113,9 +108,11 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 
 export function PrayerScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
-  const navigation =
-    useNavigation<NavigationProp<RootTabParamList, "Prayer">>();
-  const route = useRoute<RouteProp<RootTabParamList, "Prayer">>();
+  const router = useRouter();
+  const params = useLocalSearchParams<{
+    prayerId?: string;
+    query?: string;
+  }>();
   const {
     prayers,
     results,
@@ -187,9 +184,9 @@ export function PrayerScreen(): React.JSX.Element {
   const focusSetup = getPrayerFocusSetup();
 
   useEffect(() => {
-    const linkedQuery = route.params?.query?.trim();
+    const linkedQuery = params.query?.trim();
     if (linkedQuery) setQuery(linkedQuery);
-    const linkedPrayerId = route.params?.prayerId?.trim();
+    const linkedPrayerId = params.prayerId?.trim();
     if (linkedPrayerId) {
       void selectPrayer(linkedPrayerId);
       setGuidedPrayerOpen(false);
@@ -202,8 +199,8 @@ export function PrayerScreen(): React.JSX.Element {
     }
   }, [
     prayerFocusEnabled,
-    route.params?.prayerId,
-    route.params?.query,
+    params.prayerId,
+    params.query,
     selectPrayer,
     setQuery,
   ]);
@@ -292,8 +289,8 @@ export function PrayerScreen(): React.JSX.Element {
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
     setReaderOpen(false);
-    if (route.params?.prayerId) {
-      navigation.setParams({ prayerId: "" });
+    if (params.prayerId) {
+      router.setParams({ prayerId: "" });
     }
   };
 
@@ -425,7 +422,10 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen largeTitle="Prayers" subtitle="Find a prayer for this moment.">
       <View className="gap-6">
-        <View className="min-h-[62px] flex-row items-center gap-3 rounded-lg border border-hairline bg-card pl-5 pr-2">
+        <AppGlassSurface
+          isInteractive
+          className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
+        >
           <Search size={18} color={colors.inkMuted} />
           <Input
             accessibilityLabel="Search prayers"
@@ -456,7 +456,7 @@ export function PrayerScreen(): React.JSX.Element {
               }
             />
           </Button>
-        </View>
+        </AppGlassSurface>
 
         <Animated.View
           pointerEvents={showResults ? "none" : "auto"}

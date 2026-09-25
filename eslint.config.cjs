@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 
 module.exports = [
   {
-    ignores: ["node_modules/**", ".expo/**", "coverage/**", "dist/**", "ios/**", "android/**"]
+    ignores: ["node_modules/**", "node_modules.broken-*/**", "node_modules.stale-*/**", ".expo/**", "coverage/**", "dist/**", "ios/**", "android/**"]
   },
   {
     files: ["*.cjs"],
