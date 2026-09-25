@@ -1,13 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
-import { X } from "@/components/ui/icons";
 import { useInterfaceStyles } from "@/design/layout";
-import { useThemeColors } from "@/design/appearance";
 import {
   circleConfigured,
   circleRpc as requestCircle,
@@ -46,15 +44,20 @@ type Update = {
   source_ref: string | null;
   circle_profiles: CircleProfile;
 };
-export function PeopleScreen() {
+type FriendsProps = { tabs: ReactNode; lead?: ReactNode };
+export function CircleFriends({ tabs, lead }: FriendsProps) {
   const id = useCircleAccount((s) => s.session?.user.id);
   const { handle } = useLocalSearchParams<{ handle?: string }>();
-  return <PeopleContent key={`${id ?? "guest"}:${handle ?? ""}`} />;
+  return (
+    <PeopleContent
+      key={`${id ?? "guest"}:${handle ?? ""}`}
+      tabs={tabs}
+      lead={lead}
+    />
+  );
 }
-function PeopleContent() {
-  const ui = useInterfaceStyles(),
-    colors = useThemeColors(),
-    router = useRouter();
+function PeopleContent({ tabs, lead }: FriendsProps) {
+  const ui = useInterfaceStyles();
   const { session, profile, ready, error: accountError } = useCircleAccount();
   const circleRpc = useCallback(
     (name: string, args: Record<string, unknown> = {}) =>
@@ -184,25 +187,11 @@ function PeopleContent() {
     </Button>
   );
   return (
-    <Screen
-      largeTitle="Your circle"
-      subtitle="A little space for prayer, together."
-      rightComponent={
-        <Button
-          variant="ghost"
-          size="icon"
-          accessibilityLabel="Close your circle"
-          onPress={() =>
-            router.canGoBack() ? router.back() : router.replace("/circle")
-          }
-        >
-          <X size={20} color={colors.ink} />
-        </Button>
-      }
-    >
+    <Screen largeTitle="Circle" subtitle="Prayer, shared simply.">
+      {tabs}
       {!circleConfigured ? (
         <View style={ui.surface}>
-          <Text style={ui.itemTitle}>People are coming to Circle</Text>
+          <Text style={ui.itemTitle}>Friends aren’t connected yet</Text>
           <Text style={ui.body}>
             Accounts aren’t connected in this build yet. Your prayers and
             activity remain on this device.
@@ -345,7 +334,7 @@ function PeopleContent() {
             </View>
           </View>
           <View style={ui.surface}>
-            <Text style={ui.itemTitle}>Add someone</Text>
+            <Text style={ui.itemTitle}>Add a friend</Text>
             <Text style={ui.body}>
               Enter their handle. They’ll receive a request in Circle.
             </Text>
@@ -436,7 +425,8 @@ function PeopleContent() {
               </View>
             </View>
           ))}
-          <Text style={ui.sectionTitle}>Together in practice</Text>
+          {lead}
+          <Text style={ui.sectionTitle}>Friends’ activity</Text>
           {!updates.length && (
             <Text style={ui.body}>
               Shared prayers and weekly quotes from your circle will appear
@@ -523,6 +513,7 @@ function PeopleContent() {
             )}
         </>
       )}
+      {!profile && lead}
       {sync.pending > 0 && (
         <View style={ui.surface}>
           <Text style={ui.body}>

@@ -1,5 +1,7 @@
-import { useCircleAccount } from "@/store/circleAccountStore";
-import { circleConfigured } from "@/services/network/client";
+import { CircleFriends } from "@/screens/PeopleScreen";
+import { usePrayerStore } from "@/store/prayerStore";
+import { useStreakStore } from "@/store/streakStore";
+import { buildActivityDays } from "@/services/activityCalendar";
 import { ActivityCalendar } from "@/components/ActivityCalendar";
 import { useInterfaceStyles } from "@/design/layout";
 import { AnimatedHeaderSurface } from "@/components/organisms/animated-header-scrollview";
@@ -15,29 +17,17 @@ import { fonts } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
-import { useSocialStore, type FeedPost } from "@/store/socialStore";
-import { useRouter } from "expo-router";
+import { useSocialStore } from "@/store/socialStore";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import {
-  BookOpen,
   Check,
-  ChevronRight,
-  CircleDot,
-  Quote,
   ShieldCheck,
-  Award,
   Info,
+  SlidersHorizontal,
   X,
 } from "@/components/ui/icons";
-import { memo, useState } from "react";
-import {
-  Alert,
-  Modal,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Switch,
-  View,
-} from "react-native";
+import { useMemo, useState } from "react";
+import { Modal, ScrollView, StyleSheet, Switch, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const modes: { id: PrayerSharing; title: string; detail: string }[] = [
@@ -58,205 +48,182 @@ const modes: { id: PrayerSharing; title: string; detail: string }[] = [
   },
 ];
 export function CircleScreen(): React.JSX.Element {
-  const colors = useThemeColors();
-  const s = useThemedStyles(makes);
-  const ui = useInterfaceStyles();
-
+  const colors = useThemeColors(),
+    s = useThemedStyles(makes),
+    ui = useInterfaceStyles();
   const router = useRouter();
-  const account = useCircleAccount((state) => state.profile);
-  const posts = useSocialStore((s) => s.posts);
-  const profile = useSocialStore((s) => s.profile);
-  const preferences = useSocialStore((s) => s.preferences);
+  const { section } = useLocalSearchParams<{ section?: string }>();
+  const selected = section === "friends" ? "friends" : "activity";
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const history = usePrayerStore((state) => state.history);
+  const prayers = usePrayerStore((state) => state.prayers);
+  const habits = useStreakStore((state) => state.habits);
+  const posts = useSocialStore((state) => state.posts);
   const now = useCurrentDate();
   const weeklyQuote = posts.find(
     (p) => p.kind === "quote" && p.week === weekKey(now),
   );
-  const automaticEnabled =
-    preferences.prayers !== "off" || preferences.milestones;
+  const entries = useMemo(
+    () =>
+      Object.entries(buildActivityDays(history, habits, prayers))
+        .sort(([a], [b]) => b.localeCompare(a))
+        .flatMap(([day, items]) => items.map((item) => ({ ...item, day }))),
+    [history, habits, prayers],
+  );
+  const tabs = (
+    <View
+      accessibilityRole="tablist"
+      style={{
+        flexDirection: "row",
+        gap: 4,
+        padding: 4,
+        borderRadius: 20,
+        backgroundColor: colors.mineral,
+      }}
+    >
+      {(["activity", "friends"] as const).map((tab) => (
+        <Button
+          key={tab}
+          variant="ghost"
+          size="content"
+          haptic="selection"
+          accessibilityRole="tab"
+          accessibilityState={{ selected: selected === tab }}
+          onPress={() => router.setParams({ section: tab })}
+          style={{
+            flex: 1,
+            minHeight: 44,
+            alignItems: "center",
+            justifyContent: "center",
+            paddingHorizontal: 12,
+            paddingVertical: 10,
+            borderRadius: 16,
+            backgroundColor: selected === tab ? colors.blue : "transparent",
+          }}
+        >
+          <Text
+            style={[
+              ui.itemTitle,
+              { color: selected === tab ? colors.onAccent : colors.ink },
+            ]}
+          >
+            {tab === "activity" ? "Your activity" : "Friends"}
+          </Text>
+        </Button>
+      ))}
+    </View>
+  );
   const openPrayers = () =>
     router.push({ pathname: "/prayer", params: { prayerId: "modeh-ani" } });
+  const lead = (
+    <View style={ui.feature}>
+      <Text style={ui.itemTitle}>Your quote of the week</Text>
+      <Text
+        style={[
+          weeklyQuote ? ui.editorial : ui.body,
+          weeklyQuote?.language === "he" && {
+            fontFamily: fonts.hebrew,
+            writingDirection: "rtl",
+            textAlign: "right",
+          },
+        ]}
+      >
+        {weeklyQuote
+          ? `“${weeklyQuote.quote}”`
+          : "Find a line in a prayer. Hold it, choose your words, and share it with your circle."}
+      </Text>
+      {weeklyQuote && <Text style={ui.caption}>{weeklyQuote.practice}</Text>}
+      <Button variant="secondary" onPress={openPrayers}>
+        <Text>
+          {weeklyQuote ? "Choose a different quote" : "Choose in prayer"}
+        </Text>
+      </Button>
+      <Button variant="ghost" onPress={() => setSettingsOpen(true)}>
+        <Text>Sharing preferences</Text>
+      </Button>
+    </View>
+  );
   return (
     <View style={s.screen}>
-      <AnimatedHeaderSurface
-        largeTitle="Circle"
-        subtitle="Prayer, shared simply."
-        contentContainerStyle={{ gap: 0 }}
-        renderScroll={(header, scrollProps) => (
-          <Animated.FlatList
-            {...scrollProps}
-            data={posts}
-            keyExtractor={(post) => post.id}
-            renderItem={({ item }) => <ActivityCard post={item} />}
-            ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
-            showsVerticalScrollIndicator={false}
-            initialNumToRender={6}
-            windowSize={5}
-            ListHeaderComponent={
-              <View style={{ gap: 24, paddingBottom: 24 }}>
-                {header}
-                <Button
-                  variant="ghost"
-                  size="content"
-                  style={[ui.surface, s.row]}
-                  onPress={() => router.push("/people")}
-                >
-                  <View style={{ flex: 1, gap: 5 }}>
-                    <Text style={ui.itemTitle}>
-                      {account ? "Your people" : "Connect your circle"}
-                    </Text>
-                    <Text style={ui.caption}>
-                      {account
-                        ? "Shared prayers, connections, and invitations"
-                        : circleConfigured
-                          ? "Add someone. Share a little of your practice."
-                          : "Accounts are coming. Your practice stays private."}
-                    </Text>
-                  </View>
-                  <ChevronRight size={16} color={colors.inkMuted} />
-                </Button>
-                <View style={s.intro}>
+      {selected === "friends" ? (
+        <CircleFriends tabs={tabs} lead={lead} />
+      ) : (
+        <AnimatedHeaderSurface
+          largeTitle="Circle"
+          rightComponent={
+            <Button
+              variant="ghost"
+              size="icon"
+              accessibilityLabel="Sharing preferences"
+              onPress={() => setSettingsOpen(true)}
+            >
+              <SlidersHorizontal size={20} color={colors.ink} />
+            </Button>
+          }
+          subtitle="Prayer, shared simply."
+          contentContainerStyle={{ gap: 0 }}
+          renderScroll={(header, scrollProps) => (
+            <Animated.FlatList
+              {...scrollProps}
+              data={entries}
+              keyExtractor={(item) => `${item.day}:${item.id}`}
+              initialNumToRender={8}
+              windowSize={5}
+              ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+              ListHeaderComponent={
+                <View style={{ gap: 24, paddingBottom: 24 }}>
+                  {header}
+                  {tabs}
+                  <ActivityCalendar />
                   <View style={s.row}>
-                    <View style={s.avatar}>
-                      <Text style={s.initial}>
-                        {(account?.display_name ?? profile?.displayName)
-                          ?.charAt(0)
-                          .toUpperCase() || "You"}
-                      </Text>
-                    </View>
-                    <View style={{ flex: 1, gap: 3 }}>
-                      <Text style={s.heading}>
-                        {account?.display_name ||
-                          profile?.displayName ||
-                          "Your practice, your pace"}
-                      </Text>
-                      <Text style={ui.caption}>
-                        Your profile shares only what you choose.
-                      </Text>
-                    </View>
+                    <Text style={ui.sectionTitle}>Prayer history</Text>
+                    <View style={{ flex: 1 }} />
+                    <Text style={ui.caption}>{entries.length} completed</Text>
                   </View>
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    accessibilityLabel="Choose automatic sharing"
-                    onPress={() => setSettingsOpen(true)}
-                    style={[ui.surface, s.settingsRow]}
-                  >
-                    <View style={{ flex: 1, gap: 5 }}>
-                      <Text style={ui.itemTitle}>Automatic updates</Text>
-                      <Text style={ui.caption}>
-                        {preferences.prayers === "off"
-                          ? "Prayers stay private"
-                          : preferences.prayers === "every"
-                            ? "Every completed prayer"
-                            : "Your first prayer ever"}
-                        {preferences.milestones ? " · Milestones on" : ""}
-                      </Text>
-                    </View>
-                    <ChevronRight size={16} color={colors.inkMuted} />
+                </View>
+              }
+              renderItem={({ item }) => (
+                <View style={ui.surface}>
+                  <Text style={ui.itemTitle}>{item.title}</Text>
+                  <Text style={ui.caption}>
+                    {new Date(`${item.day}T12:00:00`).toLocaleDateString(
+                      undefined,
+                      { month: "short", day: "numeric", year: "numeric" },
+                    )}
+                    {item.completedAt
+                      ? ` · ${new Date(item.completedAt).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}`
+                      : " · Daily check-in"}
+                    {item.durationSeconds !== undefined
+                      ? ` · ${formatDuration(item.durationSeconds)}`
+                      : ""}
+                  </Text>
+                </View>
+              )}
+              ListEmptyComponent={
+                <View style={ui.surface}>
+                  <Text style={ui.itemTitle}>Your practice starts here</Text>
+                  <Text style={ui.body}>
+                    Finish a prayer or check in on Home. It appears here even
+                    when sharing is off.
+                  </Text>
+                  <Button onPress={openPrayers}>
+                    <Text>Open a prayer</Text>
                   </Button>
                 </View>
-                <View style={ui.feature}>
-                  <View style={s.row}>
-                    <Quote size={20} color={colors.blue} />
-                    <Text style={s.quoteLabel}>Your quote of the week</Text>
-                  </View>
-                  <Text
-                    style={[
-                      ui.editorial,
-                      weeklyQuote?.language === "he" && {
-                        fontFamily: fonts.hebrew,
-                        writingDirection: "rtl",
-                        textAlign: "right",
-                      },
-                    ]}
-                  >
-                    {weeklyQuote
-                      ? `“${weeklyQuote.quote}”`
-                      : "A line worth carrying."}
-                  </Text>
-                  <Text style={s.quoteDescription}>
-                    {weeklyQuote
-                      ? weeklyQuote.practice
-                      : "Find a line in a prayer. Hold it, choose your words, and add it here."}
-                  </Text>
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    onPress={openPrayers}
-                    style={s.quoteAction}
-                  >
-                    <BookOpen size={16} color={colors.ink} />
-                    <Text style={ui.itemTitle}>
-                      {weeklyQuote
-                        ? "Choose a different quote"
-                        : "Choose in prayer"}
-                    </Text>
-                    <ChevronRight size={16} color={colors.ink} />
-                  </Button>
-                  <Text style={ui.caption}>
-                    One quote each week. Replace it anytime. No caption.
+              }
+              ListFooterComponent={
+                <View style={s.notice}>
+                  <ShieldCheck size={16} color={colors.inkMuted} />
+                  <Text style={[ui.caption, { flex: 1 }]}>
+                    Your private history on this device. Add friends and see
+                    shared updates in Friends.
                   </Text>
                 </View>
-                <Text accessibilityRole="header" style={ui.sectionTitle}>
-                  Your activity
-                </Text>
-                <ActivityCalendar />
-                <View style={s.row}>
-                  <Text style={ui.sectionTitle}>Updates</Text>
-                  <View style={{ flex: 1 }} />
-                  <Text style={ui.caption}>
-                    {posts.length
-                      ? `${posts.length} update${posts.length === 1 ? "" : "s"}`
-                      : "A fresh start"}
-                  </Text>
-                </View>
-              </View>
-            }
-            ListEmptyComponent={
-              <View style={s.empty}>
-                <View style={s.emptyIcon}>
-                  <CircleDot size={24} color={colors.blue} />
-                </View>
-                <Text style={s.heading}>
-                  {automaticEnabled
-                    ? "You’re ready. Just pray."
-                    : "Nothing to compose."}
-                </Text>
-                <Text
-                  style={[s.muted, { textAlign: "center", lineHeight: 23 }]}
-                >
-                  {automaticEnabled
-                    ? "Your next matching completion will appear here automatically."
-                    : "Choose your automatic updates, then pray. Your practice creates the post."}
-                </Text>
-                <Button
-                  variant="default"
-                  size="content"
-                  onPress={
-                    automaticEnabled ? openPrayers : () => setSettingsOpen(true)
-                  }
-                  style={s.primary}
-                >
-                  <Text style={s.primaryText}>
-                    {automaticEnabled ? "Open a prayer" : "Choose my updates"}
-                  </Text>
-                </Button>
-              </View>
-            }
-            ListFooterComponent={
-              <View style={s.notice}>
-                <ShieldCheck size={16} color={colors.inkMuted} />
-                <Text style={[ui.caption, { flex: 1, lineHeight: 19 }]}>
-                  {account
-                    ? "This is your device activity. Open Your people for the shared feed. Sharing choices apply to future completions."
-                    : "This activity stays on your device. Connect your circle when you’re ready to share with people you know."}
-                </Text>
-              </View>
-            }
-          />
-        )}
-      />
+              }
+            />
+          )}
+        />
+      )}
       <SharingSettings
         visible={settingsOpen}
         onClose={() => setSettingsOpen(false)}
@@ -394,105 +361,6 @@ export function SharingSettings({
     </Modal>
   );
 }
-const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
-  const colors = useThemeColors();
-  const s = useThemedStyles(makes);
-  const ui = useInterfaceStyles();
-
-  const router = useRouter();
-  const removePost = useSocialStore((s) => s.removePost);
-  const account = useCircleAccount((state) => state.profile);
-  const quote = post.kind === "quote";
-  return (
-    <View style={ui.surface}>
-      <View style={s.row}>
-        <View style={s.activityIcon}>
-          {quote ? (
-            <Quote size={20} color={colors.blue} />
-          ) : post.kind === "milestone" ? (
-            <Award size={20} color={colors.blue} />
-          ) : (
-            <BookOpen size={20} color={colors.inkMuted} />
-          )}
-        </View>
-        <View style={{ flex: 1, gap: 3 }}>
-          <Text style={ui.itemTitle}>
-            {quote
-              ? "Quote of the week"
-              : post.kind === "milestone"
-                ? `${post.streak} days of practice`
-                : post.practice}
-          </Text>
-          <Text style={ui.caption}>
-            {new Date(post.createdAt).toLocaleDateString([], {
-              month: "short",
-              day: "numeric",
-            })}
-            {quote ? " · Chosen by you" : ""}
-          </Text>
-        </View>
-        <Button
-          variant="ghost"
-          size="content"
-          style={s.iconButton}
-          accessibilityLabel={`Remove ${post.practice} from device activity`}
-          onPress={() =>
-            account
-              ? Alert.alert(
-                  "Remove from this device?",
-                  "Shared updates remain in Your people. Remove a shared update there to delete it from everyone’s feed.",
-                  [
-                    { text: "Cancel", style: "cancel" },
-                    { text: "Remove", onPress: () => removePost(post.id) },
-                  ],
-                )
-              : removePost(post.id)
-          }
-        >
-          <X size={20} color={colors.inkMuted} />
-        </Button>
-      </View>
-      {!quote && (
-        <Text style={[ui.caption, { color: colors.ink }]}>
-          {post.durationSeconds != null
-            ? `Started ${new Date(post.startedAt!).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}  ·  ${formatDuration(post.durationSeconds)}`
-            : `Completed ${new Date(post.createdAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · Duration not recorded`}
-        </Text>
-      )}
-      {quote && (
-        <Text
-          style={[
-            s.activityQuote,
-            post.language === "he" && {
-              writingDirection: "rtl",
-              textAlign: "right",
-              fontFamily: fonts.hebrew,
-            },
-          ]}
-        >
-          {post.quote}
-        </Text>
-      )}
-      <Button
-        variant="ghost"
-        size="content"
-        onPress={() =>
-          router.push({
-            pathname: "/prayer",
-            params: { prayerId: post.prayerId },
-          })
-        }
-        style={s.postSource}
-      >
-        <Text style={[s.muted, { flex: 1, color: colors.ink }]}>
-          {quote || post.kind === "milestone" ? post.practice : "Read prayer"}
-          {quote && post.sourceRef ? `\n${post.sourceRef}` : ""}
-        </Text>
-        <ChevronRight size={16} color={colors.inkMuted} />
-      </Button>
-    </View>
-  );
-});
 const makes = (colors: ThemeColors) =>
   StyleSheet.create({
     screen: { flex: 1, backgroundColor: colors.parchment },
@@ -515,47 +383,6 @@ const makes = (colors: ThemeColors) =>
       minHeight: 44,
       alignItems: "center",
       justifyContent: "center",
-    },
-    intro: { gap: 18 },
-    avatar: {
-      width: 48,
-      height: 48,
-      borderRadius: 24,
-      backgroundColor: colors.mineral,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    initial: { color: colors.ink, fontSize: 14, fontFamily: fonts.semibold },
-    settingsRow: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 12,
-    },
-    quoteLabel: { color: colors.blue, fontSize: 13, lineHeight: 20 },
-    quoteDescription: { color: colors.inkMuted, fontSize: 14, lineHeight: 22 },
-    quoteAction: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 10,
-      minHeight: 48,
-      backgroundColor: colors.mineral,
-      borderRadius: 18,
-      padding: 10,
-    },
-    empty: {
-      paddingVertical: 12,
-      paddingHorizontal: 16,
-      alignItems: "center",
-      gap: 12,
-    },
-    emptyIcon: {
-      width: 52,
-      height: 52,
-      borderRadius: 26,
-      backgroundColor: colors.blueSoft,
-      justifyContent: "center",
-      alignItems: "center",
     },
     primary: {
       backgroundColor: colors.blue,
@@ -613,26 +440,6 @@ const makes = (colors: ThemeColors) =>
       borderColor: colors.hairline,
     },
     rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
-    activityIcon: {
-      width: 36,
-      height: 36,
-      borderRadius: 18,
-      backgroundColor: colors.mineral,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    activityQuote: {
-      fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
-      fontSize: 23,
-      lineHeight: 33,
-      color: colors.ink,
-    },
-    postSource: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 12,
-      minHeight: 44,
-    },
   });
 
 function formatDuration(seconds: number): string {
