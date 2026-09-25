@@ -12,6 +12,7 @@ import { useAppearanceStore, useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import {
   Bell,
+  Share2,
   Check,
   ChevronRight,
   Languages,
@@ -55,6 +56,8 @@ export function ProfileScreen(): React.JSX.Element {
     primaryLanguageCode,
     assistantConsentVersion,
     prayerFocusEnabled,
+    shareAfterPrayer,
+    setShareAfterPrayer,
     setPrimaryLanguageCode,
     setAssistantConsent,
     setPrayerFocusEnabled,
@@ -221,6 +224,25 @@ export function ProfileScreen(): React.JSX.Element {
           </View>
           <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
+
+        <View className="min-h-[76px] px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
+          <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">
+            <Share2 size={20} color={colors.blue} />
+          </View>
+          <View className="flex-1 gap-[2px]">
+            <Text className="text-[17px] leading-[24px] font-semibold text-foreground font-heading">
+              Share after prayer
+            </Text>
+            <Text className="text-[13px] leading-[20px] text-muted-foreground font-label">
+              Ask to share when you finish. Nothing posts automatically.
+            </Text>
+          </View>
+          <Switch
+            accessibilityLabel="Share after prayer"
+            checked={shareAfterPrayer}
+            onCheckedChange={setShareAfterPrayer}
+          />
+        </View>
 
         <View className="min-h-[76px] rounded-none px-5 py-4 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-10 h-10 rounded-full bg-muted items-center justify-center">

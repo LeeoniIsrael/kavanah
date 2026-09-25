@@ -14,6 +14,8 @@ type SettingsState = {
   primaryLanguageCode: string;
   assistantConsentVersion: number;
   zmanNotificationsEnabled: boolean;
+  shareAfterPrayer: boolean;
+  setShareAfterPrayer: (enabled: boolean) => void;
   prayerFocusEnabled: boolean;
   calendarInIsrael: boolean;
   setCalendarInIsrael: (value: boolean) => void;
@@ -39,6 +41,12 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     : 0,
   zmanNotificationsEnabled: initialZmanNotificationsEnabled,
   prayerFocusEnabled: initialPrayerFocusEnabled,
+  shareAfterPrayer:
+    userStorage.getString("settings.share-after-prayer") !== "false",
+  setShareAfterPrayer: (enabled) => {
+    userStorage.set("settings.share-after-prayer", String(enabled));
+    set({ shareAfterPrayer: enabled });
+  },
   calendarInIsrael:
     readSocialData(
       "settings.calendar-israel",

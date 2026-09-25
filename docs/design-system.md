@@ -178,3 +178,9 @@ Reference: https://docs.expo.dev/router/advanced/native-tabs/
 Search groups matching normalized prayer titles into one result with the highest-ranked match opening directly. An optional Other editions disclosure retains all alternative source IDs with prayer-book and section labels; grouping does not assert that their text is identical. The bundled Modeh Ani and its five indexed placements now present as one prayer. Bookmarks and the Siddur index retain their original source identities. Search deep links reveal Find a prayer automatically.
 
 Regression coverage checks grouping against the real index, preservation of weekday/Shabbat sources, distinct titles, and repeated IDs. Six search/service tests, typecheck and targeted lint passed. The grouped result was visually inspected in the native iPhone 17 Pro preview. Direct UI interaction remains limited by the locked Mac session.
+
+### Optional share prompt after completion
+
+Finish prayer records completion once, then shows a compact Share / Not now prompt by default. Ask after each prayer can be disabled in the prompt or changed later under Profile → Share after prayer. The preference persists locally. When disabled, Finish closes immediately. Sharing remains an explicit action; iOS waits for the reader modal to dismiss before presenting the existing story composer. Closing a reader still never records completion.
+
+Native popup layout inspected through a temporary preview state without recording a test prayer; override removed. Typecheck, targeted lint, the preference persistence test and three reader interaction tests passed. Full physical-device share-sheet interaction was not verified in the locked desktop session.

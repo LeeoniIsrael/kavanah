@@ -1,3 +1,4 @@
+import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
 import { groupPrayerSearchResults } from "@/services/prayerSearchGroups";
 import { PrayerSearchGroupCard } from "@/components/PrayerSearchGroupCard";
 import { siddurBooks, siddurEntries, type SiddurBook } from "@/services/siddur";
@@ -17,14 +18,12 @@ import {
   Bookmark,
   BookmarkCheck,
   BookmarkMinus,
-  BookOpenCheck,
   CircleHelp,
   ExternalLink,
   MoonStar,
   Quote,
   RefreshCw,
   Search,
-  Share2,
   ShieldCheck,
   X,
 } from "@/components/ui/icons";
@@ -34,6 +33,7 @@ import {
   Easing,
   Linking,
   Modal,
+  Platform,
   ScrollView,
   View,
 } from "react-native";
@@ -133,6 +133,11 @@ export function PrayerScreen(): React.JSX.Element {
     recordCompletion,
     sync,
   } = usePrayerStore();
+  const shareAfterPrayer = useSettingsStore((state) => state.shareAfterPrayer);
+  const setShareAfterPrayer = useSettingsStore(
+    (state) => state.setShareAfterPrayer,
+  );
+  const pendingShare = useRef<PracticeStoryMoment | null>(null);
   const completeHabit = useStreakStore((state) => state.completeHabit);
   const recordSocialPrayer = useSocialStore((state) => state.recordPrayer);
   const [quoteSource, setQuoteSource] = useState<QuoteSource | null>(null);
@@ -323,6 +328,7 @@ export function PrayerScreen(): React.JSX.Element {
     openPrayer(entry.id);
   };
   const closeReader = () => {
+    setCompletionMoment(null);
     setQuoteSource(null);
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
@@ -388,8 +394,17 @@ export function PrayerScreen(): React.JSX.Element {
       streak,
       ...(habit ? { practiceKey: habit } : {}),
     });
-    setCompletionMoment(null);
-    closeReader();
+    if (shareAfterPrayer) {
+      setCompletionMoment({
+        prayerTitle: selected.title,
+        ...(habit ? { habit } : {}),
+        streak,
+        completedAt,
+      });
+    } else {
+      setCompletionMoment(null);
+      closeReader();
+    }
     void successHaptic();
   };
 
@@ -674,6 +689,12 @@ export function PrayerScreen(): React.JSX.Element {
 
       <Modal
         visible={readerOpen && Boolean(selected)}
+        onDismiss={() => {
+          if (pendingShare.current) {
+            setShareMoment(pendingShare.current);
+            pendingShare.current = null;
+          }
+        }}
         animationType={reduceMotion ? "none" : "slide"}
         presentationStyle="fullScreen"
         onRequestClose={closeReader}
@@ -1147,78 +1168,21 @@ export function PrayerScreen(): React.JSX.Element {
               }}
             />
             {completionMoment ? (
-              <View
-                accessibilityViewIsModal
-                className="absolute left-0 right-0 top-0 bottom-0 z-[50] justify-end p-3 bg-[rgba(17,20,18,0.36)]"
-              >
-                <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
-                  <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-                    <BookOpenCheck size={24} color={colors.onAccent} />
-                  </View>
-                  <View className="gap-1">
-                    <Text variant="caption">Prayer complete</Text>
-                    <Text
-                      variant="section"
-                      className="text-[24px] leading-[30px]"
-                    >
-                      Beautiful work showing up.
-                    </Text>
-                    <Text variant="body" className="text-muted-foreground">
-                      {completionMoment.habit
-                        ? `Saved to your history and today's ${completionMoment.habit} practice.`
-                        : "Saved to your private prayer history."}
-                    </Text>
-                  </View>
-                  <View className="gap-3">
-                    <Button
-                      variant="default"
-                      size="content"
-                      accessibilityRole="button"
-                      onPress={() => {
-                        setShareMoment(completionMoment);
-                        setCompletionMoment(null);
-                        closeReader();
-                      }}
-                      className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
-                    >
-                      <Share2 size={20} color={colors.onAccent} />
-                      <Text className="text-[16px] leading-[22px] font-semibold text-primary-foreground font-heading">
-                        Share this moment
-                      </Text>
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="content"
-                      onPress={() => {
-                        setCompletionMoment(null);
-                      }}
-                      style={{
-                        minHeight: 44,
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Text style={{ color: colors.blue }}>
-                        Choose a quote from this prayer
-                      </Text>
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="content"
-                      accessibilityRole="button"
-                      onPress={() => {
-                        setCompletionMoment(null);
-                        closeReader();
-                      }}
-                      className="min-h-11 items-center justify-center"
-                    >
-                      <Text variant="section" className="text-[15px]">
-                        Done
-                      </Text>
-                    </Button>
-                  </View>
-                </Card>
-              </View>
+              <PrayerCompletionPrompt
+                enabled={shareAfterPrayer}
+                onEnabledChange={setShareAfterPrayer}
+                onShare={() => {
+                  if (Platform.OS === "ios")
+                    pendingShare.current = completionMoment;
+                  else setShareMoment(completionMoment);
+                  setCompletionMoment(null);
+                  closeReader();
+                }}
+                onDismiss={() => {
+                  setCompletionMoment(null);
+                  closeReader();
+                }}
+              />
             ) : null}
             {quoteSource && (
               <QuoteSelector
