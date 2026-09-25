@@ -1,7 +1,19 @@
 import { create } from "zustand";
 
-import { cacheStorage, readJson, userStorage, writeJson } from "@/services/mmkv";
-import { getCachedPrayers, hydratePrayerFromSefaria, mergePrayerCollections, searchPrayers, searchSefariaPrayerRefs, syncCorePrayers } from "@/services/prayerService";
+import {
+  cacheStorage,
+  readJson,
+  userStorage,
+  writeJson,
+} from "@/services/mmkv";
+import {
+  getCachedPrayers,
+  hydratePrayerFromSefaria,
+  mergePrayerCollections,
+  searchPrayers,
+  searchSefariaPrayerRefs,
+  syncCorePrayers,
+} from "@/services/prayerService";
 import type { PrayerSearchResult, PrayerText } from "@/types/prayer";
 
 const BOOKMARKS_KEY = "prayers.bookmarks";
@@ -12,7 +24,9 @@ export type PrayerHistoryEntry = {
   prayerId: string;
   prayerTitle: string;
   completedAt: string;
-  source: "guided-reading";
+  startedAt?: string;
+  durationSeconds?: number;
+  source: "guided-reading" | "reader";
 };
 
 type PrayerState = {
@@ -30,13 +44,23 @@ type PrayerState = {
   searchRemote: (query?: string) => Promise<void>;
   selectPrayer: (id: string) => Promise<void>;
   toggleBookmark: (id: string) => void;
-  recordCompletion: (prayer: Pick<PrayerText, "id" | "title">, completedAt?: Date) => PrayerHistoryEntry;
+  recordCompletion: (
+    prayer: Pick<PrayerText, "id" | "title">,
+    completedAt?: Date,
+    startedAt?: Date,
+    source?: PrayerHistoryEntry["source"],
+  ) => PrayerHistoryEntry;
   sync: () => Promise<void>;
 };
 
 const cached = getCachedPrayers();
-const persistedBookmarks = readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? ["tefillin-blessing"];
-const persistedHistory = readJson(userStorage, HISTORY_KEY, isPrayerHistoryArray) ?? [];
+const persistedBookmarks = readJson(
+  cacheStorage,
+  BOOKMARKS_KEY,
+  isStringArray,
+) ?? ["tefillin-blessing"];
+const persistedHistory =
+  readJson(userStorage, HISTORY_KEY, isPrayerHistoryArray) ?? [];
 
 export const usePrayerStore = create<PrayerState>((set, get) => ({
   prayers: cached,
@@ -79,37 +103,61 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     try {
       const hydrated = await hydratePrayerFromSefaria(prayer);
       set((state) => {
-        const prayers = state.prayers.map((item) => (item.id === id ? hydrated : item));
+        const prayers = state.prayers.map((item) =>
+          item.id === id ? hydrated : item,
+        );
         return {
           prayers,
           results: searchPrayers(state.query, prayers),
-          loadingPrayerId: state.loadingPrayerId === id ? null : state.loadingPrayerId,
-          prayerLoadError: state.selectedPrayerId === id ? null : state.prayerLoadError
+          loadingPrayerId:
+            state.loadingPrayerId === id ? null : state.loadingPrayerId,
+          prayerLoadError:
+            state.selectedPrayerId === id ? null : state.prayerLoadError,
         };
       });
     } catch (error) {
-      set((state) => state.selectedPrayerId === id
-        ? {
-            loadingPrayerId: null,
-            prayerLoadError: error instanceof Error ? error.message : "This prayer could not be loaded right now."
-          }
-        : state);
+      set((state) =>
+        state.selectedPrayerId === id
+          ? {
+              loadingPrayerId: null,
+              prayerLoadError:
+                error instanceof Error
+                  ? error.message
+                  : "This prayer could not be loaded right now.",
+            }
+          : state,
+      );
     }
   },
   toggleBookmark: (id) => {
     set((state) => {
-      const bookmarkedPrayerIds = state.bookmarkedPrayerIds.includes(id) ? state.bookmarkedPrayerIds.filter((bookmarkId) => bookmarkId !== id) : [id, ...state.bookmarkedPrayerIds];
+      const bookmarkedPrayerIds = state.bookmarkedPrayerIds.includes(id)
+        ? state.bookmarkedPrayerIds.filter((bookmarkId) => bookmarkId !== id)
+        : [id, ...state.bookmarkedPrayerIds];
       writeJson(cacheStorage, BOOKMARKS_KEY, bookmarkedPrayerIds);
       return { bookmarkedPrayerIds };
     });
   },
-  recordCompletion: (prayer, completedAt = new Date()) => {
+  recordCompletion: (
+    prayer,
+    completedAt = new Date(),
+    startedAt,
+    source = "guided-reading",
+  ) => {
     const entry: PrayerHistoryEntry = {
       id: `${completedAt.toISOString()}-${prayer.id}`,
       prayerId: prayer.id,
       prayerTitle: prayer.title,
       completedAt: completedAt.toISOString(),
-      source: "guided-reading",
+      ...(startedAt && startedAt <= completedAt
+        ? {
+            startedAt: startedAt.toISOString(),
+            durationSeconds: Math.floor(
+              (completedAt.getTime() - startedAt.getTime()) / 1000,
+            ),
+          }
+        : {}),
+      source,
     };
     set((state) => {
       const history = [entry, ...state.history].slice(0, 500);
@@ -125,22 +173,37 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
       set((state) => ({
         prayers,
         results: searchPrayers(state.query, prayers),
-        selectedPrayerId: prayers.some((prayer) => prayer.id === state.selectedPrayerId) ? state.selectedPrayerId : prayers[0]?.id ?? "shema"
+        selectedPrayerId: prayers.some(
+          (prayer) => prayer.id === state.selectedPrayerId,
+        )
+          ? state.selectedPrayerId
+          : (prayers[0]?.id ?? "shema"),
       }));
     } finally {
       set({ isSyncing: false });
     }
-  }
+  },
 }));
 
 function isStringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string");
+  return (
+    Array.isArray(value) && value.every((item) => typeof item === "string")
+  );
 }
 
 function isPrayerHistoryArray(value: unknown): value is PrayerHistoryEntry[] {
-  return Array.isArray(value) && value.every((item) => {
-    if (typeof item !== "object" || item === null) return false;
-    const entry = item as Partial<PrayerHistoryEntry>;
-    return typeof entry.id === "string" && typeof entry.prayerId === "string" && typeof entry.prayerTitle === "string" && typeof entry.completedAt === "string" && entry.source === "guided-reading";
-  });
+  return (
+    Array.isArray(value) &&
+    value.every((item) => {
+      if (typeof item !== "object" || item === null) return false;
+      const entry = item as Partial<PrayerHistoryEntry>;
+      return (
+        typeof entry.id === "string" &&
+        typeof entry.prayerId === "string" &&
+        typeof entry.prayerTitle === "string" &&
+        typeof entry.completedAt === "string" &&
+        (entry.source === "guided-reading" || entry.source === "reader")
+      );
+    })
+  );
 }

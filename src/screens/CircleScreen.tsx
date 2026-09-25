@@ -16,7 +16,6 @@ import {
   ChevronRight,
   CircleDot,
   Quote,
-  Settings2,
   ShieldCheck,
   Sparkles,
   X,
@@ -36,9 +35,9 @@ const modes: { id: PrayerSharing; title: string; detail: string }[] = [
     detail: "No automatic prayer updates.",
   },
   {
-    id: "first-daily",
-    title: "First prayer each day",
-    detail: "One update after your first completed prayer.",
+    id: "first-ever",
+    title: "First prayer ever",
+    detail: "A single update for your very first prayer. Never repeats.",
   },
   {
     id: "every",
@@ -79,15 +78,6 @@ export function CircleScreen(): React.JSX.Element {
                 <Text style={s.title}>Circle</Text>
                 <Text style={s.muted}>Prayer, shared simply.</Text>
               </View>
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityLabel="Sharing preferences"
-                onPress={() => setSettingsOpen(true)}
-                style={s.iconButton}
-              >
-                <Settings2 size={22} color={colors.ink} />
-              </Button>
             </View>
             <View style={s.intro}>
               <View style={s.row}>
@@ -119,7 +109,7 @@ export function CircleScreen(): React.JSX.Element {
                       ? "Prayers stay private"
                       : preferences.prayers === "every"
                         ? "Every completed prayer"
-                        : "Your first prayer each day"}
+                        : "Your first prayer ever"}
                     {preferences.milestones ? " · Milestones on" : ""}
                   </Text>
                 </View>
@@ -267,7 +257,7 @@ export function SharingSettings({
           >
             <Text style={s.muted}>
               Choose once. Kavanah creates simple updates from your completed
-              prayers. You never need to write a post.
+              prayers. Changes save immediately.
             </Text>
             <View style={{ gap: 12 }}>
               <Text style={s.heading}>Prayer updates</Text>
@@ -314,7 +304,8 @@ export function SharingSettings({
               <View style={{ flex: 1, gap: 7 }}>
                 <Text style={s.heading}>Streak milestones</Text>
                 <Text style={s.small}>
-                  Celebrate 3, 7, 18, 40, and 100 days of returning.
+                  After your first prayer, share milestones at 3, 7, 18, 40, and
+                  100 days.
                 </Text>
               </View>
               <Switch
@@ -371,14 +362,14 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
               ? "Quote of the week"
               : post.kind === "milestone"
                 ? `${post.streak} days of practice`
-                : "A moment for prayer"}
+                : post.practice}
           </Text>
           <Text style={s.small}>
             {new Date(post.createdAt).toLocaleDateString([], {
               month: "short",
               day: "numeric",
             })}
-            {quote ? " · Chosen by you" : " · Automatic"}
+            {quote ? " · Chosen by you" : ""}
           </Text>
         </View>
         <Button
@@ -391,6 +382,13 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
           <X size={16} color={colors.inkMuted} />
         </Button>
       </View>
+      {!quote && (
+        <Text style={[s.small, { color: colors.ink }]}>
+          {post.durationSeconds != null
+            ? `Started ${new Date(post.startedAt!).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}  ·  ${formatDuration(post.durationSeconds)}`
+            : `Completed ${new Date(post.createdAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · Duration not recorded`}
+        </Text>
+      )}
       {quote && (
         <Text
           style={[
@@ -416,8 +414,8 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
         }
         style={s.postSource}
       >
-        <Text style={[s.muted, { flex: 1 }]}>
-          {post.practice}
+        <Text style={[s.muted, { flex: 1, color: colors.ink }]}>
+          {quote || post.kind === "milestone" ? post.practice : "Read prayer"}
           {quote && post.sourceRef ? `\n${post.sourceRef}` : ""}
         </Text>
         <ChevronRight size={16} color={colors.inkMuted} />
@@ -608,3 +606,11 @@ const s = StyleSheet.create({
     minHeight: 44,
   },
 });
+
+function formatDuration(seconds: number): string {
+  if (seconds < 60) return `${seconds}s`;
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  if (minutes < 60) return `${minutes}m${remainder ? ` ${remainder}s` : ""}`;
+  return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
+}

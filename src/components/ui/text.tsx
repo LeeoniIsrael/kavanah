@@ -2,7 +2,12 @@ import { cn } from "@/lib/utils";
 import { Slot } from "@rn-primitives/slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
-import { Platform, Text as RNText, type Role } from "react-native";
+import {
+  Platform,
+  Text as RNText,
+  useWindowDimensions,
+  type Role,
+} from "react-native";
 
 const textVariants = cva(
   cn(
@@ -92,9 +97,13 @@ function Text({
     asChild?: boolean;
   }) {
   const textClass = React.useContext(TextClassContext);
+  // Recreate native text layout when Dynamic Type changes; iOS otherwise
+  // retains stale line breaks and clips paragraphs in already-open sheets.
+  const { fontScale } = useWindowDimensions();
   const Component = asChild ? Slot : RNText;
   return (
     <Component
+      key={fontScale}
       className={cn(textVariants({ variant }), textClass, className)}
       role={variant ? ROLE[variant] : undefined}
       aria-level={variant ? ARIA_LEVEL[variant] : undefined}

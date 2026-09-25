@@ -144,6 +144,9 @@ export function PrayerScreen(): React.JSX.Element {
   const prayerFocusEnabled = useSettingsStore(
     (state) => state.prayerFocusEnabled,
   );
+  const prayerSession = useRef<{ startedAt: Date; completed: boolean } | null>(
+    null,
+  );
   const [readerOpen, setReaderOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
@@ -193,6 +196,7 @@ export function PrayerScreen(): React.JSX.Element {
       setAssistantOpen(false);
       setAssistantInput("");
       setAssistantMessages([]);
+      prayerSession.current = { startedAt: new Date(), completed: false };
       setReaderOpen(true);
       setFocusPromptMessage("");
       setFocusPromptOpen(false);
@@ -280,6 +284,7 @@ export function PrayerScreen(): React.JSX.Element {
     setAssistantOpen(false);
     setAssistantInput("");
     setAssistantMessages([]);
+    prayerSession.current = { startedAt: new Date(), completed: false };
     setReaderOpen(true);
     setFocusPromptMessage("");
     setFocusPromptOpen(false);
@@ -327,9 +332,16 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   const completeGuidedPrayer = () => {
-    if (!selected) return;
+    if (!selected || prayerSession.current?.completed) return;
     const completedAt = new Date();
-    const completion = recordCompletion(selected, completedAt);
+    const startedAt = prayerSession.current?.startedAt;
+    if (prayerSession.current) prayerSession.current.completed = true;
+    const completion = recordCompletion(
+      selected,
+      completedAt,
+      startedAt,
+      guidedPrayerOpen ? "guided-reading" : "reader",
+    );
     const habit = habitForPrayer(selected);
     if (habit) completeHabit(habit, completedAt);
     const streak = habit
@@ -338,6 +350,7 @@ export function PrayerScreen(): React.JSX.Element {
       : 0;
     recordSocialPrayer({
       id: completion.id,
+      ...(startedAt ? { startedAt } : {}),
       prayerId: selected.id,
       title: selected.title,
       completedAt,
@@ -620,6 +633,28 @@ export function PrayerScreen(): React.JSX.Element {
                   <X size={17} color={colors.ink} />
                 </Button>
                 <Button
+                  variant="ghost"
+                  size="content"
+                  accessibilityLabel="Finish prayer"
+                  disabled={selectedLoading}
+                  onPress={() => {
+                    completeGuidedPrayer();
+                    setCompletionMoment(null);
+                    closeReader();
+                  }}
+                  style={{
+                    minHeight: 44,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: colors.mineral,
+                    paddingHorizontal: 20,
+                    marginLeft: "auto",
+                    marginRight: 12,
+                  }}
+                >
+                  <Text style={{ color: colors.ink }}>Done</Text>
+                </Button>
+                <Button
                   variant="default"
                   size="content"
                   accessibilityLabel={
@@ -897,7 +932,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
                   <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
-                    <MoonStar size={22} color={colors.white} />
+                    <MoonStar size={22} color={colors.parchment} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer Focus</Text>
@@ -1036,7 +1071,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
                   <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-                    <BookOpenCheck size={23} color={colors.white} />
+                    <BookOpenCheck size={23} color={colors.parchment} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer complete</Text>

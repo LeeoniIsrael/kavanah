@@ -77,7 +77,7 @@ export function GuidedPrayer({
     <View
       style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       accessibilityViewIsModal
-      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-primary"
+      className="absolute left-0 right-0 top-0 bottom-0 z-[40] bg-background"
     >
       <View className="min-h-[76px] px-6 flex-row items-center gap-3">
         <Button
@@ -93,7 +93,7 @@ export function GuidedPrayer({
           <X size={18} color={colors.white} />
         </Button>
         <View className="flex-1 items-center gap-0.5">
-          <Text className="text-[11px] leading-[15px] font-medium text-white/60 font-label">
+          <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
             Guided reading
           </Text>
           <Text
@@ -146,7 +146,7 @@ export function GuidedPrayer({
           {token.hebrew ? (
             <View className="items-center gap-3">
               <View className="self-center rounded-full border border-white/20 px-3 py-1">
-                <Text className="text-[11px] leading-[15px] font-medium text-white/60 font-label">
+                <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
                   Line {safeIndex + 1} of {tokens.length}
                 </Text>
               </View>
@@ -160,7 +160,7 @@ export function GuidedPrayer({
             </View>
           ) : null}
           {token.transliteration ? (
-            <View className="gap-3 rounded-lg bg-white px-5 py-5">
+            <View className="gap-3 rounded-lg bg-card px-5 py-5">
               <Text className="text-[12px] leading-[16px] font-semibold text-primary font-label">
                 Read aloud
               </Text>
@@ -175,7 +175,7 @@ export function GuidedPrayer({
           ) : null}
           {token.translation ? (
             <View className="gap-2 border-l-2 border-l-white/40 pl-4">
-              <Text className="text-[12px] leading-[16px] font-semibold text-white/60 font-label">
+              <Text className="text-[12px] leading-[16px] font-semibold text-muted-foreground font-label">
                 Hold the meaning
               </Text>
               <Text
@@ -234,15 +234,15 @@ export function GuidedPrayer({
           haptic={isLast ? "success" : "selection"}
           onPress={goForward}
           pressedScale={0.98}
-          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-white"
+          className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-primary"
         >
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary font-heading">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
             {isLast ? "Finish" : "Next line"}
           </Text>
           {isLast ? (
-            <Check size={18} color={colors.blue} />
+            <Check size={18} color={colors.parchment} />
           ) : (
-            <ChevronRight size={18} color={colors.blue} />
+            <ChevronRight size={18} color={colors.parchment} />
           )}
         </Button>
       </View>

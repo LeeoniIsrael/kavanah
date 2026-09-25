@@ -22,6 +22,8 @@ export type FeedPost = {
   createdAt: string;
   prayerId: string;
   practice: string;
+  startedAt?: string;
+  durationSeconds?: number;
   streak?: number;
   quote?: string;
   sourceRef?: string;
@@ -34,6 +36,7 @@ export type PrayerActivity = {
   prayerId: string;
   title: string;
   completedAt: Date;
+  startedAt?: Date;
   streak: number;
   practiceKey?: string;
 };
@@ -50,6 +53,7 @@ type SavedSocial = {
   posts: FeedPost[];
   seenEvents: string[];
   seenDays: string[];
+  hasPrayedEver: boolean;
 };
 type SocialState = SavedSocial & {
   profile: SocialProfile | null;
@@ -69,8 +73,13 @@ const PROFILE_KEY = "social.profile.v1";
 const STORAGE_KEY = "social.activity.v2";
 const profile = readSocialData(PROFILE_KEY, isSocialProfile);
 const saved = readSocialData(STORAGE_KEY, isSavedSocial);
+// Migrate the old daily option without discarding activity or sharing choices.
+if (saved && (saved.preferences.prayers as string) === "first-daily") {
+  saved.preferences.prayers = "first-ever";
+}
 function persist(state: SavedSocial): SavedSocial {
   const data = {
+    hasPrayedEver: state.hasPrayedEver,
     preferences: state.preferences,
     posts: state.posts.slice(0, 200),
     seenEvents: state.seenEvents.slice(0, 1000),
@@ -88,6 +97,9 @@ export const useSocialStore = create<SocialState>((set) => ({
   posts: saved?.posts ?? [],
   seenEvents: saved?.seenEvents ?? [],
   seenDays: saved?.seenDays ?? [],
+  hasPrayedEver:
+    saved?.hasPrayedEver ??
+    Boolean(saved?.seenEvents.length || saved?.seenDays.length),
   saveProfile: (profile) => {
     writeSocialData(PROFILE_KEY, profile);
     set({ profile });
@@ -102,14 +114,19 @@ export const useSocialStore = create<SocialState>((set) => ({
         createdAt: activity.completedAt.toISOString(),
         prayerId: activity.prayerId,
         practice: activity.title,
+        ...(activity.startedAt && activity.startedAt <= activity.completedAt
+          ? {
+              startedAt: activity.startedAt.toISOString(),
+              durationSeconds: Math.floor(
+                (activity.completedAt.getTime() -
+                  activity.startedAt.getTime()) /
+                  1000,
+              ),
+            }
+          : {}),
       };
       const additions: FeedPost[] = [];
-      if (
-        shouldSharePrayer(
-          state.preferences.prayers,
-          !state.seenDays.includes(date),
-        )
-      ) {
+      if (shouldSharePrayer(state.preferences.prayers, !state.hasPrayedEver)) {
         additions.push({
           ...base,
           id: `prayer:${activity.id}`,
@@ -132,6 +149,7 @@ export const useSocialStore = create<SocialState>((set) => ({
       }
       return persist({
         ...state,
+        hasPrayedEver: true,
         posts: [...additions, ...state.posts],
         seenEvents: [
           activity.id,
@@ -190,7 +208,9 @@ function isSavedSocial(value: unknown): value is SavedSocial {
   const s = value as SavedSocial;
   return (
     !!s.preferences &&
-    ["off", "first-daily", "every"].includes(s.preferences.prayers) &&
+    ["off", "first-ever", "first-daily", "every"].includes(
+      s.preferences.prayers,
+    ) &&
     typeof s.preferences.milestones === "boolean" &&
     Array.isArray(s.posts) &&
     s.posts.every(

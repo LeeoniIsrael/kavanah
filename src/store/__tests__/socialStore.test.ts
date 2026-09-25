@@ -14,6 +14,7 @@ beforeEach(() =>
     profile: null,
     posts: [],
     seenDays: [],
+    hasPrayedEver: false,
     seenEvents: [],
     preferences: { prayers: "off", milestones: false },
   }),
@@ -22,25 +23,23 @@ test("automatic updates stay off until chosen and do not backfill", () => {
   useSocialStore.getState().recordPrayer(activity);
   useSocialStore
     .getState()
-    .setPreferences({ prayers: "first-daily", milestones: false });
+    .setPreferences({ prayers: "first-ever", milestones: false });
   useSocialStore.getState().recordPrayer({ ...activity, id: "afternoon" });
   expect(useSocialStore.getState().posts).toHaveLength(0);
 });
-test("first-daily records one prayer per local day; repeated events never repost", () => {
+test("first-ever records only the first lifetime prayer; repeated events never repost", () => {
   useSocialStore
     .getState()
-    .setPreferences({ prayers: "first-daily", milestones: false });
+    .setPreferences({ prayers: "first-ever", milestones: false });
   useSocialStore.getState().recordPrayer(activity);
   useSocialStore.getState().recordPrayer(activity);
   useSocialStore.getState().recordPrayer({ ...activity, id: "later" });
-  useSocialStore
-    .getState()
-    .recordPrayer({
-      ...activity,
-      id: "tomorrow",
-      completedAt: new Date(2026, 8, 25, 9),
-    });
-  expect(useSocialStore.getState().posts).toHaveLength(2);
+  useSocialStore.getState().recordPrayer({
+    ...activity,
+    id: "tomorrow",
+    completedAt: new Date(2026, 8, 25, 9),
+  });
+  expect(useSocialStore.getState().posts).toHaveLength(1);
 });
 test("every prayer records distinct completions; milestones deduplicate and survive removal", () => {
   useSocialStore
@@ -86,6 +85,40 @@ test("milestones can be shared without every-prayer updates", () => {
     .getState()
     .setPreferences({ prayers: "off", milestones: true });
   useSocialStore.getState().recordPrayer({ ...activity, streak: 18 });
+  expect(useSocialStore.getState().posts.map((p) => p.kind)).toEqual([
+    "milestone",
+  ]);
+});
+
+test("timed prayer and milestone preserve the real start and elapsed seconds", () => {
+  useSocialStore
+    .getState()
+    .setPreferences({ prayers: "every", milestones: true });
+  useSocialStore
+    .getState()
+    .recordPrayer({
+      ...activity,
+      streak: 3,
+      startedAt: new Date(date.getTime() - 125000),
+    });
+  expect(useSocialStore.getState().posts).toHaveLength(2);
+  for (const post of useSocialStore.getState().posts) {
+    expect(post.startedAt).toBe(
+      new Date(date.getTime() - 125000).toISOString(),
+    );
+    expect(post.durationSeconds).toBe(125);
+  }
+});
+test("first ever cannot repeat after deleting the post or clearing bounded event history", () => {
+  useSocialStore
+    .getState()
+    .setPreferences({ prayers: "first-ever", milestones: true });
+  useSocialStore.getState().recordPrayer(activity);
+  useSocialStore.getState().removePost(useSocialStore.getState().posts[0]!.id);
+  useSocialStore.setState({ seenEvents: [], seenDays: [] });
+  useSocialStore
+    .getState()
+    .recordPrayer({ ...activity, id: "later", streak: 3 });
   expect(useSocialStore.getState().posts.map((p) => p.kind)).toEqual([
     "milestone",
   ]);

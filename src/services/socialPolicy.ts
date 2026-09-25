@@ -1,6 +1,6 @@
 import { format, startOfWeek } from "date-fns";
 
-export type PrayerSharing = "off" | "first-daily" | "every";
+export type PrayerSharing = "off" | "first-ever" | "every";
 export type SharingPreferences = {
   prayers: PrayerSharing;
   milestones: boolean;
@@ -11,9 +11,9 @@ export const weekKey = (date: Date) =>
   dayKey(startOfWeek(date, { weekStartsOn: 1 }));
 export function shouldSharePrayer(
   mode: PrayerSharing,
-  firstToday: boolean,
+  firstEver: boolean,
 ): boolean {
-  return mode === "every" || (mode === "first-daily" && firstToday);
+  return mode === "every" || (mode === "first-ever" && firstEver);
 }
 export function selectedQuote(
   text: string,

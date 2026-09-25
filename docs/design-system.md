@@ -61,3 +61,7 @@ Do not add model pickers, microphones, attachment buttons, or other controls unl
 Inspect the actual iOS preview from the checkout being edited. Check idle, focus, selected, loading, failure, and completed states relevant to the change. Verify a real source edit arrives through Fast Refresh. Check the screen bottom, long text, keyboard behavior, and larger text. Restore any test-only preview preferences. Do not substitute web screenshots for native verification.
 
 September 24 verification: language selection, Profile header/settings, Home travel/action contrast, Zmanim single header and hero, prayer library search, reader safe areas and input, focus beam, controlled loading/idle transitions, and reduced-motion behavior inspected in the visible iPhone 17 Pro preview. No AI request or consent setting was changed for the visual loading test; the temporary loading override was removed. Native dependencies were unchanged. Existing app-wide dark-only appearance and older reader lint issues are separate limitations, not hidden by this pass.
+
+## Prayer activity
+
+Opening a reader starts elapsed wall-clock timing; Done records completion and closes the reader without an extra confirmation. Guided reading is optional and uses the same session. Store start, completion, and elapsed seconds; never invent durations for older entries or manual check-ins. First prayer means once ever, even across days, deleted posts, or bounded history. Milestones remain independently opt-in. Sharing choices save immediately.
