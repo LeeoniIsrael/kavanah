@@ -29,10 +29,7 @@ import {
   ScrollView,
   View,
 } from "react-native";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 import {
   GuidedPrayer,
@@ -54,7 +51,7 @@ import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
-import { colors, grid, spacing } from "@/design/theme";
+import { colors, spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import {
@@ -110,7 +107,6 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 }
 
 export function PrayerScreen(): React.JSX.Element {
-  const insets = useSafeAreaInsets();
   const router = useRouter();
   const params = useLocalSearchParams<{
     prayerId?: string;
@@ -446,7 +442,7 @@ export function PrayerScreen(): React.JSX.Element {
               "Search for Shema…",
               "Search for protection…",
             ]}
-            className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent px-0 shadow-none"
+            className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent dark:bg-transparent px-0 shadow-none"
             placeholderTextColor={colors.inkMuted}
           />
           <Button
@@ -501,12 +497,12 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
               <BookmarkCheck size={20} color={colors.gold} />
             </View>
-            <View className="border-t border-t-hairlineStrong">
+            <View className="gap-2">
               {bookmarkedPrayers.length > 0 ? (
                 bookmarkedPrayers.map((prayer) => (
                   <View
                     key={prayer.id}
-                    className="border-b border-b-hairline flex-row items-center overflow-hidden"
+                    className="rounded-md bg-card flex-row items-center overflow-hidden"
                   >
                     <View className="flex-1">
                       <Button
@@ -515,7 +511,7 @@ export function PrayerScreen(): React.JSX.Element {
                         accessibilityLabel={`Open ${prayer.title}`}
                         accessibilityRole="button"
                         onPress={() => void openPrayer(prayer.id)}
-                        className="px-1 py-4"
+                        className="px-4 py-4"
                       >
                         <Text
                           variant="section"
@@ -600,241 +596,233 @@ export function PrayerScreen(): React.JSX.Element {
         presentationStyle="fullScreen"
         onRequestClose={closeReader}
       >
-        <SafeAreaView className="flex-1 bg-background">
-          {selected ? (
-            <View
-              className="absolute left-6 right-6 z-[10] flex-row justify-between"
-              style={{ top: insets.top + spacing.lg }}
-              pointerEvents="box-none"
-            >
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityLabel="Close prayer"
-                accessibilityRole="button"
-                onPress={closeReader}
-                pressedScale={0.94}
-                className="w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card"
-              >
-                <X size={17} color={colors.ink} />
-              </Button>
-              <Button
-                variant="default"
-                size="content"
-                accessibilityLabel={
-                  selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"
-                }
-                accessibilityRole="button"
-                haptic="confirm"
-                onPress={() => toggleBookmark(selected.id)}
-                pressedScale={0.94}
-                className={cn(
-                  "w-11 h-11 rounded-md items-center justify-center bg-glass border border-hairline shadow-card",
-                  selectedBookmarked && "bg-primary border-primary",
-                )}
-              >
-                {selectedBookmarked ? (
-                  <BookmarkCheck size={17} color={colors.white} />
-                ) : (
-                  <Bookmark size={17} color={colors.gold} />
-                )}
-              </Button>
-            </View>
-          ) : null}
-          <ScrollView
-            contentContainerClassName={cn("px-[22px] pb-[72px]")}
-            contentContainerStyle={[
-              { paddingTop: insets.top + grid.touch + spacing.xxl },
-            ]}
-            showsVerticalScrollIndicator={false}
-          >
+        <SafeAreaProvider>
+          <SafeAreaView style={{ flex: 1, backgroundColor: colors.parchment }}>
             {selected ? (
-              <View className="gap-8">
-                <View className="gap-3 pb-4 border-b border-b-hairline">
-                  <Text
-                    variant="display"
-                    className="text-[38px] leading-[42px]"
-                  >
-                    {selected.title}
-                  </Text>
-                  <Text variant="body" className="text-inkFaint max-w-80">
-                    {selected.summary}
-                  </Text>
-                </View>
-                {selected.hebrewReview.status !== "approved" ? (
-                  <View className="flex-row gap-3 py-2">
-                    <View className="w-[2px] bg-gold" />
-                    <View className="flex-1 gap-1">
-                      <View className="z-20 flex-row items-center justify-between gap-3">
-                        <Text variant="caption" className="flex-1">
-                          {hebrewContentLabel(
+              <View
+                className="z-[10] flex-row justify-between"
+                style={{
+                  marginHorizontal: 24,
+                  paddingTop: 8,
+                  paddingBottom: 12,
+                }}
+                pointerEvents="box-none"
+              >
+                <Button
+                  variant="ghost"
+                  size="content"
+                  accessibilityLabel="Close prayer"
+                  accessibilityRole="button"
+                  onPress={closeReader}
+                  pressedScale={0.94}
+                  className="w-11 h-11 rounded-md items-center justify-center bg-glass"
+                >
+                  <X size={17} color={colors.ink} />
+                </Button>
+                <Button
+                  variant="default"
+                  size="content"
+                  accessibilityLabel={
+                    selectedBookmarked ? "Remove bookmark" : "Bookmark prayer"
+                  }
+                  accessibilityRole="button"
+                  haptic="confirm"
+                  onPress={() => toggleBookmark(selected.id)}
+                  pressedScale={0.94}
+                  className={cn(
+                    "w-11 h-11 rounded-md items-center justify-center bg-glass",
+                    selectedBookmarked && "bg-primary",
+                  )}
+                >
+                  {selectedBookmarked ? (
+                    <BookmarkCheck size={17} color={colors.white} />
+                  ) : (
+                    <Bookmark size={17} color={colors.gold} />
+                  )}
+                </Button>
+              </View>
+            ) : null}
+            <ScrollView
+              automaticallyAdjustKeyboardInsets
+              keyboardShouldPersistTaps="handled"
+              keyboardDismissMode="interactive"
+              contentContainerClassName={cn("px-[22px] pb-[72px]")}
+              contentContainerStyle={[{ paddingTop: spacing.lg }]}
+              showsVerticalScrollIndicator={false}
+            >
+              {selected ? (
+                <View className="gap-8">
+                  <View className="gap-3 pb-4 border-b border-b-hairline">
+                    <Text
+                      variant="display"
+                      className="text-[38px] leading-[42px]"
+                    >
+                      {selected.title}
+                    </Text>
+                    <Text variant="body" className="text-inkFaint max-w-80">
+                      {selected.summary}
+                    </Text>
+                  </View>
+                  {selected.hebrewReview.status !== "approved" ? (
+                    <View className="flex-row gap-3 py-2">
+                      <View className="w-[2px] bg-gold" />
+                      <View className="flex-1 gap-1">
+                        <View className="z-20 flex-row items-center justify-between gap-3">
+                          <Text variant="caption" className="flex-1">
+                            {hebrewContentLabel(
+                              selected.hebrewReview.contentKind,
+                            )}
+                          </Text>
+                          <GooeyInfoPopover
+                            accessibilityLabel="About Hebrew text review"
+                            title="Why this label appears"
+                            body="Sacred text is shown with its review status and source. Kavanah never fills missing Hebrew with generated text."
+                            side="bottom"
+                            align="end"
+                            triggerStyle={{
+                              alignItems: "center",
+                              backgroundColor: colors.mineral,
+                              borderRadius: 22,
+                              height: 44,
+                              justifyContent: "center",
+                              width: 44,
+                            }}
+                            trigger={
+                              <CircleHelp size={17} color={colors.blue} />
+                            }
+                          />
+                        </View>
+                        <Text
+                          variant="body"
+                          className="text-muted-foreground text-[14px] leading-[20px]"
+                        >
+                          {hebrewReviewMessage(
                             selected.hebrewReview.contentKind,
                           )}
                         </Text>
-                        <GooeyInfoPopover
-                          accessibilityLabel="About Hebrew text review"
-                          title="Why this label appears"
-                          body="Sacred text is shown with its review status and source. Kavanah never fills missing Hebrew with generated text."
-                          side="bottom"
-                          align="end"
-                          triggerStyle={{
-                            alignItems: "center",
-                            backgroundColor: colors.mineral,
-                            borderRadius: 22,
-                            height: 44,
-                            justifyContent: "center",
-                            width: 44,
-                          }}
-                          trigger={<CircleHelp size={17} color={colors.blue} />}
-                        />
-                      </View>
-                      <Text
-                        variant="body"
-                        className="text-muted-foreground text-[14px] leading-[20px]"
-                      >
-                        {hebrewReviewMessage(selected.hebrewReview.contentKind)}
-                      </Text>
-                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-                        {selected.hebrewReview.sourceTitle} ·{" "}
-                        {selected.hebrewReview.sourceRef}
-                      </Text>
-                    </View>
-                  </View>
-                ) : null}
-                <View className="gap-1 border-l-[2px] border-l-gold pl-3 py-1">
-                  <Text variant="caption">Kavanah</Text>
-                  <Text
-                    variant="body"
-                    className="text-foreground max-w-[330px]"
-                  >
-                    Pause for one breath. Bring to mind why you opened this
-                    prayer.
-                  </Text>
-                </View>
-                {!selectedLoading && guidedTokens.length > 0 ? (
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    accessibilityHint="Shows one prayer line at a time"
-                    accessibilityLabel="Start guided reading"
-                    accessibilityRole="button"
-                    haptic="confirm"
-                    onPress={startGuidedPrayer}
-                    className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
-                  >
-                    <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
-                      <BookOpenCheck size={19} color={colors.blue} />
-                    </View>
-                    <View className="flex-1 gap-[2px]">
-                      <Text
-                        variant="section"
-                        className="text-[17px] leading-[22px]"
-                      >
-                        Read line by line
-                      </Text>
-                      <Text
-                        variant="body"
-                        className="text-[13px] leading-[18px] text-muted-foreground"
-                      >
-                        Hebrew, pronunciation, and meaning at your pace.
-                      </Text>
-                    </View>
-                    <ChevronRight size={18} color={colors.inkMuted} />
-                  </Button>
-                ) : null}
-                {selectedLoading ? (
-                  <View className="min-h-24 border-t border-t-hairline border-b border-b-hairline">
-                    <PrayerTextSkeleton />
-                  </View>
-                ) : null}
-                {!selectedLoading && prayerLoadError ? (
-                  <View className="gap-2 border-l-[2px] border-l-gold pl-4 py-2">
-                    <Text variant="caption">Source access</Text>
-                    <Text variant="section">
-                      This text stays with its publisher
-                    </Text>
-                    <Text variant="body" className="text-muted-foreground">
-                      {prayerLoadError}
-                    </Text>
-                    <Button
-                      variant="default"
-                      size="content"
-                      accessibilityLabel={`Open ${selected.title} on Sefaria`}
-                      accessibilityRole="link"
-                      onPress={() =>
-                        void Linking.openURL(selected.hebrewReview.sourceUrl)
-                      }
-                      className="min-h-11 self-start flex-row items-center gap-2 rounded-md bg-primary px-4 py-2"
-                    >
-                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
-                        Open on Sefaria
-                      </Text>
-                      <ExternalLink size={16} color={colors.white} />
-                    </Button>
-                  </View>
-                ) : null}
-                {readerTokens.map((token) => (
-                  <View
-                    key={token.id}
-                    className="gap-6 border-t border-t-hairline pt-6"
-                  >
-                    {token.hebrew ? (
-                      <Text
-                        variant="section"
-                        accessibilityHint="Hold to choose a Hebrew quote"
-                        onLongPress={() =>
-                          setQuoteSource({
-                            prayerId: selected.id,
-                            title: selected.title,
-                            text: token.hebrew,
-                            sourceRef: selected.hebrewReview.sourceRef,
-                            sourceUrl: selected.hebrewReview.sourceUrl,
-                            language: "he",
-                          })
-                        }
-                        className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
-                      >
-                        {token.hebrew}
-                      </Text>
-                    ) : null}
-                    {token.localizedTransliteration ? (
-                      <View className="gap-1 border-l-[2px] border-l-gold pl-3">
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-                          Transliteration
+                          {selected.hebrewReview.sourceTitle} ·{" "}
+                          {selected.hebrewReview.sourceRef}
                         </Text>
+                      </View>
+                    </View>
+                  ) : null}
+                  <View className="gap-1 border-l-[2px] border-l-gold pl-3 py-1">
+                    <Text variant="caption">Kavanah</Text>
+                    <Text
+                      variant="body"
+                      className="text-foreground max-w-[330px]"
+                    >
+                      Pause for one breath. Bring to mind why you opened this
+                      prayer.
+                    </Text>
+                  </View>
+                  {!selectedLoading && guidedTokens.length > 0 ? (
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      accessibilityHint="Shows one prayer line at a time"
+                      accessibilityLabel="Start guided reading"
+                      accessibilityRole="button"
+                      haptic="confirm"
+                      onPress={startGuidedPrayer}
+                      className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
+                    >
+                      <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
+                        <BookOpenCheck size={19} color={colors.blue} />
+                      </View>
+                      <View className="flex-1 gap-[2px]">
                         <Text
                           variant="section"
-                          className="text-[17px] leading-[24px] text-foreground"
+                          className="text-[17px] leading-[22px]"
                         >
-                          {token.localizedTransliteration}
+                          Read line by line
+                        </Text>
+                        <Text
+                          variant="body"
+                          className="text-[13px] leading-[18px] text-muted-foreground"
+                        >
+                          Hebrew, pronunciation, and meaning at your pace.
                         </Text>
                       </View>
-                    ) : null}
-                    <View className="gap-1">
-                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
-                        Translation
+                      <ChevronRight size={18} color={colors.inkMuted} />
+                    </Button>
+                  ) : null}
+                  {selectedLoading ? (
+                    <View className="min-h-24 border-t border-t-hairline border-b border-b-hairline">
+                      <PrayerTextSkeleton />
+                    </View>
+                  ) : null}
+                  {!selectedLoading && prayerLoadError ? (
+                    <View className="gap-2 border-l-[2px] border-l-gold pl-4 py-2">
+                      <Text variant="caption">Source access</Text>
+                      <Text variant="section">
+                        This text stays with its publisher
                       </Text>
-                      <Text
-                        variant="body"
-                        onLongPress={() =>
-                          setQuoteSource({
-                            prayerId: selected.id,
-                            title: selected.title,
-                            text: token.localizedTranslation,
-                            sourceRef: selected.hebrewReview.sourceRef,
-                            sourceUrl: selected.hebrewReview.sourceUrl,
-                            language: primaryLanguageCode,
-                          })
+                      <Text variant="body" className="text-muted-foreground">
+                        {prayerLoadError}
+                      </Text>
+                      <Button
+                        variant="default"
+                        size="content"
+                        accessibilityLabel={`Open ${selected.title} on Sefaria`}
+                        accessibilityRole="link"
+                        onPress={() =>
+                          void Linking.openURL(selected.hebrewReview.sourceUrl)
                         }
+                        className="min-h-11 self-start flex-row items-center gap-2 rounded-md bg-primary px-4 py-2"
                       >
-                        {token.localizedTranslation}
-                      </Text>
-                      {token.localizedTranslation.trim() ? (
-                        <Button
-                          variant="ghost"
-                          size="content"
-                          accessibilityLabel={`Choose a quote from line ${readerTokens.indexOf(token) + 1}`}
-                          onPress={() =>
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                          Open on Sefaria
+                        </Text>
+                        <ExternalLink size={16} color={colors.white} />
+                      </Button>
+                    </View>
+                  ) : null}
+                  {readerTokens.map((token) => (
+                    <View
+                      key={token.id}
+                      className="gap-6 border-t border-t-hairline pt-6"
+                    >
+                      {token.hebrew ? (
+                        <Text
+                          variant="section"
+                          accessibilityHint="Hold to choose a Hebrew quote"
+                          onLongPress={() =>
+                            setQuoteSource({
+                              prayerId: selected.id,
+                              title: selected.title,
+                              text: token.hebrew,
+                              sourceRef: selected.hebrewReview.sourceRef,
+                              sourceUrl: selected.hebrewReview.sourceUrl,
+                              language: "he",
+                            })
+                          }
+                          className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
+                        >
+                          {token.hebrew}
+                        </Text>
+                      ) : null}
+                      {token.localizedTransliteration ? (
+                        <View className="gap-1 border-l-[2px] border-l-gold pl-3">
+                          <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                            Transliteration
+                          </Text>
+                          <Text
+                            variant="section"
+                            className="text-[17px] leading-[24px] text-foreground"
+                          >
+                            {token.localizedTransliteration}
+                          </Text>
+                        </View>
+                      ) : null}
+                      <View className="gap-1">
+                        <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
+                          Translation
+                        </Text>
+                        <Text
+                          variant="body"
+                          onLongPress={() =>
                             setQuoteSource({
                               prayerId: selected.id,
                               title: selected.title,
@@ -844,269 +832,289 @@ export function PrayerScreen(): React.JSX.Element {
                               language: primaryLanguageCode,
                             })
                           }
-                          style={{
-                            flexDirection: "row",
-                            alignItems: "center",
-                            gap: 8,
-                            minHeight: 44,
-                            alignSelf: "flex-start",
-                          }}
                         >
-                          <Quote size={16} color={colors.blue} />
-                          <Text style={{ fontSize: 13, color: colors.blue }}>
-                            Choose a quote
-                          </Text>
-                        </Button>
-                      ) : null}
+                          {token.localizedTranslation}
+                        </Text>
+                        {token.localizedTranslation.trim() ? (
+                          <Button
+                            variant="ghost"
+                            size="content"
+                            accessibilityLabel={`Choose a quote from line ${readerTokens.indexOf(token) + 1}`}
+                            onPress={() =>
+                              setQuoteSource({
+                                prayerId: selected.id,
+                                title: selected.title,
+                                text: token.localizedTranslation,
+                                sourceRef: selected.hebrewReview.sourceRef,
+                                sourceUrl: selected.hebrewReview.sourceUrl,
+                                language: primaryLanguageCode,
+                              })
+                            }
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                              gap: 8,
+                              minHeight: 44,
+                              alignSelf: "flex-start",
+                            }}
+                          >
+                            <Quote size={16} color={colors.blue} />
+                            <Text style={{ fontSize: 13, color: colors.blue }}>
+                              Choose a quote
+                            </Text>
+                          </Button>
+                        ) : null}
+                      </View>
+                    </View>
+                  ))}
+                  {selected.sourceMetadata?.sourceVersion ? (
+                    <View className="gap-1 border-t border-t-hairline pt-4">
+                      <Text variant="caption">Text source</Text>
+                      <Text variant="body" className="text-foreground">
+                        {selected.sourceMetadata.work}
+                      </Text>
+                      <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+                        {selected.sourceMetadata.sourceVersion.versionTitle} ·{" "}
+                        {selected.sourceMetadata.sourceVersion.license}
+                      </Text>
+                    </View>
+                  ) : null}
+                  <PrayerAssistantPanel
+                    input={assistantInput}
+                    isOpen={assistantOpen}
+                    isStreaming={isAssistantStreaming}
+                    messages={assistantMessages}
+                    onChangeInput={setAssistantInput}
+                    onSubmit={() => void askAboutSelectedPrayer()}
+                  />
+                </View>
+              ) : null}
+            </ScrollView>
+            {focusPromptOpen ? (
+              <View
+                accessibilityViewIsModal
+                className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 bg-[rgba(17,20,18,0.32)]"
+              >
+                <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
+                  <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
+                    <MoonStar size={22} color={colors.white} />
+                  </View>
+                  <View className="gap-1">
+                    <Text variant="caption">Prayer Focus</Text>
+                    <Text
+                      variant="section"
+                      className="text-[21px] leading-[27px]"
+                    >
+                      Begin without interruption
+                    </Text>
+                    <Text variant="body" className="text-muted-foreground">
+                      Quiet the phone before the first word. Kavanah cannot
+                      change system Focus without your approval.
+                    </Text>
+                  </View>
+                  <View className="flex-row gap-3">
+                    <View className="flex-1">
+                      <Button
+                        variant="outline"
+                        size="content"
+                        accessibilityRole="button"
+                        onPress={() => setFocusPromptOpen(false)}
+                        className="min-h-[50px] items-center justify-center rounded-md border border-hairlineStrong bg-card"
+                      >
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                          Continue
+                        </Text>
+                      </Button>
+                    </View>
+                    <View className="flex-1">
+                      <Button
+                        variant="default"
+                        size="content"
+                        accessibilityRole="button"
+                        haptic="confirm"
+                        onPress={() => void openFocusSettings()}
+                        className="min-h-[50px] px-2 items-center justify-center rounded-md bg-primary"
+                      >
+                        <Text
+                          numberOfLines={2}
+                          className="text-[12px] leading-[16px] font-medium tracking-normal text-white text-center font-label"
+                        >
+                          {focusSetup.actionLabel}
+                        </Text>
+                      </Button>
                     </View>
                   </View>
-                ))}
-                {selected.sourceMetadata?.sourceVersion ? (
-                  <View className="gap-1 border-t border-t-hairline pt-4">
-                    <Text variant="caption">Text source</Text>
-                    <Text variant="body" className="text-foreground">
-                      {selected.sourceMetadata.work}
+                  {focusPromptMessage ? (
+                    <Text
+                      variant="body"
+                      className="text-danger text-[13px] leading-[18px]"
+                    >
+                      {focusPromptMessage}
                     </Text>
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-                      {selected.sourceMetadata.sourceVersion.versionTitle} ·{" "}
-                      {selected.sourceMetadata.sourceVersion.license}
-                    </Text>
-                  </View>
-                ) : null}
-                <PrayerAssistantPanel
-                  input={assistantInput}
-                  isOpen={assistantOpen}
-                  isStreaming={isAssistantStreaming}
-                  messages={assistantMessages}
-                  onChangeInput={setAssistantInput}
-                  onSubmit={() => void askAboutSelectedPrayer()}
-                />
+                  ) : null}
+                </Card>
               </View>
             ) : null}
-          </ScrollView>
-          {focusPromptOpen ? (
-            <View
-              accessibilityViewIsModal
-              className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 bg-[rgba(17,20,18,0.32)]"
-            >
-              <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
-                <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
-                  <MoonStar size={22} color={colors.white} />
-                </View>
-                <View className="gap-1">
-                  <Text variant="caption">Prayer Focus</Text>
-                  <Text
-                    variant="section"
-                    className="text-[21px] leading-[27px]"
-                  >
-                    Begin without interruption
-                  </Text>
-                  <Text variant="body" className="text-muted-foreground">
-                    Quiet the phone before the first word. Kavanah cannot change
-                    system Focus without your approval.
-                  </Text>
-                </View>
-                <View className="flex-row gap-3">
-                  <View className="flex-1">
-                    <Button
-                      variant="outline"
-                      size="content"
-                      accessibilityRole="button"
-                      onPress={() => setFocusPromptOpen(false)}
-                      className="min-h-[50px] items-center justify-center rounded-md border border-hairlineStrong bg-card"
-                    >
-                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                        Continue
-                      </Text>
-                    </Button>
+            {consentModalOpen ? (
+              <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
+                <View className="p-4 pb-6 gap-2 rounded-lg bg-card shadow-card border border-hairline">
+                  <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
+                    <ShieldCheck size={21} color={colors.blue} />
                   </View>
-                  <View className="flex-1">
-                    <Button
-                      variant="default"
-                      size="content"
-                      accessibilityRole="button"
-                      haptic="confirm"
-                      onPress={() => void openFocusSettings()}
-                      className="min-h-[50px] px-2 items-center justify-center rounded-md bg-primary"
-                    >
-                      <Text
-                        numberOfLines={2}
-                        className="text-[12px] leading-[16px] font-medium tracking-normal text-white text-center font-label"
-                      >
-                        {focusSetup.actionLabel}
-                      </Text>
-                    </Button>
-                  </View>
-                </View>
-                {focusPromptMessage ? (
+                  <Text variant="section">Before your first question</Text>
+                  <Text variant="body">
+                    Your question, this prayer text, language, source reference,
+                    and review status are sent to OpenAI through Kavanah.
+                    Display translations are identified as unreviewed. Contact
+                    details are removed first. Do not include anything private.
+                  </Text>
                   <Text
                     variant="body"
-                    className="text-danger text-[13px] leading-[18px]"
+                    className="text-[13px] leading-[19px] text-muted-foreground"
                   >
-                    {focusPromptMessage}
+                    Answers are educational and are not binding halachic
+                    rulings.
                   </Text>
-                ) : null}
-              </Card>
-            </View>
-          ) : null}
-          {consentModalOpen ? (
-            <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
-              <View className="p-4 pb-6 gap-2 rounded-lg bg-card shadow-card border border-hairline">
-                <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
-                  <ShieldCheck size={21} color={colors.blue} />
-                </View>
-                <Text variant="section">Before your first question</Text>
-                <Text variant="body">
-                  Your question, this prayer text, language, source reference,
-                  and review status are sent to OpenAI through Kavanah. Display
-                  translations are identified as unreviewed. Contact details are
-                  removed first. Do not include anything private.
-                </Text>
-                <Text
-                  variant="body"
-                  className="text-[13px] leading-[19px] text-muted-foreground"
-                >
-                  Answers are educational and are not binding halachic rulings.
-                </Text>
-                <View className="flex-row items-stretch gap-2 mt-2">
-                  <View className="flex-1">
-                    <Button
-                      variant="ghost"
-                      size="content"
-                      accessibilityRole="button"
-                      onPress={() => setConsentModalOpen(false)}
-                      className="min-h-12 items-center justify-center rounded-md border border-hairlineStrong"
-                    >
-                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                        Not now
-                      </Text>
-                    </Button>
+                  <View className="flex-row items-stretch gap-2 mt-2">
+                    <View className="flex-1">
+                      <Button
+                        variant="ghost"
+                        size="content"
+                        accessibilityRole="button"
+                        onPress={() => setConsentModalOpen(false)}
+                        className="min-h-12 items-center justify-center rounded-md border border-hairlineStrong"
+                      >
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+                          Not now
+                        </Text>
+                      </Button>
+                    </View>
+                    <View className="flex-[1.4]">
+                      <Button
+                        variant="default"
+                        size="content"
+                        accessibilityRole="button"
+                        onPress={() => {
+                          const question = assistantInput.trim();
+                          setAssistantConsent(true);
+                          setConsentModalOpen(false);
+                          void submitAssistantQuestion(question);
+                        }}
+                        className="min-h-12 items-center justify-center rounded-full bg-primary"
+                      >
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                          Allow and ask
+                        </Text>
+                      </Button>
+                    </View>
                   </View>
-                  <View className="flex-[1.4]">
+                </View>
+              </View>
+            ) : null}
+            <GuidedPrayer
+              prayerTitle={selected?.title ?? "Prayer"}
+              tokens={guidedTokens}
+              visible={guidedPrayerOpen}
+              onClose={() => setGuidedPrayerOpen(false)}
+              onComplete={completeGuidedPrayer}
+              onQuote={(token) => {
+                if (selected)
+                  setQuoteSource({
+                    prayerId: selected.id,
+                    title: selected.title,
+                    text: token.translation || token.hebrew,
+                    sourceRef: selected.hebrewReview.sourceRef,
+                    sourceUrl: selected.hebrewReview.sourceUrl,
+                    language: token.translation ? primaryLanguageCode : "he",
+                  });
+              }}
+            />
+            {completionMoment ? (
+              <View
+                accessibilityViewIsModal
+                className="absolute left-0 right-0 top-0 bottom-0 z-[50] justify-end p-3 bg-[rgba(17,20,18,0.36)]"
+              >
+                <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
+                  <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
+                    <BookOpenCheck size={23} color={colors.white} />
+                  </View>
+                  <View className="gap-1">
+                    <Text variant="caption">Prayer complete</Text>
+                    <Text
+                      variant="section"
+                      className="text-[24px] leading-[30px]"
+                    >
+                      Beautiful work showing up.
+                    </Text>
+                    <Text variant="body" className="text-muted-foreground">
+                      {completionMoment.habit
+                        ? `Saved to your history and today's ${completionMoment.habit} practice.`
+                        : "Saved to your private prayer history."}
+                    </Text>
+                  </View>
+                  <View className="gap-3">
                     <Button
                       variant="default"
                       size="content"
                       accessibilityRole="button"
                       onPress={() => {
-                        const question = assistantInput.trim();
-                        setAssistantConsent(true);
-                        setConsentModalOpen(false);
-                        void submitAssistantQuestion(question);
+                        setShareMoment(completionMoment);
+                        setCompletionMoment(null);
+                        closeReader();
                       }}
-                      className="min-h-12 items-center justify-center rounded-full bg-primary"
+                      className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
                     >
-                      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
-                        Allow and ask
+                      <Share2 size={18} color={colors.white} />
+                      <Text className="text-[16px] leading-[22px] font-semibold text-white font-heading">
+                        Share this moment
+                      </Text>
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      onPress={() => {
+                        setCompletionMoment(null);
+                      }}
+                      style={{
+                        minHeight: 44,
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Text style={{ color: colors.blue }}>
+                        Choose a quote from this prayer
+                      </Text>
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="content"
+                      accessibilityRole="button"
+                      onPress={() => {
+                        setCompletionMoment(null);
+                        closeReader();
+                      }}
+                      className="min-h-11 items-center justify-center"
+                    >
+                      <Text variant="section" className="text-[15px]">
+                        Done
                       </Text>
                     </Button>
                   </View>
-                </View>
+                </Card>
               </View>
-            </View>
-          ) : null}
-          <GuidedPrayer
-            prayerTitle={selected?.title ?? "Prayer"}
-            tokens={guidedTokens}
-            visible={guidedPrayerOpen}
-            onClose={() => setGuidedPrayerOpen(false)}
-            onComplete={completeGuidedPrayer}
-            onQuote={(token) => {
-              if (selected)
-                setQuoteSource({
-                  prayerId: selected.id,
-                  title: selected.title,
-                  text: token.translation || token.hebrew,
-                  sourceRef: selected.hebrewReview.sourceRef,
-                  sourceUrl: selected.hebrewReview.sourceUrl,
-                  language: token.translation ? primaryLanguageCode : "he",
-                });
-            }}
-          />
-          {completionMoment ? (
-            <View
-              accessibilityViewIsModal
-              className="absolute left-0 right-0 top-0 bottom-0 z-[50] justify-end p-3 bg-[rgba(17,20,18,0.36)]"
-            >
-              <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
-                <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-                  <BookOpenCheck size={23} color={colors.white} />
-                </View>
-                <View className="gap-1">
-                  <Text variant="caption">Prayer complete</Text>
-                  <Text
-                    variant="section"
-                    className="text-[24px] leading-[30px]"
-                  >
-                    Beautiful work showing up.
-                  </Text>
-                  <Text variant="body" className="text-muted-foreground">
-                    {completionMoment.habit
-                      ? `Saved to your history and today's ${completionMoment.habit} practice.`
-                      : "Saved to your private prayer history."}
-                  </Text>
-                </View>
-                <View className="gap-3">
-                  <Button
-                    variant="default"
-                    size="content"
-                    accessibilityRole="button"
-                    onPress={() => {
-                      setShareMoment(completionMoment);
-                      setCompletionMoment(null);
-                      closeReader();
-                    }}
-                    className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
-                  >
-                    <Share2 size={18} color={colors.white} />
-                    <Text className="text-[16px] leading-[22px] font-semibold text-white font-heading">
-                      Share this moment
-                    </Text>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    onPress={() => {
-                      setCompletionMoment(null);
-                    }}
-                    style={{
-                      minHeight: 44,
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Text style={{ color: colors.blue }}>
-                      Choose a quote from this prayer
-                    </Text>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    accessibilityRole="button"
-                    onPress={() => {
-                      setCompletionMoment(null);
-                      closeReader();
-                    }}
-                    className="min-h-11 items-center justify-center"
-                  >
-                    <Text variant="section" className="text-[15px]">
-                      Done
-                    </Text>
-                  </Button>
-                </View>
-              </Card>
-            </View>
-          ) : null}
-          {quoteSource && (
-            <QuoteSelector
-              source={quoteSource}
-              onClose={() => setQuoteSource(null)}
-              onViewCircle={() => {
-                closeReader();
-                router.push("/circle");
-              }}
-            />
-          )}
-        </SafeAreaView>
+            ) : null}
+            {quoteSource && (
+              <QuoteSelector
+                source={quoteSource}
+                onClose={() => setQuoteSource(null)}
+                onViewCircle={() => {
+                  closeReader();
+                  router.push("/circle");
+                }}
+              />
+            )}
+          </SafeAreaView>
+        </SafeAreaProvider>
       </Modal>
       <PracticeStoryComposer
         moment={shareMoment}

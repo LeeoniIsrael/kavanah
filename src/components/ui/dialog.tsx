@@ -105,7 +105,7 @@ function DialogContent({
       <DialogOverlay className={cn(overlayClassName)}>
         <DialogPrimitive.Content
           className={cn(
-            "bg-popover border-hairline z-50 mx-auto flex w-full max-w-lg flex-col gap-4 rounded-lg border p-6 shadow-floating ",
+            "bg-popover z-50 mx-auto flex w-full max-w-lg flex-col gap-4 rounded-lg p-6 shadow-floating ",
             Platform.select({
               web: "animate-in fade-in-0 zoom-in-95 duration-200",
             }),
@@ -117,7 +117,7 @@ function DialogContent({
           {showClose ? (
             <DialogPrimitive.Close
               className={cn(
-                "absolute right-4 top-4 rounded opacity-70 active:opacity-100",
+                "absolute right-4 top-4 min-h-11 min-w-11 items-center justify-center rounded-full bg-muted active:opacity-80",
                 Platform.select({
                   web: "ring-offset-background focus:ring-ring data-[state=open]:bg-accent transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2",
                 }),

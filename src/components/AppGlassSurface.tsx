@@ -15,6 +15,7 @@ import {
 } from "react-native";
 import { useEffect, useState, type ComponentProps } from "react";
 
+import { cn } from "@/lib/utils";
 import { colors } from "@/design/theme";
 
 type AppGlassSurfaceProps = ViewProps & {
@@ -31,6 +32,7 @@ type AppGlassSurfaceProps = ViewProps & {
  */
 export function AppGlassSurface({
   children,
+  className,
   glassEffectStyle = "regular",
   isInteractive = false,
   style,
@@ -43,36 +45,36 @@ export function AppGlassSurface({
     isLiquidGlassAvailable() &&
     isGlassEffectAPIAvailable();
 
-  if (canUseNativeGlass) {
-    return (
-      <GlassView
-        colorScheme="dark"
-        glassEffectStyle={glassEffectStyle}
-        isInteractive={isInteractive}
-        style={style}
-        {...props}
-      >
-        {children}
-      </GlassView>
-    );
-  }
-
-  if (Platform.OS === "ios" && !reduceTransparency) {
-    return (
-      <BlurView intensity={64} style={style} tint="dark" {...props}>
-        {children}
-      </BlurView>
-    );
-  }
-
+  // NativeWind styles belong to a core View. GlassView/BlurView do not
+  // interpret className; forwarding it silently loses layout and corner styles.
   return (
     <View
+      {...props}
+      className={cn("overflow-hidden rounded-lg", className)}
       style={[
-        Platform.OS === "android" ? styles.material : styles.opaque,
+        { borderCurve: "continuous" },
+        !canUseNativeGlass &&
+          (Platform.OS !== "ios" || reduceTransparency) &&
+          styles.opaque,
         style,
       ]}
-      {...props}
     >
+      {canUseNativeGlass ? (
+        <GlassView
+          pointerEvents="none"
+          colorScheme="dark"
+          glassEffectStyle={glassEffectStyle}
+          isInteractive={isInteractive}
+          style={StyleSheet.absoluteFill}
+        />
+      ) : Platform.OS === "ios" && !reduceTransparency ? (
+        <BlurView
+          pointerEvents="none"
+          intensity={64}
+          tint="dark"
+          style={StyleSheet.absoluteFill}
+        />
+      ) : null}
       {children}
     </View>
   );
@@ -95,15 +97,7 @@ function useReduceTransparency(): boolean {
 }
 
 const styles = StyleSheet.create({
-  material: {
-    backgroundColor: colors.vellum,
-    borderColor: colors.hairlineStrong,
-    borderWidth: StyleSheet.hairlineWidth,
-    elevation: 6,
-  },
   opaque: {
     backgroundColor: colors.vellum,
-    borderColor: colors.hairlineStrong,
-    borderWidth: StyleSheet.hairlineWidth,
   },
 });

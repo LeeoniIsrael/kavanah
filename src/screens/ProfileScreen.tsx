@@ -1,3 +1,4 @@
+import { ChoiceRow } from "@/components/ui/choice-row";
 import { Card } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
@@ -141,7 +142,7 @@ export function ProfileScreen(): React.JSX.Element {
 
   return (
     <Screen
-      largeTitle={profile?.displayName ?? "Your Kavanah"}
+      largeTitle="Profile"
       subtitle={
         profile?.bio ||
         "Make a profile, choose what people can see, and practice with your circle."
@@ -152,7 +153,7 @@ export function ProfileScreen(): React.JSX.Element {
         size="content"
         accessibilityRole="button"
         onPress={() => setActiveModal("social")}
-        className="min-h-[92px] p-4 rounded-lg bg-card border border-hairline flex-row items-center gap-4"
+        className="min-h-[92px] p-4 rounded-lg bg-card flex-row items-center gap-4"
       >
         <View className="w-14 h-14 rounded-full bg-primary items-center justify-center">
           {profile ? (
@@ -176,7 +177,7 @@ export function ProfileScreen(): React.JSX.Element {
         <ChevronRight size={18} color={colors.inkMuted} />
       </Button>
 
-      <View className="z-20 min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-md bg-primary">
+      <View className="z-20 min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-lg bg-card">
         <GooeyInfoPopover
           accessibilityLabel="What stays on this device"
           title="Local by default"
@@ -198,7 +199,7 @@ export function ProfileScreen(): React.JSX.Element {
           <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
             Local by default
           </Text>
-          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-[rgba(255,255,255,0.64)] font-label">
+          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
             Bookmarks, streaks, and location calculations stay on this device.
           </Text>
         </View>
@@ -385,7 +386,7 @@ export function ProfileScreen(): React.JSX.Element {
               accessibilityRole="button"
               onPress={() => setActiveModal(null)}
               pressedScale={0.94}
-              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline shadow-card"
+              className="w-11 h-11 rounded-md items-center justify-center bg-card"
             >
               <X size={18} color={colors.ink} />
             </Button>
@@ -405,39 +406,19 @@ export function ProfileScreen(): React.JSX.Element {
                   this choice.
                 </Text>
               </View>
-              <View className="border-t border-t-hairlineStrong">
-                {languageOptions.map((language) => {
-                  const selected = language.code === primaryLanguageCode;
-                  return (
-                    <Button
-                      variant="ghost"
-                      size="content"
-                      key={language.code}
-                      accessibilityRole="button"
-                      onPress={() => {
-                        void confirmHaptic();
-                        setPrimaryLanguageCode(language.code);
-                        setActiveModal(null);
-                      }}
-                      className={cn(
-                        "min-h-16 flex-row items-center gap-3 border-b border-b-hairline px-1 py-3",
-                        selected && "bg-accent",
-                      )}
-                    >
-                      <View className="flex-1 gap-[2px]">
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-                          {language.name}
-                        </Text>
-                        <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-muted-foreground font-label">
-                          {language.nativeName}
-                        </Text>
-                      </View>
-                      {selected ? (
-                        <Check size={20} color={colors.blue} />
-                      ) : null}
-                    </Button>
-                  );
-                })}
+              <View accessibilityRole="radiogroup" style={{ gap: 8 }}>
+                {languageOptions.map((language) => (
+                  <ChoiceRow
+                    key={language.code}
+                    title={language.name}
+                    detail={language.nativeName}
+                    selected={language.code === primaryLanguageCode}
+                    onPress={() => {
+                      setPrimaryLanguageCode(language.code);
+                      setActiveModal(null);
+                    }}
+                  />
+                ))}
               </View>
             </ScrollView>
           ) : activeModal === "focus" ? (

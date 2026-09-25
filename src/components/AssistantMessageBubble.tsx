@@ -1,92 +1,58 @@
 import { AssistantResponseText } from "@/components/AssistantResponseText";
-import { BrandMark } from "@/components/BrandMark";
 import { Text } from "@/components/ui/text";
+import { colors, fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { AssistantMessage } from "@/services/assistantService";
-import { useEffect, useRef } from "react";
-import { Animated, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Animated, StyleSheet, View } from "react-native";
 
 export function AssistantMessageBubble({
   message,
 }: {
   message: AssistantMessage;
-}): React.JSX.Element {
-  const progress = useRef(new Animated.Value(0)).current;
-  const reduceMotion = useReducedMotion();
+}) {
+  const [progress] = useState(() => new Animated.Value(0));
+  const reduced = useReducedMotion();
   const isUser = message.role === "user";
-
   useEffect(() => {
-    Animated.spring(progress, {
+    Animated.timing(progress, {
       toValue: 1,
-      damping: 18,
-      stiffness: 210,
-      mass: 0.8,
+      duration: reduced ? 0 : 220,
       useNativeDriver: true,
     }).start();
-  }, [progress]);
-
+  }, [progress, reduced]);
+  if (!isUser && !message.content) return null;
   return (
     <Animated.View
       style={{
         opacity: progress,
-        transform: [
-          {
-            translateY: reduceMotion
-              ? 0
-              : progress.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [12, 0],
-                }),
-          },
-          {
-            scale: reduceMotion
-              ? 1
-              : progress.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0.97, 1],
-                }),
-          },
-        ],
+        alignSelf: isUser ? "flex-end" : "stretch",
+        maxWidth: isUser ? "92%" : "100%",
       }}
-      className={isUser ? "self-end max-w-[88%]" : "self-start w-full"}
     >
       {isUser ? (
-        <View className="rounded-lg rounded-br-sm bg-foreground px-4 py-3">
-          <Text
-            variant="body"
-            className="text-white text-[15px] leading-[22px]"
-          >
-            {message.content}
-          </Text>
+        <View style={s.question}>
+          <Text style={s.body}>{message.content}</Text>
         </View>
       ) : (
-        <View className="flex-row items-start gap-3 py-1">
-          <View className="mt-0.5 h-7 w-7 items-center justify-center">
-            <BrandMark size={27} />
-          </View>
-          <View className="flex-1 border-l-2 border-l-primary pl-3">
-            {message.content ? (
-              <AssistantResponseText
-                content={message.content}
-                className="text-foreground text-[15px] leading-[23px]"
-              />
-            ) : (
-              <View
-                className="flex-row gap-1 py-2"
-                accessibilityLabel="Thinking"
-              >
-                {[0.35, 0.6, 1].map((opacity) => (
-                  <View
-                    key={opacity}
-                    className="h-1.5 w-1.5 rounded-full bg-primary"
-                    style={{ opacity }}
-                  />
-                ))}
-              </View>
-            )}
-          </View>
+        <View style={s.answer}>
+          <Text style={s.label}>Kavanah AI</Text>
+          <AssistantResponseText content={message.content} style={s.body} />
         </View>
       )}
     </Animated.View>
   );
 }
+const s = StyleSheet.create({
+  question: {
+    backgroundColor: colors.blueSoft,
+    borderRadius: 20,
+    borderBottomRightRadius: 6,
+    borderCurve: "continuous",
+    paddingHorizontal: 18,
+    paddingVertical: 14,
+  },
+  answer: { gap: 10, paddingVertical: 4 },
+  label: { color: colors.inkMuted, fontSize: 12, fontFamily: fonts.semibold },
+  body: { color: colors.ink, fontSize: 16, lineHeight: 25 },
+});

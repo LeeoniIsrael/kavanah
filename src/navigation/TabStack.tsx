@@ -7,11 +7,15 @@ export function TabStack({ title }: { title: string }): React.JSX.Element {
       screenOptions={{
         contentStyle: { backgroundColor: colors.parchment },
         headerBackButtonDisplayMode: "minimal",
-        headerLargeTitle: true,
+        headerShown: false,
         headerShadowVisible: false,
         headerStyle: { backgroundColor: colors.parchment },
         headerTintColor: colors.ink,
-        headerTitleStyle: { fontFamily: fonts.semibold },
+        headerTitleStyle: { fontFamily: fonts.semibold, color: colors.ink },
+        headerLargeTitleStyle: {
+          fontFamily: fonts.semibold,
+          color: colors.ink,
+        },
       }}
     >
       <Stack.Screen name="index" options={{ title }} />

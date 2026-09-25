@@ -24,15 +24,17 @@ export function PrayerCard({
       variant="ghost"
       size="content"
       onPress={onPress}
-      className={cn(
-        "rounded-lg border border-hairline bg-card p-5",
-        selected && "bg-accent border-primary",
-      )}
+      className={cn("rounded-lg bg-card p-5", selected && "bg-accent")}
     >
       <View className="flex-row items-center gap-3">
         <View className="flex-1 gap-2">
           <View className="flex-row flex-wrap items-center gap-2">
-            <Text variant="caption" className="font-label text-muted-foreground">{prayer.category}</Text>
+            <Text
+              variant="caption"
+              className="font-label text-muted-foreground"
+            >
+              {prayer.category}
+            </Text>
             <Badge variant="secondary">
               <Text>{contentLabel(prayer.hebrewReview.contentKind)}</Text>
             </Badge>

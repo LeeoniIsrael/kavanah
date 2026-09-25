@@ -72,7 +72,8 @@ const buttonVariants = cva(
           Platform.select({ web: "has-[>svg]:px-4" }),
         ),
         icon: "size-11",
-        content: "h-auto p-0 flex-col items-stretch justify-start rounded-none",
+        content:
+          "h-auto min-h-11 p-0 flex-col items-stretch justify-start rounded-md",
       },
     },
     defaultVariants: {
@@ -250,7 +251,7 @@ function Button({
         accessibilityState={{
           ...accessibilityState,
           disabled,
-          busy: isLoading,
+          busy: isLoading || accessibilityState?.busy,
         }}
         className={cn(
           buttonVariants({ variant, size }),
@@ -258,6 +259,7 @@ function Button({
           className,
         )}
         style={[
+          { borderCurve: "continuous" },
           style,
           {
             // Omitted animation props must not erase NativeWind or caller styles.

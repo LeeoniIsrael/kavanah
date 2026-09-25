@@ -17,3 +17,7 @@ This rule applies to every chat and agent working on Kavanah, including temporar
 - Close the existing Kavanah/Expo Go preview and shut down any simulator or emulator used by the previous Kavanah session before launching one fresh target. Do not erase device data. Leave unrelated projects, apps, databases, and macOS services alone unless the user explicitly requests otherwise.
 - Keep only one Kavanah development server and one requested native preview target running. Check the Metro status endpoint and confirm the app actually loads; report the runtime checkout, port/URL, device, and any limitations.
 - If cloud-only files in Documents stall startup, use a fully local runtime checkout with the intended source changes preserved. Keep dependencies inside that checkout; an external node_modules symlink can make Metro scan outside the project. Never preview an older commit without disclosing it.
+
+# Interface consistency rule
+
+For all UI changes, follow `docs/design-system.md`. Use shared surface, choice, button, and screen primitives; do not introduce square selected backgrounds, redundant card outlines, or duplicate safe-area/header ownership. Verify the changed states in the live iOS preview, including readable contrast, scroll clearance, and reduced motion for new animations. Keep loading feedback tied to actual work and remove temporary visual-test overrides before committing.

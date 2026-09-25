@@ -58,7 +58,7 @@ export function ZmanimScreen(): React.JSX.Element {
         )}
       </Card>
 
-      <View className="z-20 min-h-[58px] border-t border-b border-hairline px-1 flex-row items-center gap-3">
+      <View className="z-20 min-h-[64px] rounded-lg bg-card px-4 py-3 flex-row items-center gap-3">
         <GooeyInfoPopover
           accessibilityLabel="How Kavanah uses your location"
           title="Calculated here"

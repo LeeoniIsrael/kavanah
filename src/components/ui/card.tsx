@@ -4,16 +4,18 @@ import { View } from "react-native";
 
 function Card({
   className,
+  style,
   ...props
 }: React.ComponentProps<typeof View> & React.RefAttributes<View>) {
   return (
     <TextClassContext.Provider value="text-card-foreground">
       <View
         className={cn(
-          "bg-card border-hairline flex-col gap-4 rounded-lg border p-5 shadow-card",
+          "bg-card flex-col gap-4 rounded-lg p-5 overflow-hidden",
           className,
         )}
         {...props}
+        style={[{ borderCurve: "continuous" }, style]}
       />
     </TextClassContext.Provider>
   );
