@@ -10,7 +10,7 @@ import {
   tapHaptic,
 } from "@/services/haptics";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   Animated,
   Easing,
@@ -164,9 +164,11 @@ function Button({
   borderRadius,
   ...props
 }: ButtonProps) {
-  const scale = useRef(new Animated.Value(1)).current;
-  const lift = useRef(new Animated.Value(0)).current;
-  const loadingOpacity = useRef(new Animated.Value(isLoading ? 1 : 0)).current;
+  const [scale] = useState(() => new Animated.Value(1));
+  const [lift] = useState(() => new Animated.Value(0));
+  const [loadingOpacity] = useState(
+    () => new Animated.Value(isLoading ? 1 : 0),
+  );
   const [restingWidth, setRestingWidth] = useState<number>();
   const reduceMotion = useReducedMotion();
 
@@ -258,13 +260,22 @@ function Button({
         style={[
           style,
           {
-            width,
-            height,
-            minWidth: isLoading ? restingWidth : undefined,
-            borderRadius,
-            backgroundColor: isLoading
+            // Omitted animation props must not erase NativeWind or caller styles.
+            ...(width !== undefined ? { width } : {}),
+            ...(height !== undefined ? { height } : {}),
+            ...(isLoading && restingWidth !== undefined
+              ? { minWidth: restingWidth }
+              : {}),
+            ...(borderRadius !== undefined ? { borderRadius } : {}),
+            ...((isLoading
               ? (loadingBackgroundColor ?? backgroundColor)
-              : backgroundColor,
+              : backgroundColor) !== undefined
+              ? {
+                  backgroundColor: isLoading
+                    ? (loadingBackgroundColor ?? backgroundColor)
+                    : backgroundColor,
+                }
+              : {}),
             transform: [{ scale }, { translateY: lift }],
           },
         ]}

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
@@ -14,6 +13,10 @@ import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
 import {
   BellRing,
+  BookOpen,
+  CalendarDays,
+  Heart,
+  Utensils,
   ChartColumn,
   ChevronRight,
   MapPin,
@@ -25,11 +28,13 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react-native";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Animated,
   Easing,
   Modal,
+  Platform,
+  ScrollView,
   Pressable,
   StyleSheet,
   View,
@@ -38,12 +43,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { CommunityFeed } from "@/components/CommunityFeed";
-import { HomeNextMomentSkeleton } from "@/components/LoadingSkeletons";
-import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/organisms/check-box";
-import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
-import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
+import { StateBounce } from "@/components/ui/motion-feedback";
 import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -106,9 +108,9 @@ const prayerMomentByZman: Partial<
 };
 
 const shortcuts = [
-  { label: "Prayer", query: "health" },
-  { label: "Food", query: "food blessing" },
-  { label: "Safety", query: "protection" },
+  { label: "Healing", query: "health", icon: Heart },
+  { label: "Blessings", query: "food blessing", icon: Utensils },
+  { label: "Protection", query: "protection", icon: ShieldCheck },
 ];
 
 export function HomeScreen(): React.JSX.Element {
@@ -224,100 +226,109 @@ export function HomeScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen
-      largeTitle="Today"
-      subtitle={formatHebrewDate(now)}
+    <ScrollView
+      accessibilityLabel="Today screen"
+      contentInsetAdjustmentBehavior="automatic"
+      showsVerticalScrollIndicator={false}
+      style={{ flex: 1, backgroundColor: colors.parchment }}
+      contentContainerStyle={homeStyles.content}
     >
-      <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
-        {isLoading && !nextZman && !error ? (
-          <HomeNextMomentSkeleton />
-        ) : (
-          <>
-            <View className="flex-row items-center gap-2">
-              <StatusPulse active={Boolean(nextZman)}>
-                <View className="w-[6px] h-[6px] rounded-full bg-primary" />
-              </StatusPulse>
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
-                {nextZman ? timeUntil(nextZman.time) : "Location needed"}
-              </Text>
-            </View>
-            <Text variant="section" className="text-foreground">
-              {nextZman ? nextZman.title : "Prayer times near you"}
-            </Text>
-            {nextZman ? (
-              <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-foreground font-body">
-                {formatTime(nextZman.time)}
-              </Text>
-            ) : null}
-            <Text variant="body" className="text-muted-foreground">
-              {nextZman
-                ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}`
-                : error
-                  ? "Prayer times are unavailable. Try your location again."
-                  : "Find local prayer times and Shabbat reminders."}
-            </Text>
-            <View className="flex-row gap-2 flex-wrap mt-1">
-              {nextMoment ? (
-                <Button
-                  variant="default"
-                  size="content"
-                  accessibilityRole="button"
-                  onPress={() => openPrayerSearch(nextMoment.query)}
-                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
-                >
-                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-                    {nextMoment.label}
-                  </Text>
-                  <ChevronRight size={17} color={colors.blue} />
-                </Button>
-              ) : (
-                <Button
-                  variant="default"
-                  size="content"
-                  accessibilityRole="button"
-                  onPress={() => void refresh()}
-                  disabled={isLoading}
-                  isLoading={isLoading}
-                  loadingLabel="Finding"
-                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
-                >
-                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
-                    Use location
-                  </Text>
-                  <MapPin size={17} color={colors.blue} />
-                </Button>
-              )}
-              <Button
-                variant="ghost"
-                size="content"
-                accessibilityRole="button"
-                onPress={() => router.push("/zmanim")}
-                className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
-              >
-                <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
-                  Times
-                </Text>
-              </Button>
-            </View>
-          </>
-        )}
-      </Card>
+      <View style={homeStyles.header}>
+        <View style={{ gap: 6, flex: 1 }}>
+          <Text variant="title" style={homeStyles.title}>
+            Today
+          </Text>
+          <Text style={homeStyles.date}>{formatHebrewDate(now)}</Text>
+        </View>
+        <Button
+          variant="ghost"
+          size="content"
+          accessibilityLabel="Open local prayer times"
+          onPress={() => router.push("/zmanim")}
+          style={homeStyles.calendar}
+        >
+          <CalendarDays size={21} color={colors.inkMuted} />
+        </Button>
+      </View>
 
-      <View className="gap-3 flex-row">
-        {shortcuts.map((shortcut) => (
-          <View key={shortcut.label} className="flex-1">
-            <Button
-              variant="ghost"
-              size="content"
-              accessibilityRole="button"
-              onPress={() => openPrayerSearch(shortcut.query)}
-              className="min-h-[52px] rounded-full bg-card items-center justify-center"
-            >
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
-                {shortcut.label}
-              </Text>
-            </Button>
-          </View>
+      <View style={homeStyles.moment}>
+        <View style={homeStyles.momentTop}>
+          <Text style={homeStyles.momentLabel}>
+            {nextZman ? `In ${timeUntil(nextZman.time)}` : "Prayer for today"}
+          </Text>
+        </View>
+        <Text variant="title" style={homeStyles.momentTitle}>
+          {nextZman ? nextZman.title : "A moment of intention."}
+        </Text>
+        {nextZman ? (
+          <Text style={homeStyles.time}>{formatTime(nextZman.time)}</Text>
+        ) : null}
+        <Text style={homeStyles.momentDescription}>
+          {nextZman
+            ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
+            : "Find your words. Begin where you are."}
+        </Text>
+        <Button
+          size="content"
+          onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
+          style={homeStyles.primaryAction}
+          backgroundColor={colors.ink}
+          borderRadius={16}
+        >
+          <BookOpen size={18} color={colors.parchment} />
+          <Text style={homeStyles.primaryLabel}>
+            {nextMoment?.label ?? "Find a prayer"}
+          </Text>
+          <ChevronRight size={18} color={colors.parchment} />
+        </Button>
+      </View>
+
+      <Button
+        variant="ghost"
+        size="content"
+        accessibilityLabel={
+          nextZman
+            ? "View all local prayer times"
+            : "Set location for local prayer times"
+        }
+        onPress={() => (nextZman ? router.push("/zmanim") : void refresh())}
+        disabled={isLoading}
+        style={homeStyles.locationRow}
+      >
+        <MapPin size={17} color={colors.inkMuted} />
+        <View style={{ flex: 1, gap: 3 }}>
+          <Text style={homeStyles.locationTitle}>
+            {nextZman
+              ? (location?.label ?? "Local prayer times")
+              : "Prayer times, wherever you are"}
+          </Text>
+          <Text style={homeStyles.locationCaption}>
+            {isLoading
+              ? "Finding your location…"
+              : nextZman
+                ? "View today’s times"
+                : error
+                  ? "Location unavailable. Tap to try again."
+                  : "Set your location to see local times"}
+          </Text>
+        </View>
+        <ChevronRight size={16} color={colors.inkMuted} />
+      </Button>
+
+      <View style={homeStyles.shortcuts}>
+        {shortcuts.map(({ label, query, icon: Icon }) => (
+          <Button
+            key={label}
+            variant="ghost"
+            size="content"
+            onPress={() => openPrayerSearch(query)}
+            style={homeStyles.shortcut}
+            backgroundColor={colors.vellum}
+            borderRadius={16}
+          >
+            <Icon size={19} strokeWidth={1.5} color={colors.inkMuted} />
+            <Text style={homeStyles.shortcutLabel}>{label}</Text>
+          </Button>
         ))}
       </View>
 
@@ -327,24 +338,23 @@ export function HomeScreen(): React.JSX.Element {
             Daily practice
           </Text>
           <View className="flex-row items-center gap-2">
-            <GooeyInfoPopover
-              accessibilityLabel="About today’s practice count"
-              title="A gentle count, not a score"
-              body="This resets each day and stays on this device. Choose only the practices that help you return with intention."
-              side="bottom"
-              align="end"
-              color={colors.blueSoft}
-              triggerStyle={{ minHeight: 44, justifyContent: "center" }}
-              trigger={
-                <Badge variant="secondary">
-                  <Text>
-                    {activeHabits.length > 0
-                      ? `${completedToday.length}/${activeHabits.length} today`
-                      : "Optional"}
-                  </Text>
-                </Badge>
-              }
-            />
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityLabel={`View practice summary, ${completedToday.length} of ${activeHabits.length} completed today`}
+              onPress={() => setPracticeStatsOpen(true)}
+              style={{
+                minHeight: 44,
+                justifyContent: "center",
+                paddingHorizontal: 8,
+              }}
+            >
+              <Text style={homeStyles.practiceCount}>
+                {activeHabits.length > 0
+                  ? `${completedToday.length} of ${activeHabits.length}`
+                  : "Optional"}
+              </Text>
+            </Button>
             <Button
               variant="ghost"
               size="content"
@@ -386,7 +396,7 @@ export function HomeScreen(): React.JSX.Element {
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
-                    "min-h-[76px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    "min-h-[72px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
                     index === activeHabits.length - 1 && "border-b-0",
                   )}
                 >
@@ -395,11 +405,15 @@ export function HomeScreen(): React.JSX.Element {
                       {details.name}
                     </Text>
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
-                      {streakLabel}
+                      {complete
+                        ? "Completed today"
+                        : currentStreak > 0
+                          ? `${streakLabel} of practice`
+                          : details.description}
                     </Text>
                   </View>
                   <StateBounce trigger={complete}>
-                    <Checkbox checked={complete} size={32} stroke={2.5} />
+                    <Checkbox checked={complete} size={26} stroke={1.8} />
                   </StateBounce>
                 </Button>
               );
@@ -435,12 +449,12 @@ export function HomeScreen(): React.JSX.Element {
           accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`}
           accessibilityRole="button"
           onPress={() => setPracticeStatsOpen(true)}
-          className="min-h-[52px] px-4 flex-row items-center gap-3 border-t border-t-hairline"
+          className="min-h-[60px] px-1 flex-row items-center gap-3"
         >
           <ChartColumn size={18} color={colors.blue} />
           <View className="flex-1">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
-              Overall
+              Your practice
             </Text>
             <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
               {formatOverallSummary(practiceStats)}
@@ -462,12 +476,12 @@ export function HomeScreen(): React.JSX.Element {
         variant="outline"
         size="content"
         accessibilityRole="button"
-        onPress={() => openPrayerSearch("today")}
+        onPress={() => openPrayerSearch("")}
         className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
       >
         <Search size={18} color={colors.blue} />
         <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
-          Search prayers for today
+          Browse the prayer library
         </Text>
         <ChevronRight size={18} color={colors.inkMuted} />
       </Button>
@@ -744,7 +758,7 @@ export function HomeScreen(): React.JSX.Element {
         onDismiss={() => setSharePromptHabit(null)}
         onShare={openStoryComposer}
       />
-    </Screen>
+    </ScrollView>
   );
 }
 
@@ -757,7 +771,7 @@ function ShareMomentPrompt({
   onDismiss: () => void;
   onShare: (habit: StreakHabit) => void;
 }): React.JSX.Element | null {
-  const progress = useRef(new Animated.Value(0)).current;
+  const [progress] = useState(() => new Animated.Value(0));
   const reduceMotion = useReducedMotion();
   useEffect(() => {
     if (!habit) return;
@@ -910,7 +924,7 @@ function PracticeSharePrompt({
   label: string;
   onPress: () => void;
 }): React.JSX.Element {
-  const reveal = useRef(new Animated.Value(0)).current;
+  const [reveal] = useState(() => new Animated.Value(0));
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -1048,3 +1062,105 @@ const styles = {
     writingDirection: "rtl",
   },
 } as const;
+
+// Home uses an editorial title and a single emphasized prayer surface.
+const homeStyles = StyleSheet.create({
+  content: {
+    paddingHorizontal: 24,
+    paddingTop: 12,
+    paddingBottom: 40,
+    gap: 20,
+    width: "100%",
+    maxWidth: 600,
+    alignSelf: "center",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+    paddingBottom: 4,
+  },
+  title: {
+    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+    fontSize: 38,
+    lineHeight: 46,
+    letterSpacing: -1,
+    color: colors.ink,
+  },
+  date: { fontSize: 13, lineHeight: 19, color: colors.inkMuted },
+  calendar: {
+    width: 44,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  moment: {
+    padding: 24,
+    borderRadius: 24,
+    backgroundColor: colors.blueSoft,
+    gap: 14,
+  },
+  momentTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+  momentLabel: { fontSize: 13, lineHeight: 19, color: "#C2C7E4", flex: 1 },
+  momentTitle: {
+    fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
+    fontSize: 32,
+    lineHeight: 38,
+    letterSpacing: -0.7,
+    color: colors.ink,
+  },
+  time: {
+    fontSize: 42,
+    lineHeight: 50,
+    letterSpacing: -1.5,
+    color: colors.ink,
+    fontVariant: ["tabular-nums"],
+  },
+  momentDescription: { fontSize: 15, lineHeight: 23, color: "#C2C7D5" },
+  primaryAction: {
+    minHeight: 52,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginTop: 4,
+  },
+  primaryLabel: {
+    flex: 1,
+    fontSize: 15,
+    lineHeight: 22,
+    color: colors.parchment,
+    fontFamily: "Manrope_600SemiBold",
+  },
+  locationRow: {
+    minHeight: 48,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  locationTitle: { fontSize: 13, lineHeight: 19, color: colors.ink },
+  locationCaption: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
+  practiceCount: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
+  shortcuts: { flexDirection: "row", gap: 10, paddingBottom: 8 },
+  shortcut: {
+    flex: 1,
+    minHeight: 68,
+    paddingVertical: 14,
+    paddingHorizontal: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+  },
+  shortcutLabel: {
+    fontSize: 12,
+    lineHeight: 18,
+    color: colors.ink,
+    fontFamily: "Manrope_500Medium",
+  },
+});
