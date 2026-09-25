@@ -3,7 +3,7 @@ import { useSocialStore } from "@/store/socialStore";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 
-import { cacheStorage, readJson, writeJson } from "@/services/mmkv";
+import { cacheStorage, readJson } from "@/services/mmkv";
 import {
   getCachedPrayers,
   hydratePrayerFromSefaria,
@@ -52,11 +52,8 @@ type PrayerState = {
 };
 
 const cached = getCachedPrayers();
-const persistedBookmarks = readJson(
-  cacheStorage,
-  BOOKMARKS_KEY,
-  isStringArray,
-) ?? ["tefillin-blessing"];
+const persistedBookmarks = readSocialData(BOOKMARKS_KEY, isStringArray) ??
+  readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? ["tefillin-blessing"];
 const persistedHistory = recoverPrayerHistory(
   readSocialData(HISTORY_KEY, isPrayerHistoryArray) ?? [],
   useSocialStore.getState().posts,
@@ -136,7 +133,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
       const bookmarkedPrayerIds = state.bookmarkedPrayerIds.includes(id)
         ? state.bookmarkedPrayerIds.filter((bookmarkId) => bookmarkId !== id)
         : [id, ...state.bookmarkedPrayerIds];
-      writeJson(cacheStorage, BOOKMARKS_KEY, bookmarkedPrayerIds);
+      writeSocialData(BOOKMARKS_KEY, bookmarkedPrayerIds);
       return { bookmarkedPrayerIds };
     });
   },

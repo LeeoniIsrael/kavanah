@@ -211,7 +211,7 @@ function scoreLiturgyEntry(entry: LiturgyIndexEntry, query: string, words: strin
   return score;
 }
 
-function createIndexedPrayer(entry: LiturgyIndexEntry): PrayerText {
+export function createIndexedPrayer(entry: LiturgyIndexEntry): PrayerText {
   const cached = getCachedRemotePrayer(entry.id);
   if (cached) return cached;
   const review = getPendingHebrewReview(entry.id);
