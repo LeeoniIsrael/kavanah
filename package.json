@@ -14,7 +14,10 @@
     "prayers:index": "tsx scripts/generateLiturgyIndex.ts",
     "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts",
     "prayers:source": "tsx scripts/sourceHebrewCandidates.ts",
-    "test:ui": "jest --config jest.ui.config.cjs --runInBand"
+    "test:ui": "jest --config jest.ui.config.cjs --runInBand",
+    "test:backend": "node scripts/backend/test.mjs",
+    "backend:catalog": "tsx scripts/backend/generateCatalog.ts",
+    "release:check": "node scripts/backend/releaseCheck.mjs"
   },
   "jest": {
     "preset": "ts-jest",
@@ -50,6 +53,7 @@
     "@rn-primitives/switch": "^1.5.2",
     "@rn-primitives/tabs": "^1.5.2",
     "@shopify/react-native-skia": "2.6.2",
+    "@supabase/supabase-js": "^2.117.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -59,6 +63,7 @@
     "expo-constants": "~57.0.19",
     "expo-crypto": "~57.0.3",
     "expo-device": "~57.0.2",
+    "expo-file-system": "~57.0.7",
     "expo-font": "~57.0.4",
     "expo-glass-effect": "~57.0.3",
     "expo-haptics": "~57.0.3",
@@ -85,16 +90,17 @@
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "~4.26.0",
     "react-native-svg": "15.15.4",
+    "react-native-url-polyfill": "^4.0.0",
     "react-native-view-shot": "5.1.0",
     "react-native-web": "^0.21.0",
     "react-native-worklets": "0.10.1",
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
-    "zustand": "^5.0.2",
-    "expo-file-system": "~57.0.7"
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@electric-sql/pglite": "^0.5.8",
     "@testing-library/react-native": "^13.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^26.0.0",

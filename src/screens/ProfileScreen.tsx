@@ -1,8 +1,9 @@
+import { useRouter } from "expo-router";
+import { useCircleAccount } from "@/store/circleAccountStore";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Card } from "@/components/ui/card";
 import { ChoiceRow } from "@/components/ui/choice-row";
-import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Text } from "@/components/ui/text";
 import { useAppearanceStore, useThemeColors } from "@/design/appearance";
@@ -45,10 +46,9 @@ import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
   useSettingsStore,
 } from "@/store/settingsStore";
-import { useSocialStore } from "@/store/socialStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 
-type ProfileModal = "focus" | "language" | "privacy" | "social" | null;
+type ProfileModal = "focus" | "language" | "privacy" | null;
 
 export function ProfileScreen(): React.JSX.Element {
   const colors = useThemeColors();
@@ -56,7 +56,8 @@ export function ProfileScreen(): React.JSX.Element {
 
   const insets = useSafeAreaInsets();
   const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
-  const { profile, saveProfile } = useSocialStore();
+  const router = useRouter();
+  const profile = useCircleAccount((state) => state.profile);
   const {
     primaryLanguageCode,
     assistantConsentVersion,
@@ -70,13 +71,6 @@ export function ProfileScreen(): React.JSX.Element {
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
   const [notificationMessage, setNotificationMessage] = useState("");
   const [focusSetupMessage, setFocusSetupMessage] = useState("");
-  const [displayName, setDisplayName] = useState(profile?.displayName ?? "");
-  const [handle, setHandle] = useState(profile?.handle.replace(/^@/, "") ?? "");
-  const [bio, setBio] = useState(profile?.bio ?? "");
-  const [profilePrivate, setProfilePrivate] = useState(
-    profile?.isPrivate ?? true,
-  );
-  const sharingPreferences = useSocialStore((state) => state.preferences);
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
@@ -121,10 +115,7 @@ export function ProfileScreen(): React.JSX.Element {
   return (
     <Screen
       largeTitle="Profile"
-      subtitle={
-        profile?.bio ||
-        "Make a profile, choose what people can see, and practice with your circle."
-      }
+      subtitle="Your practice, preferences, and privacy."
     >
       <View style={{ gap: 12 }}>
         <SectionHeading title="Appearance" />
@@ -179,13 +170,13 @@ export function ProfileScreen(): React.JSX.Element {
         variant="ghost"
         size="content"
         accessibilityRole="button"
-        onPress={() => setActiveModal("social")}
+        onPress={() => router.push("/people")}
         className="min-h-[92px] p-5 rounded-lg bg-card flex-row items-center gap-4"
       >
         <View className="w-14 h-14 rounded-full bg-blueSoft items-center justify-center">
           {profile ? (
             <Text className="text-foreground font-heading text-[20px]">
-              {profile.displayName.charAt(0).toUpperCase()}
+              {profile.display_name.charAt(0).toUpperCase()}
             </Text>
           ) : (
             <UserRound size={24} color={colors.ink} />
@@ -193,12 +184,12 @@ export function ProfileScreen(): React.JSX.Element {
         </View>
         <View className="flex-1 gap-1">
           <Text variant="section">
-            {profile ? "Edit social profile" : "Create your profile"}
+            {profile ? "Your Circle account" : "Connect your circle"}
           </Text>
           <Text variant="body" className="text-[14px] leading-[22px]">
             {profile
-              ? `${profile.handle} · ${profile.isPrivate ? "Private" : "Visible to your circle"}`
-              : "Add a name, handle, bio, and privacy choice."}
+              ? `@${profile.handle} · Private circle`
+              : "Your account, people, and shared practice."}
           </Text>
         </View>
         <ChevronRight size={16} color={colors.inkMuted} />
@@ -368,8 +359,8 @@ export function ProfileScreen(): React.JSX.Element {
       </Card>
 
       <Text variant="body" className="text-[13px] leading-[20px] px-1">
-        Account sync is unavailable until secure server verification and
-        complete account deletion are ready.
+        Prayer stays usable without an account. In Circle, you control your
+        connections, sharing, and account deletion.
       </Text>
 
       <Modal
@@ -492,100 +483,6 @@ export function ProfileScreen(): React.JSX.Element {
                 </Text>
               ) : null}
             </ScrollView>
-          ) : activeModal === "social" ? (
-            <ScrollView
-              contentContainerClassName="px-6 py-4 gap-5"
-              keyboardShouldPersistTaps="handled"
-            >
-              <View className="flex-row items-center justify-between">
-                <Text variant="section" className="text-[22px]">
-                  Your profile
-                </Text>
-                <Button
-                  variant="ghost"
-                  size="content"
-                  onPress={() => setActiveModal(null)}
-                  className="w-11 h-11 items-center justify-center"
-                >
-                  <X size={20} color={colors.ink} />
-                </Button>
-              </View>
-              <View className="gap-2">
-                <Text variant="caption">Display name</Text>
-                <Input
-                  value={displayName}
-                  onChangeText={setDisplayName}
-                  placeholders={[
-                    "Your name",
-                    "How should your circle know you?",
-                  ]}
-                  className="min-h-12"
-                />
-              </View>
-              <View className="gap-2">
-                <Text variant="caption">Handle</Text>
-                <Input
-                  value={handle}
-                  onChangeText={(value) =>
-                    setHandle(value.replace(/[^a-zA-Z0-9_]/g, ""))
-                  }
-                  autoCapitalize="none"
-                  placeholders={["yourhandle", "choose_a_handle"]}
-                  className="min-h-12"
-                />
-              </View>
-              <View className="gap-2">
-                <Text variant="caption">Bio</Text>
-                <Input
-                  value={bio}
-                  onChangeText={setBio}
-                  multiline
-                  placeholders={[
-                    "What are you practicing toward?",
-                    "What brings you back to prayer?",
-                    "Share what guides your practice…",
-                  ]}
-                  className="min-h-24 p-3"
-                />
-              </View>
-              <View className="min-h-[72px] flex-row items-center gap-3 border-t border-b border-hairline">
-                <View className="flex-1">
-                  <Text variant="section">Private profile</Text>
-                  <Text variant="body" className="text-[12px] leading-[17px]">
-                    Approve people before they see your activity.
-                  </Text>
-                </View>
-                <Switch
-                  accessibilityLabel="Private profile"
-                  checked={profilePrivate}
-                  onCheckedChange={setProfilePrivate}
-                />
-              </View>
-              <Text variant="body" className="text-[13px] leading-[20px]">
-                Choose automatic prayer updates and streak milestones in Circle.
-                Your weekly quote comes directly from a prayer.
-              </Text>
-              <Button
-                variant="default"
-                size="content"
-                disabled={!displayName.trim() || !handle.trim()}
-                onPress={() => {
-                  saveProfile({
-                    displayName: displayName.trim(),
-                    handle: `@${handle.trim().toLowerCase()}`,
-                    bio: bio.trim(),
-                    isPrivate: profilePrivate,
-                    shareMilestones: sharingPreferences.milestones,
-                  });
-                  setActiveModal(null);
-                }}
-                className="min-h-[52px] rounded-md items-center justify-center bg-primary"
-              >
-                <Text className="text-primary-foreground font-heading text-[16px]">
-                  Save profile
-                </Text>
-              </Button>
-            </ScrollView>
           ) : (
             <ScrollView
               contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
@@ -615,6 +512,23 @@ export function ProfileScreen(): React.JSX.Element {
                     Bookmarks, streaks, language preferences, reminder settings,
                     and the coordinates used to calculate zmanim. Precise
                     coordinates are not sent to the prayer assistant.
+                  </BouncyAccordion.Content>
+                </BouncyAccordion.Item>
+                <BouncyAccordion.Item value="circle">
+                  <BouncyAccordion.Trigger accessibilityLabel="Circle account data">
+                    <BouncyAccordion.Trigger.Icon>
+                      <UserRound size={20} color={colors.blue} />
+                    </BouncyAccordion.Trigger.Icon>
+                    <BouncyAccordion.Trigger.Label>
+                      Circle account
+                    </BouncyAccordion.Trigger.Label>
+                  </BouncyAccordion.Trigger>
+                  <BouncyAccordion.Content>
+                    Joining Circle saves future prayer completions to your
+                    account. Sharing starts off; accepted connections see only
+                    the updates you choose to share. Your address book is never
+                    uploaded. Delete your cloud account from Your Circle
+                    account; private device activity remains here.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="assistant">

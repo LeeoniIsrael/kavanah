@@ -20,3 +20,17 @@
 - Explain the optional prayer assistant, location calculation, and notification flow in App Review notes.
 - Confirm that all core features remain usable without sign-in, location, notifications, biometrics, or assistant consent.
 - Confirm production rate limiting uses shared durable storage or infrastructure-level enforcement rather than process memory alone.
+
+## Circle launch gates — currently open
+
+- [ ] Provision owner-controlled staging and production Supabase projects; apply and verify migrations. See `docs/social-backend.md`.
+- [ ] Configure EAS public backend identifiers; keep service-role credentials out of the app bundle.
+- [ ] Configure and test custom SMTP, OTP templates/expiry, Auth anti-abuse controls, and delivery monitoring.
+- [ ] Run two real accounts over the hosted API: private/off, first-ever, every-prayer, milestones, quotes, connections, blocks, reports, cursor pagination, retries, sign-out, and deletion.
+- [ ] Assign moderation staff, a private support contact, response procedures, and finalized community terms.
+- [ ] Verify backup restoration/deletion retention, incident response, availability and spend alerts, and load testing.
+- [ ] Review App Privacy disclosures for email, identifiers, user content, and sensitive religious-practice data. No address-book permission is requested.
+- [ ] Configure the real App Store invitation URL; test existing-install and new-user referral journeys.
+- [ ] Complete native sign-in/keyboard/VoiceOver/Dynamic Type checks on unlocked real devices; restore/reset private data deliberately, never as part of automated UI testing.
+- [ ] Review remaining moderate dependency advisories. No high/critical production advisory remained after the lockfile repair on September 25; this is not a security audit.
+- [ ] Run `npm run release:check` with production configuration using Node 24 LTS. Then TestFlight and App Review; passing configuration checks alone is not launch approval.

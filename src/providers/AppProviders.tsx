@@ -1,3 +1,6 @@
+import { startCircleAccount } from "@/store/circleAccountStore";
+import { circleClient } from "@/services/network/client";
+import { flushCircle } from "@/services/network/outbox";
 import { BrandWordmark } from "@/components/BrandMark";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
@@ -13,6 +16,19 @@ export function AppProviders({
   children,
 }: PropsWithChildren): React.JSX.Element {
   const colors = useThemeColors();
+  useEffect(() => {
+    const stop = startCircleAccount();
+    const subscription = AppState.addEventListener("change", (state) => {
+      if (state === "active") {
+        void circleClient?.auth.startAutoRefresh();
+        void flushCircle();
+      } else void circleClient?.auth.stopAutoRefresh();
+    });
+    return () => {
+      stop();
+      subscription.remove();
+    };
+  }, []);
 
   const { biometricLockEnabled, hydrate, unlockWithBiometrics } =
     useAuthStore();
@@ -29,10 +45,7 @@ export function AppProviders({
 
   useEffect(() => {
     if (!hydrated) return;
-    if (!biometricLockEnabled) {
-      setUnlocked(true);
-      return;
-    }
+    if (!biometricLockEnabled) return;
     void unlockWithBiometrics().then(setUnlocked);
   }, [biometricLockEnabled, hydrated, unlockWithBiometrics]);
 

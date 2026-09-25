@@ -102,3 +102,9 @@ Circle's Your activity section includes a Monday-first monthly contribution cale
 Activity uses local completion dates and is independent of sharing choices. A reader completion and its corresponding daily habit credit count once. Current streak counts consecutive active days through today or yesterday. Legacy prayer posts can recover otherwise missing historical completions, without duplicating retained sessions. Prayer history and habit dates use the app-scoped durable storage fallback in Expo Go; prayer history retains the latest 5,000 sessions. No fake activity is generated.
 
 Verified in native Circle with existing activity and day details. Typecheck, targeted lint, calendar edge-case tests, legacy recovery tests, and existing streak tests passed (10 tests). Interactive taps remain unverified while the Mac is locked; temporary preview scroll offsets were removed.
+
+## Connected Circle
+
+Circle and Profile lead to the same account/people screen. The former device-only profile editor is retired; its saved data is preserved and can prefill enrollment. Joining requires verified email and explicit enrollment. Existing device activity is never silently published. Shared feed and private device activity are labeled separately; removing a local item explains that a shared copy must be removed from Your people.
+
+The people screen uses shared typography, surfaces, input, button, safe-area/header, and close controls. Account, loading, unconfigured, error, empty-feed, pending-request, report/block, sync-pending, and deletion states are explicit. Without hosted backend configuration, the preview clearly says accounts are unavailable instead of pretending to connect. Native Profile and this unconfigured state were inspected after a clean same-checkout Metro restart; authenticated and interactive states still require a hosted project and an unlocked device.

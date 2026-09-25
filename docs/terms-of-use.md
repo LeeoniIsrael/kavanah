@@ -25,3 +25,9 @@ Kavanah may retrieve public Jewish texts from Sefaria and may use third-party tr
 Features may change as the prayer library is reviewed and the service is improved. Offline prayer access remains limited to content bundled or previously cached on the device.
 
 Questions about these terms can be submitted through the [Kavanah support page](https://github.com/LeeoniIsrael/kavanah/issues).
+
+## Circle community (when enabled)
+
+Circle is for respectful sharing of prayer activity with people you choose. Do not impersonate anyone, harass others, use abusive profile names, or submit illegal or hateful material. Updates are generated from prayer activity and selected prayer passages; free-form captions are not supported. You control automatic sharing and may remove updates, disconnect, block, report, or delete your account in the app. Reports are reviewed by authorized operators; violating content and accounts may be removed. Invitations carry no reward, ranking, or payment. Do not send unwanted invitations.
+
+Production launch requires an operating moderation/support process and finalized public contact details; this draft must be reviewed before distribution.

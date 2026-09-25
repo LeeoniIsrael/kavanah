@@ -14,7 +14,8 @@
       "autoIncrement": true,
       "env": {
         "APP_ENV": "production"
-      }
+      },
+      "node": "24.21.0"
     }
   },
   "submit": {

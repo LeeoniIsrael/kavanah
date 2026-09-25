@@ -1,3 +1,5 @@
+import { useCircleAccount } from "@/store/circleAccountStore";
+import { circleConfigured } from "@/services/network/client";
 import { ActivityCalendar } from "@/components/ActivityCalendar";
 import { useInterfaceStyles } from "@/design/layout";
 import { AnimatedHeaderSurface } from "@/components/organisms/animated-header-scrollview";
@@ -28,6 +30,7 @@ import {
 } from "@/components/ui/icons";
 import { memo, useState } from "react";
 import {
+  Alert,
   Modal,
   Platform,
   ScrollView,
@@ -60,6 +63,7 @@ export function CircleScreen(): React.JSX.Element {
   const ui = useInterfaceStyles();
 
   const router = useRouter();
+  const account = useCircleAccount((state) => state.profile);
   const posts = useSocialStore((s) => s.posts);
   const profile = useSocialStore((s) => s.profile);
   const preferences = useSocialStore((s) => s.preferences);
@@ -91,16 +95,40 @@ export function CircleScreen(): React.JSX.Element {
             ListHeaderComponent={
               <View style={{ gap: 24, paddingBottom: 24 }}>
                 {header}
+                <Button
+                  variant="ghost"
+                  size="content"
+                  style={[ui.surface, s.row]}
+                  onPress={() => router.push("/people")}
+                >
+                  <View style={{ flex: 1, gap: 5 }}>
+                    <Text style={ui.itemTitle}>
+                      {account ? "Your people" : "Connect your circle"}
+                    </Text>
+                    <Text style={ui.caption}>
+                      {account
+                        ? "Shared prayers, connections, and invitations"
+                        : circleConfigured
+                          ? "Add someone. Share a little of your practice."
+                          : "Accounts are coming. Your practice stays private."}
+                    </Text>
+                  </View>
+                  <ChevronRight size={16} color={colors.inkMuted} />
+                </Button>
                 <View style={s.intro}>
                   <View style={s.row}>
                     <View style={s.avatar}>
                       <Text style={s.initial}>
-                        {profile?.displayName.charAt(0).toUpperCase() || "You"}
+                        {(account?.display_name ?? profile?.displayName)
+                          ?.charAt(0)
+                          .toUpperCase() || "You"}
                       </Text>
                     </View>
                     <View style={{ flex: 1, gap: 3 }}>
                       <Text style={s.heading}>
-                        {profile?.displayName || "Your practice, your pace"}
+                        {account?.display_name ||
+                          profile?.displayName ||
+                          "Your practice, your pace"}
                       </Text>
                       <Text style={ui.caption}>
                         Your profile shares only what you choose.
@@ -220,8 +248,9 @@ export function CircleScreen(): React.JSX.Element {
               <View style={s.notice}>
                 <ShieldCheck size={16} color={colors.inkMuted} />
                 <Text style={[ui.caption, { flex: 1, lineHeight: 19 }]}>
-                  Only you can see this for now. Circle is not connected to
-                  other accounts; these updates stay on this device.
+                  {account
+                    ? "This is your device activity. Open Your people for the shared feed. Sharing choices apply to future completions."
+                    : "This activity stays on your device. Connect your circle when you’re ready to share with people you know."}
                 </Text>
               </View>
             }
@@ -372,6 +401,7 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
 
   const router = useRouter();
   const removePost = useSocialStore((s) => s.removePost);
+  const account = useCircleAccount((state) => state.profile);
   const quote = post.kind === "quote";
   return (
     <View style={ui.surface}>
@@ -405,8 +435,19 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
           variant="ghost"
           size="content"
           style={s.iconButton}
-          accessibilityLabel={`Remove ${post.practice} update`}
-          onPress={() => removePost(post.id)}
+          accessibilityLabel={`Remove ${post.practice} from device activity`}
+          onPress={() =>
+            account
+              ? Alert.alert(
+                  "Remove from this device?",
+                  "Shared updates remain in Your people. Remove a shared update there to delete it from everyone’s feed.",
+                  [
+                    { text: "Cancel", style: "cancel" },
+                    { text: "Remove", onPress: () => removePost(post.id) },
+                  ],
+                )
+              : removePost(post.id)
+          }
         >
           <X size={20} color={colors.inkMuted} />
         </Button>

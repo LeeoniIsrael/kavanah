@@ -1,3 +1,4 @@
+import { queueCircle } from "@/services/network/outbox";
 import { create } from "zustand";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import {
@@ -104,11 +105,30 @@ export const useSocialStore = create<SocialState>((set) => ({
     writeSocialData(PROFILE_KEY, profile);
     set({ profile });
   },
-  setPreferences: (preferences) =>
-    set((state) => persist({ ...state, preferences })),
+  setPreferences: (preferences) => {
+    set((state) => persist({ ...state, preferences }));
+    queueCircle(
+      "circle_preferences",
+      {
+        prayer_mode: preferences.prayers,
+        share_milestones: preferences.milestones,
+      },
+      "preferences",
+    );
+  },
   recordPrayer: (activity) =>
     set((state) => {
       if (state.seenEvents.includes(activity.id)) return state;
+      queueCircle(
+        "circle_record",
+        {
+          event: activity.id,
+          prayer: activity.prayerId,
+          started: activity.startedAt?.toISOString() ?? null,
+          completed: activity.completedAt.toISOString(),
+        },
+        `record:${activity.id}`,
+      );
       const date = dayKey(activity.completedAt);
       const base = {
         createdAt: activity.completedAt.toISOString(),
@@ -164,6 +184,17 @@ export const useSocialStore = create<SocialState>((set) => ({
   setWeeklyQuote: (source, start, end, now = new Date()) => {
     const quote = selectedQuote(source.text, start, end);
     if (!quote) return false;
+    queueCircle(
+      "circle_quote",
+      {
+        prayer: source.prayerId,
+        passage_text: source.text,
+        quote_language: source.language,
+        first_word: Math.min(start, end),
+        last_word: Math.max(start, end),
+      },
+      "quote",
+    );
     const week = weekKey(now);
     set((state) =>
       persist({

@@ -1,0 +1,24 @@
+project_id = "kavanah"
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 200
+[db]
+port = 54322
+major_version = 17
+[auth]
+enabled = true
+site_url = "https://kavanah-rho.vercel.app"
+enable_signup = true
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+[auth.email.template.magic_link]
+subject = "Your Kavanah sign-in code"
+content_path = "./supabase/templates/sign-in.html"
+
+[auth.email.template.confirmation]
+subject = "Your Kavanah sign-in code"
+content_path = "./supabase/templates/sign-in.html"

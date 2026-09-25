@@ -101,3 +101,9 @@ Use `eas.json` for development, preview, and production builds. Before TestFligh
 - TLS pinning and production crash reporting are not implemented.
 - Zmanim methods are shown, but local custom and rabbinic method selection are not implemented.
 - Service collections need section-level content design; they must not be presented as complete single prayers.
+
+## Circle backend
+
+Circle's managed Postgres schema, security rules, and authenticated API are in `supabase/`. The app includes optional email-code accounts, approved connections, invitations, and a shared prayer feed. Backend configuration is required before accounts are offered; the app keeps private prayer usable without it.
+
+See [backend deployment and operating guide](docs/social-backend.md) and [release checklist](docs/release-checklist.md). Run `npm run test:backend` for PostgreSQL policy/API tests and `npm run release:check` for the release configuration gate. No cloud project is provisioned just by cloning this repository.
