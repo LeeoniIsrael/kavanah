@@ -1,3 +1,4 @@
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { formatISO, isSameDay, parseISO, subDays } from "date-fns";
 import { useSocialStore } from "@/store/socialStore";
 import { create } from "zustand";
@@ -69,9 +70,11 @@ function isStreakHabitArray(value: unknown): value is StreakHabit[] {
 }
 
 const persisted =
-  readJson(userStorage, STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
+  readSocialData(STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
 const persistedEnabledHabits =
   readJson(userStorage, ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
+
+writeSocialData(STORAGE_KEY, persisted);
 
 export const useStreakStore = create<StreakState>((set, get) => ({
   habits: persisted,
@@ -97,17 +100,14 @@ export const useStreakStore = create<StreakState>((set, get) => ({
         maariv: "Maariv",
         tefillin: "Tefillin",
       };
-      useSocialStore
-        .getState()
-        .recordPrayer({
-          id: `checkin:${habit}:${day}`,
-          prayerId: habit === "tefillin" ? "tefillin-blessing" : habit,
-          title: names[habit],
-          completedAt: date,
-          streak:
-            get().habits.find((item) => item.habit === habit)?.streak ?? 0,
-          practiceKey: habit,
-        });
+      useSocialStore.getState().recordPrayer({
+        id: `checkin:${habit}:${day}`,
+        prayerId: habit === "tefillin" ? "tefillin-blessing" : habit,
+        title: names[habit],
+        completedAt: date,
+        streak: get().habits.find((item) => item.habit === habit)?.streak ?? 0,
+        practiceKey: habit,
+      });
     }
   },
   useFreeze: (habit, date = new Date()) =>
@@ -214,7 +214,7 @@ function updateHabitVisibility(
 function persist(state: { habits: HabitProgress[] }): {
   habits: HabitProgress[];
 } {
-  writeJson(userStorage, STORAGE_KEY, state.habits);
+  writeSocialData(STORAGE_KEY, state.habits);
   return state;
 }
 

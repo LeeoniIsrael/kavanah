@@ -1,11 +1,9 @@
+import { recoverPrayerHistory } from "@/services/activityCalendar";
+import { useSocialStore } from "@/store/socialStore";
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 
-import {
-  cacheStorage,
-  readJson,
-  userStorage,
-  writeJson,
-} from "@/services/mmkv";
+import { cacheStorage, readJson, writeJson } from "@/services/mmkv";
 import {
   getCachedPrayers,
   hydratePrayerFromSefaria,
@@ -26,7 +24,7 @@ export type PrayerHistoryEntry = {
   completedAt: string;
   startedAt?: string;
   durationSeconds?: number;
-  source: "guided-reading" | "reader";
+  source: "guided-reading" | "reader" | "imported-activity";
 };
 
 type PrayerState = {
@@ -59,8 +57,12 @@ const persistedBookmarks = readJson(
   BOOKMARKS_KEY,
   isStringArray,
 ) ?? ["tefillin-blessing"];
-const persistedHistory =
-  readJson(userStorage, HISTORY_KEY, isPrayerHistoryArray) ?? [];
+const persistedHistory = recoverPrayerHistory(
+  readSocialData(HISTORY_KEY, isPrayerHistoryArray) ?? [],
+  useSocialStore.getState().posts,
+);
+
+if (persistedHistory.length) writeSocialData(HISTORY_KEY, persistedHistory);
 
 export const usePrayerStore = create<PrayerState>((set, get) => ({
   prayers: cached,
@@ -160,8 +162,8 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
       source,
     };
     set((state) => {
-      const history = [entry, ...state.history].slice(0, 500);
-      writeJson(userStorage, HISTORY_KEY, history);
+      const history = [entry, ...state.history].slice(0, 5000);
+      writeSocialData(HISTORY_KEY, history);
       return { history };
     });
     return entry;
@@ -202,7 +204,9 @@ function isPrayerHistoryArray(value: unknown): value is PrayerHistoryEntry[] {
         typeof entry.prayerId === "string" &&
         typeof entry.prayerTitle === "string" &&
         typeof entry.completedAt === "string" &&
-        (entry.source === "guided-reading" || entry.source === "reader")
+        (entry.source === "guided-reading" ||
+          entry.source === "reader" ||
+          entry.source === "imported-activity")
       );
     })
   );

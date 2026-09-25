@@ -1,3 +1,4 @@
+import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { QuoteSelector } from "@/components/QuoteSelector";
 import { Input } from "@/components/ui/input";
@@ -74,7 +75,7 @@ import {
   useSettingsStore,
 } from "@/store/settingsStore";
 import { useSocialStore } from "@/store/socialStore";
-import { useStreakStore, type StreakHabit } from "@/store/streakStore";
+import { useStreakStore } from "@/store/streakStore";
 import type { HebrewContentKind, PrayerToken } from "@/types/prayer";
 
 type LocalizedToken = PrayerToken & {
@@ -1153,36 +1154,4 @@ export function PrayerScreen(): React.JSX.Element {
       />
     </Screen>
   );
-}
-
-function habitForPrayer(prayer: {
-  id: string;
-  title: string;
-  category: string;
-  tags: string[];
-}): StreakHabit | undefined {
-  const searchable =
-    `${prayer.id} ${prayer.title} ${prayer.tags.join(" ")}`.toLowerCase();
-  if (prayer.category === "tefillin" || searchable.includes("tefillin"))
-    return "tefillin";
-  if (
-    prayer.category === "study" ||
-    searchable.includes("study") ||
-    searchable.includes("learning")
-  )
-    return "study";
-  if (
-    searchable.includes("shacharit") ||
-    searchable.includes("morning service")
-  )
-    return "shacharit";
-  if (searchable.includes("mincha") || searchable.includes("afternoon service"))
-    return "mincha";
-  if (
-    searchable.includes("maariv") ||
-    searchable.includes("arvit") ||
-    searchable.includes("evening service")
-  )
-    return "maariv";
-  return undefined;
 }

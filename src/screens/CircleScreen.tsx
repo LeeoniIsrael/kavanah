@@ -1,3 +1,4 @@
+import { ActivityCalendar } from "@/components/ActivityCalendar";
 import { useInterfaceStyles } from "@/design/layout";
 import { AnimatedHeaderSurface } from "@/components/organisms/animated-header-scrollview";
 import Animated from "react-native-reanimated";
@@ -169,8 +170,12 @@ export function CircleScreen(): React.JSX.Element {
                     One quote each week. Replace it anytime. No caption.
                   </Text>
                 </View>
+                <Text accessibilityRole="header" style={ui.sectionTitle}>
+                  Your activity
+                </Text>
+                <ActivityCalendar />
                 <View style={s.row}>
-                  <Text style={ui.sectionTitle}>Your activity</Text>
+                  <Text style={ui.sectionTitle}>Updates</Text>
                   <View style={{ flex: 1 }} />
                   <Text style={ui.caption}>
                     {posts.length

@@ -94,3 +94,11 @@ Use `useInterfaceStyles` from `src/design/layout.ts` for neutral cards, emphasiz
 Typography roles are section 20/28, item title 17/24, body 14/22, caption 13/20, editorial feature 28/36, and prominent time 48/56. Explicit Text variants take precedence over inherited button typography; otherwise tappable descriptions become bold and headings shrink. Standard button labels still inherit their button context. Long prayer descriptions remain readable without a three-line cutoff.
 
 September 25 consistency pass: compared native dark captures of all five main tabs, including the removed empty bookmarks gap in search results, aligned Zmanim rows, corrected Profile text inheritance, and shared Home/Circle feature geometry. Typecheck, targeted lint, and four light/dark contrast tests passed. Interactive testing remains limited by the locked Mac. Preview, appearance preference, and user activity were preserved.
+
+## Activity calendar
+
+Circle's Your activity section includes a Monday-first monthly contribution calendar. Cell intensity represents saved completed prayers and daily check-ins (0, 1, 2, 3+); quotes and milestone announcements are not completions. Tapping a date reveals the recorded prayers, completion times, and available durations. Future days are disabled; month navigation cannot move beyond the current month. Touch targets are at least 44 points and the grid can scroll horizontally at large text sizes or narrow widths.
+
+Activity uses local completion dates and is independent of sharing choices. A reader completion and its corresponding daily habit credit count once. Current streak counts consecutive active days through today or yesterday. Legacy prayer posts can recover otherwise missing historical completions, without duplicating retained sessions. Prayer history and habit dates use the app-scoped durable storage fallback in Expo Go; prayer history retains the latest 5,000 sessions. No fake activity is generated.
+
+Verified in native Circle with existing activity and day details. Typecheck, targeted lint, calendar edge-case tests, legacy recovery tests, and existing streak tests passed (10 tests). Interactive taps remain unverified while the Mac is locked; temporary preview scroll offsets were removed.
