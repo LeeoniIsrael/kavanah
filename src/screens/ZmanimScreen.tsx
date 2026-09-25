@@ -9,7 +9,6 @@ import {
   ZmanimHeroSkeleton,
   ZmanimListSkeleton,
 } from "@/components/LoadingSkeletons";
-import { ParametricField } from "@/components/ParametricField";
 import { Button } from "@/components/ui/button";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { StatusPulse } from "@/components/ui/motion-feedback";
@@ -29,8 +28,7 @@ export function ZmanimScreen(): React.JSX.Element {
 
   return (
     <Screen largeTitle="Zmanim" subtitle="Local prayer times">
-      <Card className="relative overflow-hidden rounded-lg bg-primary p-6 gap-3 border-[0px]">
-        <ParametricField />
+      <Card className="relative overflow-hidden rounded-lg bg-blueSoft p-6 gap-3 border-[0px]">
         {showInitialLoading ? (
           <ZmanimHeroSkeleton />
         ) : (
@@ -39,7 +37,7 @@ export function ZmanimScreen(): React.JSX.Element {
               <StatusPulse active={Boolean(nextZman)}>
                 <View className="w-2 h-2 rounded-full bg-white" />
               </StatusPulse>
-              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-[rgba(255,255,255,0.68)] font-label">
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkMuted font-label">
                 Next
               </Text>
             </View>
@@ -49,7 +47,7 @@ export function ZmanimScreen(): React.JSX.Element {
             <Text className="text-[56px] leading-[58px] font-normal tracking-[-2px] text-white font-body">
               {nextZman ? formatTime(nextZman.time) : "--:--"}
             </Text>
-            <Text variant="body" className="text-[rgba(255,255,255,0.68)]">
+            <Text variant="body" className="text-inkMuted">
               {nextZman
                 ? `${formatDay(nextZman.time)} · ${location?.label ?? "local time"}`
                 : (error ?? "Set location to calculate precise local zmanim.")}

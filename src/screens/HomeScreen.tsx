@@ -226,6 +226,7 @@ export function HomeScreen(): React.JSX.Element {
   };
 
   return (
+    <SafeAreaView edges={["top", "left", "right"]} style={{ flex: 1, backgroundColor: colors.parchment }}>
     <ScrollView
       accessibilityLabel="Today screen"
       contentInsetAdjustmentBehavior="automatic"
@@ -492,16 +493,16 @@ export function HomeScreen(): React.JSX.Element {
         accessibilityLabel="Long trip travel prayer"
         accessibilityRole="button"
         onPress={() => setTravelPromptOpen(true)}
-        className="min-h-[76px] px-4 py-3 rounded-lg bg-foreground flex-row items-center gap-3 shadow-card"
+        className="min-h-[76px] px-4 py-3 rounded-lg bg-blueSoft flex-row items-center gap-3"
       >
         <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
-          <NavigationIcon size={19} color={colors.white} />
+          <NavigationIcon size={19} color={colors.parchment} />
         </View>
         <View className="flex-1 gap-[2px]">
-          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
             Long trip?
           </Text>
-          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-[rgba(255,255,255,0.66)] font-label">
+          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-inkMuted font-label">
             {travelStatus ||
               "Open or schedule the travel prayer without sharing your route."}
           </Text>
@@ -582,8 +583,8 @@ export function HomeScreen(): React.JSX.Element {
                       travelScheduling && "opacity-[0.55]",
                     )}
                   >
-                    <BellRing size={17} color={colors.white} />
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-white font-label">
+                    <BellRing size={17} color={colors.parchment} />
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground font-label">
                       Remind in 5 min
                     </Text>
                   </Button>
@@ -759,6 +760,7 @@ export function HomeScreen(): React.JSX.Element {
         onShare={openStoryComposer}
       />
     </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -883,7 +885,7 @@ function ShareMomentPrompt({
               onPress={() => close(() => onShare(habit))}
               className="min-h-[52px] rounded-md bg-primary items-center justify-center"
             >
-              <Text className="text-[15px] leading-[20px] font-semibold text-white font-heading">
+              <Text className="text-[15px] leading-[20px] font-semibold text-primary-foreground font-heading">
                 Create story
               </Text>
             </Button>

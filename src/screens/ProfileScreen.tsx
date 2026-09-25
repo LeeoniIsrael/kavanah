@@ -155,7 +155,7 @@ export function ProfileScreen(): React.JSX.Element {
         onPress={() => setActiveModal("social")}
         className="min-h-[92px] p-4 rounded-lg bg-card flex-row items-center gap-4"
       >
-        <View className="w-14 h-14 rounded-full bg-primary items-center justify-center">
+        <View className="w-14 h-14 rounded-full bg-blueSoft items-center justify-center">
           {profile ? (
             <Text className="text-white font-heading text-[20px]">
               {profile.displayName.charAt(0).toUpperCase()}
@@ -433,8 +433,8 @@ export function ProfileScreen(): React.JSX.Element {
                 </Text>
                 <Text variant="body">{focusSetup.body}</Text>
               </View>
-              <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-md bg-primary">
-                <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
+              <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-lg bg-blueSoft">
+                <View className="w-11 h-11 rounded-sm items-center justify-center bg-blueSoft">
                   <MoonStar size={22} color={colors.white} />
                 </View>
                 <View className="flex-1 gap-1">
@@ -443,7 +443,7 @@ export function ProfileScreen(): React.JSX.Element {
                   </Text>
                   <Text
                     variant="body"
-                    className="text-[rgba(255,255,255,0.68)] text-[14px] leading-[20px]"
+                    className="text-inkMuted text-[14px] leading-[20px]"
                   >
                     Kavanah will pause when a prayer opens. Your phone keeps
                     final control of calls, alarms, and notifications.
@@ -473,10 +473,10 @@ export function ProfileScreen(): React.JSX.Element {
                 onPress={() => void openFocusSetup()}
                 className="min-h-[50px] px-4 rounded-md flex-row items-center justify-center gap-2 bg-primary"
               >
-                <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                   {focusSetup.actionLabel}
                 </Text>
-                <ChevronRight size={17} color={colors.white} />
+                <ChevronRight size={17} color={colors.parchment} />
               </Button>
               {focusSetupMessage ? (
                 <Text
@@ -576,7 +576,7 @@ export function ProfileScreen(): React.JSX.Element {
                 }}
                 className="min-h-[52px] rounded-md items-center justify-center bg-primary"
               >
-                <Text className="text-white font-heading text-[16px]">
+                <Text className="text-primary-foreground font-heading text-[16px]">
                   Save profile
                 </Text>
               </Button>

@@ -635,7 +635,7 @@ export function PrayerScreen(): React.JSX.Element {
                   )}
                 >
                   {selectedBookmarked ? (
-                    <BookmarkCheck size={17} color={colors.white} />
+                    <BookmarkCheck size={17} color={colors.parchment} />
                   ) : (
                     <Bookmark size={17} color={colors.gold} />
                   )}
@@ -772,10 +772,10 @@ export function PrayerScreen(): React.JSX.Element {
                         }
                         className="min-h-11 self-start flex-row items-center gap-2 rounded-md bg-primary px-4 py-2"
                       >
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                           Open on Sefaria
                         </Text>
-                        <ExternalLink size={16} color={colors.white} />
+                        <ExternalLink size={16} color={colors.parchment} />
                       </Button>
                     </View>
                   ) : null}
@@ -937,7 +937,7 @@ export function PrayerScreen(): React.JSX.Element {
                       >
                         <Text
                           numberOfLines={2}
-                          className="text-[12px] leading-[16px] font-medium tracking-normal text-white text-center font-label"
+                          className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground text-center font-label"
                         >
                           {focusSetup.actionLabel}
                         </Text>
@@ -1002,7 +1002,7 @@ export function PrayerScreen(): React.JSX.Element {
                         }}
                         className="min-h-12 items-center justify-center rounded-full bg-primary"
                       >
-                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                           Allow and ask
                         </Text>
                       </Button>
@@ -1064,8 +1064,8 @@ export function PrayerScreen(): React.JSX.Element {
                       }}
                       className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
                     >
-                      <Share2 size={18} color={colors.white} />
-                      <Text className="text-[16px] leading-[22px] font-semibold text-white font-heading">
+                      <Share2 size={18} color={colors.parchment} />
+                      <Text className="text-[16px] leading-[22px] font-semibold text-primary-foreground font-heading">
                         Share this moment
                       </Text>
                     </Button>
