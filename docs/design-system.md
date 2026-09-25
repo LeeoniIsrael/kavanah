@@ -172,3 +172,9 @@ UIKit owns label typography, inactive symbol colors, geometry and animation. Onl
 Native source verified in react-native-screens/ios/tabs/host; iPhone 17 Pro iOS 26 preview inspected. Typecheck and targeted lint pass. No native dependencies or rebuild required. Apple Reduce Transparency and Reduce Motion preferences remain system-controlled.
 
 Reference: https://docs.expo.dev/router/advanced/native-tabs/
+
+### Grouped prayer search
+
+Search groups matching normalized prayer titles into one result with the highest-ranked match opening directly. An optional Other editions disclosure retains all alternative source IDs with prayer-book and section labels; grouping does not assert that their text is identical. The bundled Modeh Ani and its five indexed placements now present as one prayer. Bookmarks and the Siddur index retain their original source identities. Search deep links reveal Find a prayer automatically.
+
+Regression coverage checks grouping against the real index, preservation of weekday/Shabbat sources, distinct titles, and repeated IDs. Six search/service tests, typecheck and targeted lint passed. The grouped result was visually inspected in the native iPhone 17 Pro preview. Direct UI interaction remains limited by the locked Mac session.

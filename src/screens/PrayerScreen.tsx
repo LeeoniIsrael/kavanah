@@ -1,3 +1,5 @@
+import { groupPrayerSearchResults } from "@/services/prayerSearchGroups";
+import { PrayerSearchGroupCard } from "@/components/PrayerSearchGroupCard";
 import { siddurBooks, siddurEntries, type SiddurBook } from "@/services/siddur";
 import { writeSocialData } from "@/services/socialStorage";
 import { SiddurLibrary } from "@/components/SiddurLibrary";
@@ -50,7 +52,6 @@ import {
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
 import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
-import { PrayerCard } from "@/components/PrayerCard";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -183,7 +184,8 @@ export function PrayerScreen(): React.JSX.Element {
       ? localizedPrayer.tokens
       : [];
   const showResults = query.trim().length > 0;
-  const visibleResults = showResults ? results.slice(0, 18) : [];
+  const groupedResults = groupPrayerSearchResults(results);
+  const visibleResults = showResults ? groupedResults.slice(0, 18) : [];
   const [bookmarkReveal] = useState(
     () => new Animated.Value(showResults ? 0 : 1),
   );
@@ -192,12 +194,16 @@ export function PrayerScreen(): React.JSX.Element {
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
-    if (linkedQuery) setQuery(linkedQuery);
+    if (linkedQuery) {
+      setQuery(linkedQuery);
+      // A new external route must reveal its requested search results.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setLibraryView("search");
+    }
     const linkedPrayerId = params.prayerId?.trim();
     if (linkedPrayerId) {
       void selectPrayer(linkedPrayerId);
       // Deep-link navigation resets the reader and assistant as one transition.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setGuidedPrayerOpen(true);
       setAssistantOpen(false);
       setAssistantInput("");
@@ -642,17 +648,16 @@ export function PrayerScreen(): React.JSX.Element {
             <View className="gap-3">
               <SectionHeading
                 title={isSearchingRemote ? "Searching prayers" : "Results"}
-                detail={`${visibleResults.length} found`}
+                detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
               />
               {isSearchingRemote && visibleResults.length === 0 ? (
                 <PrayerSearchSkeleton />
               ) : visibleResults.length > 0 ? (
                 visibleResults.map((result) => (
-                  <PrayerCard
+                  <PrayerSearchGroupCard
                     key={result.prayer.id}
-                    prayer={result.prayer}
-                    selected={false}
-                    onPress={() => void openPrayer(result.prayer.id)}
+                    group={result}
+                    onOpen={(id) => void openPrayer(id)}
                   />
                 ))
               ) : (
