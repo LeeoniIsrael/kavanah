@@ -17,6 +17,8 @@ import { habitForPrayer } from "./practiceHabit";
 export type CalendarActivity = {
   id: string;
   title: string;
+  prayerId?: string;
+  startedAt?: string;
   completedAt?: string;
   durationSeconds?: number;
 };
@@ -103,6 +105,8 @@ export function buildActivityDays(
     (days[day] ??= []).push({
       id: entry.id,
       title: entry.prayerTitle,
+      prayerId: entry.prayerId,
+      ...(entry.startedAt ? { startedAt: entry.startedAt } : {}),
       completedAt: entry.completedAt,
       ...(entry.durationSeconds !== undefined
         ? { durationSeconds: entry.durationSeconds }

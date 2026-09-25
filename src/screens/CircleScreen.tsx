@@ -1,3 +1,4 @@
+import { ActivityTiming } from "@/components/ActivityTiming";
 import { CircleFriends } from "@/screens/PeopleScreen";
 import { usePrayerStore } from "@/store/prayerStore";
 import { useStreakStore } from "@/store/streakStore";
@@ -20,6 +21,7 @@ import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
 import { useSocialStore } from "@/store/socialStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import {
+  ChevronRight,
   Check,
   ShieldCheck,
   Info,
@@ -175,30 +177,71 @@ export function CircleScreen(): React.JSX.Element {
                   {header}
                   {tabs}
                   <ActivityCalendar />
-                  <View style={s.row}>
+                  <View
+                    style={[
+                      s.row,
+                      { flexWrap: "wrap", alignItems: "baseline" },
+                    ]}
+                  >
                     <Text style={ui.sectionTitle}>Prayer history</Text>
                     <View style={{ flex: 1 }} />
                     <Text style={ui.caption}>{entries.length} completed</Text>
                   </View>
                 </View>
               }
-              renderItem={({ item }) => (
-                <View style={ui.surface}>
-                  <Text style={ui.itemTitle}>{item.title}</Text>
-                  <Text style={ui.caption}>
-                    {new Date(`${item.day}T12:00:00`).toLocaleDateString(
-                      undefined,
-                      { month: "short", day: "numeric", year: "numeric" },
-                    )}
-                    {item.completedAt
-                      ? ` · ${new Date(item.completedAt).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}`
-                      : " · Daily check-in"}
-                    {item.durationSeconds !== undefined
-                      ? ` · ${formatDuration(item.durationSeconds)}`
-                      : ""}
-                  </Text>
-                </View>
-              )}
+              renderItem={({ item }) => {
+                const canRead = Boolean(
+                  item.prayerId &&
+                  prayers.some((prayer) => prayer.id === item.prayerId),
+                );
+                const content = (
+                  <>
+                    <View style={{ flex: 1, gap: 6, minWidth: 0 }}>
+                      <Text style={ui.itemTitle}>{item.title}</Text>
+                      <Text style={ui.caption}>
+                        {new Date(`${item.day}T12:00:00`).toLocaleDateString(
+                          undefined,
+                          { month: "short", day: "numeric", year: "numeric" },
+                        )}
+                      </Text>
+                      <ActivityTiming
+                        startedAt={item.startedAt}
+                        completedAt={item.completedAt}
+                        durationSeconds={item.durationSeconds}
+                      />
+                    </View>
+                    {canRead ? (
+                      <ChevronRight size={16} color={colors.inkMuted} />
+                    ) : null}
+                  </>
+                );
+                const style = [
+                  ui.surface,
+                  {
+                    flexDirection: "row" as const,
+                    alignItems: "center" as const,
+                    gap: 16,
+                  },
+                ];
+                return canRead ? (
+                  <Button
+                    variant="ghost"
+                    size="content"
+                    style={style}
+                    accessibilityLabel={`Read ${item.title}`}
+                    onPress={() =>
+                      router.push({
+                        pathname: "/prayer",
+                        params: { prayerId: item.prayerId! },
+                      })
+                    }
+                  >
+                    {content}
+                  </Button>
+                ) : (
+                  <View style={style}>{content}</View>
+                );
+              }}
               ListEmptyComponent={
                 <View style={ui.surface}>
                   <Text style={ui.itemTitle}>Your practice starts here</Text>
@@ -441,11 +484,3 @@ const makes = (colors: ThemeColors) =>
     },
     rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
   });
-
-function formatDuration(seconds: number): string {
-  if (seconds < 60) return `${seconds}s`;
-  const minutes = Math.floor(seconds / 60);
-  const remainder = seconds % 60;
-  if (minutes < 60) return `${minutes}m${remainder ? ` ${remainder}s` : ""}`;
-  return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
-}

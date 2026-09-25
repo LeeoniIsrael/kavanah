@@ -1,3 +1,4 @@
+import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
@@ -457,18 +458,13 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
               {post.kind === "quote" && (
                 <Text style={ui.caption}>{post.source_ref}</Text>
               )}
-              {post.started_at && (
-                <Text style={ui.caption}>
-                  Started{" "}
-                  {new Date(post.started_at).toLocaleTimeString(undefined, {
-                    hour: "numeric",
-                    minute: "2-digit",
-                  })}
-                  {post.duration_seconds !== null
-                    ? ` · ${Math.floor(post.duration_seconds / 60)}m ${post.duration_seconds % 60}s`
-                    : ""}
-                </Text>
-              )}
+              {post.kind === "prayer" ? (
+                <ActivityTiming
+                  startedAt={post.started_at}
+                  completedAt={post.created_at}
+                  durationSeconds={post.duration_seconds}
+                />
+              ) : null}
               {post.owner === profile.id
                 ? button(
                     "Remove update",

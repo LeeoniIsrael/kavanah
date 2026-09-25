@@ -1,3 +1,4 @@
+import { ActivityTiming } from "./ActivityTiming";
 import { useMemo, useState } from "react";
 import {
   ScrollView,
@@ -207,11 +208,11 @@ export function ActivityCalendar() {
           entries.map((entry) => (
             <View key={entry.id} style={{ gap: 2 }}>
               <Text style={ui.body}>{entry.title}</Text>
-              <Text style={ui.caption}>
-                {entry.completedAt
-                  ? `Completed ${format(new Date(entry.completedAt), "h:mm a")}${entry.durationSeconds !== undefined ? ` · ${entry.durationSeconds < 60 ? `${entry.durationSeconds}s` : `${Math.floor(entry.durationSeconds / 60)}m ${entry.durationSeconds % 60}s`}` : ""}`
-                  : "Daily check-in"}
-              </Text>
+              <ActivityTiming
+                startedAt={entry.startedAt}
+                completedAt={entry.completedAt}
+                durationSeconds={entry.durationSeconds}
+              />
             </View>
           ))
         ) : (
