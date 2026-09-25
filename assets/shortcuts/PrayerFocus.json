@@ -1,0 +1,68 @@
+{
+  "WFWorkflowName": "Kavanah Prayer Focus",
+  "WFWorkflowClientVersion": "2600",
+  "WFWorkflowMinimumClientVersion": 900,
+  "WFWorkflowIcon": {
+    "WFWorkflowIconGlyphNumber": 59782,
+    "WFWorkflowIconStartColor": 946986751
+  },
+  "WFWorkflowInputContentItemClasses": [],
+  "WFWorkflowTypes": [],
+  "WFWorkflowImportQuestions": [],
+  "WFWorkflowActions": [
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "Turn on Do Not Disturb for 15 minutes. Your allowed people, apps and alarms follow your Do Not Disturb settings. Edit the duration below if you prefer. Kavanah does not install an app-open automation."
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.date",
+      "WFWorkflowActionParameters": {
+        "WFDateActionMode": "Current Date",
+        "UUID": "33A85818-8DB8-4811-96D4-13472105AD95"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.adjustdate",
+      "WFWorkflowActionParameters": {
+        "WFDate": {
+          "Value": {
+            "OutputUUID": "33A85818-8DB8-4811-96D4-13472105AD95",
+            "Type": "ActionOutput",
+            "OutputName": "Date"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFAdjustOperation": "Add",
+        "WFDuration": {
+          "Value": {
+            "Magnitude": 15,
+            "Unit": "min"
+          },
+          "WFSerializationType": "WFQuantityFieldValue"
+        },
+        "UUID": "6D199FAC-B51B-41B0-BC4E-CC5E3696B81E"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.dnd.set",
+      "WFWorkflowActionParameters": {
+        "Enabled": true,
+        "AssertionType": "Time",
+        "Time": {
+          "Value": {
+            "OutputUUID": "6D199FAC-B51B-41B0-BC4E-CC5E3696B81E",
+            "Type": "ActionOutput",
+            "OutputName": "Adjusted Date"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "FocusModes": {
+          "DisplayString": "Do Not Disturb",
+          "Identifier": "com.apple.donotdisturb.mode.default"
+        }
+      }
+    }
+  ]
+}

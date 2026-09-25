@@ -19,5 +19,5 @@ jobs:
       - run: npm run typecheck
       - run: npm test -- --runInBand
       - run: npm run test:backend
-      - name: Check social, account and reminder code
-        run: npx eslint src/screens/PeopleScreen.tsx src/screens/ProfileScreen.tsx src/services/network src/store/circleAccountStore.ts src/store/socialStore.ts src/providers/AppProviders.tsx src/screens/CircleScreen.tsx scripts/backend/generateCatalog.ts src/services/reminderPlan.ts src/services/reminderScheduler.ts src/store/reminderStore.ts src/screens/NotificationSettingsScreen.tsx src/screens/HolidayChecklistScreen.tsx
+      - name: Check social, account, reminder and Focus code
+        run: npx eslint src/screens/PeopleScreen.tsx src/screens/ProfileScreen.tsx src/services/network src/store/circleAccountStore.ts src/store/socialStore.ts src/providers/AppProviders.tsx src/screens/CircleScreen.tsx scripts/backend/generateCatalog.ts src/services/reminderPlan.ts src/services/reminderScheduler.ts src/store/reminderStore.ts src/screens/NotificationSettingsScreen.tsx src/screens/HolidayChecklistScreen.tsx app/focus-setup.tsx src/components/PrayerFocusSetupContent.tsx src/services/prayerFocus.ts src/services/__tests__/prayerFocus.test.ts

@@ -1,3 +1,4 @@
+import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
 import { useCircleAccount } from "@/store/circleAccountStore";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -33,10 +34,6 @@ import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { findLanguage, languageOptions } from "@/data/languages";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic } from "@/services/haptics";
-import {
-  getPrayerFocusSetup,
-  openPrayerFocusSetup,
-} from "@/services/prayerFocus";
 import { useAuthStore } from "@/store/authStore";
 import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
@@ -62,21 +59,10 @@ export function ProfileScreen(): React.JSX.Element {
     setPrayerFocusEnabled,
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
-  const [focusSetupMessage, setFocusSetupMessage] = useState("");
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
     assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
-  const focusSetup = getPrayerFocusSetup();
-
-  const openFocusSetup = async () => {
-    const opened = await openPrayerFocusSetup();
-    setFocusSetupMessage(
-      opened
-        ? "Finish the setup there, then return to Kavanah."
-        : "Open your device settings and choose Focus or Do Not Disturb.",
-    );
-  };
 
   return (
     <Screen
@@ -387,66 +373,7 @@ export function ProfileScreen(): React.JSX.Element {
               contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
               showsVerticalScrollIndicator={false}
             >
-              <View className="gap-1 pr-12">
-                <Text variant="caption">Prayer Focus</Text>
-                <Text variant="display" className="text-[34px] leading-[39px]">
-                  A quieter siddur
-                </Text>
-                <Text variant="body">{focusSetup.body}</Text>
-              </View>
-              <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-lg bg-blueSoft">
-                <View className="w-11 h-11 rounded-sm items-center justify-center bg-blueSoft">
-                  <MoonStar size={20} color={colors.ink} />
-                </View>
-                <View className="flex-1 gap-1">
-                  <Text variant="section" className="text-foreground">
-                    Before the first word
-                  </Text>
-                  <Text
-                    variant="body"
-                    className="text-inkMuted text-[14px] leading-[20px]"
-                  >
-                    Kavanah will pause when a prayer opens. Your phone keeps
-                    final control of calls, alarms, and notifications.
-                  </Text>
-                </View>
-              </View>
-              <View className="border-t border-t-hairlineStrong">
-                {focusSetup.steps.map((step, index) => (
-                  <View
-                    key={step}
-                    className="min-h-16 flex-row items-center gap-3 border-b border-b-hairline"
-                  >
-                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal w-6 text-primary text-center font-label">
-                      {index + 1}
-                    </Text>
-                    <Text variant="body" className="flex-1">
-                      {step}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-              <Button
-                variant="default"
-                size="content"
-                accessibilityRole="button"
-                haptic="confirm"
-                onPress={() => void openFocusSetup()}
-                className="min-h-[50px] px-4 rounded-md flex-row items-center justify-center gap-2 bg-primary"
-              >
-                <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-primary-foreground font-heading">
-                  {focusSetup.actionLabel}
-                </Text>
-                <ChevronRight size={16} color={colors.onAccent} />
-              </Button>
-              {focusSetupMessage ? (
-                <Text
-                  variant="body"
-                  className="text-center text-[13px] leading-[19px]"
-                >
-                  {focusSetupMessage}
-                </Text>
-              ) : null}
+              <PrayerFocusSetupContent />
             </ScrollView>
           ) : (
             <ScrollView

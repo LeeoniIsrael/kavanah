@@ -42,7 +42,6 @@ import {
   PrayerSearchSkeleton,
   PrayerTextSkeleton,
 } from "@/components/LoadingSkeletons";
-import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import {
   PracticeStoryComposer,
   type PracticeStoryMoment,
@@ -65,10 +64,7 @@ import {
   localizeHebrewTransliteration,
   translatePrayerText,
 } from "@/services/localizationService";
-import {
-  getPrayerFocusSetup,
-  openPrayerFocusSetup,
-} from "@/services/prayerFocus";
+import { getPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
 import {
   CURRENT_ASSISTANT_CONSENT_VERSION,
@@ -185,9 +181,9 @@ export function PrayerScreen(): React.JSX.Element {
       : [];
   const showResults = query.trim().length > 0;
   const visibleResults = showResults ? results.slice(0, 18) : [];
-  const bookmarkReveal = useRef(
-    new Animated.Value(showResults ? 0 : 1),
-  ).current;
+  const [bookmarkReveal] = useState(
+    () => new Animated.Value(showResults ? 0 : 1),
+  );
   const focusSetup = getPrayerFocusSetup();
 
   useEffect(() => {
@@ -196,6 +192,8 @@ export function PrayerScreen(): React.JSX.Element {
     const linkedPrayerId = params.prayerId?.trim();
     if (linkedPrayerId) {
       void selectPrayer(linkedPrayerId);
+      // Deep-link navigation resets the reader and assistant as one transition.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setGuidedPrayerOpen(false);
       setAssistantOpen(false);
       setAssistantInput("");
@@ -305,14 +303,8 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   const openFocusSettings = async () => {
-    const opened = await openPrayerFocusSetup();
-    if (opened) {
-      setFocusPromptOpen(false);
-      return;
-    }
-    setFocusPromptMessage(
-      "Open your device settings and choose Focus or Do Not Disturb.",
-    );
+    setFocusPromptOpen(false);
+    router.push("/focus-setup");
   };
 
   const readerTokens =
@@ -332,7 +324,6 @@ export function PrayerScreen(): React.JSX.Element {
 
   const startGuidedPrayer = () => {
     setGuidedPrayerOpen(true);
-    if (prayerFocusEnabled) void openPrayerFocusSetup();
   };
 
   const completeGuidedPrayer = () => {
