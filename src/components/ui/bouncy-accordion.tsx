@@ -3,7 +3,7 @@ import {
   useThemedStyles,
   type ThemeColors,
 } from "@/design/appearance";
-import { ChevronDown } from "lucide-react-native";
+import { ChevronDown } from "@/components/ui/icons";
 import {
   createContext,
   useContext,
@@ -207,7 +207,7 @@ function TriggerBase({
     >
       <View style={styles.triggerContent}>{children}</View>
       <Animated.View style={{ transform: [{ rotate }] }}>
-        <ChevronDown size={18} strokeWidth={2.2} color={colors.inkMuted} />
+        <ChevronDown size={16} color={colors.inkMuted} />
       </Animated.View>
     </Pressable>
   );

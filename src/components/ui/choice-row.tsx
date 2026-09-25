@@ -6,7 +6,7 @@ import {
   type ThemeColors,
 } from "@/design/appearance";
 import { fonts, geometry } from "@/design/theme";
-import { Check } from "lucide-react-native";
+import { Check } from "@/components/ui/icons";
 import { StyleSheet, View } from "react-native";
 
 /** A standalone choice keeps its selection inside the same continuous corners. */
@@ -27,6 +27,7 @@ export function ChoiceRow({
   return (
     <Button
       variant="ghost"
+      haptic="selection"
       size="content"
       accessibilityRole="radio"
       accessibilityState={{ checked: selected }}
@@ -39,7 +40,7 @@ export function ChoiceRow({
         <Text style={s.detail}>{detail}</Text>
       </View>
       <View style={s.check}>
-        {selected && <Check size={22} color={colors.blue} />}
+        {selected && <Check size={20} color={colors.blue} />}
       </View>
     </Button>
   );

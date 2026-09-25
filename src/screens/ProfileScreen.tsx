@@ -15,10 +15,10 @@ import {
   MoonStar,
   Navigation,
   ShieldCheck,
-  Sparkles,
+  MessageCircle,
   UserRound,
   X,
-} from "lucide-react-native";
+} from "@/components/ui/icons";
 import { useState } from "react";
 import { Modal, ScrollView, View } from "react-native";
 import {
@@ -168,6 +168,7 @@ export function ProfileScreen(): React.JSX.Element {
               key={mode}
               variant="ghost"
               size="content"
+              haptic="selection"
               accessibilityRole="radio"
               accessibilityState={{ checked: preference === mode }}
               onPress={() => setPreference(mode)}
@@ -225,7 +226,7 @@ export function ProfileScreen(): React.JSX.Element {
               : "Add a name, handle, bio, and privacy choice."}
           </Text>
         </View>
-        <ChevronRight size={18} color={colors.inkMuted} />
+        <ChevronRight size={16} color={colors.inkMuted} />
       </Button>
 
       <View className="z-20 min-h-[94px] py-4 px-3 flex-row items-center gap-3 rounded-lg bg-card">
@@ -244,7 +245,7 @@ export function ProfileScreen(): React.JSX.Element {
             justifyContent: "center",
             width: 44,
           }}
-          trigger={<ShieldCheck size={21} color={colors.ink} />}
+          trigger={<ShieldCheck size={20} color={colors.ink} />}
         />
         <View className="flex-1 gap-[2px]">
           <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -265,7 +266,7 @@ export function ProfileScreen(): React.JSX.Element {
           className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline"
         >
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <Languages size={19} color={colors.blue} />
+            <Languages size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -275,12 +276,12 @@ export function ProfileScreen(): React.JSX.Element {
               {primaryLanguage.name} · {primaryLanguage.nativeName}
             </Text>
           </View>
-          <ChevronRight size={18} color={colors.inkMuted} />
+          <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <Bell size={19} color={colors.blue} />
+            <Bell size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -300,7 +301,7 @@ export function ProfileScreen(): React.JSX.Element {
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <Navigation size={19} color={colors.blue} />
+            <Navigation size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -322,7 +323,7 @@ export function ProfileScreen(): React.JSX.Element {
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <MoonStar size={19} color={colors.blue} />
+            <MoonStar size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -346,7 +347,7 @@ export function ProfileScreen(): React.JSX.Element {
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <LockKeyhole size={19} color={colors.blue} />
+            <LockKeyhole size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -368,7 +369,7 @@ export function ProfileScreen(): React.JSX.Element {
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <Sparkles size={19} color={colors.blue} />
+            <MessageCircle size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -399,7 +400,7 @@ export function ProfileScreen(): React.JSX.Element {
           )}
         >
           <View className="w-[34px] h-[34px] rounded-sm bg-muted items-center justify-center">
-            <ShieldCheck size={19} color={colors.blue} />
+            <ShieldCheck size={20} color={colors.blue} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -409,7 +410,7 @@ export function ProfileScreen(): React.JSX.Element {
               What stays here and what leaves this device.
             </Text>
           </View>
-          <ChevronRight size={18} color={colors.inkMuted} />
+          <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
       </Card>
 
@@ -436,10 +437,10 @@ export function ProfileScreen(): React.JSX.Element {
               accessibilityLabel="Close"
               accessibilityRole="button"
               onPress={() => setActiveModal(null)}
-              pressedScale={0.94}
+              pressedScale={0.96}
               className="w-11 h-11 rounded-md items-center justify-center bg-card"
             >
-              <X size={18} color={colors.ink} />
+              <X size={20} color={colors.ink} />
             </Button>
           </View>
           {activeModal === "language" ? (
@@ -486,7 +487,7 @@ export function ProfileScreen(): React.JSX.Element {
               </View>
               <View className="min-h-28 p-4 flex-row items-center gap-3 rounded-lg bg-blueSoft">
                 <View className="w-11 h-11 rounded-sm items-center justify-center bg-blueSoft">
-                  <MoonStar size={22} color={colors.ink} />
+                  <MoonStar size={20} color={colors.ink} />
                 </View>
                 <View className="flex-1 gap-1">
                   <Text variant="section" className="text-foreground">
@@ -527,7 +528,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-primary-foreground font-heading">
                   {focusSetup.actionLabel}
                 </Text>
-                <ChevronRight size={17} color={colors.onAccent} />
+                <ChevronRight size={16} color={colors.onAccent} />
               </Button>
               {focusSetupMessage ? (
                 <Text
@@ -553,7 +554,7 @@ export function ProfileScreen(): React.JSX.Element {
                   onPress={() => setActiveModal(null)}
                   className="w-11 h-11 items-center justify-center"
                 >
-                  <X size={18} color={colors.ink} />
+                  <X size={20} color={colors.ink} />
                 </Button>
               </View>
               <View className="gap-2">
@@ -651,7 +652,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <BouncyAccordion.Item value="device">
                   <BouncyAccordion.Trigger accessibilityLabel="Stored on this device">
                     <BouncyAccordion.Trigger.Icon>
-                      <LockKeyhole size={18} color={colors.blue} />
+                      <LockKeyhole size={20} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
                     <BouncyAccordion.Trigger.Label>
                       Stored on this device
@@ -667,7 +668,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <BouncyAccordion.Item value="assistant">
                   <BouncyAccordion.Trigger accessibilityLabel="Prayer assistant data use">
                     <BouncyAccordion.Trigger.Icon>
-                      <Sparkles size={18} color={colors.blue} />
+                      <MessageCircle size={20} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
                     <BouncyAccordion.Trigger.Label>
                       Prayer assistant
@@ -685,7 +686,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <BouncyAccordion.Item value="guidance">
                   <BouncyAccordion.Trigger accessibilityLabel="Religious guidance">
                     <BouncyAccordion.Trigger.Icon>
-                      <ShieldCheck size={18} color={colors.blue} />
+                      <ShieldCheck size={20} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
                     <BouncyAccordion.Trigger.Label>
                       Religious guidance
@@ -700,7 +701,7 @@ export function ProfileScreen(): React.JSX.Element {
                 <BouncyAccordion.Item value="choice">
                   <BouncyAccordion.Trigger accessibilityLabel="Your choice">
                     <BouncyAccordion.Trigger.Icon>
-                      <Check size={18} color={colors.blue} />
+                      <Check size={20} color={colors.blue} />
                     </BouncyAccordion.Trigger.Icon>
                     <BouncyAccordion.Trigger.Label>
                       Your choice

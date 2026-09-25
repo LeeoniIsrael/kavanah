@@ -1,4 +1,6 @@
+import { iconMetrics } from "@/design/iconography";
+
 export const checkboxConfig = {
-  defaultSize: 32,
-  defaultStroke: 2.5,
+  defaultSize: iconMetrics.feature,
+  defaultStroke: iconMetrics.stroke,
 } as const;

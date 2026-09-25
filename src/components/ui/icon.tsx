@@ -31,7 +31,7 @@ cssInterop(IconImpl, {
  * @component
  * @example
  * ```tsx
- * import { ArrowRight } from 'lucide-react-native';
+ * import { ArrowRight } from '@/components/ui/icons';
  * import { Icon } from '@/registry/components/ui/icon';
  *
  * <Icon as={ArrowRight} className="text-red-500" size={16} />
@@ -39,13 +39,13 @@ cssInterop(IconImpl, {
  *
  * @param {LucideIcon} as - The Lucide icon component to render.
  * @param {string} className - Utility classes to style the icon using Nativewind.
- * @param {number} size - Icon size (defaults to 14).
+ * @param {number} size - Icon size (defaults to 20).
  * @param {...LucideProps} ...props - Additional Lucide icon props passed to the "as" icon.
  */
 function Icon({
   as: IconComponent,
   className,
-  size = 14,
+  size = 20,
   ...props
 }: IconProps) {
   const textClass = React.useContext(TextClassContext);

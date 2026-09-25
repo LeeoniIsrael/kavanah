@@ -1,7 +1,7 @@
 import { BrandWordmark } from "@/components/BrandMark";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
-import { LockKeyhole } from "lucide-react-native";
+import { LockKeyhole } from "@/components/ui/icons";
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { AppState, View } from "react-native";
 
@@ -61,7 +61,7 @@ export function AppProviders({
       <View className="flex-1 items-center justify-center p-6 bg-background gap-3">
         <BrandWordmark width={170} />
         <View className="w-[54px] h-[54px] rounded-md items-center justify-center bg-muted border border-hairline">
-          <LockKeyhole size={25} color={colors.ink} />
+          <LockKeyhole size={24} color={colors.ink} />
         </View>
         <Text className="text-[27px] leading-[33px] font-semibold tracking-normal text-foreground text-center font-heading">
           Kavanah is locked

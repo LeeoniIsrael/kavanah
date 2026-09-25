@@ -1,5 +1,5 @@
 import { useThemeColors } from "@/design/appearance";
-import { colors, motion } from "@/design/theme";
+import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useEffect } from "react";
 import Animated, {
@@ -22,7 +22,7 @@ export type { CheckboxProps } from "./types";
  */
 export function Checkbox({
   checked = false,
-  checkmarkColor = colors.white,
+  checkmarkColor,
   showBorder = true,
   size = checkboxConfig.defaultSize,
   stroke = checkboxConfig.defaultStroke,
@@ -64,11 +64,7 @@ export function Checkbox({
         rx={cornerRadius}
         fill={checked ? colors.gold : "transparent"}
         stroke={
-          showBorder
-            ? checked
-              ? colors.gold
-              : colors.hairlineStrong
-            : "transparent"
+          showBorder ? (checked ? colors.gold : colors.inkMuted) : "transparent"
         }
         strokeWidth={stroke}
       />
@@ -76,7 +72,7 @@ export function Checkbox({
         animatedProps={animatedPathProps}
         d={`M ${size * 0.25} ${size * 0.52} L ${size * 0.43} ${size * 0.69} L ${size * 0.76} ${size * 0.32}`}
         fill="none"
-        stroke={checkmarkColor}
+        stroke={checkmarkColor ?? colors.onAccent}
         strokeWidth={stroke}
         strokeLinecap="round"
         strokeLinejoin="round"

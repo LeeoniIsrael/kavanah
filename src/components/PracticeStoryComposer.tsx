@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import * as Device from "expo-device";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
-import { Camera, Check, ImagePlus, Share, X } from "lucide-react-native";
+import { Camera, Check, ImagePlus, Share, X } from "@/components/ui/icons";
 import { useRef, useState } from "react";
 import {
   Image,
@@ -217,10 +217,10 @@ function StoryComposerSession({
                   accessibilityRole="button"
                   haptic="selection"
                   onPress={close}
-                  pressedScale={0.94}
+                  pressedScale={0.96}
                   className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
                 >
-                  <X size={18} color={colors.ink} />
+                  <X size={20} color={colors.ink} />
                 </Button>
                 <View className="flex-1 gap-[2px]">
                   <Text variant="section">Share your practice</Text>
@@ -313,7 +313,7 @@ function StoryComposerSession({
                 </Tabs>
 
                 <View className="flex-row items-start gap-2 px-1">
-                  <Check size={15} color={colors.olive} />
+                  <Check size={16} color={colors.olive} />
                   <Text className="text-[12px] leading-[16px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
                     Your photo stays on this device. Kavanah adds no name,
                     prayer text, or location.
@@ -339,7 +339,7 @@ function StoryComposerSession({
                     onPress={() => void choosePhoto("camera")}
                     className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-card border border-hairlineStrong"
                   >
-                    <Camera size={18} color={colors.ink} />
+                    <Camera size={20} color={colors.ink} />
                     <Text className="font-heading text-[13px] text-foreground">
                       Camera
                     </Text>
@@ -360,7 +360,7 @@ function StoryComposerSession({
                     onPress={() => void choosePhoto("library")}
                     className="w-full min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-card border border-hairlineStrong"
                   >
-                    <ImagePlus size={18} color={colors.ink} />
+                    <ImagePlus size={20} color={colors.ink} />
                     <Text
                       numberOfLines={1}
                       className="font-heading text-[14px] leading-[19px] text-foreground"
@@ -391,7 +391,7 @@ function StoryComposerSession({
                         dotSpacing={4}
                       />
                     ) : (
-                      <Share size={18} color={colors.onAccent} />
+                      <Share size={20} color={colors.onAccent} />
                     )}
                     <Text
                       className="text-[14px] leading-[22px] font-semibold tracking-normal font-heading"

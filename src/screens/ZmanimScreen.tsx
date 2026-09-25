@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
-import { Bell, MapPin } from "lucide-react-native";
+import { Bell, MapPin } from "@/components/ui/icons";
 import { useEffect } from "react";
 import { View } from "react-native";
 
@@ -73,7 +73,7 @@ export function ZmanimScreen(): React.JSX.Element {
             justifyContent: "center",
             width: 44,
           }}
-          trigger={<MapPin size={18} color={colors.blue} />}
+          trigger={<MapPin size={20} color={colors.blue} />}
         />
         <Text className="text-[16px] leading-[22px] font-normal tracking-normal flex-1 text-foreground font-body">
           {error ?? location?.label ?? "Location unavailable"}
@@ -117,7 +117,7 @@ export function ZmanimScreen(): React.JSX.Element {
       </Card>
 
       <View className="min-h-[58px] border-l-[2px] border-l-gold px-3 flex-row items-center gap-3">
-        <Bell size={18} color={colors.blue} />
+        <Bell size={20} color={colors.blue} />
         <Text variant="body" className="flex-1 text-[14px] leading-[20px]">
           Reminders stay on this device. Shabbat candle lighting appears on
           Friday; Havdalah appears on Saturday.

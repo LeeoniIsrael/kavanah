@@ -9,7 +9,7 @@ import {
 } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import type { AssistantMessage } from "@/services/assistantService";
-import { ArrowUp, CornerDownLeft } from "lucide-react-native";
+import { ArrowUp, CornerDownLeft } from "@/components/ui/icons";
 import { useState } from "react";
 import { Keyboard, StyleSheet, TextInput, View } from "react-native";
 
@@ -94,9 +94,8 @@ export function PrayerAssistantPanel({
             style={[s.send, !canSend && s.sendInactive]}
           >
             <ArrowUp
-              color={canSend ? colors.parchment : colors.inkMuted}
-              size={22}
-              strokeWidth={2.2}
+              color={canSend ? colors.onAccent : colors.inkMuted}
+              size={20}
             />
           </Button>
         </View>
@@ -113,7 +112,7 @@ export function PrayerAssistantPanel({
               accessibilityLabel={`Use question: ${prompt}`}
             >
               <Text style={s.prompt}>{prompt}</Text>
-              <CornerDownLeft size={15} color={colors.inkMuted} />
+              <CornerDownLeft size={16} color={colors.inkMuted} />
             </Button>
           ))}
         </View>

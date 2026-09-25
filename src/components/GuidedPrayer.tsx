@@ -7,7 +7,7 @@ import {
   ChevronRight,
   Quote,
   X,
-} from "lucide-react-native";
+} from "@/components/ui/icons";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -90,10 +90,10 @@ export function GuidedPrayer({
           accessibilityRole="button"
           haptic="selection"
           onPress={onClose}
-          pressedScale={0.94}
+          pressedScale={0.96}
           className="w-11 h-11 rounded-md items-center justify-center border border-hairlineStrong bg-mineral"
         >
-          <X size={18} color={colors.ink} />
+          <X size={20} color={colors.ink} />
         </Button>
         <View className="flex-1 items-center gap-0.5">
           <Text className="text-[11px] leading-[15px] font-medium text-muted-foreground font-label">
@@ -204,7 +204,7 @@ export function GuidedPrayer({
               gap: 8,
             }}
           >
-            <Quote size={18} color={colors.ink} />
+            <Quote size={20} color={colors.ink} />
             <Text style={{ color: colors.white }}>
               Choose a quote from this line
             </Text>
@@ -221,20 +221,20 @@ export function GuidedPrayer({
           disabled={isFirst}
           haptic="selection"
           onPress={goBack}
-          pressedScale={0.94}
+          pressedScale={0.96}
           className={cn(
             "w-12 h-12 rounded-md items-center justify-center border border-hairlineStrong bg-mineral",
             isFirst && "opacity-[0.28]",
           )}
         >
-          <ChevronLeft size={20} color={colors.ink} />
+          <ChevronLeft size={16} color={colors.ink} />
         </Button>
         <Button
           variant="default"
           size="content"
           accessibilityLabel={isLast ? "Finish guided reading" : "Next line"}
           accessibilityRole="button"
-          haptic={isLast ? "success" : "selection"}
+          haptic={isLast ? "none" : "selection"}
           onPress={goForward}
           pressedScale={0.98}
           className="flex-1 min-h-12 rounded-md flex-row items-center justify-center gap-2 bg-primary"
@@ -243,9 +243,9 @@ export function GuidedPrayer({
             {isLast ? "Finish" : "Next line"}
           </Text>
           {isLast ? (
-            <Check size={18} color={colors.onAccent} />
+            <Check size={20} color={colors.onAccent} />
           ) : (
-            <ChevronRight size={18} color={colors.onAccent} />
+            <ChevronRight size={16} color={colors.onAccent} />
           )}
         </Button>
       </View>

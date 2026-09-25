@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 import { Button } from "@/components/ui/button";
 import type { PrayerText } from "@/types/prayer";
-import { ChevronRight } from "lucide-react-native";
+import { ChevronRight } from "@/components/ui/icons";
 
 type Props = {
   prayer: PrayerText;
@@ -53,7 +53,7 @@ export function PrayerCard({
           </Text>
         </View>
         <ChevronRight
-          size={18}
+          size={16}
           color={selected ? colors.blue : colors.mineralDark}
         />
       </View>

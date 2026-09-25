@@ -20,3 +20,13 @@ for (const [name, c] of Object.entries(palettes)) {
     expect(contrast(c.onAccent, c.blue)).toBeGreaterThanOrEqual(4.5);
   });
 }
+
+for (const [name, c] of Object.entries(palettes)) {
+  test(`${name} control glyphs and checkbox outlines remain distinguishable`, () => {
+    for (const bg of [c.parchment, c.vellum, c.mineral, c.blueSoft]) {
+      expect(contrast(c.inkMuted, bg)).toBeGreaterThanOrEqual(3);
+      expect(contrast(c.blue, bg)).toBeGreaterThanOrEqual(3);
+    }
+    expect(contrast(c.onAccent, c.gold)).toBeGreaterThanOrEqual(3);
+  });
+}

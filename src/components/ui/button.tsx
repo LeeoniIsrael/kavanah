@@ -5,6 +5,7 @@ import {
   useThemedStyles,
   type ThemeColors,
 } from "@/design/appearance";
+import { iconMetrics } from "@/design/iconography";
 import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
@@ -31,7 +32,7 @@ const buttonVariants = cva(
   cn(
     "group shrink-0 flex-row items-center justify-center gap-2 rounded-md shadow-none",
     Platform.select({
-      web: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+      web: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
     }),
   ),
   {
@@ -76,7 +77,7 @@ const buttonVariants = cva(
           "min-h-14 rounded-md px-6 py-3",
           Platform.select({ web: "has-[>svg]:px-4" }),
         ),
-        icon: "size-11",
+        icon: "size-11 rounded-full",
         content:
           "h-auto min-h-11 p-0 flex-col items-stretch justify-start rounded-md",
       },
@@ -157,7 +158,7 @@ function Button({
   onLayout,
   accessibilityState,
   pressedScale = 0.985,
-  haptic = "soft",
+  haptic = "none",
   isLoading = false,
   loadingLabel,
   loadingIndicator,
@@ -174,7 +175,6 @@ function Button({
   const styles = useThemedStyles(makestyles);
 
   const [scale] = useState(() => new Animated.Value(1));
-  const [lift] = useState(() => new Animated.Value(0));
   const [loadingOpacity] = useState(
     () => new Animated.Value(isLoading ? 1 : 0),
   );
@@ -197,45 +197,26 @@ function Button({
 
   const animateTo = (value: number) => {
     scale.stopAnimation();
-    lift.stopAnimation();
     if (!withPressAnimation) {
       scale.setValue(1);
-      lift.setValue(0);
       return;
     }
     if (value === 1 && !reduceMotion) {
-      Animated.parallel([
-        Animated.spring(scale, {
-          toValue: 1,
-          stiffness: 520,
-          damping: 28,
-          mass: 0.72,
-          useNativeDriver: true,
-        }),
-        Animated.spring(lift, {
-          toValue: 0,
-          stiffness: 520,
-          damping: 30,
-          mass: 0.72,
-          useNativeDriver: true,
-        }),
-      ]).start();
+      Animated.spring(scale, {
+        toValue: 1,
+        stiffness: 520,
+        damping: 28,
+        mass: 0.72,
+        useNativeDriver: true,
+      }).start();
       return;
     }
-    Animated.parallel([
-      Animated.timing(scale, {
-        toValue: reduceMotion ? 1 : value,
-        duration: animationDuration,
-        easing: Easing.bezier(...motion.snappy),
-        useNativeDriver: true,
-      }),
-      Animated.timing(lift, {
-        toValue: reduceMotion ? 0 : 1.5,
-        duration: animationDuration,
-        easing: Easing.bezier(...motion.snappy),
-        useNativeDriver: true,
-      }),
-    ]).start();
+    Animated.timing(scale, {
+      toValue: reduceMotion ? 1 : value,
+      duration: animationDuration,
+      easing: Easing.bezier(...motion.snappy),
+      useNativeDriver: true,
+    }).start();
   };
   const playHaptic = async () => {
     if (haptic === false || haptic === "none") return;
@@ -245,6 +226,9 @@ function Button({
     return softHaptic();
   };
   const disabled = Boolean(props.disabled || isLoading);
+  const callerStyle = StyleSheet.flatten(style);
+  const minimumHeight =
+    size === "lg" ? 56 : !size || size === "default" ? 48 : iconMetrics.target;
   const indicatorColor =
     variant === "default" || variant === "destructive"
       ? colors.onAccent
@@ -286,7 +270,19 @@ function Button({
                     : backgroundColor,
                 }
               : {}),
-            transform: [{ scale }, { translateY: lift }],
+            minWidth: Math.max(
+              iconMetrics.target,
+              typeof callerStyle?.minWidth === "number"
+                ? callerStyle.minWidth
+                : 0,
+            ),
+            minHeight: Math.max(
+              minimumHeight,
+              typeof callerStyle?.minHeight === "number"
+                ? callerStyle.minHeight
+                : 0,
+            ),
+            transform: [{ scale }],
           },
         ]}
         onLayout={(event) => {

@@ -18,9 +18,10 @@ import {
   CircleDot,
   Quote,
   ShieldCheck,
-  Sparkles,
+  Award,
+  Info,
   X,
-} from "lucide-react-native";
+} from "@/components/ui/icons";
 import { memo, useState } from "react";
 import {
   FlatList,
@@ -121,7 +122,7 @@ export function CircleScreen(): React.JSX.Element {
                     {preferences.milestones ? " · Milestones on" : ""}
                   </Text>
                 </View>
-                <ChevronRight size={18} color={colors.inkMuted} />
+                <ChevronRight size={16} color={colors.inkMuted} />
               </Button>
             </View>
             <View style={s.quoteCard}>
@@ -154,13 +155,13 @@ export function CircleScreen(): React.JSX.Element {
                 onPress={openPrayers}
                 style={s.quoteAction}
               >
-                <BookOpen size={17} color={colors.ink} />
+                <BookOpen size={16} color={colors.ink} />
                 <Text style={s.label}>
                   {weeklyQuote
                     ? "Choose a different quote"
                     : "Choose in prayer"}
                 </Text>
-                <ChevronRight size={17} color={colors.ink} />
+                <ChevronRight size={16} color={colors.ink} />
               </Button>
               <Text style={s.quoteFootnote}>
                 One quote each week. Replace it anytime. No caption.
@@ -180,7 +181,7 @@ export function CircleScreen(): React.JSX.Element {
         ListEmptyComponent={
           <View style={s.empty}>
             <View style={s.emptyIcon}>
-              <CircleDot size={26} color={colors.blue} />
+              <CircleDot size={24} color={colors.blue} />
             </View>
             <Text style={s.heading}>
               {automaticEnabled
@@ -208,7 +209,7 @@ export function CircleScreen(): React.JSX.Element {
         }
         ListFooterComponent={
           <View style={s.notice}>
-            <ShieldCheck size={17} color={colors.inkMuted} />
+            <ShieldCheck size={16} color={colors.inkMuted} />
             <Text style={[s.small, { flex: 1, lineHeight: 19 }]}>
               Only you can see this for now. Circle is not connected to other
               accounts; these updates stay on this device.
@@ -256,7 +257,7 @@ export function SharingSettings({
               onPress={onClose}
               style={s.iconButton}
             >
-              <X color={colors.ink} size={22} />
+              <X color={colors.ink} size={20} />
             </Button>
           </View>
           <ScrollView
@@ -278,6 +279,7 @@ export function SharingSettings({
                     key={mode.id}
                     variant="ghost"
                     size="content"
+                    haptic="selection"
                     accessibilityRole="radio"
                     accessibilityState={{
                       checked: preferences.prayers === mode.id,
@@ -330,7 +332,7 @@ export function SharingSettings({
               />
             </View>
             <View style={s.rule}>
-              <Sparkles size={19} color={colors.blue} />
+              <Info size={20} color={colors.blue} />
               <Text style={[s.muted, { flex: 1 }]}>
                 Only new completions create updates. Changing these choices
                 never posts your past activity.
@@ -363,11 +365,11 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
       <View style={s.row}>
         <View style={s.activityIcon}>
           {quote ? (
-            <Quote size={18} color={colors.blue} />
+            <Quote size={20} color={colors.blue} />
           ) : post.kind === "milestone" ? (
-            <Sparkles size={18} color={colors.blue} />
+            <Award size={20} color={colors.blue} />
           ) : (
-            <BookOpen size={18} color={colors.inkMuted} />
+            <BookOpen size={20} color={colors.inkMuted} />
           )}
         </View>
         <View style={{ flex: 1, gap: 3 }}>
@@ -393,7 +395,7 @@ const ActivityCard = memo(function ActivityCard({ post }: { post: FeedPost }) {
           accessibilityLabel={`Remove ${post.practice} update`}
           onPress={() => removePost(post.id)}
         >
-          <X size={16} color={colors.inkMuted} />
+          <X size={20} color={colors.inkMuted} />
         </Button>
       </View>
       {!quote && (
@@ -501,7 +503,7 @@ const makes = (colors: ThemeColors) =>
     },
     quoteCard: {
       backgroundColor: colors.blueSoft,
-      borderRadius: 24,
+      borderRadius: 26,
       padding: 22,
       gap: 16,
     },
@@ -520,7 +522,7 @@ const makes = (colors: ThemeColors) =>
       gap: 10,
       minHeight: 48,
       backgroundColor: colors.mineral,
-      borderRadius: 14,
+      borderRadius: 18,
       padding: 10,
     },
     quoteFootnote: { color: colors.inkMuted, fontSize: 11, lineHeight: 17 },
@@ -540,7 +542,7 @@ const makes = (colors: ThemeColors) =>
     },
     primary: {
       backgroundColor: colors.blue,
-      borderRadius: 16,
+      borderRadius: 18,
       minHeight: 50,
       paddingHorizontal: 18,
       alignItems: "center",
@@ -578,7 +580,7 @@ const makes = (colors: ThemeColors) =>
     radio: {
       width: 24,
       height: 24,
-      borderWidth: 1.5,
+      borderWidth: 1.75,
       borderColor: colors.inkMuted,
       borderRadius: 12,
       alignItems: "center",
@@ -589,14 +591,14 @@ const makes = (colors: ThemeColors) =>
       alignItems: "center",
       gap: 16,
       paddingVertical: 20,
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderTopWidth: StyleSheet.hairlineWidth,
+      borderBottomWidth: StyleSheet.hairlineWidth,
       borderColor: colors.hairline,
     },
     rule: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
     activity: {
       padding: 18,
-      borderRadius: 20,
+      borderRadius: 26,
       backgroundColor: colors.vellum,
       gap: 14,
     },

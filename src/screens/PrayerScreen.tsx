@@ -20,7 +20,7 @@ import {
   Share2,
   ShieldCheck,
   X,
-} from "lucide-react-native";
+} from "@/components/ui/icons";
 import { useEffect, useRef, useState } from "react";
 import {
   Animated,
@@ -32,7 +32,6 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   GuidedPrayer,
   type GuidedPrayerToken,
@@ -59,7 +58,7 @@ import {
   createAssistantStream,
   type AssistantMessage,
 } from "@/services/assistantService";
-import { confirmHaptic } from "@/services/haptics";
+import { confirmHaptic, successHaptic } from "@/services/haptics";
 import {
   localizeHebrewTransliteration,
   translatePrayerText,
@@ -367,7 +366,7 @@ export function PrayerScreen(): React.JSX.Element {
       streak,
       completedAt,
     });
-    void confirmHaptic();
+    void successHaptic();
   };
 
   const askAboutSelectedPrayer = async () => {
@@ -444,11 +443,11 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen largeTitle="Prayers" subtitle="Find a prayer for this moment.">
       <View className="gap-6">
-        <AppGlassSurface
-          isInteractive
+        <View
+          style={{ backgroundColor: colors.vellum, borderCurve: "continuous" }}
           className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
         >
-          <Search size={18} color={colors.inkMuted} />
+          <Search size={20} color={colors.inkMuted} />
           <Input
             accessibilityLabel="Search prayers"
             value={query}
@@ -472,13 +471,13 @@ export function PrayerScreen(): React.JSX.Element {
             className="w-11 h-11 rounded-full items-center justify-center bg-muted"
           >
             <RefreshCw
-              size={18}
+              size={20}
               color={
                 isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink
               }
             />
           </Button>
-        </AppGlassSurface>
+        </View>
 
         <Animated.View
           pointerEvents={showResults ? "none" : "auto"}
@@ -555,7 +554,7 @@ export function PrayerScreen(): React.JSX.Element {
                         pressedScale={0.96}
                         className="w-11 h-11 rounded-full items-center justify-center bg-muted"
                       >
-                        <BookmarkMinus size={18} color={colors.blue} />
+                        <BookmarkMinus size={20} color={colors.blue} />
                       </Button>
                     </View>
                   </View>
@@ -630,10 +629,10 @@ export function PrayerScreen(): React.JSX.Element {
                   accessibilityLabel="Close prayer"
                   accessibilityRole="button"
                   onPress={closeReader}
-                  pressedScale={0.94}
+                  pressedScale={0.96}
                   className="w-11 h-11 rounded-md items-center justify-center bg-glass"
                 >
-                  <X size={17} color={colors.ink} />
+                  <X size={20} color={colors.ink} />
                 </Button>
                 <Button
                   variant="ghost"
@@ -666,16 +665,16 @@ export function PrayerScreen(): React.JSX.Element {
                   accessibilityRole="button"
                   haptic="confirm"
                   onPress={() => toggleBookmark(selected.id)}
-                  pressedScale={0.94}
+                  pressedScale={0.96}
                   className={cn(
                     "w-11 h-11 rounded-md items-center justify-center bg-glass",
                     selectedBookmarked && "bg-primary",
                   )}
                 >
                   {selectedBookmarked ? (
-                    <BookmarkCheck size={17} color={colors.onAccent} />
+                    <BookmarkCheck size={16} color={colors.onAccent} />
                   ) : (
-                    <Bookmark size={17} color={colors.gold} />
+                    <Bookmark size={16} color={colors.gold} />
                   )}
                 </Button>
               </View>
@@ -726,7 +725,7 @@ export function PrayerScreen(): React.JSX.Element {
                               width: 44,
                             }}
                             trigger={
-                              <CircleHelp size={17} color={colors.blue} />
+                              <CircleHelp size={16} color={colors.blue} />
                             }
                           />
                         </View>
@@ -767,7 +766,7 @@ export function PrayerScreen(): React.JSX.Element {
                       className="min-h-[74px] flex-row items-center gap-3 py-3 border-t border-b border-hairline"
                     >
                       <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
-                        <BookOpenCheck size={19} color={colors.blue} />
+                        <BookOpenCheck size={20} color={colors.blue} />
                       </View>
                       <View className="flex-1 gap-[2px]">
                         <Text
@@ -783,7 +782,7 @@ export function PrayerScreen(): React.JSX.Element {
                           Hebrew, pronunciation, and meaning at your pace.
                         </Text>
                       </View>
-                      <ChevronRight size={18} color={colors.inkMuted} />
+                      <ChevronRight size={16} color={colors.inkMuted} />
                     </Button>
                   ) : null}
                   {selectedLoading ? (
@@ -935,7 +934,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-4 rounded-lg bg-card shadow-card">
                   <View className="w-11 h-11 rounded-sm items-center justify-center bg-primary">
-                    <MoonStar size={22} color={colors.onAccent} />
+                    <MoonStar size={20} color={colors.onAccent} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer Focus</Text>
@@ -997,7 +996,7 @@ export function PrayerScreen(): React.JSX.Element {
               <View className="absolute left-0 right-0 top-0 bottom-0 z-[30] justify-end p-3 pb-12 bg-[rgba(11,13,16,0.28)]">
                 <View className="p-4 pb-6 gap-2 rounded-lg bg-card shadow-card border border-hairline">
                   <View className="w-11 h-11 rounded-full items-center justify-center bg-accent">
-                    <ShieldCheck size={21} color={colors.blue} />
+                    <ShieldCheck size={20} color={colors.blue} />
                   </View>
                   <Text variant="section">Before your first question</Text>
                   <Text variant="body">
@@ -1074,7 +1073,7 @@ export function PrayerScreen(): React.JSX.Element {
               >
                 <Card className="p-6 gap-5 rounded-xl bg-card shadow-card">
                   <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-                    <BookOpenCheck size={23} color={colors.onAccent} />
+                    <BookOpenCheck size={24} color={colors.onAccent} />
                   </View>
                   <View className="gap-1">
                     <Text variant="caption">Prayer complete</Text>
@@ -1102,7 +1101,7 @@ export function PrayerScreen(): React.JSX.Element {
                       }}
                       className="min-h-[52px] rounded-md flex-row items-center justify-center gap-2 bg-primary"
                     >
-                      <Share2 size={18} color={colors.onAccent} />
+                      <Share2 size={20} color={colors.onAccent} />
                       <Text className="text-[16px] leading-[22px] font-semibold text-primary-foreground font-heading">
                         Share this moment
                       </Text>

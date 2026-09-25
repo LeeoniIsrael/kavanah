@@ -68,3 +68,13 @@ September 24 verification: language selection, Profile header/settings, Home tra
 Opening a reader starts elapsed wall-clock timing; Done records completion and closes the reader without an extra confirmation. Guided reading is optional and uses the same session. Store start, completion, and elapsed seconds; never invent durations for older entries or manual check-ins. First prayer means once ever, even across days, deleted posts, or bounded history. Milestones remain independently opt-in. Sharing choices save immediately.
 
 Appearance defaults to System, persists on device, and may be overridden with Light or Dark in Profile. Native chrome, utility colors, SVG marks, modals, and inline styles must follow the same resolved scheme. Share artwork has its own fixed palette so exports do not change with device appearance.
+
+## Icon and feedback contract
+
+- Import interface glyphs from `@/components/ui/icons`. This curated Lucide catalog uses one rounded stroke family and a constant 1.75-point optical weight. Native tab symbols retain iOS rendering; brand marks and prayer artwork remain distinct.
+- Use 16-point supporting/disclosure icons, 20-point control icons, and 24-point feature icons. Never resize a glyph to compensate for inconsistent padding. Decorative SVGs are hidden from accessibility; the enclosing control supplies its purpose and state.
+- Icon-only controls have at least a 44-by-44-point target. The shared Button enforces this floor while preserving larger controls. Circular controls use a 22-point radius; grouped surfaces use the existing radius scale. Separators use `StyleSheet.hairlineWidth`.
+- Navigation uses a restrained press response without haptics by default; native tab selection retains its selection tick. Explicit selection, completion, and confirmation feedback should occur once per action. Presses scale in place without vertical movement; Reduced Motion disables the transform. No idle icon animation.
+- Checkbox outlines use readable secondary ink. Selected checkmarks use `onAccent`, never a hardcoded white that disappears against the dark theme's light blue.
+
+September 25 icon pass: typecheck, targeted lint, and both-theme text/control contrast tests passed. Native dark captures inspected Home, Profile, Circle, and Prayer. Fast Refresh visibly updated the prayer search surface and shared glyphs from the live checkout. Interactive tap/scroll checks and a fresh light appearance capture remain pending because Device Hub reported the Mac locked. The user's Dark preference and device dark appearance were preserved. No native dependencies changed.

@@ -10,7 +10,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
 import { selectedQuote } from "@/services/socialPolicy";
 import { useSocialStore, type QuoteSource } from "@/store/socialStore";
-import { Check, Quote, X } from "lucide-react-native";
+import { Check, Quote, X } from "@/components/ui/icons";
 import { useEffect, useRef, useState } from "react";
 import type { GestureResponderEvent } from "react-native";
 import { Animated, Platform, ScrollView, StyleSheet, View } from "react-native";
@@ -135,7 +135,7 @@ export function QuoteSelector({
         }}
       >
         <View style={s.header}>
-          <Quote size={22} color={colors.blue} />
+          <Quote size={20} color={colors.blue} />
           <Text style={s.heading}>Quote of the week</Text>
           <Button
             variant="ghost"
@@ -146,7 +146,7 @@ export function QuoteSelector({
             onPress={onClose}
             style={s.iconButton}
           >
-            <X color={colors.ink} size={22} />
+            <X color={colors.ink} size={20} />
           </Button>
         </View>
         <ScrollView contentContainerStyle={s.content}>
@@ -221,7 +221,7 @@ export function QuoteSelector({
             </>
           ) : (
             <View style={s.confirmed}>
-              <Check color={colors.blue} size={28} />
+              <Check color={colors.blue} size={24} />
               <Text style={s.savedQuote}>{quote}</Text>
             </View>
           )}

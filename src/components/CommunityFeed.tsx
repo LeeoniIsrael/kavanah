@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { useRouter } from "expo-router";
-import { ChevronRight, Users } from "lucide-react-native";
+import { ChevronRight, Users } from "@/components/ui/icons";
 import { View } from "react-native";
 
 /** Home entry point. The virtualized activity feed lives in its own tab. */
@@ -31,7 +31,7 @@ export function CommunityFeed() {
           Prayer updates. Milestones. A quote to carry.
         </Text>
       </View>
-      <ChevronRight size={18} color={colors.inkMuted} />
+      <ChevronRight size={16} color={colors.inkMuted} />
     </Button>
   );
 }

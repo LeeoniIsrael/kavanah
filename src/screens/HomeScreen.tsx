@@ -33,7 +33,7 @@ import {
   SlidersHorizontal,
   Utensils,
   X,
-} from "lucide-react-native";
+} from "@/components/ui/icons";
 import { useEffect, useMemo, useState } from "react";
 import {
   Animated,
@@ -260,7 +260,7 @@ export function HomeScreen(): React.JSX.Element {
             onPress={() => router.push("/zmanim")}
             style={homeStyles.calendar}
           >
-            <CalendarDays size={21} color={colors.inkMuted} />
+            <CalendarDays size={20} color={colors.inkMuted} />
           </Button>
         </View>
 
@@ -288,11 +288,11 @@ export function HomeScreen(): React.JSX.Element {
             backgroundColor={colors.ink}
             borderRadius={16}
           >
-            <BookOpen size={18} color={colors.onAccent} />
+            <BookOpen size={20} color={colors.onAccent} />
             <Text style={homeStyles.primaryLabel}>
               {nextMoment?.label ?? "Find a prayer"}
             </Text>
-            <ChevronRight size={18} color={colors.onAccent} />
+            <ChevronRight size={16} color={colors.onAccent} />
           </Button>
         </View>
 
@@ -308,7 +308,7 @@ export function HomeScreen(): React.JSX.Element {
           disabled={isLoading}
           style={homeStyles.locationRow}
         >
-          <MapPin size={17} color={colors.inkMuted} />
+          <MapPin size={16} color={colors.inkMuted} />
           <View style={{ flex: 1, gap: 3 }}>
             <Text style={homeStyles.locationTitle}>
               {nextZman
@@ -339,7 +339,7 @@ export function HomeScreen(): React.JSX.Element {
               backgroundColor={colors.vellum}
               borderRadius={16}
             >
-              <Icon size={19} strokeWidth={1.5} color={colors.inkMuted} />
+              <Icon size={20} color={colors.inkMuted} />
               <Text style={homeStyles.shortcutLabel}>{label}</Text>
             </Button>
           ))}
@@ -374,7 +374,7 @@ export function HomeScreen(): React.JSX.Element {
                 accessibilityLabel="Choose daily practices"
                 accessibilityRole="button"
                 onPress={() => setPracticeEditorOpen(true)}
-                pressedScale={0.94}
+                pressedScale={0.96}
                 className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
               >
                 <SlidersHorizontal size={16} color={colors.ink} />
@@ -426,7 +426,7 @@ export function HomeScreen(): React.JSX.Element {
                       </Text>
                     </View>
                     <StateBounce trigger={complete}>
-                      <Checkbox checked={complete} size={26} stroke={1.8} />
+                      <Checkbox checked={complete} size={24} stroke={1.75} />
                     </StateBounce>
                   </Button>
                 );
@@ -464,7 +464,7 @@ export function HomeScreen(): React.JSX.Element {
             onPress={() => setPracticeStatsOpen(true)}
             className="min-h-[60px] px-1 flex-row items-center gap-3"
           >
-            <ChartColumn size={18} color={colors.blue} />
+            <ChartColumn size={20} color={colors.blue} />
             <View className="flex-1">
               <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                 Your practice
@@ -473,7 +473,7 @@ export function HomeScreen(): React.JSX.Element {
                 {formatOverallSummary(practiceStats)}
               </Text>
             </View>
-            <ChevronRight size={17} color={colors.inkMuted} />
+            <ChevronRight size={16} color={colors.inkMuted} />
           </Button>
           {shareablePractice ? (
             <PracticeSharePrompt
@@ -492,11 +492,11 @@ export function HomeScreen(): React.JSX.Element {
           onPress={() => openPrayerSearch("")}
           className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
         >
-          <Search size={18} color={colors.blue} />
+          <Search size={20} color={colors.blue} />
           <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
             Browse the prayer library
           </Text>
-          <ChevronRight size={18} color={colors.inkMuted} />
+          <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
 
         <Button
@@ -508,7 +508,7 @@ export function HomeScreen(): React.JSX.Element {
           className="min-h-[76px] px-4 py-3 rounded-lg bg-blueSoft flex-row items-center gap-3"
         >
           <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
-            <NavigationIcon size={19} color={colors.onAccent} />
+            <NavigationIcon size={20} color={colors.onAccent} />
           </View>
           <View className="flex-1 gap-[2px]">
             <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -519,7 +519,7 @@ export function HomeScreen(): React.JSX.Element {
                 "Open or schedule the travel prayer without sharing your route."}
             </Text>
           </View>
-          <ChevronRight size={18} color={colors.inkMuted} />
+          <ChevronRight size={16} color={colors.inkMuted} />
         </Button>
 
         <Dialog open={travelPromptOpen} onOpenChange={setTravelPromptOpen}>
@@ -546,7 +546,7 @@ export function HomeScreen(): React.JSX.Element {
                     onPress={() => setTravelPromptOpen(false)}
                     className="w-11 h-11 rounded-sm items-center justify-center bg-muted"
                   >
-                    <X size={18} color={colors.inkMuted} />
+                    <X size={20} color={colors.inkMuted} />
                   </Button>
                 </View>
                 <View className="gap-2">
@@ -574,7 +574,7 @@ export function HomeScreen(): React.JSX.Element {
                       onPress={openTravelPrayer}
                       className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 border border-hairlineStrong bg-card"
                     >
-                      <NavigationIcon size={17} color={colors.ink} />
+                      <NavigationIcon size={16} color={colors.ink} />
                       <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
                         Open now
                       </Text>
@@ -595,7 +595,7 @@ export function HomeScreen(): React.JSX.Element {
                         travelScheduling && "opacity-[0.55]",
                       )}
                     >
-                      <BellRing size={17} color={colors.onAccent} />
+                      <BellRing size={16} color={colors.onAccent} />
                       <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary-foreground font-label">
                         Remind in 5 min
                       </Text>
@@ -603,7 +603,7 @@ export function HomeScreen(): React.JSX.Element {
                   </View>
                 </View>
                 <View className="flex-row items-center gap-2">
-                  <ShieldCheck size={15} color={colors.olive} />
+                  <ShieldCheck size={16} color={colors.olive} />
                   <Text className="text-[12px] leading-[17px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
                     Only read when stopped, or ask a passenger to read it.
                   </Text>
@@ -676,7 +676,7 @@ export function HomeScreen(): React.JSX.Element {
                             {details.description}
                           </Text>
                         </View>
-                        <Checkbox checked={selected} size={26} stroke={2.25} />
+                        <Checkbox checked={selected} size={24} stroke={1.75} />
                       </Button>
                     );
                   })}
@@ -879,7 +879,7 @@ function ShareMomentPrompt({
           />
           <View className="items-center px-6 pt-7 pb-5 gap-3">
             <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-hairline">
-              <Share2 size={21} color={colors.blue} />
+              <Share2 size={20} color={colors.blue} />
             </View>
             <View className="items-center gap-1">
               <Text className="text-[21px] leading-[27px] font-semibold tracking-normal text-foreground font-heading">
@@ -925,7 +925,7 @@ function ShareMomentPrompt({
               onPress={() => close()}
               className="self-center mt-1 w-11 h-11 rounded-full items-center justify-center bg-black/10 border border-hairline"
             >
-              <X size={18} color={colors.inkMuted} />
+              <X size={20} color={colors.inkMuted} />
             </Button>
           </View>
         </Animated.View>
@@ -979,7 +979,7 @@ function PracticeSharePrompt({
         className="min-h-[66px] px-2 flex-row items-center gap-3 rounded-md bg-accent"
       >
         <View className="w-9 h-9 rounded-sm items-center justify-center bg-card">
-          <Share2 size={17} color={colors.blue} />
+          <Share2 size={16} color={colors.blue} />
         </View>
         <View className="flex-1 gap-[1px]">
           <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
@@ -989,7 +989,7 @@ function PracticeSharePrompt({
             A private story for {label}
           </Text>
         </View>
-        <ChevronRight size={17} color={colors.inkMuted} />
+        <ChevronRight size={16} color={colors.inkMuted} />
       </Button>
     </Animated.View>
   );
