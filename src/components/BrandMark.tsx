@@ -29,17 +29,17 @@ export function BrandMark({
 export function BrandWordmark({
   width = 152,
   inverted,
+  color,
 }: {
   width?: number;
   inverted?: boolean;
+  color?: string;
 }): React.JSX.Element {
   const scheme = useAppColorScheme();
-  const xml =
-    (inverted ?? scheme === "dark")
-      ? brandWordmark
-          .replaceAll("#0F0F14", "#F2EEE4")
-          .replaceAll("#0B1A3B", "#8DB6E8")
-      : brandWordmark;
+  const isInverted = inverted ?? scheme === "dark";
+  const xml = brandWordmark
+    .replaceAll("#0F0F14", color ?? (isInverted ? "#F2EEE4" : "#0F0F14"))
+    .replaceAll("#0B1A3B", color ?? (isInverted ? "#8DB6E8" : "#0B1A3B"));
   return (
     <SvgXml
       xml={xml}

@@ -15,8 +15,7 @@ import {
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { BrandMark } from "@/components/BrandMark";
-import { GradientWaveText } from "@/components/onboarding/GradientWaveText";
+import { BrandWordmark } from "@/components/BrandMark";
 import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, softHaptic, successHaptic, tapHaptic } from "@/services/haptics";
@@ -91,17 +90,9 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [intro] = useState(() => new Animated.Value(mode === "onboarding" ? 0 : 1));
-  const [orbit] = useState(() => new Animated.Value(0));
 
   useEffect(() => {
     if (mode !== "onboarding") return;
-    const loop = reduceMotion ? null : Animated.loop(Animated.timing(orbit, {
-      toValue: 1,
-      duration: 8500,
-      easing: Easing.linear,
-      useNativeDriver: Platform.OS !== "web",
-    }));
-    loop?.start();
     // The first launch intentionally holds on the mark for seven full seconds.
     const timer = setTimeout(() => {
       Animated.timing(intro, {
@@ -113,8 +104,8 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
         if (finished) { setStep("welcome"); void softHaptic(); }
       });
     }, 7000);
-    return () => { clearTimeout(timer); intro.stopAnimation(); loop?.stop(); };
-  }, [intro, mode, orbit, reduceMotion]);
+    return () => { clearTimeout(timer); intro.stopAnimation(); };
+  }, [intro, mode, reduceMotion]);
 
   const next = (value: Step) => { void tapHaptic(); setMessage(""); setStep(value); };
   const run = async (action: () => Promise<void>) => {
@@ -143,21 +134,13 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     return (
       <SafeAreaView style={styles.screen}>
         <View style={styles.heroCenter} pointerEvents="none">
-          <Animated.View style={[styles.orbit, {
-            opacity: intro.interpolate({ inputRange: [0, 0.25, 1], outputRange: [0.48, 0.48, 0] }),
-            transform: [
-              { rotate: orbit.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] }) },
-              { scale: intro.interpolate({ inputRange: [0, 1], outputRange: [1, 1.8] }) },
-            ],
-          }]} />
           <Animated.View style={[styles.logo, {
             transform: [
               { translateY: intro.interpolate({ inputRange: [0, 1], outputRange: [0, -travel] }) },
               { scale: intro.interpolate({ inputRange: [0, 1], outputRange: [1, 0.7] }) },
             ],
           }]}>
-            <BrandMark size={58} inverted />
-            <GradientWaveText style={styles.wordmark} textStyle={styles.wordmarkText}>kavanah</GradientWaveText>
+            <BrandWordmark width={296} color="#FFFFFF" />
           </Animated.View>
         </View>
         <Animated.View
@@ -195,8 +178,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={styles.flex}>
         <ScrollView contentContainerStyle={styles.formPage} keyboardShouldPersistTaps="handled">
           <View style={styles.formTop}>
-            <BrandMark size={26} inverted />
-            <Text style={styles.formBrand}>kavanah</Text>
+            <BrandWordmark width={118} color="#FFFFFF" />
             <View style={styles.flex} />
             <Pressable accessibilityRole="button" accessibilityLabel={mode !== "onboarding" && step === "audience" ? "Close" : "Go back"} onPress={goBack} hitSlop={12}>
               <Text style={styles.backLabel}>{mode !== "onboarding" && step === "audience" ? "Close" : "Back"}</Text>
@@ -269,10 +251,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: background },
   flex: { flex: 1 },
   heroCenter: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, alignItems: "center", justifyContent: "center" },
-  orbit: { position: "absolute", width: 226, height: 226, borderRadius: 113, borderWidth: 1, borderColor: "transparent", borderTopColor: accent, borderRightColor: "#536A84" },
   logo: { alignItems: "center", justifyContent: "center" },
-  wordmark: { width: 292, height: 76, marginTop: 15 },
-  wordmarkText: { fontFamily: fonts.bold, fontSize: 56, lineHeight: 72, letterSpacing: -3.8 },
   welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
   welcomeBottom: { marginTop: "auto" },
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
@@ -298,7 +277,6 @@ const styles = StyleSheet.create({
   error: { color: "#F2A0A8", fontFamily: fonts.medium, fontSize: 13, lineHeight: 20, textAlign: "center", marginTop: 14 },
   formPage: { flexGrow: 1, paddingHorizontal: 27, paddingBottom: 24, maxWidth: 560, width: "100%", alignSelf: "center" },
   formTop: { height: 62, flexDirection: "row", alignItems: "center" },
-  formBrand: { color: ink, fontFamily: fonts.bold, fontSize: 18, letterSpacing: -0.8, marginLeft: 7 },
   backLabel: { color: accent, fontFamily: fonts.medium, fontSize: 14 },
   formSpacer: { flex: 1, minHeight: 100 },
   formSpacerSmall: { flex: 1, minHeight: 43 },
