@@ -40,6 +40,7 @@ import {
   selectedBook,
 } from "./cache";
 import { ChapterRuler } from "./ChapterRuler";
+import { ReadingSettingsSheet } from "./ReadingSettingsSheet";
 import { pageDirection, pageForRef } from "./navigation";
 import { createReaderHtml } from "./readerHtml";
 import { leafNodes, normalizeHebrewSearch, sefariaProvider } from "./sefaria";
@@ -1083,215 +1084,34 @@ export function SiddurExperience({
               </View>
             </View>
           ) : null}
-          {settings ? (
-            <View
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                justifyContent: "flex-end",
-                backgroundColor: "#0008",
-                zIndex: 30,
-              }}
-            >
-              <View
-                style={{
-                  height: "90%",
-                  backgroundColor: colors.parchment,
-                  borderTopLeftRadius: 26,
-                  borderTopRightRadius: 26,
-                  overflow: "hidden",
-                }}
-              >
-                <SafeAreaView
-                  style={{
-                    flex: 1,
-                    backgroundColor: colors.parchment,
-                    padding: 22,
-                  }}
-                >
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text variant="section" style={{ fontSize: 25 }}>
-                      Reading settings
-                    </Text>
-                    <Button
-                      onPress={() => setSettings(false)}
-                      accessibilityLabel="Close settings"
-                    >
-                      <X size={22} color={colors.ink} />
-                    </Button>
-                  </View>
-                  <ScrollView
-                    contentContainerStyle={{
-                      gap: 20,
-                      paddingTop: 25,
-                      paddingBottom: 40,
-                    }}
-                  >
-                    <Text variant="section">Reading</Text>
-                    <View style={{ flexDirection: "row", gap: 10 }}>
-                      {(["en", "he"] as const).map((l) => (
-                        <Button
-                          key={l}
-                          onPress={() => switchLanguage(l)}
-                          variant="secondary"
-                        >
-                          <Text>{l === "en" ? "English" : "עברית"}</Text>
-                        </Button>
-                      ))}
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: 16,
-                      }}
-                    >
-                      <Button
-                        onPress={() =>
-                          setFontScale((s) =>
-                            Math.max(0.8, Math.round((s - 0.1) * 10) / 10),
-                          )
-                        }
-                        accessibilityLabel="Decrease text size"
-                      >
-                        <Text style={{ fontSize: 18 }}>A−</Text>
-                      </Button>
-                      <Text>{Math.round(fontScale * 100)}%</Text>
-                      <Button
-                        onPress={() =>
-                          setFontScale((s) =>
-                            Math.min(1.7, Math.round((s + 0.1) * 10) / 10),
-                          )
-                        }
-                        accessibilityLabel="Increase text size"
-                      >
-                        <Text style={{ fontSize: 22 }}>A+</Text>
-                      </Button>
-                    </View>
-                    <Text variant="section">Siddur & tradition</Text>
-                    {catalog
-                      .filter((b) => b.availability.he || b.availability.en)
-                      .map((b) => (
-                        <Button
-                          key={b.id}
-                          variant="secondary"
-                          onPress={() => {
-                            setSettings(false);
-                            void open(b.id);
-                          }}
-                          style={{
-                            padding: 14,
-                            borderRadius: 16,
-                            backgroundColor:
-                              bookId === b.id ? colors.blueSoft : colors.vellum,
-                            alignItems: "flex-start",
-                            flexDirection: "column",
-                            gap: 4,
-                          }}
-                        >
-                          <Text
-                            style={{ color: colors.ink, fontWeight: "600" }}
-                          >
-                            {b.displayName}
-                          </Text>
-                          <Text
-                            style={{ color: colors.inkMuted, fontSize: 12 }}
-                          >
-                            {b.rite.replaceAll("_", " ")} · {b.scope} ·{" "}
-                            {b.availability.he ? "Hebrew " : ""}
-                            {b.availability.en ? "English" : ""}
-                          </Text>
-                        </Button>
-                      ))}
-                    <Text variant="section">More traditions</Text>
-                    <Text style={{ color: colors.inkMuted, fontSize: 13 }}>
-                      Spanish & Portuguese, Yemenite, Italian, Romaniote,
-                      Karaite, and modern denominational editions need a
-                      verified open text source before they can be enabled.
-                    </Text>
-                    <Text variant="section">Presentation</Text>
-                    <Text style={{ color: colors.inkMuted, fontSize: 13 }}>
-                      Standard text is available. Interlinear and transliterated
-                      editions require source-aligned open text.
-                    </Text>
-                    <Text variant="section">Profile</Text>
-                    <View
-                      style={{ flexDirection: "row", gap: 7, flexWrap: "wrap" }}
-                    >
-                      {(["general", "masculine", "feminine"] as const).map(
-                        (p) => (
-                          <Button
-                            key={p}
-                            onPress={() => setProfile(p)}
-                            variant="secondary"
-                            style={{
-                              backgroundColor:
-                                profile === p ? colors.blueSoft : colors.vellum,
-                            }}
-                          >
-                            <Text>{p}</Text>
-                          </Button>
-                        ),
-                      )}
-                    </View>
-                    <Text style={{ color: colors.inkMuted, fontSize: 12 }}>
-                      Profile does not alter canonical prayer text unless an
-                      explicitly sourced variant is available.
-                    </Text>
-                    <Text variant="section">Offline</Text>
-                    <Button
-                      variant="secondary"
-                      onPress={() => {
-                        setDownload("Starting download…");
-                        void downloadBook(bookId, (done, total) =>
-                          setDownload(`${done} of ${total} sections cached`),
-                        )
-                          .then(() => setDownload("Available offline"))
-                          .catch(() =>
-                            setDownload(
-                              "Download paused. Try again when connected.",
-                            ),
-                          );
-                      }}
-                    >
-                      <Text>Download complete book</Text>
-                    </Button>
-                    {download ? (
-                      <Text style={{ color: colors.inkMuted }}>{download}</Text>
-                    ) : null}
-                    <Text variant="section">Text source</Text>
-                    <Text style={{ color: colors.inkMuted }}>
-                      Sefaria · independent source library. Kavanah is not
-                      endorsed by Sefaria.
-                    </Text>
-                    {[
-                      book?.versions.he,
-                      book?.versions.en,
-                      book?.fallbackEnglish,
-                    ]
-                      .filter(Boolean)
-                      .map((v, i) => (
-                        <Text
-                          key={i}
-                          style={{ color: colors.inkMuted, fontSize: 13 }}
-                        >
-                          {v?.versionTitle} · {v?.license}
-                        </Text>
-                      ))}
-                  </ScrollView>
-                </SafeAreaView>
-              </View>
-            </View>
-          ) : null}
+          <ReadingSettingsSheet
+            visible={settings}
+            onClose={() => setSettings(false)}
+            language={language}
+            onLanguageChange={switchLanguage}
+            fontScale={fontScale}
+            onFontScaleChange={setFontScale}
+            bookId={bookId}
+            book={book}
+            catalog={catalog}
+            onBookChange={(id) => {
+              setSettings(false);
+              void open(id);
+            }}
+            profile={profile}
+            onProfileChange={setProfile}
+            downloadStatus={download}
+            onDownload={() => {
+              setDownload("Starting download…");
+              void downloadBook(bookId, (done, total) =>
+                setDownload(`${done} of ${total} sections cached`),
+              )
+                .then(() => setDownload("Available offline"))
+                .catch(() =>
+                  setDownload("Download paused. Try again when connected."),
+                );
+            }}
+          />
           {note ? (
             <View
               style={{
