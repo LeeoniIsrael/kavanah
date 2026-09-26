@@ -604,9 +604,6 @@ export function PrayerScreen(): React.JSX.Element {
               placeholder="Search for a prayer"
               value={query}
               onChangeText={setQuery}
-              onSubmit={(searchQuery) => {
-                if (searchQuery) void searchRemote(searchQuery);
-              }}
             />
           </View>
 

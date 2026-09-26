@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Pressable,
   StyleSheet,
+  Text,
   TextInput,
   View,
   type TextInputProps,
@@ -15,7 +16,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { BlurView } from "expo-blur";
-import { ArrowUp, Search, X } from "@/components/ui/icons";
+import { Search, X } from "@/components/ui/icons";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useThemeColors } from "@/design/appearance";
 
@@ -24,18 +25,16 @@ const AnimatedView = Animated.View;
 type SearchBarProps = {
   value: string;
   onChangeText: (value: string) => void;
-  onSubmit?: (value: string) => void;
   placeholder: string;
   accessibilityLabel: string;
   inputProps?: Omit<TextInputProps, "value" | "onChangeText" | "placeholder">;
   style?: ViewStyle;
 };
 
-/** Shared, theme-aware search field with a focus reveal and an explicit send action. */
+/** Shared, theme-aware search field with a focus reveal and a cancel action. */
 export function SearchBar({
   value,
   onChangeText,
-  onSubmit,
   placeholder,
   accessibilityLabel,
   inputProps,
@@ -53,10 +52,10 @@ export function SearchBar({
       : withSpring(focused ? 1 : 0, { damping: 22, stiffness: 210 });
   }, [focused, progress, reduceMotion]);
 
-  const sendWrapStyle = useAnimatedStyle(() => ({
-    width: interpolate(progress.value, [0, 1], [0, 44]),
+  const cancelWrapStyle = useAnimatedStyle(() => ({
+    width: interpolate(progress.value, [0, 1], [0, 60]),
   }));
-  const sendStyle = useAnimatedStyle(() => ({
+  const cancelStyle = useAnimatedStyle(() => ({
     opacity: progress.value,
     transform: [{ translateX: interpolate(progress.value, [0, 1], [8, 0]) }],
   }));
@@ -65,8 +64,8 @@ export function SearchBar({
     transform: [{ scale: reduceMotion ? (value.length ? 1 : 0.8) : withSpring(value.length ? 1 : 0.8) }],
   }));
 
-  const submit = () => {
-    onSubmit?.(value.trim());
+  const cancel = () => {
+    onChangeText("");
     inputRef.current?.blur();
   };
 
@@ -92,12 +91,12 @@ export function SearchBar({
               placeholder={placeholder}
               placeholderTextColor={colors.inkMuted}
               selectionColor={colors.blue}
-              returnKeyType="search"
+              returnKeyType="done"
               autoCorrect={false}
               autoCapitalize="none"
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
-              onSubmitEditing={submit}
+              onSubmitEditing={() => inputRef.current?.blur()}
               style={[styles.input, { color: colors.ink, fontFamily: "Manrope_400Regular" }]}
               {...inputProps}
             />
@@ -115,16 +114,14 @@ export function SearchBar({
           </View>
         </BlurView>
       </AnimatedView>
-      <AnimatedView style={[styles.sendWrap, sendWrapStyle, sendStyle]} pointerEvents={focused ? "auto" : "none"}>
+      <AnimatedView style={[styles.cancelWrap, cancelWrapStyle, cancelStyle]} pointerEvents={focused ? "auto" : "none"}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Send search"
-          accessibilityState={{ disabled: !value.trim() }}
-          disabled={!value.trim()}
-          onPress={submit}
-          style={[styles.sendButton, { backgroundColor: colors.blue, opacity: value.trim() ? 1 : 0.55 }]}
+          accessibilityLabel="Cancel search"
+          onPress={cancel}
+          style={styles.cancelButton}
         >
-          <ArrowUp size={20} color={colors.onAccent} />
+          <Text style={[styles.cancelText, { color: colors.blue, fontFamily: "Manrope_500Medium" }]}>Cancel</Text>
         </Pressable>
       </AnimatedView>
     </View>
@@ -138,6 +135,7 @@ const styles = StyleSheet.create({
   content: { minHeight: 56, borderRadius: 18, flexDirection: "row", alignItems: "center", paddingHorizontal: 16, gap: 10 },
   input: { flex: 1, minWidth: 0, minHeight: 52, fontSize: 17, lineHeight: 25, paddingVertical: 0 },
   iconButton: { width: 36, height: 44, alignItems: "center", justifyContent: "center" },
-  sendWrap: { width: 44, height: 44 },
-  sendButton: { width: 44, height: 44, alignItems: "center", justifyContent: "center", borderRadius: 22 },
+  cancelWrap: { width: 60, height: 44, overflow: "hidden" },
+  cancelButton: { width: 60, height: 44, alignItems: "center", justifyContent: "center" },
+  cancelText: { fontSize: 16, lineHeight: 22 },
 });
