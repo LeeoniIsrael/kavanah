@@ -19,7 +19,7 @@ import * as Notifications from "expo-notifications";
 import { type Href, Stack, ThemeProvider, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { Appearance, Platform, View } from "react-native";
+import { Appearance, Platform, StatusBar as NativeStatusBar, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout(): React.JSX.Element {
@@ -44,7 +44,7 @@ export default function RootLayout(): React.JSX.Element {
       <View
         style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
       >
-        <StatusBar style="light" />
+        <NativeStatusBar barStyle="light-content" />
         <BrandWordmark width={190} color="#FFFFFF" />
       </View>
     );

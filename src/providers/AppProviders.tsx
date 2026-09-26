@@ -7,8 +7,7 @@ import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { LockKeyhole } from "@/components/ui/icons";
 import { useEffect, useState, type PropsWithChildren } from "react";
-import { AppState, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { AppState, StatusBar, View } from "react-native";
 
 import { Button } from "@/components/ui/button";
 import { retireTravelPrayerReminders } from "@/services/notifications";
@@ -66,7 +65,7 @@ export function AppProviders({
         accessibilityRole="progressbar"
         style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
       >
-        <StatusBar style="light" />
+        <StatusBar barStyle="light-content" />
         <BrandWordmark width={190} color="#FFFFFF" />
       </View>
     );
