@@ -1008,164 +1008,172 @@ export function SiddurExperience({
             />
           </View>
           {toc ? (
-            <View
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                justifyContent: "flex-end",
-                backgroundColor: "#0008",
-                zIndex: 30,
-              }}
+            <Modal
+              visible={toc}
+              transparent
+              animationType={reduceMotion ? "none" : "slide"}
+              onRequestClose={() => setToc(false)}
             >
               <View
                 style={{
-                  height: "90%",
-                  backgroundColor: colors.parchment,
-                  borderTopLeftRadius: 26,
-                  borderTopRightRadius: 26,
-                  overflow: "hidden",
+                  flex: 1,
+                  justifyContent: "flex-end",
+                  backgroundColor: "#0008",
                 }}
               >
-                <SafeAreaView
+                <View
                   style={{
-                    flex: 1,
-                    backgroundColor: colors.parchment,
-                    padding: 20,
+                    height: "88%",
+                    maxHeight: windowHeight - Math.max(insets.top, 24),
+                    backgroundColor: colors.vellum,
+                    borderTopLeftRadius: 26,
+                    borderTopRightRadius: 26,
+                    overflow: "hidden",
                   }}
                 >
-                  <View
+                  <SafeAreaView
+                    edges={["bottom"]}
                     style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "space-between",
+                      flex: 1,
+                      backgroundColor: colors.vellum,
+                      paddingHorizontal: 24,
+                      paddingTop: 16,
                     }}
                   >
-                    <Text variant="section" style={{ fontSize: 24 }}>
-                      Contents
-                    </Text>
-                    <Button
-                      onPress={() => setToc(false)}
-                      accessibilityLabel="Close contents"
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
                     >
-                      <X size={22} color={colors.ink} />
-                    </Button>
-                  </View>
-                  <SearchBar
-                    value={query}
-                    onChangeText={setQuery}
-                    placeholder="Search English or Hebrew"
-                    accessibilityLabel="Search siddur section titles in English or Hebrew"
-                    style={{ marginVertical: 16 }}
-                  />
-                  <ScrollView keyboardShouldPersistTaps="handled">
-                    {!query && bookmarks.length ? (
-                      <View style={{ paddingVertical: 10 }}>
-                        <Text variant="section">Saved places</Text>
-                        {bookmarks.map((saved) => {
-                          const i = leaves.findIndex(
-                            (n) => n.ref === saved.sectionRef,
-                          );
-                          return (
-                            <Pressable
-                              key={saved.id}
-                              accessibilityRole="button"
-                              accessibilityLabel={`Return to ${leaves[i]?.titleEn ?? "saved place"}`}
-                              onPress={() => {
-                                pendingRestore.current = saved.segmentRef;
-                                goSection(i);
-                              }}
-                              style={{
-                                paddingVertical: 12,
-                                borderBottomWidth: 1,
-                                borderColor: colors.hairline,
-                              }}
-                            >
-                              <Text style={{ color: colors.ink }}>
-                                {leaves[i]?.titleEn ?? saved.sectionRef}
-                              </Text>
-                            </Pressable>
-                          );
-                        })}
-                      </View>
-                    ) : null}
-                    {query.trim().length >= 2 && contentResults.length ? (
-                      <View style={{ paddingVertical: 10 }}>
-                        <Text variant="section">
-                          Text matches in downloaded sections
-                        </Text>
-                        {contentResults.map((result) => {
-                          const i = leaves.findIndex(
-                            (n) => n.ref === result.sectionId,
-                          );
-                          return (
-                            <Pressable
-                              key={result.ref}
-                              accessibilityRole="button"
-                              accessibilityLabel={`Go to ${result.ref}`}
-                              onPress={() => {
-                                pendingRestore.current = result.ref;
-                                goSection(i);
-                              }}
-                              style={{
-                                paddingVertical: 12,
-                                borderBottomWidth: 1,
-                                borderColor: colors.hairline,
-                              }}
-                            >
-                              <Text
-                                style={{ color: colors.ink, fontWeight: "600" }}
-                              >
-                                {leaves[i]?.titleEn}
-                              </Text>
-                              <Text
-                                numberOfLines={2}
-                                style={{ color: colors.inkMuted }}
-                              >
-                                {result.en ?? result.he}
-                              </Text>
-                            </Pressable>
-                          );
-                        })}
-                      </View>
-                    ) : null}
-                    {filtered.map(({ n, i }) => (
-                      <Pressable
-                        key={n.ref}
-                        accessibilityRole="button"
-                        accessibilityLabel={`Go to ${n.titleEn}`}
-                        onPress={() => goSection(i)}
-                        style={{
-                          paddingVertical: 14,
-                          paddingLeft: Math.min(n.depth, 4) * 10,
-                          borderBottomWidth: 1,
-                          borderColor: colors.hairline,
-                        }}
+                      <Text variant="section" style={{ fontSize: 24 }}>
+                        Contents
+                      </Text>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onPress={() => setToc(false)}
+                        accessibilityLabel="Close contents"
+                        style={{ backgroundColor: colors.blue }}
                       >
-                        <Text
+                        <X size={22} color={colors.onAccent} />
+                      </Button>
+                    </View>
+                    <SearchBar
+                      value={query}
+                      onChangeText={setQuery}
+                      placeholder="Search English or Hebrew"
+                      accessibilityLabel="Search siddur section titles in English or Hebrew"
+                      style={{ marginVertical: 16 }}
+                    />
+                    <ScrollView keyboardShouldPersistTaps="handled">
+                      {!query && bookmarks.length ? (
+                        <View style={{ paddingVertical: 10 }}>
+                          <Text variant="section">Saved places</Text>
+                          {bookmarks.map((saved) => {
+                            const i = leaves.findIndex(
+                              (n) => n.ref === saved.sectionRef,
+                            );
+                            return (
+                              <Pressable
+                                key={saved.id}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Return to ${leaves[i]?.titleEn ?? "saved place"}`}
+                                onPress={() => {
+                                  pendingRestore.current = saved.segmentRef;
+                                  goSection(i);
+                                }}
+                                style={{
+                                  paddingVertical: 12,
+                                  borderBottomWidth: 1,
+                                  borderColor: colors.hairline,
+                                }}
+                              >
+                                <Text style={{ color: colors.ink }}>
+                                  {leaves[i]?.titleEn ?? saved.sectionRef}
+                                </Text>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                      ) : null}
+                      {query.trim().length >= 2 && contentResults.length ? (
+                        <View style={{ paddingVertical: 10 }}>
+                          <Text variant="section">
+                            Text matches in downloaded sections
+                          </Text>
+                          {contentResults.map((result) => {
+                            const i = leaves.findIndex(
+                              (n) => n.ref === result.sectionId,
+                            );
+                            return (
+                              <Pressable
+                                key={result.ref}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Go to ${result.ref}`}
+                                onPress={() => {
+                                  pendingRestore.current = result.ref;
+                                  goSection(i);
+                                }}
+                                style={{
+                                  paddingVertical: 12,
+                                  borderBottomWidth: 1,
+                                  borderColor: colors.hairline,
+                                }}
+                              >
+                                <Text
+                                  style={{ color: colors.ink, fontWeight: "600" }}
+                                >
+                                  {leaves[i]?.titleEn}
+                                </Text>
+                                <Text
+                                  numberOfLines={2}
+                                  style={{ color: colors.inkMuted }}
+                                >
+                                  {result.en ?? result.he}
+                                </Text>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                      ) : null}
+                      {filtered.map(({ n, i }) => (
+                        <Pressable
+                          key={n.ref}
+                          accessibilityRole="button"
+                          accessibilityLabel={`Go to ${n.titleEn}`}
+                          onPress={() => goSection(i)}
                           style={{
-                            color: colors.ink,
-                            fontSize: 16,
-                            fontWeight: "600",
+                            paddingVertical: 14,
+                            paddingLeft: Math.min(n.depth, 4) * 10,
+                            borderBottomWidth: 1,
+                            borderColor: colors.hairline,
                           }}
                         >
-                          {n.titleEn}
-                        </Text>
-                        {n.titleHe ? (
                           <Text
-                            style={{ color: colors.inkMuted, fontSize: 13 }}
+                            style={{
+                              color: colors.ink,
+                              fontSize: 16,
+                              fontWeight: "600",
+                            }}
                           >
-                            {n.titleHe}
+                            {n.titleEn}
                           </Text>
-                        ) : null}
-                      </Pressable>
-                    ))}
-                  </ScrollView>
-                </SafeAreaView>
+                          {n.titleHe ? (
+                            <Text
+                              style={{ color: colors.inkMuted, fontSize: 13 }}
+                            >
+                              {n.titleHe}
+                            </Text>
+                          ) : null}
+                        </Pressable>
+                      ))}
+                    </ScrollView>
+                  </SafeAreaView>
+                </View>
               </View>
-            </View>
+            </Modal>
           ) : null}
           <ReadingSettingsSheet
             visible={settings}
