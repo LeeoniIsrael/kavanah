@@ -4,7 +4,7 @@ import { findLanguage } from "@/data/languages";
 import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
 import { groupPrayerSearchResults } from "@/services/prayerSearchGroups";
 import { PrayerSearchGroupCard } from "@/components/PrayerSearchGroupCard";
-import { siddurBooks, siddurEntries, type SiddurBook } from "@/services/siddur";
+import { siddurBooks, siddurEntries, fitsDailyView, type SiddurBook } from "@/services/siddur";
 import { writeSocialData } from "@/services/socialStorage";
 import { SiddurLibrary } from "@/components/SiddurLibrary";
 import { createIndexedPrayer } from "@/services/prayerService";
@@ -67,6 +67,7 @@ import {
 } from "@/services/localizationService";
 import { getPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
+import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { useSettingsStore } from "@/store/settingsStore";
 import { useSocialStore } from "@/store/socialStore";
 import { useStreakStore } from "@/store/streakStore";
@@ -286,10 +287,11 @@ export function PrayerScreen(): React.JSX.Element {
     setFocusPromptOpen(false);
   };
 
+  const prayerIdentity = usePrayerIdentityStore((state) => state.identity);
   const sourceBook = selected?.sourceMetadata?.work;
   const orderedSections =
     sourceBook && siddurBooks.includes(sourceBook as SiddurBook)
-      ? siddurEntries(sourceBook as SiddurBook)
+      ? siddurEntries(sourceBook as SiddurBook).filter((entry) => fitsDailyView(entry, prayerIdentity))
       : [];
   const sectionIndex = orderedSections.findIndex(
     (entry) => entry.id === selected?.id,

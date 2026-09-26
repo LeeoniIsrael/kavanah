@@ -1,3 +1,4 @@
+import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 import type { Session } from "@supabase/supabase-js";
@@ -40,6 +41,14 @@ export async function loadCircleAccount(session: Session | null) {
     ready: false,
     error: null,
   });
+  if (session) {
+    const metadata = session.user.user_metadata ?? {};
+    const localIdentity = usePrayerIdentityStore.getState().identity;
+    usePrayerIdentityStore.getState().restoreFromAccount(metadata);
+    if (!metadata.prayer_identity && localIdentity) {
+      void requireCircle().auth.updateUser({ data: { prayer_identity: localIdentity } }).catch(() => undefined);
+    }
+  }
   if (!session) {
     useCircleAccount.setState({ ready: true });
     return;

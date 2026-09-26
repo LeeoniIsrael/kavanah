@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import * as SwitchPrimitives from "@rn-primitives/switch";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Animated, Easing, Platform } from "react-native";
 
 const AnimatedThumb = Animated.createAnimatedComponent(SwitchPrimitives.Thumb);
@@ -11,7 +11,7 @@ function Switch({
   className,
   ...props
 }: React.ComponentProps<typeof SwitchPrimitives.Root>) {
-  const progress = useRef(new Animated.Value(props.checked ? 1 : 0)).current;
+  const [progress] = useState(() => new Animated.Value(props.checked ? 1 : 0));
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Switch({
       )}
       {...props}
     >
-      <AnimatedThumb
+      {Platform.OS === "web" ? <SwitchPrimitives.Thumb className="bg-white size-6 rounded-full" style={{ transform: [{ translateX: props.checked ? 20 : 0 }] }} /> : <AnimatedThumb
         className={cn(
           "bg-white size-6 rounded-full",
           Platform.select({
@@ -61,7 +61,7 @@ function Switch({
             },
           ],
         }}
-      />
+      />}
     </SwitchPrimitives.Root>
   );
 }

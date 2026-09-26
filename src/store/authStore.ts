@@ -1,4 +1,5 @@
 import * as LocalAuthentication from "expo-local-authentication";
+import { Platform } from "react-native";
 import { create } from "zustand";
 
 const BIOMETRIC_PREFERENCE_KEY = "kavanah.biometric-lock-enabled";
@@ -46,10 +47,12 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
 const SecurePreference = {
   async get(key: string): Promise<string | null> {
+    if (Platform.OS === "web") return globalThis.localStorage?.getItem(key) ?? null;
     const SecureStore = await import("expo-secure-store");
     return SecureStore.getItemAsync(key);
   },
   async set(key: string, value: string): Promise<void> {
+    if (Platform.OS === "web") { globalThis.localStorage?.setItem(key, value); return; }
     const SecureStore = await import("expo-secure-store");
     await SecureStore.setItemAsync(key, value, {
       keychainAccessible: SecureStore.WHEN_UNLOCKED_THIS_DEVICE_ONLY

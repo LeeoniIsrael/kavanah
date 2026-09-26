@@ -93,3 +93,5 @@
     --ring: 212.97 66.42% 73.14%;
   }
 }
+
+@keyframes kavanah-wave { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }

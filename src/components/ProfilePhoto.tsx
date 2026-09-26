@@ -26,6 +26,7 @@ export function profilePhotoFile(owner: string) {
 export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
   const colors = useThemeColors();
   const [uri, setUri] = useState(() => {
+    if (Platform.OS === "web") return null;
     const file = profilePhotoFile(owner);
     return file.exists ? file.uri : null;
   });
@@ -103,6 +104,7 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
     }
   };
   const open = () => {
+    if (Platform.OS === "web") { setMessage("Profile photos are available in the mobile app."); return; }
     if (Platform.OS === "ios") {
       const options = [
         "Take photo",

@@ -107,3 +107,9 @@ Use `eas.json` for development, preview, and production builds. Before TestFligh
 Circle's managed Postgres schema, security rules, and authenticated API are in `supabase/`. The app includes optional email-code accounts, approved connections, invitations, and a shared prayer feed. Backend configuration is required before accounts are offered; the app keeps private prayer usable without it.
 
 See [backend deployment and operating guide](docs/social-backend.md) and [release checklist](docs/release-checklist.md). Run `npm run test:backend` for PostgreSQL policy/API tests and `npm run release:check` for the release configuration gate. No cloud project is provisioned just by cloning this repository.
+
+### First-run sign-in and prayer view
+
+The first launch shows a short animated welcome, then offers Apple (iOS), Google, email code, phone code, or local exploration. Account sign-in uses the existing Supabase project. Set `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in a private `.env`, enable Apple, Google, email OTP, and phone OTP in Supabase Auth, and allow `kavanah://auth` (plus development redirect URLs) in Auth redirect settings. Configure Google OAuth credentials in Google Cloud and the Supabase Google provider, Apple sign-in capability/provider in Apple Developer and Supabase, and an SMS provider in Supabase before testing each method. Email OTP templates must contain `{{ .Token }}`. Do not put provider secrets in Expo variables.
+
+The selected daily prayer view is saved locally and, after sign-in, to the user's Supabase Auth metadata. The three plain-language community choices map to the corresponding indexed siddur. The woman's daily view omits selected ritual-specific sections as a navigation default; this is not a religious ruling. Text and practice guidance remain under review, and users can change their choice in Profile. Account deletion and Circle setup remain available through the existing Circle screen.

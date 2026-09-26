@@ -19,14 +19,14 @@ import * as Notifications from "expo-notifications";
 import { type Href, Stack, ThemeProvider, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { Appearance, View } from "react-native";
+import { Appearance, Platform, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout(): React.JSX.Element {
   const scheme = useAppColorScheme();
   const preference = useAppearanceStore((s) => s.preference);
   useEffect(() => {
-    Appearance.setColorScheme(
+    if (Platform.OS !== "web") Appearance.setColorScheme(
       preference === "system" ? "unspecified" : preference,
     );
   }, [preference]);
@@ -75,6 +75,7 @@ function NotificationRouter(): null {
   const router = useRouter();
 
   useEffect(() => {
+    if (Platform.OS === "web") return;
     const openResponse = async (
       response: Notifications.NotificationResponse | null,
     ) => {

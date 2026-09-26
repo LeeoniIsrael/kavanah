@@ -62,6 +62,7 @@ import {
   type PracticeStats,
 } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
+import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
@@ -130,6 +131,8 @@ export function HomeScreen(): React.JSX.Element {
   const router = useRouter();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } =
     useStreakStore();
+  const prayerAudience = usePrayerIdentityStore((state) => state.identity?.audience);
+  const visibleHabits = useMemo(() => habits.filter((habit) => prayerAudience !== "woman" || habit.habit !== "tefillin"), [habits, prayerAudience]);
   const { upcomingZmanim, location, isLoading, error, refresh } =
     useZmanimStore();
   const { setQuery } = usePrayerStore();
@@ -155,7 +158,7 @@ export function HomeScreen(): React.JSX.Element {
         helper: "Next moment",
       })
     : null;
-  const activeHabits = habits.filter((habit) =>
+  const activeHabits = visibleHabits.filter((habit) =>
     enabledHabits.includes(habit.habit),
   );
   const completedToday = activeHabits.filter((habit) =>
@@ -165,8 +168,8 @@ export function HomeScreen(): React.JSX.Element {
     completedToday.find((habit) => habit.habit === "tefillin") ??
     completedToday[0];
   const practiceStats = useMemo(
-    () => calculatePracticeStats(habits, now),
-    [habits, now],
+    () => calculatePracticeStats(visibleHabits, now),
+    [visibleHabits, now],
   );
 
   const openPrayerSearch = (query: string) => {
@@ -491,7 +494,7 @@ export function HomeScreen(): React.JSX.Element {
                 </Button>
               </View>
               <View className="border-t border-t-hairline">
-                {habits.map((habit, index) => {
+                {visibleHabits.map((habit, index) => {
                   const details = habitDetails[habit.habit];
                   const selected = enabledHabits.includes(habit.habit);
                   return (
@@ -510,7 +513,7 @@ export function HomeScreen(): React.JSX.Element {
                       onPress={() => setHabitEnabled(habit.habit, !selected)}
                       className={cn(
                         "min-h-[68px] py-2 flex-row items-center gap-4 border-b border-b-hairline",
-                        index === habits.length - 1 && "border-b-[0px]",
+                        index === visibleHabits.length - 1 && "border-b-[0px]",
                       )}
                     >
                       <View className="flex-1">

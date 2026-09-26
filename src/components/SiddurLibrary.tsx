@@ -9,10 +9,13 @@ import { useInterfaceStyles } from "@/design/layout";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import {
   siddurBooks,
+  preferredSiddurBook,
+  fitsDailyView,
   siddurEntries,
   searchSiddur,
   type SiddurBook,
 } from "@/services/siddur";
+import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { usePrayerStore } from "@/store/prayerStore";
 import type { LiturgyIndexEntry } from "@/types/prayer";
 const isBook = (v: unknown): v is SiddurBook =>
@@ -24,9 +27,8 @@ export function SiddurLibrary({
 }) {
   const ui = useInterfaceStyles(),
     colors = useThemeColors();
-  const [book, setBook] = useState<SiddurBook | null>(() =>
-    readSocialData("siddur.book", isBook),
-  );
+  const identity = usePrayerIdentityStore((state) => state.identity);
+  const [book, setBook] = useState<SiddurBook | null>(() => preferredSiddurBook(identity) ?? readSocialData("siddur.book", isBook));
   const [path, setPath] = useState<string[]>([]),
     [query, setQuery] = useState("");
   const last = readSocialData(
@@ -35,7 +37,7 @@ export function SiddurLibrary({
   );
   const savedIds = usePrayerStore((state) => state.bookmarkedPrayerIds);
   const [savedOnly, setSavedOnly] = useState(false);
-  const entries = book ? siddurEntries(book) : [];
+  const entries = book ? siddurEntries(book).filter((entry) => fitsDailyView(entry, identity)) : [];
   const resume = entries.find((entry) => entry.id === last);
   const open = (entry: LiturgyIndexEntry) => {
     writeSocialData("siddur.place", entry.id);
@@ -46,7 +48,7 @@ export function SiddurLibrary({
       <View style={{ gap: 20 }}>
         <Text style={ui.editorial}>Your siddur, in one place.</Text>
         <Text style={ui.body}>
-          Choose your tradition to browse its contents. You can change it
+          Choose the prayer style that feels familiar. You can change it
           anytime.
         </Text>
         {siddurBooks.map((item) => (
@@ -62,18 +64,17 @@ export function SiddurLibrary({
           >
             <BookOpen size={24} color={colors.blue} />
             <Text variant="section" style={{ flex: 1 }}>
-              {item.replace("Siddur ", "")}
+              {item === "Siddur Ashkenaz" ? "Eastern European" : item === "Siddur Sefard" ? "Hasidic" : "Mediterranean & Middle Eastern"}
             </Text>
             <ChevronRight size={16} color={colors.inkMuted} />
           </Button>
         ))}
         <Text style={ui.caption}>
-          Source library preview. Rabbinic approval for Kavanah’s edition and
-          men’s/women’s guidance is still pending.
+          Source library preview. Prayer text and personal practice guidance are still being reviewed.
         </Text>
       </View>
     );
-  const filtered = query.trim() ? searchSiddur(book, query) : entries;
+  const filtered = query.trim() ? searchSiddur(book, query).filter((entry) => fitsDailyView(entry, identity)) : entries;
   const visible = savedOnly
     ? filtered.filter((entry) => savedIds.includes(entry.id))
     : filtered;
@@ -101,7 +102,7 @@ export function SiddurLibrary({
     <View style={{ gap: 20 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
         <Text style={[ui.sectionTitle, { flex: 1 }]}>
-          {book.replace("Siddur ", "")}
+          Your daily prayer book
         </Text>
         <Button
           variant="ghost"

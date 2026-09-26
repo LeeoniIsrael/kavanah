@@ -1,5 +1,6 @@
 import manifest from "@/data/generatedLiturgyIndex.json";
 import order from "@/data/siddurOrder.json";
+import type { PrayerIdentity } from "@/store/prayerIdentityStore";
 import type { LiturgyIndexEntry } from "@/types/prayer";
 export type SiddurBook = keyof typeof order;
 export const siddurBooks = Object.keys(order) as SiddurBook[];
@@ -28,4 +29,18 @@ export function searchSiddur(book: SiddurBook, query: string) {
     );
     return words.every((word) => text.includes(word));
   });
+}
+
+export function preferredSiddurBook(identity: PrayerIdentity | null): SiddurBook | null {
+  if (!identity || identity.community === "unsure") return null;
+  if (identity.community === "hasidic") return "Siddur Sefard";
+  if (identity.community === "mediterranean") return "Siddur Edot HaMizrach";
+  return "Siddur Ashkenaz";
+}
+
+// This is a reading default, not a ruling about who may say a prayer.
+export function fitsDailyView(entry: LiturgyIndexEntry, identity: PrayerIdentity | null): boolean {
+  if (identity?.audience !== "woman") return true;
+  const label = [entry.title, ...entry.path].join(" ").toLowerCase();
+  return !/tefillin|phylacter|laying tefillin|wrapping in tzitzit|tallit blessing/.test(label);
 }

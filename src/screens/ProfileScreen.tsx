@@ -52,6 +52,7 @@ export function ProfileScreen(): React.JSX.Element {
   const { biometricLockEnabled, setBiometricLockEnabled } = useAuthStore();
   const router = useRouter();
   const profile = useCircleAccount((state) => state.profile);
+  const accountSession = useCircleAccount((state) => state.session);
   const {
     primaryLanguageCode,
     assistantConsentVersion,
@@ -78,6 +79,15 @@ export function ProfileScreen(): React.JSX.Element {
         owner={profile?.id ?? "local"}
         name={profile?.display_name ?? "Your profile"}
       />
+      <View style={{ gap: 12 }}>
+        <SectionHeading title="Your prayer book" />
+        <Button variant="secondary" onPress={() => router.push("/prayer-preferences")}>
+          <Text>Change my prayer view</Text>
+        </Button>
+        {!accountSession && <Button variant="secondary" onPress={() => router.push("/sign-in")}>
+          <Text>Sign in to save across devices</Text>
+        </Button>}
+      </View>
       <View style={{ gap: 12 }}>
         <SectionHeading title="Appearance" />
         <View

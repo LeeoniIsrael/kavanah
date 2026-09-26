@@ -7,7 +7,9 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.leeoniisrael.kavanah",
@@ -18,7 +20,8 @@
       "infoPlist": {
         "NSFaceIDUsageDescription": "Kavanah can lock your spiritual profile behind Face ID when you enable biometric lock.",
         "NSLocationWhenInUseUsageDescription": "Kavanah uses your location to calculate local zmanim and Shabbat times."
-      }
+      },
+      "usesAppleSignIn": true
     },
     "android": {
       "package": "com.leeoniisrael.kavanah",
@@ -55,7 +58,10 @@
       ],
       "expo-font",
       "expo-sharing",
-      "expo-status-bar"
+      "expo-status-bar",
+      "expo-apple-authentication",
+      "expo-web-browser",
+      "expo-web-browser"
     ],
     "extra": {
       "assistantApiUrl": "https://kavanah-rho.vercel.app/api/assistant",
