@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
-import { Animated, Easing, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Animated,
+  Easing,
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
+import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BrandMark } from "@/components/BrandMark";
 import { GradientWaveText } from "@/components/onboarding/GradientWaveText";
-import { useThemeColors } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, softHaptic, successHaptic, tapHaptic } from "@/services/haptics";
@@ -14,6 +25,12 @@ import { sendSignInCode, signInWithApple, signInWithGoogle, verifySignInCode, ty
 import { usePrayerIdentityStore, type PrayerAudience, type PrayerCommunity } from "@/store/prayerIdentityStore";
 
 type Step = "splash" | "welcome" | "contact" | "code" | "audience" | "community";
+const ink = "#F4F7FB";
+const muted = "#98A7B8";
+const background = "#0E141C";
+const edge = "#344254";
+const accent = "#8DB6E8";
+
 const communityOptions: { value: PrayerCommunity; title: string; detail: string }[] = [
   { value: "european", title: "Eastern European", detail: "The prayer book many European communities use" },
   { value: "hasidic", title: "Hasidic", detail: "The style common in many Hasidic homes" },
@@ -21,10 +38,48 @@ const communityOptions: { value: PrayerCommunity; title: string; detail: string 
   { value: "unsure", title: "I'm not sure yet", detail: "You can choose in your prayer book later" },
 ];
 
+function Action({
+  label,
+  onPress,
+  kind = "outline",
+  icon,
+  disabled = false,
+}: {
+  label: string;
+  onPress: () => void;
+  kind?: "solid" | "outline" | "quiet";
+  icon?: "apple" | "google";
+  disabled?: boolean;
+}): React.JSX.Element {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityState={{ disabled }}
+      disabled={disabled}
+      onPressIn={() => { if (!disabled) void tapHaptic(); }}
+      onPress={onPress}
+      style={styles.actionPressable}
+    >
+      {({ pressed }) => (
+        <View style={[
+          styles.actionSurface,
+          kind === "solid" ? styles.actionSolid : kind === "quiet" ? styles.actionQuiet : styles.actionOutline,
+          { opacity: disabled ? 0.42 : pressed ? 0.78 : 1, transform: [{ scale: pressed ? 0.985 : 1 }] },
+        ]}>
+          {icon === "apple" && <Ionicons name="logo-apple" size={21} color={kind === "solid" ? background : ink} style={styles.actionIcon} />}
+          {icon === "google" && <Text style={[styles.googleIcon, { color: kind === "solid" ? background : ink }]}>G</Text>}
+          <Text style={[styles.actionLabel, { color: kind === "solid" ? background : ink }]}>{label}</Text>
+        </View>
+      )}
+    </Pressable>
+  );
+}
+
 export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" | "account" | "preferences" }): React.JSX.Element {
-  const colors = useThemeColors();
-  const reduceMotion = useReducedMotion();
   const router = useRouter();
+  const reduceMotion = useReducedMotion();
+  const { height } = useWindowDimensions();
   const save = usePrayerIdentityStore((state) => state.save);
   const finish = usePrayerIdentityStore((state) => state.finish);
   const [step, setStep] = useState<Step>(mode === "onboarding" ? "splash" : mode === "account" ? "welcome" : "audience");
@@ -35,26 +90,33 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   const [community, setCommunity] = useState<PrayerCommunity | null>(null);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
-  const [spiral] = useState(() => new Animated.Value(0));
-  useEffect(() => {
-    if (mode !== "onboarding" || reduceMotion) return;
-    const animation = Animated.timing(spiral, { toValue: 1, duration: 1950, easing: Easing.inOut(Easing.cubic), useNativeDriver: Platform.OS !== "web" });
-    animation.start();
-    return () => animation.stop();
-  }, [mode, reduceMotion, spiral]);
+  const [intro] = useState(() => new Animated.Value(mode === "onboarding" ? 0 : 1));
+  const [orbit] = useState(() => new Animated.Value(0));
+
   useEffect(() => {
     if (mode !== "onboarding") return;
+    const loop = reduceMotion ? null : Animated.loop(Animated.timing(orbit, {
+      toValue: 1,
+      duration: 8500,
+      easing: Easing.linear,
+      useNativeDriver: Platform.OS !== "web",
+    }));
+    loop?.start();
+    // The first launch intentionally holds on the mark for seven full seconds.
     const timer = setTimeout(() => {
-      setStep("welcome");
+      Animated.timing(intro, {
+        toValue: 1,
+        duration: reduceMotion ? 1 : 950,
+        easing: Easing.bezier(0.22, 1, 0.36, 1),
+        useNativeDriver: Platform.OS !== "web",
+      }).start(({ finished }) => {
+        if (finished) { setStep("welcome"); void softHaptic(); }
+      });
+    }, 7000);
+    return () => { clearTimeout(timer); intro.stopAnimation(); loop?.stop(); };
+  }, [intro, mode, orbit, reduceMotion]);
 
-    }, reduceMotion ? 450 : 1750);
-    return () => clearTimeout(timer);
-  }, [reduceMotion, mode]);
-  const next = (value: Step) => {
-    void tapHaptic();
-    setMessage("");
-    setStep(value);
-  };
+  const next = (value: Step) => { void tapHaptic(); setMessage(""); setStep(value); };
   const run = async (action: () => Promise<void>) => {
     if (busy) return;
     setBusy(true);
@@ -71,105 +133,132 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     router.replace(mode === "preferences" ? "/profile" : "/prayer");
   };
   const afterSignIn = () => { void confirmHaptic(); if (mode === "account") router.replace("/profile"); else next("audience"); };
-  const text = (size: number, weight: "regular" | "medium" | "semibold" | "bold" = "regular", color = colors.ink) => ({ fontFamily: fonts[weight], fontSize: size, color });
-  const button = (label: string, action: () => void, primary = false, disabled = false) => (
-    <Pressable accessibilityRole="button" accessibilityLabel={label} disabled={disabled || busy} onPress={action} style={({ pressed }) => [styles.button, { backgroundColor: primary ? colors.blue : colors.vellum, borderColor: primary ? colors.blue : colors.hairlineStrong, opacity: disabled || busy ? 0.55 : pressed ? 0.82 : 1, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
-      <Text style={[text(16, "semibold", primary ? colors.onAccent : colors.ink)]}>{label}</Text>
-    </Pressable>
-  );
-  if (step === "splash") return (
-    <View style={[styles.splash, { backgroundColor: colors.parchment }]}>
-      <Animated.View style={{ alignItems: "center", opacity: spiral.interpolate({ inputRange: [0, 0.8, 1], outputRange: [1, 1, 0] }), transform: [{ scale: spiral.interpolate({ inputRange: [0, 1], outputRange: [1, 2.5] }) }] }}>
-        <Animated.View style={{ position: "absolute", width: 220, height: 220, borderRadius: 110, borderWidth: 1, borderColor: colors.blue, opacity: 0.28, transform: [{ rotate: spiral.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "300deg"] }) }, { scale: spiral.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1.3] }) }] }} />
-        <BrandMark size={56} />
-      </Animated.View>
-      <GradientWaveText style={{ width: 290, height: 76, marginTop: 30 }} textStyle={{ fontFamily: fonts.bold, fontSize: 55, lineHeight: 72, letterSpacing: -3 }}>kavanah</GradientWaveText>
-      <Text style={[text(14, "medium", colors.inkMuted), { marginTop: 8 }]}>Make room for a meaningful moment.</Text>
-    </View>
-  );
-  return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.parchment }}>
-      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
-        <ScrollView contentContainerStyle={styles.page} keyboardShouldPersistTaps="handled">
-          <View style={styles.topline}>
-            <BrandMark size={27} />
-            <Text style={[text(20, "bold"), { letterSpacing: -0.8, marginLeft: 8 }]}>kavanah</Text>
-            <View style={{ flex: 1 }} />
-            {(step !== "welcome" || mode !== "onboarding") && <Pressable accessibilityRole="button" accessibilityLabel={mode !== "onboarding" && (step === "welcome" || step === "audience") ? "Close" : "Go back"} hitSlop={12} onPress={() => {
-              if (mode !== "onboarding" && (step === "welcome" || step === "audience")) router.back();
-              else next(step === "code" ? "contact" : step === "community" ? "audience" : "welcome");
-            }}><Text style={text(15, "medium", colors.blue)}>{mode !== "onboarding" && (step === "welcome" || step === "audience") ? "Close" : "Back"}</Text></Pressable>}
+  const goBack = () => {
+    if (mode !== "onboarding" && (step === "welcome" || step === "audience")) router.back();
+    else next(step === "code" ? "contact" : step === "community" ? "audience" : "welcome");
+  };
+
+  if (step === "splash" || step === "welcome") {
+    const travel = Math.min(height * 0.38, 300);
+    return (
+      <SafeAreaView style={styles.screen}>
+        <View style={styles.heroCenter} pointerEvents="none">
+          <Animated.View style={[styles.orbit, {
+            opacity: intro.interpolate({ inputRange: [0, 0.25, 1], outputRange: [0.48, 0.48, 0] }),
+            transform: [
+              { rotate: orbit.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] }) },
+              { scale: intro.interpolate({ inputRange: [0, 1], outputRange: [1, 1.8] }) },
+            ],
+          }]} />
+          <Animated.View style={[styles.logo, {
+            transform: [
+              { translateY: intro.interpolate({ inputRange: [0, 1], outputRange: [0, -travel] }) },
+              { scale: intro.interpolate({ inputRange: [0, 1], outputRange: [1, 0.7] }) },
+            ],
+          }]}>
+            <BrandMark size={58} inverted />
+            <GradientWaveText style={styles.wordmark} textStyle={styles.wordmarkText}>kavanah</GradientWaveText>
+          </Animated.View>
+        </View>
+        <Animated.View
+          pointerEvents={step === "splash" ? "none" : "auto"}
+          importantForAccessibility={step === "splash" ? "no-hide-descendants" : "auto"}
+          style={[styles.welcomeContent, {
+            opacity: intro,
+            transform: [{ translateY: intro.interpolate({ inputRange: [0, 1], outputRange: [28, 0] }) }],
+          }]}
+        >
+          {mode === "account" && <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={goBack} style={styles.close}><Ionicons name="close" size={23} color={ink} /></Pressable>}
+          <View style={styles.welcomeBottom}>
+            <Text style={styles.welcomeTitle}>Your siddur, wherever you are.</Text>
+            <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
+            <View style={styles.providerGroup}>
+              {Platform.OS === "ios" && <Action label="Continue with Apple" icon="apple" kind="solid" disabled={busy} onPress={() => void run(async () => { if (await signInWithApple()) afterSignIn(); })} />}
+              <Action label="Continue with Google" kind={Platform.OS === "ios" ? "outline" : "solid"} disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />
+            </View>
+            <View style={styles.alternativeRow}>
+              <Pressable accessibilityRole="button" onPress={() => { setChannel("email"); next("contact"); }} hitSlop={10} style={styles.alternative}><Text style={styles.alternativeText}>Email</Text></Pressable>
+              <View style={styles.alternativeDivider} />
+              <Pressable accessibilityRole="button" onPress={() => { setChannel("phone"); next("contact"); }} hitSlop={10} style={styles.alternative}><Text style={styles.alternativeText}>Phone</Text></Pressable>
+            </View>
+            {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
+            <Text style={styles.privacy}>Your prayer stays private.</Text>
+            {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
-          {step === "welcome" && <>
-            <View style={{ flex: 1, minHeight: 18 }} />
-            <Text style={[text(43, "bold"), styles.title]}>Prayer that feels like yours.</Text>
-            <Text style={[text(17, "regular", colors.inkMuted), styles.subtitle]}>A calm place for the right words, the right time, and your own way of praying.</Text>
-            <LinearGradient colors={[colors.goldSoft, colors.vellum]} style={[styles.preview, { borderColor: colors.hairlineStrong }]}>
-              <View style={styles.previewTop}><Text style={text(13, "semibold", colors.blue)}>Your daily moment</Text><Text style={text(13, "medium", colors.inkMuted)}>Morning</Text></View>
-              <Text style={[{ fontFamily: fonts.hebrewSemibold, fontSize: 30, color: colors.ink, textAlign: "right", marginTop: 22 }]}>שְׁמַע יִשְׂרָאֵל</Text>
-              <Text style={[text(17, "semibold"), { marginTop: 6 }]}>Shema Yisrael</Text>
-              <Text style={[text(13, "regular", colors.inkMuted), { marginTop: 7 }]}>Hebrew, pronunciation, and meaning together.</Text>
-              <View style={[styles.previewBar, { backgroundColor: colors.blue }]} />
-            </LinearGradient>
-            <View style={{ flex: 1, minHeight: 18 }} />
-            {Platform.OS === "ios" && button("Continue with Apple", () => void run(async () => { if (await signInWithApple()) afterSignIn(); }), true)}
-            {button("Continue with Google", () => void run(async () => { if (await signInWithGoogle()) afterSignIn(); }), Platform.OS !== "ios")}
-            <View style={styles.double}>{button("Email", () => { setChannel("email"); next("contact"); })}{button("Phone", () => { setChannel("phone"); next("contact"); })}</View>
-            {mode === "onboarding" && button("Explore first", () => next("audience"))}
-            <Text style={[text(12, "regular", colors.inkMuted), styles.foot]}>Your prayer stays private. You can create an account anytime.</Text>
-          </>}
+        </Animated.View>
+      </SafeAreaView>
+    );
+  }
+
+  return (
+    <SafeAreaView style={styles.screen}>
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={styles.flex}>
+        <ScrollView contentContainerStyle={styles.formPage} keyboardShouldPersistTaps="handled">
+          <View style={styles.formTop}>
+            <BrandMark size={26} inverted />
+            <Text style={styles.formBrand}>kavanah</Text>
+            <View style={styles.flex} />
+            <Pressable accessibilityRole="button" accessibilityLabel={mode !== "onboarding" && step === "audience" ? "Close" : "Go back"} onPress={goBack} hitSlop={12}>
+              <Text style={styles.backLabel}>{mode !== "onboarding" && step === "audience" ? "Close" : "Back"}</Text>
+            </Pressable>
+          </View>
           {(step === "contact" || step === "code") && <>
-            <View style={{ flex: 1, minHeight: 70 }} />
-            <Text style={[text(36, "bold"), styles.title]}>{step === "code" ? "One quick check." : channel === "email" ? "What's your email?" : "What's your number?"}</Text>
-            <Text style={[text(16, "regular", colors.inkMuted), styles.subtitle]}>{step === "code" ? `Enter the code sent to ${contact.trim()}.` : `We'll send a one-time code. No password to remember.`}</Text>
+            <View style={styles.formSpacer} />
+            <Text style={styles.formTitle}>{step === "code" ? "Check your messages." : channel === "email" ? "Your email." : "Your phone number."}</Text>
+            <Text style={styles.formDescription}>{step === "code" ? `Enter the code sent to ${contact.trim()}.` : "We'll send one code. No password to remember."}</Text>
             <TextInput
               accessibilityLabel={step === "code" ? "Verification code" : channel === "email" ? "Email address" : "Phone number with country code"}
               placeholder={step === "code" ? "6-digit code" : channel === "email" ? "you@example.com" : "+1 212 555 0123"}
-              placeholderTextColor={colors.inkMuted}
+              placeholderTextColor={muted}
               keyboardType={step === "code" ? "number-pad" : channel === "email" ? "email-address" : "phone-pad"}
               autoComplete={step === "code" ? "one-time-code" : channel === "email" ? "email" : "tel"}
               autoCapitalize="none" autoCorrect={false}
               maxLength={step === "code" ? 10 : 100}
               value={step === "code" ? code : contact}
               onChangeText={step === "code" ? setCode : setContact}
-              style={[styles.input, text(18, "medium"), { backgroundColor: colors.vellum, borderColor: colors.hairlineStrong }]}
+              style={styles.input}
             />
-            {step === "code" && <Pressable hitSlop={10} disabled={busy} onPress={() => void run(() => sendSignInCode(contact, channel))}><Text style={[text(14, "semibold", colors.blue), { marginTop: 18 }]}>Send a new code</Text></Pressable>}
-            <View style={{ flex: 1, minHeight: 32 }} />
-            {button(step === "code" ? "Verify and continue" : "Send my code", () => void run(async () => {
+            {step === "code" && <Pressable hitSlop={10} disabled={busy} onPress={() => void run(() => sendSignInCode(contact, channel))}><Text style={styles.resend}>Send a new code</Text></Pressable>}
+            <View style={styles.flex} />
+            <Action label={step === "code" ? "Verify and continue" : "Send code"} kind="solid" disabled={busy} onPress={() => void run(async () => {
               if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
               else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
-            }), true)}
-            <Text style={[text(12, "regular", colors.inkMuted), styles.foot]}>Continuing creates your account if you're new. Never share your code.</Text>
+            })} />
+            <Text style={styles.formFoot}>Continuing creates your account if you're new.</Text>
           </>}
           {step === "audience" && <>
-            <View style={{ flex: 1, minHeight: 55 }} />
-            <Text style={[text(35, "bold"), styles.title]}>Make it yours.</Text>
-            <Text style={[text(16, "regular", colors.inkMuted), styles.subtitle]}>Which daily prayer view feels right for you? You can change this in Profile.</Text>
+            <View style={styles.formSpacer} />
+            <Text style={styles.formTitle}>Make it yours.</Text>
+            <Text style={styles.formDescription}>Which daily prayer view is right for you?</Text>
             {(["woman", "man"] as const).map((value) => (
-              <Pressable key={value} accessibilityRole="radio" accessibilityState={{ checked: audience === value }} onPress={() => { setAudience(value); void tapHaptic(); }} style={({ pressed }) => [styles.choice, { borderColor: audience === value ? colors.blue : colors.hairlineStrong, backgroundColor: audience === value ? colors.goldSoft : colors.vellum, opacity: pressed ? 0.8 : 1 }]}>
-                <Text style={text(19, "semibold")}>{value === "woman" ? "Woman" : "Man"}</Text><View style={[styles.radio, { borderColor: colors.blue, backgroundColor: audience === value ? colors.blue : "transparent" }]} />
+              <Pressable key={value} accessibilityRole="radio" accessibilityState={{ checked: audience === value }} onPress={() => { setAudience(value); void tapHaptic(); }} style={styles.choicePressable}>
+                {({ pressed }) => <View style={[styles.choice, audience === value && styles.choiceSelected, { opacity: pressed ? 0.75 : 1 }]}>
+                  <Text style={styles.choiceTitle}>{value === "woman" ? "Woman" : "Man"}</Text>
+                  <View style={[styles.radio, audience === value && styles.radioSelected]} />
+                </View>}
               </Pressable>
             ))}
-            <Text style={[text(13, "regular", colors.inkMuted), { lineHeight: 20, marginTop: 12 }]}>This sets a reading default. Practices vary by community and person.</Text>
-            <View style={{ flex: 1, minHeight: 32 }} />
-            {button("Continue", () => next("community"), true, !audience)}
+            <Text style={styles.helper}>This sets a reading default. You can change it at any time.</Text>
+            <View style={styles.flex} />
+            <Action label="Continue" kind="solid" disabled={!audience || busy} onPress={() => next("community")} />
           </>}
           {step === "community" && <>
-            <View style={{ flex: 1, minHeight: 16 }} />
-            <Text style={[text(35, "bold"), styles.title]}>What feels familiar?</Text>
-            <Text style={[text(16, "regular", colors.inkMuted), styles.subtitle]}>We'll open the closest prayer book. There's no wrong answer.</Text>
+            <View style={styles.formSpacerSmall} />
+            <Text style={styles.formTitle}>What feels familiar?</Text>
+            <Text style={styles.formDescription}>We'll open the closest prayer book. You can change it later.</Text>
             {communityOptions.map((option) => (
-              <Pressable key={option.value} accessibilityRole="radio" accessibilityState={{ checked: community === option.value }} onPress={() => { setCommunity(option.value); void tapHaptic(); }} style={({ pressed }) => [styles.choice, { borderColor: community === option.value ? colors.blue : colors.hairlineStrong, backgroundColor: community === option.value ? colors.goldSoft : colors.vellum, opacity: pressed ? 0.8 : 1 }]}>
-                <View style={{ flex: 1 }}><Text style={text(17, "semibold")}>{option.title}</Text><Text style={[text(13, "regular", colors.inkMuted), { marginTop: 3, lineHeight: 19 }]}>{option.detail}</Text></View><View style={[styles.radio, { borderColor: colors.blue, backgroundColor: community === option.value ? colors.blue : "transparent" }]} />
+              <Pressable key={option.value} accessibilityRole="radio" accessibilityState={{ checked: community === option.value }} onPress={() => { setCommunity(option.value); void tapHaptic(); }} style={styles.choicePressable}>
+                {({ pressed }) => <View style={[styles.choice, community === option.value && styles.choiceSelected, { opacity: pressed ? 0.75 : 1 }]}>
+                  <View style={styles.flex}><Text style={styles.choiceTitle}>{option.title}</Text><Text style={styles.choiceDetail}>{option.detail}</Text></View>
+                  <View style={[styles.radio, community === option.value && styles.radioSelected]} />
+                </View>}
               </Pressable>
             ))}
-            <View style={{ flex: 1, minHeight: 20 }} />
-            {button("Open my prayer book", () => void run(done), true, !community)}
-            <Text style={[text(12, "regular", colors.inkMuted), styles.foot]}>You can change your choice at any time.</Text>
+            <View style={styles.flex} />
+            <Action label="Open my prayer book" kind="solid" disabled={!community || busy} onPress={() => void run(done)} />
           </>}
-          {!!message && <Text accessibilityRole="alert" style={[text(14, "medium", colors.danger), { textAlign: "center", marginTop: 12 }]}>{message}</Text>}
-          {!circleConfigured && (step === "welcome" || step === "contact") && <Text style={[text(12, "regular", colors.inkMuted), styles.foot]}>Account sign-in will be available when this build is connected. You can explore now.</Text>}
+          {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
+          {!circleConfigured && step === "contact" && <Text style={styles.connectionNote}>Account sign-in is not connected in this build.</Text>}
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -177,18 +266,53 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
 }
 
 const styles = StyleSheet.create({
-  splash: { flex: 1, alignItems: "center", justifyContent: "center" },
-  page: { flexGrow: 1, paddingHorizontal: 25, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
-  topline: { flexDirection: "row", alignItems: "center", minHeight: 54, marginBottom: 14 },
-  title: { letterSpacing: -1.7, lineHeight: 46, maxWidth: 370 },
-  subtitle: { lineHeight: 25, marginTop: 13, marginBottom: 30, maxWidth: 390 },
-  preview: { borderWidth: 1, borderRadius: 30, padding: 24, minHeight: 206, overflow: "hidden" },
-  previewTop: { flexDirection: "row", justifyContent: "space-between" },
-  previewBar: { height: 4, width: 48, borderRadius: 2, marginTop: 23 },
-  button: { minHeight: 54, borderWidth: 1, borderRadius: 17, alignItems: "center", justifyContent: "center", marginTop: 9, paddingHorizontal: 16 },
-  double: { flexDirection: "row", gap: 9 },
-  foot: { textAlign: "center", lineHeight: 18, marginTop: 15 },
-  input: { borderWidth: 1, borderRadius: 18, minHeight: 58, paddingHorizontal: 18 },
-  choice: { borderWidth: 1, borderRadius: 18, paddingVertical: 18, paddingHorizontal: 18, minHeight: 70, flexDirection: "row", alignItems: "center", gap: 12, marginBottom: 10 },
-  radio: { width: 19, height: 19, borderRadius: 10, borderWidth: 2 },
+  screen: { flex: 1, backgroundColor: background },
+  flex: { flex: 1 },
+  heroCenter: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, alignItems: "center", justifyContent: "center" },
+  orbit: { position: "absolute", width: 226, height: 226, borderRadius: 113, borderWidth: 1, borderColor: "transparent", borderTopColor: accent, borderRightColor: "#536A84" },
+  logo: { alignItems: "center", justifyContent: "center" },
+  wordmark: { width: 292, height: 76, marginTop: 15 },
+  wordmarkText: { fontFamily: fonts.bold, fontSize: 56, lineHeight: 72, letterSpacing: -3.8 },
+  welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
+  welcomeBottom: { marginTop: "auto" },
+  close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
+  welcomeTitle: { color: ink, fontFamily: fonts.semibold, fontSize: 25, lineHeight: 32, letterSpacing: -1.1 },
+  welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
+  providerGroup: { marginTop: 29, gap: 10 },
+  actionPressable: { width: "100%" },
+  actionSurface: { minHeight: 56, borderRadius: 11, borderWidth: 1, flexDirection: "row", justifyContent: "center", alignItems: "center", paddingHorizontal: 20 },
+  actionSolid: { backgroundColor: ink, borderColor: ink },
+  actionOutline: { backgroundColor: "transparent", borderColor: "#66788C" },
+  actionQuiet: { backgroundColor: "transparent", borderColor: "transparent" },
+  actionLabel: { fontFamily: fonts.semibold, fontSize: 14, lineHeight: 21 },
+  actionIcon: { marginRight: 10 },
+  googleIcon: { marginRight: 10, fontFamily: fonts.bold, fontSize: 20, lineHeight: 25 },
+  alternativeRow: { flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 18 },
+  alternative: { minWidth: 91, minHeight: 42, alignItems: "center", justifyContent: "center" },
+  alternativeText: { color: ink, fontFamily: fonts.medium, fontSize: 14 },
+  alternativeDivider: { width: 1, height: 16, backgroundColor: edge },
+  explore: { alignItems: "center", justifyContent: "center", minHeight: 42, marginTop: 8 },
+  exploreText: { color: muted, fontFamily: fonts.medium, fontSize: 13 },
+  privacy: { color: "#738296", fontFamily: fonts.regular, fontSize: 11, textAlign: "center", marginTop: 19 },
+  connectionNote: { color: "#738296", fontFamily: fonts.regular, fontSize: 11, lineHeight: 16, textAlign: "center", marginTop: 9 },
+  error: { color: "#F2A0A8", fontFamily: fonts.medium, fontSize: 13, lineHeight: 20, textAlign: "center", marginTop: 14 },
+  formPage: { flexGrow: 1, paddingHorizontal: 27, paddingBottom: 24, maxWidth: 560, width: "100%", alignSelf: "center" },
+  formTop: { height: 62, flexDirection: "row", alignItems: "center" },
+  formBrand: { color: ink, fontFamily: fonts.bold, fontSize: 18, letterSpacing: -0.8, marginLeft: 7 },
+  backLabel: { color: accent, fontFamily: fonts.medium, fontSize: 14 },
+  formSpacer: { flex: 1, minHeight: 100 },
+  formSpacerSmall: { flex: 1, minHeight: 43 },
+  formTitle: { color: ink, fontFamily: fonts.semibold, fontSize: 37, lineHeight: 44, letterSpacing: -1.8 },
+  formDescription: { color: muted, fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, marginTop: 11, marginBottom: 34 },
+  input: { minHeight: 61, borderWidth: 1, borderColor: edge, borderRadius: 11, paddingHorizontal: 17, color: ink, backgroundColor: "#17212D", fontFamily: fonts.medium, fontSize: 17 },
+  resend: { color: accent, fontFamily: fonts.semibold, fontSize: 14, marginTop: 19 },
+  formFoot: { color: muted, fontFamily: fonts.regular, fontSize: 11, textAlign: "center", marginTop: 20 },
+  choicePressable: { width: "100%", marginBottom: 10 },
+  choice: { borderWidth: 1, borderColor: edge, borderRadius: 11, minHeight: 64, paddingHorizontal: 17, paddingVertical: 14, flexDirection: "row", alignItems: "center", gap: 14 },
+  choiceSelected: { borderColor: accent, backgroundColor: "#16263A" },
+  choiceTitle: { color: ink, fontFamily: fonts.semibold, fontSize: 16 },
+  choiceDetail: { color: muted, fontFamily: fonts.regular, fontSize: 12, lineHeight: 18, marginTop: 4 },
+  radio: { width: 18, height: 18, borderRadius: 9, borderWidth: 1.5, borderColor: "#8291A3" },
+  radioSelected: { borderColor: accent, borderWidth: 5, backgroundColor: background },
+  helper: { color: muted, fontFamily: fonts.regular, fontSize: 12, lineHeight: 19, marginTop: 6 },
 });
