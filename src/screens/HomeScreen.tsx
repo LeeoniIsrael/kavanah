@@ -1,9 +1,6 @@
-import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
-import { zmanimGuide } from "@/data/zmanimGuide";
-import { useInterfaceStyles } from "@/design/layout";
-import { Screen } from "@/components/Screen";
-import { AppGlassSurface } from "@/components/AppGlassSurface";
+import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   Dialog,
   DialogContent,
@@ -11,32 +8,24 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Text } from "@/components/ui/text";
-import {
-  useAppColorScheme,
-  useThemeColors,
-  useThemedStyles,
-  type ThemeColors,
-} from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import { formatISO } from "date-fns";
 import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
 import {
-  BookOpen,
-  CalendarDays,
+  BellRing,
   ChartColumn,
   ChevronRight,
-  Heart,
   MapPin,
+  Navigation as NavigationIcon,
   Plus,
   Search,
   Share2,
   ShieldCheck,
   SlidersHorizontal,
-  Utensils,
   X,
-} from "@/components/ui/icons";
-import { useEffect, useMemo, useState } from "react";
+} from "lucide-react-native";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   Easing,
@@ -47,21 +36,27 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { CommunityFeed } from "@/components/CommunityFeed";
-import { Checkbox } from "@/components/organisms/check-box";
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
+import { CommunityFeed } from "@/components/CommunityFeed";
+import { HomeNextMomentSkeleton } from "@/components/LoadingSkeletons";
+import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
-import { StateBounce } from "@/components/ui/motion-feedback";
-import { motion } from "@/design/theme";
+import { Checkbox } from "@/components/organisms/check-box";
+import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
+import { StateBounce, StatusPulse } from "@/components/ui/motion-feedback";
+import { colors, motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { confirmHaptic } from "@/services/haptics";
+import { confirmHaptic, successHaptic } from "@/services/haptics";
+import { scheduleTravelPrayerNotification } from "@/services/notifications";
 import {
   calculateCurrentRun,
   calculatePracticeStats,
   type PracticeStats,
 } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
+import { getPrayerCompletionDeadline } from "@/services/prayerCompletion";
+import { useSettingsStore } from "@/store/settingsStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
@@ -86,24 +81,20 @@ const prayerMomentByZman: Partial<
 > = {
   alotHashachar: { query: "modeh ani", label: "Begin", helper: "Modeh Ani" },
   sunrise: { query: "shacharit", label: "Morning prayer", helper: "Shacharit" },
-  latestShema: {
-    query: "shema",
-    label: "Say Shema",
-    helper: "Morning Shema deadline",
-  },
+  latestShema: { query: "shema", label: "Say Shema", helper: "Latest Shema" },
   latestTefilah: {
     query: "shacharit",
-    label: "Morning prayer",
-    helper: "Morning prayer deadline",
+    label: "Open Shacharit",
+    helper: "Latest Tefilah",
   },
   minchaGedolah: {
     query: "mincha",
-    label: "Afternoon prayer",
+    label: "Open Mincha",
     helper: "Afternoon prayer",
   },
   minchaKetana: {
     query: "mincha",
-    label: "Afternoon prayer",
+    label: "Open Mincha",
     helper: "Preferred window",
   },
   sunset: { query: "maariv", label: "Evening prayer", helper: "Maariv" },
@@ -116,17 +107,12 @@ const prayerMomentByZman: Partial<
 };
 
 const shortcuts = [
-  { label: "Healing", query: "health", icon: Heart },
-  { label: "Blessings", query: "food blessing", icon: Utensils },
-  { label: "Protection", query: "protection", icon: ShieldCheck },
+  { label: "Prayer", query: "health" },
+  { label: "Food", query: "food blessing" },
+  { label: "Safety", query: "protection" },
 ];
 
 export function HomeScreen(): React.JSX.Element {
-  const availability = usePracticeAvailability();
-  const colors = useThemeColors();
-  const homeStyles = useThemedStyles(makehomeStyles);
-  const ui = useInterfaceStyles();
-
   const router = useRouter();
   const { habits, enabledHabits, setHabitEnabled, toggleHabit } =
     useStreakStore();
@@ -136,13 +122,20 @@ export function HomeScreen(): React.JSX.Element {
   const reduceMotion = useReducedMotion();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
+  const [travelPromptOpen, setTravelPromptOpen] = useState(false);
+  const [travelScheduling, setTravelScheduling] = useState(false);
+  const [travelStatus, setTravelStatus] = useState("");
   const [shareHabit, setShareHabit] = useState<StreakHabit | null>(null);
   const [sharePromptHabit, setSharePromptHabit] = useState<StreakHabit | null>(
     null,
   );
+  const setTravelNotificationsEnabled = useSettingsStore(
+    (state) => state.setTravelNotificationsEnabled,
+  );
   useEffect(() => {
-    if (practiceEditorOpen || practiceStatsOpen) void confirmHaptic();
-  }, [practiceEditorOpen, practiceStatsOpen]);
+    if (travelPromptOpen || practiceEditorOpen || practiceStatsOpen)
+      void confirmHaptic();
+  }, [travelPromptOpen, practiceEditorOpen, practiceStatsOpen]);
   const now = useCurrentDate();
   const nextZman = useMemo(
     () => findNextZman(upcomingZmanim, now),
@@ -150,8 +143,8 @@ export function HomeScreen(): React.JSX.Element {
   );
   const nextMoment = nextZman
     ? (prayerMomentByZman[nextZman.key] ?? {
-        query: zmanimGuide[nextZman.key].title,
-        label: zmanimGuide[nextZman.key].title,
+        query: nextZman.title,
+        label: nextZman.title,
         helper: "Next moment",
       })
     : null;
@@ -169,16 +162,23 @@ export function HomeScreen(): React.JSX.Element {
     [habits, now],
   );
 
-  const openPrayerSearch = (query: string) => {
+  const openPrayerSearch = (query: string, completionDeadline?: Date) => {
     setQuery(query);
-    router.push({ pathname: "/prayer", params: { query } });
+    router.push({
+      pathname: "/prayer",
+      params: {
+        query,
+        ...(completionDeadline
+          ? { completionDeadline: completionDeadline.toISOString() }
+          : {}),
+      },
+    });
   };
 
   const togglePractice = (habit: StreakHabit) => {
     const wasComplete = habits
       .find((item) => item.habit === habit)
       ?.completedDates.includes(formatDateKey(now));
-    if (!wasComplete && !availability(habit).allowed) return;
     toggleHabit(habit);
     if (!wasComplete) setSharePromptHabit(habit);
   };
@@ -198,136 +198,175 @@ export function HomeScreen(): React.JSX.Element {
     setPracticeStatsOpen(false);
   };
 
+  const openTravelPrayer = () => {
+    setTravelPromptOpen(false);
+    setQuery("travel");
+    router.push({
+      pathname: "/prayer",
+      params: { prayerId: "tefilat-haderech", query: "travel" },
+    });
+  };
+
+  const scheduleTravelReminder = async () => {
+    if (travelScheduling) return;
+    setTravelScheduling(true);
+    try {
+      const scheduled = await scheduleTravelPrayerNotification(5);
+      if (!scheduled) {
+        setTravelStatus(
+          "Enable notifications on a physical device to use reminders.",
+        );
+        return;
+      }
+
+      setTravelNotificationsEnabled(true);
+      setTravelStatus("Reminder set for 5 minutes from now.");
+      setTravelPromptOpen(false);
+      void successHaptic();
+    } catch {
+      setTravelStatus(
+        "The reminder could not be set. Check notification access and try again.",
+      );
+    } finally {
+      setTravelScheduling(false);
+    }
+  };
+
   return (
     <Screen
       largeTitle="Today"
       subtitle={formatHebrewDate(now)}
-      rightComponent={
-        <Button
-          variant="ghost"
-          size="content"
-          accessibilityLabel="Open local prayer times"
-          onPress={() => router.push("/zmanim")}
-          style={homeStyles.calendar}
-        >
-          <CalendarDays size={20} color={colors.inkMuted} />
-        </Button>
-      }
     >
-      <View style={ui.feature}>
-        <View style={homeStyles.momentTop}>
-          <Text style={homeStyles.momentLabel}>
-            {nextZman ? `In ${timeUntil(nextZman.time)}` : "Prayer for today"}
-          </Text>
-        </View>
-        <Text variant="title" style={ui.editorial}>
-          {nextZman
-            ? zmanimGuide[nextZman.key].title
-            : "A moment of intention."}
-        </Text>
-        {nextZman ? (
-          <Text style={ui.time}>{formatTime(nextZman.time)}</Text>
-        ) : null}
-        <Text style={ui.body}>
-          {nextZman
-            ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
-            : "Find your words. Begin where you are."}
-        </Text>
-        <Button
-          size="content"
-          onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
-          style={homeStyles.primaryAction}
-          backgroundColor={colors.ink}
-          borderRadius={18}
-        >
-          <BookOpen size={20} color={colors.onAccent} />
-          <Text style={homeStyles.primaryLabel}>
-            {nextMoment?.label ?? "Find a prayer"}
-          </Text>
-          <ChevronRight size={16} color={colors.onAccent} />
-        </Button>
-      </View>
-
-      <Button
-        variant="ghost"
-        size="content"
-        accessibilityLabel={
-          nextZman
-            ? "View all local prayer times"
-            : "Set location for local prayer times"
-        }
-        onPress={() => (nextZman ? router.push("/zmanim") : void refresh())}
-        disabled={isLoading}
-        style={homeStyles.locationRow}
-      >
-        <MapPin size={16} color={colors.inkMuted} />
-        <View style={{ flex: 1, gap: 3 }}>
-          <Text style={homeStyles.locationTitle}>
-            {nextZman
-              ? (location?.label ?? "Local prayer times")
-              : "Prayer times, wherever you are"}
-          </Text>
-          <Text style={homeStyles.locationCaption}>
-            {isLoading
-              ? "Finding your location…"
-              : nextZman
-                ? "View today’s times"
+      <Card className="relative overflow-hidden rounded-xl bg-accent p-6 gap-3 border-hairline">
+        {isLoading && !nextZman && !error ? (
+          <HomeNextMomentSkeleton />
+        ) : (
+          <>
+            <View className="flex-row items-center gap-2">
+              <StatusPulse active={Boolean(nextZman)}>
+                <View className="w-[6px] h-[6px] rounded-full bg-primary" />
+              </StatusPulse>
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
+                {nextZman ? timeUntil(nextZman.time) : "Location needed"}
+              </Text>
+            </View>
+            <Text variant="section" className="text-foreground">
+              {nextZman ? nextZman.title : "Prayer times near you"}
+            </Text>
+            {nextZman ? (
+              <Text className="text-[52px] leading-[54px] font-normal tracking-[-1.8px] text-foreground font-body">
+                {formatTime(nextZman.time)}
+              </Text>
+            ) : null}
+            <Text variant="body" className="text-muted-foreground">
+              {nextZman
+                ? `${nextMoment?.helper ?? "Next prayer moment"} at ${location?.label ?? "your local time"}`
                 : error
-                  ? "Location unavailable. Tap to try again."
-                  : "Set your location to see local times"}
-          </Text>
-        </View>
-        <ChevronRight size={16} color={colors.inkMuted} />
-      </Button>
+                  ? "Prayer times are unavailable. Try your location again."
+                  : "Find local prayer times and Shabbat reminders."}
+            </Text>
+            <View className="flex-row gap-2 flex-wrap mt-1">
+              {nextMoment ? (
+                <Button
+                  variant="default"
+                  size="content"
+                  accessibilityRole="button"
+                  onPress={() =>
+                    openPrayerSearch(
+                      nextMoment.query,
+                      getPrayerCompletionDeadline(nextZman, upcomingZmanim),
+                    )
+                  }
+                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
+                >
+                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+                    {nextMoment.label}
+                  </Text>
+                  <ChevronRight size={17} color={colors.blue} />
+                </Button>
+              ) : (
+                <Button
+                  variant="default"
+                  size="content"
+                  accessibilityRole="button"
+                  onPress={() => void refresh()}
+                  disabled={isLoading}
+                  isLoading={isLoading}
+                  loadingLabel="Finding"
+                  className="min-h-11 rounded-full px-4 bg-card flex-row items-center gap-1 border border-hairline"
+                >
+                  <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-primary font-label">
+                    Use location
+                  </Text>
+                  <MapPin size={17} color={colors.blue} />
+                </Button>
+              )}
+              <Button
+                variant="ghost"
+                size="content"
+                accessibilityRole="button"
+                onPress={() => router.push("/zmanim")}
+                className="min-h-11 rounded-full px-4 bg-secondary items-center justify-center border border-hairline"
+              >
+                <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
+                  Times
+                </Text>
+              </Button>
+            </View>
+          </>
+        )}
+      </Card>
 
-      <View style={homeStyles.shortcuts}>
-        {shortcuts.map(({ label, query, icon: Icon }) => (
-          <Button
-            key={label}
-            variant="ghost"
-            size="content"
-            onPress={() => openPrayerSearch(query)}
-            style={homeStyles.shortcut}
-            backgroundColor={colors.vellum}
-            borderRadius={18}
-          >
-            <Icon size={20} color={colors.inkMuted} />
-            <Text style={homeStyles.shortcutLabel}>{label}</Text>
-          </Button>
+      <View className="gap-3 flex-row">
+        {shortcuts.map((shortcut) => (
+          <View key={shortcut.label} className="flex-1">
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityRole="button"
+              onPress={() => openPrayerSearch(shortcut.query)}
+              className="min-h-[52px] rounded-full bg-card items-center justify-center"
+            >
+              <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
+                {shortcut.label}
+              </Text>
+            </Button>
+          </View>
         ))}
       </View>
 
       <View className="gap-3">
         <View className="z-20 flex-row items-center justify-between">
-          <Text accessibilityRole="header" style={ui.sectionTitle}>
+          <Text variant="section" className="text-[20px] leading-[26px]">
             Daily practice
           </Text>
           <View className="flex-row items-center gap-2">
-            <Button
-              variant="ghost"
-              size="content"
-              accessibilityLabel={`View practice summary, ${completedToday.length} of ${activeHabits.length} completed today`}
-              onPress={() => setPracticeStatsOpen(true)}
-              style={{
-                minHeight: 44,
-                justifyContent: "center",
-                paddingHorizontal: 8,
-              }}
-            >
-              <Text style={homeStyles.practiceCount}>
-                {activeHabits.length > 0
-                  ? `${completedToday.length} of ${activeHabits.length}`
-                  : "Optional"}
-              </Text>
-            </Button>
+            <GooeyInfoPopover
+              accessibilityLabel="About today’s practice count"
+              title="A gentle count, not a score"
+              body="This resets each day and stays on this device. Choose only the practices that help you return with intention."
+              side="bottom"
+              align="end"
+              color={colors.blueSoft}
+              triggerStyle={{ minHeight: 44, justifyContent: "center" }}
+              trigger={
+                <Badge variant="secondary">
+                  <Text>
+                    {activeHabits.length > 0
+                      ? `${completedToday.length}/${activeHabits.length} today`
+                      : "Optional"}
+                  </Text>
+                </Badge>
+              }
+            />
             <Button
               variant="ghost"
               size="content"
               accessibilityLabel="Choose daily practices"
               accessibilityRole="button"
               onPress={() => setPracticeEditorOpen(true)}
-              pressedScale={0.96}
-              className="w-11 h-11 rounded-md items-center justify-center bg-card"
+              pressedScale={0.94}
+              className="w-11 h-11 rounded-md items-center justify-center bg-card border border-hairline"
             >
               <SlidersHorizontal size={16} color={colors.ink} />
             </Button>
@@ -339,7 +378,6 @@ export function HomeScreen(): React.JSX.Element {
               const complete = habit.completedDates.includes(
                 formatDateKey(now),
               );
-              const eligibility = availability(habit.habit);
               const details = habitDetails[habit.habit];
               const currentStreak = calculateCurrentRun(
                 habit.completedDates,
@@ -358,34 +396,24 @@ export function HomeScreen(): React.JSX.Element {
                       ? "Marks this practice incomplete"
                       : "Marks this practice complete"
                   }
-                  disabled={!complete && !eligibility.allowed}
-                  accessibilityState={{
-                    checked: complete,
-                    disabled: !complete && !eligibility.allowed,
-                  }}
+                  accessibilityState={{ checked: complete }}
                   haptic={complete ? "selection" : "success"}
                   onPress={() => togglePractice(habit.habit)}
                   className={cn(
-                    "min-h-[76px] rounded-none px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
+                    "min-h-[76px] px-5 py-4 flex-row items-center justify-between gap-3 border-b border-hairline",
                     index === activeHabits.length - 1 && "border-b-0",
                   )}
                 >
                   <View className="flex-1 gap-1">
-                    <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
+                    <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                       {details.name}
                     </Text>
                     <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground mt-[2px] font-label">
-                      {complete
-                        ? "Completed today"
-                        : !eligibility.allowed
-                          ? eligibility.reason
-                          : currentStreak > 0
-                            ? `${streakLabel} of practice`
-                            : details.description}
+                      {streakLabel}
                     </Text>
                   </View>
                   <StateBounce trigger={complete}>
-                    <Checkbox checked={complete} size={24} stroke={1.75} />
+                    <Checkbox checked={complete} size={32} stroke={2.5} />
                   </StateBounce>
                 </Button>
               );
@@ -394,7 +422,7 @@ export function HomeScreen(): React.JSX.Element {
         ) : (
           <View className="min-h-[92px] px-4 py-3 flex-row items-center gap-4 border-t border-b border-hairline">
             <View className="flex-1 gap-[2px]">
-              <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
+              <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                 Nothing to keep up with
               </Text>
               <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
@@ -421,18 +449,18 @@ export function HomeScreen(): React.JSX.Element {
           accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`}
           accessibilityRole="button"
           onPress={() => setPracticeStatsOpen(true)}
-          className="min-h-[60px] px-1 flex-row items-center gap-3"
+          className="min-h-[52px] px-4 flex-row items-center gap-3 border-t border-t-hairline"
         >
-          <ChartColumn size={20} color={colors.blue} />
+          <ChartColumn size={18} color={colors.blue} />
           <View className="flex-1">
-            <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
-              Your practice
+            <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
+              Overall
             </Text>
             <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
               {formatOverallSummary(practiceStats)}
             </Text>
           </View>
-          <ChevronRight size={16} color={colors.inkMuted} />
+          <ChevronRight size={17} color={colors.inkMuted} />
         </Button>
         {shareablePractice ? (
           <PracticeSharePrompt
@@ -448,15 +476,129 @@ export function HomeScreen(): React.JSX.Element {
         variant="outline"
         size="content"
         accessibilityRole="button"
-        onPress={() => openPrayerSearch("")}
+        onPress={() => openPrayerSearch("today")}
         className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
       >
-        <Search size={20} color={colors.blue} />
+        <Search size={18} color={colors.blue} />
         <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
-          Browse the prayer library
+          Search prayers for today
         </Text>
-        <ChevronRight size={16} color={colors.inkMuted} />
+        <ChevronRight size={18} color={colors.inkMuted} />
       </Button>
+
+      <Button
+        variant="ghost"
+        size="content"
+        accessibilityLabel="Long trip travel prayer"
+        accessibilityRole="button"
+        onPress={() => setTravelPromptOpen(true)}
+        className="min-h-[76px] px-4 py-3 rounded-lg bg-foreground flex-row items-center gap-3 shadow-card"
+      >
+        <View className="w-10 h-10 rounded-sm items-center justify-center bg-primary">
+          <NavigationIcon size={19} color={colors.white} />
+        </View>
+        <View className="flex-1 gap-[2px]">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">
+            Long trip?
+          </Text>
+          <Text className="text-[12px] leading-[18px] font-medium tracking-normal text-[rgba(255,255,255,0.66)] font-label">
+            {travelStatus ||
+              "Open or schedule the travel prayer without sharing your route."}
+          </Text>
+        </View>
+        <ChevronRight size={18} color="rgba(255,255,255,0.58)" />
+      </Button>
+
+      <Dialog open={travelPromptOpen} onOpenChange={setTravelPromptOpen}>
+        <DialogContent
+          overlayClassName="justify-end p-0"
+          className="max-w-[560px] rounded-b-none border-b-0 p-0"
+          showClose={false}
+        >
+          <SafeAreaView
+            edges={["bottom"]}
+            className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
+          >
+            <View className="px-6 pt-2 pb-4 gap-4">
+              <View className="flex-row items-center justify-between">
+                <View className="w-[42px] h-[42px] rounded-sm items-center justify-center bg-accent">
+                  <NavigationIcon size={20} color={colors.blue} />
+                </View>
+                <Button
+                  variant="secondary"
+                  size="content"
+                  accessibilityLabel="Close"
+                  accessibilityRole="button"
+                  haptic="selection"
+                  onPress={() => setTravelPromptOpen(false)}
+                  className="w-11 h-11 rounded-sm items-center justify-center bg-muted"
+                >
+                  <X size={18} color={colors.inkMuted} />
+                </Button>
+              </View>
+              <View className="gap-2">
+                <Text
+                  className="font-hebrew-heading text-[28px] leading-[38px] text-foreground text-right"
+                  style={styles.travelHebrew}
+                >
+                  תפילת הדרך
+                </Text>
+                <DialogTitle className="text-[21px] leading-[27px]">
+                  Traveling for over an hour?
+                </DialogTitle>
+                <DialogDescription>
+                  Maps cannot share route duration with Kavanah. Start this
+                  private reminder in one tap.
+                </DialogDescription>
+              </View>
+              <View className="flex-row gap-3">
+                <View className="flex-1">
+                  <Button
+                    variant="outline"
+                    size="content"
+                    accessibilityRole="button"
+                    haptic="confirm"
+                    onPress={openTravelPrayer}
+                    className="w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 border border-hairlineStrong bg-card"
+                  >
+                    <NavigationIcon size={17} color={colors.ink} />
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-foreground font-label">
+                      Open now
+                    </Text>
+                  </Button>
+                </View>
+                <View className="flex-1">
+                  <Button
+                    variant="default"
+                    size="content"
+                    accessibilityRole="button"
+                    disabled={travelScheduling}
+                    isLoading={travelScheduling}
+                    loadingLabel="Setting"
+                    haptic="confirm"
+                    onPress={() => void scheduleTravelReminder()}
+                    className={cn(
+                      "w-full min-h-[50px] rounded-md flex-row items-center justify-center gap-2 bg-primary",
+                      travelScheduling && "opacity-[0.55]",
+                    )}
+                  >
+                    <BellRing size={17} color={colors.white} />
+                    <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-white font-label">
+                      Remind in 5 min
+                    </Text>
+                  </Button>
+                </View>
+              </View>
+              <View className="flex-row items-center gap-2">
+                <ShieldCheck size={15} color={colors.olive} />
+                <Text className="text-[12px] leading-[17px] font-medium tracking-normal flex-1 text-muted-foreground font-label">
+                  Only read when stopped, or ask a passenger to read it.
+                </Text>
+              </View>
+            </View>
+          </SafeAreaView>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
         <DialogContent
@@ -514,14 +656,14 @@ export function HomeScreen(): React.JSX.Element {
                       )}
                     >
                       <View className="flex-1">
-                        <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
+                        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
                           {details.name}
                         </Text>
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
                           {details.description}
                         </Text>
                       </View>
-                      <Checkbox checked={selected} size={24} stroke={1.75} />
+                      <Checkbox checked={selected} size={26} stroke={2.25} />
                     </Button>
                   );
                 })}
@@ -629,10 +771,7 @@ function ShareMomentPrompt({
   onDismiss: () => void;
   onShare: (habit: StreakHabit) => void;
 }): React.JSX.Element | null {
-  const scheme = useAppColorScheme();
-  const colors = useThemeColors();
-
-  const [progress] = useState(() => new Animated.Value(0));
+  const progress = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
   useEffect(() => {
     if (!habit) return;
@@ -680,7 +819,7 @@ function ShareMomentPrompt({
         >
           <BlurView
             intensity={80}
-            tint={scheme}
+            tint="dark"
             experimentalBlurMethod="dimezisBlurView"
             style={StyleSheet.absoluteFill}
           />
@@ -723,7 +862,7 @@ function ShareMomentPrompt({
           />
           <View className="items-center px-6 pt-7 pb-5 gap-3">
             <View className="w-12 h-12 rounded-full items-center justify-center bg-accent border border-hairline">
-              <Share2 size={20} color={colors.blue} />
+              <Share2 size={21} color={colors.blue} />
             </View>
             <View className="items-center gap-1">
               <Text className="text-[21px] leading-[27px] font-semibold tracking-normal text-foreground font-heading">
@@ -744,7 +883,7 @@ function ShareMomentPrompt({
               onPress={() => close(() => onShare(habit))}
               className="min-h-[52px] rounded-md bg-primary items-center justify-center"
             >
-              <Text className="text-[15px] leading-[20px] font-semibold text-primary-foreground font-heading">
+              <Text className="text-[15px] leading-[20px] font-semibold text-white font-heading">
                 Create story
               </Text>
             </Button>
@@ -769,7 +908,7 @@ function ShareMomentPrompt({
               onPress={() => close()}
               className="self-center mt-1 w-11 h-11 rounded-full items-center justify-center bg-black/10 border border-hairline"
             >
-              <X size={20} color={colors.inkMuted} />
+              <X size={18} color={colors.inkMuted} />
             </Button>
           </View>
         </Animated.View>
@@ -785,9 +924,7 @@ function PracticeSharePrompt({
   label: string;
   onPress: () => void;
 }): React.JSX.Element {
-  const colors = useThemeColors();
-
-  const [reveal] = useState(() => new Animated.Value(0));
+  const reveal = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -823,17 +960,17 @@ function PracticeSharePrompt({
         className="min-h-[66px] px-2 flex-row items-center gap-3 rounded-md bg-accent"
       >
         <View className="w-9 h-9 rounded-sm items-center justify-center bg-card">
-          <Share2 size={16} color={colors.blue} />
+          <Share2 size={17} color={colors.blue} />
         </View>
         <View className="flex-1 gap-[1px]">
-          <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
+          <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
             Share this moment
           </Text>
           <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
             A private story for {label}
           </Text>
         </View>
-        <ChevronRight size={16} color={colors.inkMuted} />
+        <ChevronRight size={17} color={colors.inkMuted} />
       </Button>
     </Animated.View>
   );
@@ -858,7 +995,7 @@ function PracticeStatRow({
       <Text className="text-[16px] leading-[22px] font-normal tracking-normal text-foreground font-body">
         {label}
       </Text>
-      <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
+      <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-foreground font-heading">
         {value}
       </Text>
     </View>
@@ -919,66 +1056,9 @@ function formatCount(value: number, noun: string): string {
   return `${value} ${noun}${value === 1 ? "" : "s"}`;
 }
 
-// Home uses an editorial title and a single emphasized prayer surface.
-const makehomeStyles = (colors: ThemeColors) =>
-  StyleSheet.create({
-    calendar: {
-      width: 44,
-      height: 44,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    momentTop: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      gap: 12,
-    },
-    momentLabel: {
-      fontSize: 13,
-      lineHeight: 19,
-      color: colors.inkMuted,
-      flex: 1,
-    },
-    primaryAction: {
-      minHeight: 52,
-      paddingHorizontal: 16,
-      paddingVertical: 12,
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 10,
-      marginTop: 4,
-    },
-    primaryLabel: {
-      flex: 1,
-      fontSize: 15,
-      lineHeight: 22,
-      color: colors.onAccent,
-      fontFamily: "Manrope_600SemiBold",
-    },
-    locationRow: {
-      minHeight: 48,
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 12,
-    },
-    locationTitle: { fontSize: 13, lineHeight: 19, color: colors.ink },
-    locationCaption: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
-    practiceCount: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
-    shortcuts: { flexDirection: "row", gap: 10, paddingBottom: 8 },
-    shortcut: {
-      flex: 1,
-      minHeight: 68,
-      paddingVertical: 14,
-      paddingHorizontal: 4,
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 8,
-    },
-    shortcutLabel: {
-      fontSize: 12,
-      lineHeight: 18,
-      color: colors.ink,
-      fontFamily: "Manrope_500Medium",
-    },
-  });
+// Native text direction and platform-only values cannot be expressed as layout utilities.
+const styles = {
+  travelHebrew: {
+    writingDirection: "rtl",
+  },
+} as const;
