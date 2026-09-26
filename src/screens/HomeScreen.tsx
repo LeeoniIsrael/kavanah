@@ -241,19 +241,19 @@ export function HomeScreen(): React.JSX.Element {
           onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
           style={homeStyles.primaryAction}
           borderRadius={18}
-          borderWidth={2}
+          borderWidth={1}
           paddingHorizontal={16}
           paddingVertical={12}
           theme={{
             foreground: colors.onAccent,
             background: colors.ink,
             backgroundSubtle: colors.ink,
-            highlight: colors.onAccent,
+            highlight: colors.gold,
             highlightSubtle: colors.blueSoft,
           }}
-          dotOpacity={0.2}
+          dotOpacity={0.12}
           glowWidth={0.55}
-          shimmerOpacity={0.45}
+          shimmerOpacity={0.24}
         >
           <BookOpen size={20} color={colors.onAccent} />
           <Text style={homeStyles.primaryLabel}>
@@ -942,7 +942,7 @@ const makehomeStyles = (colors: ThemeColors) =>
       flex: 1,
     },
     primaryAction: {
-      minHeight: 52,
+      minHeight: 60,
       paddingHorizontal: 16,
       paddingVertical: 12,
       flexDirection: "row",
