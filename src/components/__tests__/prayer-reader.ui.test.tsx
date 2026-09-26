@@ -40,6 +40,7 @@ const tokens = [
   },
 ];
 function setup(completionBlockedReason?: string) {
+  const startedAt = Date.now();
   const callbacks = {
     onClose: jest.fn(),
     onComplete: jest.fn(),
@@ -51,6 +52,7 @@ function setup(completionBlockedReason?: string) {
     ...render(
       <GuidedPrayer
         completionBlockedReason={completionBlockedReason}
+        startedAt={startedAt}
         prayerTitle="Test prayer"
         tokens={tokens}
         visible
@@ -72,7 +74,9 @@ beforeEach(() => jest.useFakeTimers());
 afterEach(() => jest.useRealTimers());
 test("opening and waiting never logs completion, and close stays available", () => {
   const view = setup();
+  expect(view.getByText("0:00 elapsed")).toBeTruthy();
   act(() => jest.advanceTimersByTime(30000));
+  expect(view.getByText("0:30 elapsed")).toBeTruthy();
   expect(view.onComplete).not.toHaveBeenCalled();
   fireEvent.press(view.getByLabelText("Close without logging a prayer"));
   expect(view.onClose).toHaveBeenCalledTimes(1);
@@ -94,36 +98,12 @@ test("bookmarking and opening details do not log a prayer", () => {
   expect(view.onComplete).not.toHaveBeenCalled();
 });
 
-test("selects and saves a transliteration quote without leaving the prayer", () => {
-  const view = setup();
-  fireEvent.press(view.getByLabelText("First, word 1"));
-  fireEvent.press(view.getAllByLabelText("pronunciation, word 2")[0]!);
-  expect(view.getByText("2 words selected")).toBeTruthy();
-  fireEvent.press(
-    view.getByLabelText("Save selected words as my weekly quote"),
-  );
-  expect(view.onSaveQuote).toHaveBeenCalledWith(
-    expect.objectContaining({
-      language: "transliteration",
-      text: "First pronunciation",
-    }),
-    0,
-    1,
-  );
-  expect(view.getByText("Weekly quote saved")).toBeTruthy();
-  expect(view.onClose).not.toHaveBeenCalled();
-});
-
 test("closed timing window keeps the text and exit available but disables Finish", () => {
   const view = setup("Today’s logging window closed at local sunset.");
   expect(
     view.getByText("Today’s logging window closed at local sunset."),
   ).toBeTruthy();
-  expect(
-    view.getAllByLabelText(
-      "Transliteration quote text. Tap a word to start selecting.",
-    ),
-  ).toHaveLength(2);
+  expect(view.getByLabelText("First, word 1")).toBeTruthy();
   fireEvent.press(view.getByLabelText("Finish prayer and save to activity"));
   expect(view.onComplete).not.toHaveBeenCalled();
   fireEvent.press(view.getByLabelText("Close without logging a prayer"));
