@@ -11,16 +11,17 @@ import {
   type SiddurBook,
 } from "@/services/siddur";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
-import { SiddurExperience } from "@/features/siddur/SiddurExperience";
+import {
+  SiddurExperience,
+  type SiddurMenuAction,
+} from "@/features/siddur/SiddurExperience";
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { QuoteSelector } from "@/components/QuoteSelector";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
-import type { QuoteSource } from "@/store/socialStore";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
@@ -29,7 +30,6 @@ import {
   CircleHelp,
   ExternalLink,
   MoonStar,
-  Quote,
   RefreshCw,
   Search,
   X,
@@ -42,6 +42,7 @@ import {
   Linking,
   Modal,
   Platform,
+  Pressable,
   ScrollView,
   View,
 } from "react-native";
@@ -62,7 +63,7 @@ import {
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
+import { GooeyInfoPopover, GooeyPopover } from "@/components/ui/gooey-popover";
 import { spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
@@ -149,7 +150,7 @@ export function PrayerScreen(): React.JSX.Element {
   const pendingShare = useRef<PracticeStoryMoment | null>(null);
   const completeHabit = useStreakStore((state) => state.completeHabit);
   const recordSocialPrayer = useSocialStore((state) => state.recordPrayer);
-  const [quoteSource, setQuoteSource] = useState<QuoteSource | null>(null);
+  const setWeeklyQuote = useSocialStore((state) => state.setWeeklyQuote);
   const primaryLanguageCode = useSettingsStore(
     (state) => state.primaryLanguageCode,
   );
@@ -196,7 +197,20 @@ export function PrayerScreen(): React.JSX.Element {
     useState<PrayerLandingView>(savedPrayerLanding);
   const [libraryView, setLibraryView] =
     useState<PrayerLandingView>(savedPrayerLanding);
-  const [readerMenuSignal, setReaderMenuSignal] = useState(0);
+  const [optionsOpen, setOptionsOpen] = useState(false);
+  const [readerMenuCommand, setReaderMenuCommand] = useState<{
+    id: number;
+    action: SiddurMenuAction;
+  } | null>(null);
+  const [readerBookmarked, setReaderBookmarked] = useState(false);
+
+  const chooseReaderAction = (action: SiddurMenuAction) => {
+    setOptionsOpen(false);
+    setReaderMenuCommand((previous) => ({
+      id: (previous?.id ?? 0) + 1,
+      action,
+    }));
+  };
 
   useFocusEffect(
     useCallback(() => {
@@ -356,7 +370,6 @@ export function PrayerScreen(): React.JSX.Element {
   };
   const closeReader = () => {
     setCompletionMoment(null);
-    setQuoteSource(null);
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
     setReaderOpen(false);
@@ -449,20 +462,89 @@ export function PrayerScreen(): React.JSX.Element {
       largeTitle="Prayer"
       subtitle="Your siddur and prayers, together."
       rightComponent={
-        <Button
-          variant="ghost"
-          accessibilityLabel="Prayer options"
-          onPress={() => {
-            if (libraryView === "siddur")
-              setReaderMenuSignal((signal) => signal + 1);
-            else chooseDefaultView();
-          }}
-          style={{ minWidth: 64, height: 44, borderRadius: 16 }}
+        <GooeyPopover.Root
+          open={optionsOpen}
+          onOpenChange={setOptionsOpen}
+          side="bottom"
+          align="end"
+          sideOffset={8}
+          color={colors.mineral}
+          gooStrength={9}
+          style={{ zIndex: 50 }}
         >
-          <Text style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}>
-            Options
-          </Text>
-        </Button>
+          <GooeyPopover.Trigger
+            accessibilityLabel="Prayer options"
+            accessibilityHint="Opens reader actions"
+            style={{
+              minWidth: 72,
+              height: 44,
+              borderRadius: 16,
+              backgroundColor: colors.mineral,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}
+            >
+              Options
+            </Text>
+          </GooeyPopover.Trigger>
+          <GooeyPopover.Content
+            style={{ width: 246, paddingVertical: 7, paddingHorizontal: 8 }}
+          >
+            <View>
+              {(libraryView === "siddur"
+                ? [
+                    { label: "Contents", action: "contents" as const },
+                    {
+                      label: readerBookmarked
+                        ? "Remove bookmark"
+                        : "Bookmark this page",
+                      action: "bookmark" as const,
+                    },
+                    { label: "Share page", action: "share" as const },
+                    { label: "Save page image", action: "save" as const },
+                    { label: "Reading settings", action: "settings" as const },
+                  ]
+                : []
+              ).map(({ label, action }) => (
+                <Pressable
+                  key={action}
+                  accessibilityRole="button"
+                  accessibilityLabel={label}
+                  onPress={() => chooseReaderAction(action)}
+                  style={{
+                    minHeight: 45,
+                    justifyContent: "center",
+                    paddingHorizontal: 12,
+                  }}
+                >
+                  <Text style={{ color: colors.ink, fontSize: 14 }}>
+                    {label}
+                  </Text>
+                </Pressable>
+              ))}
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Choose default Prayer view"
+                onPress={() => {
+                  setOptionsOpen(false);
+                  chooseDefaultView();
+                }}
+                style={{
+                  minHeight: 45,
+                  justifyContent: "center",
+                  paddingHorizontal: 12,
+                }}
+              >
+                <Text style={{ color: colors.ink, fontSize: 14 }}>
+                  Default Prayer view
+                </Text>
+              </Pressable>
+            </View>
+          </GooeyPopover.Content>
+        </GooeyPopover.Root>
       }
       {...(libraryView === "siddur"
         ? {
@@ -507,7 +589,8 @@ export function PrayerScreen(): React.JSX.Element {
       {libraryView === "siddur" ? (
         <SiddurExperience
           embedded
-          menuSignal={readerMenuSignal}
+          menuCommand={readerMenuCommand}
+          onBookmarkStatus={setReaderBookmarked}
           onChooseDefault={chooseDefaultView}
         />
       ) : (
@@ -902,17 +985,6 @@ export function PrayerScreen(): React.JSX.Element {
                       {token.hebrew ? (
                         <Text
                           variant="section"
-                          accessibilityHint="Hold to choose a Hebrew quote"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.hebrew,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: "he",
-                            })
-                          }
                           className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
                         >
                           {token.hebrew}
@@ -935,50 +1007,7 @@ export function PrayerScreen(): React.JSX.Element {
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
                           Translation
                         </Text>
-                        <Text
-                          variant="body"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.localizedTranslation,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: primaryLanguageCode,
-                            })
-                          }
-                        >
-                          {token.localizedTranslation}
-                        </Text>
-                        {token.localizedTranslation.trim() ? (
-                          <Button
-                            variant="ghost"
-                            size="content"
-                            accessibilityLabel={`Choose a quote from line ${readerTokens.indexOf(token) + 1}`}
-                            onPress={() =>
-                              setQuoteSource({
-                                prayerId: selected.id,
-                                title: selected.title,
-                                text: token.localizedTranslation,
-                                sourceRef: selected.hebrewReview.sourceRef,
-                                sourceUrl: selected.hebrewReview.sourceUrl,
-                                language: primaryLanguageCode,
-                              })
-                            }
-                            style={{
-                              flexDirection: "row",
-                              alignItems: "center",
-                              gap: 8,
-                              minHeight: 44,
-                              alignSelf: "flex-start",
-                            }}
-                          >
-                            <Quote size={16} color={colors.blue} />
-                            <Text style={{ fontSize: 13, color: colors.blue }}>
-                              Choose a quote
-                            </Text>
-                          </Button>
-                        ) : null}
+                        <Text variant="body">{token.localizedTranslation}</Text>
                       </View>
                     </View>
                   ))}
@@ -1091,17 +1120,17 @@ export function PrayerScreen(): React.JSX.Element {
               reviewPending={selected?.hebrewReview.status !== "approved"}
               completionBlockedReason={availability(selectedPractice).reason}
               onComplete={completeGuidedPrayer}
-              onQuote={(token) => {
-                if (selected)
-                  setQuoteSource({
-                    prayerId: selected.id,
-                    title: selected.title,
-                    text: token.translation || token.hebrew,
-                    sourceRef: selected.hebrewReview.sourceRef,
-                    sourceUrl: selected.hebrewReview.sourceUrl,
-                    language: token.translation ? primaryLanguageCode : "he",
-                  });
-              }}
+              quoteSource={
+                selected
+                  ? {
+                      prayerId: selected.id,
+                      title: selected.title,
+                      sourceRef: selected.hebrewReview.sourceRef,
+                      sourceUrl: selected.hebrewReview.sourceUrl,
+                    }
+                  : undefined
+              }
+              onSaveQuote={setWeeklyQuote}
             />
             {completionMoment ? (
               <PrayerCompletionPrompt
@@ -1120,16 +1149,6 @@ export function PrayerScreen(): React.JSX.Element {
                 }}
               />
             ) : null}
-            {quoteSource && (
-              <QuoteSelector
-                source={quoteSource}
-                onClose={() => setQuoteSource(null)}
-                onViewCircle={() => {
-                  closeReader();
-                  router.push("/circle");
-                }}
-              />
-            )}
           </SafeAreaView>
         </SafeAreaProvider>
       </Modal>

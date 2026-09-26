@@ -13,12 +13,9 @@ enabled = true
 site_url = "https://kavanah-rho.vercel.app"
 enable_signup = true
 [auth.email]
-enable_signup = true
+enable_signup = false
 enable_confirmations = true
-[auth.email.template.magic_link]
-subject = "Your Kavanah sign-in code"
-content_path = "./supabase/templates/sign-in.html"
-
-[auth.email.template.confirmation]
-subject = "Your Kavanah sign-in code"
-content_path = "./supabase/templates/sign-in.html"
+[auth.external.apple]
+enabled = true
+client_id = "com.leeoniisrael.kavanah"
+secret = ""
