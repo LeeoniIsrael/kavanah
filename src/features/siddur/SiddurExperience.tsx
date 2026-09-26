@@ -84,7 +84,15 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   justifyContent: "center" as const,
   backgroundColor: colors.mineral,
 });
-export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
+export function SiddurExperience({
+  embedded = false,
+  menuSignal = 0,
+  onChooseDefault,
+}: {
+  embedded?: boolean;
+  menuSignal?: number;
+  onChooseDefault?: () => void;
+}) {
   const insets = useSafeAreaInsets();
   const { height: windowHeight } = useWindowDimensions();
   const colors = useThemeColors(),
@@ -439,14 +447,26 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
       setError("This page could not be captured right now.");
     }
   };
+  const chooseCapture = () =>
+    Alert.alert("Current page", undefined, [
+      { text: "Share image", onPress: () => void share(false) },
+      { text: "Save image", onPress: () => void share(true) },
+      { text: "Cancel", style: "cancel" },
+    ]);
   const openReaderMenu = () =>
-    Alert.alert("Reader", undefined, [
+    Alert.alert("Prayer options", undefined, [
+      {
+        text: "Contents",
+        onPress: () => {
+          setSettings(false);
+          setToc(true);
+        },
+      },
       {
         text: currentBookmark ? "Remove bookmark" : "Bookmark this page",
         onPress: () => void toggleBookmark(),
       },
-      { text: "Share page", onPress: () => void share(false) },
-      { text: "Save page image", onPress: () => void share(true) },
+      { text: "Share or save page", onPress: chooseCapture },
       {
         text: "Reading settings",
         onPress: () => {
@@ -454,8 +474,16 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
           setSettings(true);
         },
       },
+      ...(onChooseDefault
+        ? [{ text: "Default Prayer view", onPress: onChooseDefault }]
+        : []),
       { text: "Cancel", style: "cancel" },
     ]);
+  const previousMenuSignal = useRef(menuSignal);
+  useEffect(() => {
+    if (embedded && menuSignal !== previousMenuSignal.current) openReaderMenu();
+    previousMenuSignal.current = menuSignal;
+  }, [embedded, menuSignal]);
   useEffect(() => {
     if (!toc || query.trim().length < 2) return;
     let live = true;
@@ -553,7 +581,7 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
       ) : null}
       <ReaderHost
         {...(embedded
-          ? { style: { height: Math.max(390, windowHeight - 275) } }
+          ? { style: { height: Math.max(390, windowHeight - 365) } }
           : {
               visible: reader,
               animationType: "slide" as const,
@@ -577,90 +605,109 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
             paddingBottom: embedded ? 0 : Math.max(insets.bottom, 10),
           }}
         >
-          <View
-            style={{
-              height: 58,
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 9,
-              paddingHorizontal: 15,
-            }}
-          >
-            {!embedded ? (
-              <Button
-                variant="ghost"
-                accessibilityLabel="Close Siddur reader"
-                onPress={() => setReader(false)}
-                style={button(colors)}
-              >
-                <X size={20} color={colors.ink} />
-              </Button>
-            ) : null}
+          {embedded ? (
             <View
               style={{
-                flex: 1,
-                alignItems: embedded ? "flex-start" : "center",
+                minHeight: 36,
+                justifyContent: "center",
+                paddingHorizontal: 4,
               }}
             >
               <Text
                 numberOfLines={1}
-                style={{ fontSize: 13, fontWeight: "600", color: colors.ink }}
+                style={{ color: colors.ink, fontSize: 16, fontWeight: "600" }}
               >
                 {section?.titleEn ?? bookId}
               </Text>
             </View>
-            <Button
-              variant="ghost"
-              accessibilityLabel="Table of contents"
-              onPress={() => {
-                setSettings(false);
-                setToc(true);
+          ) : (
+            <View
+              style={{
+                height: 58,
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 9,
+                paddingHorizontal: 15,
               }}
-              style={button(colors)}
             >
-              <List size={20} color={colors.ink} />
-            </Button>
-            <Button
-              variant="ghost"
-              accessibilityLabel="Reader menu"
-              onPress={openReaderMenu}
-              style={button(colors)}
-            >
-              <MoreHorizontal size={23} color={colors.ink} />
-            </Button>
-          </View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignSelf: "center",
-              padding: 3,
-              borderRadius: 16,
-              backgroundColor: colors.mineral,
-              marginBottom: 10,
-            }}
-          >
-            {(["en", "he"] as const).map((l) => (
-              <Button
-                key={l}
-                accessibilityLabel={
-                  l === "en" ? "Read in English" : "Read in Hebrew"
-                }
-                accessibilityState={{ selected: language === l }}
-                variant="ghost"
-                onPress={() => switchLanguage(l)}
+              {!embedded ? (
+                <Button
+                  variant="ghost"
+                  accessibilityLabel="Close Siddur reader"
+                  onPress={() => setReader(false)}
+                  style={button(colors)}
+                >
+                  <X size={20} color={colors.ink} />
+                </Button>
+              ) : null}
+              <View
                 style={{
-                  borderRadius: 13,
-                  minWidth: 83,
-                  backgroundColor:
-                    language === l ? colors.vellum : "transparent",
+                  flex: 1,
+                  alignItems: embedded ? "flex-start" : "center",
                 }}
               >
-                <Text style={{ textAlign: "center", color: colors.ink }}>
-                  {l === "en" ? "English" : "עברית"}
+                <Text
+                  numberOfLines={1}
+                  style={{ fontSize: 13, fontWeight: "600", color: colors.ink }}
+                >
+                  {section?.titleEn ?? bookId}
                 </Text>
+              </View>
+              <Button
+                variant="ghost"
+                accessibilityLabel="Table of contents"
+                onPress={() => {
+                  setSettings(false);
+                  setToc(true);
+                }}
+                style={button(colors)}
+              >
+                <List size={20} color={colors.ink} />
               </Button>
-            ))}
-          </View>
+              <Button
+                variant="ghost"
+                accessibilityLabel="Reader menu"
+                onPress={openReaderMenu}
+                style={button(colors)}
+              >
+                <MoreHorizontal size={23} color={colors.ink} />
+              </Button>
+            </View>
+          )}
+          {!embedded ? (
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "center",
+                padding: 3,
+                borderRadius: 16,
+                backgroundColor: colors.mineral,
+                marginBottom: 10,
+              }}
+            >
+              {(["en", "he"] as const).map((l) => (
+                <Button
+                  key={l}
+                  accessibilityLabel={
+                    l === "en" ? "Read in English" : "Read in Hebrew"
+                  }
+                  accessibilityState={{ selected: language === l }}
+                  variant="ghost"
+                  onPress={() => switchLanguage(l)}
+                  style={{
+                    borderRadius: 13,
+                    minWidth: 83,
+                    backgroundColor:
+                      language === l ? colors.vellum : "transparent",
+                  }}
+                >
+                  <Text style={{ textAlign: "center", color: colors.ink }}>
+                    {l === "en" ? "English" : "עברית"}
+                  </Text>
+                </Button>
+              ))}
+            </View>
+          ) : null}
           <Animated.View
             ref={pageRef}
             collapsable={false}
@@ -745,7 +792,7 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
           ) : null}
           <View
             style={{
-              minHeight: 54,
+              minHeight: embedded ? 30 : 54,
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "center",
@@ -998,6 +1045,47 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
                       paddingBottom: 40,
                     }}
                   >
+                    <Text variant="section">Reading</Text>
+                    <View style={{ flexDirection: "row", gap: 10 }}>
+                      {(["en", "he"] as const).map((l) => (
+                        <Button
+                          key={l}
+                          onPress={() => switchLanguage(l)}
+                          variant="secondary"
+                        >
+                          <Text>{l === "en" ? "English" : "עברית"}</Text>
+                        </Button>
+                      ))}
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 16,
+                      }}
+                    >
+                      <Button
+                        onPress={() =>
+                          setFontScale((s) =>
+                            Math.max(0.8, Math.round((s - 0.1) * 10) / 10),
+                          )
+                        }
+                        accessibilityLabel="Decrease text size"
+                      >
+                        <Text style={{ fontSize: 18 }}>A−</Text>
+                      </Button>
+                      <Text>{Math.round(fontScale * 100)}%</Text>
+                      <Button
+                        onPress={() =>
+                          setFontScale((s) =>
+                            Math.min(1.7, Math.round((s + 0.1) * 10) / 10),
+                          )
+                        }
+                        accessibilityLabel="Increase text size"
+                      >
+                        <Text style={{ fontSize: 22 }}>A+</Text>
+                      </Button>
+                    </View>
                     <Text variant="section">Siddur & tradition</Text>
                     {catalog
                       .filter((b) => b.availability.he || b.availability.en)
@@ -1044,47 +1132,6 @@ export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
                       Standard text is available. Interlinear and transliterated
                       editions require source-aligned open text.
                     </Text>
-                    <Text variant="section">Reading</Text>
-                    <View style={{ flexDirection: "row", gap: 10 }}>
-                      {(["en", "he"] as const).map((l) => (
-                        <Button
-                          key={l}
-                          onPress={() => switchLanguage(l)}
-                          variant="secondary"
-                        >
-                          <Text>{l === "en" ? "English" : "עברית"}</Text>
-                        </Button>
-                      ))}
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: 16,
-                      }}
-                    >
-                      <Button
-                        onPress={() =>
-                          setFontScale((s) =>
-                            Math.max(0.8, Math.round((s - 0.1) * 10) / 10),
-                          )
-                        }
-                        accessibilityLabel="Decrease text size"
-                      >
-                        <Text style={{ fontSize: 18 }}>A−</Text>
-                      </Button>
-                      <Text>{Math.round(fontScale * 100)}%</Text>
-                      <Button
-                        onPress={() =>
-                          setFontScale((s) =>
-                            Math.min(1.7, Math.round((s + 0.1) * 10) / 10),
-                          )
-                        }
-                        accessibilityLabel="Increase text size"
-                      >
-                        <Text style={{ fontSize: 22 }}>A+</Text>
-                      </Button>
-                    </View>
                     <Text variant="section">Profile</Text>
                     <View
                       style={{ flexDirection: "row", gap: 7, flexWrap: "wrap" }}

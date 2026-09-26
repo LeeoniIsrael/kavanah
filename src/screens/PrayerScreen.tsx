@@ -22,7 +22,6 @@ import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import type { QuoteSource } from "@/store/socialStore";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
-import { Settings2 } from "lucide-react-native";
 import {
   Bookmark,
   BookmarkCheck,
@@ -197,6 +196,7 @@ export function PrayerScreen(): React.JSX.Element {
     useState<PrayerLandingView>(savedPrayerLanding);
   const [libraryView, setLibraryView] =
     useState<PrayerLandingView>(savedPrayerLanding);
+  const [readerMenuSignal, setReaderMenuSignal] = useState(0);
 
   useFocusEffect(
     useCallback(() => {
@@ -447,65 +447,69 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen
       largeTitle="Prayer"
-      {...(libraryView === "search"
-        ? { subtitle: "Your siddur and prayers, together." }
-        : {
-            largeHeaderTitleStyle: { fontSize: 0, lineHeight: 0 },
-            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
-          })}
-    >
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-        <View
-          accessibilityRole="tablist"
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            gap: 6,
-            padding: 5,
-            borderRadius: 20,
-            backgroundColor: colors.mineral,
-          }}
-        >
-          {(["siddur", "search"] as const).map((view) => (
-            <Button
-              key={view}
-              variant="ghost"
-              accessibilityRole="tab"
-              accessibilityState={{ selected: libraryView === view }}
-              onPress={() => setLibraryView(view)}
-              style={{
-                flex: 1,
-                borderRadius: 16,
-                backgroundColor:
-                  libraryView === view ? colors.blue : "transparent",
-              }}
-            >
-              <Text
-                style={{
-                  color: libraryView === view ? colors.onAccent : colors.ink,
-                }}
-              >
-                {view === "siddur" ? "Siddur" : "Find a prayer"}
-              </Text>
-            </Button>
-          ))}
-        </View>
+      subtitle="Your siddur and prayers, together."
+      rightComponent={
         <Button
           variant="ghost"
-          accessibilityLabel={`Choose Prayer landing view. Currently ${defaultView === "siddur" ? "Siddur" : "Find a prayer"}`}
-          onPress={chooseDefaultView}
-          style={{
-            width: 44,
-            height: 44,
-            borderRadius: 16,
-            backgroundColor: colors.mineral,
+          accessibilityLabel="Prayer options"
+          onPress={() => {
+            if (libraryView === "siddur")
+              setReaderMenuSignal((signal) => signal + 1);
+            else chooseDefaultView();
           }}
+          style={{ minWidth: 64, height: 44, borderRadius: 16 }}
         >
-          <Settings2 size={20} color={colors.ink} />
+          <Text style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}>
+            Options
+          </Text>
         </Button>
+      }
+      {...(libraryView === "siddur"
+        ? {
+            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
+          }
+        : {})}
+    >
+      <View
+        accessibilityRole="tablist"
+        style={{
+          flexDirection: "row",
+          gap: 6,
+          padding: 5,
+          borderRadius: 20,
+          backgroundColor: colors.mineral,
+        }}
+      >
+        {(["siddur", "search"] as const).map((view) => (
+          <Button
+            key={view}
+            variant="ghost"
+            accessibilityRole="tab"
+            accessibilityState={{ selected: libraryView === view }}
+            onPress={() => setLibraryView(view)}
+            style={{
+              flex: 1,
+              borderRadius: 16,
+              backgroundColor:
+                libraryView === view ? colors.blue : "transparent",
+            }}
+          >
+            <Text
+              style={{
+                color: libraryView === view ? colors.onAccent : colors.ink,
+              }}
+            >
+              {view === "siddur" ? "Siddur" : "Find a prayer"}
+            </Text>
+          </Button>
+        ))}
       </View>
       {libraryView === "siddur" ? (
-        <SiddurExperience embedded />
+        <SiddurExperience
+          embedded
+          menuSignal={readerMenuSignal}
+          onChooseDefault={chooseDefaultView}
+        />
       ) : (
         <View className="gap-6">
           <View
