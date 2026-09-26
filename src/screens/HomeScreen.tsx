@@ -84,6 +84,9 @@ const habitDetails: Record<StreakHabit, { name: string; description: string }> =
     },
   };
 
+const PRAYER_CTA_SURFACE = "#FFFFFF";
+const PRAYER_CTA_FOREGROUND = "#0B1A3B";
+
 const prayerMomentByZman: Partial<
   Record<Zman["key"], { query: string; label: string; helper: string }>
 > = {
@@ -263,9 +266,9 @@ export function HomeScreen(): React.JSX.Element {
           paddingHorizontal={16}
           paddingVertical={12}
           theme={{
-            foreground: colors.onAccent,
-            background: colors.ink,
-            backgroundSubtle: colors.ink,
+            foreground: PRAYER_CTA_FOREGROUND,
+            background: PRAYER_CTA_SURFACE,
+            backgroundSubtle: PRAYER_CTA_SURFACE,
             highlight: colors.gold,
             highlightSubtle: colors.blueSoft,
           }}
@@ -273,11 +276,11 @@ export function HomeScreen(): React.JSX.Element {
           glowWidth={0.55}
           shimmerOpacity={0.5}
         >
-          <BookOpen size={20} color={colors.onAccent} />
+          <BookOpen size={20} color={PRAYER_CTA_FOREGROUND} />
           <Text style={homeStyles.primaryLabel}>
             {nextMoment?.label ?? "Find a prayer"}
           </Text>
-          <ChevronRight size={16} color={colors.onAccent} />
+          <ChevronRight size={16} color={PRAYER_CTA_FOREGROUND} />
         </RadiantButton>
       </View>
 
@@ -1123,13 +1126,14 @@ const makehomeStyles = (colors: ThemeColors) =>
       flexDirection: "row",
       alignItems: "center",
       gap: 10,
+      backgroundColor: PRAYER_CTA_SURFACE,
       marginTop: 4,
     },
     primaryLabel: {
       flex: 1,
       fontSize: 15,
       lineHeight: 22,
-      color: colors.onAccent,
+      color: PRAYER_CTA_FOREGROUND,
       fontFamily: "Manrope_600SemiBold",
     },
     locationRow: {
