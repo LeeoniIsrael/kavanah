@@ -124,11 +124,18 @@ export function ReadingSettingsSheet({
             <View style={{ flex: 1, gap: 3 }}>
               <Text
                 accessibilityRole="header"
-                style={{ color: colors.ink, fontSize: 23, fontWeight: "700" }}
+                style={{
+                  color: colors.ink,
+                  fontSize: 23,
+                  lineHeight: 30,
+                  fontWeight: "700",
+                }}
               >
                 Reading settings
               </Text>
-              <Text style={{ color: colors.inkMuted, fontSize: 13 }}>
+              <Text
+                style={{ color: colors.inkMuted, fontSize: 13, lineHeight: 20 }}
+              >
                 Make the Siddur comfortable to read.
               </Text>
             </View>
