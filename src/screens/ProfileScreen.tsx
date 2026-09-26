@@ -25,6 +25,7 @@ import {
 } from "react-native-safe-area-context";
 
 import { Screen } from "@/components/Screen";
+import { PulsingDots } from "@/components/molecules/pulsing-dots";
 import { Button } from "@/components/ui/button";
 import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
 import { findLanguage, languageOptions } from "@/data/languages";
@@ -71,6 +72,9 @@ export function ProfileScreen(): React.JSX.Element {
   const [travelNotificationMessage, setTravelNotificationMessage] =
     useState("");
   const [focusSetupMessage, setFocusSetupMessage] = useState("");
+  const [notificationsBusy, setNotificationsBusy] = useState(false);
+  const [travelNotificationsBusy, setTravelNotificationsBusy] = useState(false);
+  const [focusSetupBusy, setFocusSetupBusy] = useState(false);
   const [displayName, setDisplayName] = useState(profile?.displayName ?? "");
   const [handle, setHandle] = useState(profile?.handle.replace(/^@/, "") ?? "");
   const [bio, setBio] = useState(profile?.bio ?? "");
@@ -87,58 +91,76 @@ export function ProfileScreen(): React.JSX.Element {
   const focusSetup = getPrayerFocusSetup();
 
   const openFocusSetup = async () => {
-    const opened = await openPrayerFocusSetup();
-    setFocusSetupMessage(
-      opened
-        ? "Finish the setup there, then return to Kavanah."
-        : "Open your device settings and choose Focus or Do Not Disturb.",
-    );
+    if (focusSetupBusy) return;
+    setFocusSetupBusy(true);
+    try {
+      const opened = await openPrayerFocusSetup();
+      setFocusSetupMessage(
+        opened
+          ? "Finish the setup there, then return to Kavanah."
+          : "Open your device settings and choose Focus or Do Not Disturb.",
+      );
+    } finally {
+      setFocusSetupBusy(false);
+    }
   };
 
   const changeNotifications = async (enabled: boolean) => {
-    void confirmHaptic();
-    if (!enabled) {
-      setZmanNotificationsEnabled(false);
-      setNotificationMessage("");
-      return;
-    }
-    setZmanNotificationsEnabled(true);
-    setNotificationMessage("Turning on local reminders…");
-    const granted = await initializeNotifications();
-    setZmanNotificationsEnabled(granted);
-    setNotificationMessage(
-      granted
-        ? "Reminders will follow your calculated local times."
-        : "Notifications are disabled in device settings.",
-    );
-    if (granted) {
-      const { upcomingZmanim, refresh } = useZmanimStore.getState();
-      if (upcomingZmanim.length > 0) {
-        await scheduleZmanNotifications(upcomingZmanim);
-      } else {
-        await refresh();
+    if (notificationsBusy) return;
+    setNotificationsBusy(true);
+    try {
+      void confirmHaptic();
+      if (!enabled) {
+        setZmanNotificationsEnabled(false);
+        setNotificationMessage("");
+        return;
       }
+      setZmanNotificationsEnabled(true);
+      setNotificationMessage("Turning on local reminders…");
+      const granted = await initializeNotifications();
+      setZmanNotificationsEnabled(granted);
+      setNotificationMessage(
+        granted
+          ? "Reminders will follow your calculated local times."
+          : "Notifications are disabled in device settings.",
+      );
+      if (granted) {
+        const { upcomingZmanim, refresh } = useZmanimStore.getState();
+        if (upcomingZmanim.length > 0) {
+          await scheduleZmanNotifications(upcomingZmanim);
+        } else {
+          await refresh();
+        }
+      }
+    } finally {
+      setNotificationsBusy(false);
     }
   };
 
   const changeTravelNotifications = async (enabled: boolean) => {
-    void confirmHaptic();
-    if (!enabled) {
-      await cancelTravelPrayerNotification();
-      setTravelNotificationsEnabled(false);
-      setTravelNotificationMessage("");
-      return;
-    }
+    if (travelNotificationsBusy) return;
+    setTravelNotificationsBusy(true);
+    try {
+      void confirmHaptic();
+      if (!enabled) {
+        await cancelTravelPrayerNotification();
+        setTravelNotificationsEnabled(false);
+        setTravelNotificationMessage("");
+        return;
+      }
 
-    setTravelNotificationsEnabled(true);
-    setTravelNotificationMessage("Turning on travel reminders…");
-    const granted = await initializeNotifications();
-    setTravelNotificationsEnabled(granted);
-    setTravelNotificationMessage(
-      granted
-        ? "Ready for reminders you start from Home or a Shortcut."
-        : "Notifications are disabled in device settings.",
-    );
+      setTravelNotificationsEnabled(true);
+      setTravelNotificationMessage("Turning on travel reminders…");
+      const granted = await initializeNotifications();
+      setTravelNotificationsEnabled(granted);
+      setTravelNotificationMessage(
+        granted
+          ? "Ready for reminders you start from Home or a Shortcut."
+          : "Notifications are disabled in device settings.",
+      );
+    } finally {
+      setTravelNotificationsBusy(false);
+    }
   };
 
   return (
@@ -244,8 +266,16 @@ export function ProfileScreen(): React.JSX.Element {
           <Switch
             accessibilityLabel="Zmanim reminders"
             checked={zmanNotificationsEnabled}
+            disabled={notificationsBusy}
             onCheckedChange={(enabled) => void changeNotifications(enabled)}
           />
+          {notificationsBusy ? (
+            <PulsingDots
+              accessibilityLabel="Updating reminders"
+              radius={2}
+              spacing={3}
+            />
+          ) : null}
         </View>
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
@@ -264,10 +294,18 @@ export function ProfileScreen(): React.JSX.Element {
           <Switch
             accessibilityLabel="Travel prayer reminders"
             checked={travelNotificationsEnabled}
+            disabled={travelNotificationsBusy}
             onCheckedChange={(enabled) =>
               void changeTravelNotifications(enabled)
             }
           />
+          {travelNotificationsBusy ? (
+            <PulsingDots
+              accessibilityLabel="Updating travel reminders"
+              radius={2}
+              spacing={3}
+            />
+          ) : null}
         </View>
 
         <View className="min-h-[76px] px-4 py-3 flex-row items-center gap-3 border-b border-b-hairline">
@@ -492,6 +530,8 @@ export function ProfileScreen(): React.JSX.Element {
                 accessibilityRole="button"
                 haptic="confirm"
                 onPress={() => void openFocusSetup()}
+                isLoading={focusSetupBusy}
+                loadingLabel="Opening"
                 className="min-h-[50px] px-4 rounded-md flex-row items-center justify-center gap-2 bg-primary"
               >
                 <Text className="text-[16px] leading-[22px] font-semibold tracking-normal text-white font-heading">

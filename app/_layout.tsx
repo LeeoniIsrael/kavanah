@@ -1,6 +1,7 @@
 import "../global.css";
 
 import { BrandWordmark } from "@/components/BrandMark";
+import { PulsingDots } from "@/components/molecules/pulsing-dots";
 import { AppErrorBoundary } from "@/components/AppErrorBoundary";
 import { NAV_THEME } from "@/lib/theme";
 import { AppProviders } from "@/providers/AppProviders";
@@ -34,6 +35,10 @@ export default function RootLayout(): React.JSX.Element {
     return (
       <View className="flex-1 bg-background items-center justify-center">
         <BrandWordmark width={190} />
+        <PulsingDots
+          accessibilityLabel="Opening Kavanah"
+          style={{ marginTop: 20 }}
+        />
       </View>
     );
   }

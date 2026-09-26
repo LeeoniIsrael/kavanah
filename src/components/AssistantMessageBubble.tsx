@@ -1,5 +1,6 @@
 import { AssistantResponseText } from "@/components/AssistantResponseText";
 import { BrandMark } from "@/components/BrandMark";
+import { PulsingDots } from "@/components/molecules/pulsing-dots";
 import { Text } from "@/components/ui/text";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { AssistantMessage } from "@/services/assistantService";
@@ -71,18 +72,10 @@ export function AssistantMessageBubble({
                 className="text-foreground text-[15px] leading-[23px]"
               />
             ) : (
-              <View
-                className="flex-row gap-1 py-2"
-                accessibilityLabel="Thinking"
-              >
-                {[0.35, 0.6, 1].map((opacity) => (
-                  <View
-                    key={opacity}
-                    className="h-1.5 w-1.5 rounded-full bg-primary"
-                    style={{ opacity }}
-                  />
-                ))}
-              </View>
+              <PulsingDots
+                accessibilityLabel="Preparing answer"
+                style={{ alignSelf: "flex-start" }}
+              />
             )}
           </View>
         </View>

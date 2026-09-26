@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native";
 
 import { Shimmer, ShimmerGroup } from "@/components/molecules/shimmer";
+import { PulsingDots } from "@/components/molecules/pulsing-dots";
 import { colors } from "@/design/theme";
 
 const CONTENT_COLORS = [colors.mineral, "#40404A", colors.mineral];
@@ -26,6 +27,7 @@ export function HomeNextMomentSkeleton(): React.JSX.Element {
         <Shimmer style={styles.pill} />
         <Shimmer style={styles.shortPill} />
       </View>
+      <PulsingDots color={colors.blue} decorative style={styles.dots} />
     </ShimmerGroup>
   );
 }
@@ -41,6 +43,7 @@ export function ZmanimHeroSkeleton(): React.JSX.Element {
       <Shimmer style={styles.title} />
       <Shimmer style={styles.zmanTime} />
       <Shimmer style={styles.copy} />
+      <PulsingDots color={colors.white} decorative style={styles.dots} />
     </ShimmerGroup>
   );
 }
@@ -63,6 +66,7 @@ export function ZmanimListSkeleton(): React.JSX.Element {
           <Shimmer style={styles.rowTime} />
         </View>
       ))}
+      <PulsingDots decorative style={styles.dots} />
     </ShimmerGroup>
   );
 }
@@ -82,6 +86,7 @@ export function PrayerTextSkeleton(): React.JSX.Element {
           <Shimmer style={styles.prayerLineShort} />
         </View>
       </View>
+      <PulsingDots decorative style={styles.dots} />
     </ShimmerGroup>
   );
 }
@@ -105,11 +110,16 @@ export function PrayerSearchSkeleton(): React.JSX.Element {
           <Shimmer style={styles.searchLineShort} />
         </View>
       ))}
+      <PulsingDots decorative style={styles.dots} />
     </ShimmerGroup>
   );
 }
 
 const styles = StyleSheet.create({
+  dots: {
+    alignSelf: "flex-start",
+    marginTop: 4,
+  },
   actionRow: {
     flexDirection: "row",
     gap: 8,
