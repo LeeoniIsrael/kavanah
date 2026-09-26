@@ -36,7 +36,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors, useAppColorScheme } from "@/design/appearance";
-import { confirmHaptic } from "@/services/haptics";
+import { confirmHaptic, softHaptic } from "@/services/haptics";
 import {
   loadAnnotations,
   loadBookmarks,
@@ -327,6 +327,7 @@ export function SiddurExperience({
       return;
     }
     const turn = () => {
+      void softHaptic();
       if (direction > 0) {
         if (pageIndex < pages.length - 1) setPageIndex((p) => p + 1);
         else goSection(sectionIndex + 1);
