@@ -188,7 +188,7 @@ const makeStyles = (colors: ThemeColors) =>
       paddingTop: 12,
       paddingBottom: 40,
     },
-    header: { flexDirection: "row", alignItems: "center", gap: 12 },
+    header: { flexDirection: "row", alignItems: "center", gap: 12, zIndex: 10 },
     titles: { flex: 1, gap: 8 },
     title: {
       color: colors.ink,

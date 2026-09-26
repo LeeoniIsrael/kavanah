@@ -11,7 +11,10 @@ import {
   type SiddurBook,
 } from "@/services/siddur";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
-import { SiddurExperience } from "@/features/siddur/SiddurExperience";
+import {
+  SiddurExperience,
+  type SiddurMenuAction,
+} from "@/features/siddur/SiddurExperience";
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -42,6 +45,7 @@ import {
   Linking,
   Modal,
   Platform,
+  Pressable,
   ScrollView,
   View,
 } from "react-native";
@@ -62,7 +66,7 @@ import {
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GooeyInfoPopover } from "@/components/ui/gooey-popover";
+import { GooeyInfoPopover, GooeyPopover } from "@/components/ui/gooey-popover";
 import { spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
@@ -196,7 +200,20 @@ export function PrayerScreen(): React.JSX.Element {
     useState<PrayerLandingView>(savedPrayerLanding);
   const [libraryView, setLibraryView] =
     useState<PrayerLandingView>(savedPrayerLanding);
-  const [readerMenuSignal, setReaderMenuSignal] = useState(0);
+  const [optionsOpen, setOptionsOpen] = useState(false);
+  const [readerMenuCommand, setReaderMenuCommand] = useState<{
+    id: number;
+    action: SiddurMenuAction;
+  } | null>(null);
+  const [readerBookmarked, setReaderBookmarked] = useState(false);
+
+  const chooseReaderAction = (action: SiddurMenuAction) => {
+    setOptionsOpen(false);
+    setReaderMenuCommand((previous) => ({
+      id: (previous?.id ?? 0) + 1,
+      action,
+    }));
+  };
 
   useFocusEffect(
     useCallback(() => {
@@ -449,20 +466,89 @@ export function PrayerScreen(): React.JSX.Element {
       largeTitle="Prayer"
       subtitle="Your siddur and prayers, together."
       rightComponent={
-        <Button
-          variant="ghost"
-          accessibilityLabel="Prayer options"
-          onPress={() => {
-            if (libraryView === "siddur")
-              setReaderMenuSignal((signal) => signal + 1);
-            else chooseDefaultView();
-          }}
-          style={{ minWidth: 64, height: 44, borderRadius: 16 }}
+        <GooeyPopover.Root
+          open={optionsOpen}
+          onOpenChange={setOptionsOpen}
+          side="bottom"
+          align="end"
+          sideOffset={8}
+          color={colors.mineral}
+          gooStrength={9}
+          style={{ zIndex: 50 }}
         >
-          <Text style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}>
-            Options
-          </Text>
-        </Button>
+          <GooeyPopover.Trigger
+            accessibilityLabel="Prayer options"
+            accessibilityHint="Opens reader actions"
+            style={{
+              minWidth: 72,
+              height: 44,
+              borderRadius: 16,
+              backgroundColor: colors.mineral,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}
+            >
+              Options
+            </Text>
+          </GooeyPopover.Trigger>
+          <GooeyPopover.Content
+            style={{ width: 246, paddingVertical: 7, paddingHorizontal: 8 }}
+          >
+            <View>
+              {(libraryView === "siddur"
+                ? [
+                    { label: "Contents", action: "contents" as const },
+                    {
+                      label: readerBookmarked
+                        ? "Remove bookmark"
+                        : "Bookmark this page",
+                      action: "bookmark" as const,
+                    },
+                    { label: "Share page", action: "share" as const },
+                    { label: "Save page image", action: "save" as const },
+                    { label: "Reading settings", action: "settings" as const },
+                  ]
+                : []
+              ).map(({ label, action }) => (
+                <Pressable
+                  key={action}
+                  accessibilityRole="button"
+                  accessibilityLabel={label}
+                  onPress={() => chooseReaderAction(action)}
+                  style={{
+                    minHeight: 45,
+                    justifyContent: "center",
+                    paddingHorizontal: 12,
+                  }}
+                >
+                  <Text style={{ color: colors.ink, fontSize: 14 }}>
+                    {label}
+                  </Text>
+                </Pressable>
+              ))}
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Choose default Prayer view"
+                onPress={() => {
+                  setOptionsOpen(false);
+                  chooseDefaultView();
+                }}
+                style={{
+                  minHeight: 45,
+                  justifyContent: "center",
+                  paddingHorizontal: 12,
+                }}
+              >
+                <Text style={{ color: colors.ink, fontSize: 14 }}>
+                  Default Prayer view
+                </Text>
+              </Pressable>
+            </View>
+          </GooeyPopover.Content>
+        </GooeyPopover.Root>
       }
       {...(libraryView === "siddur"
         ? {
@@ -507,7 +593,8 @@ export function PrayerScreen(): React.JSX.Element {
       {libraryView === "siddur" ? (
         <SiddurExperience
           embedded
-          menuSignal={readerMenuSignal}
+          menuCommand={readerMenuCommand}
+          onBookmarkStatus={setReaderBookmarked}
           onChooseDefault={chooseDefaultView}
         />
       ) : (

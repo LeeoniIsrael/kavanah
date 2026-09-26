@@ -84,13 +84,18 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   justifyContent: "center" as const,
   backgroundColor: colors.mineral,
 });
+export type SiddurMenuAction =
+  "contents" | "bookmark" | "share" | "save" | "settings";
+
 export function SiddurExperience({
   embedded = false,
-  menuSignal = 0,
+  menuCommand,
+  onBookmarkStatus,
   onChooseDefault,
 }: {
   embedded?: boolean;
-  menuSignal?: number;
+  menuCommand?: { id: number; action: SiddurMenuAction } | null;
+  onBookmarkStatus?: (bookmarked: boolean) => void;
   onChooseDefault?: () => void;
 }) {
   const insets = useSafeAreaInsets();
@@ -149,6 +154,9 @@ export function SiddurExperience({
   const currentBookmark = bookmarks.find(
     (b) => b.segmentRef === location && b.siddurId === bookId,
   );
+  useEffect(() => {
+    onBookmarkStatus?.(Boolean(currentBookmark));
+  }, [currentBookmark, onBookmarkStatus]);
   useEffect(() => {
     let live = true;
     void selectedBook()
@@ -525,11 +533,31 @@ export function SiddurExperience({
         : []),
       { text: "Cancel", style: "cancel" },
     ]);
-  const previousMenuSignal = useRef(menuSignal);
+  const previousMenuCommand = useRef(menuCommand?.id);
+  /* eslint-disable react-hooks/set-state-in-effect -- A header menu command is a user event forwarded to this embedded reader. */
   useEffect(() => {
-    if (embedded && menuSignal !== previousMenuSignal.current) openReaderMenu();
-    previousMenuSignal.current = menuSignal;
-  }, [embedded, menuSignal]);
+    if (
+      !embedded ||
+      !menuCommand ||
+      menuCommand.id === previousMenuCommand.current
+    )
+      return;
+    previousMenuCommand.current = menuCommand.id;
+    if (menuCommand.action === "contents") {
+      setSettings(false);
+      setToc(true);
+    } else if (menuCommand.action === "bookmark") {
+      void toggleBookmark();
+    } else if (menuCommand.action === "share") {
+      void share(false);
+    } else if (menuCommand.action === "save") {
+      void share(true);
+    } else if (menuCommand.action === "settings") {
+      setToc(false);
+      setSettings(true);
+    }
+  }, [embedded, menuCommand?.id]);
+  /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (!toc || query.trim().length < 2) return;
     let live = true;
