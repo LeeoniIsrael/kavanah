@@ -3,6 +3,7 @@ import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Screen } from "@/components/Screen";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
+import { RadiantButton } from "@/components/base/radiant-button";
 import { Card } from "@/components/ui/card";
 import {
   Dialog,
@@ -29,7 +30,6 @@ import {
   Heart,
   MapPin,
   Plus,
-  Search,
   Share2,
   ShieldCheck,
   SlidersHorizontal,
@@ -236,19 +236,31 @@ export function HomeScreen(): React.JSX.Element {
             ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
             : "Find your words. Begin where you are."}
         </Text>
-        <Button
-          size="content"
+        <RadiantButton
+          accessibilityLabel={nextMoment?.label ?? "Find a prayer"}
           onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
           style={homeStyles.primaryAction}
-          backgroundColor={colors.ink}
           borderRadius={18}
+          borderWidth={2}
+          paddingHorizontal={16}
+          paddingVertical={12}
+          theme={{
+            foreground: colors.onAccent,
+            background: colors.ink,
+            backgroundSubtle: colors.ink,
+            highlight: colors.onAccent,
+            highlightSubtle: colors.blueSoft,
+          }}
+          dotOpacity={0.2}
+          glowWidth={0.55}
+          shimmerOpacity={0.45}
         >
           <BookOpen size={20} color={colors.onAccent} />
           <Text style={homeStyles.primaryLabel}>
             {nextMoment?.label ?? "Find a prayer"}
           </Text>
           <ChevronRight size={16} color={colors.onAccent} />
-        </Button>
+        </RadiantButton>
       </View>
 
       <Button
@@ -446,20 +458,6 @@ export function HomeScreen(): React.JSX.Element {
       </View>
 
       <CommunityFeed />
-
-      <Button
-        variant="outline"
-        size="content"
-        accessibilityRole="button"
-        onPress={() => openPrayerSearch("")}
-        className="min-h-[58px] rounded-md border-[0px] bg-card px-4 flex-row items-center gap-3 shadow-card"
-      >
-        <Search size={20} color={colors.blue} />
-        <Text className="text-[16px] leading-[22px] font-semibold tracking-normal flex-1 text-foreground font-heading">
-          Browse the prayer library
-        </Text>
-        <ChevronRight size={16} color={colors.inkMuted} />
-      </Button>
 
       <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
         <DialogContent
