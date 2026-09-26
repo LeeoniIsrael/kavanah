@@ -94,7 +94,7 @@ export function SiddurExperience({
   onChooseDefault?: () => void;
 }) {
   const insets = useSafeAreaInsets();
-  const { height: windowHeight } = useWindowDimensions();
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const colors = useThemeColors(),
     dark = useAppColorScheme() === "dark",
     reduceMotion = useReducedMotion();
@@ -130,6 +130,7 @@ export function SiddurExperience({
     pendingRestore = useRef<string | undefined>(undefined),
     [readySection, setReadySection] = useState(""),
     [slide] = useState(() => new Animated.Value(0)),
+    turning = useRef(false),
     interaction = useRef<
       "idle" | "selecting" | "zooming" | "annotating" | "ruler"
     >("idle");
@@ -288,8 +289,25 @@ export function SiddurExperience({
     interaction.current = "idle";
   };
   const goPage = (direction: number) => {
-    if (interaction.current !== "idle") return;
+    if (interaction.current !== "idle" || turning.current) return;
     setSelection(null);
+    const canTurn =
+      direction > 0
+        ? pageIndex < pages.length - 1 || sectionIndex < leaves.length - 1
+        : pageIndex > 0 || sectionIndex > 0;
+    if (!canTurn) {
+      if (reduceMotion) {
+        slide.setValue(0);
+        return;
+      }
+      Animated.spring(slide, {
+        toValue: 0,
+        useNativeDriver: true,
+        tension: 85,
+        friction: 12,
+      }).start();
+      return;
+    }
     const turn = () => {
       if (direction > 0) {
         if (pageIndex < pages.length - 1) setPageIndex((p) => p + 1);
@@ -298,35 +316,47 @@ export function SiddurExperience({
       else goSection(sectionIndex - 1);
     };
     if (reduceMotion) {
+      slide.setValue(0);
       turn();
       return;
     }
+    turning.current = true;
+    const visualDirection = direction * (language === "he" ? -1 : 1);
+    const travel = windowWidth * 0.78;
     Animated.parallel([
       Animated.timing(opacity, {
-        toValue: 0.6,
-        duration: 90,
+        toValue: 0.35,
+        duration: 220,
         useNativeDriver: true,
       }),
       Animated.timing(slide, {
-        toValue: -direction * 26,
-        duration: 90,
+        toValue: -visualDirection * travel,
+        duration: 220,
         useNativeDriver: true,
       }),
-    ]).start(() => {
+    ]).start(({ finished }) => {
+      if (!finished) {
+        turning.current = false;
+        return;
+      }
       turn();
-      slide.setValue(direction * 16);
-      Animated.parallel([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 135,
-          useNativeDriver: true,
-        }),
-        Animated.timing(slide, {
-          toValue: 0,
-          duration: 135,
-          useNativeDriver: true,
-        }),
-      ]).start();
+      slide.setValue(visualDirection * travel);
+      requestAnimationFrame(() => {
+        Animated.parallel([
+          Animated.timing(opacity, {
+            toValue: 1,
+            duration: 260,
+            useNativeDriver: true,
+          }),
+          Animated.timing(slide, {
+            toValue: 0,
+            duration: 260,
+            useNativeDriver: true,
+          }),
+        ]).start(() => {
+          turning.current = false;
+        });
+      });
     });
   };
   const switchLanguage = (next: ReaderLanguage) => {
@@ -375,6 +405,22 @@ export function SiddurExperience({
       setFontScale((s) =>
         Math.max(0.8, Math.min(1.7, Math.round(s * m.scale! * 20) / 20)),
       );
+    } else if (
+      m.type === "drag" &&
+      m.dx &&
+      !turning.current &&
+      interaction.current === "idle"
+    ) {
+      slide.setValue(
+        Math.max(-windowWidth * 0.5, Math.min(windowWidth * 0.5, m.dx)),
+      );
+    } else if (m.type === "dragEnd" && !turning.current) {
+      Animated.spring(slide, {
+        toValue: 0,
+        useNativeDriver: true,
+        tension: 85,
+        friction: 12,
+      }).start();
     } else if (m.type === "swipe" && m.dx)
       goPage(pageDirection(language, m.dx));
     else if (m.type === "edge" && m.side !== undefined)
@@ -517,6 +563,16 @@ export function SiddurExperience({
     () => createReaderHtml(currentPage, language, fontScale, annotations, dark),
     [currentPage, language, fontScale, annotations, dark],
   );
+  const pageTilt = slide.interpolate({
+    inputRange: [-windowWidth, 0, windowWidth],
+    outputRange: ["12deg", "0deg", "-12deg"],
+    extrapolate: "clamp",
+  });
+  const pageLift = slide.interpolate({
+    inputRange: [-windowWidth, 0, windowWidth],
+    outputRange: [30, 0, 30],
+    extrapolate: "clamp",
+  });
   const ReaderHost = embedded ? View : Modal;
   return (
     <View style={embedded ? { flex: 1 } : { gap: 18, paddingTop: 22 }}>
@@ -716,9 +772,14 @@ export function SiddurExperience({
               marginHorizontal: embedded ? 0 : 12,
               borderRadius: 24,
               overflow: "hidden",
+              transformOrigin: "bottom",
               backgroundColor: colors.vellum,
               opacity,
-              transform: [{ translateX: slide }],
+              transform: [
+                { translateX: slide },
+                { rotateZ: pageTilt },
+                { translateY: pageLift },
+              ],
               shadowColor: colors.shadow,
               shadowOpacity: 0.07,
               shadowRadius: 10,
