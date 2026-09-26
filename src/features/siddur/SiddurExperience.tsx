@@ -916,12 +916,14 @@ export function SiddurExperience({
                 alignItems: "center",
                 justifyContent: "center",
                 zIndex: 2,
+                borderRadius: 22,
+                backgroundColor: colors.parchment,
               }}
             >
               {language === "he" ? (
-                <ChevronRight size={12} color={colors.inkMuted} />
+                <ChevronRight size={18} color={colors.blue} />
               ) : (
-                <ChevronLeft size={12} color={colors.inkMuted} />
+                <ChevronLeft size={18} color={colors.blue} />
               )}
             </Pressable>
             <Pressable
@@ -938,12 +940,14 @@ export function SiddurExperience({
                 alignItems: "center",
                 justifyContent: "center",
                 zIndex: 2,
+                borderRadius: 22,
+                backgroundColor: colors.parchment,
               }}
             >
               {language === "he" ? (
-                <ChevronLeft size={12} color={colors.inkMuted} />
+                <ChevronLeft size={18} color={colors.blue} />
               ) : (
-                <ChevronRight size={12} color={colors.inkMuted} />
+                <ChevronRight size={18} color={colors.blue} />
               )}
             </Pressable>
           </View>

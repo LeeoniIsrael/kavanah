@@ -259,6 +259,7 @@ export function HomeScreen(): React.JSX.Element {
           style={homeStyles.primaryAction}
           borderRadius={18}
           borderWidth={1}
+          contentGap={16}
           paddingHorizontal={16}
           paddingVertical={12}
           theme={{

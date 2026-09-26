@@ -38,6 +38,7 @@ export interface RadiantButtonProps {
   glowWidth?: number;
   breathingEnabled?: boolean;
   glowBandWidth?: number;
+  contentGap?: number;
   accessibilityLabel?: string;
   accessibilityHint?: string;
   accessibilityRole?: AccessibilityRole;

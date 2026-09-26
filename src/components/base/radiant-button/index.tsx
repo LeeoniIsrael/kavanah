@@ -66,6 +66,7 @@ function RadiantButtonComponent({
   glowWidth = 0.7,
   breathingEnabled = true,
   glowBandWidth = 0.15,
+  contentGap = 10,
   accessibilityLabel,
   accessibilityHint,
   accessibilityRole = "button",
@@ -363,7 +364,7 @@ function RadiantButtonComponent({
             </Group>
           </Canvas>
         ) : null}
-        <View style={styles.content}>
+        <View style={[styles.content, { gap: contentGap }]}>
           {typeof children === "string" ? (
             <Text style={[styles.text, { color: theme.foreground }, textStyle]}>
               {children}
