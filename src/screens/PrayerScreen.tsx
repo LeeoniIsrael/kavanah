@@ -1,4 +1,3 @@
-import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -12,7 +11,6 @@ import {
   ExternalLink,
   MoonStar,
   RefreshCw,
-  Search,
   Share2,
   ShieldCheck,
   X,
@@ -21,11 +19,15 @@ import { useEffect, useRef, useState } from "react";
 import {
   Animated,
   Easing,
+  Keyboard,
   Linking,
   Modal,
+  Pressable,
   ScrollView,
+  StyleSheet,
   View,
 } from "react-native";
+import { BlurView } from "expo-blur";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -36,13 +38,13 @@ import {
   type GuidedPrayerToken,
 } from "@/components/GuidedPrayer";
 import { PrayerCard } from "@/components/PrayerCard";
+import { PrayerSearchBar } from "@/components/PrayerSearchBar";
 import { PrayerAssistantPanel } from "@/components/PrayerAssistantPanel";
 import {
   PracticeStoryComposer,
   type PracticeStoryMoment,
 } from "@/components/PracticeStoryComposer";
 import { Screen } from "@/components/Screen";
-import { AppGlassSurface } from "@/components/AppGlassSurface";
 import {
   PrayerSearchSkeleton,
   PrayerTextSkeleton,
@@ -145,6 +147,7 @@ export function PrayerScreen(): React.JSX.Element {
     (state) => state.prayerFocusEnabled,
   );
   const [readerOpen, setReaderOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
   const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
@@ -181,6 +184,7 @@ export function PrayerScreen(): React.JSX.Element {
   const bookmarkReveal = useRef(
     new Animated.Value(showResults ? 0 : 1),
   ).current;
+  const searchReveal = useRef(new Animated.Value(0)).current;
   const focusSetup = getPrayerFocusSetup();
 
   useEffect(() => {
@@ -226,6 +230,17 @@ export function PrayerScreen(): React.JSX.Element {
       useNativeDriver: false,
     }).start();
   }, [bookmarkReveal, reduceMotion, showResults]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    searchReveal.setValue(0);
+    Animated.timing(searchReveal, {
+      toValue: 1,
+      duration: reduceMotion ? 0 : 360,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
+  }, [reduceMotion, searchOpen, searchReveal]);
 
   useEffect(() => {
     let cancelled = false;
@@ -275,6 +290,8 @@ export function PrayerScreen(): React.JSX.Element {
   }, [primaryLanguageCode, selected]);
 
   const openPrayer = (id: string) => {
+    Keyboard.dismiss();
+    setSearchOpen(false);
     void selectPrayer(id);
     setGuidedPrayerOpen(false);
     setAssistantOpen(false);
@@ -283,6 +300,12 @@ export function PrayerScreen(): React.JSX.Element {
     setReaderOpen(true);
     setFocusPromptMessage("");
     setFocusPromptOpen(false);
+  };
+
+  const closeSearch = () => {
+    Keyboard.dismiss();
+    setSearchOpen(false);
+    setQuery("");
   };
 
   const closeReader = () => {
@@ -422,23 +445,16 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen largeTitle="Prayers" subtitle="Find a prayer for this moment.">
       <View className="gap-6">
-        <AppGlassSurface
-          isInteractive
-          className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
-        >
-          <Search size={18} color={colors.inkMuted} />
-          <Input
-            accessibilityLabel="Search prayers"
-            value={query}
-            onChangeText={setQuery}
-            placeholders={[
-              "Search for travel…",
-              "Search for Shema…",
-              "Search for protection…",
-            ]}
-            className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent px-0 shadow-none"
-            placeholderTextColor={colors.inkMuted}
-          />
+        <View className="flex-row items-center gap-3">
+          <View className="flex-1">
+            <PrayerSearchBar
+              active={false}
+              value={query}
+              onChangeText={setQuery}
+              onActivate={() => setSearchOpen(true)}
+              onCancel={closeSearch}
+            />
+          </View>
           <Button
             variant="secondary"
             size="content"
@@ -456,7 +472,7 @@ export function PrayerScreen(): React.JSX.Element {
               }
             />
           </Button>
-        </AppGlassSurface>
+        </View>
 
         <Animated.View
           pointerEvents={showResults ? "none" : "auto"}
@@ -583,6 +599,123 @@ export function PrayerScreen(): React.JSX.Element {
           </View>
         ) : null}
       </View>
+
+      <Modal
+        visible={searchOpen}
+        transparent
+        animationType={reduceMotion ? "none" : "fade"}
+        statusBarTranslucent
+        onRequestClose={closeSearch}
+      >
+        <View style={searchStyles.screen}>
+          <BlurView
+            intensity={72}
+            tint="dark"
+            style={StyleSheet.absoluteFill}
+          />
+          <View style={searchStyles.scrim} />
+          <SafeAreaView style={searchStyles.safeArea} edges={["top", "bottom"]}>
+            <Animated.View
+              style={{
+                opacity: searchReveal,
+                transform: [
+                  {
+                    translateY: searchReveal.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [reduceMotion ? 0 : 18, 0],
+                    }),
+                  },
+                ],
+              }}
+            >
+              <View style={searchStyles.searchHeader}>
+                <PrayerSearchBar
+                  active
+                  value={query}
+                  onChangeText={setQuery}
+                  onActivate={() => undefined}
+                  onCancel={closeSearch}
+                />
+              </View>
+              <View style={searchStyles.intro}>
+                <Text variant="caption" style={searchStyles.eyebrow}>
+                  PRAYER LIBRARY
+                </Text>
+                <Text variant="title" style={searchStyles.title}>
+                  {showResults ? "Find your prayer" : "What’s on your heart?"}
+                </Text>
+                <Text variant="body" style={searchStyles.subtitle}>
+                  {showResults
+                    ? "Prayers that speak to your search."
+                    : "Browse the collection or begin with a moment below."}
+                </Text>
+              </View>
+            </Animated.View>
+            <Animated.ScrollView
+              keyboardShouldPersistTaps="handled"
+              keyboardDismissMode="on-drag"
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={searchStyles.resultsContent}
+              style={{ opacity: searchReveal }}
+            >
+              {!showResults ? (
+                <View style={searchStyles.suggestions}>
+                  {["Travel", "Healing", "Gratitude", "Shema"].map((term) => (
+                    <Pressable
+                      key={term}
+                      accessibilityRole="button"
+                      accessibilityLabel={`Search for ${term}`}
+                      onPress={() => setQuery(term)}
+                      style={searchStyles.suggestion}
+                    >
+                      <Text style={searchStyles.suggestionText}>{term}</Text>
+                      <ChevronRight size={15} color={colors.blue} />
+                    </Pressable>
+                  ))}
+                </View>
+              ) : null}
+              <View style={searchStyles.sectionHeader}>
+                {isSearchingRemote ? (
+                  <CircleLoadingIndicator dotRadius={2} dotSpacing={3} />
+                ) : null}
+                <Text variant="caption" style={searchStyles.sectionTitle}>
+                  {isSearchingRemote
+                    ? "Searching Sefaria"
+                    : showResults
+                      ? "Results"
+                      : "Explore prayers"}
+                </Text>
+                <Text variant="body" style={searchStyles.count}>
+                  {(showResults ? visibleResults : results.slice(0, 12)).length}{" "}
+                  found
+                </Text>
+              </View>
+              {isSearchingRemote && visibleResults.length === 0 ? (
+                <PrayerSearchSkeleton />
+              ) : (showResults ? visibleResults : results.slice(0, 12)).length >
+                0 ? (
+                (showResults ? visibleResults : results.slice(0, 12)).map(
+                  (result) => (
+                    <PrayerCard
+                      key={result.prayer.id}
+                      prayer={result.prayer}
+                      selected={false}
+                      onPress={() => openPrayer(result.prayer.id)}
+                    />
+                  ),
+                )
+              ) : (
+                <Card>
+                  <Text variant="body">
+                    No matching prayers yet. Try another word or a broader
+                    intention.
+                  </Text>
+                </Card>
+              )}
+            </Animated.ScrollView>
+          </SafeAreaView>
+        </View>
+      </Modal>
 
       <Modal
         visible={readerOpen && Boolean(selected)}
@@ -1046,3 +1179,44 @@ function habitForPrayer(prayer: {
     return "maariv";
   return undefined;
 }
+
+const searchStyles = StyleSheet.create({
+  screen: { flex: 1, backgroundColor: colors.parchment },
+  scrim: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(12, 12, 16, 0.72)",
+  },
+  safeArea: { flex: 1 },
+  searchHeader: { paddingHorizontal: 22, paddingTop: 18 },
+  intro: { paddingHorizontal: 24, paddingTop: 34, paddingBottom: 28, gap: 7 },
+  eyebrow: { color: colors.blue, letterSpacing: 2, fontSize: 11 },
+  title: { color: colors.ink, fontSize: 30, lineHeight: 36 },
+  subtitle: { color: colors.inkMuted, fontSize: 14, lineHeight: 21 },
+  resultsContent: { paddingHorizontal: 22, paddingBottom: 48, gap: 10 },
+  suggestions: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 9,
+    paddingBottom: 19,
+  },
+  suggestion: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 7,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    backgroundColor: colors.vellum,
+  },
+  suggestionText: { color: colors.ink, fontSize: 13 },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingBottom: 5,
+  },
+  sectionTitle: { color: colors.inkMuted, flex: 1 },
+  count: { color: colors.inkMuted, fontSize: 12 },
+});
