@@ -40,6 +40,7 @@ const tokens = [
   },
 ];
 function setup(completionBlockedReason?: string) {
+  const startedAt = Date.now();
   const callbacks = {
     onClose: jest.fn(),
     onComplete: jest.fn(),
@@ -51,6 +52,7 @@ function setup(completionBlockedReason?: string) {
     ...render(
       <GuidedPrayer
         completionBlockedReason={completionBlockedReason}
+        startedAt={startedAt}
         prayerTitle="Test prayer"
         tokens={tokens}
         visible
@@ -72,7 +74,9 @@ beforeEach(() => jest.useFakeTimers());
 afterEach(() => jest.useRealTimers());
 test("opening and waiting never logs completion, and close stays available", () => {
   const view = setup();
+  expect(view.getByText("0:00 elapsed")).toBeTruthy();
   act(() => jest.advanceTimersByTime(30000));
+  expect(view.getByText("0:30 elapsed")).toBeTruthy();
   expect(view.onComplete).not.toHaveBeenCalled();
   fireEvent.press(view.getByLabelText("Close without logging a prayer"));
   expect(view.onClose).toHaveBeenCalledTimes(1);

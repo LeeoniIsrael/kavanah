@@ -24,6 +24,7 @@ export type GuidedPrayerToken = {
 };
 type Props = {
   completionBlockedReason?: string | undefined;
+  startedAt: number;
   prayerTitle: string;
   guide?: ReadingGuide | undefined;
   scopeNote?: string | undefined;
@@ -43,6 +44,7 @@ type Props = {
 };
 export function GuidedPrayer({
   completionBlockedReason,
+  startedAt,
   prayerTitle,
   guide,
   scopeNote,
@@ -64,8 +66,24 @@ export function GuidedPrayer({
     insets = useSafeAreaInsets();
   const [reveal] = useState(() => new Animated.Value(1));
   const [activeQuoteField, setActiveQuoteField] = useState("");
+  const [clockTick, setClockTick] = useState(Date.now);
   const scroll = useRef<FlatList<GuidedPrayerToken>>(null);
   const reduceMotion = useReducedMotion();
+  const elapsedSeconds = Math.max(
+    0,
+    Math.floor((clockTick - startedAt) / 1000),
+  );
+  const elapsedMinutes = Math.floor(elapsedSeconds / 60);
+  const elapsedHours = Math.floor(elapsedMinutes / 60);
+  const elapsedTime =
+    elapsedHours > 0
+      ? `${elapsedHours}:${String(elapsedMinutes % 60).padStart(2, "0")}:${String(elapsedSeconds % 60).padStart(2, "0")}`
+      : `${elapsedMinutes}:${String(elapsedSeconds % 60).padStart(2, "0")}`;
+  useEffect(() => {
+    if (!visible) return;
+    const interval = setInterval(() => setClockTick(Date.now()), 1000);
+    return () => clearInterval(interval);
+  }, [visible]);
   useEffect(() => {
     scroll.current?.scrollToOffset({ offset: 0, animated: false });
     reveal.setValue(reduceMotion ? 1 : 0);
@@ -121,8 +139,15 @@ export function GuidedPrayer({
             )}
           </Button>
           <View style={{ flex: 1, alignItems: "center", gap: 3 }}>
-            <Text variant="caption" style={{ color: colors.inkMuted }}>
-              Prayer
+            <Text
+              variant="caption"
+              accessibilityLabel={`Elapsed prayer time ${elapsedTime}`}
+              style={{
+                color: colors.inkMuted,
+                fontVariant: ["tabular-nums"],
+              }}
+            >
+              {elapsedTime} elapsed
             </Text>
             <Text
               style={{
