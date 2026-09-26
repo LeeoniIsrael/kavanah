@@ -763,14 +763,16 @@ export function SiddurExperience({
               >
                 <List size={20} color={colors.ink} />
               </Button>
-              <Button
-                variant="ghost"
-                accessibilityLabel="Reader menu"
-                onPress={openReaderMenu}
-                style={button(colors)}
-              >
-                <MoreHorizontal size={23} color={colors.ink} />
-              </Button>
+              {!embedded ? (
+                <Button
+                  variant="ghost"
+                  accessibilityLabel="Reader menu"
+                  onPress={openReaderMenu}
+                  style={button(colors)}
+                >
+                  <MoreHorizontal size={23} color={colors.ink} />
+                </Button>
+              ) : null}
             </View>
           )}
           {!embedded ? (
