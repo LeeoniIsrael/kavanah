@@ -10,7 +10,7 @@ import {
   fitsDailyView,
   type SiddurBook,
 } from "@/services/siddur";
-import { writeSocialData } from "@/services/socialStorage";
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { SiddurExperience } from "@/features/siddur/SiddurExperience";
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
@@ -21,7 +21,8 @@ import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import type { QuoteSource } from "@/store/socialStore";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
+import { Settings2 } from "lucide-react-native";
 import {
   Bookmark,
   BookmarkCheck,
@@ -34,8 +35,9 @@ import {
   Search,
   X,
 } from "@/components/ui/icons";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  Alert,
   Animated,
   Easing,
   Linking,
@@ -87,6 +89,13 @@ type LocalizedPrayer = {
   prayerId: string;
   tokens: LocalizedToken[];
 };
+
+type PrayerLandingView = "siddur" | "search";
+const PRAYER_LANDING_KEY = "prayer.landing.v1";
+const isPrayerLandingView = (value: unknown): value is PrayerLandingView =>
+  value === "siddur" || value === "search";
+const savedPrayerLanding = () =>
+  readSocialData(PRAYER_LANDING_KEY, isPrayerLandingView) ?? "siddur";
 
 function hebrewContentLabel(kind: HebrewContentKind): string {
   if (kind === "complete") return "Hebrew review pending";
@@ -184,7 +193,37 @@ export function PrayerScreen(): React.JSX.Element {
     () => new Animated.Value(showResults ? 0 : 1),
   );
   const focusSetup = getPrayerFocusSetup();
-  const [libraryView, setLibraryView] = useState<"siddur" | "search">("siddur");
+  const [defaultView, setDefaultView] =
+    useState<PrayerLandingView>(savedPrayerLanding);
+  const [libraryView, setLibraryView] =
+    useState<PrayerLandingView>(savedPrayerLanding);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!params.prayerId && !params.query) setLibraryView(defaultView);
+    }, [defaultView, params.prayerId, params.query]),
+  );
+
+  const chooseDefaultView = () =>
+    Alert.alert("Open Prayer to", "Choose what appears when you tap Prayer.", [
+      {
+        text: "Siddur",
+        onPress: () => {
+          writeSocialData(PRAYER_LANDING_KEY, "siddur");
+          setDefaultView("siddur");
+          setLibraryView("siddur");
+        },
+      },
+      {
+        text: "Find a prayer",
+        onPress: () => {
+          writeSocialData(PRAYER_LANDING_KEY, "search");
+          setDefaultView("search");
+          setLibraryView("search");
+        },
+      },
+      { text: "Cancel", style: "cancel" },
+    ]);
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
@@ -406,43 +445,67 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen largeTitle="Prayer" subtitle="Your siddur and prayers, together.">
-      <View
-        accessibilityRole="tablist"
-        style={{
-          flexDirection: "row",
-          gap: 6,
-          padding: 5,
-          borderRadius: 20,
-          backgroundColor: colors.mineral,
-        }}
-      >
-        {(["siddur", "search"] as const).map((view) => (
-          <Button
-            key={view}
-            variant="ghost"
-            accessibilityRole="tab"
-            accessibilityState={{ selected: libraryView === view }}
-            onPress={() => setLibraryView(view)}
-            style={{
-              flex: 1,
-              borderRadius: 16,
-              backgroundColor:
-                libraryView === view ? colors.blue : "transparent",
-            }}
-          >
-            <Text
+    <Screen
+      largeTitle="Prayer"
+      {...(libraryView === "search"
+        ? { subtitle: "Your siddur and prayers, together." }
+        : {
+            largeHeaderTitleStyle: { fontSize: 0, lineHeight: 0 },
+            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
+          })}
+    >
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+        <View
+          accessibilityRole="tablist"
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            gap: 6,
+            padding: 5,
+            borderRadius: 20,
+            backgroundColor: colors.mineral,
+          }}
+        >
+          {(["siddur", "search"] as const).map((view) => (
+            <Button
+              key={view}
+              variant="ghost"
+              accessibilityRole="tab"
+              accessibilityState={{ selected: libraryView === view }}
+              onPress={() => setLibraryView(view)}
               style={{
-                color: libraryView === view ? colors.onAccent : colors.ink,
+                flex: 1,
+                borderRadius: 16,
+                backgroundColor:
+                  libraryView === view ? colors.blue : "transparent",
               }}
             >
-              {view === "siddur" ? "Siddur" : "Find a prayer"}
-            </Text>
-          </Button>
-        ))}
+              <Text
+                style={{
+                  color: libraryView === view ? colors.onAccent : colors.ink,
+                }}
+              >
+                {view === "siddur" ? "Siddur" : "Find a prayer"}
+              </Text>
+            </Button>
+          ))}
+        </View>
+        <Button
+          variant="ghost"
+          accessibilityLabel={`Choose Prayer landing view. Currently ${defaultView === "siddur" ? "Siddur" : "Find a prayer"}`}
+          onPress={chooseDefaultView}
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 16,
+            backgroundColor: colors.mineral,
+          }}
+        >
+          <Settings2 size={20} color={colors.ink} />
+        </Button>
       </View>
       {libraryView === "siddur" ? (
-        <SiddurExperience />
+        <SiddurExperience embedded />
       ) : (
         <View className="gap-6">
           <View

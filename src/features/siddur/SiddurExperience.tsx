@@ -10,8 +10,12 @@ import {
   ScrollView,
   TextInput,
   View,
+  useWindowDimensions,
 } from "react-native";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import WebView, { type WebViewMessageEvent } from "react-native-webview";
 import { captureRef } from "react-native-view-shot";
 import * as Sharing from "expo-sharing";
@@ -80,8 +84,9 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   justifyContent: "center" as const,
   backgroundColor: colors.mineral,
 });
-export function SiddurExperience() {
+export function SiddurExperience({ embedded = false }: { embedded?: boolean }) {
   const insets = useSafeAreaInsets();
+  const { height: windowHeight } = useWindowDimensions();
   const colors = useThemeColors(),
     dark = useAppColorScheme() === "dark",
     reduceMotion = useReducedMotion();
@@ -189,6 +194,20 @@ export function SiddurExperience() {
       setLoading(false);
     }
   }, []);
+  useEffect(() => {
+    if (!embedded) return;
+    let live = true;
+    void selectedBook()
+      .then((id) => {
+        if (live) void open(id ?? "Siddur Ashkenaz");
+      })
+      .catch(() => {
+        if (live) void open("Siddur Ashkenaz");
+      });
+    return () => {
+      live = false;
+    };
+  }, [embedded, open]);
   useEffect(() => {
     if (!reader || !section) return;
     let active = true;
@@ -470,80 +489,92 @@ export function SiddurExperience() {
     () => createReaderHtml(currentPage, language, fontScale, annotations, dark),
     [currentPage, language, fontScale, annotations, dark],
   );
+  const ReaderHost = embedded ? View : Modal;
   return (
-    <View style={{ gap: 18, paddingTop: 22 }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-        <BookOpen size={23} color={colors.blue} />
-        <Text variant="section" style={{ flex: 1 }}>
-          Siddur reader
-        </Text>
-        <Button
-          accessibilityLabel="Siddur adjustments"
-          variant="ghost"
-          onPress={() => {
-            void open(bookId).then(() => setSettings(true));
-          }}
-          style={button(colors)}
-        >
-          <Settings2 size={20} color={colors.ink} />
-        </Button>
-      </View>
-      <View
-        style={{
-          backgroundColor: colors.vellum,
-          borderRadius: 26,
-          padding: 22,
-          gap: 12,
-        }}
-      >
-        <Text variant="section" style={{ fontSize: 23 }}>
-          {bookId}
-        </Text>
-        <Text style={{ color: colors.inkMuted }}>
-          Read the structured Sefaria text, with your place saved on this
-          device.
-        </Text>
-        <Button
-          variant="secondary"
-          onPress={() => void open(bookId)}
-          disabled={loading}
-          style={{
-            minHeight: 50,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 18,
-            backgroundColor: colors.blue,
-          }}
-        >
-          {loading ? (
-            <ActivityIndicator color={colors.onAccent} />
-          ) : (
-            <Text style={{ color: colors.onAccent, fontWeight: "700" }}>
-              Open reader
+    <View style={embedded ? { flex: 1 } : { gap: 18, paddingTop: 22 }}>
+      {!embedded ? (
+        <>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+            <BookOpen size={23} color={colors.blue} />
+            <Text variant="section" style={{ flex: 1 }}>
+              Siddur reader
             </Text>
-          )}
-        </Button>
-      </View>
-      {error && !reader ? (
-        <Text style={{ color: colors.danger }}>{error}</Text>
+            <Button
+              accessibilityLabel="Siddur adjustments"
+              variant="ghost"
+              onPress={() => {
+                void open(bookId).then(() => setSettings(true));
+              }}
+              style={button(colors)}
+            >
+              <Settings2 size={20} color={colors.ink} />
+            </Button>
+          </View>
+          <View
+            style={{
+              backgroundColor: colors.vellum,
+              borderRadius: 26,
+              padding: 22,
+              gap: 12,
+            }}
+          >
+            <Text variant="section" style={{ fontSize: 23 }}>
+              {bookId}
+            </Text>
+            <Text style={{ color: colors.inkMuted }}>
+              Read the structured Sefaria text, with your place saved on this
+              device.
+            </Text>
+            <Button
+              variant="secondary"
+              onPress={() => void open(bookId)}
+              disabled={loading}
+              style={{
+                minHeight: 50,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 18,
+                backgroundColor: colors.blue,
+              }}
+            >
+              {loading ? (
+                <ActivityIndicator color={colors.onAccent} />
+              ) : (
+                <Text style={{ color: colors.onAccent, fontWeight: "700" }}>
+                  Open reader
+                </Text>
+              )}
+            </Button>
+          </View>
+          {error && !reader ? (
+            <Text style={{ color: colors.danger }}>{error}</Text>
+          ) : null}
+        </>
       ) : null}
-      <Modal
-        visible={reader}
-        animationType="slide"
-        onRequestClose={() => {
-          if (note) setNote(false);
-          else if (settings) setSettings(false);
-          else if (toc) setToc(false);
-          else setReader(false);
-        }}
+      <ReaderHost
+        {...(embedded
+          ? { style: { height: Math.max(390, windowHeight - 275) } }
+          : {
+              visible: reader,
+              animationType: "slide" as const,
+              onRequestClose: () => {
+                if (note) setNote(false);
+                else if (settings) setSettings(false);
+                else if (toc) setToc(false);
+                else setReader(false);
+              },
+            })}
       >
         <View
           style={{
             flex: 1,
             backgroundColor: colors.parchment,
-            paddingTop:
-              Platform.OS === "ios" ? Math.max(insets.top, 52) : insets.top,
-            paddingBottom: Math.max(insets.bottom, 10),
+            paddingTop: embedded
+              ? 0
+              : Platform.OS === "ios"
+                ? Math.max(insets.top, 52)
+                : insets.top,
+            paddingBottom: embedded ? 0 : Math.max(insets.bottom, 10),
           }}
         >
           <View
@@ -555,15 +586,22 @@ export function SiddurExperience() {
               paddingHorizontal: 15,
             }}
           >
-            <Button
-              variant="ghost"
-              accessibilityLabel="Close Siddur reader"
-              onPress={() => setReader(false)}
-              style={button(colors)}
+            {!embedded ? (
+              <Button
+                variant="ghost"
+                accessibilityLabel="Close Siddur reader"
+                onPress={() => setReader(false)}
+                style={button(colors)}
+              >
+                <X size={20} color={colors.ink} />
+              </Button>
+            ) : null}
+            <View
+              style={{
+                flex: 1,
+                alignItems: embedded ? "flex-start" : "center",
+              }}
             >
-              <X size={20} color={colors.ink} />
-            </Button>
-            <View style={{ flex: 1, alignItems: "center" }}>
               <Text
                 numberOfLines={1}
                 style={{ fontSize: 13, fontWeight: "600", color: colors.ink }}
@@ -628,7 +666,7 @@ export function SiddurExperience() {
             collapsable={false}
             style={{
               flex: 1,
-              marginHorizontal: 12,
+              marginHorizontal: embedded ? 0 : 12,
               borderRadius: 24,
               overflow: "hidden",
               backgroundColor: colors.vellum,
@@ -716,7 +754,11 @@ export function SiddurExperience() {
           >
             <Text
               accessibilityLabel={`Page ${pageIndex + 1} of ${pages.length}`}
-              style={{ color: colors.inkMuted, fontSize: 15, fontWeight: "600" }}
+              style={{
+                color: colors.inkMuted,
+                fontSize: 15,
+                fontWeight: "600",
+              }}
             >
               Page {pageIndex + 1} of {pages.length}
             </Text>
@@ -1179,7 +1221,7 @@ export function SiddurExperience() {
             </View>
           ) : null}
         </View>
-      </Modal>
+      </ReaderHost>
     </View>
   );
 }
