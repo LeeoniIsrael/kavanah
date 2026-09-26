@@ -18,7 +18,7 @@ import {
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Input } from "@/components/ui/input";
+import { SearchBar } from "@/components/SearchBar";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
@@ -31,7 +31,6 @@ import {
   ExternalLink,
   MoonStar,
   RefreshCw,
-  Search,
   X,
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -601,25 +600,16 @@ export function PrayerScreen(): React.JSX.Element {
         />
       ) : (
         <View className="gap-6">
-          <View
-            style={{
-              backgroundColor: colors.vellum,
-              borderCurve: "continuous",
-            }}
-            className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
-          >
-            <Search size={20} color={colors.inkMuted} />
-            <Input
+          <View className="flex-row items-center gap-3">
+            <SearchBar
               accessibilityLabel="Search prayers"
+              style={{ flex: 1 }}
+              placeholder="Search for a prayer"
               value={query}
               onChangeText={setQuery}
-              placeholders={[
-                "Search for travel…",
-                "Search for Shema…",
-                "Search for protection…",
-              ]}
-              className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent dark:bg-transparent px-0 shadow-none"
-              placeholderTextColor={colors.inkMuted}
+              onSubmit={(searchQuery) => {
+                if (searchQuery) void searchRemote(searchQuery);
+              }}
             />
             <Button
               variant="secondary"

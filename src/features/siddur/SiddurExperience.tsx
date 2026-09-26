@@ -24,7 +24,8 @@ import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
 import { LinearGradient } from "expo-linear-gradient";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { BookOpen, Search, X } from "@/components/ui/icons";
+import { BookOpen, X } from "@/components/ui/icons";
+import { SearchBar } from "@/components/SearchBar";
 import {
   ChevronLeft,
   ChevronRight,
@@ -1051,30 +1052,13 @@ export function SiddurExperience({
                       <X size={22} color={colors.ink} />
                     </Button>
                   </View>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      backgroundColor: colors.mineral,
-                      borderRadius: 16,
-                      paddingHorizontal: 12,
-                      marginVertical: 16,
-                    }}
-                  >
-                    <Search size={18} color={colors.inkMuted} />
-                    <TextInput
-                      value={query}
-                      onChangeText={setQuery}
-                      placeholder="Search English or Hebrew"
-                      placeholderTextColor={colors.inkMuted}
-                      style={{
-                        height: 48,
-                        flex: 1,
-                        marginLeft: 8,
-                        color: colors.ink,
-                      }}
-                    />
-                  </View>
+                  <SearchBar
+                    value={query}
+                    onChangeText={setQuery}
+                    placeholder="Search English or Hebrew"
+                    accessibilityLabel="Search siddur section titles in English or Hebrew"
+                    style={{ marginVertical: 16 }}
+                  />
                   <ScrollView keyboardShouldPersistTaps="handled">
                     {!query && bookmarks.length ? (
                       <View style={{ paddingVertical: 10 }}>
