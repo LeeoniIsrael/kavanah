@@ -63,6 +63,23 @@
       "expo-web-browser",
       "expo-web-browser",
       "expo-sqlite",
+      "./plugins/withWidgetFonts",
+      [
+        "expo-widgets",
+        {
+          "widgets": [
+            {
+              "name": "KavanahNextPrayerWidget",
+              "displayName": "Next Prayer",
+              "description": "A quiet glance at your next prayer moment.",
+              "ios": {
+                "contentMarginsDisabled": true,
+                "supportedFamilies": ["systemSmall", "systemMedium"]
+              }
+            }
+          ]
+        }
+      ],
       [
         "expo-media-library",
         {

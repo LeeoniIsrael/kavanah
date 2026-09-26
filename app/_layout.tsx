@@ -5,6 +5,7 @@ import "../global.css";
 import { AppErrorBoundary } from "@/components/AppErrorBoundary";
 import { NAV_THEME } from "@/lib/theme";
 import { AppProviders } from "@/providers/AppProviders";
+import { WidgetSync } from "@/widgets/WidgetSync";
 import { getNotificationNavigationUrl } from "@/services/notifications";
 import { Manrope_400Regular } from "@expo-google-fonts/manrope/400Regular";
 import { Manrope_500Medium } from "@expo-google-fonts/manrope/500Medium";
@@ -47,6 +48,7 @@ export default function RootLayout(): React.JSX.Element | null {
       <SafeAreaProvider>
         <AppErrorBoundary>
           <AppProviders>
+            <WidgetSync />
             <ThemeProvider value={NAV_THEME[scheme]}>
               <StatusBar style={scheme === "dark" ? "light" : "dark"} />
               <NotificationRouter />
