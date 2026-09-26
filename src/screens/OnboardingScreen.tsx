@@ -3,6 +3,7 @@ import {
   Animated,
   Easing,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   Pressable,
   ScrollView,
@@ -23,7 +24,7 @@ import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { confirmHaptic, softHaptic, successHaptic, tapHaptic, typingHaptic } from "@/services/haptics";
 import { circleConfigured } from "@/services/network/client";
-import { sendSignInCode, signInWithApple, signInWithGoogle, verifySignInCode, type CodeChannel } from "@/services/onboardingAuth";
+import { recordTermsAcceptance, sendSignInCode, signInWithApple, signInWithGoogle, verifySignInCode, type CodeChannel } from "@/services/onboardingAuth";
 import { usePrayerIdentityStore, type PrayerAudience, type PrayerCommunity } from "@/store/prayerIdentityStore";
 
 type Step = "splash" | "welcome" | "contact" | "code" | "audience" | "community";
@@ -96,6 +97,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   const [community, setCommunity] = useState<PrayerCommunity | null>(null);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [intro] = useState(() => new Animated.Value(mode === "onboarding" ? 0 : 1));
 
   useEffect(() => {
@@ -136,7 +138,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     emailSignInEnabled || googleSignInEnabled || phoneSignInEnabled
   );
   const submitCredential = () => void run(async () => {
-    if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
+    if (step === "code") { await verifySignInCode(contact, code, channel); await recordTermsAcceptance(); afterSignIn(); }
     else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
   });
   const goBack = () => {
@@ -172,20 +174,31 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             <AnimatedWelcomeHeadline />
             <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
             {canSignIn ? (
-              <View style={styles.providerGroup}>
+              <>
+              <Pressable
+                accessibilityRole="checkbox"
+                accessibilityState={{ checked: termsAccepted }}
+                onPress={() => { setTermsAccepted((accepted) => !accepted); void tapHaptic(); }}
+                style={styles.termsCheck}
+              >
+                <Ionicons name={termsAccepted ? "checkbox" : "square-outline"} size={21} color={termsAccepted ? accent : muted} />
+                <Text style={styles.termsText}>I agree to the <Text accessibilityRole="link" style={styles.termsLink} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/terms-of-use.md")}>Terms of Use</Text> and <Text accessibilityRole="link" style={styles.termsLink} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/privacy-policy.md")}>Privacy Policy</Text>.</Text>
+              </Pressable>
+              <View pointerEvents={termsAccepted && !busy ? "auto" : "none"} style={[styles.providerGroup, (!termsAccepted || busy) && styles.providersDisabled]}>
                 {Platform.OS === "ios" && appleSignInEnabled && (
                   <AppleAuthentication.AppleAuthenticationButton
                     buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                     buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
                     cornerRadius={11}
                     style={styles.appleButton}
-                    onPress={() => { void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
+                    onPress={() => { if (!termsAccepted) return; void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
                   />
                 )}
-                {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />}
-                {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
-                {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy} onPress={() => { setChannel("phone"); next("contact"); }} />}
+                {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy || !termsAccepted} onPress={() => { setChannel("email"); next("contact"); }} />}
+                {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy || !termsAccepted} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
+                {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy || !termsAccepted} onPress={() => { setChannel("phone"); next("contact"); }} />}
               </View>
+              </>
             ) : <Text style={styles.unavailable}>Account sign-in is being set up. You can keep using your prayer book without an account.</Text>}
             {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
             {mode === "account" && !canSignIn && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
@@ -287,6 +300,10 @@ const styles = StyleSheet.create({
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
   providerGroup: { marginTop: 29, gap: 10 },
+  providersDisabled: { opacity: 0.45 },
+  termsCheck: { marginTop: 20, minHeight: 44, flexDirection: "row", alignItems: "center", gap: 10 },
+  termsText: { flex: 1, color: muted, fontFamily: fonts.regular, fontSize: 12, lineHeight: 18 },
+  termsLink: { color: accent, fontFamily: fonts.semibold, textDecorationLine: "underline" },
   appleButton: { width: "100%", height: 56 },
   actionPressable: { width: "100%" },
   actionSurface: { minHeight: 56, borderRadius: 11, borderWidth: 1, flexDirection: "row", justifyContent: "center", alignItems: "center", paddingHorizontal: 20 },

@@ -6,6 +6,13 @@ import { Platform } from "react-native";
 import { requireCircle } from "@/services/network/client";
 
 export type CodeChannel = "email" | "phone";
+export const TERMS_VERSION = "2026-08-10";
+export async function recordTermsAcceptance(): Promise<void> {
+  const { error } = await requireCircle().auth.updateUser({
+    data: { terms_accepted_at: new Date().toISOString(), terms_version: TERMS_VERSION },
+  });
+  if (error) throw error;
+}
 export function normalizeContact(value: string, channel: CodeChannel): string {
   return channel === "email" ? value.trim().toLowerCase() : value.replace(/[\s().-]/g, "").trim();
 }
@@ -19,7 +26,9 @@ export async function sendSignInCode(value: string, channel: CodeChannel): Promi
   if (message) throw new Error(message);
   const contact = normalizeContact(value, channel);
   const { error } = await requireCircle().auth.signInWithOtp(
-    channel === "email" ? { email: contact } : { phone: contact },
+    channel === "email"
+      ? { email: contact, options: { data: { terms_accepted_at: new Date().toISOString(), terms_version: TERMS_VERSION } } }
+      : { phone: contact, options: { data: { terms_accepted_at: new Date().toISOString(), terms_version: TERMS_VERSION } } },
   );
   if (error) throw error;
 }
@@ -49,6 +58,7 @@ export async function signInWithApple(): Promise<boolean> {
       provider: "apple", token: credential.identityToken, nonce: rawNonce,
     });
     if (error) throw error;
+    await recordTermsAcceptance();
     return true;
   } catch (error) {
     if (error instanceof Error && error.message.includes("ERR_REQUEST_CANCELED")) return false;
@@ -73,5 +83,6 @@ export async function signInWithGoogle(): Promise<boolean> {
   if (!accessToken || !refreshToken) throw new Error(params.get("error_description") ?? "Google sign-in did not complete. Try again.");
   const { error: sessionError } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
   if (sessionError) throw sessionError;
+  await recordTermsAcceptance();
   return true;
 }

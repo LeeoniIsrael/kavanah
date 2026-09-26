@@ -1,12 +1,14 @@
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { Alert, Linking, Share, View } from "react-native";
+import { Alert, Linking, Pressable, Share, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
+import { Check } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
 import { useInterfaceStyles } from "@/design/layout";
+import { useThemeColors } from "@/design/appearance";
 import {
   circleConfigured,
   circleRpc as requestCircle,
@@ -25,6 +27,7 @@ import {
   type CircleProfile,
 } from "@/store/circleAccountStore";
 import { useSocialStore } from "@/store/socialStore";
+import { recordTermsAcceptance, TERMS_VERSION } from "@/services/onboardingAuth";
 
 type Contact = {
   requester: string;
@@ -59,6 +62,7 @@ export function CircleFriends({ tabs, lead }: FriendsProps) {
 }
 function PeopleContent({ tabs, lead }: FriendsProps) {
   const ui = useInterfaceStyles();
+  const colors = useThemeColors();
   const { session, profile, ready, error: accountError } = useCircleAccount();
   const circleRpc = useCallback(
     (name: string, args: Record<string, unknown> = {}) =>
@@ -68,7 +72,8 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const sync = useCircleSync();
   const [email, setEmail] = useState(""),
     [code, setCode] = useState(""),
-    [sent, setSent] = useState(false);
+    [sent, setSent] = useState(false),
+    [termsAccepted, setTermsAccepted] = useState(false);
   const params = useLocalSearchParams<{ handle?: string }>();
   const [name, setName] = useState(
       useSocialStore.getState().profile?.displayName ?? "",
@@ -220,6 +225,17 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             }}
             editable={!busy}
           />
+          <Pressable
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: termsAccepted }}
+            onPress={() => setTermsAccepted((accepted) => !accepted)}
+            style={{ minHeight: 48, flexDirection: "row", alignItems: "center", gap: 10 }}
+          >
+            <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1, borderColor: termsAccepted ? colors.blue : colors.inkMuted, backgroundColor: termsAccepted ? colors.blue : "transparent", alignItems: "center", justifyContent: "center" }}>
+              {termsAccepted && <Check size={16} color={colors.onAccent} />}
+            </View>
+            <Text style={[ui.caption, { flex: 1 }]}>I agree to the <Text accessibilityRole="link" style={{ color: colors.blue }} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/terms-of-use.md")}>Terms of Use</Text> and <Text accessibilityRole="link" style={{ color: colors.blue }} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/privacy-policy.md")}>Privacy Policy</Text>.</Text>
+          </Pressable>
           {sent && (
             <Input
               accessibilityLabel="Email verification code"
@@ -236,17 +252,21 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             () =>
               void run(async () => {
                 if (sent) {
+                  if (!termsAccepted) throw new Error("Please accept the Terms of Use and Privacy Policy to continue.");
                   const { error } = await requireCircle().auth.verifyOtp({
                     email: email.trim(),
                     token: code.trim(),
                     type: "email",
                   });
                   if (error) throw error;
+                  await recordTermsAcceptance();
                 } else {
+                  if (!termsAccepted) throw new Error("Please accept the Terms of Use and Privacy Policy to continue.");
                   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
                     throw new Error("Enter your email address.");
                   const { error } = await requireCircle().auth.signInWithOtp({
                     email: email.trim(),
+                    options: { data: { terms_accepted_at: new Date().toISOString(), terms_version: TERMS_VERSION } },
                   });
                   if (error) throw error;
                   setSent(true);
