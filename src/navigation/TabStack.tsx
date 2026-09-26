@@ -2,7 +2,13 @@ import { useThemeColors } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import { Stack } from "expo-router";
 
-export function TabStack({ title }: { title: string }): React.JSX.Element {
+export function TabStack({
+  title,
+  animation,
+}: {
+  title: string;
+  animation?: "default" | "fade" | "fade_from_bottom";
+}): React.JSX.Element {
   const colors = useThemeColors();
 
   return (
@@ -21,7 +27,7 @@ export function TabStack({ title }: { title: string }): React.JSX.Element {
         },
       }}
     >
-      <Stack.Screen name="index" options={{ title }} />
+      <Stack.Screen name="index" options={{ title, ...(animation ? { animation } : {}) }} />
     </Stack>
   );
 }

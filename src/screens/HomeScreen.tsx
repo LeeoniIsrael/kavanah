@@ -27,29 +27,30 @@ import {
   CalendarDays,
   ChartColumn,
   ChevronRight,
-  Heart,
   MapPin,
   Plus,
+  Search,
   Share2,
-  ShieldCheck,
   SlidersHorizontal,
-  Utensils,
   X,
 } from "@/components/ui/icons";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   Easing,
   Modal,
   Pressable,
+  ScrollView,
   StyleSheet,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Checkbox } from "@/components/organisms/check-box";
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { StateBounce } from "@/components/ui/motion-feedback";
 import { motion } from "@/design/theme";
 import { useCurrentDate } from "@/hooks/useCurrentDate";
@@ -61,10 +62,12 @@ import {
   type PracticeStats,
 } from "@/services/practiceStats";
 import { usePrayerStore } from "@/store/prayerStore";
+import { searchPrayers } from "@/services/prayerService";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { useStreakStore, type StreakHabit } from "@/store/streakStore";
 import { useZmanimStore } from "@/store/zmanimStore";
 import type { Zman } from "@/types/zmanim";
+import type { PrayerText } from "@/types/prayer";
 
 const habitDetails: Record<StreakHabit, { name: string; description: string }> =
   {
@@ -115,12 +118,6 @@ const prayerMomentByZman: Partial<
   havdalah: { query: "havdalah", label: "Havdalah", helper: "Close Shabbat" },
 };
 
-const shortcuts = [
-  { label: "Healing", query: "health", icon: Heart },
-  { label: "Blessings", query: "food blessing", icon: Utensils },
-  { label: "Protection", query: "protection", icon: ShieldCheck },
-];
-
 export function HomeScreen(): React.JSX.Element {
   const availability = usePracticeAvailability();
   const colors = useThemeColors();
@@ -134,7 +131,7 @@ export function HomeScreen(): React.JSX.Element {
   const visibleHabits = useMemo(() => habits.filter((habit) => prayerAudience !== "woman" || habit.habit !== "tefillin"), [habits, prayerAudience]);
   const { upcomingZmanim, location, isLoading, error, refresh } =
     useZmanimStore();
-  const { setQuery } = usePrayerStore();
+  const { setQuery, prayers, bookmarkedPrayerIds, toggleBookmark } = usePrayerStore();
   const reduceMotion = useReducedMotion();
   const [practiceEditorOpen, setPracticeEditorOpen] = useState(false);
   const [practiceStatsOpen, setPracticeStatsOpen] = useState(false);
@@ -142,6 +139,27 @@ export function HomeScreen(): React.JSX.Element {
   const [sharePromptHabit, setSharePromptHabit] = useState<StreakHabit | null>(
     null,
   );
+  const [prayerEditorOpen, setPrayerEditorOpen] = useState(false);
+  const [prayerSearch, setPrayerSearch] = useState("");
+  const [shortcutPage, setShortcutPage] = useState(0);
+  const shortcutPager = useRef<ScrollView>(null);
+  const { width: windowWidth } = useWindowDimensions();
+  const shortcutPageWidth = windowWidth;
+  const homePrayers = useMemo(
+    () => bookmarkedPrayerIds
+      .map((id) => prayers.find((prayer) => prayer.id === id))
+      .filter((prayer): prayer is PrayerText => prayer !== undefined),
+    [bookmarkedPrayerIds, prayers],
+  );
+  const prayerPages = useMemo(
+    () => Array.from({ length: Math.ceil(homePrayers.length / 3) }, (_, index) => homePrayers.slice(index * 3, index * 3 + 3)),
+    [homePrayers],
+  );
+  const prayerOptions = useMemo(() => {
+    const results = searchPrayers(prayerSearch, prayers)
+      .filter(({ prayer }) => !bookmarkedPrayerIds.includes(prayer.id));
+    return results.slice(0, prayerSearch.trim() ? 60 : 40);
+  }, [bookmarkedPrayerIds, prayerSearch, prayers]);
   useEffect(() => {
     if (practiceEditorOpen || practiceStatsOpen) void confirmHaptic();
   }, [practiceEditorOpen, practiceStatsOpen]);
@@ -294,21 +312,91 @@ export function HomeScreen(): React.JSX.Element {
         <ChevronRight size={16} color={colors.inkMuted} />
       </Button>
 
-      <View style={homeStyles.shortcuts}>
-        {shortcuts.map(({ label, query, icon: Icon }) => (
+      <View style={homeStyles.prayerShortcutsSection}>
+        <View style={homeStyles.prayerShortcutsHeading}>
+          <Text accessibilityRole="header" style={ui.sectionTitle}>Your prayers</Text>
           <Button
-            key={label}
             variant="ghost"
             size="content"
-            onPress={() => openPrayerSearch(query)}
-            style={homeStyles.shortcut}
+            accessibilityLabel="Edit prayers on your home screen"
+            haptic="selection"
+            onPress={() => {
+              setPrayerSearch("");
+              setPrayerEditorOpen(true);
+            }}
+            style={homeStyles.editPrayersButton}
+          >
+            <SlidersHorizontal size={16} color={colors.inkMuted} />
+            <Text style={homeStyles.editPrayersLabel}>Edit</Text>
+          </Button>
+        </View>
+        {homePrayers.length ? (
+          <>
+            <ScrollView
+              ref={shortcutPager}
+              horizontal
+              pagingEnabled
+              decelerationRate="fast"
+              showsHorizontalScrollIndicator={false}
+              style={homeStyles.shortcutPager}
+              onMomentumScrollEnd={(event) => setShortcutPage(Math.round(event.nativeEvent.contentOffset.x / shortcutPageWidth))}
+            >
+              {prayerPages.map((page, pageIndex) => (
+                <View key={`prayer-page-${pageIndex}`} style={[homeStyles.shortcutPage, { width: shortcutPageWidth }]}>
+                  {page.map((prayer) => (
+                    <Button
+                      key={prayer.id}
+                      variant="ghost"
+                      size="content"
+                      accessibilityLabel={`Open ${prayer.title}`}
+                      accessibilityHint="Opens this prayer"
+                      haptic="soft"
+                      pressedScale={0.96}
+                      onPress={() => openPrayerSearch(prayer.title)}
+                      style={homeStyles.shortcut}
+                      backgroundColor={colors.vellum}
+                      borderRadius={18}
+                    >
+                      <BookOpen size={19} color={colors.blue} />
+                      <Text numberOfLines={2} style={homeStyles.shortcutLabel}>{prayer.title}</Text>
+                    </Button>
+                  ))}
+                </View>
+              ))}
+            </ScrollView>
+            {prayerPages.length > 1 ? (
+              <View accessibilityLabel={`Page ${shortcutPage + 1} of ${prayerPages.length}`} style={homeStyles.pageIndicators}>
+                {prayerPages.map((_, index) => (
+                  <Pressable
+                    key={`page-${index}`}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Show prayer page ${index + 1}`}
+                    onPress={() => {
+                      setShortcutPage(index);
+                      shortcutPager.current?.scrollTo({ x: index * shortcutPageWidth, animated: !reduceMotion });
+                    }}
+                    style={[homeStyles.pageIndicator, index === shortcutPage && homeStyles.pageIndicatorActive]}
+                  />
+                ))}
+              </View>
+            ) : null}
+          </>
+        ) : (
+          <Button
+            variant="ghost"
+            size="content"
+            accessibilityLabel="Add prayers to your home screen"
+            haptic="selection"
+            onPress={() => setPrayerEditorOpen(true)}
+            style={homeStyles.emptyPrayers}
             backgroundColor={colors.vellum}
             borderRadius={18}
           >
-            <Icon size={20} color={colors.inkMuted} />
-            <Text style={homeStyles.shortcutLabel}>{label}</Text>
+            <Plus size={18} color={colors.blue} />
+            <Text style={homeStyles.emptyPrayersText}>Add prayers to your home screen</Text>
+            <ChevronRight size={16} color={colors.inkMuted} />
           </Button>
-        ))}
+        )}
       </View>
 
       <View className="gap-3">
@@ -455,6 +543,95 @@ export function HomeScreen(): React.JSX.Element {
           />
         ) : null}
       </View>
+
+      <Dialog open={prayerEditorOpen} onOpenChange={setPrayerEditorOpen}>
+        <DialogContent
+          overlayClassName="justify-end p-0"
+          className="max-w-[560px] rounded-b-none border-b-0 p-0"
+          showClose={false}
+        >
+          <SafeAreaView edges={["bottom"]} className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card">
+            <View style={homeStyles.prayerEditor}>
+              <View style={homeStyles.prayerEditorHeading}>
+                <View style={homeStyles.prayerEditorTitle}>
+                  <DialogTitle>Home prayers</DialogTitle>
+                  <DialogDescription>Choose the prayers you want close at hand.</DialogDescription>
+                </View>
+                <Button variant="ghost" size="content" accessibilityRole="button" haptic="selection" onPress={() => setPrayerEditorOpen(false)} style={homeStyles.doneButton}>
+                  <Text style={homeStyles.doneLabel}>Done</Text>
+                </Button>
+              </View>
+              <View style={homeStyles.prayerSearch}>
+                <Search size={17} color={colors.inkMuted} />
+                <Input
+                  accessibilityLabel="Search prayers"
+                  placeholder="Find a prayer"
+                  value={prayerSearch}
+                  onChangeText={setPrayerSearch}
+                  returnKeyType="search"
+                  className="min-h-11 flex-1 border-0 bg-transparent px-0"
+                  style={{ color: colors.ink }}
+                />
+                {prayerSearch ? (
+                  <Button variant="ghost" size="icon" accessibilityLabel="Clear prayer search" haptic="none" onPress={() => setPrayerSearch("")}>
+                    <X size={16} color={colors.inkMuted} />
+                  </Button>
+                ) : null}
+              </View>
+              <ScrollView keyboardShouldPersistTaps="handled" style={homeStyles.prayerOptions}>
+                <Text style={homeStyles.prayerListHeading}>On your home · {homePrayers.length}</Text>
+                {homePrayers.map((prayer, index) => (
+                  <Button
+                    key={`home-${prayer.id}`}
+                    variant="ghost"
+                    size="content"
+                    accessibilityRole="checkbox"
+                    accessibilityLabel={prayer.title}
+                    accessibilityHint="Removes this prayer from your home screen"
+                    accessibilityState={{ checked: true }}
+                    haptic="selection"
+                    onPress={() => toggleBookmark(prayer.id)}
+                    className={cn("min-h-[64px] flex-row items-center gap-4 border-b border-b-hairline", index === homePrayers.length - 1 && "border-b-0")}
+                  >
+                    <View style={homeStyles.prayerOptionCopy}>
+                      <Text style={homeStyles.prayerOptionTitle}>{prayer.title}</Text>
+                      <Text numberOfLines={1} style={homeStyles.prayerOptionDescription}>{prayer.summary}</Text>
+                    </View>
+                    <Checkbox checked size={23} stroke={1.75} />
+                  </Button>
+                ))}
+                <Text style={homeStyles.prayerListHeading}>Browse prayers</Text>
+                {prayerOptions.map(({ prayer }, index) => {
+                  return (
+                    <Button
+                      key={prayer.id}
+                      variant="ghost"
+                      size="content"
+                      accessibilityRole="checkbox"
+                      accessibilityLabel={prayer.title}
+                      accessibilityHint="Adds this prayer to your home screen"
+                      accessibilityState={{ checked: false }}
+                      haptic="selection"
+                      onPress={() => toggleBookmark(prayer.id)}
+                      className={cn("min-h-[64px] flex-row items-center gap-4 border-b border-b-hairline", index === prayerOptions.length - 1 && "border-b-0")}
+                    >
+                      <View style={homeStyles.prayerOptionCopy}>
+                        <Text style={homeStyles.prayerOptionTitle}>{prayer.title}</Text>
+                        <Text numberOfLines={1} style={homeStyles.prayerOptionDescription}>{prayer.summary}</Text>
+                      </View>
+                      <Checkbox checked={false} size={23} stroke={1.75} />
+                    </Button>
+                  );
+                })}
+                {prayerOptions.length === 0 ? <Text style={homeStyles.noPrayerResults}>No prayers found. Try another search.</Text> : null}
+                {!prayerSearch.trim() && prayers.length - homePrayers.length > prayerOptions.length ? (
+                  <Text style={homeStyles.prayerListHint}>Search to find more from the prayer library.</Text>
+                ) : null}
+              </ScrollView>
+            </View>
+          </SafeAreaView>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
         <DialogContent
@@ -963,20 +1140,111 @@ const makehomeStyles = (colors: ThemeColors) =>
     locationTitle: { fontSize: 13, lineHeight: 19, color: colors.ink },
     locationCaption: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
     practiceCount: { fontSize: 12, lineHeight: 18, color: colors.inkMuted },
-    shortcuts: { flexDirection: "row", gap: 10, paddingBottom: 8 },
+    prayerShortcutsSection: { gap: 10 },
+    prayerShortcutsHeading: {
+      minHeight: 44,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 12,
+    },
+    editPrayersButton: {
+      minHeight: 44,
+      paddingHorizontal: 8,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 7,
+    },
+    editPrayersLabel: {
+      fontSize: 13,
+      lineHeight: 19,
+      color: colors.inkMuted,
+      fontFamily: "Manrope_600SemiBold",
+    },
+    shortcutPager: { marginHorizontal: -24, paddingBottom: 2 },
+    shortcutPage: {
+      paddingHorizontal: 24,
+      flexDirection: "row",
+      gap: 10,
+    },
     shortcut: {
       flex: 1,
-      minHeight: 68,
-      paddingVertical: 14,
-      paddingHorizontal: 4,
+      minHeight: 82,
+      paddingVertical: 12,
+      paddingHorizontal: 7,
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
     },
     shortcutLabel: {
       fontSize: 12,
-      lineHeight: 18,
+      lineHeight: 16,
       color: colors.ink,
-      fontFamily: "Manrope_500Medium",
+      textAlign: "center",
+      fontFamily: "Manrope_600SemiBold",
     },
+    pageIndicators: {
+      minHeight: 14,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 6,
+      marginTop: -2,
+    },
+    pageIndicator: {
+      width: 5,
+      height: 5,
+      borderRadius: 3,
+      backgroundColor: colors.inkMuted,
+      opacity: 0.35,
+    },
+    pageIndicatorActive: {
+      width: 16,
+      backgroundColor: colors.blue,
+      opacity: 1,
+    },
+    emptyPrayers: {
+      minHeight: 66,
+      paddingHorizontal: 16,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      gap: 12,
+    },
+    emptyPrayersText: {
+      flex: 1,
+      color: colors.ink,
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: "Manrope_600SemiBold",
+    },
+    prayerEditor: { paddingHorizontal: 24, paddingTop: 10, paddingBottom: 12, gap: 16 },
+    prayerEditorHeading: { flexDirection: "row", alignItems: "center", gap: 12 },
+    prayerEditorTitle: { flex: 1, gap: 4 },
+    doneButton: { minHeight: 44, paddingHorizontal: 8, justifyContent: "center" },
+    doneLabel: { color: colors.blue, fontSize: 15, lineHeight: 21, fontFamily: "Manrope_600SemiBold" },
+    prayerSearch: {
+      minHeight: 48,
+      paddingHorizontal: 13,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 10,
+      borderRadius: 16,
+      backgroundColor: colors.vellum,
+    },
+    prayerOptions: { maxHeight: 440 },
+    prayerListHeading: {
+      paddingTop: 8,
+      paddingBottom: 4,
+      color: colors.inkMuted,
+      fontSize: 12,
+      lineHeight: 18,
+      fontFamily: "Manrope_600SemiBold",
+    },
+    prayerOptionCopy: { flex: 1, gap: 3 },
+    prayerOptionTitle: { color: colors.ink, fontSize: 15, lineHeight: 21, fontFamily: "Manrope_600SemiBold" },
+    prayerOptionDescription: { color: colors.inkMuted, fontSize: 12, lineHeight: 17 },
+    noPrayerResults: { paddingVertical: 24, color: colors.inkMuted, textAlign: "center", fontSize: 14, lineHeight: 20 },
+    prayerListHint: { paddingVertical: 12, color: colors.inkMuted, textAlign: "center", fontSize: 12, lineHeight: 18 },
   });

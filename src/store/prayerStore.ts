@@ -57,7 +57,7 @@ type PrayerState = {
 
 const cached = getCachedPrayers();
 const persistedBookmarks = readSocialData(BOOKMARKS_KEY, isStringArray) ??
-  readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? ["tefillin-blessing"];
+  readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? [];
 const persistedHistory = recoverPrayerHistory(
   readSocialData(HISTORY_KEY, isPrayerHistoryArray) ?? [],
   useSocialStore.getState().posts,
