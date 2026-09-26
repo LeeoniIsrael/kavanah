@@ -16,6 +16,7 @@ import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import * as AppleAuthentication from "expo-apple-authentication";
 import { BrandWordmark } from "@/components/BrandMark";
 import { AnimatedWelcomeHeadline } from "@/components/AnimatedWelcomeHeadline";
 import { fonts } from "@/design/theme";
@@ -32,6 +33,7 @@ const background = "#000000";
 const edge = "#344254";
 const accent = "#8DB6E8";
 const appleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN === "true";
+const emailSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN === "true";
 const googleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN === "true";
 const phoneSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_PHONE_SIGN_IN === "true";
 
@@ -129,6 +131,10 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     router.replace(mode === "preferences" ? "/profile" : "/prayer");
   };
   const afterSignIn = () => { void confirmHaptic(); if (mode === "account") router.replace("/profile"); else next("audience"); };
+  const canSignIn = circleConfigured && (
+    (Platform.OS === "ios" && appleSignInEnabled) ||
+    emailSignInEnabled || googleSignInEnabled || phoneSignInEnabled
+  );
   const submitCredential = () => void run(async () => {
     if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
     else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
@@ -165,16 +171,24 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
           <View style={styles.welcomeBottom}>
             <AnimatedWelcomeHeadline />
             <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
-            {circleConfigured ? (
+            {canSignIn ? (
               <View style={styles.providerGroup}>
-                <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />
-                {Platform.OS === "ios" && appleSignInEnabled && <Action label="Continue with Apple" icon="apple" disabled={busy} onPress={() => void run(async () => { if (await signInWithApple()) afterSignIn(); })} />}
+                {Platform.OS === "ios" && appleSignInEnabled && (
+                  <AppleAuthentication.AppleAuthenticationButton
+                    buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+                    buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
+                    cornerRadius={11}
+                    style={styles.appleButton}
+                    onPress={() => { void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
+                  />
+                )}
+                {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />}
                 {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
                 {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy} onPress={() => { setChannel("phone"); next("contact"); }} />}
               </View>
             ) : <Text style={styles.unavailable}>Account sign-in is being set up. You can keep using your prayer book without an account.</Text>}
             {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
-            {mode === "account" && !circleConfigured && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
+            {mode === "account" && !canSignIn && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
             <Text style={styles.privacy}>Your prayer stays private.</Text>
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
@@ -273,6 +287,7 @@ const styles = StyleSheet.create({
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
   providerGroup: { marginTop: 29, gap: 10 },
+  appleButton: { width: "100%", height: 56 },
   actionPressable: { width: "100%" },
   actionSurface: { minHeight: 56, borderRadius: 11, borderWidth: 1, flexDirection: "row", justifyContent: "center", alignItems: "center", paddingHorizontal: 20 },
   actionSolid: { backgroundColor: ink, borderColor: ink },
