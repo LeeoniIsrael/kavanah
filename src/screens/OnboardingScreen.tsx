@@ -113,7 +113,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             </LinearGradient>
             <View style={{ flex: 1, minHeight: 18 }} />
             {Platform.OS === "ios" && button("Continue with Apple", () => void run(async () => { if (await signInWithApple()) afterSignIn(); }), true)}
-            {Platform.OS !== "web" && button("Continue with Google", () => void run(async () => { if (await signInWithGoogle()) afterSignIn(); }), Platform.OS !== "ios")}
+            {button("Continue with Google", () => void run(async () => { if (await signInWithGoogle()) afterSignIn(); }), Platform.OS !== "ios")}
             <View style={styles.double}>{button("Email", () => { setChannel("email"); next("contact"); })}{button("Phone", () => { setChannel("phone"); next("contact"); })}</View>
             {mode === "onboarding" && button("Explore first", () => next("audience"))}
             <Text style={[text(12, "regular", colors.inkMuted), styles.foot]}>Your prayer stays private. You can create an account anytime.</Text>
