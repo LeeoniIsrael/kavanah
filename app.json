@@ -61,7 +61,19 @@
       "expo-status-bar",
       "expo-apple-authentication",
       "expo-web-browser",
-      "expo-web-browser"
+      "expo-web-browser",
+      "expo-sqlite",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Kavanah only needs photo access to save a Siddur page you choose.",
+          "savePhotosPermission": "Allow Kavanah to save a Siddur page image to Photos.",
+          "isAccessMediaLocationEnabled": false,
+          "granularPermissions": [
+            "photo"
+          ]
+        }
+      ]
     ],
     "extra": {
       "assistantApiUrl": "https://kavanah-rho.vercel.app/api/assistant",

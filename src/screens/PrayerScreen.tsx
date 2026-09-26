@@ -4,9 +4,14 @@ import { findLanguage } from "@/data/languages";
 import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
 import { groupPrayerSearchResults } from "@/services/prayerSearchGroups";
 import { PrayerSearchGroupCard } from "@/components/PrayerSearchGroupCard";
-import { siddurBooks, siddurEntries, fitsDailyView, type SiddurBook } from "@/services/siddur";
+import {
+  siddurBooks,
+  siddurEntries,
+  fitsDailyView,
+  type SiddurBook,
+} from "@/services/siddur";
 import { writeSocialData } from "@/services/socialStorage";
-import { SiddurLibrary } from "@/components/SiddurLibrary";
+import { SiddurExperience } from "@/features/siddur/SiddurExperience";
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -291,7 +296,9 @@ export function PrayerScreen(): React.JSX.Element {
   const sourceBook = selected?.sourceMetadata?.work;
   const orderedSections =
     sourceBook && siddurBooks.includes(sourceBook as SiddurBook)
-      ? siddurEntries(sourceBook as SiddurBook).filter((entry) => fitsDailyView(entry, prayerIdentity))
+      ? siddurEntries(sourceBook as SiddurBook).filter((entry) =>
+          fitsDailyView(entry, prayerIdentity),
+        )
       : [];
   const sectionIndex = orderedSections.findIndex(
     (entry) => entry.id === selected?.id,
@@ -435,17 +442,7 @@ export function PrayerScreen(): React.JSX.Element {
         ))}
       </View>
       {libraryView === "siddur" ? (
-        <SiddurLibrary
-          onOpen={(entry) => {
-            const prayer = createIndexedPrayer(entry);
-            usePrayerStore.setState((state) => ({
-              prayers: state.prayers.some((item) => item.id === prayer.id)
-                ? state.prayers
-                : [...state.prayers, prayer],
-            }));
-            openPrayer(prayer.id);
-          }}
-        />
+        <SiddurExperience />
       ) : (
         <View className="gap-6">
           <View
@@ -646,8 +643,7 @@ export function PrayerScreen(): React.JSX.Element {
                   size="content"
                   accessibilityLabel="Finish prayer"
                   disabled={
-                    selectedLoading ||
-                    !availability(selectedPractice).allowed
+                    selectedLoading || !availability(selectedPractice).allowed
                   }
                   onPress={completeGuidedPrayer}
                   style={{
@@ -1026,9 +1022,7 @@ export function PrayerScreen(): React.JSX.Element {
               onBookmark={() => selected && toggleBookmark(selected.id)}
               bookmarked={selectedBookmarked}
               reviewPending={selected?.hebrewReview.status !== "approved"}
-              completionBlockedReason={
-                availability(selectedPractice).reason
-              }
+              completionBlockedReason={availability(selectedPractice).reason}
               onComplete={completeGuidedPrayer}
               onQuote={(token) => {
                 if (selected)
