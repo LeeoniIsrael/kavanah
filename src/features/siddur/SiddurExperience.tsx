@@ -4,6 +4,7 @@ import {
   ActivityIndicator,
   Alert,
   Animated,
+  Easing,
   Modal,
   Platform,
   Pressable,
@@ -319,8 +320,8 @@ export function SiddurExperience({
       Animated.spring(slide, {
         toValue: 0,
         useNativeDriver: true,
-        tension: 85,
-        friction: 12,
+        tension: 110,
+        friction: 15,
       }).start();
       return;
     }
@@ -342,12 +343,14 @@ export function SiddurExperience({
     Animated.parallel([
       Animated.timing(opacity, {
         toValue: 0.35,
-        duration: 220,
+        duration: 150,
+        easing: Easing.in(Easing.cubic),
         useNativeDriver: true,
       }),
       Animated.timing(slide, {
         toValue: -visualDirection * travel,
-        duration: 220,
+        duration: 150,
+        easing: Easing.in(Easing.cubic),
         useNativeDriver: true,
       }),
     ]).start(({ finished }) => {
@@ -361,12 +364,14 @@ export function SiddurExperience({
         Animated.parallel([
           Animated.timing(opacity, {
             toValue: 1,
-            duration: 260,
+            duration: 180,
+            easing: Easing.out(Easing.cubic),
             useNativeDriver: true,
           }),
           Animated.timing(slide, {
             toValue: 0,
-            duration: 260,
+            duration: 180,
+            easing: Easing.out(Easing.cubic),
             useNativeDriver: true,
           }),
         ]).start(() => {
@@ -434,8 +439,8 @@ export function SiddurExperience({
       Animated.spring(slide, {
         toValue: 0,
         useNativeDriver: true,
-        tension: 85,
-        friction: 12,
+        tension: 110,
+        friction: 15,
       }).start();
     } else if (m.type === "swipe" && m.dx)
       goPage(pageDirection(language, m.dx));
