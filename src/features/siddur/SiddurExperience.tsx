@@ -774,7 +774,6 @@ export function SiddurExperience() {
                   overflow: "hidden",
                 }}
               >
-                {" "}
                 <SafeAreaView
                   style={{
                     flex: 1,
@@ -952,7 +951,6 @@ export function SiddurExperience() {
                   overflow: "hidden",
                 }}
               >
-                {" "}
                 <SafeAreaView
                   style={{
                     flex: 1,
@@ -1151,7 +1149,6 @@ export function SiddurExperience() {
                 zIndex: 40,
               }}
             >
-              {" "}
               <View
                 style={{
                   flex: 1,
