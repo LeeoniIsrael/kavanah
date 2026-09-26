@@ -803,7 +803,7 @@ export function SiddurExperience({
             style={{
               flex: 1,
               position: "relative",
-              marginHorizontal: embedded ? 0 : 12,
+              marginHorizontal: embedded ? -24 : 12,
             }}
           >
             <Animated.View
@@ -811,6 +811,7 @@ export function SiddurExperience({
               collapsable={false}
               style={{
                 flex: 1,
+                marginHorizontal: embedded ? 24 : 0,
                 borderRadius: 24,
                 overflow: "hidden",
                 transformOrigin: "bottom",
@@ -876,9 +877,9 @@ export function SiddurExperience({
               }}
             >
               {language === "he" ? (
-                <ChevronRight size={16} color={colors.inkMuted} />
+                <ChevronRight size={12} color={colors.inkMuted} />
               ) : (
-                <ChevronLeft size={16} color={colors.inkMuted} />
+                <ChevronLeft size={12} color={colors.inkMuted} />
               )}
             </Pressable>
             <Pressable
@@ -898,9 +899,9 @@ export function SiddurExperience({
               }}
             >
               {language === "he" ? (
-                <ChevronLeft size={16} color={colors.inkMuted} />
+                <ChevronLeft size={12} color={colors.inkMuted} />
               ) : (
-                <ChevronRight size={16} color={colors.inkMuted} />
+                <ChevronRight size={12} color={colors.inkMuted} />
               )}
             </Pressable>
           </View>
