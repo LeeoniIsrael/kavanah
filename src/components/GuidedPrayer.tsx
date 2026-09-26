@@ -8,16 +8,12 @@ import { Animated, Easing, FlatList, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/text";
 import { Button } from "@/components/ui/button";
-import {
-  Check,
-  Bookmark,
-  BookmarkCheck,
-  Quote,
-  X,
-} from "@/components/ui/icons";
+import { InlineQuoteText } from "@/components/InlineQuoteText";
+import { Check, Bookmark, BookmarkCheck, X } from "@/components/ui/icons";
 import { useThemeColors } from "@/design/appearance";
 import { fonts, motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import type { QuoteSource } from "@/store/socialStore";
 
 export type GuidedPrayerToken = {
   id: string;
@@ -42,7 +38,8 @@ type Props = {
   onBookmark: () => void;
   bookmarked: boolean;
   reviewPending: boolean;
-  onQuote: (token: GuidedPrayerToken) => void;
+  quoteSource?: Omit<QuoteSource, "language" | "text"> | undefined;
+  onSaveQuote: (source: QuoteSource, start: number, end: number) => boolean;
 };
 export function GuidedPrayer({
   completionBlockedReason,
@@ -56,7 +53,8 @@ export function GuidedPrayer({
   visible,
   onClose,
   onComplete,
-  onQuote,
+  quoteSource,
+  onSaveQuote,
   onDetails,
   onBookmark,
   bookmarked,
@@ -65,6 +63,7 @@ export function GuidedPrayer({
   const colors = useThemeColors(),
     insets = useSafeAreaInsets();
   const [reveal] = useState(() => new Animated.Value(1));
+  const [activeQuoteField, setActiveQuoteField] = useState("");
   const scroll = useRef<FlatList<GuidedPrayerToken>>(null);
   const reduceMotion = useReducedMotion();
   useEffect(() => {
@@ -110,10 +109,16 @@ export function GuidedPrayer({
           <Button
             variant="ghost"
             size="icon"
-            accessibilityLabel="Close without logging a prayer"
-            onPress={onClose}
+            accessibilityLabel={
+              bookmarked ? "Remove bookmark" : "Bookmark prayer"
+            }
+            onPress={onBookmark}
           >
-            <X size={20} color={colors.ink} />
+            {bookmarked ? (
+              <BookmarkCheck size={20} color={colors.blue} />
+            ) : (
+              <Bookmark size={20} color={colors.ink} />
+            )}
           </Button>
           <View style={{ flex: 1, alignItems: "center", gap: 3 }}>
             <Text variant="caption" style={{ color: colors.inkMuted }}>
@@ -134,16 +139,10 @@ export function GuidedPrayer({
           <Button
             variant="ghost"
             size="icon"
-            accessibilityLabel={
-              bookmarked ? "Remove bookmark" : "Bookmark prayer"
-            }
-            onPress={onBookmark}
+            accessibilityLabel="Close without logging a prayer"
+            onPress={onClose}
           >
-            {bookmarked ? (
-              <BookmarkCheck size={20} color={colors.blue} />
-            ) : (
-              <Bookmark size={20} color={colors.ink} />
-            )}
+            <X size={20} color={colors.ink} />
           </Button>
         </View>
         <Button
@@ -177,6 +176,18 @@ export function GuidedPrayer({
             }}
             ListHeaderComponent={
               <View style={{ gap: 16, paddingBottom: 24 }}>
+                {quoteSource ? (
+                  <Text
+                    style={{
+                      color: colors.inkMuted,
+                      fontSize: 13,
+                      lineHeight: 20,
+                    }}
+                  >
+                    Tap the first word in the pronunciation or Hebrew, then tap
+                    the last word.
+                  </Text>
+                ) : null}
                 {guide?.before ? (
                   <View style={{ gap: 8 }}>
                     <Text
@@ -262,17 +273,39 @@ export function GuidedPrayer({
                     <Text variant="caption" style={{ color: colors.inkMuted }}>
                       Say these words
                     </Text>
-                    <Text
-                      selectable
-                      style={{
-                        fontFamily: fonts.regular,
-                        fontSize: 25,
-                        lineHeight: 39,
-                        color: colors.ink,
-                      }}
-                    >
-                      {token.transliteration}
-                    </Text>
+                    {quoteSource ? (
+                      <InlineQuoteText
+                        active={
+                          activeQuoteField === `${token.id}:transliteration`
+                        }
+                        fieldId={`${token.id}:transliteration`}
+                        onActivate={setActiveQuoteField}
+                        onSave={onSaveQuote}
+                        source={{
+                          ...quoteSource,
+                          text: token.transliteration,
+                          language: "transliteration",
+                        }}
+                        style={{
+                          fontFamily: fonts.regular,
+                          fontSize: 25,
+                          lineHeight: 39,
+                          color: colors.ink,
+                        }}
+                      />
+                    ) : (
+                      <Text
+                        selectable
+                        style={{
+                          fontFamily: fonts.regular,
+                          fontSize: 25,
+                          lineHeight: 39,
+                          color: colors.ink,
+                        }}
+                      >
+                        {token.transliteration}
+                      </Text>
+                    )}
                   </View>
                 ) : null}
                 {token.translation ? (
@@ -294,20 +327,43 @@ export function GuidedPrayer({
                   </View>
                 ) : null}
                 {token.hebrew ? (
-                  <Text
-                    selectable
-                    style={{
-                      fontFamily: fonts.hebrew,
-                      fontSize: 25,
-                      lineHeight: 40,
-                      fontWeight: "400",
-                      writingDirection: "rtl",
-                      textAlign: "right",
-                      color: colors.ink,
-                    }}
-                  >
-                    {token.hebrew}
-                  </Text>
+                  quoteSource ? (
+                    <InlineQuoteText
+                      active={activeQuoteField === `${token.id}:hebrew`}
+                      fieldId={`${token.id}:hebrew`}
+                      onActivate={setActiveQuoteField}
+                      onSave={onSaveQuote}
+                      source={{
+                        ...quoteSource,
+                        text: token.hebrew,
+                        language: "he",
+                      }}
+                      style={{
+                        fontFamily: fonts.hebrew,
+                        fontSize: 25,
+                        lineHeight: 40,
+                        fontWeight: "400",
+                        writingDirection: "rtl",
+                        textAlign: "right",
+                        color: colors.ink,
+                      }}
+                    />
+                  ) : (
+                    <Text
+                      selectable
+                      style={{
+                        fontFamily: fonts.hebrew,
+                        fontSize: 25,
+                        lineHeight: 40,
+                        fontWeight: "400",
+                        writingDirection: "rtl",
+                        textAlign: "right",
+                        color: colors.ink,
+                      }}
+                    >
+                      {token.hebrew}
+                    </Text>
+                  )
                 ) : null}
                 {explanationContext && tokens.length > 1 ? (
                   <PrayerExplanation
@@ -318,21 +374,6 @@ export function GuidedPrayer({
                     }
                   />
                 ) : null}
-                <Button
-                  variant="ghost"
-                  size="content"
-                  onPress={() => onQuote(token)}
-                  style={{
-                    minHeight: 44,
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "flex-start",
-                    gap: 10,
-                  }}
-                >
-                  <Quote size={20} color={colors.blue} />
-                  <Text style={{ color: colors.blue }}>Choose a quote</Text>
-                </Button>
               </View>
             )}
           />

@@ -18,12 +18,10 @@ import {
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { QuoteSelector } from "@/components/QuoteSelector";
 import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
-import type { QuoteSource } from "@/store/socialStore";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
@@ -32,7 +30,6 @@ import {
   CircleHelp,
   ExternalLink,
   MoonStar,
-  Quote,
   RefreshCw,
   Search,
   X,
@@ -153,7 +150,7 @@ export function PrayerScreen(): React.JSX.Element {
   const pendingShare = useRef<PracticeStoryMoment | null>(null);
   const completeHabit = useStreakStore((state) => state.completeHabit);
   const recordSocialPrayer = useSocialStore((state) => state.recordPrayer);
-  const [quoteSource, setQuoteSource] = useState<QuoteSource | null>(null);
+  const setWeeklyQuote = useSocialStore((state) => state.setWeeklyQuote);
   const primaryLanguageCode = useSettingsStore(
     (state) => state.primaryLanguageCode,
   );
@@ -373,7 +370,6 @@ export function PrayerScreen(): React.JSX.Element {
   };
   const closeReader = () => {
     setCompletionMoment(null);
-    setQuoteSource(null);
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
     setReaderOpen(false);
@@ -989,17 +985,6 @@ export function PrayerScreen(): React.JSX.Element {
                       {token.hebrew ? (
                         <Text
                           variant="section"
-                          accessibilityHint="Hold to choose a Hebrew quote"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.hebrew,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: "he",
-                            })
-                          }
                           className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
                         >
                           {token.hebrew}
@@ -1022,50 +1007,7 @@ export function PrayerScreen(): React.JSX.Element {
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
                           Translation
                         </Text>
-                        <Text
-                          variant="body"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.localizedTranslation,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: primaryLanguageCode,
-                            })
-                          }
-                        >
-                          {token.localizedTranslation}
-                        </Text>
-                        {token.localizedTranslation.trim() ? (
-                          <Button
-                            variant="ghost"
-                            size="content"
-                            accessibilityLabel={`Choose a quote from line ${readerTokens.indexOf(token) + 1}`}
-                            onPress={() =>
-                              setQuoteSource({
-                                prayerId: selected.id,
-                                title: selected.title,
-                                text: token.localizedTranslation,
-                                sourceRef: selected.hebrewReview.sourceRef,
-                                sourceUrl: selected.hebrewReview.sourceUrl,
-                                language: primaryLanguageCode,
-                              })
-                            }
-                            style={{
-                              flexDirection: "row",
-                              alignItems: "center",
-                              gap: 8,
-                              minHeight: 44,
-                              alignSelf: "flex-start",
-                            }}
-                          >
-                            <Quote size={16} color={colors.blue} />
-                            <Text style={{ fontSize: 13, color: colors.blue }}>
-                              Choose a quote
-                            </Text>
-                          </Button>
-                        ) : null}
+                        <Text variant="body">{token.localizedTranslation}</Text>
                       </View>
                     </View>
                   ))}
@@ -1178,17 +1120,17 @@ export function PrayerScreen(): React.JSX.Element {
               reviewPending={selected?.hebrewReview.status !== "approved"}
               completionBlockedReason={availability(selectedPractice).reason}
               onComplete={completeGuidedPrayer}
-              onQuote={(token) => {
-                if (selected)
-                  setQuoteSource({
-                    prayerId: selected.id,
-                    title: selected.title,
-                    text: token.translation || token.hebrew,
-                    sourceRef: selected.hebrewReview.sourceRef,
-                    sourceUrl: selected.hebrewReview.sourceUrl,
-                    language: token.translation ? primaryLanguageCode : "he",
-                  });
-              }}
+              quoteSource={
+                selected
+                  ? {
+                      prayerId: selected.id,
+                      title: selected.title,
+                      sourceRef: selected.hebrewReview.sourceRef,
+                      sourceUrl: selected.hebrewReview.sourceUrl,
+                    }
+                  : undefined
+              }
+              onSaveQuote={setWeeklyQuote}
             />
             {completionMoment ? (
               <PrayerCompletionPrompt
@@ -1207,16 +1149,6 @@ export function PrayerScreen(): React.JSX.Element {
                 }}
               />
             ) : null}
-            {quoteSource && (
-              <QuoteSelector
-                source={quoteSource}
-                onClose={() => setQuoteSource(null)}
-                onViewCircle={() => {
-                  closeReader();
-                  router.push("/circle");
-                }}
-              />
-            )}
           </SafeAreaView>
         </SafeAreaProvider>
       </Modal>
