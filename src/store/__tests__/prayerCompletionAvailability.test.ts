@@ -46,3 +46,34 @@ it("rejects stale location without preventing untimed prayer history", () => {
       .recordCompletion({ id: "modeh-ani", title: "Modeh Ani" }),
   ).not.toBeNull();
 });
+
+it("uses the reader's matched practice when enforcing the completion window", () => {
+  const now = new Date(2026, 8, 24, 12);
+  const calendar = new ComplexZmanimCalendar(
+    new GeoLocation(
+      "New York",
+      40.7128,
+      -74.006,
+      0,
+      Intl.DateTimeFormat().resolvedOptions().timeZone,
+    ),
+  );
+  calendar.setDate(now);
+  const sunset = calendar.getSeaLevelSunset()!.toJSDate();
+  useZmanimStore.setState({
+    location: { label: "New York", latitude: 40.7128, longitude: -74.006 },
+    locationCheckedAt: +sunset - 60000,
+  });
+  usePrayerStore.setState({ history: [] });
+
+  expect(
+    usePrayerStore.getState().recordCompletion(
+      { id: "remote-mincha-section", title: "Ashrei" },
+      sunset,
+      new Date(+sunset - 300000),
+      "reader",
+      "mincha",
+    ),
+  ).toBeNull();
+  expect(usePrayerStore.getState().history).toEqual([]);
+});

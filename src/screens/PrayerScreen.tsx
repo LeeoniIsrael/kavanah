@@ -1,5 +1,4 @@
 import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
-import { timedPracticeForPrayer } from "@/services/prayerAvailability";
 import { prayerReadingGuide, prayerScopeNote } from "@/data/prayerReadingGuide";
 import { findLanguage } from "@/data/languages";
 import { PrayerCompletionPrompt } from "@/components/PrayerCompletionPrompt";
@@ -160,6 +159,7 @@ export function PrayerScreen(): React.JSX.Element {
   const reduceMotion = useReducedMotion();
   const selected =
     prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
+  const selectedPractice = selected ? habitForPrayer(selected) : undefined;
   const bookmarkedPrayers = bookmarkedPrayerIds
     .map((id) => prayers.find((prayer) => prayer.id === id))
     .filter((prayer): prayer is NonNullable<typeof prayer> => Boolean(prayer));
@@ -357,16 +357,17 @@ export function PrayerScreen(): React.JSX.Element {
       return;
     const completedAt = new Date();
     const startedAt = prayerSession.current?.startedAt;
+    const habit = selectedPractice;
 
     const completion = recordCompletion(
       selected,
       completedAt,
       startedAt,
       "reader",
+      habit,
     );
     if (!completion) return;
     if (prayerSession.current) prayerSession.current.completed = true;
-    const habit = habitForPrayer(selected);
     if (habit) completeHabit(habit, completedAt);
     const streak = habit
       ? (useStreakStore.getState().habits.find((item) => item.habit === habit)
@@ -644,9 +645,7 @@ export function PrayerScreen(): React.JSX.Element {
                   accessibilityLabel="Finish prayer"
                   disabled={
                     selectedLoading ||
-                    !availability(
-                      selected ? timedPracticeForPrayer(selected) : undefined,
-                    ).allowed
+                    !availability(selectedPractice).allowed
                   }
                   onPress={completeGuidedPrayer}
                   style={{
@@ -1026,9 +1025,7 @@ export function PrayerScreen(): React.JSX.Element {
               bookmarked={selectedBookmarked}
               reviewPending={selected?.hebrewReview.status !== "approved"}
               completionBlockedReason={
-                availability(
-                  selected ? timedPracticeForPrayer(selected) : undefined,
-                ).reason
+                availability(selectedPractice).reason
               }
               onComplete={completeGuidedPrayer}
               onQuote={(token) => {

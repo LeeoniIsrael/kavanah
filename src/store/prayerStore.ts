@@ -15,6 +15,7 @@ import {
   syncCorePrayers,
 } from "@/services/prayerService";
 import type { PrayerSearchResult, PrayerText } from "@/types/prayer";
+import type { StreakHabit } from "@/store/streakStore";
 
 const BOOKMARKS_KEY = "prayers.bookmarks";
 const HISTORY_KEY = "prayers.history.v1";
@@ -49,6 +50,7 @@ type PrayerState = {
     completedAt?: Date,
     startedAt?: Date,
     source?: PrayerHistoryEntry["source"],
+    practice?: StreakHabit,
   ) => PrayerHistoryEntry | null;
   sync: () => Promise<void>;
 };
@@ -144,10 +146,13 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     completedAt = new Date(),
     startedAt,
     source = "guided-reading",
+    practice,
   ) => {
     if (
-      !currentPrayerAvailability(timedPracticeForPrayer(prayer), completedAt)
-        .allowed
+      !currentPrayerAvailability(
+        practice ?? timedPracticeForPrayer(prayer),
+        completedAt,
+      ).allowed
     )
       return null;
     const entry: PrayerHistoryEntry = {
