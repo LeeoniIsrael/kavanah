@@ -11,6 +11,7 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from "react-native-reanimated";
+import { LinearGradient } from "expo-linear-gradient";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -183,6 +184,21 @@ export function ChapterRuler({
             colors={colors}
           />
         ))}
+        <LinearGradient
+          pointerEvents="none"
+          colors={[
+            colors.parchment,
+            `${colors.parchment}D9`,
+            `${colors.parchment}00`,
+          ]}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 27,
+          }}
+        />
       </View>
       <Text
         numberOfLines={1}

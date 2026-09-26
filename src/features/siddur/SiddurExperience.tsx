@@ -665,7 +665,7 @@ export function SiddurExperience({
       ) : null}
       <ReaderHost
         {...(embedded
-          ? { style: { height: Math.max(390, windowHeight - 365) } }
+          ? { style: { height: Math.max(390, windowHeight - 319) } }
           : {
               visible: reader,
               animationType: "slide" as const,
@@ -899,11 +899,13 @@ export function SiddurExperience({
               Page {pageIndex + 1} of {pages.length}
             </Text>
           </View>
-          <ChapterRuler
-            sections={leaves}
-            index={sectionIndex}
-            onCommit={goSection}
-          />
+          <View style={{ marginTop: embedded ? 8 : 0 }}>
+            <ChapterRuler
+              sections={leaves}
+              index={sectionIndex}
+              onCommit={goSection}
+            />
+          </View>
           {toc ? (
             <View
               style={{
