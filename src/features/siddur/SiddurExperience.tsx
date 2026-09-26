@@ -21,6 +21,7 @@ import { captureRef } from "react-native-view-shot";
 import * as Sharing from "expo-sharing";
 import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
+import { LinearGradient } from "expo-linear-gradient";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { BookOpen, Search, X } from "@/components/ui/icons";
 import {
@@ -860,13 +861,45 @@ export function SiddurExperience({
                 </View>
               )}
             </Animated.View>
+            {embedded ? (
+              <>
+                <LinearGradient
+                  colors={[colors.parchment, colors.vellum, colors.parchment]}
+                  locations={[0, 0.5, 1]}
+                  start={{ x: 0.5, y: 0 }}
+                  end={{ x: 0.5, y: 1 }}
+                  pointerEvents="none"
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 24,
+                  }}
+                />
+                <LinearGradient
+                  colors={[colors.parchment, colors.vellum, colors.parchment]}
+                  locations={[0, 0.5, 1]}
+                  start={{ x: 0.5, y: 0 }}
+                  end={{ x: 0.5, y: 1 }}
+                  pointerEvents="none"
+                  style={{
+                    position: "absolute",
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 24,
+                  }}
+                />
+              </>
+            ) : null}
             <Pressable
               accessibilityRole="button"
               accessibilityLabel="Previous page"
               onPress={() => goPage(-1)}
               style={{
                 position: "absolute",
-                left: 0,
+                left: -8,
                 top: "50%",
                 width: 44,
                 height: 52,
@@ -888,7 +921,7 @@ export function SiddurExperience({
               onPress={() => goPage(1)}
               style={{
                 position: "absolute",
-                right: 0,
+                right: -8,
                 top: "50%",
                 width: 44,
                 height: 52,
