@@ -219,6 +219,81 @@ const seeds: PrayerSeed[] = [
     ]
   },
   {
+    id: "mezonot",
+    title: "Borei Minei Mezonot",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Rishonot, Mezonot",
+    category: "food",
+    summary: "The blessing before eating many grain foods that are not treated as bread.",
+    useCase: "Use this for many cakes, cookies, pasta, and other foods made from the five grains. Preparation and meal context can change the blessing; check a trusted halachic guide for mixed or processed foods.",
+    aliases: ["mezonot", "cake", "cookies", "pasta", "cereal", "grain", "crackers", "before eating"],
+    tags: ["food", "thanks", "grain"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם בורא מיני מזונות",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, who creates various kinds of sustenance.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, borei minei mezonot."
+    }]
+  },
+  {
+    id: "hagafen",
+    title: "Borei Pri HaGafen",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Rishonot, HaGafen",
+    category: "food",
+    summary: "The blessing before drinking wine or grape juice.",
+    useCase: "Use this before drinking wine or grape juice.",
+    aliases: ["hagafen", "wine", "grape juice", "grapes", "drink", "before drinking"],
+    tags: ["food", "thanks", "drink"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם בורא פרי הגפן",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, who creates the fruit of the vine.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, borei pri hagafen."
+    }]
+  },
+  {
+    id: "haetz",
+    title: "Borei Pri HaEtz",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Rishonot, HaEtz",
+    category: "food",
+    summary: "The blessing before eating fruit that grows on trees.",
+    useCase: "Use this for many tree fruits, such as apples, oranges, and peaches. Prepared foods can have different rules.",
+    aliases: ["haetz", "fruit", "apple", "orange", "peach", "tree fruit", "nuts", "before eating"],
+    tags: ["food", "thanks", "fruit"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם בורא פרי העץ",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, who creates the fruit of the tree.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, borei pri ha'etz."
+    }]
+  },
+  {
+    id: "haadamah",
+    title: "Borei Pri HaAdamah",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Rishonot, HaAdamah",
+    category: "food",
+    summary: "The blessing before eating many vegetables and produce that grows from the ground.",
+    useCase: "Use this for many vegetables and other produce that grows from the ground. Some foods that seem similar have different blessings; check a trusted halachic guide for uncertain cases.",
+    aliases: ["haadamah", "vegetable", "vegetables", "potato", "carrot", "banana", "ground", "before eating"],
+    tags: ["food", "thanks", "vegetables", "produce"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם בורא פרי האדמה",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, who creates the fruit of the earth.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, borei pri ha'adamah."
+    }]
+  },
+  {
+    id: "shehakol",
+    title: "SheHakol Nihyah Bidvaro",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Rishonot, Shehakol",
+    category: "food",
+    summary: "The blessing before foods and drinks outside the other five categories.",
+    useCase: "Use this for many foods and drinks such as water, meat, fish, eggs, dairy, and candy. When unsure, ask a knowledgeable authority rather than relying on a guess.",
+    aliases: ["shehakol", "water", "meat", "fish", "eggs", "dairy", "milk", "candy", "coffee", "tea", "before eating", "before drinking"],
+    tags: ["food", "thanks", "drink"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם שהכל נהיה בדברו",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, by whose word all things came to be.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, shehakol nihyah bidvaro."
+    }]
+  },
+  {
     id: "birkat-hamazon",
     title: "Birkat Hamazon",
     sefariaRef: "Birkat Hamazon",
@@ -251,6 +326,51 @@ const seeds: PrayerSeed[] = [
         transliteration: "Baruch atah Adonai, borei nefashot rabot vechesronan."
       }
     ]
+  },
+  {
+    id: "al-hamichya",
+    title: "Al HaMichya",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Al Hamichya",
+    category: "food",
+    summary: "After-blessing for many grain foods that have the Mezonot blessing.",
+    useCase: "Use this after qualifying grain foods that are not treated as bread. This catalog entry gives the opening; the complete wording includes tradition and occasion-specific variations.",
+    aliases: ["al hamichya", "after mezonot", "after cake", "after pasta", "after grain"],
+    tags: ["food", "thanks", "after blessing", "grain"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם על המחיה ועל הכלכלה",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, for the sustenance and nourishment.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, al hamichya ve'al hakalkalah."
+    }]
+  },
+  {
+    id: "al-hagefen",
+    title: "Al HaGefen",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Al Hagefen",
+    category: "food",
+    summary: "After-blessing for qualifying amounts of wine or grape juice.",
+    useCase: "Use this after drinking a qualifying amount of wine or grape juice. This catalog entry gives the opening; the complete wording varies with context.",
+    aliases: ["al hagefen", "after wine", "after grape juice"],
+    tags: ["food", "thanks", "after blessing", "drink"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם על הגפן ועל פרי הגפן",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, for the vine and the fruit of the vine.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, al hagefen ve'al pri hagefen."
+    }]
+  },
+  {
+    id: "al-haetz",
+    title: "Al HaEtz",
+    sefariaRef: "Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Al HaEtz",
+    category: "food",
+    summary: "After-blessing for qualifying amounts of the seven species fruit associated with the Land of Israel.",
+    useCase: "Use this after qualifying amounts of grapes, figs, pomegranates, olives, or dates. This catalog entry gives the opening; the complete wording varies with context.",
+    aliases: ["al haetz", "after dates", "after figs", "after olives", "after pomegranate", "after grapes"],
+    tags: ["food", "thanks", "after blessing", "fruit"],
+    lines: [{
+      hebrew: "ברוך אתה יהוה אלהינו מלך העולם על העץ ועל פרי העץ",
+      translation: "Blessed are You, Adonai our God, Sovereign of the universe, for the tree and its fruit.",
+      transliteration: "Baruch atah Adonai Eloheinu Melech ha'olam, al ha'etz ve'al pri ha'etz."
+    }]
   },
   {
     id: "shehecheyanu",
