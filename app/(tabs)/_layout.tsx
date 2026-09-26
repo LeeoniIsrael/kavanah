@@ -48,7 +48,7 @@ export default function TabsLayout(): React.JSX.Element {
           sf={{ default: "person.2", selected: "person.2.fill" }}
           md="groups"
         />
-        <NativeTabs.Trigger.Label>Circle</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>Friends</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
         <NativeTabs.Trigger.Icon

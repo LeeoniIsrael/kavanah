@@ -1,6 +1,6 @@
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { Alert, Linking, Pressable, Share, View } from "react-native";
+import { Alert, Linking, Platform, Pressable, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
@@ -150,9 +150,9 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const invite = () =>
     run(async () => {
       const link = process.env.EXPO_PUBLIC_INVITE_URL;
-      await Share.share({
-        message: `Join me on Kavanah. A little space for prayer, together. Add @${profile!.handle} in Circle.${link && /^https:\/\//.test(link) ? `\n${link}?handle=${encodeURIComponent(profile!.handle)}` : ""}`,
-      });
+      const message = `Hey! Join me on Kavanah — a little space for prayer, together. Add me as a friend: @${profile!.handle}.${link && /^https:\/\//.test(link) ? ` ${link}?handle=${encodeURIComponent(profile!.handle)}` : ""}`;
+      const separator = Platform.OS === "ios" ? "&" : "?";
+      await Linking.openURL(`sms:${separator}body=${encodeURIComponent(message)}`);
     });
   const report = (post: Update) =>
     Alert.alert(
@@ -193,7 +193,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
     </Button>
   );
   return (
-    <Screen largeTitle="Circle" subtitle="Prayer, shared simply.">
+    <Screen largeTitle="Friends" subtitle="Prayer, shared simply.">
       {tabs}
       {!circleConfigured ? (
         <View style={ui.surface}>
@@ -350,7 +350,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
               @{profile.handle} · Only accepted connections see your updates.
             </Text>
             <View style={{ flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
-              {button("Invite a friend", () => void invite())}
+              {button("Text a friend", () => void invite())}
               {button("Refresh", () => void run(load), true)}
             </View>
           </View>
@@ -447,7 +447,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             </View>
           ))}
           {lead}
-          <Text style={ui.sectionTitle}>Friends’ activity</Text>
+          <Text style={ui.sectionTitle}>Friends’ feed</Text>
           {!updates.length && (
             <Text style={ui.body}>
               Shared prayers and weekly quotes from your circle will appear

@@ -151,7 +151,7 @@ export function CircleScreen(): React.JSX.Element {
         <CircleFriends tabs={tabs} lead={lead} />
       ) : (
         <AnimatedHeaderSurface
-          largeTitle="Circle"
+          largeTitle="Friends"
           rightComponent={
             <Button
               variant="ghost"
