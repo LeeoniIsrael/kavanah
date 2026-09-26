@@ -21,6 +21,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { SearchBar } from "@/components/SearchBar";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
+import { useInterfaceStyles } from "@/design/layout";
 import { cn } from "@/lib/utils";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import {
@@ -116,6 +117,7 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
 }
 
 export function PrayerScreen(): React.JSX.Element {
+  const ui = useInterfaceStyles();
   const availability = usePracticeAvailability();
   const colors = useThemeColors();
 
@@ -558,8 +560,8 @@ export function PrayerScreen(): React.JSX.Element {
         accessibilityRole="tablist"
         style={{
           flexDirection: "row",
-          gap: 6,
-          padding: 5,
+          gap: 4,
+          padding: 4,
           borderRadius: 20,
           backgroundColor: colors.mineral,
         }}
@@ -568,11 +570,17 @@ export function PrayerScreen(): React.JSX.Element {
           <Button
             key={view}
             variant="ghost"
+            size="content"
             accessibilityRole="tab"
             accessibilityState={{ selected: libraryView === view }}
             onPress={() => setLibraryView(view)}
             style={{
               flex: 1,
+              minHeight: 44,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingHorizontal: 12,
+              paddingVertical: 10,
               borderRadius: 16,
               backgroundColor:
                 libraryView === view ? colors.blue : "transparent",
@@ -580,6 +588,7 @@ export function PrayerScreen(): React.JSX.Element {
           >
             <Text
               style={{
+                ...ui.itemTitle,
                 color: libraryView === view ? colors.onAccent : colors.ink,
               }}
             >
