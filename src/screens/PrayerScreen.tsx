@@ -18,6 +18,13 @@ import {
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ChoiceRow } from "@/components/ui/choice-row";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { SearchBar } from "@/components/SearchBar";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
@@ -34,7 +41,6 @@ import {
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  Alert,
   Animated,
   Easing,
   Linking,
@@ -194,6 +200,7 @@ export function PrayerScreen(): React.JSX.Element {
     useState<PrayerLandingView>(savedPrayerLanding);
   const [libraryView, setLibraryView] =
     useState<PrayerLandingView>(savedPrayerLanding);
+  const [defaultViewDialogOpen, setDefaultViewDialogOpen] = useState(false);
   const [optionsOpen, setOptionsOpen] = useState(false);
   const [readerMenuCommand, setReaderMenuCommand] = useState<{
     id: number;
@@ -215,26 +222,14 @@ export function PrayerScreen(): React.JSX.Element {
     }, [defaultView, params.prayerId, params.query]),
   );
 
-  const chooseDefaultView = () =>
-    Alert.alert("Open Prayer to", "Choose what appears when you tap Prayer.", [
-      {
-        text: "Siddur",
-        onPress: () => {
-          writeSocialData(PRAYER_LANDING_KEY, "siddur");
-          setDefaultView("siddur");
-          setLibraryView("siddur");
-        },
-      },
-      {
-        text: "Find a prayer",
-        onPress: () => {
-          writeSocialData(PRAYER_LANDING_KEY, "search");
-          setDefaultView("search");
-          setLibraryView("search");
-        },
-      },
-      { text: "Cancel", style: "cancel" },
-    ]);
+  const chooseDefaultView = () => setDefaultViewDialogOpen(true);
+
+  const selectDefaultView = (view: PrayerLandingView) => {
+    writeSocialData(PRAYER_LANDING_KEY, view);
+    setDefaultView(view);
+    setLibraryView(view);
+    setDefaultViewDialogOpen(false);
+  };
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
@@ -1130,6 +1125,45 @@ export function PrayerScreen(): React.JSX.Element {
         moment={shareMoment}
         onClose={() => setShareMoment(null)}
       />
+      <Dialog
+        open={defaultViewDialogOpen}
+        onOpenChange={setDefaultViewDialogOpen}
+      >
+        <DialogContent
+          className="gap-5 rounded-xl p-5"
+          accessibilityViewIsModal
+        >
+          <View className="gap-2 pr-10">
+            <DialogTitle>Open Prayer to</DialogTitle>
+            <DialogDescription>
+              Choose what appears when you tap Prayer.
+            </DialogDescription>
+          </View>
+          <View accessibilityRole="radiogroup" className="gap-2">
+            <ChoiceRow
+              title="Siddur"
+              detail="Browse the prayer book"
+              selected={defaultView === "siddur"}
+              onPress={() => selectDefaultView("siddur")}
+            />
+            <ChoiceRow
+              title="Find a prayer"
+              detail="Search prayers by name or text"
+              selected={defaultView === "search"}
+              onPress={() => selectDefaultView("search")}
+            />
+          </View>
+          <Button
+            variant="ghost"
+            accessibilityRole="button"
+            accessibilityLabel="Cancel choosing the default Prayer view"
+            onPress={() => setDefaultViewDialogOpen(false)}
+            className="min-h-11 items-center justify-center rounded-md"
+          >
+            <Text className="text-muted-foreground">Cancel</Text>
+          </Button>
+        </DialogContent>
+      </Dialog>
     </Screen>
   );
 }
