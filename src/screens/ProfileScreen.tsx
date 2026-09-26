@@ -1,7 +1,12 @@
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
-import { useCircleAccount } from "@/store/circleAccountStore";
+import {
+  deleteCircleAccount,
+  loadCircleAccount,
+  useCircleAccount,
+} from "@/store/circleAccountStore";
+import { requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Card } from "@/components/ui/card";
@@ -24,7 +29,7 @@ import {
   X,
 } from "@/components/ui/icons";
 import { useState } from "react";
-import { Modal, ScrollView, View } from "react-native";
+import { Alert, Modal, Platform, ScrollView, View } from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -64,10 +69,57 @@ export function ProfileScreen(): React.JSX.Element {
     setPrayerFocusEnabled,
   } = useSettingsStore();
   const [activeModal, setActiveModal] = useState<ProfileModal>(null);
+  const [accountAction, setAccountAction] = useState<
+    "signOut" | "delete" | null
+  >(null);
+  const [accountError, setAccountError] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
     assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
+
+  const runAccountAction = async (action: "signOut" | "delete") => {
+    if (accountAction) return;
+    setAccountAction(action);
+    setAccountError(null);
+    try {
+      if (action === "delete") {
+        await deleteCircleAccount();
+      } else {
+        const { error } = await requireCircle().auth.signOut({
+          scope: "local",
+        });
+        if (error) throw error;
+        await loadCircleAccount(null);
+      }
+    } catch (error) {
+      setAccountError(
+        error instanceof Error
+          ? error.message
+          : "Could not update your account. Please try again.",
+      );
+    } finally {
+      setAccountAction(null);
+    }
+  };
+
+  const confirmDeleteProfile = () => {
+    const message =
+      "This permanently deletes your Circle profile, cloud prayer history, posts, and connections. Prayer activity saved only on this device stays here.";
+    if (Platform.OS === "web") {
+      if (globalThis.confirm?.(`${message}\n\nDelete profile?`))
+        void runAccountAction("delete");
+      return;
+    }
+    Alert.alert("Delete your profile?", message, [
+      { text: "Keep profile", style: "cancel" },
+      {
+        text: "Delete profile",
+        style: "destructive",
+        onPress: () => void runAccountAction("delete"),
+      },
+    ]);
+  };
 
   return (
     <Screen
@@ -81,13 +133,62 @@ export function ProfileScreen(): React.JSX.Element {
       />
       <View style={{ gap: 12 }}>
         <SectionHeading title="Your prayer book" />
-        <Button variant="secondary" onPress={() => router.push("/prayer-preferences")}>
+        <Button
+          variant="secondary"
+          onPress={() => router.push("/prayer-preferences")}
+        >
           <Text>Change my prayer view</Text>
         </Button>
-        {!accountSession && <Button variant="secondary" onPress={() => router.push("/sign-in")}>
-          <Text>Sign in to save across devices</Text>
-        </Button>}
+        {!accountSession && (
+          <Button variant="secondary" onPress={() => router.push("/sign-in")}>
+            <Text>Sign in to save across devices</Text>
+          </Button>
+        )}
       </View>
+      {accountSession && (
+        <View style={{ gap: 12 }}>
+          <SectionHeading title="Account" />
+          <Card className="p-0 gap-0 overflow-hidden rounded-lg bg-card">
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityRole="button"
+              disabled={accountAction !== null}
+              isLoading={accountAction === "signOut"}
+              onPress={() => void runAccountAction("signOut")}
+              className="min-h-[68px] rounded-none px-5 py-4 border-b border-b-hairline"
+            >
+              <Text variant="section" className="text-[17px] leading-[24px]">
+                Sign out
+              </Text>
+            </Button>
+            <Button
+              variant="ghost"
+              size="content"
+              accessibilityRole="button"
+              disabled={accountAction !== null}
+              isLoading={accountAction === "delete"}
+              onPress={confirmDeleteProfile}
+              className="min-h-[68px] rounded-none px-5 py-4"
+            >
+              <Text
+                variant="section"
+                className="text-[17px] leading-[24px] text-destructive"
+              >
+                Delete profile
+              </Text>
+            </Button>
+          </Card>
+          {accountError && (
+            <Text accessibilityRole="alert" variant="body">
+              {accountError}
+            </Text>
+          )}
+          <Text variant="caption">
+            Subscription management will appear here when plans are available.
+          </Text>
+        </View>
+      )}
       <View style={{ gap: 12 }}>
         <SectionHeading title="Appearance" />
         <View
@@ -457,8 +558,8 @@ export function ProfileScreen(): React.JSX.Element {
                     Joining Circle saves future prayer completions to your
                     account. Sharing starts off; accepted connections see only
                     the updates you choose to share. Your address book is never
-                    uploaded. Delete your cloud account from Your Circle
-                    account; private device activity remains here.
+                    uploaded. Delete your cloud account from Profile → Account;
+                    private device activity remains here.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="assistant">
