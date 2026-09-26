@@ -42,10 +42,10 @@ export default function RootLayout(): React.JSX.Element {
   if (!fontsLoaded) {
     return (
       <View
-        style={[{ flex: 1 }, themeVariables[scheme]]}
-        className="flex-1 bg-background items-center justify-center"
+        style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
       >
-        <BrandWordmark width={190} />
+        <StatusBar style="light" />
+        <BrandWordmark width={190} color="#FFFFFF" />
       </View>
     );
   }

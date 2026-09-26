@@ -8,6 +8,7 @@ import { useThemeColors } from "@/design/appearance";
 import { LockKeyhole } from "@/components/ui/icons";
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { AppState, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 import { Button } from "@/components/ui/button";
 import { retireTravelPrayerReminders } from "@/services/notifications";
@@ -63,10 +64,10 @@ export function AppProviders({
       <View
         accessibilityLabel="Opening Kavanah"
         accessibilityRole="progressbar"
-        className="flex-1 items-center justify-center bg-background gap-3"
+        style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
       >
-        <BrandWordmark width={190} />
-        <View className="w-7 h-[2px] bg-gold" />
+        <StatusBar style="light" />
+        <BrandWordmark width={190} color="#FFFFFF" />
       </View>
     );
   }

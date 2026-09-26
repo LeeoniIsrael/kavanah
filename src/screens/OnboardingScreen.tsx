@@ -15,6 +15,7 @@ import {
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 import { BrandWordmark } from "@/components/BrandMark";
 import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -26,7 +27,7 @@ import { usePrayerIdentityStore, type PrayerAudience, type PrayerCommunity } fro
 type Step = "splash" | "welcome" | "contact" | "code" | "audience" | "community";
 const ink = "#F4F7FB";
 const muted = "#98A7B8";
-const background = "#0E141C";
+const background = "#000000";
 const edge = "#344254";
 const accent = "#8DB6E8";
 
@@ -133,6 +134,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     const travel = Math.min(height * 0.38, 300);
     return (
       <SafeAreaView style={styles.screen}>
+        <StatusBar style="light" />
         <View style={styles.heroCenter} pointerEvents="none">
           <Animated.View style={[styles.logo, {
             transform: [
@@ -175,6 +177,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
 
   return (
     <SafeAreaView style={styles.screen}>
+      <StatusBar style="light" />
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={styles.flex}>
         <ScrollView contentContainerStyle={styles.formPage} keyboardShouldPersistTaps="handled">
           <View style={styles.formTop}>

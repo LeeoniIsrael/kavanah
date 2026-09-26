@@ -73,6 +73,19 @@
             "photo"
           ]
         }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/brand/kavanah-splash-logo.png",
+          "imageWidth": 280,
+          "resizeMode": "contain",
+          "backgroundColor": "#000000",
+          "dark": {
+            "image": "./assets/brand/kavanah-splash-logo.png",
+            "backgroundColor": "#000000"
+          }
+        }
       ]
     ],
     "extra": {
@@ -84,6 +97,11 @@
         "projectId": "8763a342-4956-4e23-a92e-16e457e8294f"
       }
     },
-    "owner": "leeoniisrael"
+    "owner": "leeoniisrael",
+    "splash": {
+      "image": "./assets/brand/kavanah-splash-logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    }
   }
 }
