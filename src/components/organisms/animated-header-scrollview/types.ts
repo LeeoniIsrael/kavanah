@@ -33,6 +33,7 @@ export type AnimatedHeaderScrollViewProps = {
   leftComponent?: ReactNode;
   rightComponent?: ReactNode;
   showsVerticalScrollIndicator?: boolean;
+  scrollEnabled?: boolean;
   contentContainerStyle?: StyleProp<ViewStyle>;
   headerBackgroundGradient?: GradientConfig;
   headerBlurConfig?: BlurConfig;
