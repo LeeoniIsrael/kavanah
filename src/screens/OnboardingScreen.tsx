@@ -17,9 +17,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { BrandWordmark } from "@/components/BrandMark";
+import { AnimatedWelcomeHeadline } from "@/components/AnimatedWelcomeHeadline";
 import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { confirmHaptic, softHaptic, successHaptic, tapHaptic } from "@/services/haptics";
+import { confirmHaptic, softHaptic, successHaptic, tapHaptic, typingHaptic } from "@/services/haptics";
 import { circleConfigured } from "@/services/network/client";
 import { sendSignInCode, signInWithApple, signInWithGoogle, verifySignInCode, type CodeChannel } from "@/services/onboardingAuth";
 import { usePrayerIdentityStore, type PrayerAudience, type PrayerCommunity } from "@/store/prayerIdentityStore";
@@ -30,6 +31,9 @@ const muted = "#98A7B8";
 const background = "#000000";
 const edge = "#344254";
 const accent = "#8DB6E8";
+const appleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN === "true";
+const googleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN === "true";
+const phoneSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_PHONE_SIGN_IN === "true";
 
 const communityOptions: { value: PrayerCommunity; title: string; detail: string }[] = [
   { value: "european", title: "Eastern European", detail: "The prayer book many European communities use" },
@@ -94,17 +98,17 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
 
   useEffect(() => {
     if (mode !== "onboarding") return;
-    // The first launch intentionally holds on the mark for seven full seconds.
+    // Give the mark a brief introduction without delaying account access.
     const timer = setTimeout(() => {
       Animated.timing(intro, {
         toValue: 1,
-        duration: reduceMotion ? 1 : 950,
+        duration: reduceMotion ? 1 : 550,
         easing: Easing.bezier(0.22, 1, 0.36, 1),
         useNativeDriver: Platform.OS !== "web",
       }).start(({ finished }) => {
         if (finished) { setStep("welcome"); void softHaptic(); }
       });
-    }, 7000);
+    }, reduceMotion ? 0 : 900);
     return () => { clearTimeout(timer); intro.stopAnimation(); };
   }, [intro, mode, reduceMotion]);
 
@@ -125,6 +129,10 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     router.replace(mode === "preferences" ? "/profile" : "/prayer");
   };
   const afterSignIn = () => { void confirmHaptic(); if (mode === "account") router.replace("/profile"); else next("audience"); };
+  const submitCredential = () => void run(async () => {
+    if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
+    else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
+  });
   const goBack = () => {
     if (mode !== "onboarding" && (step === "welcome" || step === "audience")) router.back();
     else next(step === "code" ? "contact" : step === "community" ? "audience" : "welcome");
@@ -155,18 +163,18 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
         >
           {mode === "account" && <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={goBack} style={styles.close}><Ionicons name="close" size={23} color={ink} /></Pressable>}
           <View style={styles.welcomeBottom}>
-            <Text style={styles.welcomeTitle}>Your siddur, wherever you are.</Text>
+            <AnimatedWelcomeHeadline />
             <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
-            <View style={styles.providerGroup}>
-              {Platform.OS === "ios" && <Action label="Continue with Apple" icon="apple" kind="solid" disabled={busy} onPress={() => void run(async () => { if (await signInWithApple()) afterSignIn(); })} />}
-              <Action label="Continue with Google" kind={Platform.OS === "ios" ? "outline" : "solid"} disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />
-            </View>
-            <View style={styles.alternativeRow}>
-              <Pressable accessibilityRole="button" onPress={() => { setChannel("email"); next("contact"); }} hitSlop={10} style={styles.alternative}><Text style={styles.alternativeText}>Email</Text></Pressable>
-              <View style={styles.alternativeDivider} />
-              <Pressable accessibilityRole="button" onPress={() => { setChannel("phone"); next("contact"); }} hitSlop={10} style={styles.alternative}><Text style={styles.alternativeText}>Phone</Text></Pressable>
-            </View>
+            {circleConfigured ? (
+              <View style={styles.providerGroup}>
+                <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />
+                {Platform.OS === "ios" && appleSignInEnabled && <Action label="Continue with Apple" icon="apple" disabled={busy} onPress={() => void run(async () => { if (await signInWithApple()) afterSignIn(); })} />}
+                {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
+                {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy} onPress={() => { setChannel("phone"); next("contact"); }} />}
+              </View>
+            ) : <Text style={styles.unavailable}>Account sign-in is being set up. You can keep using your prayer book without an account.</Text>}
             {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
+            {mode === "account" && !circleConfigured && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
             <Text style={styles.privacy}>Your prayer stays private.</Text>
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
@@ -192,23 +200,29 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             <Text style={styles.formTitle}>{step === "code" ? "Check your messages." : channel === "email" ? "Your email." : "Your phone number."}</Text>
             <Text style={styles.formDescription}>{step === "code" ? `Enter the code sent to ${contact.trim()}.` : "We'll send one code. No password to remember."}</Text>
             <TextInput
+              key={`${step}-${channel}`}
               accessibilityLabel={step === "code" ? "Verification code" : channel === "email" ? "Email address" : "Phone number with country code"}
               placeholder={step === "code" ? "6-digit code" : channel === "email" ? "you@example.com" : "+1 212 555 0123"}
               placeholderTextColor={muted}
               keyboardType={step === "code" ? "number-pad" : channel === "email" ? "email-address" : "phone-pad"}
               autoComplete={step === "code" ? "one-time-code" : channel === "email" ? "email" : "tel"}
               autoCapitalize="none" autoCorrect={false}
+              autoFocus
+              returnKeyType={step === "code" ? "done" : "go"}
+              onSubmitEditing={submitCredential}
               maxLength={step === "code" ? 10 : 100}
               value={step === "code" ? code : contact}
-              onChangeText={step === "code" ? setCode : setContact}
+              onChangeText={(value) => {
+                typingHaptic(step === "code" ? code : contact, value);
+                if (step === "code") setCode(value); else setContact(value);
+                if (message) setMessage("");
+              }}
               style={styles.input}
             />
+            {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
             {step === "code" && <Pressable hitSlop={10} disabled={busy} onPress={() => void run(() => sendSignInCode(contact, channel))}><Text style={styles.resend}>Send a new code</Text></Pressable>}
             <View style={styles.flex} />
-            <Action label={step === "code" ? "Verify and continue" : "Send code"} kind="solid" disabled={busy} onPress={() => void run(async () => {
-              if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
-              else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
-            })} />
+            <Action label={step === "code" ? "Verify and continue" : "Send code"} kind="solid" disabled={busy} onPress={submitCredential} />
             <Text style={styles.formFoot}>Continuing creates your account if you're new.</Text>
           </>}
           {step === "audience" && <>
@@ -242,8 +256,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             <View style={styles.flex} />
             <Action label="Open my prayer book" kind="solid" disabled={!community || busy} onPress={() => void run(done)} />
           </>}
-          {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
-          {!circleConfigured && step === "contact" && <Text style={styles.connectionNote}>Account sign-in is not connected in this build.</Text>}
+          {!!message && step !== "contact" && step !== "code" && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -258,7 +271,6 @@ const styles = StyleSheet.create({
   welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
   welcomeBottom: { marginTop: "auto" },
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
-  welcomeTitle: { color: ink, fontFamily: fonts.semibold, fontSize: 25, lineHeight: 32, letterSpacing: -1.1 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
   providerGroup: { marginTop: 29, gap: 10 },
   actionPressable: { width: "100%" },
@@ -269,14 +281,10 @@ const styles = StyleSheet.create({
   actionLabel: { fontFamily: fonts.semibold, fontSize: 14, lineHeight: 21 },
   actionIcon: { marginRight: 10 },
   googleIcon: { marginRight: 10, fontFamily: fonts.bold, fontSize: 20, lineHeight: 25 },
-  alternativeRow: { flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 18 },
-  alternative: { minWidth: 91, minHeight: 42, alignItems: "center", justifyContent: "center" },
-  alternativeText: { color: ink, fontFamily: fonts.medium, fontSize: 14 },
-  alternativeDivider: { width: 1, height: 16, backgroundColor: edge },
+  unavailable: { color: muted, fontFamily: fonts.medium, fontSize: 14, lineHeight: 21, marginTop: 29 },
   explore: { alignItems: "center", justifyContent: "center", minHeight: 42, marginTop: 8 },
   exploreText: { color: muted, fontFamily: fonts.medium, fontSize: 13 },
   privacy: { color: "#738296", fontFamily: fonts.regular, fontSize: 11, textAlign: "center", marginTop: 19 },
-  connectionNote: { color: "#738296", fontFamily: fonts.regular, fontSize: 11, lineHeight: 16, textAlign: "center", marginTop: 9 },
   error: { color: "#F2A0A8", fontFamily: fonts.medium, fontSize: 13, lineHeight: 20, textAlign: "center", marginTop: 14 },
   formPage: { flexGrow: 1, paddingHorizontal: 27, paddingBottom: 24, maxWidth: 560, width: "100%", alignSelf: "center" },
   formTop: { height: 62, flexDirection: "row", alignItems: "center" },

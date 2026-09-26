@@ -6,7 +6,7 @@ import {
   loadCircleAccount,
   useCircleAccount,
 } from "@/store/circleAccountStore";
-import { requireCircle } from "@/services/network/client";
+import { circleConfigured, requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Card } from "@/components/ui/card";
@@ -139,10 +139,13 @@ export function ProfileScreen(): React.JSX.Element {
         >
           <Text>Change my prayer view</Text>
         </Button>
-        {!accountSession && (
+        {!accountSession && circleConfigured && (
           <Button variant="secondary" onPress={() => router.push("/sign-in")}>
             <Text>Sign in to save across devices</Text>
           </Button>
+        )}
+        {!accountSession && !circleConfigured && (
+          <Text variant="caption">Account sync is being set up. Your prayer book remains available on this device.</Text>
         )}
       </View>
       {accountSession && (
