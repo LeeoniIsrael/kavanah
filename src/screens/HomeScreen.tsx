@@ -253,7 +253,7 @@ export function HomeScreen(): React.JSX.Element {
           }}
           dotOpacity={0.12}
           glowWidth={0.55}
-          shimmerOpacity={0.24}
+          shimmerOpacity={0.5}
         >
           <BookOpen size={20} color={colors.onAccent} />
           <Text style={homeStyles.primaryLabel}>
