@@ -159,7 +159,6 @@ export function PrayerScreen(): React.JSX.Element {
   const prayerSession = useRef<{ startedAt: Date; completed: boolean } | null>(
     null,
   );
-  const [prayerStartedAt, setPrayerStartedAt] = useState<number | null>(null);
   const [readerOpen, setReaderOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
@@ -240,9 +239,7 @@ export function PrayerScreen(): React.JSX.Element {
       // Deep-link navigation resets the reader and assistant as one transition.
       setGuidedPrayerOpen(true);
 
-      const startedAt = new Date();
-      prayerSession.current = { startedAt, completed: false };
-      setPrayerStartedAt(startedAt.getTime());
+      prayerSession.current = { startedAt: new Date(), completed: false };
       setReaderOpen(true);
       setFocusPromptMessage("");
       setFocusPromptOpen(false);
@@ -328,9 +325,7 @@ export function PrayerScreen(): React.JSX.Element {
     void selectPrayer(id);
     setGuidedPrayerOpen(true);
 
-    const startedAt = new Date();
-    prayerSession.current = { startedAt, completed: false };
-    setPrayerStartedAt(startedAt.getTime());
+    prayerSession.current = { startedAt: new Date(), completed: false };
     setReaderOpen(true);
     setFocusPromptMessage("");
     setFocusPromptOpen(false);
@@ -365,7 +360,6 @@ export function PrayerScreen(): React.JSX.Element {
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
     setReaderOpen(false);
-    setPrayerStartedAt(null);
     if (params.prayerId) {
       router.setParams({ prayerId: "" });
     }
@@ -1069,7 +1063,6 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
             ) : null}
             <GuidedPrayer
-              startedAt={prayerStartedAt ?? 0}
               prayerTitle={selected?.title ?? "Prayer"}
               guide={selected ? prayerReadingGuide(selected) : undefined}
               scopeNote={selected ? prayerScopeNote(selected) : undefined}

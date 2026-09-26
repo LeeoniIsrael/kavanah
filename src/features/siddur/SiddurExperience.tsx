@@ -23,7 +23,13 @@ import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { BookOpen, Search, X } from "@/components/ui/icons";
-import { List, MoreHorizontal, Settings2 } from "lucide-react-native";
+import {
+  ChevronLeft,
+  ChevronRight,
+  List,
+  MoreHorizontal,
+  Settings2,
+} from "lucide-react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors, useAppColorScheme } from "@/design/appearance";
@@ -764,58 +770,111 @@ export function SiddurExperience({
               ))}
             </View>
           ) : null}
-          <Animated.View
-            ref={pageRef}
-            collapsable={false}
+          <View
             style={{
               flex: 1,
+              position: "relative",
               marginHorizontal: embedded ? 0 : 12,
-              borderRadius: 24,
-              overflow: "hidden",
-              transformOrigin: "bottom",
-              backgroundColor: colors.vellum,
-              opacity,
-              transform: [
-                { translateX: slide },
-                { rotateZ: pageTilt },
-                { translateY: pageLift },
-              ],
-              shadowColor: colors.shadow,
-              shadowOpacity: 0.07,
-              shadowRadius: 10,
             }}
           >
-            {segments.length ? (
-              <WebView
-                key={`${section?.ref}:${pageIndex}:${language}:${fontScale}`}
-                source={{ html }}
-                originWhitelist={["about:blank"]}
-                onShouldStartLoadWithRequest={(r) => r.url === "about:blank"}
-                onMessage={onMessage}
-                textInteractionEnabled
-                javaScriptEnabled
-                domStorageEnabled={false}
-                scrollEnabled
-                showsVerticalScrollIndicator={false}
-                style={{ backgroundColor: colors.vellum }}
-              />
-            ) : (
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 25,
-                }}
-              >
-                {error ? (
-                  <Text style={{ color: colors.inkMuted }}>{error}</Text>
-                ) : (
-                  <ActivityIndicator color={colors.blue} />
-                )}
-              </View>
-            )}
-          </Animated.View>
+            <Animated.View
+              ref={pageRef}
+              collapsable={false}
+              style={{
+                flex: 1,
+                borderRadius: 24,
+                overflow: "hidden",
+                transformOrigin: "bottom",
+                backgroundColor: colors.vellum,
+                opacity,
+                transform: [
+                  { translateX: slide },
+                  { rotateZ: pageTilt },
+                  { translateY: pageLift },
+                ],
+                shadowColor: colors.shadow,
+                shadowOpacity: 0.07,
+                shadowRadius: 10,
+              }}
+            >
+              {segments.length ? (
+                <WebView
+                  key={`${section?.ref}:${pageIndex}:${language}:${fontScale}`}
+                  source={{ html }}
+                  originWhitelist={["about:blank"]}
+                  onShouldStartLoadWithRequest={(r) => r.url === "about:blank"}
+                  onMessage={onMessage}
+                  textInteractionEnabled
+                  javaScriptEnabled
+                  domStorageEnabled={false}
+                  scrollEnabled
+                  bounces={false}
+                  directionalLockEnabled
+                  showsVerticalScrollIndicator={false}
+                  style={{ backgroundColor: colors.vellum }}
+                />
+              ) : (
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: 25,
+                  }}
+                >
+                  {error ? (
+                    <Text style={{ color: colors.inkMuted }}>{error}</Text>
+                  ) : (
+                    <ActivityIndicator color={colors.blue} />
+                  )}
+                </View>
+              )}
+            </Animated.View>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Previous page"
+              onPress={() => goPage(-1)}
+              style={{
+                position: "absolute",
+                left: 0,
+                top: "50%",
+                width: 44,
+                height: 52,
+                marginTop: -26,
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 2,
+              }}
+            >
+              {language === "he" ? (
+                <ChevronRight size={16} color={colors.inkMuted} />
+              ) : (
+                <ChevronLeft size={16} color={colors.inkMuted} />
+              )}
+            </Pressable>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Next page"
+              onPress={() => goPage(1)}
+              style={{
+                position: "absolute",
+                right: 0,
+                top: "50%",
+                width: 44,
+                height: 52,
+                marginTop: -26,
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 2,
+              }}
+            >
+              {language === "he" ? (
+                <ChevronLeft size={16} color={colors.inkMuted} />
+              ) : (
+                <ChevronRight size={16} color={colors.inkMuted} />
+              )}
+            </Pressable>
+          </View>
           {selection ? (
             <View
               style={{
