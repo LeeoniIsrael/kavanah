@@ -1,11 +1,74 @@
-/* eslint-disable react-hooks/refs -- PanResponder callbacks read these refs only during touch events. */
+/* eslint-disable react-hooks/refs -- PanResponder reads these refs only in touch callbacks. */
 import { useEffect, useRef, useState } from "react";
-import { Animated, PanResponder, View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import { PanResponder, View, useWindowDimensions } from "react-native";
+import Animated, {
+  Extrapolation,
+  interpolate,
+  interpolateColor,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  withTiming,
+  type SharedValue,
+} from "react-native-reanimated";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { tapHaptic } from "@/services/haptics";
 import type { SiddurNode } from "./model";
-import { rulerTarget } from "./navigation";
+
+const TICK_STEP = 12;
+const VISIBLE_TICKS = 43;
+
+function RulerTick({
+  value,
+  total,
+  center,
+  cursor,
+  colors,
+}: {
+  value: number;
+  total: number;
+  center: number;
+  cursor: SharedValue<number>;
+  colors: ReturnType<typeof useThemeColors>;
+}) {
+  const style = useAnimatedStyle(() => {
+    const distance = Math.abs(value - cursor.value);
+    return {
+      transform: [{ translateX: center + (value - cursor.value) * TICK_STEP }],
+      height: interpolate(
+        distance,
+        [0, 0.5, 1.5, 4, 10],
+        [35, 31, 23, 15, 9],
+        Extrapolation.CLAMP,
+      ),
+      width: interpolate(distance, [0, 1], [2.5, 1], Extrapolation.CLAMP),
+      opacity: interpolate(
+        distance,
+        [0, 2, 10, 18],
+        [1, 0.9, 0.62, 0.22],
+        Extrapolation.CLAMP,
+      ),
+      backgroundColor: interpolateColor(
+        distance,
+        [0, 2, 8],
+        [colors.blue, colors.inkMuted, colors.hairlineStrong],
+      ),
+    };
+  });
+  if (value < 0 || value >= total) return null;
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={[
+        { position: "absolute", left: 0, bottom: 0, borderRadius: 2 },
+        style,
+      ]}
+    />
+  );
+}
+
 export function ChapterRuler({
   sections,
   index,
@@ -16,156 +79,123 @@ export function ChapterRuler({
   onCommit: (index: number) => void;
 }) {
   const colors = useThemeColors();
+  const reduceMotion = useReducedMotion();
+  const { width: windowWidth } = useWindowDimensions();
+  const [width, setWidth] = useState(windowWidth - 48);
   const [target, setTarget] = useState(index);
   const [active, setActive] = useState(false);
-  const [labelFade] = useState(() => new Animated.Value(1));
+  const cursor = useSharedValue(index);
   const current = useRef(index);
   const start = useRef(index);
   const total = useRef(sections.length);
   const callback = useRef(onCommit);
+  const lastHaptic = useRef(0);
+
   useEffect(() => {
-    current.current = index;
-  }, [index, active]);
+    if (!active) {
+      current.current = index;
+      cursor.value = reduceMotion
+        ? index
+        : withTiming(index, { duration: 160 });
+    }
+  }, [index, active, cursor, reduceMotion]);
   useEffect(() => {
     total.current = sections.length;
     callback.current = onCommit;
   }, [sections.length, onCommit]);
+
   const [pan] = useState(() =>
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
         start.current = current.current;
+        setTarget(current.current);
         setActive(true);
       },
-      onPanResponderMove: (_, g) => {
-        const next = rulerTarget(start.current, g.dx, total.current);
+      onPanResponderMove: (_, gesture) => {
+        const value = Math.max(
+          0,
+          Math.min(total.current - 1, start.current - gesture.dx / TICK_STEP),
+        );
+        cursor.value = value;
+        const next = Math.round(value);
         if (next !== current.current) {
           current.current = next;
           setTarget(next);
+          const now = Date.now();
+          if (now - lastHaptic.current > 45) {
+            lastHaptic.current = now;
+            void tapHaptic();
+          }
         }
       },
       onPanResponderRelease: () => {
         const exact = current.current;
+        cursor.value = reduceMotion
+          ? exact
+          : withSpring(exact, { damping: 22, stiffness: 280 });
         setActive(false);
         callback.current(exact);
       },
       onPanResponderTerminate: () => {
+        cursor.value = start.current;
+        current.current = start.current;
         setActive(false);
-        setTarget(index);
+        setTarget(start.current);
       },
     }),
   );
-  const shownTarget = active ? target : index;
-  useEffect(() => {
-    labelFade.setValue(0);
-    Animated.timing(labelFade, {
-      toValue: 1,
-      duration: 140,
-      useNativeDriver: true,
-    }).start();
-  }, [shownTarget, labelFade]);
   if (!sections.length) return null;
-  const progress = (shownTarget / Math.max(1, sections.length - 1)) * 100;
+  const shownTarget = active ? target : index;
+  const first = Math.max(
+    0,
+    Math.min(
+      sections.length - VISIBLE_TICKS,
+      shownTarget - Math.floor(VISIBLE_TICKS / 2),
+    ),
+  );
+
   return (
     <View
       accessibilityLabel="Chapter ruler. Drag to choose a section"
       style={{
-        paddingHorizontal: 22,
-        paddingTop: 10,
-        paddingBottom: 13,
-        backgroundColor: colors.vellum,
-        borderTopWidth: 1,
-        borderColor: colors.hairline,
+        paddingTop: 6,
+        paddingBottom: 2,
+        backgroundColor: colors.parchment,
       }}
       {...pan.panHandlers}
     >
-      <Animated.View
-        style={{
-          height: 29,
-          alignItems: "center",
-          opacity: labelFade,
-          transform: [
-            {
-              translateY: labelFade.interpolate({
-                inputRange: [0, 1],
-                outputRange: [4, 0],
-              }),
-            },
-          ],
-        }}
-      >
-        <Text
-          numberOfLines={1}
-          style={{ color: colors.ink, fontWeight: "600" }}
-        >
-          {sections[shownTarget]?.titleEn}
-        </Text>
-      </Animated.View>
       <View
-        style={{
-          height: 25,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 4,
-          overflow: "hidden",
-          transform: [{ scale: active ? 1.08 : 1 }],
-        }}
+        onLayout={(event) => setWidth(event.nativeEvent.layout.width)}
+        style={{ height: 42, overflow: "hidden" }}
       >
-        <LinearGradient
-          pointerEvents="none"
-          colors={
-            active
-              ? [colors.vellum, colors.blueSoft, colors.blueSoft, colors.vellum]
-              : [colors.vellum, colors.mineral, colors.mineral, colors.vellum]
-          }
-          locations={[0, 0.3, 0.7, 1]}
-          style={{ position: "absolute", left: 0, right: 0, height: 25 }}
-        />
-        {Array.from({ length: 29 }, (_, i) => {
-          const n = shownTarget + i - 14;
-          const distance = Math.abs(i - 14);
-          return (
-            <View
-              key={i}
-              style={{
-                width: i === 14 ? 2 : 1,
-                height: i === 14 ? 23 : i % 5 === 0 ? 14 : 8,
-                backgroundColor:
-                  i === 14
-                    ? colors.blue
-                    : distance <= 3
-                      ? colors.inkMuted
-                      : distance <= 7
-                        ? colors.mineralDark
-                        : colors.hairlineStrong,
-                opacity: n < 0 || n >= sections.length ? 0.15 : 1,
-              }}
-            />
-          );
-        })}
-      </View>
-      <View
-        style={{
-          height: 3,
-          marginTop: 5,
-          borderRadius: 3,
-          overflow: "hidden",
-          backgroundColor: colors.mineral,
-        }}
-      >
-        <LinearGradient
-          colors={[colors.blueSoft, colors.blue]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          style={{ height: "100%", width: `${progress}%` }}
-        />
+        {Array.from(
+          { length: Math.min(sections.length, VISIBLE_TICKS) },
+          (_, i) => first + i,
+        ).map((value) => (
+          <RulerTick
+            key={value}
+            value={value}
+            total={sections.length}
+            center={width / 2}
+            cursor={cursor}
+            colors={colors}
+          />
+        ))}
       </View>
       <Text
-        style={{ textAlign: "center", color: colors.inkMuted, fontSize: 13, marginTop: 5 }}
+        numberOfLines={1}
+        style={{
+          color: active ? colors.ink : colors.inkMuted,
+          textAlign: "center",
+          fontSize: 12,
+          marginTop: 2,
+        }}
       >
-        Section {shownTarget + 1} of {sections.length}
+        {active
+          ? sections[shownTarget]?.titleEn
+          : `Section ${shownTarget + 1} of ${sections.length}`}
       </Text>
     </View>
   );

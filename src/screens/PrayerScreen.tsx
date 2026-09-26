@@ -10,7 +10,7 @@ import {
   fitsDailyView,
   type SiddurBook,
 } from "@/services/siddur";
-import { writeSocialData } from "@/services/socialStorage";
+import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { SiddurExperience } from "@/features/siddur/SiddurExperience";
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
@@ -21,7 +21,7 @@ import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
 import type { QuoteSource } from "@/store/socialStore";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
   BookmarkCheck,
@@ -34,8 +34,9 @@ import {
   Search,
   X,
 } from "@/components/ui/icons";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  Alert,
   Animated,
   Easing,
   Linking,
@@ -87,6 +88,13 @@ type LocalizedPrayer = {
   prayerId: string;
   tokens: LocalizedToken[];
 };
+
+type PrayerLandingView = "siddur" | "search";
+const PRAYER_LANDING_KEY = "prayer.landing.v1";
+const isPrayerLandingView = (value: unknown): value is PrayerLandingView =>
+  value === "siddur" || value === "search";
+const savedPrayerLanding = () =>
+  readSocialData(PRAYER_LANDING_KEY, isPrayerLandingView) ?? "siddur";
 
 function hebrewContentLabel(kind: HebrewContentKind): string {
   if (kind === "complete") return "Hebrew review pending";
@@ -184,7 +192,38 @@ export function PrayerScreen(): React.JSX.Element {
     () => new Animated.Value(showResults ? 0 : 1),
   );
   const focusSetup = getPrayerFocusSetup();
-  const [libraryView, setLibraryView] = useState<"siddur" | "search">("siddur");
+  const [defaultView, setDefaultView] =
+    useState<PrayerLandingView>(savedPrayerLanding);
+  const [libraryView, setLibraryView] =
+    useState<PrayerLandingView>(savedPrayerLanding);
+  const [readerMenuSignal, setReaderMenuSignal] = useState(0);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!params.prayerId && !params.query) setLibraryView(defaultView);
+    }, [defaultView, params.prayerId, params.query]),
+  );
+
+  const chooseDefaultView = () =>
+    Alert.alert("Open Prayer to", "Choose what appears when you tap Prayer.", [
+      {
+        text: "Siddur",
+        onPress: () => {
+          writeSocialData(PRAYER_LANDING_KEY, "siddur");
+          setDefaultView("siddur");
+          setLibraryView("siddur");
+        },
+      },
+      {
+        text: "Find a prayer",
+        onPress: () => {
+          writeSocialData(PRAYER_LANDING_KEY, "search");
+          setDefaultView("search");
+          setLibraryView("search");
+        },
+      },
+      { text: "Cancel", style: "cancel" },
+    ]);
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
@@ -406,7 +445,31 @@ export function PrayerScreen(): React.JSX.Element {
   };
 
   return (
-    <Screen largeTitle="Prayer" subtitle="Your siddur and prayers, together.">
+    <Screen
+      largeTitle="Prayer"
+      subtitle="Your siddur and prayers, together."
+      rightComponent={
+        <Button
+          variant="ghost"
+          accessibilityLabel="Prayer options"
+          onPress={() => {
+            if (libraryView === "siddur")
+              setReaderMenuSignal((signal) => signal + 1);
+            else chooseDefaultView();
+          }}
+          style={{ minWidth: 64, height: 44, borderRadius: 16 }}
+        >
+          <Text style={{ color: colors.ink, fontSize: 14, fontWeight: "600" }}>
+            Options
+          </Text>
+        </Button>
+      }
+      {...(libraryView === "siddur"
+        ? {
+            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
+          }
+        : {})}
+    >
       <View
         accessibilityRole="tablist"
         style={{
@@ -442,7 +505,11 @@ export function PrayerScreen(): React.JSX.Element {
         ))}
       </View>
       {libraryView === "siddur" ? (
-        <SiddurExperience />
+        <SiddurExperience
+          embedded
+          menuSignal={readerMenuSignal}
+          onChooseDefault={chooseDefaultView}
+        />
       ) : (
         <View className="gap-6">
           <View
