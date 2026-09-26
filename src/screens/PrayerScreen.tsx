@@ -30,7 +30,6 @@ import {
   CircleHelp,
   ExternalLink,
   MoonStar,
-  RefreshCw,
   X,
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -130,7 +129,6 @@ export function PrayerScreen(): React.JSX.Element {
     results,
     selectedPrayerId,
     query,
-    isSyncing,
     isSearchingRemote,
     loadingPrayerId,
     prayerLoadError,
@@ -140,7 +138,6 @@ export function PrayerScreen(): React.JSX.Element {
     selectPrayer,
     toggleBookmark,
     recordCompletion,
-    sync,
   } = usePrayerStore();
   const shareAfterPrayer = useSettingsStore((state) => state.shareAfterPrayer);
   const setShareAfterPrayer = useSettingsStore(
@@ -600,7 +597,7 @@ export function PrayerScreen(): React.JSX.Element {
         />
       ) : (
         <View className="gap-6">
-          <View className="flex-row items-center gap-3">
+          <View>
             <SearchBar
               accessibilityLabel="Search prayers"
               style={{ flex: 1 }}
@@ -611,23 +608,6 @@ export function PrayerScreen(): React.JSX.Element {
                 if (searchQuery) void searchRemote(searchQuery);
               }}
             />
-            <Button
-              variant="secondary"
-              size="content"
-              accessibilityLabel="Refresh prayer library"
-              accessibilityRole="button"
-              onPress={() => void sync()}
-              disabled={isSyncing}
-              isLoading={isSyncing}
-              className="w-11 h-11 rounded-full items-center justify-center bg-muted"
-            >
-              <RefreshCw
-                size={20}
-                color={
-                  isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink
-                }
-              />
-            </Button>
           </View>
 
           {!showResults && (
