@@ -47,7 +47,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { CommunityFeed } from "@/components/CommunityFeed";
 import { Checkbox } from "@/components/organisms/check-box";
 import { PracticeStoryComposer } from "@/components/PracticeStoryComposer";
 import { Button } from "@/components/ui/button";
@@ -456,8 +455,6 @@ export function HomeScreen(): React.JSX.Element {
           />
         ) : null}
       </View>
-
-      <CommunityFeed />
 
       <Dialog open={practiceEditorOpen} onOpenChange={setPracticeEditorOpen}>
         <DialogContent

@@ -463,7 +463,6 @@ export function PrayerScreen(): React.JSX.Element {
     <Screen
       largeTitle="Prayer"
       subtitle="Your siddur and prayers, together."
-      scrollEnabled={libraryView !== "siddur"}
       rightComponent={
         <GooeyPopover.Root
           open={optionsOpen}
