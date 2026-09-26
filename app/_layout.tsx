@@ -3,7 +3,6 @@ import { themeVariables } from "@/design/themeVariables";
 import "../global.css";
 
 import { AppErrorBoundary } from "@/components/AppErrorBoundary";
-import { BrandWordmark } from "@/components/BrandMark";
 import { NAV_THEME } from "@/lib/theme";
 import { AppProviders } from "@/providers/AppProviders";
 import { getNotificationNavigationUrl } from "@/services/notifications";
@@ -19,10 +18,10 @@ import * as Notifications from "expo-notifications";
 import { type Href, Stack, ThemeProvider, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { Appearance, Platform, StatusBar as NativeStatusBar, View } from "react-native";
+import { Appearance, Platform, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-export default function RootLayout(): React.JSX.Element {
+export default function RootLayout(): React.JSX.Element | null {
   const scheme = useAppColorScheme();
   const preference = useAppearanceStore((s) => s.preference);
   useEffect(() => {
@@ -40,14 +39,7 @@ export default function RootLayout(): React.JSX.Element {
   });
 
   if (!fontsLoaded) {
-    return (
-      <View
-        style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
-      >
-        <NativeStatusBar barStyle="light-content" />
-        <BrandWordmark width={190} color="#FFFFFF" />
-      </View>
-    );
+    return null;
   }
 
   return (

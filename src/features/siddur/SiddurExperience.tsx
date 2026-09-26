@@ -5,29 +5,21 @@ import {
   Alert,
   Animated,
   Modal,
+  Platform,
   Pressable,
   ScrollView,
   TextInput,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import WebView, { type WebViewMessageEvent } from "react-native-webview";
 import { captureRef } from "react-native-view-shot";
 import * as Sharing from "expo-sharing";
 import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import {
-  Bookmark as BookmarkIcon,
-  BookmarkCheck,
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  Search,
-  Share2,
-  X,
-} from "@/components/ui/icons";
-import { List, Settings2 } from "lucide-react-native";
+import { BookOpen, Search, X } from "@/components/ui/icons";
+import { List, MoreHorizontal, Settings2 } from "lucide-react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors, useAppColorScheme } from "@/design/appearance";
@@ -89,6 +81,7 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   backgroundColor: colors.mineral,
 });
 export function SiddurExperience() {
+  const insets = useSafeAreaInsets();
   const colors = useThemeColors(),
     dark = useAppColorScheme() === "dark",
     reduceMotion = useReducedMotion();
@@ -427,10 +420,21 @@ export function SiddurExperience() {
       setError("This page could not be captured right now.");
     }
   };
-  const chooseCapture = () =>
-    Alert.alert("Current page", "Capture a clean image of this prayer page", [
-      { text: "Save image", onPress: () => void share(true) },
-      { text: "Share image", onPress: () => void share(false) },
+  const openReaderMenu = () =>
+    Alert.alert("Reader", undefined, [
+      {
+        text: currentBookmark ? "Remove bookmark" : "Bookmark this page",
+        onPress: () => void toggleBookmark(),
+      },
+      { text: "Share page", onPress: () => void share(false) },
+      { text: "Save page image", onPress: () => void share(true) },
+      {
+        text: "Reading settings",
+        onPress: () => {
+          setToc(false);
+          setSettings(true);
+        },
+      },
       { text: "Cancel", style: "cancel" },
     ]);
   useEffect(() => {
@@ -533,7 +537,15 @@ export function SiddurExperience() {
           else setReader(false);
         }}
       >
-        <SafeAreaView style={{ flex: 1, backgroundColor: colors.parchment }}>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: colors.parchment,
+            paddingTop:
+              Platform.OS === "ios" ? Math.max(insets.top, 52) : insets.top,
+            paddingBottom: Math.max(insets.bottom, 10),
+          }}
+        >
           <View
             style={{
               height: 58,
@@ -572,14 +584,11 @@ export function SiddurExperience() {
             </Button>
             <Button
               variant="ghost"
-              accessibilityLabel="Reader adjustments"
-              onPress={() => {
-                setToc(false);
-                setSettings(true);
-              }}
+              accessibilityLabel="Reader menu"
+              onPress={openReaderMenu}
               style={button(colors)}
             >
-              <Settings2 size={20} color={colors.ink} />
+              <MoreHorizontal size={23} color={colors.ink} />
             </Button>
           </View>
           <View
@@ -698,54 +707,19 @@ export function SiddurExperience() {
           ) : null}
           <View
             style={{
-              height: 56,
+              minHeight: 54,
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: "center",
               paddingHorizontal: 18,
             }}
           >
-            <Button
-              variant="ghost"
-              accessibilityLabel="Previous page"
-              onPress={() => goPage(-1)}
-              style={button(colors)}
+            <Text
+              accessibilityLabel={`Page ${pageIndex + 1} of ${pages.length}`}
+              style={{ color: colors.inkMuted, fontSize: 15, fontWeight: "600" }}
             >
-              <ChevronLeft size={20} color={colors.ink} />
-            </Button>
-            <Button
-              variant="ghost"
-              accessibilityLabel={
-                currentBookmark ? "Remove bookmark" : "Bookmark this page"
-              }
-              onPress={() => void toggleBookmark()}
-              style={button(colors)}
-            >
-              {currentBookmark ? (
-                <BookmarkCheck size={20} color={colors.blue} />
-              ) : (
-                <BookmarkIcon size={20} color={colors.ink} />
-              )}
-            </Button>
-            <Text style={{ color: colors.inkMuted, fontSize: 12 }}>
-              {pageIndex + 1} / {pages.length}
+              Page {pageIndex + 1} of {pages.length}
             </Text>
-            <Button
-              variant="ghost"
-              accessibilityLabel="Share this page"
-              onPress={chooseCapture}
-              style={button(colors)}
-            >
-              <Share2 size={19} color={colors.ink} />
-            </Button>
-            <Button
-              variant="ghost"
-              accessibilityLabel="Next page"
-              onPress={() => goPage(1)}
-              style={button(colors)}
-            >
-              <ChevronRight size={20} color={colors.ink} />
-            </Button>
           </View>
           <ChapterRuler
             sections={leaves}
@@ -1204,7 +1178,7 @@ export function SiddurExperience() {
               </View>
             </View>
           ) : null}
-        </SafeAreaView>
+        </View>
       </Modal>
     </View>
   );

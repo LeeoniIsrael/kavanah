@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/refs -- PanResponder callbacks read these refs only during touch events. */
 import { useEffect, useRef, useState } from "react";
 import { Animated, PanResponder, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import type { SiddurNode } from "./model";
@@ -65,12 +66,14 @@ export function ChapterRuler({
     }).start();
   }, [shownTarget, labelFade]);
   if (!sections.length) return null;
+  const progress = (shownTarget / Math.max(1, sections.length - 1)) * 100;
   return (
     <View
       accessibilityLabel="Chapter ruler. Drag to choose a section"
       style={{
         paddingHorizontal: 22,
-        paddingVertical: 10,
+        paddingTop: 10,
+        paddingBottom: 13,
         backgroundColor: colors.vellum,
         borderTopWidth: 1,
         borderColor: colors.hairline,
@@ -106,28 +109,63 @@ export function ChapterRuler({
           alignItems: "center",
           justifyContent: "center",
           gap: 4,
+          overflow: "hidden",
           transform: [{ scale: active ? 1.08 : 1 }],
         }}
       >
+        <LinearGradient
+          pointerEvents="none"
+          colors={
+            active
+              ? [colors.vellum, colors.blueSoft, colors.blueSoft, colors.vellum]
+              : [colors.vellum, colors.mineral, colors.mineral, colors.vellum]
+          }
+          locations={[0, 0.3, 0.7, 1]}
+          style={{ position: "absolute", left: 0, right: 0, height: 25 }}
+        />
         {Array.from({ length: 29 }, (_, i) => {
           const n = shownTarget + i - 14;
+          const distance = Math.abs(i - 14);
           return (
             <View
               key={i}
               style={{
                 width: i === 14 ? 2 : 1,
                 height: i === 14 ? 23 : i % 5 === 0 ? 14 : 8,
-                backgroundColor: i === 14 ? colors.blue : colors.hairlineStrong,
+                backgroundColor:
+                  i === 14
+                    ? colors.blue
+                    : distance <= 3
+                      ? colors.inkMuted
+                      : distance <= 7
+                        ? colors.mineralDark
+                        : colors.hairlineStrong,
                 opacity: n < 0 || n >= sections.length ? 0.15 : 1,
               }}
             />
           );
         })}
       </View>
-      <Text
-        style={{ textAlign: "center", color: colors.inkFaint, fontSize: 11 }}
+      <View
+        style={{
+          height: 3,
+          marginTop: 5,
+          borderRadius: 3,
+          overflow: "hidden",
+          backgroundColor: colors.mineral,
+        }}
       >
-        {shownTarget + 1} / {sections.length}
+        <LinearGradient
+          colors={[colors.blueSoft, colors.blue]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ height: "100%", width: `${progress}%` }}
+        />
+      </View>
+      <Text
+        style={{ textAlign: "center", color: colors.inkMuted, fontSize: 13, marginTop: 5 }}
+      >
+        Section {shownTarget + 1} of {sections.length}
       </Text>
     </View>
   );
