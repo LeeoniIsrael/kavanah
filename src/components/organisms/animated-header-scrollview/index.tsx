@@ -128,6 +128,7 @@ export function AnimatedHeaderSurface(props: SurfaceProps) {
         accessibilityLabel: `${props.largeTitle} screen`,
         automaticallyAdjustsScrollIndicatorInsets: true,
         contentInsetAdjustmentBehavior: "automatic",
+        scrollEnabled: props.scrollEnabled,
         keyboardShouldPersistTaps: "handled",
         keyboardDismissMode: "interactive",
         contentContainerStyle: [styles.content, props.contentContainerStyle],
