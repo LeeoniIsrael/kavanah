@@ -2,7 +2,7 @@
 
 ## Product Boundary
 
-Kavanah is a local-first prayer utility. The launch architecture deliberately has no accounts, cloud profile, advertising, analytics, or social feed. The only user-initiated external processing is prayer search/localization and the optional assistant.
+Kavanah is a local-first prayer utility. Core prayer and zmanim features remain usable without an account. The codebase also contains optional Circle accounts and sharing through Supabase Auth and PostgreSQL, which have not been deployed or accepted for public use. The optional assistant remains a separate serverless service. There is no advertising or analytics SDK.
 
 ## Runtime Shape
 
@@ -19,7 +19,7 @@ React Native screens and components
         HTTPS external services
 ```
 
-Expo Router's root layout loads fonts, safe-area context, the app error boundary, privacy providers, and the navigation theme. The `(tabs)` route group exposes Home, Prayer, Zmanim, and Profile through platform-native tabs, with a native stack inside each tab. The assistant intentionally lives inside a selected prayer instead of occupying its own tab.
+Expo Router's root layout loads fonts, safe-area context, the app error boundary, privacy providers, and the navigation theme. The `(tabs)` route group exposes Home, Prayer, Times, Circle, and Profile through platform-native tabs, with a native stack inside each tab. Circle's account actions remain unavailable without backend configuration. The assistant lives inside a selected prayer instead of occupying its own tab.
 
 ## State and Storage
 
@@ -27,7 +27,8 @@ Expo Router's root layout loads fonts, safe-area context, the app error boundary
 - `zmanimStore`: permission state, in-memory location, today display, and a seven-day upcoming schedule.
 - `streakStore`: enabled practices, completion dates, milestones, and optional freezes.
 - `settingsStore`: language, assistant consent version, and notification preference.
-- `authStore`: biometric-lock preference and unlock behavior only. There is no account/session flow.
+- `authStore`: biometric-lock preference and unlock behavior.
+- `circleAccountStore` and `socialStore`: optional Supabase session/profile state, sharing preferences, and a local account-scoped outbox.
 
 `src/services/mmkv.ts` creates separate `kavanah.user` and `kavanah.cache` stores in development/release builds. Expo Go falls back to memory because MMKV requires native code. User MMKV data is currently not encrypted at rest. This must be resolved before claims of encrypted local data are made.
 
@@ -97,8 +98,9 @@ Dynamic Type, VoiceOver reading order, Android TalkBack, full RTL layout, and iP
 
 ## Deployment
 
-- Mobile: Expo SDK 54 and EAS profiles in `eas.json`.
+- Mobile: Expo SDK 57 and EAS profiles in `eas.json`.
 - Assistant: Vercel serverless function configured by `vercel.json`.
+- Optional Circle: Supabase Auth, PostgREST RPC, PostgreSQL migrations, and the invitation endpoint. See `docs/social-backend.md` for the deployment and acceptance contract.
 - Required production secret: `OPENAI_API_KEY` on the backend only.
 - Required mobile environment: `EXPO_PUBLIC_ASSISTANT_API_URL` in EAS.
 

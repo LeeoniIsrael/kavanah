@@ -32,7 +32,7 @@ Do not change an entry to `approved` or promote generated candidates into runtim
 
 Requirements:
 
-- Node.js 22 LTS recommended. Node 23 is not supported by several current Expo dependencies.
+- Node.js 24 LTS (`.nvmrc`). Node 23 is not supported by several current Expo dependencies.
 - npm.
 - Expo Go for quick UI review, or an Expo development build for MMKV and complete notification behavior.
 - Xcode for the iOS simulator or Android Studio for an Android emulator.
@@ -53,6 +53,8 @@ npm test -- --runInBand
 npx expo-doctor
 npm run prayers:source
 npm run prayers:review
+npm run test:backend
+npm run release:check
 ```
 
 ## Assistant Setup
@@ -73,15 +75,16 @@ See [docs/architecture.md](docs/architecture.md) for data flow, trust boundaries
 
 The main layers are:
 
-- `src/screens` and `src/components`: four-tab React Native UI.
+- `src/screens` and `src/components`: React Native UI, including the optional Circle tab.
 - `src/store`: Zustand state and local persistence boundaries.
 - `src/services`: prayer search, localization, zmanim, notifications, assistant transport, privacy helpers, and network policy.
 - `src/data`: bundled prayer catalog, language definitions, and review provenance.
-- `api/assistant.js`: serverless assistant gateway.
+- `supabase/`: Circle schema, catalog, and authenticated API.
+- `api/assistant.js` and `api/invite.js`: serverless assistant and invitation endpoints.
 
 ## Privacy
 
-Kavanah has no account system, analytics SDK, advertising, or cloud sync. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional and consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
+Prayer reading remains available without an account. Circle account and sharing code exists but requires a hosted Supabase project and explicit production configuration; it is not a deployed service merely because the code is present. Kavanah has no analytics SDK or advertising. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional and consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
 
 Travel reminders are intentionally user-triggered. Mobile operating systems do not let Kavanah inspect route duration inside Apple Maps, Google Maps, or Waze. The custom URL above can be used from iPhone Shortcuts or an Android automation, while route details remain outside Kavanah.
 
@@ -90,6 +93,8 @@ Prayer Focus is also user-controlled. iOS does not let Kavanah silently switch s
 ## Release
 
 Use `eas.json` for development, preview, and production builds. Before TestFlight, complete [docs/release-checklist.md](docs/release-checklist.md) and resolve all `NOW` work in [docs/product-backlog.md](docs/product-backlog.md).
+
+The current [release handoff](docs/release-handoff-2026-09-27.md) records what has been verified, the publication decisions, and the remaining acceptance evidence. Passing `release:check` validates configuration only; it does not approve a public launch.
 
 ## Current Limitations
 
