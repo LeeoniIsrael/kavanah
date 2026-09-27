@@ -629,12 +629,9 @@ export function PrayerScreen(): React.JSX.Element {
               ]}
             >
               <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
-                <View className="flex-row items-center justify-between gap-3">
-                  <View>
-                    <Text variant="caption">Bookmarked</Text>
-                    <Text variant="section">Saved prayers</Text>
-                  </View>
-                  <BookmarkCheck size={20} color={colors.gold} />
+                <View className="pl-1">
+                  <Text variant="caption">Bookmarked</Text>
+                  <Text variant="section">Saved prayers</Text>
                 </View>
                 <View className="gap-2">
                   {bookmarkedPrayers.length > 0 ? (
