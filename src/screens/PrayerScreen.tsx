@@ -390,6 +390,10 @@ export function PrayerScreen(): React.JSX.Element {
     translationLanguage: "English",
   }));
 
+  const showReaderDetails =
+    !guidedPrayerOpen ||
+    (!selectedLoading && (Boolean(prayerLoadError) || guidedTokens.length === 0));
+
   const startGuidedPrayer = () => {
     setGuidedPrayerOpen(true);
   };
@@ -731,6 +735,8 @@ export function PrayerScreen(): React.JSX.Element {
       >
         <SafeAreaProvider>
           <SafeAreaView style={{ flex: 1, backgroundColor: colors.parchment }}>
+            {showReaderDetails ? (
+              <>
             {selected ? (
               <View
                 className="z-[10] flex-row justify-between"
@@ -998,6 +1004,15 @@ export function PrayerScreen(): React.JSX.Element {
                 </View>
               ) : null}
             </ScrollView>
+              </>
+            ) : selectedLoading ? (
+              <View style={{ flex: 1, paddingHorizontal: 24, paddingTop: 24 }}>
+                <Text variant="section" style={{ color: colors.ink }}>
+                  Opening {selected?.title ?? "prayer"}
+                </Text>
+                <PrayerTextSkeleton />
+              </View>
+            ) : null}
             {focusPromptOpen ? (
               <View
                 accessibilityViewIsModal
