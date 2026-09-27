@@ -3,7 +3,7 @@ import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Screen } from "@/components/Screen";
 import { AppGlassSurface } from "@/components/AppGlassSurface";
-import { RadiantButton } from "@/components/base/radiant-button";
+import { ChromaRing } from "@/components/organisms/chroma-ring";
 import { Card } from "@/components/ui/card";
 import {
   Dialog,
@@ -21,7 +21,7 @@ import {
 import { cn } from "@/lib/utils";
 import { formatISO } from "date-fns";
 import { BlurView } from "expo-blur";
-import { useRouter } from "expo-router";
+import { useFocusEffect, useRouter } from "expo-router";
 import {
   BookOpen,
   CalendarDays,
@@ -34,7 +34,7 @@ import {
   SlidersHorizontal,
   X,
 } from "@/components/ui/icons";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   Easing,
@@ -84,9 +84,6 @@ const habitDetails: Record<StreakHabit, { name: string; description: string }> =
     },
   };
 
-const PRAYER_CTA_SURFACE = "#FFFFFF";
-const PRAYER_CTA_FOREGROUND = "#0B1A3B";
-
 const prayerMomentByZman: Partial<
   Record<Zman["key"], { query: string; label: string; helper: string }>
 > = {
@@ -122,6 +119,11 @@ const prayerMomentByZman: Partial<
 };
 
 export function HomeScreen(): React.JSX.Element {
+  const [isFocused, setIsFocused] = useState(false);
+  useFocusEffect(useCallback(() => {
+    setIsFocused(true);
+    return () => setIsFocused(false);
+  }, []));
   const availability = usePracticeAvailability();
   const colors = useThemeColors();
   const homeStyles = useThemedStyles(makehomeStyles);
@@ -256,32 +258,19 @@ export function HomeScreen(): React.JSX.Element {
             ? `${nextMoment?.helper ?? "Next prayer moment"} in ${location?.label ?? "your location"}.`
             : "Find your words. Begin where you are."}
         </Text>
-        <RadiantButton
-          accessibilityLabel={nextMoment?.label ?? "Find a prayer"}
-          onPress={() => openPrayerSearch(nextMoment?.query ?? "")}
-          style={homeStyles.primaryAction}
-          borderRadius={18}
-          borderWidth={1}
-          contentGap={16}
-          paddingHorizontal={16}
-          paddingVertical={12}
-          theme={{
-            foreground: PRAYER_CTA_FOREGROUND,
-            background: PRAYER_CTA_SURFACE,
-            backgroundSubtle: PRAYER_CTA_SURFACE,
-            highlight: colors.gold,
-            highlightSubtle: colors.blueSoft,
-          }}
-          dotOpacity={0.12}
-          glowWidth={0.55}
-          shimmerOpacity={0.5}
-        >
-          <BookOpen size={20} color={PRAYER_CTA_FOREGROUND} />
-          <Text style={homeStyles.primaryLabel}>
-            {nextMoment?.label ?? "Find a prayer"}
-          </Text>
-          <ChevronRight size={16} color={PRAYER_CTA_FOREGROUND} />
-        </RadiantButton>
+        <ChromaRing active={isFocused} style={{ marginTop: 4 }}>
+          <Button
+            variant="ghost"
+            accessibilityLabel="Find a prayer"
+            onPress={() => openPrayerSearch("")}
+            style={homeStyles.primaryAction}
+            borderRadius={16.5}
+          >
+            <BookOpen size={20} color={colors.blue} />
+            <Text style={homeStyles.primaryLabel}>Find a prayer</Text>
+            <ChevronRight size={16} color={colors.blue} />
+          </Button>
+        </ChromaRing>
       </View>
 
       <Button
@@ -1126,14 +1115,13 @@ const makehomeStyles = (colors: ThemeColors) =>
       flexDirection: "row",
       alignItems: "center",
       gap: 10,
-      backgroundColor: PRAYER_CTA_SURFACE,
-      marginTop: 4,
+      backgroundColor: colors.vellum,
     },
     primaryLabel: {
       flex: 1,
       fontSize: 15,
       lineHeight: 22,
-      color: PRAYER_CTA_FOREGROUND,
+      color: colors.blue,
       fontFamily: "Manrope_600SemiBold",
     },
     locationRow: {

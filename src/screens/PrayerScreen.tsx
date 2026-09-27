@@ -213,7 +213,7 @@ export function PrayerScreen(): React.JSX.Element {
 
   useFocusEffect(
     useCallback(() => {
-      if (!params.prayerId && !params.query) setLibraryView(defaultView);
+      if (!params.prayerId && params.query === undefined) setLibraryView(defaultView);
     }, [defaultView, params.prayerId, params.query]),
   );
 
@@ -240,8 +240,8 @@ export function PrayerScreen(): React.JSX.Element {
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
-    if (linkedQuery) {
-      setQuery(linkedQuery);
+    if (params.query !== undefined) {
+      setQuery(linkedQuery ?? "");
       // A new external route must reveal its requested search results.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLibraryView("search");
