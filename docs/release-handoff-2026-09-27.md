@@ -4,7 +4,7 @@
 
 ## Publication decision
 
-The owner selected **Circle accounts and a database for version 1**. Provision a separate owner-controlled production Supabase project, then complete the hosted, operational, and device gates in `social-backend.md` and `release-checklist.md`. The migrations and local tests are implementation evidence, not hosted acceptance evidence. The existing Free project is named Kavanah Development and must not be treated as production merely because its database branch is labeled `main PRODUCTION` in the Supabase interface.
+The owner selected **Circle accounts and a database for version 1**. On September 27, the owner upgraded the existing Kavanah Development Supabase organization to Pro and chose to use its existing project for the app rather than pay for a second project. The release build now points to that project's public URL and publishable key and enables Apple sign-in on iOS. Complete the hosted, operational, and device gates in `social-backend.md` and `release-checklist.md`. The migrations and local tests are implementation evidence, not hosted acceptance evidence. Since testing and live accounts will share one database, test accounts and data must be identified and cleaned up deliberately before launch.
 
 Version 1 also requires an approved edition and exact prayer text, qualified review of translations/transliterations and licenses, stable legal/support pages, physical-device accessibility and notification checks, privacy labels, Apple signing, and TestFlight. The current `0.2.0` version and content status must not be represented as a release candidate.
 
@@ -24,7 +24,7 @@ The owner chose Circle and a database for the first release, and confirmed that 
 
 | Decision or evidence | Why it is needed | Acceptance artifact |
 | --- | --- | --- |
-| Production Supabase region and billing | Circle requires an owner-controlled production service | Separate project with backups, spending controls, and recorded region |
+| Existing Supabase project readiness | The owner chose one Pro project in `us-east-1` for testing and launch | Backups, spending controls, access review, and hosted account tests on that project |
 | Named reviewer and approved source edition | All core Hebrew entries are still marked pending | Signed or dated exact-text review with corrections applied |
 | Translation rights and reviewer | Current localization uses unofficial endpoints | License records and reviewed text per shipped language |
 | Apple Developer and App Store Connect access | Signing, TestFlight, listing, and submission require the owner's team | Verified bundle ownership, signing, test build, listing draft |
@@ -33,8 +33,8 @@ The owner chose Circle and a database for the first release, and confirmed that 
 
 ## Next executable sequence
 
-1. Choose the production database region and plan; finish exact-text and language review in parallel. Keep unapproved text labeled pending.
+1. Verify the selected Pro project's Apple sign-in and backup configuration on a real device; finish exact-text and language review in parallel. Keep unapproved text labeled pending.
 2. Free enough disk space and use Node 24 LTS. In a clean current-main checkout run `npm ci`, `npm run typecheck`, `npm run lint`, `npm test -- --runInBand`, `npm run test:backend`, `npx expo-doctor`, and `npm run release:check` with the chosen production configuration. Record failures and fixes.
-3. For Circle scope, follow `social-backend.md` in staging, including OTP/provider setup, RLS/grant checks, two real accounts, report handling, deletion, backup restoration, and load tests. Repeat accepted configuration in production.
+3. For Circle scope, follow `social-backend.md` on the selected project, including Apple sign-in, RLS/grant checks, two real accounts, report handling, deletion, backup recovery planning, and load tests. Keep test data identifiable and clear it before launch.
 4. Build an internal iOS candidate, then run the physical-device matrix in `release-checklist.md` and capture App Privacy, permissions, accessibility, offline, and account behavior evidence. Prepare screenshots and listing copy from that exact candidate.
 5. Present the final binary, listing, privacy disclosures, content approvals, and open risk log for owner approval before external TestFlight distribution or App Store submission.

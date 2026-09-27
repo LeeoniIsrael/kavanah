@@ -23,9 +23,9 @@
 
 ## Circle launch gates — currently open
 
-- [ ] Provision owner-controlled staging and production Supabase projects; apply and verify migrations. See `docs/social-backend.md`.
-- [ ] Configure EAS public backend identifiers; keep service-role credentials out of the app bundle.
-- [ ] Configure and test custom SMTP, OTP templates/expiry, Auth anti-abuse controls, and delivery monitoring.
+- [ ] Verify all migrations and hosted policies on the owner's existing Pro Supabase project. Testing and launch share this project by owner choice; identify and remove test data deliberately. See `docs/social-backend.md`.
+- [x] Configure EAS production with the public Supabase URL and publishable key; keep service-role credentials out of the app bundle.
+- [ ] Test Apple sign-in on a real iPhone, Auth anti-abuse controls, and account deletion. If email sign-in is enabled later, first configure custom SMTP, OTP templates/expiry, and delivery monitoring.
 - [ ] Run two real accounts over the hosted API: private/off, first-ever, every-prayer, milestones, quotes, connections, blocks, reports, cursor pagination, retries, sign-out, and deletion.
 - [ ] Assign moderation staff, a private support contact, response procedures, and finalized community terms.
 - [ ] Verify backup restoration/deletion retention, incident response, availability and spend alerts, and load testing.
