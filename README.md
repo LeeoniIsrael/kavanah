@@ -34,7 +34,7 @@ Requirements:
 
 - Node.js 24 LTS (`.nvmrc`). Node 23 is not supported by several current Expo dependencies.
 - npm.
-- Expo Go for quick UI review, or an Expo development build for MMKV and complete notification behavior.
+- A matching Expo Go build for quick UI review, or an Expo development build for MMKV, Apple sign-in, and complete notification behavior. The App Store Expo Go build supports SDK 54, while this project uses SDK 57; use a signed Kavanah build on iPhone for account testing.
 - Xcode for the iOS simulator or Android Studio for an Android emulator.
 
 ```bash
@@ -42,7 +42,7 @@ npm ci
 npm start
 ```
 
-Then scan the terminal QR code with Expo Go, or press `i` for the iOS simulator. Expo Go intentionally uses in-memory storage because native MMKV is unavailable there; use a development build when testing persistence.
+Then scan the terminal QR code with a matching Expo Go build, or press `i` for the iOS simulator. Expo Go intentionally uses in-memory storage because native MMKV is unavailable there; use a development build when testing persistence. The current iPhone App Store version of Expo Go does not match this project's SDK and cannot test Apple sign-in.
 
 ## Important Commands
 

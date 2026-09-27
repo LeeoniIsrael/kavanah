@@ -33,6 +33,8 @@ The owner chose Circle and a database for the first release, and confirmed that 
 
 ## Next executable sequence
 
+The September 27 iPhone Expo Go preview showed `Unimplemented component: ViewManagerAdapter_ExpoAppleAuthentication`. The project uses Expo SDK 57 while the App Store Expo Go build supports SDK 54. The welcome screen now hides Apple sign-in in Expo Go instead of rendering an unavailable native view. A signed Kavanah build is required for an account test. The Expo account is signed in, but `eas device:list` reported no Apple teams for it, so iOS internal distribution cannot be completed until the owner's Apple Developer team is available to EAS.
+
 1. Verify the selected Pro project's Apple sign-in and backup configuration on a real device; finish exact-text and language review in parallel. Keep unapproved text labeled pending.
 2. Free enough disk space and use Node 24 LTS. In a clean current-main checkout run `npm ci`, `npm run typecheck`, `npm run lint`, `npm test -- --runInBand`, `npm run test:backend`, `npx expo-doctor`, and `npm run release:check` with the chosen production configuration. Record failures and fixes.
 3. For Circle scope, follow `social-backend.md` on the selected project, including Apple sign-in, RLS/grant checks, two real accounts, report handling, deletion, backup recovery planning, and load tests. Keep test data identifiable and clear it before launch.
