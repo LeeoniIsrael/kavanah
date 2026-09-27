@@ -9,6 +9,7 @@ import {
   type ViewStyle,
 } from "react-native";
 import Animated, {
+  Easing,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
@@ -49,7 +50,10 @@ export function SearchBar({
   useEffect(() => {
     progress.value = reduceMotion
       ? focused ? 1 : 0
-      : withSpring(focused ? 1 : 0, { damping: 22, stiffness: 210 });
+      : withTiming(focused ? 1 : 0, {
+          duration: 240,
+          easing: Easing.out(Easing.cubic),
+        });
   }, [focused, progress, reduceMotion]);
 
   const cancelWrapStyle = useAnimatedStyle(() => ({
