@@ -3,13 +3,24 @@ import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const db=new PGlite();
 await db.exec(`create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
-for(const file of ['202609250001_circle.sql','202609250002_catalog.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
+for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
 const a='00000000-0000-4000-8000-000000000001',b='00000000-0000-4000-8000-000000000002',c='00000000-0000-4000-8000-000000000003';
 await db.exec(`insert into auth.users values('${a}'),('${b}'),('${c}');`);
 async function as(id){await db.exec(`reset role; select set_config('request.jwt.claim.sub','${id}',false); set role authenticated;`);}
 const q=(sql,args=[])=>db.query(sql,args);
 let checks=0;
 async function denied(sql,args=[]){await assert.rejects(q(sql,args));checks++;}
+for(const table of ['circle_profiles','circle_connections','circle_activity']){
+ const privileges=(await q(`select c.relrowsecurity rls,
+  has_table_privilege('anon',c.oid,'SELECT') anon_select,
+  has_table_privilege('authenticated',c.oid,'SELECT') user_select,
+  has_table_privilege('authenticated',c.oid,'INSERT') user_insert,
+  has_table_privilege('authenticated',c.oid,'UPDATE') user_update,
+  has_table_privilege('authenticated',c.oid,'DELETE') user_delete
+  from pg_class c join pg_namespace n on n.oid=c.relnamespace
+  where n.nspname='public' and c.relname=$1`,[table])).rows[0];
+ assert.deepEqual(privileges,{rls:true,anon_select:false,user_select:true,user_insert:false,user_update:false,user_delete:false});checks++;
+}
 for(const [id,handle] of [[a,'alice'],[b,'bobby'],[c,'carol']]){await as(id);await q("select circle_join($1,$1,'America/New_York',false)",[handle]);}
 await as(a);
 await denied("insert into circle_activity(owner,event_key,kind,prayer_id,title) values($1,'fake','prayer','modeh-ani','Fake')",[a]);
