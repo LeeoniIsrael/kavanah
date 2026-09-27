@@ -201,7 +201,7 @@ export function SiddurExperience({
       setLanguage(saved?.language ?? "en");
       setFontScale(saved?.fontScale ?? 1);
       setProfile(saved?.profile ?? "general");
-      setBookmarks(await loadBookmarks(id));
+      setBookmarks((await loadBookmarks(id)).filter(b => refs.some(n => n.ref === b.sectionRef)));
       const target = Math.max(
         0,
         refs.findIndex(
@@ -215,7 +215,7 @@ export function SiddurExperience({
       setReader(true);
     } catch {
       setError(
-        "This siddur is unavailable right now. Connect to download its approved text.",
+        "This siddur is unavailable right now. Choose one of the available researched books.",
       );
     } finally {
       setLoading(false);
@@ -226,7 +226,7 @@ export function SiddurExperience({
     let live = true;
     void selectedBook()
       .then((id) => {
-        if (live) void open(id ?? "Siddur Ashkenaz");
+        if (live) void sefariaProvider.getCatalog().then(books => open(books.some(b => b.id === id) ? id! : "Siddur Ashkenaz"));
       })
       .catch(() => {
         if (live) void open("Siddur Ashkenaz");
@@ -246,7 +246,7 @@ export function SiddurExperience({
         setSegments(s);
         if (!s.length)
           setError(
-            "No approved text is available in this section. Choose another section from Contents.",
+            "No researched text is available in this section. Choose another section from Contents.",
           );
         else setError("");
         setAnnotations(await loadAnnotations(bookId, section.ref));
@@ -649,7 +649,7 @@ export function SiddurExperience({
               {bookId}
             </Text>
             <Text style={{ color: colors.inkMuted }}>
-              Read the structured Sefaria text, with your place saved on this
+              Read selected research sections, with your place saved on this
               device.
             </Text>
             <Button

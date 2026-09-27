@@ -3,7 +3,7 @@ import order from "@/data/siddurOrder.json";
 import type { PrayerIdentity } from "@/store/prayerIdentityStore";
 import type { LiturgyIndexEntry } from "@/types/prayer";
 export type SiddurBook = keyof typeof order;
-export const siddurBooks = Object.keys(order) as SiddurBook[];
+export const siddurBooks = (Object.keys(order) as SiddurBook[]).filter(book => order[book].length > 0);
 const byId = new Map(
   (manifest.entries as LiturgyIndexEntry[]).map((entry) => [entry.id, entry]),
 );
@@ -34,7 +34,7 @@ export function searchSiddur(book: SiddurBook, query: string) {
 export function preferredSiddurBook(identity: PrayerIdentity | null): SiddurBook | null {
   if (!identity || identity.community === "unsure") return null;
   if (identity.community === "hasidic") return "Siddur Sefard";
-  if (identity.community === "mediterranean") return "Siddur Edot HaMizrach";
+  if (identity.community === "mediterranean") return siddurBooks.includes("Siddur Edot HaMizrach") ? "Siddur Edot HaMizrach" : null;
   return "Siddur Ashkenaz";
 }
 

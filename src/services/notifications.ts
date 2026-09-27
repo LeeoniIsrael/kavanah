@@ -8,7 +8,7 @@ const TRAVEL_CATEGORY_ID = "travel_prayer";
 const TRAVEL_NOTIFICATION_KEY = "notifications.travel-prayer-id";
 const OPEN_TRAVEL_PRAYER_ACTION = "OPEN_TRAVEL_PRAYER";
 export const TRAVEL_PRAYER_URL =
-  "kavanah://prayer?query=travel&prayerId=tefilat-haderech";
+  "kavanah://prayer?query=travel";
 
 Notifications.setNotificationHandler({
   handleNotification: async (notification) => ({

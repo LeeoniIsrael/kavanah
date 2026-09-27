@@ -1,5 +1,6 @@
 import * as SQLite from "expo-sqlite";
-import { normalizeHebrewSearch } from "./sefaria";
+import { corePrayers } from "@/data/corePrayers";
+import { sefariaProvider, normalizeHebrewSearch } from "./sefaria";
 import type {
   Bookmark,
   ReaderPosition,
@@ -200,20 +201,11 @@ export async function searchCached(
   bookId: string,
   query: string,
 ): Promise<SiddurSegment[]> {
-  const rows = await (
-    await db()
-  ).getAllAsync<{ data: string }>(
-    "SELECT data FROM siddur_segments WHERE book_id=? ORDER BY rowid",
-    bookId,
-  );
   const needle = normalizeHebrewSearch(query);
-  return rows
-    .map((r) => JSON.parse(r.data) as SiddurSegment)
-    .filter((s) =>
-      normalizeHebrewSearch(`${s.he ?? ""} ${s.en ?? ""}`).includes(needle),
-    )
-    .slice(0, 50);
+  const groups = await Promise.all(corePrayers.filter(p => p.sourceMetadata?.work === bookId).map(p => sefariaProvider.getSection(bookId,p.sefariaRef)));
+  return groups.flat().filter(s => normalizeHebrewSearch(`${s.he} ${s.en} ${s.transliteration}`).includes(needle)).slice(0,50);
 }
+
 export async function downloadProgress(bookId: string) {
   return (await db()).getFirstAsync<{ completed: number; total: number }>(
     "SELECT completed,total FROM siddur_downloads WHERE book_id=?",

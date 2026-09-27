@@ -67,10 +67,6 @@ import { spacing } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
-import {
-  localizeHebrewTransliteration,
-  translatePrayerText,
-} from "@/services/localizationService";
 import { getPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
@@ -113,7 +109,7 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
     return "This entry represents a full service whose sections must be reviewed individually.";
   if (kind === "missing")
     return "Kavanah will not invent or silently substitute sacred text while the canonical Hebrew is being prepared.";
-  return "This text came from a live library search and is outside Kavanah's reviewed catalog.";
+  return "This captured prayer-book section is in the research catalog. Text, alignment, and pronunciation await expert review.";
 }
 
 export function PrayerScreen(): React.JSX.Element {
@@ -172,7 +168,7 @@ export function PrayerScreen(): React.JSX.Element {
     useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
   const selected =
-    prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
+    prayers.find((prayer) => prayer.id === selectedPrayerId);
   const selectedPractice = selected ? habitForPrayer(selected) : undefined;
   const bookmarkedPrayers = bookmarkedPrayerIds
     .map((id) => prayers.find((prayer) => prayer.id === id))
@@ -307,22 +303,12 @@ export function PrayerScreen(): React.JSX.Element {
         })),
       });
 
-      const tokens = await Promise.all(
-        selected.tokens.map(async (token) => ({
-          ...token,
-          localizedTransliteration: localizeHebrewTransliteration(
-            token.transliteration,
-            primaryLanguageCode,
-          ),
-          localizedTranslation:
-            primaryLanguageCode === "he" && token.hebrew
-              ? token.hebrew
-              : await translatePrayerText(
-                  token.translation,
-                  primaryLanguageCode,
-                ),
-        })),
-      );
+      // Only captured English and pronunciation are published; never replace them with generated text.
+      const tokens = selected.tokens.map((token) => ({
+        ...token,
+        localizedTransliteration: token.transliteration,
+        localizedTranslation: token.translation,
+      }));
 
       if (!cancelled) {
         setLocalizedPrayer({ prayerId: selected.id, tokens });
@@ -397,15 +383,11 @@ export function PrayerScreen(): React.JSX.Element {
         })) ?? []);
   const guidedTokens: GuidedPrayerToken[] = readerTokens.map((token) => ({
     id: token.id,
+    ...(token.kind ? { kind: token.kind } : {}),
     hebrew: token.hebrew,
     transliteration: token.localizedTransliteration,
     translation: token.localizedTranslation,
-    translationLanguage:
-      primaryLanguageCode !== "en" &&
-      primaryLanguageCode !== "he" &&
-      token.localizedTranslation === token.translation
-        ? "English (translation unavailable)"
-        : findLanguage(primaryLanguageCode).name,
+    translationLanguage: "English",
   }));
 
   const startGuidedPrayer = () => {
@@ -464,7 +446,7 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen
       largeTitle="Prayer"
-      subtitle="Your siddur and prayers, together."
+      subtitle={`${prayers.length} researched entries · Hebrew, English & pronunciation.`}
       rightComponent={
         <GooeyPopover.Root
           open={optionsOpen}
@@ -1002,6 +984,14 @@ export function PrayerScreen(): React.JSX.Element {
                       <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-muted-foreground font-label">
                         {selected.sourceMetadata.sourceVersion.versionTitle} ·{" "}
                         {selected.sourceMetadata.sourceVersion.license}
+                      </Text>
+                      {selected.sourceMetadata.translationVersions.map((version) => (
+                        <Text key={version.versionTitle} style={{ color: colors.inkMuted }}>
+                          English: {version.versionTitle} · {version.license} · {version.versionSource}
+                        </Text>
+                      ))}
+                      <Text style={{ color: colors.inkMuted }}>
+                        {selected.sourceMetadata.sourceVersion.versionSource}
                       </Text>
                     </View>
                   ) : null}

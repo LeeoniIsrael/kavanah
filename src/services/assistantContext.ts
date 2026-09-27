@@ -17,6 +17,7 @@ export function buildPrayerAssistantContext(
     : `Rabbinical Hebrew review: ${review.status}`;
 
   return [
+    `Catalog prayer ID: ${prayer.id}`,
     `Prayer title: ${prayer.title}`,
     `User-facing purpose (app guidance, not canonical source text): ${prayer.useCase}`,
     `Short description (app guidance, not canonical source text): ${prayer.summary}`,

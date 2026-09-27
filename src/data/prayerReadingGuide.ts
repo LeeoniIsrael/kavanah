@@ -25,7 +25,7 @@ const guides: Record<string, ReadingGuide> = {
   },
   shema: {
     before:
-      "For the first verse, it is customary to cover your eyes with your right hand to focus. The complete Shema continues beyond the verses shown here; this excerpt does not replace the full reading.",
+      "For the first verse, it is customary to cover your eyes with your right hand to focus. This prayer-book section includes the Shema paragraphs and conditional directions; follow the directions for your setting.",
     source:
       "https://www.chabad.org/library/article_cdo/aid/705353/jewish/The-Shema.htm",
   },
@@ -67,5 +67,6 @@ export function prayerScopeNote(prayer: PrayerText): string | undefined {
     return "This is a service overview, not a complete step-by-step service. Open Siddur to follow the prayer book in order.";
   if (contentKind === "remote-unreviewed")
     return "Prayer-book section. Ritual instructions and text have not yet been reviewed in Kavanah.";
+  if (prayer.research) return "Pronunciation is a machine-generated learning aid and has not been checked by a Hebrew expert.";
   return undefined;
 }

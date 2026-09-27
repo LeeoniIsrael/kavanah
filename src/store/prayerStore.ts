@@ -7,6 +7,7 @@ import { create } from "zustand";
 
 import { cacheStorage, readJson } from "@/services/mmkv";
 import {
+  catalogPrayer,
   getCachedPrayers,
   hydratePrayerFromSefaria,
   mergePrayerCollections,
@@ -97,6 +98,12 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     }
   },
   selectPrayer: async (id) => {
+    const canonical = catalogPrayer(id);
+    if (!canonical) {
+      set({ selectedPrayerId: "", loadingPrayerId: null, prayerLoadError: "This prayer is not included in the current research catalog." });
+      return;
+    }
+    id = canonical.id;
     set({ selectedPrayerId: id, loadingPrayerId: null, prayerLoadError: null });
     const prayer = get().prayers.find((item) => item.id === id);
     if (!prayer || prayer.source !== "sefaria-search") {
@@ -148,6 +155,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     source = "guided-reading",
     practice,
   ) => {
+    if (!catalogPrayer(prayer.id)) return null;
     if (
       !currentPrayerAvailability(
         practice ?? timedPracticeForPrayer(prayer),

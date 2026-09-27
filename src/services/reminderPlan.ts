@@ -336,7 +336,7 @@ export function buildReminderPlan(
         time,
         prayer.title,
         prayer.body,
-        `kavanah://prayer?query=${prayer.id}&prayerId=${prayer.prayer}`,
+        `kavanah://prayer?query=${prayer.id}`,
       );
     }
     const times = {

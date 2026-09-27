@@ -16,6 +16,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { QuoteSource } from "@/store/socialStore";
 
 export type GuidedPrayerToken = {
+  kind?: "instruction";
   id: string;
   hebrew: string;
   transliteration: string;
@@ -178,7 +179,7 @@ export function GuidedPrayer({
         >
           <Text variant="caption" style={{ color: colors.inkMuted }}>
             {reviewPending
-              ? "Text review pending · Source & options"
+              ? "Text & pronunciation review pending · Source & options"
               : "Source & options"}
           </Text>
         </Button>
@@ -286,6 +287,9 @@ export function GuidedPrayer({
             ItemSeparatorComponent={() => <View style={{ height: 36 }} />}
             renderItem={({ item: token }) => (
               <View style={{ gap: 24 }}>
+                {token.kind === "instruction" ? (
+                  <Text variant="caption" style={{ color: colors.inkMuted }}>Prayer-book instruction · not recited</Text>
+                ) : null}
                 {token.transliteration ? (
                   <View
                     style={{
@@ -296,7 +300,7 @@ export function GuidedPrayer({
                     }}
                   >
                     <Text variant="caption" style={{ color: colors.inkMuted }}>
-                      Say these words
+                      Pronunciation · draft
                     </Text>
                     {quoteSource ? (
                       <InlineQuoteText

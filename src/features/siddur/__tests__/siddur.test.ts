@@ -117,3 +117,24 @@ test("Hebrew page progression mirrors English", () => {
   expect(pageDirection("en", -50)).toBe(1);
   expect(pageDirection("he", -50)).toBe(-1);
 });
+
+test("published siddur provider uses the same offline research text and rejects excluded sections", async () => {
+  const { sefariaProvider } = await import("../sefaria");
+  const { corePrayers } = await import("@/data/corePrayers");
+  const spy = jest.spyOn(global, "fetch");
+  const books = await sefariaProvider.getCatalog();
+  for (const book of books) {
+    const nodes = leafNodes(await sefariaProvider.getStructure(book.id));
+    expect(nodes.length).toBeGreaterThan(0);
+    for (const node of nodes) {
+      const prayer = corePrayers.find(p => p.sefariaRef === node.ref)!;
+      expect(prayer).toBeDefined();
+      const segments = await sefariaProvider.getSection(book.id,node.ref);
+      expect(segments.map(s => s.he)).toEqual(prayer.tokens.map(t => t.hebrew));
+      expect(segments.map(s => s.transliteration)).toEqual(prayer.tokens.map(t => t.transliteration));
+    }
+  }
+  await expect(sefariaProvider.getSection("Siddur Ashkenaz","outside-research")).rejects.toThrow("not included");
+  expect(spy).not.toHaveBeenCalled();
+  spy.mockRestore();
+});

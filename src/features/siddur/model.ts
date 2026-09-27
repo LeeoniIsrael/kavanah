@@ -50,6 +50,8 @@ export type SiddurNode = {
   children?: SiddurNode[] | undefined;
 };
 export type SiddurSegment = {
+  transliteration?: string;
+  kind?: "instruction";
   id: string;
   ref: string;
   sectionId: string;

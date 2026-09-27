@@ -11,13 +11,14 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest",
-    "prayers:index": "tsx scripts/generateLiturgyIndex.ts",
+    "prayers:index": "python3 scripts/importResearchCatalog.py",
     "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts",
     "prayers:source": "tsx scripts/sourceHebrewCandidates.ts",
     "test:ui": "jest --config jest.ui.config.cjs --runInBand",
     "test:backend": "node scripts/backend/test.mjs",
     "backend:catalog": "tsx scripts/backend/generateCatalog.ts",
-    "release:check": "node scripts/backend/releaseCheck.mjs"
+    "release:check": "node scripts/backend/releaseCheck.mjs",
+    "prayers:import": "python3 scripts/importResearchCatalog.py"
   },
   "jest": {
     "preset": "ts-jest",

@@ -1,4 +1,5 @@
 export type PrayerToken = {
+  kind?: "instruction";
   id: string;
   hebrew: string;
   translation: string;
@@ -82,6 +83,7 @@ export type PrayerText = {
   updatedAt: string;
   hebrewReview: HebrewReview;
   sourceMetadata?: PrayerSourceMetadata;
+  research?: { id: string; pronunciationStatus: "machine-draft-unreviewed"; alignmentStatus: string };
 };
 
 export type LiturgyIndexEntry = {

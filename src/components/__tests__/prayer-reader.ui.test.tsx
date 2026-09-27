@@ -92,7 +92,7 @@ test("all passages are readable without another start or next action", () => {
 test("bookmarking and opening details do not log a prayer", () => {
   const view = setup();
   fireEvent.press(view.getByLabelText("Bookmark prayer"));
-  fireEvent.press(view.getByText("Text review pending · Source & options"));
+  fireEvent.press(view.getByText("Text & pronunciation review pending · Source & options"));
   expect(view.onBookmark).toHaveBeenCalledTimes(1);
   expect(view.onDetails).toHaveBeenCalledTimes(1);
   expect(view.onComplete).not.toHaveBeenCalled();

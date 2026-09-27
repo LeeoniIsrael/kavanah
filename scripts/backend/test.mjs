@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const db=new PGlite();
 await db.exec(`create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
-for(const file of ['202609250001_circle.sql','202609250002_catalog.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
+for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_research_catalog.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
 const a='00000000-0000-4000-8000-000000000001',b='00000000-0000-4000-8000-000000000002',c='00000000-0000-4000-8000-000000000003';
 await db.exec(`insert into auth.users values('${a}'),('${b}'),('${c}');`);
 async function as(id){await db.exec(`reset role; select set_config('request.jwt.claim.sub','${id}',false); set role authenticated;`);}
@@ -31,7 +31,9 @@ assert.equal((await q('select * from circle_feed()')).rows.length,0);checks++;
 
 await as(a);
 await denied("select circle_quote('modeh-ani','My arbitrary caption','en',0,2)");
-const text='I thank You, living and enduring King, for restoring my soul with compassion; great is Your faithfulness.';
+const text=JSON.parse(readFileSync('src/data/researchPrayers.json','utf8')).find(p=>p.id==='modeh-ani').tokens[0].translation;
+await denied("select circle_record('removed','idf-prayer',null,now())");
+await denied("select circle_quote('modeh-ani','I thank You, living and enduring King, for restoring my soul with compassion; great is Your faithfulness.','en',0,2)");
 await q("select circle_quote('modeh-ani',$1,'en',0,2)",[text]);
 await q("select circle_quote('modeh-ani',$1,'en',0,3)",[text]);
 assert.equal((await q("select * from circle_activity where kind='quote'")).rows.length,1);checks++;

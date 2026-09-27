@@ -21,7 +21,7 @@ This package gives Kavanah a large, traceable research foundation for a pronunci
 
 All Hebrew and English source segments were compared against the retained selected-edition snapshots. For Psalms, all three source versions have matching chapter/verse structure. These checks establish source fidelity and stated structural coverage; they do not establish independent linguistic or rabbinic approval.
 
-No application runtime or active dictionary was changed. The user requested the research and an implementation prompt; the prompt describes the later replacement. The production approval manifest is empty because this work has no evidence of exact-text approval for all three renderings. It must not be used to erase the current app catalog.
+The user subsequently requested app integration. The app now publishes a filtered research catalog: **560 entries (150 Psalms, 376 liturgical sections, 34 biblical passages)**. See [APP-INTEGRATION.md](APP-INTEGRATION.md). These are user-authorized research entries, not expert-approved texts. The expert approval manifest remains empty; source research statuses are preserved. Missing languages, unmatched source addresses, and unresolved recitation pronunciation exclude candidates from the active app.
 
 ## Read the results
 

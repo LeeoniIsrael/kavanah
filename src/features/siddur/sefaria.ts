@@ -1,4 +1,5 @@
-import { allowedLicense, candidateBooks, chooseVersions } from "./registry";
+import { candidateBooks } from "./registry";
+import { corePrayers } from "@/data/corePrayers";
 import type {
   ReaderLanguage,
   SiddurDefinition,
@@ -7,27 +8,12 @@ import type {
   SiddurSegment,
   SiddurVersion,
 } from "./model";
-const BASE = "https://www.sefaria.org/api";
 type ApiNode = {
   key?: string;
   depth?: number;
   titles?: { lang: string; text: string; primary?: boolean }[];
   nodes?: ApiNode[];
 };
-type ApiVersion = {
-  language?: string;
-  versionTitle?: string;
-  license?: string;
-  versionSource?: string;
-  text?: unknown;
-};
-async function getJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${BASE}${path}`, {
-    headers: { Accept: "application/json" },
-  });
-  if (!response.ok) throw new Error("Sefaria temporarily unavailable");
-  return response.json() as Promise<T>;
-}
 const title = (node: ApiNode, lang: string) =>
   node.titles?.find((t) => t.lang === lang && t.primary)?.text ??
   node.titles?.find((t) => t.lang === lang)?.text;
@@ -62,21 +48,6 @@ export function normalizeHebrewSearch(value: string): string {
     .replace(/\s+/g, " ")
     .trim();
 }
-function cleanText(input: unknown): string {
-  return typeof input === "string"
-    ? input
-        .replace(/<[^>]*>/g, "")
-        .replace(/&nbsp;/g, " ")
-        .replace(/&amp;/g, "&")
-        .replace(/&lt;/g, "<")
-        .replace(/&gt;/g, ">")
-        .trim()
-    : "";
-}
-function textArray(response: { versions?: ApiVersion[] }): string[] {
-  const text = response.versions?.[0]?.text;
-  return Array.isArray(text) ? text.map(cleanText) : [];
-}
 export function mapSegments(
   ref: string,
   he: string[],
@@ -95,94 +66,42 @@ export function mapSegments(
     enVersion: en[i] ? enVersion : undefined,
   }));
 }
+// The reader shares the same immutable offline catalog as search.
 export class SefariaSiddurProvider implements SiddurProvider {
-  private catalog?: SiddurDefinition[];
-  private structures = new Map<string, SiddurNode[]>();
   async getVersions(id: string): Promise<SiddurVersion[]> {
-    const raw = await getJson<ApiVersion[]>(
-      `/texts/versions/${encodeURIComponent(id)}`,
-    );
-    return raw
-      .filter((v) => v.language === "he" || v.language === "en")
-      .map((v) => ({
-        language: v.language as ReaderLanguage,
-        versionTitle: v.versionTitle ?? "",
-        license: v.license ?? "",
-        versionSource: v.versionSource,
-      }));
+    const all = corePrayers.filter(p => p.sourceMetadata?.work === id).flatMap(p => [p.sourceMetadata!.sourceVersion, ...p.sourceMetadata!.translationVersions]);
+    return [...new Map(all.filter(v => v && (v.language === "he" || v.language === "en")).map(v => [`${v!.language}:${v!.versionTitle}`, {...v!, language: v!.language as ReaderLanguage}])).values()];
   }
   async getCatalog(): Promise<SiddurDefinition[]> {
-    if (this.catalog) return this.catalog;
-    const results = await Promise.all(
-      candidateBooks.map(async (book) => {
-        try {
-          return {
-            ...book,
-            ...chooseVersions(await this.getVersions(book.id)),
-          };
-        } catch {
-          return {
-            ...book,
-            versions: {},
-            availability: { he: false, en: false },
-          };
-        }
-      }),
-    );
-    this.catalog = results;
-    return results;
+    return Promise.all(candidateBooks.filter(book => corePrayers.some(p => p.sourceMetadata?.work === book.id)).map(async book => {
+      const versions = await this.getVersions(book.id);
+      return {...book, displayName: `${book.displayName} · selected sections`, availability: {he:true,en:true}, versions: {he: versions.find(v => v.language === "he"), en: versions.find(v => v.language === "en")}};
+    }));
   }
   async getStructure(id: string): Promise<SiddurNode[]> {
-    const found = this.structures.get(id);
-    if (found) return found;
-    const raw = await getJson<{ schema: ApiNode }>(
-      `/v2/raw/index/${encodeURIComponent(id)}`,
-    );
-    const nodes = normalizeSchema(id, raw.schema);
-    this.structures.set(id, nodes);
-    return nodes;
+    const roots: SiddurNode[] = [];
+    for (const prayer of corePrayers.filter(p => p.sourceMetadata?.work === id)) {
+      const path = prayer.sourceMetadata!.path.length ? prayer.sourceMetadata!.path : [prayer.title];
+      let siblings = roots;
+      path.forEach((title, index) => {
+        const leaf = index === path.length - 1;
+        const ref = leaf ? prayer.sefariaRef : [id, ...path.slice(0,index+1)].join(", ");
+        let node = siblings.find(n => n.ref === ref);
+        if (!node) { node = {id: ref, ref, titleEn: title, depth:index+1, ...(leaf ? {titleHe: prayer.sourceMetadata!.hebrewTitle} : {children: []})}; siblings.push(node); }
+        if (!leaf) siblings = node.children!;
+      });
+    }
+    return roots;
   }
   async getSection(id: string, ref: string): Promise<SiddurSegment[]> {
-    const book = (await this.getCatalog()).find((b) => b.id === id);
-    if (!book) throw new Error("Unknown siddur");
-    const fetchVersion = async (v?: SiddurVersion): Promise<string[]> => {
-      if (!v || !allowedLicense(v.license)) return [];
-      const key = `${v.language === "he" ? "hebrew" : "english"}|${v.versionTitle}`;
-      const data = await getJson<{ versions?: ApiVersion[] }>(
-        `/v3/texts/${encodeURIComponent(ref)}?version=${encodeURIComponent(key)}&fill_in_missing_segments=0`,
-      );
-      const returned = data.versions?.[0];
-      if (
-        returned?.versionTitle !== v.versionTitle ||
-        !allowedLicense(returned.license)
-      )
-        return [];
-      return textArray(data);
-    };
-    const [he, en] = await Promise.all([
-      fetchVersion(book.versions.he),
-      fetchVersion(book.versions.en),
-    ]);
-    const fallback =
-      book.fallbackEnglish && (!en.length || en.some((s) => !s))
-        ? await fetchVersion(book.fallbackEnglish)
-        : [];
-    const english = en.map((s, i) => s || fallback[i] || "");
-    for (let i = en.length; i < fallback.length; i++)
-      english.push(fallback[i]!);
-    return mapSegments(
-      ref,
-      he,
-      english,
-      book.versions.he?.versionTitle,
-      book.versions.en?.versionTitle,
-    ).map((s, i) => ({
-      ...s,
-      enVersion: en[i]
-        ? book.versions.en?.versionTitle
-        : fallback[i]
-          ? book.fallbackEnglish?.versionTitle
-          : undefined,
+    const prayer = corePrayers.find(p => p.sourceMetadata?.work === id && p.sefariaRef === ref);
+    if (!prayer) throw new Error("This section is not included in the current research catalog.");
+    return prayer.tokens.map((token, i) => ({
+      id: token.id, ref: `${ref}.${i+1}`, sectionId: ref, order:i,
+      he: token.hebrew, en: token.translation, transliteration: token.transliteration,
+      ...(token.kind ? {kind: token.kind} : {}),
+      heVersion: `${prayer.sourceMetadata!.sourceVersion!.versionTitle} · ${prayer.sourceMetadata!.sourceVersion!.license}`,
+      enVersion: prayer.sourceMetadata!.translationVersions.map(v => `${v.versionTitle} · ${v.license}`).join("; ")
     }));
   }
 }

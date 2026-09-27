@@ -12,12 +12,12 @@ describe("personalized siddur defaults", () => {
     const pairs = [
       ["european", "Siddur Ashkenaz"],
       ["hasidic", "Siddur Sefard"],
-      ["mediterranean", "Siddur Edot HaMizrach"],
     ] as const;
     for (const [community, book] of pairs) {
       expect(preferredSiddurBook({ audience: "man", community })).toBe(book);
       expect(siddurEntries(book).length).toBeGreaterThan(0);
     }
+    expect(preferredSiddurBook({ audience: "man", community: "mediterranean" })).toBeNull();
     expect(preferredSiddurBook({ audience: "woman", community: "unsure" })).toBeNull();
   });
   it("keeps common text in both daily views while omitting tefillin from the woman's default", () => {
