@@ -1051,7 +1051,10 @@ export function SiddurExperience({
                         justifyContent: "space-between",
                       }}
                     >
-                      <Text variant="section" style={{ fontSize: 24 }}>
+                      <Text
+                        variant="section"
+                        style={{ fontSize: 24, lineHeight: 32 }}
+                      >
                         Contents
                       </Text>
                       <Button
