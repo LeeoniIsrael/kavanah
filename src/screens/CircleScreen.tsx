@@ -21,7 +21,6 @@ import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
 import { useSocialStore } from "@/store/socialStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import {
-  ChevronRight,
   Check,
   ShieldCheck,
   Info,
@@ -190,13 +189,9 @@ export function CircleScreen(): React.JSX.Element {
                 </View>
               }
               renderItem={({ item }) => {
-                const canRead = Boolean(
-                  item.prayerId &&
-                  prayers.some((prayer) => prayer.id === item.prayerId),
-                );
-                const content = (
-                  <>
-                    <View style={{ flex: 1, gap: 6, minWidth: 0 }}>
+                return (
+                  <View style={ui.surface}>
+                    <View style={{ gap: 6 }}>
                       <Text style={ui.itemTitle}>{item.title}</Text>
                       <Text style={ui.caption}>
                         {new Date(`${item.day}T12:00:00`).toLocaleDateString(
@@ -210,36 +205,7 @@ export function CircleScreen(): React.JSX.Element {
                         durationSeconds={item.durationSeconds}
                       />
                     </View>
-                    {canRead ? (
-                      <ChevronRight size={16} color={colors.inkMuted} />
-                    ) : null}
-                  </>
-                );
-                const style = [
-                  ui.surface,
-                  {
-                    flexDirection: "row" as const,
-                    alignItems: "center" as const,
-                    gap: 16,
-                  },
-                ];
-                return canRead ? (
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    style={style}
-                    accessibilityLabel={`Read ${item.title}`}
-                    onPress={() =>
-                      router.push({
-                        pathname: "/prayer",
-                        params: { prayerId: item.prayerId! },
-                      })
-                    }
-                  >
-                    {content}
-                  </Button>
-                ) : (
-                  <View style={style}>{content}</View>
+                  </View>
                 );
               }}
               ListEmptyComponent={
