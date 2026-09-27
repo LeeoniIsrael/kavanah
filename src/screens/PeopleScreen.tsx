@@ -1,7 +1,7 @@
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -59,6 +59,7 @@ export function CircleFriends({ tabs, lead }: FriendsProps) {
 }
 function PeopleContent({ tabs, lead }: FriendsProps) {
   const ui = useInterfaceStyles();
+  const router = useRouter();
   const { session, profile, ready, error: accountError } = useCircleAccount();
   const circleRpc = useCallback(
     (name: string, args: Record<string, unknown> = {}) =>
@@ -66,9 +67,6 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
     [session?.user.id],
   );
   const sync = useCircleSync();
-  const [email, setEmail] = useState(""),
-    [code, setCode] = useState(""),
-    [sent, setSent] = useState(false);
   const params = useLocalSearchParams<{ handle?: string }>();
   const [name, setName] = useState(
       useSocialStore.getState().profile?.displayName ?? "",
@@ -204,69 +202,10 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
         <View style={ui.surface}>
           <Text style={ui.itemTitle}>Pray in good company</Text>
           <Text style={ui.body}>
-            Sign in with your email. You choose who joins your circle and what
-            you share. Private prayer works without an account.
+            Sign in to join Circle. You choose who joins and what you share.
+            Private prayer works without an account.
           </Text>
-          <Input
-            accessibilityLabel="Email address"
-            placeholder="Email address"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            autoComplete="email"
-            value={email}
-            onChangeText={(v) => {
-              setEmail(v);
-              setSent(false);
-            }}
-            editable={!busy}
-          />
-          {sent && (
-            <Input
-              accessibilityLabel="Email verification code"
-              placeholder="Code from your email"
-              keyboardType="number-pad"
-              autoComplete="one-time-code"
-              value={code}
-              onChangeText={setCode}
-              maxLength={10}
-            />
-          )}
-          {button(
-            busy ? "Connecting…" : sent ? "Verify code" : "Continue with email",
-            () =>
-              void run(async () => {
-                if (sent) {
-                  const { error } = await requireCircle().auth.verifyOtp({
-                    email: email.trim(),
-                    token: code.trim(),
-                    type: "email",
-                  });
-                  if (error) throw error;
-                } else {
-                  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
-                    throw new Error("Enter your email address.");
-                  const { error } = await requireCircle().auth.signInWithOtp({
-                    email: email.trim(),
-                  });
-                  if (error) throw error;
-                  setSent(true);
-                  setNotice("Check your email for a sign-in code.");
-                }
-              }),
-          )}
-          {sent &&
-            button(
-              "Use another email",
-              () => {
-                setSent(false);
-                setCode("");
-              },
-              true,
-            )}
-          <Text style={ui.caption}>
-            Continuing creates an account if you don’t have one. Never share
-            your sign-in code.
-          </Text>
+          {button("Sign in to join Circle", () => router.push("/sign-in"))}
         </View>
       ) : accountError && !profile ? (
         <View style={ui.surface}>
