@@ -78,6 +78,7 @@ const buttonVariants = cva(
           Platform.select({ web: "has-[>svg]:px-4" }),
         ),
         icon: "size-11 rounded-full",
+        row: "min-h-16 flex-row items-center justify-start gap-4 px-4 py-3 rounded-md",
         content:
           "h-auto min-h-11 p-0 flex-col items-stretch justify-start rounded-md",
       },
@@ -117,6 +118,7 @@ const buttonTextVariants = cva(
         sm: "",
         lg: "",
         icon: "",
+        row: "",
         content: "",
       },
     },
@@ -228,7 +230,13 @@ function Button({
   const disabled = Boolean(props.disabled || isLoading);
   const callerStyle = StyleSheet.flatten(style);
   const minimumHeight =
-    size === "lg" ? 56 : !size || size === "default" ? 48 : iconMetrics.target;
+    size === "row"
+      ? 64
+      : size === "lg"
+        ? 56
+        : !size || size === "default"
+          ? 48
+          : iconMetrics.target;
   const indicatorColor =
     variant === "default" || variant === "destructive"
       ? colors.onAccent

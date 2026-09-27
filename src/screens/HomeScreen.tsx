@@ -148,7 +148,7 @@ export function HomeScreen(): React.JSX.Element {
   const [prayerSearch, setPrayerSearch] = useState("");
   const [shortcutPage, setShortcutPage] = useState(0);
   const shortcutPager = useRef<ScrollView>(null);
-  const { width: windowWidth } = useWindowDimensions();
+  const { width: windowWidth, height: windowHeight, fontScale } = useWindowDimensions();
   const shortcutPageWidth = windowWidth;
   const homePrayers = useMemo(
     () => bookmarkedPrayerIds
@@ -275,7 +275,7 @@ export function HomeScreen(): React.JSX.Element {
 
       <Button
         variant="ghost"
-        size="content"
+        size="row"
         accessibilityLabel={
           nextZman
             ? "View all local prayer times"
@@ -512,11 +512,11 @@ export function HomeScreen(): React.JSX.Element {
         )}
         <Button
           variant="ghost"
-          size="content"
+          size="row"
           accessibilityLabel={`Overall practice. ${formatOverallSummary(practiceStats)}`}
           accessibilityRole="button"
           onPress={() => setPracticeStatsOpen(true)}
-          className="min-h-[60px] px-1 flex-row items-center gap-3"
+          className="min-h-[60px] gap-3"
         >
           <ChartColumn size={20} color={colors.blue} />
           <View className="flex-1">
@@ -573,18 +573,18 @@ export function HomeScreen(): React.JSX.Element {
               </View>
               <ScrollView keyboardShouldPersistTaps="handled" style={homeStyles.prayerOptions}>
                 <Text style={homeStyles.prayerListHeading}>On your home · {homePrayers.length}</Text>
-                {homePrayers.map((prayer, index) => (
+                {homePrayers.map((prayer) => (
                   <Button
                     key={`home-${prayer.id}`}
                     variant="ghost"
-                    size="content"
+                    size="row"
                     accessibilityRole="checkbox"
                     accessibilityLabel={prayer.title}
                     accessibilityHint="Removes this prayer from your home screen"
                     accessibilityState={{ checked: true }}
                     haptic="selection"
                     onPress={() => toggleBookmark(prayer.id)}
-                    className={cn("min-h-[64px] flex-row items-center gap-4 border-b border-b-hairline", index === homePrayers.length - 1 && "border-b-0")}
+                    className="mb-1"
                   >
                     <View style={homeStyles.prayerOptionCopy}>
                       <Text style={homeStyles.prayerOptionTitle}>{prayer.title}</Text>
@@ -594,19 +594,19 @@ export function HomeScreen(): React.JSX.Element {
                   </Button>
                 ))}
                 <Text style={homeStyles.prayerListHeading}>Browse prayers</Text>
-                {prayerOptions.map(({ prayer }, index) => {
+                {prayerOptions.map(({ prayer }) => {
                   return (
                     <Button
                       key={prayer.id}
                       variant="ghost"
-                      size="content"
+                      size="row"
                       accessibilityRole="checkbox"
                       accessibilityLabel={prayer.title}
                       accessibilityHint="Adds this prayer to your home screen"
                       accessibilityState={{ checked: false }}
                       haptic="selection"
                       onPress={() => toggleBookmark(prayer.id)}
-                      className={cn("min-h-[64px] flex-row items-center gap-4 border-b border-b-hairline", index === prayerOptions.length - 1 && "border-b-0")}
+                      className="mb-1"
                     >
                       <View style={homeStyles.prayerOptionCopy}>
                         <Text style={homeStyles.prayerOptionTitle}>{prayer.title}</Text>
@@ -634,17 +634,18 @@ export function HomeScreen(): React.JSX.Element {
         >
           <SafeAreaView
             edges={["bottom"]}
+            style={{ maxHeight: windowHeight * 0.85 }}
             className="bg-card rounded-tl-lg rounded-tr-lg overflow-hidden shadow-card"
           >
-            <View className="px-6 pt-2 pb-4 gap-4">
-              <View className="flex-row items-start gap-4">
-                <View className="flex-1 gap-1">
+            <View className="shrink px-6 pt-2 pb-4 gap-4">
+              <View className="flex-row items-start justify-end gap-4">
+                {fontScale <= 1.3 && <View className="flex-1 gap-1">
                   <DialogTitle>Choose your practices</DialogTitle>
                   <DialogDescription>
                     Keep only what feels meaningful right now. You can change
                     this anytime.
                   </DialogDescription>
-                </View>
+                </View>}
                 <Button
                   variant="ghost"
                   size="content"
@@ -658,14 +659,25 @@ export function HomeScreen(): React.JSX.Element {
                   </Text>
                 </Button>
               </View>
-              <View className="border-t border-t-hairline">
-                {visibleHabits.map((habit, index) => {
+              <ScrollView
+                className="shrink border-t border-t-hairline"
+                contentContainerStyle={{ paddingTop: 8, paddingBottom: 4, gap: 4 }}
+              >
+                {fontScale > 1.3 && (
+                  <View className="gap-2 pb-4">
+                    <DialogTitle>Choose your practices</DialogTitle>
+                    <DialogDescription>
+                      Keep only what feels meaningful right now. You can change this anytime.
+                    </DialogDescription>
+                  </View>
+                )}
+                {visibleHabits.map((habit) => {
                   const details = habitDetails[habit.habit];
                   const selected = enabledHabits.includes(habit.habit);
                   return (
                     <Button
                       variant="ghost"
-                      size="content"
+                      size="row"
                       key={habit.habit}
                       accessibilityHint={
                         selected
@@ -676,10 +688,7 @@ export function HomeScreen(): React.JSX.Element {
                       accessibilityRole="checkbox"
                       accessibilityState={{ checked: selected }}
                       onPress={() => setHabitEnabled(habit.habit, !selected)}
-                      className={cn(
-                        "min-h-[68px] py-2 flex-row items-center gap-4 border-b border-b-hairline",
-                        index === visibleHabits.length - 1 && "border-b-[0px]",
-                      )}
+                      className="min-h-[68px]"
                     >
                       <View className="flex-1">
                         <Text className="text-[17px] leading-[24px] font-semibold tracking-normal text-foreground font-heading">
@@ -693,7 +702,7 @@ export function HomeScreen(): React.JSX.Element {
                     </Button>
                   );
                 })}
-              </View>
+              </ScrollView>
             </View>
           </SafeAreaView>
         </DialogContent>
