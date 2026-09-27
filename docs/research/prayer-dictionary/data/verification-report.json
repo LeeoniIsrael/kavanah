@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "psalms": 150,
+  "verses": 2527,
+  "psalmSourceTextFidelity": "exact",
+  "psalmPronunciationDrafts": 2527,
+  "liturgySections": 3009,
+  "liturgySourceTextFidelity": "exact for every selected raw segment",
+  "unmappedNonemptyExportPaths": 0,
+  "biblicalPassages": 37,
+  "duplicateIds": 0,
+  "duplicateRefs": 0,
+  "approvedEntries": 0,
+  "notVerified": [
+    "independent linguistic correctness",
+    "all English-Hebrew alignment",
+    "liturgical completeness and suitability of each section",
+    "cantor or rabbinic approval",
+    "all Jewish traditions or all digital archives"
+  ]
+}

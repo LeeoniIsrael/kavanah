@@ -1,0 +1,5107 @@
+# Need-based bucket index
+
+All Psalm themes and all rule-tagged liturgy source sections. The same record may appear in several buckets. Liturgy tags come from source-heading rules and need editorial review before they may drive app recommendations. A heading may be a collection or instructional passage. This is discovery inventory, not an approved prayer menu.
+
+## health (51 source records)
+
+- [Psalm 6: Weakness, tears, and a plea for healing](https://www.sefaria.org/Psalms.6) — complete source chapter; pronunciation draft.
+- [Psalm 9: Thanksgiving and justice for the oppressed](https://www.sefaria.org/Psalms.9) — complete source chapter; pronunciation draft.
+- [Psalm 13: How long? Sorrow moving toward trust](https://www.sefaria.org/Psalms.13) — complete source chapter; pronunciation draft.
+- [Psalm 16: Refuge, guidance, and joy](https://www.sefaria.org/Psalms.16) — complete source chapter; pronunciation draft.
+- [Psalm 17: An appeal for protection and vindication](https://www.sefaria.org/Psalms.17) — complete source chapter; pronunciation draft.
+- [Psalm 18: Thanksgiving for rescue](https://www.sefaria.org/Psalms.18) — complete source chapter; pronunciation draft.
+- [Psalm 20: Help in a day of trouble](https://www.sefaria.org/Psalms.20) — complete source chapter; pronunciation draft.
+- [Psalm 22: Abandonment, suffering, and eventual praise](https://www.sefaria.org/Psalms.22) — complete source chapter; pronunciation draft.
+- [Psalm 23: The shepherd, provision, and comfort](https://www.sefaria.org/Psalms.23) — complete source chapter; pronunciation draft.
+- [Psalm 28: A plea for help and blessing for the people](https://www.sefaria.org/Psalms.28) — complete source chapter; pronunciation draft.
+- [Psalm 30: Healing, rescue, and mourning turned to joy](https://www.sefaria.org/Psalms.30) — complete source chapter; pronunciation draft.
+- [Psalm 31: Refuge amid distress and betrayal](https://www.sefaria.org/Psalms.31) — complete source chapter; pronunciation draft.
+- [Psalm 32: Confession, forgiveness, and instruction](https://www.sefaria.org/Psalms.32) — complete source chapter; pronunciation draft.
+- [Psalm 33: Creation, trust, and communal praise](https://www.sefaria.org/Psalms.33) — complete source chapter; pronunciation draft.
+- [Psalm 37: Patience, upright conduct, and provision](https://www.sefaria.org/Psalms.37) — complete source chapter; pronunciation draft.
+- [Psalm 38: Affliction, guilt, and a plea for help](https://www.sefaria.org/Psalms.38) — complete source chapter; pronunciation draft.
+- [Psalm 39: Human frailty and the brevity of life](https://www.sefaria.org/Psalms.39) — complete source chapter; pronunciation draft.
+- [Psalm 41: Care for the vulnerable and sickness](https://www.sefaria.org/Psalms.41) — complete source chapter; pronunciation draft.
+- [Psalm 49: Wealth, mortality, and perspective](https://www.sefaria.org/Psalms.49) — complete source chapter; pronunciation draft.
+- [Psalm 55: Betrayal, anguish, and casting one's burden on God](https://www.sefaria.org/Psalms.55) — complete source chapter; pronunciation draft.
+- [Psalm 56: Fear, tears, and trust](https://www.sefaria.org/Psalms.56) — complete source chapter; pronunciation draft.
+- [Psalm 69: Deep distress and an appeal for rescue](https://www.sefaria.org/Psalms.69) — complete source chapter; pronunciation draft.
+- [Psalm 86: Mercy, guidance, and help in distress](https://www.sefaria.org/Psalms.86) — complete source chapter; pronunciation draft.
+- [Psalm 88: Unrelieved darkness and isolation](https://www.sefaria.org/Psalms.88) — complete source chapter; pronunciation draft.
+- [Psalm 89: Covenant, praise, and disappointment](https://www.sefaria.org/Psalms.89) — complete source chapter; pronunciation draft.
+- [Psalm 90: Mortality, wisdom, and the work of our hands](https://www.sefaria.org/Psalms.90) — complete source chapter; pronunciation draft.
+- [Psalm 91: Shelter and protection](https://www.sefaria.org/Psalms.91) — complete source chapter; pronunciation draft.
+- [Psalm 102: The prayer of one overwhelmed by affliction](https://www.sefaria.org/Psalms.102) — complete source chapter; pronunciation draft.
+- [Psalm 103: Compassion, forgiveness, and healing](https://www.sefaria.org/Psalms.103) — complete source chapter; pronunciation draft.
+- [Psalm 104: Creation, living things, and sustenance](https://www.sefaria.org/Psalms.104) — complete source chapter; pronunciation draft.
+- [Psalm 107: Thanksgiving after distress and rescue](https://www.sefaria.org/Psalms.107) — complete source chapter; pronunciation draft.
+- [Psalm 116: Deliverance, gratitude, and vows](https://www.sefaria.org/Psalms.116) — complete source chapter; pronunciation draft.
+- [Psalm 118: Thanksgiving, rescue, and rejoicing](https://www.sefaria.org/Psalms.118) — complete source chapter; pronunciation draft.
+- [Psalm 121: Help and guarding on the way](https://www.sefaria.org/Psalms.121) — complete source chapter; pronunciation draft.
+- [Psalm 130: Calling from the depths and awaiting redemption](https://www.sefaria.org/Psalms.130) — complete source chapter; pronunciation draft.
+- [Psalm 142: Loneliness and an appeal for refuge](https://www.sefaria.org/Psalms.142) — complete source chapter; pronunciation draft.
+- [Psalm 143: Mercy, direction, and renewal](https://www.sefaria.org/Psalms.143) — complete source chapter; pronunciation draft.
+- [Psalm 148: All creation called to praise](https://www.sefaria.org/Psalms.148) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Healing) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Healing) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Healing) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Sickness_%28includes_man_and_woman%29) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Berachot, Asher Yatzar Etchem Badin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Asher_Yatzar_Etchem_Badin) — H/E segments 1/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Prayer for Taking Medicine](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Prayer_for_Taking_Medicine) — H/E segments 3/2; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Sick](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Sick) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Childrens' Illness](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Childrens%27_Illness) — H/E segments 5/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of a Sick Person](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_on_Behalf_of_a_Sick_Person) — H/E segments 8/2; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer for Recovery from Illness](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Prayer_for_Recovery_from_Illness) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer after Recovery from Illness](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Prayer_after_Recovery_from_Illness) — H/E segments 0/0; unreviewed.
+
+## wellness (38 source records)
+
+- [Psalm 3: Trust amid enemies](https://www.sefaria.org/Psalms.3) — complete source chapter; pronunciation draft.
+- [Psalm 4: Distress, trust, and resting in safety](https://www.sefaria.org/Psalms.4) — complete source chapter; pronunciation draft.
+- [Psalm 6: Weakness, tears, and a plea for healing](https://www.sefaria.org/Psalms.6) — complete source chapter; pronunciation draft.
+- [Psalm 11: Trust when foundations are shaken](https://www.sefaria.org/Psalms.11) — complete source chapter; pronunciation draft.
+- [Psalm 13: How long? Sorrow moving toward trust](https://www.sefaria.org/Psalms.13) — complete source chapter; pronunciation draft.
+- [Psalm 16: Refuge, guidance, and joy](https://www.sefaria.org/Psalms.16) — complete source chapter; pronunciation draft.
+- [Psalm 22: Abandonment, suffering, and eventual praise](https://www.sefaria.org/Psalms.22) — complete source chapter; pronunciation draft.
+- [Psalm 23: The shepherd, provision, and comfort](https://www.sefaria.org/Psalms.23) — complete source chapter; pronunciation draft.
+- [Psalm 27: Courage, seeking God, and waiting with hope](https://www.sefaria.org/Psalms.27) — complete source chapter; pronunciation draft.
+- [Psalm 31: Refuge amid distress and betrayal](https://www.sefaria.org/Psalms.31) — complete source chapter; pronunciation draft.
+- [Psalm 34: Rescue, ethical speech, and care for the brokenhearted](https://www.sefaria.org/Psalms.34) — complete source chapter; pronunciation draft.
+- [Psalm 39: Human frailty and the brevity of life](https://www.sefaria.org/Psalms.39) — complete source chapter; pronunciation draft.
+- [Psalm 42: Longing, tears, and hope](https://www.sefaria.org/Psalms.42) — complete source chapter; pronunciation draft.
+- [Psalm 51: Confession and a clean heart](https://www.sefaria.org/Psalms.51) — complete source chapter; pronunciation draft.
+- [Psalm 55: Betrayal, anguish, and casting one's burden on God](https://www.sefaria.org/Psalms.55) — complete source chapter; pronunciation draft.
+- [Psalm 56: Fear, tears, and trust](https://www.sefaria.org/Psalms.56) — complete source chapter; pronunciation draft.
+- [Psalm 61: Refuge and an enduring shelter](https://www.sefaria.org/Psalms.61) — complete source chapter; pronunciation draft.
+- [Psalm 62: Quiet trust and the limits of wealth](https://www.sefaria.org/Psalms.62) — complete source chapter; pronunciation draft.
+- [Psalm 69: Deep distress and an appeal for rescue](https://www.sefaria.org/Psalms.69) — complete source chapter; pronunciation draft.
+- [Psalm 71: Trust and dignity in old age](https://www.sefaria.org/Psalms.71) — complete source chapter; pronunciation draft.
+- [Psalm 77: Sleepless distress and recalling deliverance](https://www.sefaria.org/Psalms.77) — complete source chapter; pronunciation draft.
+- [Psalm 86: Mercy, guidance, and help in distress](https://www.sefaria.org/Psalms.86) — complete source chapter; pronunciation draft.
+- [Psalm 88: Unrelieved darkness and isolation](https://www.sefaria.org/Psalms.88) — complete source chapter; pronunciation draft.
+- [Psalm 91: Shelter and protection](https://www.sefaria.org/Psalms.91) — complete source chapter; pronunciation draft.
+- [Psalm 94: Justice and comfort amid anxious thoughts](https://www.sefaria.org/Psalms.94) — complete source chapter; pronunciation draft.
+- [Psalm 102: The prayer of one overwhelmed by affliction](https://www.sefaria.org/Psalms.102) — complete source chapter; pronunciation draft.
+- [Psalm 123: Mercy in the face of contempt](https://www.sefaria.org/Psalms.123) — complete source chapter; pronunciation draft.
+- [Psalm 131: A quieted soul](https://www.sefaria.org/Psalms.131) — complete source chapter; pronunciation draft.
+- [Psalm 139: Being known, creation, and self-examination](https://www.sefaria.org/Psalms.139) — complete source chapter; pronunciation draft.
+- [Psalm 142: Loneliness and an appeal for refuge](https://www.sefaria.org/Psalms.142) — complete source chapter; pronunciation draft.
+- [Psalm 143: Mercy, direction, and renewal](https://www.sefaria.org/Psalms.143) — complete source chapter; pronunciation draft.
+- [Psalm 147: Healing the brokenhearted and sustaining creation](https://www.sefaria.org/Psalms.147) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Elokai Neshama](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Elokai_Neshama) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Elokai Neshama](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Elokai_Neshama) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Berachot, Asher Yatzar Etchem Badin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Asher_Yatzar_Etchem_Badin) — H/E segments 1/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, My Soul Bless](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_My_Soul_Bless) — H/E segments 94/96; unreviewed.
+
+## opportunity (7 source records)
+
+- [Psalm 37: Patience, upright conduct, and provision](https://www.sefaria.org/Psalms.37) — complete source chapter; pronunciation draft.
+- [Psalm 90: Mortality, wisdom, and the work of our hands](https://www.sefaria.org/Psalms.90) — complete source chapter; pronunciation draft.
+- [Psalm 127: Building, labor, rest, and children](https://www.sefaria.org/Psalms.127) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Prosperity) — H/E segments 5/5; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Prayer for Livelihood](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Prayer_for_Livelihood) — H/E segments 3/0; unreviewed.
+
+## provision (30 source records)
+
+- [Psalm 23: The shepherd, provision, and comfort](https://www.sefaria.org/Psalms.23) — complete source chapter; pronunciation draft.
+- [Psalm 37: Patience, upright conduct, and provision](https://www.sefaria.org/Psalms.37) — complete source chapter; pronunciation draft.
+- [Psalm 49: Wealth, mortality, and perspective](https://www.sefaria.org/Psalms.49) — complete source chapter; pronunciation draft.
+- [Psalm 62: Quiet trust and the limits of wealth](https://www.sefaria.org/Psalms.62) — complete source chapter; pronunciation draft.
+- [Psalm 65: Forgiveness, rain, and the earth's abundance](https://www.sefaria.org/Psalms.65) — complete source chapter; pronunciation draft.
+- [Psalm 67: Blessing, harvest, and the nations](https://www.sefaria.org/Psalms.67) — complete source chapter; pronunciation draft.
+- [Psalm 72: Just leadership and care for the poor](https://www.sefaria.org/Psalms.72) — complete source chapter; pronunciation draft.
+- [Psalm 73: Envy, prosperity, and regained perspective](https://www.sefaria.org/Psalms.73) — complete source chapter; pronunciation draft.
+- [Psalm 81: Festival praise, listening, and provision](https://www.sefaria.org/Psalms.81) — complete source chapter; pronunciation draft.
+- [Psalm 104: Creation, living things, and sustenance](https://www.sefaria.org/Psalms.104) — complete source chapter; pronunciation draft.
+- [Psalm 112: Generosity, integrity, and steadiness](https://www.sefaria.org/Psalms.112) — complete source chapter; pronunciation draft.
+- [Psalm 128: Work, household blessing, and peace](https://www.sefaria.org/Psalms.128) — complete source chapter; pronunciation draft.
+- [Psalm 136: Enduring lovingkindness](https://www.sefaria.org/Psalms.136) — complete source chapter; pronunciation draft.
+- [Psalm 144: Rescue, fruitful households, and communal well-being](https://www.sefaria.org/Psalms.144) — complete source chapter; pronunciation draft.
+- [Psalm 145: Praise, compassion, and sustenance](https://www.sefaria.org/Psalms.145) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Prosperity) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 50/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 50/50; unreviewed.
+- [Siddur Sefard, Additional Prayers , Chapter of Manna](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Chapter_of_Manna) — H/E segments 10/8; unreviewed.
+- [Siddur Sefard, Holidays, Prayer for Dew](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Prayer_for_Dew) — H/E segments 62/0; unreviewed.
+- [Siddur Sefard, Holidays, Prayer for Rain](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Prayer_for_Rain) — H/E segments 68/1; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Prayer for Livelihood](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Prayer_for_Livelihood) — H/E segments 3/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Dew](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Dew) — H/E segments 73/75; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Rain](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Rain) — H/E segments 102/104; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Guide to the Jewish Year](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Guide_to_the_Jewish_Year) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Mannah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Chapter_of_Mannah) — H/E segments 9/9; unreviewed.
+
+## aging (2 source records)
+
+- [Psalm 71: Trust and dignity in old age](https://www.sefaria.org/Psalms.71) — complete source chapter; pronunciation draft.
+- [Psalm 90: Mortality, wisdom, and the work of our hands](https://www.sefaria.org/Psalms.90) — complete source chapter; pronunciation draft.
+
+## caregiving (3 source records)
+
+- [Psalm 41: Care for the vulnerable and sickness](https://www.sefaria.org/Psalms.41) — complete source chapter; pronunciation draft.
+- [Psalm 82: Judgment and defense of the powerless](https://www.sefaria.org/Psalms.82) — complete source chapter; pronunciation draft.
+- [Psalm 146: Care for the vulnerable and enduring trust](https://www.sefaria.org/Psalms.146) — complete source chapter; pronunciation draft.
+
+## children (1 source records)
+
+- [Psalm 78: Teaching history to the next generation](https://www.sefaria.org/Psalms.78) — complete source chapter; pronunciation draft.
+
+## community (50 source records)
+
+- [Psalm 2: Kingship and the nations](https://www.sefaria.org/Psalms.2) — complete source chapter; pronunciation draft.
+- [Psalm 14: Corruption and longing for restoration](https://www.sefaria.org/Psalms.14) — complete source chapter; pronunciation draft.
+- [Psalm 21: Gratitude for a ruler's deliverance](https://www.sefaria.org/Psalms.21) — complete source chapter; pronunciation draft.
+- [Psalm 28: A plea for help and blessing for the people](https://www.sefaria.org/Psalms.28) — complete source chapter; pronunciation draft.
+- [Psalm 33: Creation, trust, and communal praise](https://www.sefaria.org/Psalms.33) — complete source chapter; pronunciation draft.
+- [Psalm 44: Communal suffering and an appeal for aid](https://www.sefaria.org/Psalms.44) — complete source chapter; pronunciation draft.
+- [Psalm 47: Universal praise and kingship](https://www.sefaria.org/Psalms.47) — complete source chapter; pronunciation draft.
+- [Psalm 48: Zion and communal memory](https://www.sefaria.org/Psalms.48) — complete source chapter; pronunciation draft.
+- [Psalm 53: Corruption and longing for deliverance](https://www.sefaria.org/Psalms.53) — complete source chapter; pronunciation draft.
+- [Psalm 60: Communal defeat and renewed hope](https://www.sefaria.org/Psalms.60) — complete source chapter; pronunciation draft.
+- [Psalm 66: Collective and personal thanksgiving](https://www.sefaria.org/Psalms.66) — complete source chapter; pronunciation draft.
+- [Psalm 67: Blessing, harvest, and the nations](https://www.sefaria.org/Psalms.67) — complete source chapter; pronunciation draft.
+- [Psalm 68: Protection of the vulnerable and collective praise](https://www.sefaria.org/Psalms.68) — complete source chapter; pronunciation draft.
+- [Psalm 72: Just leadership and care for the poor](https://www.sefaria.org/Psalms.72) — complete source chapter; pronunciation draft.
+- [Psalm 74: Communal devastation and remembrance](https://www.sefaria.org/Psalms.74) — complete source chapter; pronunciation draft.
+- [Psalm 78: Teaching history to the next generation](https://www.sefaria.org/Psalms.78) — complete source chapter; pronunciation draft.
+- [Psalm 79: Destruction, mourning, and appeal for mercy](https://www.sefaria.org/Psalms.79) — complete source chapter; pronunciation draft.
+- [Psalm 80: Restore us; the image of a devastated vine](https://www.sefaria.org/Psalms.80) — complete source chapter; pronunciation draft.
+- [Psalm 83: An appeal amid collective danger](https://www.sefaria.org/Psalms.83) — complete source chapter; pronunciation draft.
+- [Psalm 87: Zion and belonging](https://www.sefaria.org/Psalms.87) — complete source chapter; pronunciation draft.
+- [Psalm 89: Covenant, praise, and disappointment](https://www.sefaria.org/Psalms.89) — complete source chapter; pronunciation draft.
+- [Psalm 98: A new song of deliverance](https://www.sefaria.org/Psalms.98) — complete source chapter; pronunciation draft.
+- [Psalm 105: Remembering the covenant and history](https://www.sefaria.org/Psalms.105) — complete source chapter; pronunciation draft.
+- [Psalm 106: Collective confession and mercy](https://www.sefaria.org/Psalms.106) — complete source chapter; pronunciation draft.
+- [Psalm 108: Praise and communal hope](https://www.sefaria.org/Psalms.108) — complete source chapter; pronunciation draft.
+- [Psalm 110: Kingship and victory](https://www.sefaria.org/Psalms.110) — complete source chapter; pronunciation draft.
+- [Psalm 114: The Exodus and transformed nature](https://www.sefaria.org/Psalms.114) — complete source chapter; pronunciation draft.
+- [Psalm 115: Trust and blessing for the community](https://www.sefaria.org/Psalms.115) — complete source chapter; pronunciation draft.
+- [Psalm 132: Covenant, Zion, and a resting place](https://www.sefaria.org/Psalms.132) — complete source chapter; pronunciation draft.
+- [Psalm 135: Praise and communal memory](https://www.sefaria.org/Psalms.135) — complete source chapter; pronunciation draft.
+- [Psalm 137: Exile, grief, and a severe appeal for retribution](https://www.sefaria.org/Psalms.137) — complete source chapter; pronunciation draft.
+- [Psalm 147: Healing the brokenhearted and sustaining creation](https://www.sefaria.org/Psalms.147) — complete source chapter; pronunciation draft.
+- [Psalm 149: Communal rejoicing and judgment](https://www.sefaria.org/Psalms.149) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, God of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_God_of_Israel) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Ein Kelohenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Ein_Kelohenu) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Pitum HaKetoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Pitum_HaKetoret) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Mourner%27s_Kaddish) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Barchu) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yom zeh L'yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Yom_zeh_L%27yisrael) — H/E segments 34/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Shema Yisrael (Gadlu)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Shema_Yisrael_%28Gadlu%29) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer of the State of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_of_the_State_of_Israel) — H/E segments 35/35; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Israeli Soldiers](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Israeli_Soldiers) — H/E segments 12/12; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer for the Government](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_for_the_Government) — H/E segments 26/27; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the Welfare of the Government](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_the_Welfare_of_the_Government) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the State of Israel](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_the_State_of_Israel) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for Israel's Defense Forces](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_Israel%27s_Defense_Forces) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Guide for Visitors to Israel](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Guide_for_Visitors_to_Israel) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Birkat Kohanim In Israel](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Birkat_Kohanim_In_Israel) — H/E segments 0/0; unreviewed.
+
+## daily (1116 source records)
+
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Netilat Yadayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Netilat_Yadayim) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Elokai Neshama](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Elokai_Neshama) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tzitzit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tzitzit) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Blessings](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Torah_Blessings) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Study](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Torah_Study) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tallit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tallit) — H/E segments 5/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tefillin) — H/E segments 13/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Ma Tovu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Ma_Tovu) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Adon_Olam) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Yigdal) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Morning Blessings](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Morning_Blessings) — H/E segments 18/18; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Akedah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Akedah) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Sovereignty of Heaven](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Sovereignty_of_Heaven) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Kiyor](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kiyor) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Terumat HaDeshen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Terumat_HaDeshen) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Korban HaTamid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Korban_HaTamid) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Ketoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Ketoret) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Order of the Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Order_of_the_Temple_Service) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Laws of Sacrifices](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Laws_of_Sacrifices) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Baraita of Rabbi Yishmael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Baraita_of_Rabbi_Yishmael) — H/E segments 14/14; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kaddish_DeRabbanan) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Introductory Psalm](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Introductory_Psalm) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Barukh She'amar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Barukh_She%27amar) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Hodu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Hodu) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mizmor Letoda](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mizmor_Letoda) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Yehi Chevod](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yehi_Chevod) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Ashrei) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 146](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_146) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 147](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_147) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 148](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_148) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 149](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_149) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 150](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_150) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Closing Verses](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Closing_Verses) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Vayevarech David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Vayevarech_David) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Ata Hu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Ata_Hu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Az Yashir](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Az_Yashir) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Yishtabach](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yishtabach) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Psalm 130](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_130) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Half_Kaddish) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Barchu) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Blessing_after_Shema) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Patriarchs) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Divine_Might) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Holiness_of_God) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Kedushah) — H/E segments 14/14; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Knowledge) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Redemption](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Redemption) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Healing) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Gathering the Exiles](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Gathering_the_Exiles) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Against Enemies](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Against_Enemies) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Rebuilding_Jerusalem) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Kingdom of David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Kingdom_of_David) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Response to Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Response_to_Prayer) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Temple_Service) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Thanksgiving) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Birkat_Kohanim) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Peace) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Concluding_Passage) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Vidui and 13 Middot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Vidui_and_13_Middot) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Avinu Malkenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Avinu_Malkenu) — H/E segments 54/54; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, For Monday and Thursday](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_For_Monday_and_Thursday) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Nefilat Apayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Nefilat_Apayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, God of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_God_of_Israel) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Half_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, El Erech Appayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_El_Erech_Appayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vayehi_Binsoa) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Berich_Shmei) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Lekha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Lekha_Hashem) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Av Harachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Av_Harachamim) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vetigaleh_Veteraeh) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Prayers for Welfare of the People](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Prayers_for_Welfare_of_the_People) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Yehalelu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Yehalelu) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, LeDavid Mizmor](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_LeDavid_Mizmor) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Uvenucho_Yomar) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Ashrei) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Lamenatze'ach](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Lamenatze%27ach) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Uva Letzion](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Uva_Letzion) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Alenu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Song of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Song_of_the_Day) — H/E segments 19/19; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Barchi Nafshi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Barchi_Nafshi) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_LeDavid) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Ein Kelohenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Ein_Kelohenu) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Pitum HaKetoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Pitum_HaKetoret) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Mourner%27s_Kaddish) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Barchu) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Service, Six Remembrances](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Service%2C_Six_Remembrances) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Service, Ten Commandments](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Service%2C_Ten_Commandments) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Service, Thirteen Principles](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Service%2C_Thirteen_Principles) — H/E segments 13/13; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Ashrei) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Patriarchs) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Divine_Might) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Holiness_of_God) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Keduasha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Keduasha) — H/E segments 14/14; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Knowledge) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Redemption](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Redemption) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Healing) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Prosperity) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Gathering the Exiles](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Gathering_the_Exiles) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Against Enemies](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Against_Enemies) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Rebuilding_Jerusalem) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Kingdom of David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Kingdom_of_David) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Response to Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Response_to_Prayer) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Temple_Service) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Thanksgiving) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Birkat_Kohanim) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Peace) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Concluding_Passage) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Vidui and 13 Middot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Vidui_and_13_Middot) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Avinu Malkenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Avinu_Malkenu) — H/E segments 53/53; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Nefilat Appayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Nefilat_Appayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Concluding_Prayers%2C_Alenu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Vehu Rachum](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Vehu_Rachum) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Barchu) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, First Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_after_Shema) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Second Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_after_Shema) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Third Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Third_Blessing_after_Shema) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Half_Kaddish) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Patriarchs) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Divine_Might) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Holiness_of_God) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Knowledge) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Redemption](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Redemption) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Healing](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Healing) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Prosperity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Prosperity) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Gathering the Exiles](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Gathering_the_Exiles) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Against Enemies](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Against_Enemies) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Rebuilding_Jerusalem) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Kingdom of David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Kingdom_of_David) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Response to Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Response_to_Prayer) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Temple_Service) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Thanksgiving) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Peace) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Concluding_Passage) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Kaddish_Shalem) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Viyehi Noam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Additions_for_Motza%27ei_Shabbat%2C_Viyehi_Noam) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Veyiten Lekha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Additions_for_Motza%27ei_Shabbat%2C_Veyiten_Lekha) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Sefirat_HaOmer) — H/E segments 65/15; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Alenu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_LeDavid) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Birkat HaLevana](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Birkat_HaLevana) — H/E segments 18/17; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Keri'at Shema al Hamita](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Keri%27at_Shema_al_Hamita) — H/E segments 37/37; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Barchu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_after_Shema) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_after_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Veshamru](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Veshamru) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Half_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Patriarchs) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Divine_Might) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Holines of God's Name](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Holines_of_God%27s_Name) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Temple_Service) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Thanksgiving) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Peace) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Concluding_Passage) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Vay'chulu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Vay%27chulu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Me'ein Sheva](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Me%27ein_Sheva) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Sefirat_HaOmer) — H/E segments 14/13; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Aleinu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_LeDavid) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Yigdal) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Adon_Olam) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Blessing the Children](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Blessing_the_Children) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Shalom Aleichem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Shalom_Aleichem) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Kiddush](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Kiddush) — H/E segments 7/9; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Ribon Kol HaOlamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Ribon_Kol_HaOlamim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Eshet Chayil](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Eshet_Chayil) — H/E segments 22/22; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Kol Mekadesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Kol_Mekadesh) — H/E segments 33/32; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Menucha VeSimcha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Menucha_VeSimcha) — H/E segments 20/20; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Ma Yedidut](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Ma_Yedidut) — H/E segments 25/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yom zeh L'yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Yom_zeh_L%27yisrael) — H/E segments 34/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yah Ribon](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Yah_Ribon) — H/E segments 25/25; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzamah Nafshi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Tzamah_Nafshi) — H/E segments 28/32; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzur Mishelo](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Tzur_Mishelo) — H/E segments 22/22; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Netilat Yadayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Netilat_Yadayim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Elokai Neshama](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Elokai_Neshama) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tzitzit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tzitzit) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tallit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tallit) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Ma Tovu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Ma_Tovu) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Adon_Olam) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Yigdal) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Morning Blessings](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Morning_Blessings) — H/E segments 20/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Akedah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Akedah) — H/E segments 19/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Sovereignty of Heaven](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Sovereignty_of_Heaven) — H/E segments 22/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kiyor](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kiyor) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Terumat HaDeshen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Terumat_HaDeshen) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Korban HaTamid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Korban_HaTamid) — H/E segments 9/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Ketoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Ketoret) — H/E segments 21/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Order of the Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Order_of_the_Temple_Service) — H/E segments 16/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Laws of Sacrifices](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Laws_of_Sacrifices) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Baraita of Rabbi Yishmael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Baraita_of_Rabbi_Yishmael) — H/E segments 15/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kaddish_DeRabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Shir](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mizmor_Shir) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Barukh She'amar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Barukh_She%27amar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Hodu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Hodu) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Letoda](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mizmor_Letoda) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 19](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_19) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 34](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_34) — H/E segments 1/12; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 90](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_90) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 91](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_91) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 135](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_135) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 136](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_136) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 33](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_33) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 92](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_92) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 93](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_93) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yehi Chevod](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yehi_Chevod) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 146](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_146) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 147](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_147) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 148](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_148) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 149](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_149) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 150](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_150) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Baruch Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Baruch_Hashem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Vayevarech David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Vayevarech_David) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shirat HaYam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Shirat_HaYam) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Nishmat Kol Chai](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Nishmat_Kol_Chai) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shochen Ad](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Shochen_Ad) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yishtabach](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yishtabach) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 130](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_130) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Barchu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 9/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Blessing_after_Shema) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Patriarchs) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Divine_Might) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kedushah) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Holiness_of_God) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 4/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Temple_Service) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Thanksgiving) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Birkat_Kohanim) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Concluding_Passage) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Ein Kamocha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Ein_Kamocha) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Vayehi_Binsoa) — H/E segments 5/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Shema Yisrael (Gadlu)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Shema_Yisrael_%28Gadlu%29) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Lecha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Lecha_Hashem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Veyazor Veyagen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Veyazor_Veyagen) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For an Oleh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_an_Oleh) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Sickness_%28includes_man_and_woman%29) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of a Son](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_a_Son) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of Daughter](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_Daughter) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bar Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bar_Mitzvah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bat Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bat_Mitzvah) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Haftarah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Haftarah) — H/E segments 9/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Yekum Purkan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Yekum_Purkan) — H/E segments 3/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer of the State of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_of_the_State_of_Israel) — H/E segments 35/35; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Israeli Soldiers](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Israeli_Soldiers) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Those Being Held in Captivity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Those_Being_Held_in_Captivity) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Birkat Hachodesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Birkat_Hachodesh) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Av HaRachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Av_HaRachamim) — H/E segments 2/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Returning Sefer to Aron](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Returning_Sefer_to_Aron) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Uva Letzion](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Uva_Letzion) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Va'ani Tefillati](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Va%27ani_Tefillati) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vayehi_Binsoa) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Gadlu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Gadlu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Lekha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Lekha_Hashem) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Av Harachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Av_Harachamim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vetigaleh_Veteraeh) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 11/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Yehalelu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Yehalelu) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_LeDavid) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Uvenucho_Yomar) — H/E segments 9/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Patriarchs) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Divine_Might) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Kedushah) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Holiness_of_God) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Temple_Service) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Modim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Chanukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Chanukkah) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Purim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Purim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Concluding_Passage) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Tzidkatkhah Tzedek](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Tzidkatkhah_Tzedek) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Alenu) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Barchi Nafshi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Barchi_Nafshi) — H/E segments 35/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Avot) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Gevurot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Gevurot) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Kedusha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Kedusha) — H/E segments 17/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Sanctity_of_the_Day) — H/E segments 20/1; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avodah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Avodah) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Modim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Birkat_Kohanim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Concluding Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Concluding_Prayer) — H/E segments 8/0; unreviewed.
+- [Siddur Edot HaMizrach, Preparatory Prayers, Morning Blessings](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Preparatory_Prayers%2C_Morning_Blessings) — H/E segments 27/27; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Petichat Eliyahu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Petichat_Eliyahu) — H/E segments 11/1; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Order of Talit](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Order_of_Talit) — H/E segments 3/2; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Order of Tefillin](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Order_of_Tefillin) — H/E segments 6/1; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Hanna's Prayer](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Hanna%27s_Prayer) — H/E segments 2/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Morning Prayer](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Morning_Prayer) — H/E segments 19/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Incense Offering](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Incense_Offering) — H/E segments 35/18; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Hodu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Hodu) — H/E segments 15/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Pesukei D'Zimra](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Pesukei_D%27Zimra) — H/E segments 26/5; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_The_Shema) — H/E segments 21/20; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Amida](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Amida) — H/E segments 108/91; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Vidui](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Vidui) — H/E segments 34/9; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Torah_Reading) — H/E segments 21/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Ashrei](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Ashrei) — H/E segments 6/3; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Uva LeSion](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Uva_LeSion) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Beit Yaakov](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Beit_Yaakov) — H/E segments 5/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Song of the Day](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Song_of_the_Day) — H/E segments 30/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Kaveh](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Kaveh) — H/E segments 19/23; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Alenu) — H/E segments 6/3; unreviewed.
+- [Siddur Edot HaMizrach, Additions for Shacharit, Thirteen Principles of Faith](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Additions_for_Shacharit%2C_Thirteen_Principles_of_Faith) — H/E segments 3/3; unreviewed.
+- [Siddur Edot HaMizrach, Additions for Shacharit, Ten Remembrances](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Additions_for_Shacharit%2C_Ten_Remembrances) — H/E segments 25/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Mincha, Offerings](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Mincha%2C_Offerings) — H/E segments 16/16; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Mincha, Amida](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Mincha%2C_Amida) — H/E segments 107/89; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Mincha, Vidui](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Mincha%2C_Vidui) — H/E segments 24/18; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Mincha, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Mincha%2C_Alenu) — H/E segments 4/3; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Arvit, Barchu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Arvit%2C_Barchu) — H/E segments 11/11; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Arvit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Arvit%2C_The_Shema) — H/E segments 13/11; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Arvit, Amidah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Arvit%2C_Amidah) — H/E segments 73/50; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Arvit, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Arvit%2C_Alenu) — H/E segments 4/3; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Barchu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Barchu) — H/E segments 8/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_The_Shema) — H/E segments 15/13; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Magen Avot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Magen_Avot) — H/E segments 49/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Alenu) — H/E segments 19/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Shalom Alekhem](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Shalom_Alekhem) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Eshet Hayil](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Eshet_Hayil) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Atkenu Seudata](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Atkenu_Seudata) — H/E segments 29/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Kiddush](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Kiddush) — H/E segments 14/5; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Blessing of Children](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Blessing_of_Children) — H/E segments 6/5; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, First Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_First_Meal) — H/E segments 11/3; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Zohar](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Zohar) — H/E segments 15/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Songs for Shabbat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Songs_for_Shabbat) — H/E segments 148/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Psalms for Shabbat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Psalms_for_Shabbat) — H/E segments 40/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Pesukei D'Zimra](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Pesukei_D%27Zimra) — H/E segments 37/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_The_Shema) — H/E segments 26/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Amidah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Amidah) — H/E segments 85/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Torah_Reading) — H/E segments 28/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, HaGomel](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_HaGomel) — H/E segments 11/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Zeved HaBat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Zeved_HaBat) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Shabbat Chatan](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Shabbat_Chatan) — H/E segments 20/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Haftarah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Haftarah) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Birkat HaChodesh](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Birkat_HaChodesh) — H/E segments 7/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Announcement of Fast](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Announcement_of_Fast) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Mi Sheberach](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Mi_Sheberach) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Ashrei](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Ashrei) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Offerings](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Offerings) — H/E segments 13/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Uva LeSion](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Uva_LeSion) — H/E segments 23/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Amida](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Amida) — H/E segments 48/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Alenu) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Hanukkah, Shacharit](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Hanukkah%2C_Shacharit) — H/E segments 28/0; unreviewed.
+- [Siddur Sefard, Upon Arising, Modeh Ani](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Modeh_Ani) — H/E segments 7/7; unreviewed.
+- [Siddur Sefard, Upon Arising, Tallit](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Tallit) — H/E segments 6/5; unreviewed.
+- [Siddur Sefard, Upon Arising, Tefilin](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Tefilin) — H/E segments 14/13; unreviewed.
+- [Siddur Sefard, Upon Arising, Introductory Prayers](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Introductory_Prayers) — H/E segments 42/1; unreviewed.
+- [Siddur Sefard, Upon Arising, Upon Entering Synagogue](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Upon_Entering_Synagogue) — H/E segments 42/42; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Morning Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Morning_Blessings) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Blessings on Torah](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Blessings_on_Torah) — H/E segments 26/26; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Morning Prayer](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Morning_Prayer) — H/E segments 14/14; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Korbanot](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Korbanot) — H/E segments 41/41; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, B'raita d'Rabi Yishmael](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_B%27raita_d%27Rabi_Yishmael) — H/E segments 9/9; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Hodu](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Hodu) — H/E segments 39/39; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Yishtabach](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Yishtabach) — H/E segments 9/9; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, The Shema](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_The_Shema) — H/E segments 39/39; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Amidah) — H/E segments 125/124; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Tachanun](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Tachanun) — H/E segments 14/14; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Avinu Malkeinu](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Avinu_Malkeinu) — H/E segments 55/55; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, For Monday & Thursday](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_For_Monday_%26_Thursday) — H/E segments 31/31; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Torah_Reading) — H/E segments 40/40; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Ashrei](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Ashrei) — H/E segments 30/30; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Beit Yaakov](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Beit_Yaakov) — H/E segments 4/4; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Song of the Day](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Song_of_the_Day) — H/E segments 25/25; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Barchi Nafshi](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Barchi_Nafshi) — H/E segments 9/9; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, L'David Hashem](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_L%27David_Hashem) — H/E segments 13/13; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Kaveh](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Kaveh) — H/E segments 18/18; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Aleinu](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Aleinu) — H/E segments 9/9; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Korbanot](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Korbanot) — H/E segments 28/28; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Torah Reading for Fast Day](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Torah_Reading_for_Fast_Day) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Amidah) — H/E segments 128/128; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Tachanun](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Tachanun) — H/E segments 37/37; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Avinu Malkeinu](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Avinu_Malkeinu) — H/E segments 55/55; unreviewed.
+- [Siddur Sefard, Weekday Maariv, The Shema](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_The_Shema) — H/E segments 33/33; unreviewed.
+- [Siddur Sefard, Weekday Maariv, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_Amidah) — H/E segments 121/121; unreviewed.
+- [Siddur Sefard, Weekday Maariv, Motzaei Shabbat](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_Motzaei_Shabbat) — H/E segments 25/25; unreviewed.
+- [Siddur Sefard, Weekday Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_Sefirat_HaOmer) — H/E segments 65/15; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Song of Songs](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Song_of_Songs) — H/E segments 16/2; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Mincha](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Mincha) — H/E segments 34/5; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Amidah) — H/E segments 89/1; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Shabbat Eve Maariv](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Shabbat_Eve_Maariv) — H/E segments 7/4; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Shema & Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Shema_%26_Blessings) — H/E segments 22/21; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Amidah) — H/E segments 42/40; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Vayechulu](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Vayechulu) — H/E segments 21/19; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Blessing the Children](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Blessing_the_Children) — H/E segments 9/7; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Shalom Aleichem](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Shalom_Aleichem) — H/E segments 8/6; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Eishet Chayil](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Eishet_Chayil) — H/E segments 22/22; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Atkinu Seudata](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Atkinu_Seudata) — H/E segments 27/0; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Shabbat Eve Kiddush](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Shabbat_Eve_Kiddush) — H/E segments 11/7; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Zemirot](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Zemirot) — H/E segments 167/21; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Pesukei D'Zimrah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Pesukei_D%27Zimrah) — H/E segments 108/103; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Shema & Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Shema_%26_Blessings) — H/E segments 34/34; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Amidah) — H/E segments 76/71; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Shabbat Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Shabbat_Torah_Reading) — H/E segments 26/19; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Blessings on Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Blessings_on_Torah_Reading) — H/E segments 7/7; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Oleh](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Oleh) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Mother after Chilbirth](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Mother_after_Chilbirth) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Sick](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Sick) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, BaHaB Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_BaHaB_Blessing) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Thanksgiving Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Thanksgiving_Blessing) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Bar Mitzva](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Bar_Mitzva) — H/E segments 2/2; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Hagbahah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Hagbahah) — H/E segments 2/2; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Haftarah Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Haftarah_Blessings) — H/E segments 24/20; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Blessing of New Month](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Blessing_of_New_Month) — H/E segments 6/6; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Deceased](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Deceased) — H/E segments 5/5; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Av HaRachamim](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Av_HaRachamim) — H/E segments 15/15; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Korbanot](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Korbanot) — H/E segments 51/50; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Amidah) — H/E segments 85/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.1](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.1) — H/E segments 19/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.2](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.2) — H/E segments 17/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.3](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.3) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.4](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.4) — H/E segments 30/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.5](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.5) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.6](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.6) — H/E segments 12/0; unreviewed.
+- [Siddur Sefard, Holidays, Kaddish Before Maariv Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Kaddish_Before_Maariv_Amidah) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Holidays, Maariv, Shacharit & Mincha Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Maariv%2C_Shacharit_%26_Mincha_Amidah) — H/E segments 64/0; unreviewed.
+- [Siddur Sefard, Simchat Torah, Evening Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Simchat_Torah%2C_Evening_Torah_Reading) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Shabbat Mincha & Monday, Thursday](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Shabbat_Mincha_%26_Monday%2C_Thursday) — H/E segments 110/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Fast Day Mincha Haftara](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Fast_Day_Mincha_Haftara) — H/E segments 2/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Psalm 107](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Psalm_107) — H/E segments 105/105; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Yedid Nefesh](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Yedid_Nefesh) — H/E segments 28/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Ashrei) — H/E segments 78/79; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Shemoneh Esrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Shemoneh_Esrei) — H/E segments 534/576; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Aleinu) — H/E segments 73/73; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 84/87; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Borechu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Borechu) — H/E segments 265/280; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Amidah for Shabbos Eve](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Amidah_for_Shabbos_Eve) — H/E segments 325/350; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Vayechulu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Vayechulu) — H/E segments 19/21; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Magein Avos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Magein_Avos) — H/E segments 116/121; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 31/31; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 26/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 25/26; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 18/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 60/60; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 97/99; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Akeidah (The Binding of Isaac)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Isaac%29) — H/E segments 109/110; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Supplications](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Supplications) — H/E segments 137/138; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/68; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 476/486; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 44/47; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 134/136; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 585/594; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 92](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_92) — H/E segments 38/38; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 93](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_93) — H/E segments 17/17; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yehi Chevod](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yehi_Chevod) — H/E segments 41/42; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 275/285; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 149/152; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yishtabach](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 128/142; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Eil Adon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 231/234; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 212/220; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Amidah for Shabbos Morning](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Amidah_for_Shabbos_Morning) — H/E segments 509/543; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Song of the Day](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch Hashem Yom Yom](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Baruch_Hashem_Yom_Yom) — H/E segments 125/125; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch El Elyon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Baruch_El_Elyon) — H/E segments 79/86; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Yom Zeh Mechubod](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Yom_Zeh_Mechubod) — H/E segments 55/41; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Dror Yikra](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Dror_Yikra) — H/E segments 32/32; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Shabbos Hayom](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Shabbos_Hayom) — H/E segments 30/35; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 17/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korban Tamid (Daily Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/68; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ketores (Incense Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Ketores_%28Incense_Offering%29) — H/E segments 158/163; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Ashrei) — H/E segments 57/57; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Uvah L'tzion](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Uvah_L%27tzion) — H/E segments 128/130; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Reading of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Reading_of_the_Torah) — H/E segments 14/15; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Berich Shemei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Berich_Shemei) — H/E segments 246/265; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Amidah) — H/E segments 363/394; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Psalms recited between Sukkos and Pesach](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Psalms_recited_between_Sukkos_and_Pesach) — H/E segments 404/421; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos, Preface](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Pirkei_Avos%2C_Preface) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Pirkei_Avos) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Borechu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Borechu) — H/E segments 327/341; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Amidah) — H/E segments 655/690; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Veyiten Lecha](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Veyiten_Lecha) — H/E segments 290/297; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Kiddush for Yom Tov Evenings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Kiddush_for_Yom_Tov_Evenings) — H/E segments 89/103; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Amidah for Yom Tov Maariv, Shacharis and Minchah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Amidah_for_Yom_Tov_Maariv%2C_Shacharis_and_Minchah) — H/E segments 379/417; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, On Waking](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_On_Waking) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Blessings Over the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Blessings_Over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Tallit](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Tefillin](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Tefillin) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Preparation for Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Preparation_for_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Morning Blessings](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Binding of Isaac](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Binding_of_Isaac) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Accepting the Sovereignty of Heaven](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Accepting_the_Sovereignty_of_Heaven) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Offerings](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Offerings) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Interpretive Principles of Rabbi Yishmael](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Interpretive_Principles_of_Rabbi_Yishmael) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Pesukei DeZimra](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Pesukei_DeZimra) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Blessings of the Shema](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Amida](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Viduy](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Viduy) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Avinu Malkenu](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Tahanun](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Tahanun) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Reading of the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Conclusion of the Service](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Conclusion_of_the_Service) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Daily Psalm](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Daily_Psalm) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Readings after the Service](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Readings_after_the_Service) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Personal Supplications](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Personal_Supplications) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Minha for Weekdays](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Minha_for_Weekdays) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Ma'ariv for Weekdays](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Ma%27ariv_for_Weekdays) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Counting of the Omer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Counting_of_the_Omer) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Shema before Sleep at Night](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Shema_before_Sleep_at_Night) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Kiddush_and_Zemirot_for_Shabbat_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Morning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Kiddush_and_Zemirot_for_Shabbat_Morning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Yom_Tov_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Morning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Yom_Tov_Morning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Rosh HaShana Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Rosh_HaShana_Evening) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Upon Arising](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Morning Blessings](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Morning_Blessings) — H/E segments 0/1; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Tzitzit and Tallit](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Tzitzit_and_Tallit) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Tefillin](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Tefillin) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Morning Prayer](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Morning_Prayer) — H/E segments 0/5; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Kaddish DeRabbanan](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Kaddish_DeRabbanan) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Hodu](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Pesukei Dezimra](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Pesukei_Dezimra) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Blessings of the Shema](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, The Amidah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_The_Amidah) — H/E segments 0/9; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Tachnun](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Tachnun) — H/E segments 0/9; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Torah Reading](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Ashrei Uva LeZion](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Ashrei_Uva_LeZion) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Song of the Day](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Kaveh](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Kaveh) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Aleinu](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Rabbenu Tam](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Rabbenu_Tam) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Six Remembrances](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Six_Remembrances) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, The Travelers' Prayer](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_The_Travelers%27_Prayer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Various Blessings](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Various_Blessings) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Birkat HaMazon](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Birkat_HaMazon) — H/E segments 0/2; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Berakha Acharona](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Berakha_Acharona) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Birkat HaMazon for Circumcision](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Birkat_HaMazon_for_Circumcision) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Sheva Berakhot](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Sheva_Berakhot) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Korbanot](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Ashrei](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Amidah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Amidah) — H/E segments 0/9; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Tachanun](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Tachanun) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Aleinu](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Maariv](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Maariv) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Sefirat HaOmer](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Sefirat_HaOmer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Bedtime Shema](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Bedtime_Shema) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Kiddush Levanah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Kiddush_Levanah) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Lulav](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Lulav) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Hallel](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Hallel) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Rosh Chodesh](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Rosh_Chodesh) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Musaf for Festivals](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Musaf_for_Festivals) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Annulment of Vows](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Annulment_of_Vows) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Kapparot](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Kapparot) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Chanukah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Chanukah) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Purim](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Purim) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Reading of the Nassi](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Reading_of_the_Nassi) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings of Marriage Ceremony](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings_of_Marriage_Ceremony) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Order of a Circumcision](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Order_of_a_Circumcision) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Pidyon HaBen](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Pidyon_HaBen) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mishnayot for a Mourner](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mishnayot_for_a_Mourner) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 26/29; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 25/26; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Putting on the Tefillin](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Putting_on_the_Tefillin) — H/E segments 34/39; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 18/20; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 60/60; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 96/98; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Akeidah (The Binding of Isaac)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Isaac%29) — H/E segments 201/202; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Morning Supplications](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Supplications) — H/E segments 137/138; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 70/75; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 474/482; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 44/47; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 134/139; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 76/77; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 35/36; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Mizmor Lesodah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mizmor_Lesodah) — H/E segments 14/18; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Yehi Chevod](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yehi_Chevod) — H/E segments 41/42; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Ashrei](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 271/283; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 94/96; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Yishtabach](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 70/76; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Blessings of Shema](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Blessings_of_Shema) — H/E segments 170/178; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 210/225; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Shemoneh Esrei](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Shemoneh_Esrei) — H/E segments 482/523; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Tachanun](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Tachanun) — H/E segments 122/126; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Avinu Malkeinu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Avinu_Malkeinu) — H/E segments 129/135; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Vehu Rachum](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Vehu_Rachum) — H/E segments 360/367; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Reading of the Torah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Reading_of_the_Torah) — H/E segments 117/133; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Birchas Hagomeil](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Birchas_Hagomeil) — H/E segments 7/9; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Berachah for Father of Bar Mitzvah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Berachah_for_Father_of_Bar_Mitzvah) — H/E segments 55/59; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Ashrei U'va L'Tzion](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ashrei_U%27va_L%27Tzion) — H/E segments 291/300; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Psalm of the Day](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_of_the_Day) — H/E segments 349/363; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, My Soul Bless](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_My_Soul_Bless) — H/E segments 94/96; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Psalm from Rosh Chodesh Elul](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_from_Rosh_Chodesh_Elul) — H/E segments 53/56; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Psalm in the House of a Mourner](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_in_the_House_of_a_Mourner) — H/E segments 128/132; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Aleinu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Aleinu) — H/E segments 218/220; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 31/32; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Six Verses of Remembrance](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Six_Verses_of_Remembrance) — H/E segments 41/42; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Thirteen Principles of Faith](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Thirteen_Principles_of_Faith) — H/E segments 69/72; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Reverence for God](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Chapter_of_Reverence_for_God) — H/E segments 2/4; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Repentance](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Chapter_of_Repentance) — H/E segments 2/4; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Mannah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Chapter_of_Mannah) — H/E segments 9/9; unreviewed.
+- [Weekday Siddur Sefard Linear, Birkas Hamazon](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Birkas_Hamazon) — H/E segments 426/462; unreviewed.
+- [Weekday Siddur Sefard Linear, Concluding Blessings](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Concluding_Blessings) — H/E segments 71/89; unreviewed.
+- [Weekday Siddur Sefard Linear, Berachos Said Before Performing Mitzvos](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Berachos_Said_Before_Performing_Mitzvos) — H/E segments 18/25; unreviewed.
+- [Weekday Siddur Sefard Linear, Berachos Said Before Eating or Drinking](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Berachos_Said_Before_Eating_or_Drinking) — H/E segments 19/26; unreviewed.
+- [Weekday Siddur Sefard Linear, Berachos Said Upon Witnessing Phenomenal Sights](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Berachos_Said_Upon_Witnessing_Phenomenal_Sights) — H/E segments 22/28; unreviewed.
+- [Weekday Siddur Sefard Linear, Various Other Berachos](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Various_Other_Berachos) — H/E segments 18/24; unreviewed.
+- [Weekday Siddur Sefard Linear, Marriage Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Marriage_Service) — H/E segments 67/73; unreviewed.
+- [Weekday Siddur Sefard Linear, Birchas Hamazon for Sheva Berachos](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Birchas_Hamazon_for_Sheva_Berachos) — H/E segments 23/30; unreviewed.
+- [Weekday Siddur Sefard Linear, Service at a Circumcision](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Service_at_a_Circumcision) — H/E segments 142/154; unreviewed.
+- [Weekday Siddur Sefard Linear, Birkas Hamzon for Bris Milah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Birkas_Hamzon_for_Bris_Milah) — H/E segments 101/123; unreviewed.
+- [Weekday Siddur Sefard Linear, Redemption of the Firstborn](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Redemption_of_the_Firstborn) — H/E segments 59/68; unreviewed.
+- [Weekday Siddur Sefard Linear, The Travelers' Prayer](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Travelers%27_Prayer) — H/E segments 36/40; unreviewed.
+- [Weekday Siddur Sefard Linear, Mincha, Ashrei](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Mincha%2C_Ashrei) — H/E segments 78/79; unreviewed.
+- [Weekday Siddur Sefard Linear, Mincha, Shemoneh Esrei](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Mincha%2C_Shemoneh_Esrei) — H/E segments 529/573; unreviewed.
+- [Weekday Siddur Sefard Linear, Mincha, Tachanun](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Mincha%2C_Tachanun) — H/E segments 211/215; unreviewed.
+- [Weekday Siddur Sefard Linear, Mincha, Aleinu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Mincha%2C_Aleinu) — H/E segments 157/160; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Berachos Preceding Shema](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Berachos_Preceding_Shema) — H/E segments 50/56; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Shema](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Shema) — H/E segments 100/104; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Berachos Following Shema](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Berachos_Following_Shema) — H/E segments 177/181; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Shemoneh Esrei](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Shemoneh_Esrei) — H/E segments 459/492; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Motzei Shabbos Prayers](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Motzei_Shabbos_Prayers) — H/E segments 162/163; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Aleinu](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Aleinu) — H/E segments 137/138; unreviewed.
+- [Weekday Siddur Sefard Linear, Counting the Omer](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Counting_the_Omer) — H/E segments 142/95; unreviewed.
+- [Weekday Siddur Sefard Linear, Prayer Before Retiring at Night](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Prayer_Before_Retiring_at_Night) — H/E segments 283/290; unreviewed.
+- [Weekday Siddur Sefard Linear, Berachos on Lulav](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Berachos_on_Lulav) — H/E segments 10/11; unreviewed.
+- [Weekday Siddur Sefard Linear, Hallel](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Hallel) — H/E segments 287/300; unreviewed.
+- [Weekday Siddur Sefard Linear, Musaf for Rosh Chodesh](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Musaf_for_Rosh_Chodesh) — H/E segments 303/317; unreviewed.
+- [Weekday Siddur Sefard Linear, Musaf for Chol Hamo'ed](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Musaf_for_Chol_Hamo%27ed) — H/E segments 521/540; unreviewed.
+- [Weekday Siddur Sefard Linear, Hoshanos](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Hoshanos) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Chanukah Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Chanukah_Service) — H/E segments 78/82; unreviewed.
+- [Weekday Siddur Sefard Linear, Purim Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Purim_Service) — H/E segments 48/49; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Monday (1)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Monday_%281%29) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Thursday](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Thursday) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Monday (2)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Monday_%282%29) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Tenth of Teves](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Tenth_of_Teves) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Fast of Esther](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Fast_of_Esther) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Seventeenth of Tamuz](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Seventeenth_of_Tamuz) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 2/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 6/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 43/52; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Borechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Borechu) — H/E segments 18/28; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Amidah) — H/E segments 35/39; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Vayechulu) — H/E segments 2/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Magein Avos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Magein_Avos) — H/E segments 4/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Aleinu) — H/E segments 4/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Adon_Olam) — H/E segments 5/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 4/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 4/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 6/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 17/18; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 10/11; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 2/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 4/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 28/35; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 3/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 37/45; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 11/22; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 2/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 1/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 15/26; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Eil Adon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Eil_Adon) — H/E segments 30/30; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 13/20; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 34/38; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 71/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 12/17; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 5/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 7/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 46/48; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 25/25; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 12/19; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 34/38; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 99/75; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 13/18; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 4/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 8/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 45/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Ashrei) — H/E segments 6/10; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Berich_Shemei) — H/E segments 17/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Amidah) — H/E segments 9/12; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 30/34; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 45/48; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 76/77; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 40/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 301/310; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 64/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 83/84; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Borechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Borechu) — H/E segments 265/275; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Amidah) — H/E segments 327/340; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Vayechulu) — H/E segments 19/22; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Magein Avos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Magein_Avos) — H/E segments 100/102; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Aleinu) — H/E segments 147/149; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Adon_Olam) — H/E segments 24/26; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 25/28; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 24/25; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 15/16; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/54; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 90/91; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 240/241; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/67; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 432/451; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 40/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 554/562; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 314/325; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 106/108; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 32/32; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 158/167; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Eil Adon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Eil_Adon) — H/E segments 175/172; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 208/215; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 300/312; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 359/335; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 93/98; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 84/90; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 104/108; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 145/148; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 32/33; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 229/226; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 209/216; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 286/292; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 540/514; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 92/97; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 71/71; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 104/107; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 148/153; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Ashrei) — H/E segments 197/202; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Berich_Shemei) — H/E segments 192/207; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Amidah) — H/E segments 46/49; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 294/313; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 148/151; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Aleinu) — H/E segments 65/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Achot Ketannah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Achot_Ketannah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Barechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Morning Prayers](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Morning_Prayers) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Akeidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Ketoret](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shirat Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shema and Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Shema_and_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit for Motzei Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit_for_Motzei_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Achot Ketannah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Achot_Ketannah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Barechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Akeidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Ketoret](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Shirat Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Blessings of the Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Blessings of the Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Borechu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Borechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yishtabach](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Eil Adon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Sanctification_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Berich_Shemei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Amidah for Mincha](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Amidah_for_Mincha) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 77/78; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 594/609; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 66/65; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 85/86; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Borechu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Borechu) — H/E segments 264/273; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 542/555; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 55/58; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 1375/1396; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 180/185; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 148/151; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 26/29; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 25/26; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 15/16; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 21/22; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/53; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 90/91; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 239/240; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/66; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 434/442; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 68/69; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 555/563; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 44/45; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 276/286; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 105/106; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_The_King) — H/E segments 32/32; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yishtabach](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 162/172; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Eil Adon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 233/177; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 209/216; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 546/558; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 589/509; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 214/184; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Sanctification_of_the_Day) — H/E segments 628/627; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Avodah) — H/E segments 115/118; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 400/405; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 18/20; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 64/70; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Va%27yehi_Binsoa) — H/E segments 8/9; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Berich_Shemei) — H/E segments 100/110; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 168/178; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Amidah for Mincha](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Amidah_for_Mincha) — H/E segments 548/560; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 163/161; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 818/828; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Avodah) — H/E segments 116/120; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 145/149; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before the Service](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Prayer_Before_the_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Lecha Eli Teshukati](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Lecha_Eli_Teshukati) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before Yom Kippur Services](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Prayer_Before_Yom_Kippur_Services) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Barechu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Shema and its Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Shema_and_its_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Arvit Finale](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Arvit_Finale) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Modeh Ani](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Modeh_Ani) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Patach Eliyahu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Patach_Eliyahu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Chana's Prayer](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Chana%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Akeidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Piyutim](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Piyutim) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Shema and its Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Shema_and_its_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Opening of the Ark](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Opening_of_the_Ark) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Mi Sheberach](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Prayer of Rabbi Chaim Yosef David Azulai](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Prayer_of_Rabbi_Chaim_Yosef_David_Azulai) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Laws of Tevilah on Erev Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Laws_of_Tevilah_on_Erev_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Barechu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Akeidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Ketoret](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Shirat Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Blessings of the Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Song of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Torah Reading](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Motzei Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Motzei_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Kiddush for Rosh HaShana Evening](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Kiddush_for_Rosh_HaShana_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Morning Blessings](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Mincha](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Mincha) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Ma'ariv for Yom Kippur](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Ma%27ariv_for_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Selihot](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Selihot) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Viduy](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Viduy) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaYichud](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Shir_HaYichud) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaKavod](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Shir_HaKavod) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Massekhet_Yoma) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma, Appendix](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Massekhet_Yoma%2C_Appendix) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Morning Blessings](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Reading of the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Haftara; The Book of Jonah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Haftara%3B_The_Book_of_Jonah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, The Amida](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Leader's Repetition for Mincha](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Leader%27s_Repetition_for_Mincha) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.8) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.17) — H/E segments 128/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.18) — H/E segments 1/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Arvit](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Arvit) — H/E segments 0/0; unreviewed.
+
+## devotion (490 source records)
+
+- [Psalm 63: Longing for God and nighttime remembrance](https://www.sefaria.org/Psalms.63) — complete source chapter; pronunciation draft.
+- [Psalm 84: Longing for God's dwelling](https://www.sefaria.org/Psalms.84) — complete source chapter; pronunciation draft.
+- [Psalm 93: Majesty and stability amid mighty waters](https://www.sefaria.org/Psalms.93) — complete source chapter; pronunciation draft.
+- [Psalm 95: Praise, worship, and listening](https://www.sefaria.org/Psalms.95) — complete source chapter; pronunciation draft.
+- [Psalm 99: Holiness and just kingship](https://www.sefaria.org/Psalms.99) — complete source chapter; pronunciation draft.
+- [Psalm 134: Blessing in the night](https://www.sefaria.org/Psalms.134) — complete source chapter; pronunciation draft.
+- [Psalm 150: Praise with instruments and every breath](https://www.sefaria.org/Psalms.150) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Adon_Olam) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Yigdal) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kaddish_DeRabbanan) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Half_Kaddish) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Kedushah) — H/E segments 14/14; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Half_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Mourner%27s_Kaddish) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Blessings of the Shema, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Blessings_of_the_Shema%2C_Half_Kaddish) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Kaddish_Shalem) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Kaddish_DeRabbanan) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Half_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Yigdal) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Adon_Olam) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Adon_Olam) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Yigdal) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kaddish_DeRabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kedushah) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Kedushah) — H/E segments 13/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Derabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Kaddish_Derabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Adon_Olam) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Kedushah) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Kedushah, Kedushat HaShem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Kedushah%2C_Kedushat_HaShem) — H/E segments 11/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Kedusha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Kedusha) — H/E segments 17/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Kedusha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Kedusha) — H/E segments 23/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Mourner%27s_Kaddish) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Kaddish d'Rabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Kaddish_d%27Rabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Kaddish achar HaKevura](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Kaddish_achar_HaKevura) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Kaddish achar Hashlamat Meschet](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Kaddish_achar_Hashlamat_Meschet) — H/E segments 6/0; unreviewed.
+- [Siddur Edot HaMizrach, The Midnight Rite, LeShem Yichud](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_The_Midnight_Rite%2C_LeShem_Yichud) — H/E segments 4/3; unreviewed.
+- [Siddur Edot HaMizrach, The Midnight Rite, Tikkun Rachel](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_The_Midnight_Rite%2C_Tikkun_Rachel) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, The Midnight Rite, Tikkun Leah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_The_Midnight_Rite%2C_Tikkun_Leah) — H/E segments 15/0; unreviewed.
+- [Siddur Sefard, Blessings, Various Blessings of Praise](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Various_Blessings_of_Praise) — H/E segments 28/0; unreviewed.
+- [Siddur Sefard, Holidays, Kaddish Before Maariv Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Kaddish_Before_Maariv_Amidah) — H/E segments 6/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 84/87; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 34/33; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 31/31; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 44/47; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Kaddish d'Rabanan](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Kaddish_d%27Rabanan) — H/E segments 43/43; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Mourner%27s_Kaddish) — H/E segments 39/39; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Adon Olam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Adon_Olam) — H/E segments 20/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Kedusha for Chol Hamoed](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Kedusha_for_Chol_Hamoed) — H/E segments 29/34; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Rabbis' Kaddish Transliterated](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Rabbis%27_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Kaddish DeRabbanan](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Kaddish_DeRabbanan) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 44/47; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 31/32; unreviewed.
+- [Pesach Haggadah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 6/6; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 43/52; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Adon_Olam) — H/E segments 5/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 3/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 12/17; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 13/18; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 50/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 48/49; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 30/34; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 301/310; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Adon_Olam) — H/E segments 24/26; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 93/98; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 92/97; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 371/384; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 41/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 348/354; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 41/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 294/313; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 21/22; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 214/184; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Kedushah) — H/E segments 508/528; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 818/828; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Kedushah) — H/E segments 136/143; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Shir HaYichud](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Customs_of_Yom_Kippur_Night%2C_Shir_HaYichud) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Full Kaddish](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Full_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Rabbis%27_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaYichud](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Shir_HaYichud) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Full Kaddish](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Full_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Rabbis%27_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [Leshon Chakhamim, Part I, Introduction](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I%2C_Introduction) — H/E segments 128/0; unreviewed.
+- [Leshon Chakhamim, Part I.1](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.1) — H/E segments 20/0; unreviewed.
+- [Leshon Chakhamim, Part I.2](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.2) — H/E segments 46/0; unreviewed.
+- [Leshon Chakhamim, Part I.3](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.3) — H/E segments 29/0; unreviewed.
+- [Leshon Chakhamim, Part I.4](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.4) — H/E segments 20/0; unreviewed.
+- [Leshon Chakhamim, Part I.5](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.5) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.6](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.6) — H/E segments 26/0; unreviewed.
+- [Leshon Chakhamim, Part I.7](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.7) — H/E segments 12/0; unreviewed.
+- [Leshon Chakhamim, Part I.8](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.8) — H/E segments 37/0; unreviewed.
+- [Leshon Chakhamim, Part I.9](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.9) — H/E segments 42/0; unreviewed.
+- [Leshon Chakhamim, Part I.10](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.10) — H/E segments 119/0; unreviewed.
+- [Leshon Chakhamim, Part I.11](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.11) — H/E segments 31/0; unreviewed.
+- [Leshon Chakhamim, Part I.12](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.12) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.13](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.13) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part I.14](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.14) — H/E segments 22/0; unreviewed.
+- [Leshon Chakhamim, Part I.15](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.15) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part I.16](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.16) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.17](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.17) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part I.18](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.18) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.19](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.19) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.20](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.20) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.21](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.21) — H/E segments 30/0; unreviewed.
+- [Leshon Chakhamim, Part I.22](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.22) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part I.23](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.23) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part I.24](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.24) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part I.25](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.25) — H/E segments 3/0; unreviewed.
+- [Leshon Chakhamim, Part I.26](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.26) — H/E segments 3/0; unreviewed.
+- [Leshon Chakhamim, Part I.27](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.27) — H/E segments 14/0; unreviewed.
+- [Leshon Chakhamim, Part I.28](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.28) — H/E segments 28/0; unreviewed.
+- [Leshon Chakhamim, Part I.29](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.29) — H/E segments 34/0; unreviewed.
+- [Leshon Chakhamim, Part I.30](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.30) — H/E segments 20/0; unreviewed.
+- [Leshon Chakhamim, Part I.31](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.31) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part I.32](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.32) — H/E segments 18/0; unreviewed.
+- [Leshon Chakhamim, Part I.33](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.33) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.34](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.34) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.35](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.35) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part I.36](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.36) — H/E segments 24/21; unreviewed.
+- [Leshon Chakhamim, Part I.37](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.37) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.38](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.38) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.39](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.39) — H/E segments 153/0; unreviewed.
+- [Leshon Chakhamim, Part I.40](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.40) — H/E segments 0/0; unreviewed.
+- [Leshon Chakhamim, Part I.41](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.41) — H/E segments 0/0; unreviewed.
+- [Leshon Chakhamim, Part I.42](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.42) — H/E segments 13/0; unreviewed.
+- [Leshon Chakhamim, Part I.43](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.43) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part I.44](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.44) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.45](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.45) — H/E segments 3/0; unreviewed.
+- [Leshon Chakhamim, Part I.46](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.46) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part I.47](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.47) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part I.48](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.48) — H/E segments 3/0; unreviewed.
+- [Leshon Chakhamim, Part I.49](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.49) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part I.50](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.50) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.51](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.51) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part I.52](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.52) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.53](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.53) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part I.54](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.54) — H/E segments 24/0; unreviewed.
+- [Leshon Chakhamim, Part I.55](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.55) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part I.56](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.56) — H/E segments 90/0; unreviewed.
+- [Leshon Chakhamim, Part I.57](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.57) — H/E segments 13/0; unreviewed.
+- [Leshon Chakhamim, Part I.58](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.58) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.59](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.59) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part I.60](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.60) — H/E segments 20/0; unreviewed.
+- [Leshon Chakhamim, Part I.61](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.61) — H/E segments 12/0; unreviewed.
+- [Leshon Chakhamim, Part I.62](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.62) — H/E segments 6/3; unreviewed.
+- [Leshon Chakhamim, Part I.63](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.63) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part I.64](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.64) — H/E segments 18/0; unreviewed.
+- [Leshon Chakhamim, Part I.65](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.65) — H/E segments 17/0; unreviewed.
+- [Leshon Chakhamim, Part I.66](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.66) — H/E segments 30/0; unreviewed.
+- [Leshon Chakhamim, Part I.67](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.67) — H/E segments 104/0; unreviewed.
+- [Leshon Chakhamim, Part I.68](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.68) — H/E segments 212/0; unreviewed.
+- [Leshon Chakhamim, Part I.69](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.69) — H/E segments 98/0; unreviewed.
+- [Leshon Chakhamim, Part I.70](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.70) — H/E segments 50/0; unreviewed.
+- [Leshon Chakhamim, Part I.71](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.71) — H/E segments 15/0; unreviewed.
+- [Leshon Chakhamim, Part I.72](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.72) — H/E segments 31/0; unreviewed.
+- [Leshon Chakhamim, Part I.73](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.73) — H/E segments 51/0; unreviewed.
+- [Leshon Chakhamim, Part I.74](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.74) — H/E segments 18/0; unreviewed.
+- [Leshon Chakhamim, Part I.75](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.75) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part I.76](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.76) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part I.77](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_I.77) — H/E segments 993/0; unreviewed.
+- [Leshon Chakhamim, Part II, Introduction](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II%2C_Introduction) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part II.1](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.1) — H/E segments 194/0; unreviewed.
+- [Leshon Chakhamim, Part II.2](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.2) — H/E segments 109/0; unreviewed.
+- [Leshon Chakhamim, Part II.3](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.3) — H/E segments 277/0; unreviewed.
+- [Leshon Chakhamim, Part II.4](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.4) — H/E segments 126/0; unreviewed.
+- [Leshon Chakhamim, Part II.5](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.5) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part II.6](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.6) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part II.7](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.7) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part II.8](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.8) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part II.9](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.9) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.10](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.10) — H/E segments 14/0; unreviewed.
+- [Leshon Chakhamim, Part II.11](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.11) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.12](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.12) — H/E segments 35/0; unreviewed.
+- [Leshon Chakhamim, Part II.13](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.13) — H/E segments 2/0; unreviewed.
+- [Leshon Chakhamim, Part II.14](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.14) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part II.15](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.15) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part II.16](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.16) — H/E segments 12/0; unreviewed.
+- [Leshon Chakhamim, Part II.17](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.17) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part II.18](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.18) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part II.19](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.19) — H/E segments 11/0; unreviewed.
+- [Leshon Chakhamim, Part II.20](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.20) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part II.21](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.21) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part II.22](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.22) — H/E segments 23/0; unreviewed.
+- [Leshon Chakhamim, Part II.23](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.23) — H/E segments 6/5; unreviewed.
+- [Leshon Chakhamim, Part II.24](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.24) — H/E segments 5/0; unreviewed.
+- [Leshon Chakhamim, Part II.25](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.25) — H/E segments 28/0; unreviewed.
+- [Leshon Chakhamim, Part II.26](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.26) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.27](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.27) — H/E segments 12/0; unreviewed.
+- [Leshon Chakhamim, Part II.28](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.28) — H/E segments 33/0; unreviewed.
+- [Leshon Chakhamim, Part II.29](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.29) — H/E segments 13/0; unreviewed.
+- [Leshon Chakhamim, Part II.30](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.30) — H/E segments 15/0; unreviewed.
+- [Leshon Chakhamim, Part II.31](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.31) — H/E segments 13/0; unreviewed.
+- [Leshon Chakhamim, Part II.32](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.32) — H/E segments 10/0; unreviewed.
+- [Leshon Chakhamim, Part II.33](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.33) — H/E segments 6/0; unreviewed.
+- [Leshon Chakhamim, Part II.34](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.34) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.35](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.35) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.36](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.36) — H/E segments 13/0; unreviewed.
+- [Leshon Chakhamim, Part II.37](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.37) — H/E segments 12/0; unreviewed.
+- [Leshon Chakhamim, Part II.38](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.38) — H/E segments 11/0; unreviewed.
+- [Leshon Chakhamim, Part II.39](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.39) — H/E segments 9/0; unreviewed.
+- [Leshon Chakhamim, Part II.40](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.40) — H/E segments 8/0; unreviewed.
+- [Leshon Chakhamim, Part II.41](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.41) — H/E segments 15/0; unreviewed.
+- [Leshon Chakhamim, Part II.42](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.42) — H/E segments 32/0; unreviewed.
+- [Leshon Chakhamim, Part II.43](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.43) — H/E segments 32/0; unreviewed.
+- [Leshon Chakhamim, Part II.44](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.44) — H/E segments 25/0; unreviewed.
+- [Leshon Chakhamim, Part II.45](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.45) — H/E segments 18/0; unreviewed.
+- [Leshon Chakhamim, Part II.46](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.46) — H/E segments 19/0; unreviewed.
+- [Leshon Chakhamim, Part II.47](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.47) — H/E segments 7/0; unreviewed.
+- [Leshon Chakhamim, Part II.48](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.48) — H/E segments 4/0; unreviewed.
+- [Leshon Chakhamim, Part II.49](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.49) — H/E segments 196/0; unreviewed.
+- [Leshon Chakhamim, Part II.50](https://www.sefaria.org/Leshon_Chakhamim%2C_Part_II.50) — H/E segments 62/0; unreviewed.
+- [Ma'avar Yabbok, Introduction](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Introduction) — H/E segments 11/0; unreviewed.
+- [Ma'avar Yabbok, Author's Introduction.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Author%27s_Introduction.1) — H/E segments 27/0; unreviewed.
+- [Ma'avar Yabbok, Author's Introduction.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Author%27s_Introduction.2) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.2) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.3) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.4) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.6) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.7) — H/E segments 348/3; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.8) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.9) — H/E segments 7/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.11) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.12) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.16) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.17) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.19) — H/E segments 5/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.22) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.24) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.26) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.31) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.35) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.40) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.8) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.16) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.17) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.25) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.37) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.1) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.8) — H/E segments 0/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.17) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.33) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.40) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.41](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.41) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.42](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.42) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.43](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.43) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.44](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.44) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.45](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.45) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.46](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.46) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.1) — H/E segments 4/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.6) — H/E segments 9/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.8) — H/E segments 4/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.5) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.7) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.8) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.17) — H/E segments 128/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.1) — H/E segments 5/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.5) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.6) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.8) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.9) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.12) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.13) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.17) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.40) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.41](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.41) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.42](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.42) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Epilogue](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Epilogue) — H/E segments 2/0; unreviewed.
+- [Tikkun HaKlali](https://www.sefaria.org/Tikkun_HaKlali) — H/E segments 0/14; unreviewed.
+
+## family (23 source records)
+
+- [Psalm 113: Praise and the lifting of the lowly](https://www.sefaria.org/Psalms.113) — complete source chapter; pronunciation draft.
+- [Psalm 127: Building, labor, rest, and children](https://www.sefaria.org/Psalms.127) — complete source chapter; pronunciation draft.
+- [Psalm 128: Work, household blessing, and peace](https://www.sefaria.org/Psalms.128) — complete source chapter; pronunciation draft.
+- [Psalm 144: Rescue, fruitful households, and communal well-being](https://www.sefaria.org/Psalms.144) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Blessing the Children](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Blessing_the_Children) — H/E segments 3/3; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Blessing of Children](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Blessing_of_Children) — H/E segments 6/5; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Marriage](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Marriage) — H/E segments 8/0; unreviewed.
+- [Siddur Sefard, Various Blessings, Marriage Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Various_Blessings%2C_Marriage_Blessings) — H/E segments 11/6; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Blessing the Children](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Blessing_the_Children) — H/E segments 9/7; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Childrens' Illness](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Childrens%27_Illness) — H/E segments 5/0; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Prayer of the Shelah](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Prayer_of_the_Shelah) — H/E segments 13/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Blessing the Children](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Order_of_Shabbos_in_the_Home%2C_Blessing_the_Children) — H/E segments 20/22; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, The Seven Marriage Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_The_Seven_Marriage_Blessings) — H/E segments 45/45; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer after Childbirth](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Prayer_after_Childbirth) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Marriage Service](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Marriage_Service) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings of Marriage Ceremony](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings_of_Marriage_Ceremony) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Marriage Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Marriage_Service) — H/E segments 67/73; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Blessing_the_Children) — H/E segments 49/55; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Blessing the Children](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Blessing the Children](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+
+## fertility (4 source records)
+
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of a Son](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_a_Son) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of Daughter](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_Daughter) — H/E segments 1/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Mother after Chilbirth](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Mother_after_Chilbirth) — H/E segments 4/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer after Childbirth](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Prayer_after_Childbirth) — H/E segments 0/0; unreviewed.
+
+## festivals (1096 source records)
+
+- [Psalm 81: Festival praise, listening, and provision](https://www.sefaria.org/Psalms.81) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Sefirat_HaOmer) — H/E segments 65/15; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Sefirat_HaOmer) — H/E segments 14/13; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Chanukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Chanukkah) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Purim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Purim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Berakhah before the Hallel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Berakhah_before_the_Hallel) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 113](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_113) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 114](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_114) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 115](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_115) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 116](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_116) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 117](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_117) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Psalm 118](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Psalm_118) — H/E segments 13/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Hallel, Berakhah after the Hallel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Hallel%2C_Berakhah_after_the_Hallel) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Avot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Avot) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Gevurot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Gevurot) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Kedushah, Kedushat HaShem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Kedushah%2C_Kedushat_HaShem) — H/E segments 11/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Sanctity_of_the_Day) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Avodah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Avodah) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Hodayah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Hodayah) — H/E segments 14/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Birkat_Kohanim) — H/E segments 19/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Passages Ending Amidah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Passages_Ending_Amidah) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Avot) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Gevurot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Gevurot) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Kedusha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Kedusha) — H/E segments 17/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Sanctity_of_the_Day) — H/E segments 20/1; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Avodah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Avodah) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Modim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Birkat_Kohanim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Concluding Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Concluding_Prayer) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Avot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Avot) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Gevurot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Gevurot) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Kedusha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Kedusha) — H/E segments 23/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Sanctity of the Name](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Sanctity_of_the_Name) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Sanctity_of_the_Day) — H/E segments 65/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Avodah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Avodah) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Modim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Birkat_Kohanim) — H/E segments 16/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Concluding Prayer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Concluding_Prayer) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 50/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 50/50; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Entering the Sukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Prayers_in_the_Sukkah%2C_Entering_the_Sukkah) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Ushpizin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Prayers_in_the_Sukkah%2C_Ushpizin) — H/E segments 18/18; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Prayers in the Sukkah, Leaving the Sukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Prayers_in_the_Sukkah%2C_Leaving_the_Sukkah) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Blessing on Lulav](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Blessing_on_Lulav) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, For Shabbat Chol Hamoed](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_For_Shabbat_Chol_Hamoed) — H/E segments 28/28; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, First Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_First_Day_of_Sukkot) — H/E segments 19/19; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Second Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Second_Day_of_Sukkot) — H/E segments 23/23; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Third Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Third_Day_of_Sukkot) — H/E segments 19/19; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Fourth Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Fourth_Day_of_Sukkot) — H/E segments 48/48; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Fifth Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Fifth_Day_of_Sukkot) — H/E segments 40/40; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Sixth Day of Sukkot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Sixth_Day_of_Sukkot) — H/E segments 40/40; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, Hosha'ana Rabba](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_Hosha%27ana_Rabba) — H/E segments 72/74; unreviewed.
+- [Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Blessings on Chanukah Candles](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Chanukah%2C_Service_for_Lighting_Chanukah_Candles%2C_Blessings_on_Chanukah_Candles) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Hanerot Hallalu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Chanukah%2C_Service_for_Lighting_Chanukah_Candles%2C_Hanerot_Hallalu) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Festivals, Chanukah, Service for Lighting Chanukah Candles, Maoz Tzur](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Chanukah%2C_Service_for_Lighting_Chanukah_Candles%2C_Maoz_Tzur) — H/E segments 24/20; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Fast of Gedalia](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Fast_of_Gedalia) — H/E segments 187/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Ten of Tevet](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Ten_of_Tevet) — H/E segments 55/39; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Fast of Esther](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Fast_of_Esther) — H/E segments 47/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Seventeen of Tamuz](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Seventeen_of_Tamuz) — H/E segments 42/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Yom Kippur Katan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Yom_Kippur_Katan) — H/E segments 106/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, BaHaB](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_BaHaB) — H/E segments 4/0; unreviewed.
+- [Siddur Edot HaMizrach, Counting of the Omer](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Counting_of_the_Omer) — H/E segments 161/65; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Prayers for Three Festivals](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Prayers_for_Three_Festivals) — H/E segments 2/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Passover](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Song_for_Passover) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Shavuot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Song_for_Shavuot) — H/E segments 2/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Sukkot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Song_for_Sukkot) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Song for Shemini Atzeret](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Song_for_Shemini_Atzeret) — H/E segments 6/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Amidah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Amidah) — H/E segments 72/0; unreviewed.
+- [Siddur Edot HaMizrach, Prayers for Three Festivals, Mussaf](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Prayers_for_Three_Festivals%2C_Mussaf) — H/E segments 296/8; unreviewed.
+- [Siddur Edot HaMizrach, Hanukkah, Menorah Lighting](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Hanukkah%2C_Menorah_Lighting) — H/E segments 21/21; unreviewed.
+- [Siddur Edot HaMizrach, Hanukkah, Shacharit](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Hanukkah%2C_Shacharit) — H/E segments 28/0; unreviewed.
+- [Siddur Edot HaMizrach, Purim, Shabbat Zachor](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Purim%2C_Shabbat_Zachor) — H/E segments 92/0; unreviewed.
+- [Siddur Edot HaMizrach, Purim, Megillah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Purim%2C_Megillah_Reading) — H/E segments 15/0; unreviewed.
+- [Siddur Edot HaMizrach, Purim, Purim Day](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Purim%2C_Purim_Day) — H/E segments 10/0; unreviewed.
+- [Siddur Sefard, Weekday Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_Sefirat_HaOmer) — H/E segments 65/15; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Amar Rabbi Akiva](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Amar_Rabbi_Akiva) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Ashreinu Ma Tov](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Ashreinu_Ma_Tov) — H/E segments 46/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Ashreinu Uma Naim](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Ashreinu_Uma_Naim) — H/E segments 69/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Bar Yochai](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Bar_Yochai) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Bar Yochai Butzina Kadisha](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Bar_Yochai_Butzina_Kadisha) — H/E segments 24/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Bar Yochai Hashem Imcha](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Bar_Yochai_Hashem_Imcha) — H/E segments 39/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Bar Yochai Yesod Olam](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Bar_Yochai_Yesod_Olam) — H/E segments 39/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Bar Yochai Tagel Yoladetecha](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Bar_Yochai_Tagel_Yoladetecha) — H/E segments 19/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Va'amartem Ko Lechai](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Va%27amartem_Ko_Lechai) — H/E segments 47/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Lichvod HaTanna](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Lichvod_HaTanna) — H/E segments 47/0; unreviewed.
+- [Siddur Sefard, Lag BaOmer Songs, Naaleh V'Navo](https://www.sefaria.org/Siddur_Sefard%2C_Lag_BaOmer_Songs%2C_Naaleh_V%27Navo) — H/E segments 12/0; unreviewed.
+- [Siddur Sefard, Nissan, Pesach Offering](https://www.sefaria.org/Siddur_Sefard%2C_Nissan%2C_Pesach_Offering) — H/E segments 11/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Kadesh](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Kadesh) — H/E segments 14/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Urchatz](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Urchatz) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Karpas](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Karpas) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Yachatz](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Yachatz) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Maggid](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Maggid) — H/E segments 94/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Rochtzoh](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Rochtzoh) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Motzi, Matzah](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Motzi%2C_Matzah) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Maror](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Maror) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Korech](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Korech) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Shulchan Orech](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Shulchan_Orech) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Tzafun](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Tzafun) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Barech](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Barech) — H/E segments 46/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Hallel](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Hallel) — H/E segments 76/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Nirtzah](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Nirtzah) — H/E segments 165/0; unreviewed.
+- [Siddur Sefard, Pesach Haggadah, Shir HaShirim](https://www.sefaria.org/Siddur_Sefard%2C_Pesach_Haggadah%2C_Shir_HaShirim) — H/E segments 9/0; unreviewed.
+- [Siddur Sefard, Sukkot, Order of Hoshanot](https://www.sefaria.org/Siddur_Sefard%2C_Sukkot%2C_Order_of_Hoshanot) — H/E segments 11/11; unreviewed.
+- [Siddur Sefard, Sukkot, First Day & Chol HaMoed](https://www.sefaria.org/Siddur_Sefard%2C_Sukkot%2C_First_Day_%26_Chol_HaMoed) — H/E segments 37/37; unreviewed.
+- [Siddur Sefard, Sukkot, Sabbath](https://www.sefaria.org/Siddur_Sefard%2C_Sukkot%2C_Sabbath) — H/E segments 12/12; unreviewed.
+- [Siddur Sefard, Sukkot, Hoshana Rabba](https://www.sefaria.org/Siddur_Sefard%2C_Sukkot%2C_Hoshana_Rabba) — H/E segments 50/50; unreviewed.
+- [Siddur Sefard, Simchat Torah, Hakafot](https://www.sefaria.org/Siddur_Sefard%2C_Simchat_Torah%2C_Hakafot) — H/E segments 119/119; unreviewed.
+- [Siddur Sefard, Simchat Torah, Evening Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Simchat_Torah%2C_Evening_Torah_Reading) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Shavuot](https://www.sefaria.org/Siddur_Sefard%2C_Shavuot) — H/E segments 92/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Haggadah for Shabbat Hagadol](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Haggadah_for_Shabbat_Hagadol) — H/E segments 66/0; unreviewed.
+- [Siddur Sefard, Chanukah, Menorah Lighting](https://www.sefaria.org/Siddur_Sefard%2C_Chanukah%2C_Menorah_Lighting) — H/E segments 37/0; unreviewed.
+- [Siddur Sefard, Chanukah, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Chanukah%2C_Torah_Reading) — H/E segments 22/0; unreviewed.
+- [Siddur Sefard, Chanukah, Song for Shabbat Chanuka](https://www.sefaria.org/Siddur_Sefard%2C_Chanukah%2C_Song_for_Shabbat_Chanuka) — H/E segments 11/0; unreviewed.
+- [Siddur Sefard, Purim, Parashat Zachor](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Parashat_Zachor) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Purim, Megillah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Megillah_Reading) — H/E segments 51/0; unreviewed.
+- [Siddur Sefard, Purim, Order of Purim Day](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Order_of_Purim_Day) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Purim, Krovetz L'Purim](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Krovetz_L%27Purim) — H/E segments 64/2; unreviewed.
+- [Siddur Sefard, Purim, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Torah_Reading) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Fast Days, Yom Kippur Katan](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Yom_Kippur_Katan) — H/E segments 114/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Pesach](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Chol_Hamoed_Pesach) — H/E segments 31/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Sukkot](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Chol_Hamoed_Sukkot) — H/E segments 8/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Psalms recited between Sukkos and Pesach](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Psalms_recited_between_Sukkos_and_Pesach) — H/E segments 404/421; unreviewed.
+- [Shabbat Siddur Sefard Linear, Counting the Omer](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Counting_the_Omer) — H/E segments 140/93; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Counting of the Omer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Counting_of_the_Omer) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Blessing on Taking the Lulav](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Blessing_on_Taking_the_Lulav) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hallel](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hallel) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Musaf for Rosh Hodesh](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Musaf_for_Rosh_Hodesh) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Removal of Hametz](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Removal_of_Hametz) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Eiruv Tavshilin](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Eiruv_Tavshilin) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Yom_Tov_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, On Entering the Sukka](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_On_Entering_the_Sukka) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Ushpizin](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Ushpizin) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Yom Tov Morning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Yom_Tov_Morning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Amida for Yom Tov](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Amida_for_Yom_Tov) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hakafot for Simhat Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hakafot_for_Simhat_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Akdamut](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Akdamut) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Yizkor](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Yizkor) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Ka Keli](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Ka_Keli) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Musaf for Festivals](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Musaf_for_Festivals) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Birkat Kohanim](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Birkat_Kohanim) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hoshanot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot for Shabbat Hol HaMo'ed](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hoshanot_for_Shabbat_Hol_HaMo%27ed) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot for Hoshana Raba](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hoshanot_for_Hoshana_Raba) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Annulment of Vows before Rosh HaShana](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Annulment_of_Vows_before_Rosh_HaShana) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Rosh HaShana Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Rosh_HaShana_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kiddush for Rosh HaShana Day](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kiddush_for_Rosh_HaShana_Day) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Tashlikh](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Tashlikh) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Kaparot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Kaparot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Viduy for Minha of Erev Yom Kippur](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Viduy_for_Minha_of_Erev_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Candle Lighting for Hanukka](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Candle_Lighting_for_Hanukka) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Service for Purim](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Service_for_Purim) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Shaharit for Yom HaZikaron](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Additions_to_Shaharit_for_Yom_HaZikaron) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Ma'ariv for Yom HaAtzma'ut](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Additions_to_Ma%27ariv_for_Yom_HaAtzma%27ut) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Additions to Shaharit for Yom HaAtzma'ut](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Additions_to_Shaharit_for_Yom_HaAtzma%27ut) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Yom Yerushalayim](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Yom_Yerushalayim) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Tenth of Tevet](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Selihot_for_the_Tenth_of_Tevet) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Fast of Esther](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Selihot_for_the_Fast_of_Esther) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot for the Seventeenth of Tammuz](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Selihot_for_the_Seventeenth_of_Tammuz) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Selihot; All Days](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Selihot%3B_All_Days) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hanukka](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hanukka) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Purim](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Purim) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shavuot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Shavuot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Sukkot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Sukkot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hol HaMo'ed Sukkot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hol_HaMo%27ed_Sukkot) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Sefirat HaOmer](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Sefirat_HaOmer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Musaf for Festivals](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Musaf_for_Festivals) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Chanukah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Chanukah) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Purim](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Purim) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Counting the Omer](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Counting_the_Omer) — H/E segments 142/95; unreviewed.
+- [Weekday Siddur Sefard Linear, Chanukah Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Chanukah_Service) — H/E segments 78/82; unreviewed.
+- [Weekday Siddur Sefard Linear, Purim Service](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Purim_Service) — H/E segments 48/49; unreviewed.
+- [Pesach Haggadah, Kadesh](https://www.sefaria.org/Pesach_Haggadah%2C_Kadesh) — H/E segments 13/13; unreviewed.
+- [Pesach Haggadah, Urchatz](https://www.sefaria.org/Pesach_Haggadah%2C_Urchatz) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Karpas](https://www.sefaria.org/Pesach_Haggadah%2C_Karpas) — H/E segments 3/3; unreviewed.
+- [Pesach Haggadah, Yachatz](https://www.sefaria.org/Pesach_Haggadah%2C_Yachatz) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Magid, Ha Lachma Anya](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Ha_Lachma_Anya) — H/E segments 3/3; unreviewed.
+- [Pesach Haggadah, Magid, Four Questions](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Four_Questions) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Magid, We Were Slaves in Egypt](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_We_Were_Slaves_in_Egypt) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Magid, Story of the Five Rabbis](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Story_of_the_Five_Rabbis) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Magid, The Four Sons](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_The_Four_Sons) — H/E segments 5/5; unreviewed.
+- [Pesach Haggadah, Magid, Yechol Me'rosh Chodesh](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Yechol_Me%27rosh_Chodesh) — H/E segments 1/1; unreviewed.
+- [Pesach Haggadah, Magid, In the Beginning Our Fathers Were Idol Worshipers](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_In_the_Beginning_Our_Fathers_Were_Idol_Worshipers) — H/E segments 5/5; unreviewed.
+- [Pesach Haggadah, Magid, First Fruits Declaration](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_First_Fruits_Declaration) — H/E segments 23/23; unreviewed.
+- [Pesach Haggadah, Magid, The Ten Plagues](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_The_Ten_Plagues) — H/E segments 19/19; unreviewed.
+- [Pesach Haggadah, Magid, Dayenu](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Dayenu) — H/E segments 16/16; unreviewed.
+- [Pesach Haggadah, Magid, Rabban Gamliel's Three Things](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Rabban_Gamliel%27s_Three_Things) — H/E segments 7/7; unreviewed.
+- [Pesach Haggadah, Magid, First Half of Hallel](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_First_Half_of_Hallel) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Magid, Second Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Second_Cup_of_Wine) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Rachtzah](https://www.sefaria.org/Pesach_Haggadah%2C_Rachtzah) — H/E segments 3/3; unreviewed.
+- [Pesach Haggadah, Motzi Matzah](https://www.sefaria.org/Pesach_Haggadah%2C_Motzi_Matzah) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Maror](https://www.sefaria.org/Pesach_Haggadah%2C_Maror) — H/E segments 3/3; unreviewed.
+- [Pesach Haggadah, Korech](https://www.sefaria.org/Pesach_Haggadah%2C_Korech) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Shulchan Orech](https://www.sefaria.org/Pesach_Haggadah%2C_Shulchan_Orech) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Tzafun](https://www.sefaria.org/Pesach_Haggadah%2C_Tzafun) — H/E segments 3/3; unreviewed.
+- [Pesach Haggadah, Barech, Birkat Hamazon](https://www.sefaria.org/Pesach_Haggadah%2C_Barech%2C_Birkat_Hamazon) — H/E segments 23/23; unreviewed.
+- [Pesach Haggadah, Barech, Third Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Barech%2C_Third_Cup_of_Wine) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Barech, Pour Out Thy Wrath](https://www.sefaria.org/Pesach_Haggadah%2C_Barech%2C_Pour_Out_Thy_Wrath) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Hallel, Second Half of Hallel](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Second_Half_of_Hallel) — H/E segments 10/10; unreviewed.
+- [Pesach Haggadah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 6/6; unreviewed.
+- [Pesach Haggadah, Hallel, Fourth Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Fourth_Cup_of_Wine) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Nirtzah, Chasal Siddur Pesach](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Chasal_Siddur_Pesach) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Nirtzah, L'Shana HaBaa](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_L%27Shana_HaBaa) — H/E segments 1/1; unreviewed.
+- [Pesach Haggadah, Nirtzah, And It Happened at Midnight](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_And_It_Happened_at_Midnight) — H/E segments 11/11; unreviewed.
+- [Pesach Haggadah, Nirtzah, Zevach Pesach](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Zevach_Pesach) — H/E segments 8/8; unreviewed.
+- [Pesach Haggadah, Nirtzah, Ki Lo Na'e](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Ki_Lo_Na%27e) — H/E segments 9/9; unreviewed.
+- [Pesach Haggadah, Nirtzah, Adir Hu](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Adir_Hu) — H/E segments 8/8; unreviewed.
+- [Pesach Haggadah, Nirtzah, Sefirat HaOmer](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Sefirat_HaOmer) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Nirtzah, Echad Mi Yodea](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Echad_Mi_Yodea) — H/E segments 1/1; unreviewed.
+- [Pesach Haggadah, Nirtzah, Chad Gadya](https://www.sefaria.org/Pesach_Haggadah%2C_Nirtzah%2C_Chad_Gadya) — H/E segments 10/10; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Kadesh](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Kadesh) — H/E segments 0/9; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Urchatz](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Urchatz) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Karpas](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Karpas) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Yachatz](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Yachatz) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Ha Lachma Anya](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Ha_Lachma_Anya) — H/E segments 0/3; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Four Questions](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Four_Questions) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, We Were Slaves in Egypt](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_We_Were_Slaves_in_Egypt) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Story of the Five Rabbis](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Story_of_the_Five_Rabbis) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, The Four Sons](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_The_Four_Sons) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Yechol Me'rosh Chodesh](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Yechol_Me%27rosh_Chodesh) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, In the Beginning Our Fathers Were Idol Worshipers](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_In_the_Beginning_Our_Fathers_Were_Idol_Worshipers) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, First Fruits Declaration](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_First_Fruits_Declaration) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, The Ten Plagues](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_The_Ten_Plagues) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Dayenu](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Dayenu) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Rabban Gamliel's Three Things](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Rabban_Gamliel%27s_Three_Things) — H/E segments 0/3; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, First Half of Hallel](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_First_Half_of_Hallel) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Second Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Second_Cup_of_Wine) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Rachtzah](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Rachtzah) — H/E segments 0/3; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Motzi Matzah](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Motzi_Matzah) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Maror](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Maror) — H/E segments 0/3; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Korech](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Korech) — H/E segments 0/3; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Shulchan Orech](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Shulchan_Orech) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Tzafun](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Tzafun) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Barech, Birkat Hamazon](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Barech%2C_Birkat_Hamazon) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Barech, Third Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Barech%2C_Third_Cup_of_Wine) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Barech, Pour Out Thy Wrath](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Barech%2C_Pour_Out_Thy_Wrath) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Second Half of Hallel](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Second_Half_of_Hallel) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Fourth Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Fourth_Cup_of_Wine) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Nirtzah, Chad Gadya](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Nirtzah%2C_Chad_Gadya) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Nirtzah, Echad Mi Yodea](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Nirtzah%2C_Echad_Mi_Yodea) — H/E segments 0/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Annullment of Vows](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Annullment_of_Vows) — H/E segments 3/8; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Eiruv Tavshilin](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Eiruv_Tavshilin) — H/E segments 2/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Lighting the Candles](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Lighting_the_Candles) — H/E segments 4/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 2/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 6/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 43/52; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Borechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Borechu) — H/E segments 18/28; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Amidah) — H/E segments 35/39; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Vayechulu) — H/E segments 2/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Magein Avos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Magein_Avos) — H/E segments 4/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Aleinu) — H/E segments 4/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Adon_Olam) — H/E segments 5/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Kiddush](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Kiddush) — H/E segments 11/19; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 4/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 4/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 6/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 17/18; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 10/11; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 2/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 4/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 28/35; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 3/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 37/45; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 11/22; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 2/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 1/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 15/26; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Eil Adon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Eil_Adon) — H/E segments 30/30; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 13/20; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 34/38; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 71/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 12/17; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 5/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 7/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 46/48; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 25/25; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 12/19; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 34/38; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 99/75; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 13/18; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 4/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 8/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 45/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 6/12; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 13/23; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 6/8; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 2/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 1/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Sounding of the Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Sounding_of_the_Shofar) — H/E segments 33/44; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Hineni](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Hineni) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 57/69; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 40/48; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 50/50; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Malkhuyot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Malkhuyot) — H/E segments 13/17; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Zikhronot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Zikhronot) — H/E segments 7/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Shofarot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Shofarot) — H/E segments 7/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 53/71; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 6/7; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, First Day of Rosh Hashana, Hymn of Glory](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Hymn_of_Glory) — H/E segments 32/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 51/60; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 16/25; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 48/49; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Malkhuyot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Malkhuyot) — H/E segments 12/15; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Zikhronot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Zikhronot) — H/E segments 7/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Shofarot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Shofarot) — H/E segments 7/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 40/62; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 7/8; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Musaf, Second Day of Rosh Hashana, Hymn of Glory](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Hymn_of_Glory) — H/E segments 32/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Ashrei) — H/E segments 6/10; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Berich_Shemei) — H/E segments 17/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Amidah) — H/E segments 9/12; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 30/34; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 45/48; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Tashlich) — H/E segments 8/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Annullment of Vows](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Annullment_of_Vows) — H/E segments 130/135; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Eiruv Tavshilin](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Eiruv_Tavshilin) — H/E segments 13/15; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Lighting the Candles](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Lighting_the_Candles) — H/E segments 19/20; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 76/77; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 40/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Kedushah) — H/E segments 301/310; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 64/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 83/84; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Borechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Borechu) — H/E segments 265/275; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Amidah) — H/E segments 327/340; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Vayechulu) — H/E segments 19/22; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Magein Avos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Magein_Avos) — H/E segments 100/102; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Aleinu) — H/E segments 147/149; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Adon_Olam) — H/E segments 24/26; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Kiddush](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Kiddush) — H/E segments 74/87; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 25/28; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 24/25; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 15/16; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/54; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 90/91; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 240/241; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/67; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 432/451; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 40/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 554/562; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 314/325; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 106/108; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 32/32; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 158/167; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Eil Adon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Eil_Adon) — H/E segments 175/172; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 208/215; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 300/312; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 359/335; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 93/98; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 84/90; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 104/108; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, First Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 145/148; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 32/33; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Yishtabach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Yishtabach) — H/E segments 229/226; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 209/216; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 286/292; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 540/514; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 92/97; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Sancification of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Sancification_of_the_Day) — H/E segments 71/71; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 104/107; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Second Day of Rosh Hashana, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Avinu_Malkenu) — H/E segments 148/153; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 72/78; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 98/109; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 19/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 15/16; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 11/13; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 4/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 61/68; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/77; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Sounding of the Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Sounding_of_the_Shofar) — H/E segments 217/228; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Hineni](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Hineni) — H/E segments 86/88; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 785/805; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 246/252; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 371/384; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Malkhuyot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Malkhuyot) — H/E segments 254/261; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Zikhronot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Zikhronot) — H/E segments 188/188; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Shofarot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Shofarot) — H/E segments 154/154; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 461/490; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 41/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Aleinu) — H/E segments 65/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 237/238; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, First Day of Rosh Hashana, Hymn of Glory](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Hymn_of_Glory) — H/E segments 32/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 746/757; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 191/200; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kedushah) — H/E segments 348/354; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Malkhuyot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Malkhuyot) — H/E segments 246/249; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Zikhronot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Zikhronot) — H/E segments 187/186; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Shofarot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Shofarot) — H/E segments 150/149; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Avodah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Avodah) — H/E segments 489/519; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Kaddish_d%27Rabanan) — H/E segments 41/41; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Aleinu) — H/E segments 65/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 255/256; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Musaf, Second Day of Rosh Hashana, Hymn of Glory](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Hymn_of_Glory) — H/E segments 32/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Ashrei) — H/E segments 197/202; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Berich_Shemei) — H/E segments 192/207; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Amidah) — H/E segments 46/49; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 294/313; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 148/151; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Aleinu) — H/E segments 65/65; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Tashlich) — H/E segments 144/141; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Annulment of Vows and Curses](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Annulment_of_Vows_and_Curses) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Eiruv Tavshilin](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Eiruv_Tavshilin) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Candle Lighting](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha for Erev Rosh Hashana, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha_for_Erev_Rosh_Hashana%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Achot Ketannah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Achot_Ketannah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Barechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Nighttime Kiddush](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Nighttime_Kiddush) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Seder Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Seder_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Masekhet Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Masekhet_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Zohar Study for Rosh Hashana Night](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Zohar_Study_for_Rosh_Hashana_Night) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Birkat Hamazon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Birkat_Hamazon) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Morning Prayers](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Morning_Prayers) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Akeidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Ketoret](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shirat Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Shema and Blessings](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Shema_and_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Opening of the Ark](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Opening_of_the_Ark) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Blessing on the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Blessing_on_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Maftir](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Maftir) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Blessing after the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Blessing_after_the_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Sounding of the Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Sounding_of_the_Shofar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Unetanneh Tokef](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Unetanneh_Tokef) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Musaf](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Musaf) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Daytime Kiddush](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Daytime_Kiddush) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Tashlich) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Arvit for Motzei Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Arvit_for_Motzei_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Havdalah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Havdalah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Laws of Erev Rosh Hashanah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Laws_of_Erev_Rosh_Hashanah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Annullment of Vows](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Annullment_of_Vows) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Yesod HaTeshuva of Rabbeinu Yonah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Yesod_HaTeshuva_of_Rabbeinu_Yonah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Eiruv Chatzerot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Eiruv_Chatzerot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Eiruv Tavshilin](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Eiruv_Tavshilin) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Eiruv Techumin](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Eiruv_Techumin) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Lighting the Candles](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Lighting_the_Candles) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Ashrei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha for Erev Rosh Hashanah, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha_for_Erev_Rosh_Hashanah%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Achot Ketannah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Achot_Ketannah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Barechu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Vayechulu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Kiddush](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Kiddush) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Rosh Hashanah Customs](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Rosh_Hashanah_Customs) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Akeidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Ketoret](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Shirat Hayam](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Blessings of the Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, First Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_First_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, The King](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Blessings of the Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Recitation of Shema](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Second Day of Rosh Hashana, Song of the Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Second_Day_of_Rosh_Hashana%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Maftir Reading](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Maftir_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Mi Sheberach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Blessings for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Blessings_for_the_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Yekum Purkan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Yekum_Purkan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Laws of Circumcision on Rosh Hashanah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Laws_of_Circumcision_on_Rosh_Hashanah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Laws of Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Laws_of_Shofar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Order of the Shofar Sounds](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Order_of_the_Shofar_Sounds) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Kavanot for Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Kavanot_for_Shofar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Rav Saadiah Gaon's Ten Reasons for Shofar Sounding](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Rav_Saadiah_Gaon%27s_Ten_Reasons_for_Shofar_Sounding) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Zohar Recitation Prior to Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Zohar_Recitation_Prior_to_Shofar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Blessings and Sounding of the Shofar](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Blessings_and_Sounding_of_the_Shofar) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Laws of Musaf](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Laws_of_Musaf) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Hineni](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Hineni) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, First Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/2; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, First Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_First_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Second Day of Rosh Hashana, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Second Day of Rosh Hashana, Reader's Repetition](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Second_Day_of_Rosh_Hashana%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Kaveh](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Kaveh) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Hymn of Glory](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Hymn_of_Glory) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Laws of Rosh Hashanah Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Laws_of_Rosh_Hashanah_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Korbanot](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Amidah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Aleinu](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Tashlich) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Kaporos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Kaporos) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Candle Lighting](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Borechu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Borechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Customs of Yom Kippur Night](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Customs_of_Yom_Kippur_Night) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Yishtabach](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Eil Adon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Sanctification_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Memorial_Services) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Hineni](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Hineni) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, The Avodah Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_The_Avodah_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, The Ten Martyrs](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_The_Ten_Martyrs) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Musaf for Yom Kippur, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Musaf_for_Yom_Kippur%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Berich_Shemei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Amidah for Mincha](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Amidah_for_Mincha) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Amidah for Neilah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Amidah_for_Neilah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Kedushah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Sanctification_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Avodah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Neilah; Concluding Service, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Neilah%3B_Concluding_Service%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Motzei Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Motzei_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Kaporos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Kaporos) — H/E segments 61/71; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 77/78; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 594/609; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 66/65; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Blessing_the_Children) — H/E segments 49/55; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Candle Lighting](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Candle_Lighting) — H/E segments 40/40; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Kol_Nidrei) — H/E segments 49/55; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 85/86; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Borechu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Borechu) — H/E segments 264/273; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 542/555; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 55/58; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 1375/1396; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 180/185; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 148/151; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Customs of Yom Kippur Night](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Customs_of_Yom_Kippur_Night) — H/E segments 492/1; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 26/29; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 25/26; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 15/16; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 21/22; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 37/51; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/53; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 90/91; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Akeidah (The Binding of Yitzchak)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Yitzchak%29) — H/E segments 239/240; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/66; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 434/442; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 41/44; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 68/69; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 555/563; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yehi Kevod](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yehi_Kevod) — H/E segments 44/45; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 276/286; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 105/106; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_The_King) — H/E segments 32/32; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Yishtabach](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 162/172; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Eil Adon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 233/177; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 209/216; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 546/558; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 589/509; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Kedushah) — H/E segments 214/184; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Sanctification_of_the_Day) — H/E segments 628/627; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Avodah) — H/E segments 115/118; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 400/405; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 71/77; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 102/112; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 18/20; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 14/16; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 11/13; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 64/70; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/77; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Memorial_Services) — H/E segments 300/319; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Hineni](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Hineni) — H/E segments 88/89; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Shemoneh Esrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Shemoneh_Esrei) — H/E segments 609/624; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 415/352; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Kedushah) — H/E segments 508/528; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, The Avodah Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_The_Avodah_Service) — H/E segments 843/821; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, The Ten Martyrs](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_The_Ten_Martyrs) — H/E segments 740/740; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Musaf for Yom Kippur, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Musaf_for_Yom_Kippur%2C_Avodah) — H/E segments 328/355; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Va%27yehi_Binsoa) — H/E segments 8/9; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Berich_Shemei) — H/E segments 100/110; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 168/178; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Amidah for Mincha](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Amidah_for_Mincha) — H/E segments 548/560; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 163/161; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Kedushah) — H/E segments 818/828; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Avodah) — H/E segments 116/120; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 145/149; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Ashrei) — H/E segments 183/185; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Amidah for Neilah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Amidah_for_Neilah) — H/E segments 485/497; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Reader's Repetition of the Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Reader%27s_Repetition_of_the_Amidah) — H/E segments 97/97; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Kedushah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Kedushah) — H/E segments 136/143; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Sanctification of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Sanctification_of_the_Day) — H/E segments 784/809; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Avodah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Avodah) — H/E segments 115/118; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Neilah; Concluding Service, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Neilah%3B_Concluding_Service%2C_Avinu_Malkenu) — H/E segments 155/162; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Motzei Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Motzei_Yom_Kippur) — H/E segments 74/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Kapparot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Kapparot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Lashes](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Lashes) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Seudah HaMafseket, Prayer Before the Meal](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Seudah_HaMafseket%2C_Prayer_Before_the_Meal) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Seudah HaMafseket, Prayer After the Meal](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Seudah_HaMafseket%2C_Prayer_After_the_Meal) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Candle Lighting](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before the Service](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Prayer_Before_the_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Lecha Eli Teshukati](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Lecha_Eli_Teshukati) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Prayer Before Yom Kippur Services](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Prayer_Before_Yom_Kippur_Services) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Barechu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Shema and its Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Shema_and_its_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Arvit Finale](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Arvit_Finale) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Modeh Ani](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Modeh_Ani) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Patach Eliyahu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Patach_Eliyahu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Chana's Prayer](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Chana%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Akeidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Piyutim](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Piyutim) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Shema and its Blessings](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Shema_and_its_Blessings) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Opening of the Ark](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Opening_of_the_Ark) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Mi Sheberach](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Story of Rabbi Amnon of Mainz](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Story_of_Rabbi_Amnon_of_Mainz) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mussaf, Mussaf Finale](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mussaf%2C_Mussaf_Finale) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Prayer of Rabbi Chaim Yosef David Azulai](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Prayer_of_Rabbi_Chaim_Yosef_David_Azulai) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Neilah, El Nora Alilah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Neilah%2C_El_Nora_Alilah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Neilah, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Neilah%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Neilah, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Neilah%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Neilah, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Neilah%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Neilah, Slichot](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Neilah%2C_Slichot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Motzei Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Motzei_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Kapparot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Kapparot) — H/E segments 0/1; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Laws of Tevilah on Erev Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Laws_of_Tevilah_on_Erev_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service for Erev Yom Kippur, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Candle Lighting](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Blessing the Children](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Before Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Before_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Kol Nidrei](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Barechu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Barechu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Vayechulu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Vayechulu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Yaaleh](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Yaaleh) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Aleinu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Four Chapters of Tehillim](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Customs_of_Yom_Kippur_Night%2C_Four_Chapters_of_Tehillim) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Shir HaKavod](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Customs_of_Yom_Kippur_Night%2C_Shir_HaKavod) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Customs of Yom Kippur Night, Shir HaYichud](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Customs_of_Yom_Kippur_Night%2C_Shir_HaYichud) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Akeidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Akeidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Ketoret](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Ketoret) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Hodu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Shirat Hayam](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Shirat_Hayam) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, The King](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_The_King) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Blessings of the Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Song of the Day](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Torah Reading](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Mi Sheberach](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Yekum Purkan](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Yekum_Purkan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Memorial_Services) — H/E segments 0/3; unreviewed.
+- [Machzor Yom Kippur Sefard, Musaf Service, Hineni](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Musaf_Service%2C_Hineni) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Musaf Service, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Musaf_Service%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Musaf Service, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Musaf_Service%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Musaf Service, The Avodah Service](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Musaf_Service%2C_The_Avodah_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Musaf Service, Priestly Blessing](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Musaf_Service%2C_Priestly_Blessing) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Korbanot](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Korbanot) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Torah Reading](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Neilah Service, Laws of Neilah Service](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Neilah_Service%2C_Laws_of_Neilah_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Neilah Service, Ashrei](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Neilah_Service%2C_Ashrei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Neilah Service, Amidah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Neilah_Service%2C_Amidah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Neilah Service, Reader's Repetition](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Neilah_Service%2C_Reader%27s_Repetition) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Neilah Service, Avinu Malkenu](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Neilah_Service%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Motzei Yom Kippur](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Motzei_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, On Motzei Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_On_Motzei_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Kiddush Levanah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Kiddush_Levanah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Havdalah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Havdalah) — H/E segments 0/0; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.2) — H/E segments 6/6; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.3) — H/E segments 26/26; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.4) — H/E segments 21/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.5) — H/E segments 13/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.6) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.7) — H/E segments 25/25; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.8) — H/E segments 35/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.9) — H/E segments 24/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.10) — H/E segments 27/27; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.11) — H/E segments 34/33; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.12) — H/E segments 36/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.13) — H/E segments 34/34; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.14) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.15) — H/E segments 18/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.16) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.17) — H/E segments 21/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.18) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.19) — H/E segments 21/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.20) — H/E segments 14/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.21) — H/E segments 25/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.22) — H/E segments 12/12; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.23) — H/E segments 9/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.24) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.25) — H/E segments 5/5; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.26) — H/E segments 2/2; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.27](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.27) — H/E segments 10/10; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.28](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.28) — H/E segments 16/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.29](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.29) — H/E segments 10/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.30](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.30) — H/E segments 35/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.31](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.31) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.2) — H/E segments 11/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.3) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.4) — H/E segments 12/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.5) — H/E segments 17/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.6) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.2) — H/E segments 175/175; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.3) — H/E segments 210/210; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.4) — H/E segments 166/165; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.5) — H/E segments 89/89; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.6) — H/E segments 142/142; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.7) — H/E segments 181/181; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.8) — H/E segments 233/233; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.9) — H/E segments 171/170; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.10) — H/E segments 207/207; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.11) — H/E segments 265/264; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.12) — H/E segments 281/280; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.13) — H/E segments 265/265; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.14) — H/E segments 135/134; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.15) — H/E segments 120/120; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.16) — H/E segments 139/139; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.17) — H/E segments 160/160; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.18) — H/E segments 188/188; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.19) — H/E segments 170/170; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.20) — H/E segments 132/132; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.21) — H/E segments 211/210; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.22) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.23) — H/E segments 155/155; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.24) — H/E segments 28/28; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.25) — H/E segments 87/87; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.26) — H/E segments 48/48; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.27](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.27) — H/E segments 235/232; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.28](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.28) — H/E segments 97/86; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.29](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.29) — H/E segments 43/40; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.30](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.30) — H/E segments 192/185; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.31](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.31) — H/E segments 100/91; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.2) — H/E segments 109/109; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.3) — H/E segments 136/135; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.4) — H/E segments 79/78; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.5) — H/E segments 165/164; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.6) — H/E segments 76/67; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.3) — H/E segments 26/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.4) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.5) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.6) — H/E segments 32/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.7) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.8) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.9) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.10) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.11) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.12) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.13) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.14) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.15) — H/E segments 33/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.16) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.17) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.18) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.19) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.20) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.21) — H/E segments 7/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.22) — H/E segments 7/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.23) — H/E segments 4/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.24) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.25) — H/E segments 28/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.26) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.2) — H/E segments 11/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.3) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.4) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.5) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.6) — H/E segments 14/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Introduction](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Introduction) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Annulment of Vows](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Annulment_of_Vows) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Prozbul](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Prozbul) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Eiruvin](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Eiruvin) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Candle Lighting](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Minha for Erev Rosh HaShana](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Minha_for_Erev_Rosh_HaShana) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Ahot Ketana](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Ahot_Ketana) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Kabbalat Shabbat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Ma'ariv for Rosh HaShana](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Ma%27ariv_for_Rosh_HaShana) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Blessing the Children](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Kiddush for Rosh HaShana Evening](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Kiddush_for_Rosh_HaShana_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Simanim](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Simanim) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Grace After Meals](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Grace_After_Meals) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Massekhet Rosh HaShana](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Massekhet_Rosh_HaShana) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, On Waking](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_On_Waking) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Blessings over the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Tallit](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Preparation for Prayer](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Preparation_for_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Sunday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Sunday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Monday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Monday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Tuesday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Tuesday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Wednesday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Wednesday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Thursday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Thursday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Friday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Friday) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Shabbat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Both Days](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Both_Days) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaKavod](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaKavod) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Daily Psalm](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Daily_Psalm) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Morning Blessings](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Binding of Isaac](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Binding_of_Isaac) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Accepting the Sovereignty of Heaven](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Accepting_the_Sovereignty_of_Heaven) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Offerings](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Offerings) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Interpretive Principles of Rabbi Yishmael](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Interpretive_Principles_of_Rabbi_Yishmael) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Pesukei DeZimra](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Pesukei_DeZimra) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Nishmat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, HaMelekh](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_HaMelekh) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Blessings of the Shema](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, The Amida](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Repetition for Shaharit](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Leader%27s_Repetition_for_Shaharit) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Avinu Malkenu](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Reading of the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, The Blowing of the Shofar](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_The_Blowing_of_the_Shofar) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Prayer](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Leader%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Musaf](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Musaf) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Leader's Repetition for Musaf](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Leader%27s_Repetition_for_Musaf) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Kiddush and Al HaMihya](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Kiddush_and_Al_HaMihya) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Repetition for Shaharit](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Leader%27s_Repetition_for_Shaharit) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Avinu Malkenu](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Reading of the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, The Blowing of the Shofar](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_The_Blowing_of_the_Shofar) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Prayer](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Leader%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Musaf](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Musaf) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Leader's Repetition for Musaf](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Leader%27s_Repetition_for_Musaf) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Kiddush and Al HaMihya](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Kiddush_and_Al_HaMihya) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Minha](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Minha) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Tashlikh](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Tashlikh) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Ma'ariv for Motza'ei Rosh HaShana](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Ma%27ariv_for_Motza%27ei_Rosh_HaShana) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Brit Mila](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Brit_Mila) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Additional Piyutim for First Day](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Additional_Piyutim_for_First_Day) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Additional Piyutim for Second Day](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Additional_Piyutim_for_Second_Day) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Halakha Guide](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Halakha_Guide) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Full Kaddish](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Full_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Rabbis%27_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Introduction](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Introduction) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kaparot](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Kaparot) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Mincha](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Mincha) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Eiruvin](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Eiruvin) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Candle Lighting](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Blessing the Children](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Blessing_the_Children) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Tallit](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Tefilla Zaka](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Tefilla_Zaka) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kol Nidrei](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Kol_Nidrei) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kabbalat Shabbat](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Ma'ariv for Yom Kippur](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Ma%27ariv_for_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Selihot](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Selihot) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Viduy](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Viduy) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaYichud](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Shir_HaYichud) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Shir HaKavod](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Shir_HaKavod) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Massekhet_Yoma) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Evening, Massekhet Yoma, Appendix](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Evening%2C_Massekhet_Yoma%2C_Appendix) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, On Waking](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_On_Waking) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Blessings over the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Tallit](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Preparation for Prayer](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Preparation_for_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Daily Psalm](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Daily_Psalm) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Morning Blessings](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Morning_Blessings) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Binding of Isaac](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Binding_of_Isaac) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Accepting the Sovereignty of Heaven](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Accepting_the_Sovereignty_of_Heaven) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Offerings](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Offerings) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Interpretive Principles of Rabbi Yishmael](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Interpretive_Principles_of_Rabbi_Yishmael) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Rabbis' Kaddish](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Rabbis%27_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, A Psalm Before Verses of Praise](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_A_Psalm_Before_Verses_of_Praise) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Pesukei DeZimra](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Pesukei_DeZimra) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Nishmat](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, HaMelekh](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_HaMelekh) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Blessings of the Shema](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, The Amida](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Leader's Repetition for Shaharit](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Leader%27s_Repetition_for_Shaharit) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Reading of the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Yekum Purkan](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Yekum_Purkan) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Yizkor](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Yizkor) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Leader's Prayer](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Leader%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, The Amida](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Leader's Repetition for Musaf](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Leader%27s_Repetition_for_Musaf) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Seder HaAvoda](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Seder_HaAvoda) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Eleh Ezkera](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Eleh_Ezkera) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Viduy](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Viduy) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Musaf, Birkat Kohanim](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Musaf%2C_Birkat_Kohanim) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Reading of the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Haftara; The Book of Jonah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Haftara%3B_The_Book_of_Jonah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, The Amida](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Leader's Repetition for Mincha](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Leader%27s_Repetition_for_Mincha) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, The Amida](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Ne%27ila%2C_The_Amida) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Leader's Repetition for Ne'ila](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Ne%27ila%2C_Leader%27s_Repetition_for_Ne%27ila) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Avinu Malkenu](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Ne%27ila%2C_Avinu_Malkenu) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Ne'ila, Verses of Unity](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Ne%27ila%2C_Verses_of_Unity) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Ma'ariv for Motza'ei Yom Kippur](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Ma%27ariv_for_Motza%27ei_Yom_Kippur) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Kiddush Levana](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Kiddush_Levana) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Havdala](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Havdala) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Birkat Kohanim In Israel](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Birkat_Kohanim_In_Israel) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Seder HaAvoda Nusah Sepharad](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Seder_HaAvoda_Nusah_Sepharad) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Additional Piyutim](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Additional_Piyutim) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Halakha Guide](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Halakha_Guide) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Annotated Viduy](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Annotated_Viduy) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Full Kaddish](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Full_Kaddish) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Rabbis' Kaddish Transliterated](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Rabbis%27_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+
+## food (43 source records)
+
+- [Siddur Ashkenaz, Berachot, Birkat HaMazon](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkat_HaMazon) — H/E segments 89/87; unreviewed.
+- [Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Borei Nefashot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkat_Hanehenin%2C_Eating%2C_Brachot_Achronot%2C_Borei_Nefashot) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Birchat HaMazon, Birchat HaMazon](https://www.sefaria.org/Siddur_Sefard%2C_Birchat_HaMazon%2C_Birchat_HaMazon) — H/E segments 89/100; unreviewed.
+- [Siddur Sefard, Birchat HaMazon, Brit Milah](https://www.sefaria.org/Siddur_Sefard%2C_Birchat_HaMazon%2C_Brit_Milah) — H/E segments 17/0; unreviewed.
+- [Siddur Sefard, Birchat HaMazon, Blessing on Foods](https://www.sefaria.org/Siddur_Sefard%2C_Birchat_HaMazon%2C_Blessing_on_Foods) — H/E segments 5/0; unreviewed.
+- [Siddur Sefard, Blessings, Shehakol](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Shehakol) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Borei Nefashot](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Borei_Nefashot) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Fragrant Fruit](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Fragrant_Fruit) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Blossoming Fruit Tree](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Blossoming_Fruit_Tree) — H/E segments 3/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamazon) — H/E segments 401/432; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Concluding Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Concluding_Blessings) — H/E segments 73/88; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Berachos Said Before Eating or Drinking](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Berachos_Said_Before_Eating_or_Drinking) — H/E segments 19/26; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon for Sheva Berachos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamazon_for_Sheva_Berachos) — H/E segments 23/30; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, The Seven Marriage Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_The_Seven_Marriage_Blessings) — H/E segments 45/45; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamozon for Bris Milah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamozon_for_Bris_Milah) — H/E segments 101/123; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Birkat HaMazon; Grace after Meals](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_Birkat_HaMazon%3B_Grace_after_Meals) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Birkat HaMazon in a House of Mourning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Birkat_HaMazon_in_a_House_of_Mourning) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Birkat HaMazon](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Birkat_HaMazon) — H/E segments 0/2; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Birkat HaMazon for Circumcision](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Birkat_HaMazon_for_Circumcision) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Birkas Hamazon](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Birkas_Hamazon) — H/E segments 426/462; unreviewed.
+- [Weekday Siddur Sefard Linear, Birchas Hamazon for Sheva Berachos](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Birchas_Hamazon_for_Sheva_Berachos) — H/E segments 23/30; unreviewed.
+- [Pesach Haggadah, Magid, First Fruits Declaration](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_First_Fruits_Declaration) — H/E segments 23/23; unreviewed.
+- [Pesach Haggadah, Magid, Second Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Magid%2C_Second_Cup_of_Wine) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah, Barech, Birkat Hamazon](https://www.sefaria.org/Pesach_Haggadah%2C_Barech%2C_Birkat_Hamazon) — H/E segments 23/23; unreviewed.
+- [Pesach Haggadah, Barech, Third Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Barech%2C_Third_Cup_of_Wine) — H/E segments 2/2; unreviewed.
+- [Pesach Haggadah, Hallel, Fourth Cup of Wine](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Fourth_Cup_of_Wine) — H/E segments 4/4; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, First Fruits Declaration](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_First_Fruits_Declaration) — H/E segments 0/1; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Magid, Second Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Magid%2C_Second_Cup_of_Wine) — H/E segments 0/2; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Barech, Birkat Hamazon](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Barech%2C_Birkat_Hamazon) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Barech, Third Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Barech%2C_Third_Cup_of_Wine) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Fourth Cup of Wine](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Fourth_Cup_of_Wine) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Birkat Hamazon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Birkat_Hamazon) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Grace After Meals](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Grace_After_Meals) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Preliminary Psalms](https://www.sefaria.org/Birkat_Hamazon%2C_Preliminary_Psalms) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Zimmun](https://www.sefaria.org/Birkat_Hamazon%2C_Zimmun) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Blessing on the Food](https://www.sefaria.org/Birkat_Hamazon%2C_Blessing_on_the_Food) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Blessing on the Land](https://www.sefaria.org/Birkat_Hamazon%2C_Blessing_on_the_Land) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Blessing on Jerusalem](https://www.sefaria.org/Birkat_Hamazon%2C_Blessing_on_Jerusalem) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Hatov Vehametiv](https://www.sefaria.org/Birkat_Hamazon%2C_Hatov_Vehametiv) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Blessings After Other Foods, M'ainShalosh](https://www.sefaria.org/Birkat_Hamazon%2C_Blessings_After_Other_Foods%2C_M%27ainShalosh) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, Blessings After Other Foods, Bore Nefashot](https://www.sefaria.org/Birkat_Hamazon%2C_Blessings_After_Other_Foods%2C_Bore_Nefashot) — H/E segments 0/0; unreviewed.
+- [Birkat Hamazon, HaRachaman of Brit Milah](https://www.sefaria.org/Birkat_Hamazon%2C_HaRachaman_of_Brit_Milah) — H/E segments 7/0; unreviewed.
+- [Birkat Hamazon, Sheva Brachot](https://www.sefaria.org/Birkat_Hamazon%2C_Sheva_Brachot) — H/E segments 0/0; unreviewed.
+
+## general (152 source records)
+
+- [Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Barachot Rishonot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkat_Hanehenin%2C_Eating%2C_Barachot_Rishonot) — H/E segments 7/2; unreviewed.
+- [Siddur Ashkenaz, Berachot, Birkat Hanehenin, Eating, Brachot Achronot, Al Hamichyah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkat_Hanehenin%2C_Eating%2C_Brachot_Achronot%2C_Al_Hamichyah) — H/E segments 12/0; unreviewed.
+- [Siddur Ashkenaz, Berachot, Birkat Hanehenin, Blessings on Sights Sounds and Smells](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkat_Hanehenin%2C_Blessings_on_Sights_Sounds_and_Smells) — H/E segments 17/0; unreviewed.
+- [Siddur Ashkenaz, Berachot, Birkhot Hamitzvot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Birkhot_Hamitzvot) — H/E segments 18/2; unreviewed.
+- [Siddur Ashkenaz, Berachot, Havinenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Havinenu) — H/E segments 14/14; unreviewed.
+- [Siddur Edot HaMizrach, Song of Songs](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Song_of_Songs) — H/E segments 16/0; unreviewed.
+- [Siddur Edot HaMizrach, Post Meal Blessing](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Post_Meal_Blessing) — H/E segments 59/42; unreviewed.
+- [Siddur Edot HaMizrach, Al Hamihya](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Al_Hamihya) — H/E segments 21/0; unreviewed.
+- [Siddur Edot HaMizrach, Blessings on Enjoyments](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Blessings_on_Enjoyments) — H/E segments 21/7; unreviewed.
+- [Siddur Edot HaMizrach, Daytime Meal, Daytime Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Daytime_Meal%2C_Daytime_Meal) — H/E segments 28/0; unreviewed.
+- [Siddur Edot HaMizrach, Daytime Meal, Kiddush](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Daytime_Meal%2C_Kiddush) — H/E segments 12/0; unreviewed.
+- [Siddur Edot HaMizrach, Third Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Third_Meal) — H/E segments 35/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Rosh Hodesh](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Rosh_Hodesh) — H/E segments 3/3; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Hallel](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Hallel) — H/E segments 44/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Uva LeSion](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Uva_LeSion) — H/E segments 5/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Song of the Day](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Song_of_the_Day) — H/E segments 19/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Mussaf](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Mussaf) — H/E segments 49/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Barchi Nafshi](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Barchi_Nafshi) — H/E segments 6/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Kaveh](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Kaveh) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Incense Offering](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Incense_Offering) — H/E segments 16/0; unreviewed.
+- [Siddur Edot HaMizrach, Rosh Hodesh, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Rosh_Hodesh%2C_Alenu) — H/E segments 4/0; unreviewed.
+- [Siddur Edot HaMizrach, Nissan, Blessing of the Trees](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Nissan%2C_Blessing_of_the_Trees) — H/E segments 15/3; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Sheva Berachot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Sheva_Berachot) — H/E segments 13/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Brit Mila](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Brit_Mila) — H/E segments 41/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Redeeming the First Born](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Redeeming_the_First_Born) — H/E segments 14/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Building a Fence](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Building_a_Fence) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Separating Hallah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Separating_Hallah) — H/E segments 10/4; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Tevillat Kelim](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Tevillat_Kelim) — H/E segments 4/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Separating Tithes](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Separating_Tithes) — H/E segments 22/0; unreviewed.
+- [Siddur Sefard, Additional Prayers , Six Rememberances](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Six_Rememberances) — H/E segments 13/13; unreviewed.
+- [Siddur Sefard, Additional Prayers , Thirteen Principles](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Thirteen_Principles) — H/E segments 15/14; unreviewed.
+- [Siddur Sefard, Additional Prayers , Chapter of Fear of God](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Chapter_of_Fear_of_God) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Additional Prayers , Supplications After Prayers](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Supplications_After_Prayers) — H/E segments 15/0; unreviewed.
+- [Siddur Sefard, Additional Prayers , Chapter of Song](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Chapter_of_Song) — H/E segments 103/0; unreviewed.
+- [Siddur Sefard, Various Blessings, Sheva Berachot](https://www.sefaria.org/Siddur_Sefard%2C_Various_Blessings%2C_Sheva_Berachot) — H/E segments 9/8; unreviewed.
+- [Siddur Sefard, Various Blessings, Geula LeBrit Milah](https://www.sefaria.org/Siddur_Sefard%2C_Various_Blessings%2C_Geula_LeBrit_Milah) — H/E segments 22/0; unreviewed.
+- [Siddur Sefard, Various Blessings, Redeeming Firstborn](https://www.sefaria.org/Siddur_Sefard%2C_Various_Blessings%2C_Redeeming_Firstborn) — H/E segments 17/16; unreviewed.
+- [Siddur Sefard, Mealtime Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Mealtime_Blessings) — H/E segments 6/1; unreviewed.
+- [Siddur Sefard, Blessings, Me'ein Shalosh](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Me%27ein_Shalosh) — H/E segments 17/0; unreviewed.
+- [Siddur Sefard, Blessings, Ha'etz](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Ha%27etz) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Ha'adamah](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Ha%27adamah) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Shehecheyanu](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Shehecheyanu) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Fragrant Spices](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Fragrant_Spices) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Fragrant Herbs](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Fragrant_Herbs) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Fragrant Shrubs](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Fragrant_Shrubs) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Fragrant Oils](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Fragrant_Oils) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Seeing Ocean](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Seeing_Ocean) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Immersing Utensils](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Immersing_Utensils) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Blessings, Separating Challah](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Separating_Challah) — H/E segments 10/0; unreviewed.
+- [Siddur Sefard, Blessings, Separating Terumot & Maasrot](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Separating_Terumot_%26_Maasrot) — H/E segments 12/0; unreviewed.
+- [Siddur Sefard, Eruv Tavshilin](https://www.sefaria.org/Siddur_Sefard%2C_Eruv_Tavshilin) — H/E segments 17/12; unreviewed.
+- [Siddur Sefard, Musaf](https://www.sefaria.org/Siddur_Sefard%2C_Musaf) — H/E segments 155/78; unreviewed.
+- [Siddur Sefard, Third Meal, Zemirot](https://www.sefaria.org/Siddur_Sefard%2C_Third_Meal%2C_Zemirot) — H/E segments 68/0; unreviewed.
+- [Siddur Sefard, Third Meal, Gott Fun Avraham](https://www.sefaria.org/Siddur_Sefard%2C_Third_Meal%2C_Gott_Fun_Avraham) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Shaking Lulav](https://www.sefaria.org/Siddur_Sefard%2C_Shaking_Lulav) — H/E segments 7/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Hallel](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Hallel) — H/E segments 35/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Song of the Day](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Song_of_the_Day) — H/E segments 43/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Barchi Nafshi](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Barchi_Nafshi) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Ashrei Uva L'Tziyon](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Ashrei_Uva_L%27Tziyon) — H/E segments 5/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Mussaf](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Mussaf) — H/E segments 64/0; unreviewed.
+- [Siddur Sefard, Holidays, Yom Tov Eve Kiddush](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Yom_Tov_Eve_Kiddush) — H/E segments 22/15; unreviewed.
+- [Siddur Sefard, Holidays, Yom Tov Musaf Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Yom_Tov_Musaf_Amidah) — H/E segments 120/0; unreviewed.
+- [Siddur Sefard, Holidays, Yom Tov Daytime Kiddush](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Yom_Tov_Daytime_Kiddush) — H/E segments 9/0; unreviewed.
+- [Siddur Sefard, Holidays, Prayer Upon Entering Sukkah](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Prayer_Upon_Entering_Sukkah) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Nissan, The'Nasi' Readings](https://www.sefaria.org/Siddur_Sefard%2C_Nissan%2C_The%27Nasi%27_Readings) — H/E segments 40/0; unreviewed.
+- [Siddur Sefard, Nissan, Search for Hametz](https://www.sefaria.org/Siddur_Sefard%2C_Nissan%2C_Search_for_Hametz) — H/E segments 10/0; unreviewed.
+- [Siddur Sefard, Nissan, Burning Hametz](https://www.sefaria.org/Siddur_Sefard%2C_Nissan%2C_Burning_Hametz) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Nissan, Letter of Rav Shimshon of Ostropol](https://www.sefaria.org/Siddur_Sefard%2C_Nissan%2C_Letter_of_Rav_Shimshon_of_Ostropol) — H/E segments 26/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Parashat Sekalim](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Parashat_Sekalim) — H/E segments 92/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Musaf for Shekalim](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Musaf_for_Shekalim) — H/E segments 77/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Parashat Zachor](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Parashat_Zachor) — H/E segments 74/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Parashat Parah](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Parashat_Parah) — H/E segments 70/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Parashat HaChodesh](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Parashat_HaChodesh) — H/E segments 86/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Musaf for Hachodesh](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Musaf_for_Hachodesh) — H/E segments 77/0; unreviewed.
+- [Siddur Sefard, Fast Days, El Maleh Prayer](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_El_Maleh_Prayer) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Priestly Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Priestly_Blessing) — H/E segments 28/0; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Formula Against Evil Eye](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Formula_Against_Evil_Eye) — H/E segments 8/0; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Letter of Ramban](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Letter_of_Ramban) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Parashat Haman Reading for Tuesday Beshalach](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Parashat_Haman_Reading_for_Tuesday_Beshalach) — H/E segments 103/0; unreviewed.
+- [Siddur Sefard, Various Prayers & Segulot, Awesome Prayer of Rabbeinu Tam](https://www.sefaria.org/Siddur_Sefard%2C_Various_Prayers_%26_Segulot%2C_Awesome_Prayer_of_Rabbeinu_Tam) — H/E segments 13/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Preface](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Preface) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Foreword](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Foreword) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Guide to the Reader](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Guide_to_the_Reader) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Brit Mila](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Brit_Mila) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Zeved HaBat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Zeved_HaBat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Sheva Berakhot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Sheva_Berakhot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Daily Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Daily_Prayer) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Textual Variants](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Textual_Variants) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Table of Permitted Responses](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Table_of_Permitted_Responses) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Jewish Leap Years](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Jewish_Leap_Years) — H/E segments 0/0; unreviewed.
+- [Unetaneh Tokef](https://www.sefaria.org/Unetaneh_Tokef) — H/E segments 0/6; unreviewed.
+- [Azharot of Solomon ibn Gabirol, Prelude](https://www.sefaria.org/Azharot_of_Solomon_ibn_Gabirol%2C_Prelude) — H/E segments 20/0; unreviewed.
+- [Azharot of Solomon ibn Gabirol, Positive Commandments](https://www.sefaria.org/Azharot_of_Solomon_ibn_Gabirol%2C_Positive_Commandments) — H/E segments 91/0; unreviewed.
+- [Azharot of Solomon ibn Gabirol, Negative Commandments](https://www.sefaria.org/Azharot_of_Solomon_ibn_Gabirol%2C_Negative_Commandments) — H/E segments 156/0; unreviewed.
+- [Azharot of Solomon ibn Gabirol, Postscript](https://www.sefaria.org/Azharot_of_Solomon_ibn_Gabirol%2C_Postscript) — H/E segments 8/0; unreviewed.
+- [Keter Malkhut.1](https://www.sefaria.org/Keter_Malkhut.1) — H/E segments 15/15; unreviewed.
+- [Keter Malkhut.2](https://www.sefaria.org/Keter_Malkhut.2) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.3](https://www.sefaria.org/Keter_Malkhut.3) — H/E segments 4/4; unreviewed.
+- [Keter Malkhut.4](https://www.sefaria.org/Keter_Malkhut.4) — H/E segments 4/4; unreviewed.
+- [Keter Malkhut.5](https://www.sefaria.org/Keter_Malkhut.5) — H/E segments 3/3; unreviewed.
+- [Keter Malkhut.6](https://www.sefaria.org/Keter_Malkhut.6) — H/E segments 4/4; unreviewed.
+- [Keter Malkhut.7](https://www.sefaria.org/Keter_Malkhut.7) — H/E segments 3/3; unreviewed.
+- [Keter Malkhut.8](https://www.sefaria.org/Keter_Malkhut.8) — H/E segments 11/11; unreviewed.
+- [Keter Malkhut.9](https://www.sefaria.org/Keter_Malkhut.9) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.10](https://www.sefaria.org/Keter_Malkhut.10) — H/E segments 5/5; unreviewed.
+- [Keter Malkhut.11](https://www.sefaria.org/Keter_Malkhut.11) — H/E segments 4/4; unreviewed.
+- [Keter Malkhut.12](https://www.sefaria.org/Keter_Malkhut.12) — H/E segments 16/16; unreviewed.
+- [Keter Malkhut.13](https://www.sefaria.org/Keter_Malkhut.13) — H/E segments 8/8; unreviewed.
+- [Keter Malkhut.14](https://www.sefaria.org/Keter_Malkhut.14) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.15](https://www.sefaria.org/Keter_Malkhut.15) — H/E segments 11/11; unreviewed.
+- [Keter Malkhut.16](https://www.sefaria.org/Keter_Malkhut.16) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.17](https://www.sefaria.org/Keter_Malkhut.17) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.18](https://www.sefaria.org/Keter_Malkhut.18) — H/E segments 8/8; unreviewed.
+- [Keter Malkhut.19](https://www.sefaria.org/Keter_Malkhut.19) — H/E segments 9/9; unreviewed.
+- [Keter Malkhut.20](https://www.sefaria.org/Keter_Malkhut.20) — H/E segments 5/5; unreviewed.
+- [Keter Malkhut.21](https://www.sefaria.org/Keter_Malkhut.21) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.22](https://www.sefaria.org/Keter_Malkhut.22) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.23](https://www.sefaria.org/Keter_Malkhut.23) — H/E segments 8/8; unreviewed.
+- [Keter Malkhut.24](https://www.sefaria.org/Keter_Malkhut.24) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.25](https://www.sefaria.org/Keter_Malkhut.25) — H/E segments 20/20; unreviewed.
+- [Keter Malkhut.26](https://www.sefaria.org/Keter_Malkhut.26) — H/E segments 3/3; unreviewed.
+- [Keter Malkhut.27](https://www.sefaria.org/Keter_Malkhut.27) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.28](https://www.sefaria.org/Keter_Malkhut.28) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.29](https://www.sefaria.org/Keter_Malkhut.29) — H/E segments 5/5; unreviewed.
+- [Keter Malkhut.30](https://www.sefaria.org/Keter_Malkhut.30) — H/E segments 8/8; unreviewed.
+- [Keter Malkhut.31](https://www.sefaria.org/Keter_Malkhut.31) — H/E segments 6/6; unreviewed.
+- [Keter Malkhut.32](https://www.sefaria.org/Keter_Malkhut.32) — H/E segments 19/19; unreviewed.
+- [Keter Malkhut.33](https://www.sefaria.org/Keter_Malkhut.33) — H/E segments 20/20; unreviewed.
+- [Keter Malkhut.34](https://www.sefaria.org/Keter_Malkhut.34) — H/E segments 10/10; unreviewed.
+- [Keter Malkhut.35](https://www.sefaria.org/Keter_Malkhut.35) — H/E segments 24/24; unreviewed.
+- [Keter Malkhut.36](https://www.sefaria.org/Keter_Malkhut.36) — H/E segments 18/18; unreviewed.
+- [Keter Malkhut.37](https://www.sefaria.org/Keter_Malkhut.37) — H/E segments 53/53; unreviewed.
+- [Keter Malkhut.38](https://www.sefaria.org/Keter_Malkhut.38) — H/E segments 27/27; unreviewed.
+- [Keter Malkhut.39](https://www.sefaria.org/Keter_Malkhut.39) — H/E segments 11/11; unreviewed.
+- [Keter Malkhut.40](https://www.sefaria.org/Keter_Malkhut.40) — H/E segments 25/25; unreviewed.
+- [Shir HaKavod.1](https://www.sefaria.org/Shir_HaKavod.1) — H/E segments 0/1; unreviewed.
+- [Yedid Nefesh](https://www.sefaria.org/Yedid_Nefesh) — H/E segments 24/24; unreviewed.
+- [Akdamut Milin.1](https://www.sefaria.org/Akdamut_Milin.1) — H/E segments 0/90; unreviewed.
+- [Hallel](https://www.sefaria.org/Hallel) — H/E segments 0/15; unreviewed.
+- [Ketubah Text](https://www.sefaria.org/Ketubah_Text) — H/E segments 0/3; unreviewed.
+- [Ma'aneh Lashon Chabad.1](https://www.sefaria.org/Ma%27aneh_Lashon_Chabad.1) — H/E segments 8/8; unreviewed.
+- [Ma'aneh Lashon Chabad.2](https://www.sefaria.org/Ma%27aneh_Lashon_Chabad.2) — H/E segments 7/3; unreviewed.
+- [Ma'aneh Lashon Chabad.3](https://www.sefaria.org/Ma%27aneh_Lashon_Chabad.3) — H/E segments 6/0; unreviewed.
+- [Ma'aneh Lashon Chabad.4](https://www.sefaria.org/Ma%27aneh_Lashon_Chabad.4) — H/E segments 29/0; unreviewed.
+- [Ma'aneh Lashon Chabad.5](https://www.sefaria.org/Ma%27aneh_Lashon_Chabad.5) — H/E segments 11/0; unreviewed.
+- [Seder Ma'amadot.1](https://www.sefaria.org/Seder_Ma%27amadot.1) — H/E segments 111/58; unreviewed.
+- [Seder Ma'amadot.2](https://www.sefaria.org/Seder_Ma%27amadot.2) — H/E segments 41/22; unreviewed.
+- [Seder Ma'amadot.3](https://www.sefaria.org/Seder_Ma%27amadot.3) — H/E segments 42/41; unreviewed.
+- [Seder Ma'amadot.4](https://www.sefaria.org/Seder_Ma%27amadot.4) — H/E segments 41/35; unreviewed.
+- [Seder Ma'amadot.5](https://www.sefaria.org/Seder_Ma%27amadot.5) — H/E segments 41/22; unreviewed.
+- [Seder Ma'amadot.6](https://www.sefaria.org/Seder_Ma%27amadot.6) — H/E segments 41/2; unreviewed.
+- [Seder Ma'amadot.7](https://www.sefaria.org/Seder_Ma%27amadot.7) — H/E segments 52/0; unreviewed.
+
+## gratitude (70 source records)
+
+- [Psalm 8: Creation and human dignity](https://www.sefaria.org/Psalms.8) — complete source chapter; pronunciation draft.
+- [Psalm 9: Thanksgiving and justice for the oppressed](https://www.sefaria.org/Psalms.9) — complete source chapter; pronunciation draft.
+- [Psalm 18: Thanksgiving for rescue](https://www.sefaria.org/Psalms.18) — complete source chapter; pronunciation draft.
+- [Psalm 21: Gratitude for a ruler's deliverance](https://www.sefaria.org/Psalms.21) — complete source chapter; pronunciation draft.
+- [Psalm 30: Healing, rescue, and mourning turned to joy](https://www.sefaria.org/Psalms.30) — complete source chapter; pronunciation draft.
+- [Psalm 33: Creation, trust, and communal praise](https://www.sefaria.org/Psalms.33) — complete source chapter; pronunciation draft.
+- [Psalm 34: Rescue, ethical speech, and care for the brokenhearted](https://www.sefaria.org/Psalms.34) — complete source chapter; pronunciation draft.
+- [Psalm 40: Rescue, willingness, and renewed need](https://www.sefaria.org/Psalms.40) — complete source chapter; pronunciation draft.
+- [Psalm 47: Universal praise and kingship](https://www.sefaria.org/Psalms.47) — complete source chapter; pronunciation draft.
+- [Psalm 50: Sincere worship, thanksgiving, and moral responsibility](https://www.sefaria.org/Psalms.50) — complete source chapter; pronunciation draft.
+- [Psalm 57: Refuge and steadfast praise](https://www.sefaria.org/Psalms.57) — complete source chapter; pronunciation draft.
+- [Psalm 66: Collective and personal thanksgiving](https://www.sefaria.org/Psalms.66) — complete source chapter; pronunciation draft.
+- [Psalm 75: Gratitude and just judgment](https://www.sefaria.org/Psalms.75) — complete source chapter; pronunciation draft.
+- [Psalm 92: A Sabbath song of thanksgiving](https://www.sefaria.org/Psalms.92) — complete source chapter; pronunciation draft.
+- [Psalm 95: Praise, worship, and listening](https://www.sefaria.org/Psalms.95) — complete source chapter; pronunciation draft.
+- [Psalm 96: A new song and creation's rejoicing](https://www.sefaria.org/Psalms.96) — complete source chapter; pronunciation draft.
+- [Psalm 97: Divine rule, justice, and joy](https://www.sefaria.org/Psalms.97) — complete source chapter; pronunciation draft.
+- [Psalm 98: A new song of deliverance](https://www.sefaria.org/Psalms.98) — complete source chapter; pronunciation draft.
+- [Psalm 100: A song of thanksgiving](https://www.sefaria.org/Psalms.100) — complete source chapter; pronunciation draft.
+- [Psalm 103: Compassion, forgiveness, and healing](https://www.sefaria.org/Psalms.103) — complete source chapter; pronunciation draft.
+- [Psalm 105: Remembering the covenant and history](https://www.sefaria.org/Psalms.105) — complete source chapter; pronunciation draft.
+- [Psalm 107: Thanksgiving after distress and rescue](https://www.sefaria.org/Psalms.107) — complete source chapter; pronunciation draft.
+- [Psalm 108: Praise and communal hope](https://www.sefaria.org/Psalms.108) — complete source chapter; pronunciation draft.
+- [Psalm 111: Praise for divine works and wisdom](https://www.sefaria.org/Psalms.111) — complete source chapter; pronunciation draft.
+- [Psalm 113: Praise and the lifting of the lowly](https://www.sefaria.org/Psalms.113) — complete source chapter; pronunciation draft.
+- [Psalm 116: Deliverance, gratitude, and vows](https://www.sefaria.org/Psalms.116) — complete source chapter; pronunciation draft.
+- [Psalm 117: Universal praise](https://www.sefaria.org/Psalms.117) — complete source chapter; pronunciation draft.
+- [Psalm 118: Thanksgiving, rescue, and rejoicing](https://www.sefaria.org/Psalms.118) — complete source chapter; pronunciation draft.
+- [Psalm 124: Collective rescue](https://www.sefaria.org/Psalms.124) — complete source chapter; pronunciation draft.
+- [Psalm 126: Restoration, tears, and joy](https://www.sefaria.org/Psalms.126) — complete source chapter; pronunciation draft.
+- [Psalm 135: Praise and communal memory](https://www.sefaria.org/Psalms.135) — complete source chapter; pronunciation draft.
+- [Psalm 136: Enduring lovingkindness](https://www.sefaria.org/Psalms.136) — complete source chapter; pronunciation draft.
+- [Psalm 138: Thanksgiving and courage](https://www.sefaria.org/Psalms.138) — complete source chapter; pronunciation draft.
+- [Psalm 145: Praise, compassion, and sustenance](https://www.sefaria.org/Psalms.145) — complete source chapter; pronunciation draft.
+- [Psalm 148: All creation called to praise](https://www.sefaria.org/Psalms.148) — complete source chapter; pronunciation draft.
+- [Psalm 150: Praise with instruments and every breath](https://www.sefaria.org/Psalms.150) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Thanksgiving) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Thanksgiving) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Thanksgiving) — H/E segments 10/10; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Thanksgiving) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Nishmat Kol Chai](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Nishmat_Kol_Chai) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Thanksgiving) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Thanksgiving) — H/E segments 18/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Modim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Chanukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Chanukkah) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Purim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Purim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Modim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Modim) — H/E segments 7/0; unreviewed.
+- [Siddur Edot HaMizrach, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 4/4; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, HaGomel](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_HaGomel) — H/E segments 11/0; unreviewed.
+- [Siddur Sefard, Upon Arising, Modeh Ani](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Modeh_Ani) — H/E segments 7/7; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Thanksgiving Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Thanksgiving_Blessing) — H/E segments 3/3; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Nishmat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Birkat HaMazon; Grace after Meals](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_Birkat_HaMazon%3B_Grace_after_Meals) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Blessings on Mitzvot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_Blessings_on_Mitzvot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Blessings on Pleasures, Sights and Sounds](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_Blessings_on_Pleasures%2C_Sights_and_Sounds) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, Consecration of a House](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_Consecration_of_a_House) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, The Traveler's Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_The_Traveler%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [Pesach Haggadah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 6/6; unreviewed.
+- [Pesach Haggadah Edot Hamizrah, Hallel, Songs of Praise and Thanks](https://www.sefaria.org/Pesach_Haggadah_Edot_Hamizrah%2C_Hallel%2C_Songs_of_Praise_and_Thanks) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Modeh Ani](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Modeh_Ani) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Nishmat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Nishmat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Nishmat](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Nishmat) — H/E segments 0/0; unreviewed.
+
+## grief (371 source records)
+
+- [Psalm 23: The shepherd, provision, and comfort](https://www.sefaria.org/Psalms.23) — complete source chapter; pronunciation draft.
+- [Psalm 39: Human frailty and the brevity of life](https://www.sefaria.org/Psalms.39) — complete source chapter; pronunciation draft.
+- [Psalm 44: Communal suffering and an appeal for aid](https://www.sefaria.org/Psalms.44) — complete source chapter; pronunciation draft.
+- [Psalm 74: Communal devastation and remembrance](https://www.sefaria.org/Psalms.74) — complete source chapter; pronunciation draft.
+- [Psalm 79: Destruction, mourning, and appeal for mercy](https://www.sefaria.org/Psalms.79) — complete source chapter; pronunciation draft.
+- [Psalm 88: Unrelieved darkness and isolation](https://www.sefaria.org/Psalms.88) — complete source chapter; pronunciation draft.
+- [Psalm 102: The prayer of one overwhelmed by affliction](https://www.sefaria.org/Psalms.102) — complete source chapter; pronunciation draft.
+- [Psalm 137: Exile, grief, and a severe appeal for retribution](https://www.sefaria.org/Psalms.137) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Korbanot (Israel), Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Korbanot_%28Israel%29%2C_Mourner%27s_Kaddish) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Concluding Prayers, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Concluding_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Kaddish, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Kaddish%2C_Mourner%27s_Kaddish) — H/E segments 7/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Fast of Gedalya](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Fast_of_Gedalya) — H/E segments 30/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Tenth of Tevet](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Tenth_of_Tevet) — H/E segments 37/7; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Fast of Esther](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Fast_of_Esther) — H/E segments 35/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Seventeenth of Tammuz](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Seventeenth_of_Tammuz) — H/E segments 39/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Mourning](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Mourning) — H/E segments 33/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Torah Reading for Fast Days](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Torah_Reading_for_Fast_Days) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Holidays, Yizkor](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Yizkor) — H/E segments 39/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 84/87; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 34/33; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 31/31; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Mourner%27s_Kaddish) — H/E segments 39/39; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Yizkor](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Yizkor) — H/E segments 107/119; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Yizkor](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Yizkor) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Confession before Death](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Confession_before_Death) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Funeral Service](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Funeral_Service) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Prayer in a House of Mourning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Prayer_in_a_House_of_Mourning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Birkat HaMazon in a House of Mourning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Birkat_HaMazon_in_a_House_of_Mourning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Tisha B'Av](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Tisha_B%27Av) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mishnayot for a Mourner](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mishnayot_for_a_Mourner) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Psalm in the House of a Mourner](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_in_the_House_of_a_Mourner) — H/E segments 128/132; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 31/32; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha for Erev Rosh Hashana, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha_for_Erev_Rosh_Hashana%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Mincha, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Mincha%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Musaf, Mourner's Kaddish](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Musaf%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Memorial_Services) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha Service for Erev Yom Kippur, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha_Service_for_Erev_Yom_Kippur%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 27/27; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Mourner%27s_Kaddish) — H/E segments 28/28; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Memorial_Services) — H/E segments 300/319; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Mourner's Kaddish](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Memorial Services](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Memorial_Services) — H/E segments 0/3; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Yizkor](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Yizkor) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mourner's Kaddish Transliterated](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mourner%27s_Kaddish_Transliterated) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night.1](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Night.1) — H/E segments 23/23; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night.2](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Night.2) — H/E segments 7/7; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night.3](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Night.3) — H/E segments 27/27; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night.4](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Night.4) — H/E segments 23/23; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Night.5](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Night.5) — H/E segments 13/13; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.1](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.1) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.2](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.2) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.3](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.3) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.4](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.4) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.5](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.5) — H/E segments 0/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.6](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.6) — H/E segments 11/11; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.7](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.7) — H/E segments 24/23; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.8](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.8) — H/E segments 15/13; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.9](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.9) — H/E segments 26/4; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.10](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.10) — H/E segments 24/1; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.11](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.11) — H/E segments 27/1; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.12](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.12) — H/E segments 39/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.13](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.13) — H/E segments 12/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.14](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.14) — H/E segments 33/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.15](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.15) — H/E segments 22/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.16](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.16) — H/E segments 12/3; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.17](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.17) — H/E segments 50/18; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.18](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.18) — H/E segments 12/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.19](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.19) — H/E segments 24/24; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.20](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.20) — H/E segments 12/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.21](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.21) — H/E segments 14/2; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.22](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.22) — H/E segments 5/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.23](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.23) — H/E segments 9/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.24](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.24) — H/E segments 23/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.25](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.25) — H/E segments 13/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.26](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.26) — H/E segments 32/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.27](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.27) — H/E segments 1/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.28](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.28) — H/E segments 23/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.29](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.29) — H/E segments 34/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.30](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.30) — H/E segments 16/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.31](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.31) — H/E segments 92/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.32](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.32) — H/E segments 29/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.33](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.33) — H/E segments 33/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.34](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.34) — H/E segments 20/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.35](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.35) — H/E segments 4/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.36](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.36) — H/E segments 34/8; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.37](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.37) — H/E segments 1/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.38](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.38) — H/E segments 33/1; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.39](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.39) — H/E segments 29/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.40](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.40) — H/E segments 40/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.41](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.41) — H/E segments 34/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.42](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.42) — H/E segments 34/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.43](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.43) — H/E segments 29/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.44](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.44) — H/E segments 23/0; unreviewed.
+- [Kinnot for Tisha B'Av (Ashkenaz), Kinot for Tisha B'Av Day.45](https://www.sefaria.org/Kinnot_for_Tisha_B%27Av_%28Ashkenaz%29%2C_Kinot_for_Tisha_B%27Av_Day.45) — H/E segments 24/24; unreviewed.
+- [Ma'avar Yabbok, Introduction](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Introduction) — H/E segments 11/0; unreviewed.
+- [Ma'avar Yabbok, Author's Introduction.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Author%27s_Introduction.1) — H/E segments 27/0; unreviewed.
+- [Ma'avar Yabbok, Author's Introduction.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Author%27s_Introduction.2) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.2) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.3) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.4) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.6) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.7) — H/E segments 348/3; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.8) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.9) — H/E segments 7/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.11) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.12) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.16) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.17) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.19) — H/E segments 5/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.22) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.24) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.26) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.31) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.35) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Tzedek.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Tzedek.40) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.8) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.16) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.17) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.25) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Sefat Emet.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Sefat_Emet.37) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.1) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.8) — H/E segments 0/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.17) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.33) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.40) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.41](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.41) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.42](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.42) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.43](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.43) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.44](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.44) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.45](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.45) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Siftei Renanot.46](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Siftei_Renanot.46) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.1) — H/E segments 4/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.6) — H/E segments 9/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Atar Anan HaKetoret.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Atar_Anan_HaKetoret.8) — H/E segments 4/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.5) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Korban Ta'anit.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Korban_Ta%27anit.7) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.1) — H/E segments 3/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.5) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.6) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.8) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.9) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.12) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.13) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.17) — H/E segments 128/0; unreviewed.
+- [Ma'avar Yabbok, Minchat Aharon.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Minchat_Aharon.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.1](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.1) — H/E segments 5/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.2](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.2) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.3](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.3) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.4](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.4) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.5](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.5) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.6](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.6) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.7](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.7) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.8](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.8) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.9](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.9) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.10](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.10) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.11](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.11) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.12](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.12) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.13](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.13) — H/E segments 2/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.14](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.14) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.15](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.15) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.16](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.16) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.17](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.17) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.18](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.18) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.19](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.19) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.20](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.20) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.21](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.21) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.22](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.22) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.23](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.23) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.24](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.24) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.25](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.25) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.26](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.26) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.27](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.27) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.28](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.28) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.29](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.29) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.30](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.30) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.31](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.31) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.32](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.32) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.33](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.33) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.34](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.34) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.35](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.35) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.36](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.36) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.37](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.37) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.38](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.38) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.39](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.39) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.40](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.40) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.41](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.41) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Imrei Noam.42](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Imrei_Noam.42) — H/E segments 1/0; unreviewed.
+- [Ma'avar Yabbok, Epilogue](https://www.sefaria.org/Ma%27avar_Yabbok%2C_Epilogue) — H/E segments 2/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Al Naharot Bavel](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Al_Naharot_Bavel) — H/E segments 0/5; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Oy Ki Yarad Esh](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Oy_Ki_Yarad_Esh) — H/E segments 0/5; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Ha'azinu HaShamayim](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Ha%27azinu_HaShamayim) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Arvit](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Arvit) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, L'mi Evkeh](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_L%27mi_Evkeh) — H/E segments 0/1; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Megillat Eichah](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Megillat_Eichah) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.1](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.1) — H/E segments 0/1; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.2](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.2) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.3](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.3) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.4](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.4) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.5](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.5) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.6](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.6) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.7](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.7) — H/E segments 0/4; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.8](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.8) — H/E segments 0/6; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.9](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.9) — H/E segments 0/8; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.10](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.10) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.11](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.11) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.12](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.12) — H/E segments 0/7; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night.13](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night.13) — H/E segments 0/10; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Aleinu](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Aleinu) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Night, Al Heichali](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Night%2C_Al_Heichali) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.1](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.1) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.2](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.2) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.3](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.3) — H/E segments 0/9; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.4](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.4) — H/E segments 0/1; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.5](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.5) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.6](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.6) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.7](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.7) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.8](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.8) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.9](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.9) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.10](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.10) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.11](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.11) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.12](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.12) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.13](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.13) — H/E segments 0/6; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.14](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.14) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.15](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.15) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.16](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.16) — H/E segments 0/9; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.17](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.17) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.18](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.18) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.19](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.19) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.20](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.20) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.21](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.21) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.22](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.22) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.23](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.23) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.24](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.24) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.25](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.25) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.26](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.26) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.27](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.27) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.28](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.28) — H/E segments 0/0; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.29](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.29) — H/E segments 0/5; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.30](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.30) — H/E segments 0/5; unreviewed.
+- [Seder Tisha B'Av (Edot HaMizrach), Tisha B'Av Day.31](https://www.sefaria.org/Seder_Tisha_B%27Av_%28Edot_HaMizrach%29%2C_Tisha_B%27Av_Day.31) — H/E segments 0/6; unreviewed.
+- [Yizkor](https://www.sefaria.org/Yizkor) — H/E segments 0/20; unreviewed.
+
+## hope (21 source records)
+
+- [Psalm 13: How long? Sorrow moving toward trust](https://www.sefaria.org/Psalms.13) — complete source chapter; pronunciation draft.
+- [Psalm 20: Help in a day of trouble](https://www.sefaria.org/Psalms.20) — complete source chapter; pronunciation draft.
+- [Psalm 22: Abandonment, suffering, and eventual praise](https://www.sefaria.org/Psalms.22) — complete source chapter; pronunciation draft.
+- [Psalm 27: Courage, seeking God, and waiting with hope](https://www.sefaria.org/Psalms.27) — complete source chapter; pronunciation draft.
+- [Psalm 36: Human wrongdoing and divine lovingkindness](https://www.sefaria.org/Psalms.36) — complete source chapter; pronunciation draft.
+- [Psalm 40: Rescue, willingness, and renewed need](https://www.sefaria.org/Psalms.40) — complete source chapter; pronunciation draft.
+- [Psalm 42: Longing, tears, and hope](https://www.sefaria.org/Psalms.42) — complete source chapter; pronunciation draft.
+- [Psalm 43: Light, truth, and renewed hope](https://www.sefaria.org/Psalms.43) — complete source chapter; pronunciation draft.
+- [Psalm 54: An appeal for rescue](https://www.sefaria.org/Psalms.54) — complete source chapter; pronunciation draft.
+- [Psalm 60: Communal defeat and renewed hope](https://www.sefaria.org/Psalms.60) — complete source chapter; pronunciation draft.
+- [Psalm 70: An urgent request for help](https://www.sefaria.org/Psalms.70) — complete source chapter; pronunciation draft.
+- [Psalm 80: Restore us; the image of a devastated vine](https://www.sefaria.org/Psalms.80) — complete source chapter; pronunciation draft.
+- [Psalm 84: Longing for God's dwelling](https://www.sefaria.org/Psalms.84) — complete source chapter; pronunciation draft.
+- [Psalm 89: Covenant, praise, and disappointment](https://www.sefaria.org/Psalms.89) — complete source chapter; pronunciation draft.
+- [Psalm 115: Trust and blessing for the community](https://www.sefaria.org/Psalms.115) — complete source chapter; pronunciation draft.
+- [Psalm 118: Thanksgiving, rescue, and rejoicing](https://www.sefaria.org/Psalms.118) — complete source chapter; pronunciation draft.
+- [Psalm 119: Torah, longing, affliction, and guidance](https://www.sefaria.org/Psalms.119) — complete source chapter; pronunciation draft.
+- [Psalm 126: Restoration, tears, and joy](https://www.sefaria.org/Psalms.126) — complete source chapter; pronunciation draft.
+- [Psalm 129: Endurance through oppression](https://www.sefaria.org/Psalms.129) — complete source chapter; pronunciation draft.
+- [Psalm 130: Calling from the depths and awaiting redemption](https://www.sefaria.org/Psalms.130) — complete source chapter; pronunciation draft.
+- [Psalm 138: Thanksgiving and courage](https://www.sefaria.org/Psalms.138) — complete source chapter; pronunciation draft.
+
+## jerusalem (13 source records)
+
+- [Psalm 48: Zion and communal memory](https://www.sefaria.org/Psalms.48) — complete source chapter; pronunciation draft.
+- [Psalm 87: Zion and belonging](https://www.sefaria.org/Psalms.87) — complete source chapter; pronunciation draft.
+- [Psalm 122: Jerusalem, pilgrimage, and peace](https://www.sefaria.org/Psalms.122) — complete source chapter; pronunciation draft.
+- [Psalm 132: Covenant, Zion, and a resting place](https://www.sefaria.org/Psalms.132) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Rebuilding_Jerusalem) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Concluding Prayers, Uva Letzion](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Concluding_Prayers%2C_Uva_Letzion) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Rebuilding_Jerusalem) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Rebuilding Jerusalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Rebuilding_Jerusalem) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Uva Letzion](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Uva_Letzion) — H/E segments 1/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Uvah L'tzion](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Uvah_L%27tzion) — H/E segments 128/130; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Ashrei Uva LeZion](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Ashrei_Uva_LeZion) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Ashrei U'va L'Tzion](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ashrei_U%27va_L%27Tzion) — H/E segments 291/300; unreviewed.
+- [Birkat Hamazon, Blessing on Jerusalem](https://www.sefaria.org/Birkat_Hamazon%2C_Blessing_on_Jerusalem) — H/E segments 0/0; unreviewed.
+
+## justice (37 source records)
+
+- [Psalm 1: Two ways of living; delight in Torah](https://www.sefaria.org/Psalms.1) — complete source chapter; pronunciation draft.
+- [Psalm 2: Kingship and the nations](https://www.sefaria.org/Psalms.2) — complete source chapter; pronunciation draft.
+- [Psalm 7: An appeal for just judgment](https://www.sefaria.org/Psalms.7) — complete source chapter; pronunciation draft.
+- [Psalm 9: Thanksgiving and justice for the oppressed](https://www.sefaria.org/Psalms.9) — complete source chapter; pronunciation draft.
+- [Psalm 10: A plea for those threatened by the wicked](https://www.sefaria.org/Psalms.10) — complete source chapter; pronunciation draft.
+- [Psalm 12: Truthfulness in a deceitful world](https://www.sefaria.org/Psalms.12) — complete source chapter; pronunciation draft.
+- [Psalm 14: Corruption and longing for restoration](https://www.sefaria.org/Psalms.14) — complete source chapter; pronunciation draft.
+- [Psalm 17: An appeal for protection and vindication](https://www.sefaria.org/Psalms.17) — complete source chapter; pronunciation draft.
+- [Psalm 26: Integrity and love of God's house](https://www.sefaria.org/Psalms.26) — complete source chapter; pronunciation draft.
+- [Psalm 35: Help against unjust opponents](https://www.sefaria.org/Psalms.35) — complete source chapter; pronunciation draft.
+- [Psalm 36: Human wrongdoing and divine lovingkindness](https://www.sefaria.org/Psalms.36) — complete source chapter; pronunciation draft.
+- [Psalm 52: Destructive speech and trust](https://www.sefaria.org/Psalms.52) — complete source chapter; pronunciation draft.
+- [Psalm 53: Corruption and longing for deliverance](https://www.sefaria.org/Psalms.53) — complete source chapter; pronunciation draft.
+- [Psalm 58: Condemnation of unjust judgment](https://www.sefaria.org/Psalms.58) — complete source chapter; pronunciation draft.
+- [Psalm 59: Protection from violent enemies](https://www.sefaria.org/Psalms.59) — complete source chapter; pronunciation draft.
+- [Psalm 68: Protection of the vulnerable and collective praise](https://www.sefaria.org/Psalms.68) — complete source chapter; pronunciation draft.
+- [Psalm 72: Just leadership and care for the poor](https://www.sefaria.org/Psalms.72) — complete source chapter; pronunciation draft.
+- [Psalm 75: Gratitude and just judgment](https://www.sefaria.org/Psalms.75) — complete source chapter; pronunciation draft.
+- [Psalm 76: Awe, judgment, and the ending of warfare](https://www.sefaria.org/Psalms.76) — complete source chapter; pronunciation draft.
+- [Psalm 82: Judgment and defense of the powerless](https://www.sefaria.org/Psalms.82) — complete source chapter; pronunciation draft.
+- [Psalm 94: Justice and comfort amid anxious thoughts](https://www.sefaria.org/Psalms.94) — complete source chapter; pronunciation draft.
+- [Psalm 97: Divine rule, justice, and joy](https://www.sefaria.org/Psalms.97) — complete source chapter; pronunciation draft.
+- [Psalm 99: Holiness and just kingship](https://www.sefaria.org/Psalms.99) — complete source chapter; pronunciation draft.
+- [Psalm 109: Accusation and a plea for vindication](https://www.sefaria.org/Psalms.109) — complete source chapter; pronunciation draft.
+- [Psalm 112: Generosity, integrity, and steadiness](https://www.sefaria.org/Psalms.112) — complete source chapter; pronunciation draft.
+- [Psalm 113: Praise and the lifting of the lowly](https://www.sefaria.org/Psalms.113) — complete source chapter; pronunciation draft.
+- [Psalm 123: Mercy in the face of contempt](https://www.sefaria.org/Psalms.123) — complete source chapter; pronunciation draft.
+- [Psalm 129: Endurance through oppression](https://www.sefaria.org/Psalms.129) — complete source chapter; pronunciation draft.
+- [Psalm 140: Protection from violence and harmful plans](https://www.sefaria.org/Psalms.140) — complete source chapter; pronunciation draft.
+- [Psalm 146: Care for the vulnerable and enduring trust](https://www.sefaria.org/Psalms.146) — complete source chapter; pronunciation draft.
+- [Psalm 149: Communal rejoicing and judgment](https://www.sefaria.org/Psalms.149) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Justice](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Justice) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, The Righteous](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_The_Righteous) — H/E segments 1/1; unreviewed.
+
+## learning (181 source records)
+
+- [Psalm 1: Two ways of living; delight in Torah](https://www.sefaria.org/Psalms.1) — complete source chapter; pronunciation draft.
+- [Psalm 19: Creation, Torah, and acceptable words](https://www.sefaria.org/Psalms.19) — complete source chapter; pronunciation draft.
+- [Psalm 78: Teaching history to the next generation](https://www.sefaria.org/Psalms.78) — complete source chapter; pronunciation draft.
+- [Psalm 119: Torah, longing, affliction, and guidance](https://www.sefaria.org/Psalms.119) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Blessings](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Torah_Blessings) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Torah Study](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Torah_Study) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, El Erech Appayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_El_Erech_Appayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vayehi_Binsoa) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Berich_Shmei) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Lekha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Lekha_Hashem) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Av Harachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Av_Harachamim) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vetigaleh_Veteraeh) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Reading from Sefer, Prayers for Welfare of the People](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Prayers_for_Welfare_of_the_People) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Yehalelu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Yehalelu) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, LeDavid Mizmor](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_LeDavid_Mizmor) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Uvenucho_Yomar) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Ein Kamocha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Ein_Kamocha) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Vayehi_Binsoa) — H/E segments 5/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Shema Yisrael (Gadlu)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Shema_Yisrael_%28Gadlu%29) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Lecha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Lecha_Hashem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Veyazor Veyagen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Veyazor_Veyagen) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For an Oleh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_an_Oleh) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Sickness_%28includes_man_and_woman%29) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of a Son](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_a_Son) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of Daughter](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_Daughter) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bar Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bar_Mitzvah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bat Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bat_Mitzvah) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Haftarah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Haftarah) — H/E segments 9/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Va'ani Tefillati](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Va%27ani_Tefillati) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vayehi_Binsoa) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Gadlu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Gadlu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Lekha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Lekha_Hashem) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Av Harachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Av_Harachamim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vetigaleh_Veteraeh) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 11/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Yehalelu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Yehalelu) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_LeDavid) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Uvenucho_Yomar) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, Preparatory Prayers, Torah Blessings](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Preparatory_Prayers%2C_Torah_Blessings) — H/E segments 5/5; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Torah_Reading) — H/E segments 21/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Torah_Reading) — H/E segments 28/0; unreviewed.
+- [Siddur Edot HaMizrach, Nissan, Learning of the Day](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Nissan%2C_Learning_of_the_Day) — H/E segments 88/0; unreviewed.
+- [Siddur Edot HaMizrach, Fast Days and Mourning, Torah Reading for Fast Days](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Fast_Days_and_Mourning%2C_Torah_Reading_for_Fast_Days) — H/E segments 2/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, First Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_First_Meal) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Second Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Second_Meal) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Third Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Third_Meal) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Pirkei Avot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Pirkei_Avot) — H/E segments 142/4; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Blessings on Torah](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Blessings_on_Torah) — H/E segments 26/26; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Torah_Reading) — H/E segments 40/40; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Torah Reading for Fast Day](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Torah_Reading_for_Fast_Day) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Shabbat Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Shabbat_Torah_Reading) — H/E segments 26/19; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Blessings on Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Blessings_on_Torah_Reading) — H/E segments 7/7; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Torah_Reading) — H/E segments 29/0; unreviewed.
+- [Siddur Sefard, Rosh Chodesh, Returning Sefer Torah](https://www.sefaria.org/Siddur_Sefard%2C_Rosh_Chodesh%2C_Returning_Sefer_Torah) — H/E segments 15/0; unreviewed.
+- [Siddur Sefard, Simchat Torah, Hakafot](https://www.sefaria.org/Siddur_Sefard%2C_Simchat_Torah%2C_Hakafot) — H/E segments 119/119; unreviewed.
+- [Siddur Sefard, Simchat Torah, Evening Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Simchat_Torah%2C_Evening_Torah_Reading) — H/E segments 6/0; unreviewed.
+- [Siddur Sefard, Chanukah, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Chanukah%2C_Torah_Reading) — H/E segments 22/0; unreviewed.
+- [Siddur Sefard, Purim, Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Purim%2C_Torah_Reading) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Shabbat Mincha & Monday, Thursday](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Shabbat_Mincha_%26_Monday%2C_Thursday) — H/E segments 110/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Fast Day Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Fast_Day_Torah_Reading) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Fast Day Mincha Haftara](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Fast_Day_Mincha_Haftara) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Rosh Chodesh](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Rosh_Chodesh) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Pesach](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Chol_Hamoed_Pesach) — H/E segments 31/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Chol Hamoed Sukkot](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Chol_Hamoed_Sukkot) — H/E segments 8/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 60/60; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 83/89; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 101/111; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of the Oleh to Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_on_Behalf_of_the_Oleh_to_Torah) — H/E segments 1/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of a Sick Person](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_on_Behalf_of_a_Sick_Person) — H/E segments 8/2; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Birchas Hagomeil](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Birchas_Hagomeil) — H/E segments 24/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 83/93; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/79; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer for the Government](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_for_the_Government) — H/E segments 26/27; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Blessings of the New Month](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Blessings_of_the_New_Month) — H/E segments 47/50; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Av Horachamim](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Av_Horachamim) — H/E segments 52/54; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Reading of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Reading_of_the_Torah) — H/E segments 14/15; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Blessings Over the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Blessings_Over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Reading of the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Reading of the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hakafot for Simhat Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hakafot_for_Simhat_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Weekly Portions for Mondays, Thursdays and Shabbat Minha](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Weekly_Portions_for_Mondays%2C_Thursdays_and_Shabbat_Minha) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Rosh Hodesh](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Rosh_Hodesh) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Fast Days](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Fast_Days) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Tisha B'Av](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Tisha_B%27Av) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hanukka](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hanukka) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Purim](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Purim) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Pesah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Pesah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hol HaMo'ed Pesah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hol_HaMo%27ed_Pesah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shabbat Hol HaMo'ed](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Shabbat_Hol_HaMo%27ed) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Seventh Day of Pesah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Seventh_Day_of_Pesah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shavuot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Shavuot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Sukkot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Sukkot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hol HaMo'ed Sukkot](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hol_HaMo%27ed_Sukkot) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shemini Atzeret](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Shemini_Atzeret) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Simhat Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Simhat_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Hatan Torah and Hatan Bereshit](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Hatan_Torah_and_Hatan_Bereshit) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Piyutei Geula; Berah Dodi](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Piyutei_Geula%3B_Berah_Dodi) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Torah Reading](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 60/60; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Reading of the Torah](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Reading_of_the_Torah) — H/E segments 117/133; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 6/6; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 6/12; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 13/23; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 6/8; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 2/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 1/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 1/2; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 3/3; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/54; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 72/78; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 98/109; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 5/9; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 19/21; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 15/16; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 11/13; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 4/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 61/68; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/77; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Zohar Study for Rosh Hashana Night](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Zohar_Study_for_Rosh_Hashana_Night) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Blessing on the Torah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Blessing_on_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the First Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_First_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Reading of the Torah for the Second Day](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Reading_of_the_Torah_for_the_Second_Day) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Maftir Reading](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Maftir_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Mi Sheberach](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the First Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Haftarah_for_the_First_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Haftarah for the Second Day of Rosh Hashana](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Haftarah_for_the_Second_Day_of_Rosh_Hashana) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Blessings for the Haftarah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Blessings_for_the_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Reading of the Torah, Yekum Purkan](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Reading_of_the_Torah%2C_Yekum_Purkan) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 53/53; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 71/77; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 102/112; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Reading for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Reading_for_Yom_Kippur_Morning) — H/E segments 18/20; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Maftir Reading from the Second Sefer Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Maftir_Reading_from_the_Second_Sefer_Torah) — H/E segments 14/16; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 11/13; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Haftarah for Yom Kippur Morning](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Haftarah_for_Yom_Kippur_Morning) — H/E segments 64/70; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/77; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Mincha, Torah Reading for Mincha Service](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Mincha%2C_Torah_Reading_for_Mincha_Service) — H/E segments 168/178; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Blessings of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Blessings_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Mincha, Reading of the Torah](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Torah Reading](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Mi Sheberach](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Mi_Sheberach) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Haftarah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Haftarah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Reading of the Torah, Yekum Purkan](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Reading_of_the_Torah%2C_Yekum_Purkan) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Mincha Service, Torah Reading](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Mincha_Service%2C_Torah_Reading) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Blessings over the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, First Day, Reading of the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_First_Day%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Second Day, Reading of the Torah](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Second_Day%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Blessings over the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Blessings_over_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Reading of the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Mincha, Reading of the Torah](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Mincha%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [Hadran](https://www.sefaria.org/Hadran) — H/E segments 0/6; unreviewed.
+- [Hadran for Tanakh](https://www.sefaria.org/Hadran_for_Tanakh) — H/E segments 0/0; unreviewed.
+
+## life-cycle (1 source records)
+
+- [Psalm 45: A royal wedding song](https://www.sefaria.org/Psalms.45) — complete source chapter; pronunciation draft.
+
+## nature (41 source records)
+
+- [Psalm 8: Creation and human dignity](https://www.sefaria.org/Psalms.8) — complete source chapter; pronunciation draft.
+- [Psalm 19: Creation, Torah, and acceptable words](https://www.sefaria.org/Psalms.19) — complete source chapter; pronunciation draft.
+- [Psalm 24: The earth, purity, and the King of glory](https://www.sefaria.org/Psalms.24) — complete source chapter; pronunciation draft.
+- [Psalm 29: Divine power in the storm and peace](https://www.sefaria.org/Psalms.29) — complete source chapter; pronunciation draft.
+- [Psalm 65: Forgiveness, rain, and the earth's abundance](https://www.sefaria.org/Psalms.65) — complete source chapter; pronunciation draft.
+- [Psalm 96: A new song and creation's rejoicing](https://www.sefaria.org/Psalms.96) — complete source chapter; pronunciation draft.
+- [Psalm 104: Creation, living things, and sustenance](https://www.sefaria.org/Psalms.104) — complete source chapter; pronunciation draft.
+- [Psalm 114: The Exodus and transformed nature](https://www.sefaria.org/Psalms.114) — complete source chapter; pronunciation draft.
+- [Psalm 139: Being known, creation, and self-examination](https://www.sefaria.org/Psalms.139) — complete source chapter; pronunciation draft.
+- [Psalm 147: Healing the brokenhearted and sustaining creation](https://www.sefaria.org/Psalms.147) — complete source chapter; pronunciation draft.
+- [Psalm 148: All creation called to praise](https://www.sefaria.org/Psalms.148) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Maariv, Birkat HaLevana](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Birkat_HaLevana) — H/E segments 18/17; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 50/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 50/50; unreviewed.
+- [Siddur Edot HaMizrach, Blessing of the Moon](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Blessing_of_the_Moon) — H/E segments 26/26; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Rainbow](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Rainbow) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Blessings on Lighting and Thunder](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Blessings_on_Lighting_and_Thunder) — H/E segments 5/5; unreviewed.
+- [Siddur Sefard, Kiddush Levanah](https://www.sefaria.org/Siddur_Sefard%2C_Kiddush_Levanah) — H/E segments 25/1; unreviewed.
+- [Siddur Sefard, Blessings, Lightning & Thunder](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Lightning_%26_Thunder) — H/E segments 5/0; unreviewed.
+- [Siddur Sefard, Blessings, Seeing Rainbow](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Seeing_Rainbow) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Holidays, Prayer for Dew](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Prayer_for_Dew) — H/E segments 62/0; unreviewed.
+- [Siddur Sefard, Holidays, Prayer for Rain](https://www.sefaria.org/Siddur_Sefard%2C_Holidays%2C_Prayer_for_Rain) — H/E segments 68/1; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kiddush Levanah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kiddush_Levanah) — H/E segments 146/157; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Dew](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Dew) — H/E segments 73/75; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Rain](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Rain) — H/E segments 102/104; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessing of the New Moon](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Blessing_of_the_New_Moon) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Dew](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Dew) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Prayer for Rain](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Prayer_for_Rain) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Kiddush Levanah](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Kiddush_Levanah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Kiddush Levanah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Kiddush_Levanah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Sunday](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Sunday) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Kiddush Levana](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Kiddush_Levana) — H/E segments 0/0; unreviewed.
+- [Perek Shirah, Introductory Text](https://www.sefaria.org/Perek_Shirah%2C_Introductory_Text) — H/E segments 0/3; unreviewed.
+- [Perek Shirah.1](https://www.sefaria.org/Perek_Shirah.1) — H/E segments 11/11; unreviewed.
+- [Perek Shirah.2](https://www.sefaria.org/Perek_Shirah.2) — H/E segments 11/11; unreviewed.
+- [Perek Shirah.3](https://www.sefaria.org/Perek_Shirah.3) — H/E segments 11/11; unreviewed.
+- [Perek Shirah.4](https://www.sefaria.org/Perek_Shirah.4) — H/E segments 34/34; unreviewed.
+- [Perek Shirah.5](https://www.sefaria.org/Perek_Shirah.5) — H/E segments 21/21; unreviewed.
+- [Perek Shirah.6](https://www.sefaria.org/Perek_Shirah.6) — H/E segments 9/9; unreviewed.
+- [Perek Shirah.7](https://www.sefaria.org/Perek_Shirah.7) — H/E segments 0/0; unreviewed.
+- [Perek Shirah, Concluding Prayer](https://www.sefaria.org/Perek_Shirah%2C_Concluding_Prayer) — H/E segments 3/3; unreviewed.
+
+## peace (23 source records)
+
+- [Psalm 29: Divine power in the storm and peace](https://www.sefaria.org/Psalms.29) — complete source chapter; pronunciation draft.
+- [Psalm 46: Refuge amid upheaval](https://www.sefaria.org/Psalms.46) — complete source chapter; pronunciation draft.
+- [Psalm 76: Awe, judgment, and the ending of warfare](https://www.sefaria.org/Psalms.76) — complete source chapter; pronunciation draft.
+- [Psalm 85: Restoration, mercy, truth, and peace](https://www.sefaria.org/Psalms.85) — complete source chapter; pronunciation draft.
+- [Psalm 120: Distress over deception and conflict](https://www.sefaria.org/Psalms.120) — complete source chapter; pronunciation draft.
+- [Psalm 122: Jerusalem, pilgrimage, and peace](https://www.sefaria.org/Psalms.122) — complete source chapter; pronunciation draft.
+- [Psalm 125: Steadfast trust and peace for Israel](https://www.sefaria.org/Psalms.125) — complete source chapter; pronunciation draft.
+- [Psalm 133: The goodness of people dwelling together](https://www.sefaria.org/Psalms.133) — complete source chapter; pronunciation draft.
+- [Psalm 144: Rescue, fruitful households, and communal well-being](https://www.sefaria.org/Psalms.144) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Peace) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Peace) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Peace) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Peace) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Shalom Aleichem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Shalom_Aleichem) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Rosh Chodesh, Musaf Amidah for Rosh Chodesh, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Rosh_Chodesh%2C_Musaf_Amidah_for_Rosh_Chodesh%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Amida for Maariv, Shacharit, Mincha, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Amida_for_Maariv%2C_Shacharit%2C_Mincha%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Shalosh Regalim, Mussaf, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Shalosh_Regalim%2C_Mussaf%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Shalom Alekhem](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Shalom_Alekhem) — H/E segments 10/0; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Shalom Aleichem](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Shalom_Aleichem) — H/E segments 8/6; unreviewed.
+- [Shalom Aleichem.1](https://www.sefaria.org/Shalom_Aleichem.1) — H/E segments 4/4; unreviewed.
+
+## protection (31 source records)
+
+- [Psalm 3: Trust amid enemies](https://www.sefaria.org/Psalms.3) — complete source chapter; pronunciation draft.
+- [Psalm 5: A morning appeal for guidance and justice](https://www.sefaria.org/Psalms.5) — complete source chapter; pronunciation draft.
+- [Psalm 7: An appeal for just judgment](https://www.sefaria.org/Psalms.7) — complete source chapter; pronunciation draft.
+- [Psalm 10: A plea for those threatened by the wicked](https://www.sefaria.org/Psalms.10) — complete source chapter; pronunciation draft.
+- [Psalm 11: Trust when foundations are shaken](https://www.sefaria.org/Psalms.11) — complete source chapter; pronunciation draft.
+- [Psalm 16: Refuge, guidance, and joy](https://www.sefaria.org/Psalms.16) — complete source chapter; pronunciation draft.
+- [Psalm 17: An appeal for protection and vindication](https://www.sefaria.org/Psalms.17) — complete source chapter; pronunciation draft.
+- [Psalm 18: Thanksgiving for rescue](https://www.sefaria.org/Psalms.18) — complete source chapter; pronunciation draft.
+- [Psalm 20: Help in a day of trouble](https://www.sefaria.org/Psalms.20) — complete source chapter; pronunciation draft.
+- [Psalm 28: A plea for help and blessing for the people](https://www.sefaria.org/Psalms.28) — complete source chapter; pronunciation draft.
+- [Psalm 31: Refuge amid distress and betrayal](https://www.sefaria.org/Psalms.31) — complete source chapter; pronunciation draft.
+- [Psalm 35: Help against unjust opponents](https://www.sefaria.org/Psalms.35) — complete source chapter; pronunciation draft.
+- [Psalm 46: Refuge amid upheaval](https://www.sefaria.org/Psalms.46) — complete source chapter; pronunciation draft.
+- [Psalm 54: An appeal for rescue](https://www.sefaria.org/Psalms.54) — complete source chapter; pronunciation draft.
+- [Psalm 56: Fear, tears, and trust](https://www.sefaria.org/Psalms.56) — complete source chapter; pronunciation draft.
+- [Psalm 57: Refuge and steadfast praise](https://www.sefaria.org/Psalms.57) — complete source chapter; pronunciation draft.
+- [Psalm 59: Protection from violent enemies](https://www.sefaria.org/Psalms.59) — complete source chapter; pronunciation draft.
+- [Psalm 61: Refuge and an enduring shelter](https://www.sefaria.org/Psalms.61) — complete source chapter; pronunciation draft.
+- [Psalm 64: Protection from harmful speech](https://www.sefaria.org/Psalms.64) — complete source chapter; pronunciation draft.
+- [Psalm 69: Deep distress and an appeal for rescue](https://www.sefaria.org/Psalms.69) — complete source chapter; pronunciation draft.
+- [Psalm 70: An urgent request for help](https://www.sefaria.org/Psalms.70) — complete source chapter; pronunciation draft.
+- [Psalm 83: An appeal amid collective danger](https://www.sefaria.org/Psalms.83) — complete source chapter; pronunciation draft.
+- [Psalm 91: Shelter and protection](https://www.sefaria.org/Psalms.91) — complete source chapter; pronunciation draft.
+- [Psalm 93: Majesty and stability amid mighty waters](https://www.sefaria.org/Psalms.93) — complete source chapter; pronunciation draft.
+- [Psalm 109: Accusation and a plea for vindication](https://www.sefaria.org/Psalms.109) — complete source chapter; pronunciation draft.
+- [Psalm 121: Help and guarding on the way](https://www.sefaria.org/Psalms.121) — complete source chapter; pronunciation draft.
+- [Psalm 124: Collective rescue](https://www.sefaria.org/Psalms.124) — complete source chapter; pronunciation draft.
+- [Psalm 125: Steadfast trust and peace for Israel](https://www.sefaria.org/Psalms.125) — complete source chapter; pronunciation draft.
+- [Psalm 140: Protection from violence and harmful plans](https://www.sefaria.org/Psalms.140) — complete source chapter; pronunciation draft.
+- [Psalm 142: Loneliness and an appeal for refuge](https://www.sefaria.org/Psalms.142) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Those Being Held in Captivity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Those_Being_Held_in_Captivity) — H/E segments 1/1; unreviewed.
+
+## relationships (12 source records)
+
+- [Psalm 12: Truthfulness in a deceitful world](https://www.sefaria.org/Psalms.12) — complete source chapter; pronunciation draft.
+- [Psalm 15: Integrity and worthy conduct](https://www.sefaria.org/Psalms.15) — complete source chapter; pronunciation draft.
+- [Psalm 34: Rescue, ethical speech, and care for the brokenhearted](https://www.sefaria.org/Psalms.34) — complete source chapter; pronunciation draft.
+- [Psalm 45: A royal wedding song](https://www.sefaria.org/Psalms.45) — complete source chapter; pronunciation draft.
+- [Psalm 52: Destructive speech and trust](https://www.sefaria.org/Psalms.52) — complete source chapter; pronunciation draft.
+- [Psalm 55: Betrayal, anguish, and casting one's burden on God](https://www.sefaria.org/Psalms.55) — complete source chapter; pronunciation draft.
+- [Psalm 64: Protection from harmful speech](https://www.sefaria.org/Psalms.64) — complete source chapter; pronunciation draft.
+- [Psalm 101: Integrity in leadership and one's household](https://www.sefaria.org/Psalms.101) — complete source chapter; pronunciation draft.
+- [Psalm 120: Distress over deception and conflict](https://www.sefaria.org/Psalms.120) — complete source chapter; pronunciation draft.
+- [Psalm 128: Work, household blessing, and peace](https://www.sefaria.org/Psalms.128) — complete source chapter; pronunciation draft.
+- [Psalm 133: The goodness of people dwelling together](https://www.sefaria.org/Psalms.133) — complete source chapter; pronunciation draft.
+- [Psalm 141: Guarding speech and conduct](https://www.sefaria.org/Psalms.141) — complete source chapter; pronunciation draft.
+
+## repentance (520 source records)
+
+- [Psalm 19: Creation, Torah, and acceptable words](https://www.sefaria.org/Psalms.19) — complete source chapter; pronunciation draft.
+- [Psalm 24: The earth, purity, and the King of glory](https://www.sefaria.org/Psalms.24) — complete source chapter; pronunciation draft.
+- [Psalm 25: Guidance, forgiveness, and protection](https://www.sefaria.org/Psalms.25) — complete source chapter; pronunciation draft.
+- [Psalm 32: Confession, forgiveness, and instruction](https://www.sefaria.org/Psalms.32) — complete source chapter; pronunciation draft.
+- [Psalm 38: Affliction, guilt, and a plea for help](https://www.sefaria.org/Psalms.38) — complete source chapter; pronunciation draft.
+- [Psalm 50: Sincere worship, thanksgiving, and moral responsibility](https://www.sefaria.org/Psalms.50) — complete source chapter; pronunciation draft.
+- [Psalm 51: Confession and a clean heart](https://www.sefaria.org/Psalms.51) — complete source chapter; pronunciation draft.
+- [Psalm 65: Forgiveness, rain, and the earth's abundance](https://www.sefaria.org/Psalms.65) — complete source chapter; pronunciation draft.
+- [Psalm 85: Restoration, mercy, truth, and peace](https://www.sefaria.org/Psalms.85) — complete source chapter; pronunciation draft.
+- [Psalm 103: Compassion, forgiveness, and healing](https://www.sefaria.org/Psalms.103) — complete source chapter; pronunciation draft.
+- [Psalm 106: Collective confession and mercy](https://www.sefaria.org/Psalms.106) — complete source chapter; pronunciation draft.
+- [Psalm 130: Calling from the depths and awaiting redemption](https://www.sefaria.org/Psalms.130) — complete source chapter; pronunciation draft.
+- [Psalm 139: Being known, creation, and self-examination](https://www.sefaria.org/Psalms.139) — complete source chapter; pronunciation draft.
+- [Psalm 141: Guarding speech and conduct](https://www.sefaria.org/Psalms.141) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Vidui and 13 Middot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Vidui_and_13_Middot) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, For Monday and Thursday](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_For_Monday_and_Thursday) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Nefilat Apayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Nefilat_Apayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, God of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_God_of_Israel) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Post Amidah, Tachanun, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Post_Amidah%2C_Tachanun%2C_Half_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Vidui and 13 Middot](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Vidui_and_13_Middot) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Nefilat Appayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Nefilat_Appayim) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Post Amidah, Tachanun, Shomer Yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Post_Amidah%2C_Tachanun%2C_Shomer_Yisrael) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Repentance](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Repentance) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Forgiveness](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Forgiveness) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Fast of Gedalia](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Fast_of_Gedalia) — H/E segments 187/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Ten of Tevet](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Ten_of_Tevet) — H/E segments 55/39; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Fast of Esther](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Fast_of_Esther) — H/E segments 47/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Seventeen of Tamuz](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Seventeen_of_Tamuz) — H/E segments 42/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, Yom Kippur Katan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_Yom_Kippur_Katan) — H/E segments 106/0; unreviewed.
+- [Siddur Ashkenaz, Festivals, Selichot, BaHaB](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Selichot%2C_BaHaB) — H/E segments 4/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Vidui](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Vidui) — H/E segments 34/9; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Mincha, Vidui](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Mincha%2C_Vidui) — H/E segments 24/18; unreviewed.
+- [Siddur Sefard, Weekday Shacharit, Tachanun](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Shacharit%2C_Tachanun) — H/E segments 14/14; unreviewed.
+- [Siddur Sefard, Additional Prayers , Chapter of Repentance](https://www.sefaria.org/Siddur_Sefard%2C_Additional_Prayers_%2C_Chapter_of_Repentance) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Weekday Mincha, Tachanun](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Mincha%2C_Tachanun) — H/E segments 37/37; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for BaHaB](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_BaHaB) — H/E segments 5/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for First Monday](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_First_Monday) — H/E segments 37/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Thursday](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Thursday) — H/E segments 43/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Concluding Monday](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Concluding_Monday) — H/E segments 41/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Asara B'Tevet](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Asara_B%27Tevet) — H/E segments 41/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Taanit Esther](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Taanit_Esther) — H/E segments 39/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for 20 Sivan](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_20_Sivan) — H/E segments 64/1; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for 17 Tamuz](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_17_Tamuz) — H/E segments 40/0; unreviewed.
+- [Siddur Sefard, Fast Days, Selichot for Childrens' Illness](https://www.sefaria.org/Siddur_Sefard%2C_Fast_Days%2C_Selichot_for_Childrens%27_Illness) — H/E segments 5/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Confession before Death](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Confession_before_Death) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Mincha, Tachanun](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Mincha%2C_Tachanun) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Tachanun](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Tachanun) — H/E segments 122/126; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, The Chapter of Repentance](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_The_Chapter_of_Repentance) — H/E segments 2/4; unreviewed.
+- [Weekday Siddur Sefard Linear, Mincha, Tachanun](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Mincha%2C_Tachanun) — H/E segments 211/215; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Monday (1)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Monday_%281%29) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Thursday](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Thursday) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Monday (2)](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Monday_%282%29) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Tenth of Teves](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Tenth_of_Teves) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Fast of Esther](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Fast_of_Esther) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Selichos, Seventeenth of Tamuz](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Selichos%2C_Seventeenth_of_Tamuz) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Tashlich) — H/E segments 8/5; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Tashlich) — H/E segments 144/141; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Tashlich) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Tashlich](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Tashlich) — H/E segments 0/0; unreviewed.
+- [Selichot Edot HaMizrach](https://www.sefaria.org/Selichot_Edot_HaMizrach) — H/E segments 229/229; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.3) — H/E segments 22/22; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.4) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.5) — H/E segments 20/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.6) — H/E segments 14/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.7) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.8) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.9) — H/E segments 6/6; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, First Day.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_First_Day.10) — H/E segments 17/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.3) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.4) — H/E segments 15/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.5) — H/E segments 12/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.3) — H/E segments 23/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.4) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.5) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.3) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.4) — H/E segments 20/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.5) — H/E segments 10/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.3) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.4) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.5) — H/E segments 13/12; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.3) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.4) — H/E segments 15/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.5) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Sixth Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Sixth_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.2) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.3) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.4) — H/E segments 15/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.5) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.6) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Seventh Day.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Seventh_Day.7) — H/E segments 39/39; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.2) — H/E segments 6/6; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.3) — H/E segments 26/26; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.4) — H/E segments 21/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.5) — H/E segments 13/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.6) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.7) — H/E segments 25/25; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.8) — H/E segments 35/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.9) — H/E segments 24/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.10) — H/E segments 27/27; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.11) — H/E segments 34/33; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.12) — H/E segments 36/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.13) — H/E segments 34/34; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.14) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.15) — H/E segments 18/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.16) — H/E segments 19/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.17) — H/E segments 21/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.18) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.19) — H/E segments 21/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.20) — H/E segments 14/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.21) — H/E segments 25/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.22) — H/E segments 12/12; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.23) — H/E segments 9/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.24) — H/E segments 4/4; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.25) — H/E segments 5/5; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.26) — H/E segments 2/2; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.27](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.27) — H/E segments 10/10; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.28](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.28) — H/E segments 16/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.29](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.29) — H/E segments 10/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.30](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.30) — H/E segments 35/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Erev Rosh Hashana.31](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Erev_Rosh_Hashana.31) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.3) — H/E segments 22/22; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.4) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.5) — H/E segments 18/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.6) — H/E segments 18/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.7) — H/E segments 23/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.8) — H/E segments 20/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.9) — H/E segments 23/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.10) — H/E segments 17/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.11) — H/E segments 26/26; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.12) — H/E segments 10/10; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.13](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.13) — H/E segments 12/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.14](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.14) — H/E segments 12/12; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.15](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.15) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.16](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.16) — H/E segments 22/22; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fast of Gedaliah.17](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fast_of_Gedaliah.17) — H/E segments 18/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 28/27; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 21/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 23/22; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 29/28; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 14/14; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Second Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Second_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 23/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 20/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 23/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 35/34; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 17/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Third Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Third_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 24/23; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 21/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 30/29; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 36/35; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 34/33; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 18/17; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 17/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 33/32; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fourth Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 22/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 21/20; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 23/22; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 27/26; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 19/18; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 14/13; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 26/25; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 9/9; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 12/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.13](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.13) — H/E segments 24/24; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Fifth Day of the Ten Days of Penitence.14](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.14) — H/E segments 22/21; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.1) — H/E segments 3/3; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.2) — H/E segments 11/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.3) — H/E segments 20/19; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.4) — H/E segments 12/11; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.5) — H/E segments 17/16; unreviewed.
+- [Selichot Nusach Ashkenaz Lita, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Ashkenaz_Lita%2C_Yom_Kippur_Eve.6) — H/E segments 15/15; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.3) — H/E segments 174/174; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.4) — H/E segments 164/164; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.5) — H/E segments 126/126; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.6) — H/E segments 99/99; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.7) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.8) — H/E segments 261/261; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.9) — H/E segments 209/209; unreviewed.
+- [Selichot Nusach Lita Linear, First Day.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_First_Day.10) — H/E segments 141/141; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.2) — H/E segments 259/259; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.3) — H/E segments 139/139; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.4) — H/E segments 96/95; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.5) — H/E segments 80/79; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.2) — H/E segments 259/259; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.3) — H/E segments 152/152; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.4) — H/E segments 106/106; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.5) — H/E segments 116/115; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.2) — H/E segments 258/258; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.3) — H/E segments 139/138; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.4) — H/E segments 131/131; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.5) — H/E segments 112/111; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.2) — H/E segments 262/262; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.3) — H/E segments 145/144; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.4) — H/E segments 117/116; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.5) — H/E segments 109/108; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.2) — H/E segments 262/262; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.3) — H/E segments 150/149; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.4) — H/E segments 109/108; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.5) — H/E segments 119/118; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Sixth Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Sixth_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.2) — H/E segments 262/262; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.3) — H/E segments 147/146; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.4) — H/E segments 111/110; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.5) — H/E segments 160/159; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.6) — H/E segments 145/145; unreviewed.
+- [Selichot Nusach Lita Linear, Seventh Day.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Seventh_Day.7) — H/E segments 118/87; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.2) — H/E segments 175/175; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.3) — H/E segments 210/210; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.4) — H/E segments 166/165; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.5) — H/E segments 89/89; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.6) — H/E segments 142/142; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.7) — H/E segments 181/181; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.8) — H/E segments 233/233; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.9) — H/E segments 171/170; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.10) — H/E segments 207/207; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.11) — H/E segments 265/264; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.12) — H/E segments 281/280; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.13) — H/E segments 265/265; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.14) — H/E segments 135/134; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.15) — H/E segments 120/120; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.16) — H/E segments 139/139; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.17) — H/E segments 160/160; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.18) — H/E segments 188/188; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.19) — H/E segments 170/170; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.20) — H/E segments 132/132; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.21) — H/E segments 211/210; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.22) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.23) — H/E segments 155/155; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.24) — H/E segments 28/28; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.25) — H/E segments 87/87; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.26) — H/E segments 48/48; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.27](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.27) — H/E segments 235/232; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.28](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.28) — H/E segments 97/86; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.29](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.29) — H/E segments 43/40; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.30](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.30) — H/E segments 192/185; unreviewed.
+- [Selichot Nusach Lita Linear, Erev Rosh Hashana.31](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Erev_Rosh_Hashana.31) — H/E segments 100/91; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.3) — H/E segments 194/194; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.4) — H/E segments 161/160; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.5) — H/E segments 128/128; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.6) — H/E segments 136/136; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.7) — H/E segments 157/157; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.8) — H/E segments 162/162; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.9) — H/E segments 121/121; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.10) — H/E segments 167/167; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.11) — H/E segments 194/194; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.12) — H/E segments 86/86; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.13](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.13) — H/E segments 169/168; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.14](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.14) — H/E segments 91/87; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.15](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.15) — H/E segments 103/90; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.16](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.16) — H/E segments 108/100; unreviewed.
+- [Selichot Nusach Lita Linear, Fast of Gedaliah.17](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fast_of_Gedaliah.17) — H/E segments 120/113; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 167/166; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 226/225; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 157/156; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 160/159; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 209/208; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 95/94; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 140/140; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 169/168; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 103/87; unreviewed.
+- [Selichot Nusach Lita Linear, Second Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Second_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 64/49; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 160/159; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 134/133; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 148/148; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 169/169; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 280/279; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 74/73; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 148/147; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 181/180; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 103/87; unreviewed.
+- [Selichot Nusach Lita Linear, Third Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Third_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 79/63; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 154/153; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 155/155; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 218/217; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 202/201; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 282/281; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 107/106; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 160/159; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 211/210; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 103/87; unreviewed.
+- [Selichot Nusach Lita Linear, Fourth Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 59/42; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 168/168; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 162/161; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 158/157; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 147/146; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 185/184; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 147/146; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 117/116; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 126/125; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 130/129; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 65/65; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 134/133; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.13](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.13) — H/E segments 103/87; unreviewed.
+- [Selichot Nusach Lita Linear, Fifth Day of the Ten Days of Penitence.14](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.14) — H/E segments 64/48; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.1) — H/E segments 74/74; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.2) — H/E segments 109/109; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.3) — H/E segments 136/135; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.4) — H/E segments 79/78; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.5) — H/E segments 165/164; unreviewed.
+- [Selichot Nusach Lita Linear, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Lita_Linear%2C_Yom_Kippur_Eve.6) — H/E segments 76/67; unreviewed.
+- [Selichot Nusach Polin, First Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, First Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, First Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.3) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, First Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.4) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, First Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.5) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, First Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.6) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, First Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.7) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, First Day.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.8) — H/E segments 17/0; unreviewed.
+- [Selichot Nusach Polin, First Day.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.9) — H/E segments 6/0; unreviewed.
+- [Selichot Nusach Polin, First Day.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_First_Day.10) — H/E segments 17/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.3) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.4) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.5) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Second Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.3) — H/E segments 17/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.4) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.5) — H/E segments 12/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Third Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.3) — H/E segments 17/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.4) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.5) — H/E segments 11/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.3) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.4) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.5) — H/E segments 12/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.3) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.4) — H/E segments 25/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.5) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Sixth Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Sixth_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.2) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.3) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.4) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.5) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.6) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Seventh Day.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Seventh_Day.7) — H/E segments 37/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.3) — H/E segments 26/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.4) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.5) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.6) — H/E segments 32/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.7) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.8) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.9) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.10) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.11) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.12](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.12) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.13](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.13) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.14](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.14) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.15](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.15) — H/E segments 33/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.16](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.16) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.17](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.17) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.18](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.18) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.19](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.19) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.20](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.20) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.21](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.21) — H/E segments 7/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.22](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.22) — H/E segments 7/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.23](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.23) — H/E segments 4/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.24](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.24) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.25](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.25) — H/E segments 28/0; unreviewed.
+- [Selichot Nusach Polin, Erev Rosh Hashana.26](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Erev_Rosh_Hashana.26) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.3) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.4) — H/E segments 17/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.5) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.6) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.7) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.8) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.9) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.10) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.11) — H/E segments 11/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.12](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.12) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.13](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.13) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Fast of Gedaliah.14](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fast_of_Gedaliah.14) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 21/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Second Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Second_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 24/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 23/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 24/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 16/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 21/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Third Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Third_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 23/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 25/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 26/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fourth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fourth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.2) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.3) — H/E segments 21/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.4) — H/E segments 19/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.5) — H/E segments 20/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.6) — H/E segments 33/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.7](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.7) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.8](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.8) — H/E segments 18/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.9](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.9) — H/E segments 13/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.10](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.10) — H/E segments 21/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.11](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.11) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Fifth Day of the Ten Days of Penitence.12](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Fifth_Day_of_the_Ten_Days_of_Penitence.12) — H/E segments 22/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.1](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.1) — H/E segments 3/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.2](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.2) — H/E segments 11/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.3](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.3) — H/E segments 14/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.4](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.4) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.5](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.5) — H/E segments 15/0; unreviewed.
+- [Selichot Nusach Polin, Yom Kippur Eve.6](https://www.sefaria.org/Selichot_Nusach_Polin%2C_Yom_Kippur_Eve.6) — H/E segments 14/0; unreviewed.
+
+## ritual (31 source records)
+
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Netilat Yadayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Netilat_Yadayim) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tzitzit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tzitzit) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tallit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tallit) — H/E segments 5/4; unreviewed.
+- [Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Preparatory_Prayers%2C_Tefillin) — H/E segments 13/12; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Netilat Yadayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Netilat_Yadayim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tzitzit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tzitzit) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tallit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tallit) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Weekday Shacharit, Order of Tefillin](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Weekday_Shacharit%2C_Order_of_Tefillin) — H/E segments 6/1; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Mezuza](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Mezuza) — H/E segments 5/5; unreviewed.
+- [Siddur Sefard, Upon Arising, Tallit](https://www.sefaria.org/Siddur_Sefard%2C_Upon_Arising%2C_Tallit) — H/E segments 6/5; unreviewed.
+- [Siddur Sefard, Various Blessings, Circumcision](https://www.sefaria.org/Siddur_Sefard%2C_Various_Blessings%2C_Circumcision) — H/E segments 44/25; unreviewed.
+- [Siddur Sefard, Blessings, Mezuzah](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Mezuzah) — H/E segments 3/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Service at a Circumcision](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Service_at_a_Circumcision) — H/E segments 142/155; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Tallit](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Tefillin](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Tefillin) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, The Cycle of Life, Pidyon HaBen](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_The_Cycle_of_Life%2C_Pidyon_HaBen) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Tzitzit and Tallit](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Tzitzit_and_Tallit) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Shacharit, Tefillin](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Shacharit%2C_Tefillin) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, Birkat HaMazon for Circumcision](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_Birkat_HaMazon_for_Circumcision) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Order of a Circumcision](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Order_of_a_Circumcision) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Pidyon HaBen](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Pidyon_HaBen) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Morning Prayers, Putting on the Tefillin](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Putting_on_the_Tefillin) — H/E segments 34/39; unreviewed.
+- [Weekday Siddur Sefard Linear, Service at a Circumcision](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Service_at_a_Circumcision) — H/E segments 142/154; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Sounding of the Shofar, Laws of Circumcision on Rosh Hashanah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Sounding_of_the_Shofar%2C_Laws_of_Circumcision_on_Rosh_Hashanah) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Shacharit, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Shacharit%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, The Morning Prayers, Putting On the Tallit](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_The_Morning_Prayers%2C_Putting_On_the_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Tallit](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Tallit](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Tallit) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Shaharit, Tallit](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Tallit) — H/E segments 0/0; unreviewed.
+
+## shabbat (510 source records)
+
+- [Psalm 92: A Sabbath song of thanksgiving](https://www.sefaria.org/Psalms.92) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Viyehi Noam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Additions_for_Motza%27ei_Shabbat%2C_Viyehi_Noam) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Additions for Motza'ei Shabbat, Veyiten Lekha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Additions_for_Motza%27ei_Shabbat%2C_Veyiten_Lekha) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Yedid Nefesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Yedid_Nefesh) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 95](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_95) — H/E segments 2/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 96](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_96) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 97](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_97) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 98](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_98) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 99](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_99) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 29](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_29) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Ana Bekoach](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Ana_Bekoach) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Lekha Dodi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Lekha_Dodi) — H/E segments 19/19; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 92](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_92) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Psalm 93](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Psalm_93) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Mourner%27s_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Bameh Madlikin](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Bameh_Madlikin) — H/E segments 0/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Kabbalat Shabbat, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat%2C_Kaddish_DeRabbanan) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Barchu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, First Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_First_Blessing_after_Shema) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Blessings of the Shema, Second Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Blessings_of_the_Shema%2C_Second_Blessing_after_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Veshamru](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Veshamru) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Half_Kaddish) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Patriarchs) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Divine_Might) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Holines of God's Name](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Holines_of_God%27s_Name) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Temple_Service) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Thanksgiving) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Peace) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Amidah%2C_Concluding_Passage) — H/E segments 4/4; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Vay'chulu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Vay%27chulu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Me'ein Sheva](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Me%27ein_Sheva) — H/E segments 5/5; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Kaddish_Shalem) — H/E segments 8/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Sefirat HaOmer](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Sefirat_HaOmer) — H/E segments 14/13; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Aleinu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Aleinu) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Mourner%27s_Kaddish) — H/E segments 7/7; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_LeDavid) — H/E segments 9/9; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Yigdal) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Maariv, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Maariv%2C_Adon_Olam) — H/E segments 11/11; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Blessing the Children](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Blessing_the_Children) — H/E segments 3/3; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Shalom Aleichem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Shalom_Aleichem) — H/E segments 6/6; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Kiddush](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Kiddush) — H/E segments 7/9; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Ribon Kol HaOlamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Ribon_Kol_HaOlamim) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Eshet Chayil](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Eshet_Chayil) — H/E segments 22/22; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Kol Mekadesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Kol_Mekadesh) — H/E segments 33/32; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Menucha VeSimcha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Menucha_VeSimcha) — H/E segments 20/20; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Ma Yedidut](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Ma_Yedidut) — H/E segments 25/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yom zeh L'yisrael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Yom_zeh_L%27yisrael) — H/E segments 34/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Yah Ribon](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Yah_Ribon) — H/E segments 25/25; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzamah Nafshi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Tzamah_Nafshi) — H/E segments 28/32; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shabbat Evening, Zemirot for Shabbat Evening, Tzur Mishelo](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shabbat_Evening%2C_Zemirot_for_Shabbat_Evening%2C_Tzur_Mishelo) — H/E segments 22/22; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Modeh Ani](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Modeh_Ani) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Netilat Yadayim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Netilat_Yadayim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Asher Yatzar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Asher_Yatzar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Elokai Neshama](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Elokai_Neshama) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tzitzit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tzitzit) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Tallit](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Tallit) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Ma Tovu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Ma_Tovu) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Adon_Olam) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Yigdal](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Yigdal) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Morning Blessings](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Morning_Blessings) — H/E segments 20/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Akedah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Akedah) — H/E segments 19/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Sovereignty of Heaven](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Sovereignty_of_Heaven) — H/E segments 22/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kiyor](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kiyor) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Terumat HaDeshen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Terumat_HaDeshen) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Korban HaTamid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Korban_HaTamid) — H/E segments 9/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Ketoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Ketoret) — H/E segments 21/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Order of the Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Order_of_the_Temple_Service) — H/E segments 16/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Laws of Sacrifices](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Laws_of_Sacrifices) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Baraita of Rabbi Yishmael](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Baraita_of_Rabbi_Yishmael) — H/E segments 15/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Preparatory Prayers, Korbanot, Kaddish DeRabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Preparatory_Prayers%2C_Korbanot%2C_Kaddish_DeRabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Shir](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mizmor_Shir) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Barukh She'amar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Barukh_She%27amar) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Hodu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Hodu) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Mizmor Letoda](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Mizmor_Letoda) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 19](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_19) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 34](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_34) — H/E segments 1/12; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 90](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_90) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 91](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_91) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 135](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_135) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 136](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_136) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 33](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_33) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 92](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_92) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 93](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_93) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yehi Chevod](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yehi_Chevod) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 146](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_146) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 147](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_147) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 148](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_148) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 149](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_149) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 150](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_150) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Baruch Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Baruch_Hashem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Vayevarech David](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Vayevarech_David) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shirat HaYam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Shirat_HaYam) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Nishmat Kol Chai](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Nishmat_Kol_Chai) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Shochen Ad](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Shochen_Ad) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Yishtabach](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Yishtabach) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Psalm 130](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Psalm_130) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Pesukei Dezimra, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Pesukei_Dezimra%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Barchu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Barchu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, First Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_First_Blessing_before_Shema) — H/E segments 9/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Second Blessing before Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Second_Blessing_before_Shema) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Shema) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Blessings of the Shema, Blessing after Shema](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Blessings_of_the_Shema%2C_Blessing_after_Shema) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Patriarchs) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Divine_Might) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kedushah) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Holiness_of_God) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 4/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Temple_Service) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Thanksgiving) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Birkat_Kohanim) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Peace) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Concluding_Passage) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Amidah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Ein Kamocha](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Ein_Kamocha) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Vayehi_Binsoa) — H/E segments 5/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Shema Yisrael (Gadlu)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Shema_Yisrael_%28Gadlu%29) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Lecha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Lecha_Hashem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Removing the Torah from the Ark, Veyazor Veyagen](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Removing_the_Torah_from_the_Ark%2C_Veyazor_Veyagen) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Birkat Hagomel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_Hagomel) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For an Oleh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_an_Oleh) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Sickness (includes man and woman)](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Sickness_%28includes_man_and_woman%29) — H/E segments 2/2; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of a Son](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_a_Son) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, For Birth, Birth of Daughter](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_For_Birth%2C_Birth_of_Daughter) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bar Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bar_Mitzvah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Mi Sheberach, Bat Mitzvah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Mi_Sheberach%2C_Bat_Mitzvah) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Torah Reading, Reading from Sefer, Haftarah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Haftarah) — H/E segments 9/8; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Yekum Purkan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Yekum_Purkan) — H/E segments 3/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer of the State of Israel](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_of_the_State_of_Israel) — H/E segments 35/35; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Israeli Soldiers](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Israeli_Soldiers) — H/E segments 12/12; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Prayer for Those Being Held in Captivity](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Prayer_for_Those_Being_Held_in_Captivity) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Birkat Hachodesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Birkat_Hachodesh) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Communal Prayers, Av HaRachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Communal_Prayers%2C_Av_HaRachamim) — H/E segments 2/1; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Returning Sefer to Aron](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Returning_Sefer_to_Aron) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Shacharit, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Shacharit%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Patriarchs) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Divine_Might) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Kedushah) — H/E segments 13/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Holiness_of_God) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Sanctity of the Day, For Shabbat](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Sanctity_of_the_Day%2C_For_Shabbat) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Sanctity of the Day, For Shabbat Rosh Chodesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Sanctity_of_the_Day%2C_For_Shabbat_Rosh_Chodesh) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Temple_Service) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Thanksgiving](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Thanksgiving) — H/E segments 18/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Birkat Kohanim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Birkat_Kohanim) — H/E segments 15/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Concluding_Passage) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Amidah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Amidah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Ein Keloheinu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Ein_Keloheinu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Pitum Haketoret](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Pitum_Haketoret) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Kaddish Derabbanan](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Kaddish_Derabbanan) — H/E segments 8/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Alenu) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Mourner%27s_Kaddish) — H/E segments 0/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Mizmor Shir L'Yom HaShabbat](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Mizmor_Shir_L%27Yom_HaShabbat) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_LeDavid) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Shir HaKavod](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Shir_HaKavod) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Musaf LeShabbat, Adon Olam](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Musaf_LeShabbat%2C_Adon_Olam) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Kiddusha Rabba](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Kiddusha_Rabba) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Baruch Kel Elyon](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Baruch_Kel_Elyon) — H/E segments 36/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Yom Zeh Mechubad](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Yom_Zeh_Mechubad) — H/E segments 27/27; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Yom Shabbaton](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Yom_Shabbaton) — H/E segments 26/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Shimru Shabtotai](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Shimru_Shabtotai) — H/E segments 34/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Ki Eshmera](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Ki_Eshmera) — H/E segments 22/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Daytime Meal, Zemirot for Second Meal, Dror Yikrah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Daytime_Meal%2C_Zemirot_for_Second_Meal%2C_Dror_Yikrah) — H/E segments 25/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Ashrei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Ashrei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Uva Letzion](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Uva_Letzion) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Half Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Half_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Va'ani Tefillati](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Va%27ani_Tefillati) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vayehi Binsoa](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vayehi_Binsoa) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Berich Shmei](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Berich_Shmei) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Gadlu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Gadlu) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Lekha Hashem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Lekha_Hashem) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Av Harachamim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Av_Harachamim) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Removing the Torah from Ark, Vetigaleh Veteraeh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Removing_the_Torah_from_Ark%2C_Vetigaleh_Veteraeh) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Birkat HaTorah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Birkat_HaTorah) — H/E segments 11/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Reading from Sefer, Raising the Torah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Reading_from_Sefer%2C_Raising_the_Torah) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Yehalelu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Yehalelu) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_LeDavid) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Torah Reading, Returning Sefer to Aron, Uvenucho Yomar](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Torah_Reading%2C_Returning_Sefer_to_Aron%2C_Uvenucho_Yomar) — H/E segments 9/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Patriarchs](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Patriarchs) — H/E segments 5/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Divine Might](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Divine_Might) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Kedushah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Kedushah) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Holiness of God](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Holiness_of_God) — H/E segments 2/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Sanctity of the Day](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Sanctity_of_the_Day) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Temple Service](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Temple_Service) — H/E segments 10/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Modim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Modim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Chanukkah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Chanukkah) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Thanksgiving, Al Hanisim for Purim](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Thanksgiving%2C_Al_Hanisim_for_Purim) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Peace](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Peace) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Amidah, Concluding Passage](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Amidah%2C_Concluding_Passage) — H/E segments 7/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Tzidkatkhah Tzedek](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Tzidkatkhah_Tzedek) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Kaddish Shalem](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Kaddish_Shalem) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Alenu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Alenu) — H/E segments 3/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Mourner's Kaddish](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Mourner%27s_Kaddish) — H/E segments 1/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Minchah, Barchi Nafshi](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Minchah%2C_Barchi_Nafshi) — H/E segments 35/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Third Meal, Atkinu](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Third_Meal%2C_Atkinu) — H/E segments 12/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Third Meal, Mizmor LeDavid](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Third_Meal%2C_Mizmor_LeDavid) — H/E segments 6/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Third Meal, Yedid Nefesh](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Third_Meal%2C_Yedid_Nefesh) — H/E segments 4/0; unreviewed.
+- [Siddur Ashkenaz, Shabbat, Havdalah](https://www.sefaria.org/Siddur_Ashkenaz%2C_Shabbat%2C_Havdalah) — H/E segments 13/13; unreviewed.
+- [Siddur Ashkenaz, Festivals, Sukkot, Hosha'anot, For Shabbat Chol Hamoed](https://www.sefaria.org/Siddur_Ashkenaz%2C_Festivals%2C_Sukkot%2C_Hosha%27anot%2C_For_Shabbat_Chol_Hamoed) — H/E segments 28/28; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Candle Lighting](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Candle_Lighting) — H/E segments 7/3; unreviewed.
+- [Siddur Edot HaMizrach, Kabbalat Shabbat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Kabbalat_Shabbat) — H/E segments 35/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Barchu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Barchu) — H/E segments 8/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_The_Shema) — H/E segments 15/13; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Magen Avot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Magen_Avot) — H/E segments 49/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Arvit, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Arvit%2C_Alenu) — H/E segments 19/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Shalom Alekhem](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Shalom_Alekhem) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Eshet Hayil](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Eshet_Hayil) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Atkenu Seudata](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Atkenu_Seudata) — H/E segments 29/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Kiddush](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Kiddush) — H/E segments 14/5; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Blessing of Children](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Blessing_of_Children) — H/E segments 6/5; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, First Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_First_Meal) — H/E segments 11/3; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Zohar](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Zohar) — H/E segments 15/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Evening, Songs for Shabbat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Evening%2C_Songs_for_Shabbat) — H/E segments 148/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Psalms for Shabbat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Psalms_for_Shabbat) — H/E segments 40/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Pesukei D'Zimra](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Pesukei_D%27Zimra) — H/E segments 37/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, The Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_The_Shema) — H/E segments 26/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Amidah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Amidah) — H/E segments 85/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Torah Reading](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Torah_Reading) — H/E segments 28/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, HaGomel](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_HaGomel) — H/E segments 11/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Zeved HaBat](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Zeved_HaBat) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Shabbat Chatan](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Shabbat_Chatan) — H/E segments 20/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Haftarah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Haftarah) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Birkat HaChodesh](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Birkat_HaChodesh) — H/E segments 7/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Announcement of Fast](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Announcement_of_Fast) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Mi Sheberach](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Mi_Sheberach) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Shacharit, Ashrei](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Shacharit%2C_Ashrei) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mussaf, Amida](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mussaf%2C_Amida) — H/E segments 64/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mussaf, Incense Offering](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mussaf%2C_Incense_Offering) — H/E segments 16/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mussaf, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mussaf%2C_Alenu) — H/E segments 4/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Offerings](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Offerings) — H/E segments 13/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Uva LeSion](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Uva_LeSion) — H/E segments 23/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Amida](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Amida) — H/E segments 48/0; unreviewed.
+- [Siddur Edot HaMizrach, Shabbat Mincha, Alenu](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Shabbat_Mincha%2C_Alenu) — H/E segments 3/0; unreviewed.
+- [Siddur Edot HaMizrach, Havdalah, Before Havdalah](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Havdalah%2C_Before_Havdalah) — H/E segments 21/0; unreviewed.
+- [Siddur Edot HaMizrach, Havdalah, Havdala](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Havdalah%2C_Havdala) — H/E segments 21/13; unreviewed.
+- [Siddur Edot HaMizrach, Havdalah, Motzei Shabbat Songs](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Havdalah%2C_Motzei_Shabbat_Songs) — H/E segments 69/0; unreviewed.
+- [Siddur Edot HaMizrach, Havdalah, Veyiten Lecha](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Havdalah%2C_Veyiten_Lecha) — H/E segments 20/0; unreviewed.
+- [Siddur Edot HaMizrach, Havdalah, Fourth Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Havdalah%2C_Fourth_Meal) — H/E segments 6/0; unreviewed.
+- [Siddur Edot HaMizrach, Purim, Shabbat Zachor](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Purim%2C_Shabbat_Zachor) — H/E segments 92/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, First Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_First_Meal) — H/E segments 10/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Second Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Second_Meal) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Third Meal](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Third_Meal) — H/E segments 9/0; unreviewed.
+- [Siddur Edot HaMizrach, Mishna Study for Shabbat, Pirkei Avot](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Mishna_Study_for_Shabbat%2C_Pirkei_Avot) — H/E segments 142/4; unreviewed.
+- [Siddur Sefard, Weekday Maariv, Motzaei Shabbat](https://www.sefaria.org/Siddur_Sefard%2C_Weekday_Maariv%2C_Motzaei_Shabbat) — H/E segments 25/25; unreviewed.
+- [Siddur Sefard, Shabbat Candle Lighting](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Candle_Lighting) — H/E segments 31/4; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Song of Songs](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Song_of_Songs) — H/E segments 16/2; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Mincha](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Mincha) — H/E segments 34/5; unreviewed.
+- [Siddur Sefard, Shabbat Eve Mincha, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Mincha%2C_Amidah) — H/E segments 89/1; unreviewed.
+- [Siddur Sefard, Kabbalat Shabbat](https://www.sefaria.org/Siddur_Sefard%2C_Kabbalat_Shabbat) — H/E segments 43/42; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Shabbat Eve Maariv](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Shabbat_Eve_Maariv) — H/E segments 7/4; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Shema & Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Shema_%26_Blessings) — H/E segments 22/21; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Amidah) — H/E segments 42/40; unreviewed.
+- [Siddur Sefard, Shabbat Eve Maariv, Vayechulu](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Eve_Maariv%2C_Vayechulu) — H/E segments 21/19; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Blessing the Children](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Blessing_the_Children) — H/E segments 9/7; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Shalom Aleichem](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Shalom_Aleichem) — H/E segments 8/6; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Eishet Chayil](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Eishet_Chayil) — H/E segments 22/22; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Atkinu Seudata](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Atkinu_Seudata) — H/E segments 27/0; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Shabbat Eve Kiddush](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Shabbat_Eve_Kiddush) — H/E segments 11/7; unreviewed.
+- [Siddur Sefard, Shabbat Evening Meal, Zemirot](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Evening_Meal%2C_Zemirot) — H/E segments 167/21; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Pesukei D'Zimrah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Pesukei_D%27Zimrah) — H/E segments 108/103; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Shema & Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Shema_%26_Blessings) — H/E segments 34/34; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Amidah) — H/E segments 76/71; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Shabbat Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Shabbat_Torah_Reading) — H/E segments 26/19; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Blessings on Torah Reading](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Blessings_on_Torah_Reading) — H/E segments 7/7; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Oleh](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Oleh) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Mother after Chilbirth](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Mother_after_Chilbirth) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Sick](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Sick) — H/E segments 4/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, BaHaB Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_BaHaB_Blessing) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Thanksgiving Blessing](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Thanksgiving_Blessing) — H/E segments 3/3; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Bar Mitzva](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Bar_Mitzva) — H/E segments 2/2; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Hagbahah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Hagbahah) — H/E segments 2/2; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Haftarah Blessings](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Haftarah_Blessings) — H/E segments 24/20; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Blessing of New Month](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Blessing_of_New_Month) — H/E segments 6/6; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Prayer for Deceased](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Prayer_for_Deceased) — H/E segments 5/5; unreviewed.
+- [Siddur Sefard, Shabbat Morning Services, Av HaRachamim](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Morning_Services%2C_Av_HaRachamim) — H/E segments 15/15; unreviewed.
+- [Siddur Sefard, Shabbat Day Meal, Seder Tikunei Shabbat](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Day_Meal%2C_Seder_Tikunei_Shabbat) — H/E segments 2/0; unreviewed.
+- [Siddur Sefard, Shabbat Day Meal, Shabbat Day Kiddush](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Day_Meal%2C_Shabbat_Day_Kiddush) — H/E segments 30/5; unreviewed.
+- [Siddur Sefard, Shabbat Day Meal, Zemirot](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Day_Meal%2C_Zemirot) — H/E segments 60/35; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Korbanot](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Korbanot) — H/E segments 51/50; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Amidah](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Amidah) — H/E segments 85/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.1](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.1) — H/E segments 19/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.2](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.2) — H/E segments 17/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.3](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.3) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.4](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.4) — H/E segments 30/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.5](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.5) — H/E segments 25/0; unreviewed.
+- [Siddur Sefard, Shabbat Mincha, Pirkei Avot.6](https://www.sefaria.org/Siddur_Sefard%2C_Shabbat_Mincha%2C_Pirkei_Avot.6) — H/E segments 12/0; unreviewed.
+- [Siddur Sefard, Third Meal, Motzaei Shabbat Prayers](https://www.sefaria.org/Siddur_Sefard%2C_Third_Meal%2C_Motzaei_Shabbat_Prayers) — H/E segments 12/0; unreviewed.
+- [Siddur Sefard, Motzaei Shabbat , Havdala](https://www.sefaria.org/Siddur_Sefard%2C_Motzaei_Shabbat_%2C_Havdala) — H/E segments 8/0; unreviewed.
+- [Siddur Sefard, Motzaei Shabbat , Hamavdil](https://www.sefaria.org/Siddur_Sefard%2C_Motzaei_Shabbat_%2C_Hamavdil) — H/E segments 3/0; unreviewed.
+- [Siddur Sefard, Motzaei Shabbat , Melava Malka Zemirot](https://www.sefaria.org/Siddur_Sefard%2C_Motzaei_Shabbat_%2C_Melava_Malka_Zemirot) — H/E segments 85/0; unreviewed.
+- [Siddur Sefard, Sukkot, Sabbath](https://www.sefaria.org/Siddur_Sefard%2C_Sukkot%2C_Sabbath) — H/E segments 12/12; unreviewed.
+- [Siddur Sefard, Yotzerot, Shabbat HaGadol](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Shabbat_HaGadol) — H/E segments 93/0; unreviewed.
+- [Siddur Sefard, Yotzerot, Haggadah for Shabbat Hagadol](https://www.sefaria.org/Siddur_Sefard%2C_Yotzerot%2C_Haggadah_for_Shabbat_Hagadol) — H/E segments 66/0; unreviewed.
+- [Siddur Sefard, Chanukah, Song for Shabbat Chanuka](https://www.sefaria.org/Siddur_Sefard%2C_Chanukah%2C_Song_for_Shabbat_Chanuka) — H/E segments 11/0; unreviewed.
+- [Siddur Sefard, Torah Readings, Torah Reading for Shabbat Mincha & Monday, Thursday](https://www.sefaria.org/Siddur_Sefard%2C_Torah_Readings%2C_Torah_Reading_for_Shabbat_Mincha_%26_Monday%2C_Thursday) — H/E segments 110/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Eiruv Tavshilin](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Eiruv_Tavshilin) — H/E segments 13/15; unreviewed.
+- [Shabbat Siddur Sefard Linear, Eiruvei Chatzeiros](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Eiruvei_Chatzeiros) — H/E segments 13/15; unreviewed.
+- [Shabbat Siddur Sefard Linear, Eiruvei Techumin](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Eiruvei_Techumin) — H/E segments 9/12; unreviewed.
+- [Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting for Shabbos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Candle_Lighting%2C_Candle_Lighting_for_Shabbos) — H/E segments 5/7; unreviewed.
+- [Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting for Yom Tov](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Candle_Lighting%2C_Candle_Lighting_for_Yom_Tov) — H/E segments 9/9; unreviewed.
+- [Shabbat Siddur Sefard Linear, Candle Lighting, Candle Lighting when Shabbos occurs on Yom Tov](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Candle_Lighting%2C_Candle_Lighting_when_Shabbos_occurs_on_Yom_Tov) — H/E segments 10/10; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs, Preface to Shir Hashirim](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs%2C_Preface_to_Shir_Hashirim) — H/E segments 0/3; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.1](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.1) — H/E segments 17/17; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.2](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.2) — H/E segments 17/17; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.3](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.3) — H/E segments 11/11; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.4](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.4) — H/E segments 16/16; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.5](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.5) — H/E segments 16/16; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.6](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.6) — H/E segments 12/12; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.7](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.7) — H/E segments 14/14; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs.8](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs.8) — H/E segments 14/14; unreviewed.
+- [Shabbat Siddur Sefard Linear, Song of Songs, Short Version](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Song_of_Songs%2C_Short_Version) — H/E segments 1/1; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Psalm 107](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Psalm_107) — H/E segments 105/105; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Yedid Nefesh](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Yedid_Nefesh) — H/E segments 28/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Ashrei) — H/E segments 78/79; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Shemoneh Esrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Shemoneh_Esrei) — H/E segments 534/576; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Aleinu) — H/E segments 73/73; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Erev Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Erev_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 84/87; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 95](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_95) — H/E segments 30/30; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 96](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_96) — H/E segments 38/38; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 97](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_97) — H/E segments 34/34; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 98](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_98) — H/E segments 30/30; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 99](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_99) — H/E segments 34/34; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 29](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_29) — H/E segments 52/52; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Lecha Dodi](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Lecha_Dodi) — H/E segments 70/85; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 92](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_92) — H/E segments 38/38; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Psalm 93](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Psalm_93) — H/E segments 17/17; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kabbalas Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kabbalas_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 34/33; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Borechu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Borechu) — H/E segments 265/280; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Amidah for Shabbos Eve](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Amidah_for_Shabbos_Eve) — H/E segments 325/350; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Vayechulu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Vayechulu) — H/E segments 19/21; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Magein Avos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Magein_Avos) — H/E segments 116/121; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 31/31; unreviewed.
+- [Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Blessing the Children](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Order_of_Shabbos_in_the_Home%2C_Blessing_the_Children) — H/E segments 20/22; unreviewed.
+- [Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Sholom Aleichem](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Order_of_Shabbos_in_the_Home%2C_Sholom_Aleichem) — H/E segments 22/23; unreviewed.
+- [Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Eishes Chayil](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Order_of_Shabbos_in_the_Home%2C_Eishes_Chayil) — H/E segments 69/51; unreviewed.
+- [Shabbat Siddur Sefard Linear, Order of Shabbos in the Home, Kiddush for Shabbos Eve](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Order_of_Shabbos_in_the_Home%2C_Kiddush_for_Shabbos_Eve) — H/E segments 43/53; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Kol Mekadesh](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Eve%2C_Kol_Mekadesh) — H/E segments 65/65; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Menucha Vesimcha](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Eve%2C_Menucha_Vesimcha) — H/E segments 42/35; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Mah Yedidut](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Eve%2C_Mah_Yedidut) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Yah Ribbon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Eve%2C_Yah_Ribbon) — H/E segments 37/42; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Eve, Tzur Mishelo](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Eve%2C_Tzur_Mishelo) — H/E segments 59/64; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamazon) — H/E segments 401/432; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Concluding Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Concluding_Blessings) — H/E segments 73/88; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Berachos Said Before Eating or Drinking](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Berachos_Said_Before_Eating_or_Drinking) — H/E segments 19/26; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamazon for Sheva Berachos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamazon_for_Sheva_Berachos) — H/E segments 23/30; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, The Seven Marriage Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_The_Seven_Marriage_Blessings) — H/E segments 45/45; unreviewed.
+- [Shabbat Siddur Sefard Linear, Birchas Hamazon, Birchas Hamozon for Bris Milah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Birchas_Hamazon%2C_Birchas_Hamozon_for_Bris_Milah) — H/E segments 101/123; unreviewed.
+- [Shabbat Siddur Sefard Linear, Berachos Said Upon Witnessing Phenomenal Sights](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Berachos_Said_Upon_Witnessing_Phenomenal_Sights) — H/E segments 23/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Various Other Berachos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Various_Other_Berachos) — H/E segments 18/24; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Upon Arising in the Morning](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Upon_Arising_in_the_Morning) — H/E segments 26/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Putting On the Tallis](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Putting_On_the_Tallis) — H/E segments 25/26; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ma Tovu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ma_Tovu) — H/E segments 18/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Adon Olam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Adon_Olam) — H/E segments 20/21; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yigdal](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yigdal) — H/E segments 36/50; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings Upon Arising](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_Upon_Arising) — H/E segments 35/35; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Blessings of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Blessings_of_the_Torah) — H/E segments 60/60; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Blessings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Blessings) — H/E segments 97/99; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Akeidah (The Binding of Isaac)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Akeidah_%28The_Binding_of_Isaac%29) — H/E segments 109/110; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Morning Supplications](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Morning_Supplications) — H/E segments 137/138; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 46/51; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Korban Tamid (Daily Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/68; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ketores (Incense Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ketores_%28Incense_Offering%29) — H/E segments 476/486; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Kaddish d'Rabanan](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Kaddish_d%27Rabanan) — H/E segments 44/47; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Pesukei Dezimrah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Pesukei_Dezimrah) — H/E segments 0/3; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Hodu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Hodu) — H/E segments 134/136; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Mizmor Shir](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Mizmor_Shir) — H/E segments 585/594; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Baruch She'amar](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Baruch_She%27amar) — H/E segments 36/36; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 92](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_92) — H/E segments 38/38; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Psalm 93](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Psalm_93) — H/E segments 17/17; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yehi Chevod](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yehi_Chevod) — H/E segments 41/42; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Ashrei) — H/E segments 275/285; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Shiras Hayam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Shiras_Hayam) — H/E segments 95/97; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Nishmas](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Nishmas) — H/E segments 149/152; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Yishtabach](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Yishtabach) — H/E segments 128/142; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Eil Adon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Eil_Adon) — H/E segments 231/234; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Recitation of Shema](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Recitation_of_Shema) — H/E segments 212/220; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Amidah for Shabbos Morning](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Amidah_for_Shabbos_Morning) — H/E segments 509/543; unreviewed.
+- [Shabbat Siddur Sefard Linear, The Morning Prayers, Song of the Day](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_The_Morning_Prayers%2C_Song_of_the_Day) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Va'yehi Binsoa](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Va%27yehi_Binsoa) — H/E segments 83/89; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Berich Shemei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Berich_Shemei) — H/E segments 101/111; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of the Oleh to Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_on_Behalf_of_the_Oleh_to_Torah) — H/E segments 1/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer on Behalf of a Sick Person](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_on_Behalf_of_a_Sick_Person) — H/E segments 8/2; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Birchas Hagomeil](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Birchas_Hagomeil) — H/E segments 24/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Berachos for the Haftarah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Berachos_for_the_Haftarah) — H/E segments 83/93; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Yekum Purkon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Yekum_Purkon) — H/E segments 77/79; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Prayer for the Government](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Prayer_for_the_Government) — H/E segments 26/27; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Blessings of the New Month](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Blessings_of_the_New_Month) — H/E segments 47/50; unreviewed.
+- [Shabbat Siddur Sefard Linear, Reading of the Torah, Av Horachamim](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Reading_of_the_Torah%2C_Av_Horachamim) — H/E segments 52/54; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Ashrei) — H/E segments 162/169; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Amidah) — H/E segments 526/559; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Ein Keiloheinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Ein_Keiloheinu) — H/E segments 132/134; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Kaddish d'Rabanan](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Kaddish_d%27Rabanan) — H/E segments 43/43; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Aleinu) — H/E segments 64/64; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Mourner%27s_Kaddish) — H/E segments 39/39; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Hymn of Glory](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Hymn_of_Glory) — H/E segments 32/2; unreviewed.
+- [Shabbat Siddur Sefard Linear, Musaf Service, Adon Olam](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Musaf_Service%2C_Adon_Olam) — H/E segments 20/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kiddush for Shabbos day](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kiddush_for_Shabbos_day) — H/E segments 67/38; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch Hashem Yom Yom](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Baruch_Hashem_Yom_Yom) — H/E segments 125/125; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Baruch El Elyon](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Baruch_El_Elyon) — H/E segments 79/86; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Yom Zeh Mechubod](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Yom_Zeh_Mechubod) — H/E segments 55/41; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Dror Yikra](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Dror_Yikra) — H/E segments 32/32; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Shabbos Morning, Shabbos Hayom](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Shabbos_Morning%2C_Shabbos_Hayom) — H/E segments 30/35; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korbanos (Sacrificial Offerings)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Korbanos_%28Sacrificial_Offerings%29) — H/E segments 17/20; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Korban Tamid (Daily Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Korban_Tamid_%28Daily_Offering%29) — H/E segments 63/68; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ketores (Incense Offering)](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Ketores_%28Incense_Offering%29) — H/E segments 158/163; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Ashrei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Ashrei) — H/E segments 57/57; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Uvah L'tzion](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Uvah_L%27tzion) — H/E segments 128/130; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Reading of the Torah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Reading_of_the_Torah) — H/E segments 14/15; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Berich Shemei](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Berich_Shemei) — H/E segments 246/265; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Amidah) — H/E segments 363/394; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Psalms recited between Sukkos and Pesach](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Psalms_recited_between_Sukkos_and_Pesach) — H/E segments 404/421; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos, Preface](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Pirkei_Avos%2C_Preface) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Mincha Service for Shabbos and Yom Tov, Pirkei Avos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Mincha_Service_for_Shabbos_and_Yom_Tov%2C_Pirkei_Avos) — H/E segments 0/0; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Seudah Shelishis](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Seudah_Shelishis) — H/E segments 73/52; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Borechu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Borechu) — H/E segments 327/341; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Amidah) — H/E segments 655/690; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Aleinu](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Aleinu) — H/E segments 74/74; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Mourner's Kaddish](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Mourner%27s_Kaddish) — H/E segments 29/29; unreviewed.
+- [Shabbat Siddur Sefard Linear, Maariv Service for the Conclusion of Shabbos, Veyiten Lecha](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Maariv_Service_for_the_Conclusion_of_Shabbos%2C_Veyiten_Lecha) — H/E segments 290/297; unreviewed.
+- [Shabbat Siddur Sefard Linear, Kiddush Levanah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Kiddush_Levanah) — H/E segments 146/157; unreviewed.
+- [Shabbat Siddur Sefard Linear, Havdalah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Havdalah) — H/E segments 40/45; unreviewed.
+- [Shabbat Siddur Sefard Linear, Songs for Motzoei Shabbos](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Songs_for_Motzoei_Shabbos) — H/E segments 72/46; unreviewed.
+- [Shabbat Siddur Sefard Linear, Hallel](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Hallel) — H/E segments 293/306; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Blessings on the Lulav](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Blessings_on_the_Lulav) — H/E segments 10/11; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Ushpizin](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Ushpizin) — H/E segments 157/158; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Kiddush for Yom Tov Evenings](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Kiddush_for_Yom_Tov_Evenings) — H/E segments 89/103; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Amidah for Yom Tov Maariv, Shacharis and Minchah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Amidah_for_Yom_Tov_Maariv%2C_Shacharis_and_Minchah) — H/E segments 379/417; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Kah Keili](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Kah_Keili) — H/E segments 1/1; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Yizkor](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Yizkor) — H/E segments 107/119; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Amidah](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Amidah) — H/E segments 113/127; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Kedusha for Chol Hamoed](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Kedusha_for_Chol_Hamoed) — H/E segments 29/34; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Divine Sanctification](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Divine_Sanctification) — H/E segments 580/608; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Birkas Kohanim](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Birkas_Kohanim) — H/E segments 162/181; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Dew](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Dew) — H/E segments 73/75; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayers for Yom Tov, Musaf for Yom Tov, Prayer for Rain](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayers_for_Yom_Tov%2C_Musaf_for_Yom_Tov%2C_Prayer_for_Rain) — H/E segments 102/104; unreviewed.
+- [Shabbat Siddur Sefard Linear, Service at a Circumcision](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Service_at_a_Circumcision) — H/E segments 142/155; unreviewed.
+- [Shabbat Siddur Sefard Linear, Counting the Omer](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Counting_the_Omer) — H/E segments 140/93; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayer Before Retiring at Night](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayer_Before_Retiring_at_Night) — H/E segments 286/291; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Eiruvin](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Eiruvin) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Candle Lighting](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Candle_Lighting) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Kabbalat Shabbat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Ma'ariv for Shabbat and Yom Tov](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Ma%27ariv_for_Shabbat_and_Yom_Tov) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Evening](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Kiddush_and_Zemirot_for_Shabbat_Evening) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Shaharit for Shabbat and Yom Tov](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Shaharit_for_Shabbat_and_Yom_Tov) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Pesukei DeZimra](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Pesukei_DeZimra) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Nishmat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Nishmat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessings of the Shema](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Blessings_of_the_Shema) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, The Amida for Shabbat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_The_Amida_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Reading of the Torah](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Reading_of_the_Torah) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the Welfare of the Government](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_the_Welfare_of_the_Government) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for the State of Israel](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_the_State_of_Israel) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Prayer for Israel's Defense Forces](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Prayer_for_Israel%27s_Defense_Forces) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessing the New Month](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Blessing_the_New_Month) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Musaf for Shabbat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Musaf_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Kiddush and Zemirot for Shabbat Morning](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Kiddush_and_Zemirot_for_Shabbat_Morning) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Minha for Shabbat and Yom Tov](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Minha_for_Shabbat_and_Yom_Tov) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Barekhi Nafshi](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Barekhi_Nafshi) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Ethics of the Fathers](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Ethics_of_the_Fathers) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Se'uda Shelishit for Shabbat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Se%27uda_Shelishit_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Ma'ariv for Motza'ei Shabbat](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Ma%27ariv_for_Motza%27ei_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Blessing of the New Moon](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Blessing_of_the_New_Moon) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Shabbat, Havdala at Home](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Shabbat%2C_Havdala_at_Home) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Festivals, Hoshanot for Shabbat Hol HaMo'ed](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Festivals%2C_Hoshanot_for_Shabbat_Hol_HaMo%27ed) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Weekly Portions for Mondays, Thursdays and Shabbat Minha](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Weekly_Portions_for_Mondays%2C_Thursdays_and_Shabbat_Minha) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Torah Readings, Shabbat Hol HaMo'ed](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Torah_Readings%2C_Shabbat_Hol_HaMo%27ed) — H/E segments 0/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Gates to Prayer, Shabbat Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Gates_to_Prayer%2C_Shabbat_Prayer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Maariv, Motzei Shabbos Prayers](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Maariv%2C_Motzei_Shabbos_Prayers) — H/E segments 162/163; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 3/4; unreviewed.
+- [Machzor Rosh Hashanah Ashkenaz Linear, Maariv, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Rosh_Hashanah_Ashkenaz_Linear%2C_Maariv%2C_Kabbalas_Shabbos) — H/E segments 83/84; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Edot HaMizrach, Havdalah](https://www.sefaria.org/Machzor_Rosh_Hashanah_Edot_HaMizrach%2C_Havdalah) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Maariv, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Maariv%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Rosh Hashanah Sefard, Mincha, Reading of the Torah for Shabbat](https://www.sefaria.org/Machzor_Rosh_Hashanah_Sefard%2C_Mincha%2C_Reading_of_the_Torah_for_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Ashkenaz Linear, Maariv Service for Yom Kippur Eve, Kabbalas Shabbos](https://www.sefaria.org/Machzor_Yom_Kippur_Ashkenaz_Linear%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalas_Shabbos) — H/E segments 85/86; unreviewed.
+- [Machzor Yom Kippur Edot HaMizrach, Arvit, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Edot_HaMizrach%2C_Arvit%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Maariv Service for Yom Kippur Eve, Kabbalat Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Maariv_Service_for_Yom_Kippur_Eve%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, On Motzei Shabbat](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_On_Motzei_Shabbat) — H/E segments 0/0; unreviewed.
+- [Machzor Yom Kippur Sefard, Havdalah](https://www.sefaria.org/Machzor_Yom_Kippur_Sefard%2C_Havdalah) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Kabbalat Shabbat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Rosh HaShana Mahzor; Ashkenaz, Shaharit, Shir HaYihud, Shabbat](https://www.sefaria.org/The_Koren_Rosh_HaShana_Mahzor%3B_Ashkenaz%2C_Shaharit%2C_Shir_HaYihud%2C_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Yom Kippur Eve, Kabbalat Shabbat](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Yom_Kippur_Eve%2C_Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+- [The Koren Yom Kippur Mahzor; Ashkenaz, Havdala](https://www.sefaria.org/The_Koren_Yom_Kippur_Mahzor%3B_Ashkenaz%2C_Havdala) — H/E segments 0/0; unreviewed.
+- [Lekha Dodi.1](https://www.sefaria.org/Lekha_Dodi.1) — H/E segments 2/2; unreviewed.
+- [Lekha Dodi.2](https://www.sefaria.org/Lekha_Dodi.2) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.3](https://www.sefaria.org/Lekha_Dodi.3) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.4](https://www.sefaria.org/Lekha_Dodi.4) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.5](https://www.sefaria.org/Lekha_Dodi.5) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.6](https://www.sefaria.org/Lekha_Dodi.6) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.7](https://www.sefaria.org/Lekha_Dodi.7) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.8](https://www.sefaria.org/Lekha_Dodi.8) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.9](https://www.sefaria.org/Lekha_Dodi.9) — H/E segments 4/4; unreviewed.
+- [Lekha Dodi.10](https://www.sefaria.org/Lekha_Dodi.10) — H/E segments 4/4; unreviewed.
+- [Shalom Aleichem.1](https://www.sefaria.org/Shalom_Aleichem.1) — H/E segments 4/4; unreviewed.
+- [Kabbalat Shabbat](https://www.sefaria.org/Kabbalat_Shabbat) — H/E segments 0/0; unreviewed.
+
+## sleep (11 source records)
+
+- [Psalm 4: Distress, trust, and resting in safety](https://www.sefaria.org/Psalms.4) — complete source chapter; pronunciation draft.
+- [Psalm 63: Longing for God and nighttime remembrance](https://www.sefaria.org/Psalms.63) — complete source chapter; pronunciation draft.
+- [Psalm 77: Sleepless distress and recalling deliverance](https://www.sefaria.org/Psalms.77) — complete source chapter; pronunciation draft.
+- [Psalm 127: Building, labor, rest, and children](https://www.sefaria.org/Psalms.127) — complete source chapter; pronunciation draft.
+- [Psalm 134: Blessing in the night](https://www.sefaria.org/Psalms.134) — complete source chapter; pronunciation draft.
+- [Siddur Edot HaMizrach, Bedtime Shema](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Bedtime_Shema) — H/E segments 30/18; unreviewed.
+- [Siddur Sefard, Bedtime Shema](https://www.sefaria.org/Siddur_Sefard%2C_Bedtime_Shema) — H/E segments 36/36; unreviewed.
+- [Shabbat Siddur Sefard Linear, Prayer Before Retiring at Night](https://www.sefaria.org/Shabbat_Siddur_Sefard_Linear%2C_Prayer_Before_Retiring_at_Night) — H/E segments 286/291; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Weekdays, Shema before Sleep at Night](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Weekdays%2C_Shema_before_Sleep_at_Night) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Bedtime Shema](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Bedtime_Shema) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, Prayer Before Retiring at Night](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_Prayer_Before_Retiring_at_Night) — H/E segments 283/290; unreviewed.
+
+## travel (9 source records)
+
+- [Psalm 107: Thanksgiving after distress and rescue](https://www.sefaria.org/Psalms.107) — complete source chapter; pronunciation draft.
+- [Psalm 121: Help and guarding on the way](https://www.sefaria.org/Psalms.121) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Berachot, Tefillat HaDerech](https://www.sefaria.org/Siddur_Ashkenaz%2C_Berachot%2C_Tefillat_HaDerech) — H/E segments 6/1; unreviewed.
+- [Siddur Edot HaMizrach, Assorted Blessings and Prayers, Traveler's Prayer](https://www.sefaria.org/Siddur_Edot_HaMizrach%2C_Assorted_Blessings_and_Prayers%2C_Traveler%27s_Prayer) — H/E segments 9/1; unreviewed.
+- [Siddur Sefard, Blessings, Traveler's Prayer](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Traveler%27s_Prayer) — H/E segments 33/0; unreviewed.
+- [Siddur Sefard, Blessings, Air Traveler's Prayer](https://www.sefaria.org/Siddur_Sefard%2C_Blessings%2C_Air_Traveler%27s_Prayer) — H/E segments 4/0; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Giving Thanks, The Traveler's Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Giving_Thanks%2C_The_Traveler%27s_Prayer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Chabad, Blessings, The Travelers' Prayer](https://www.sefaria.org/Weekday_Siddur_Chabad%2C_Blessings%2C_The_Travelers%27_Prayer) — H/E segments 0/0; unreviewed.
+- [Weekday Siddur Sefard Linear, The Travelers' Prayer](https://www.sefaria.org/Weekday_Siddur_Sefard_Linear%2C_The_Travelers%27_Prayer) — H/E segments 36/40; unreviewed.
+
+## wisdom (20 source records)
+
+- [Psalm 1: Two ways of living; delight in Torah](https://www.sefaria.org/Psalms.1) — complete source chapter; pronunciation draft.
+- [Psalm 5: A morning appeal for guidance and justice](https://www.sefaria.org/Psalms.5) — complete source chapter; pronunciation draft.
+- [Psalm 15: Integrity and worthy conduct](https://www.sefaria.org/Psalms.15) — complete source chapter; pronunciation draft.
+- [Psalm 25: Guidance, forgiveness, and protection](https://www.sefaria.org/Psalms.25) — complete source chapter; pronunciation draft.
+- [Psalm 26: Integrity and love of God's house](https://www.sefaria.org/Psalms.26) — complete source chapter; pronunciation draft.
+- [Psalm 32: Confession, forgiveness, and instruction](https://www.sefaria.org/Psalms.32) — complete source chapter; pronunciation draft.
+- [Psalm 37: Patience, upright conduct, and provision](https://www.sefaria.org/Psalms.37) — complete source chapter; pronunciation draft.
+- [Psalm 43: Light, truth, and renewed hope](https://www.sefaria.org/Psalms.43) — complete source chapter; pronunciation draft.
+- [Psalm 49: Wealth, mortality, and perspective](https://www.sefaria.org/Psalms.49) — complete source chapter; pronunciation draft.
+- [Psalm 73: Envy, prosperity, and regained perspective](https://www.sefaria.org/Psalms.73) — complete source chapter; pronunciation draft.
+- [Psalm 86: Mercy, guidance, and help in distress](https://www.sefaria.org/Psalms.86) — complete source chapter; pronunciation draft.
+- [Psalm 90: Mortality, wisdom, and the work of our hands](https://www.sefaria.org/Psalms.90) — complete source chapter; pronunciation draft.
+- [Psalm 101: Integrity in leadership and one's household](https://www.sefaria.org/Psalms.101) — complete source chapter; pronunciation draft.
+- [Psalm 111: Praise for divine works and wisdom](https://www.sefaria.org/Psalms.111) — complete source chapter; pronunciation draft.
+- [Psalm 119: Torah, longing, affliction, and guidance](https://www.sefaria.org/Psalms.119) — complete source chapter; pronunciation draft.
+- [Psalm 143: Mercy, direction, and renewal](https://www.sefaria.org/Psalms.143) — complete source chapter; pronunciation draft.
+- [Siddur Ashkenaz, Weekday, Shacharit, Amidah, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Shacharit%2C_Amidah%2C_Knowledge) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Minchah, Amida, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Minchah%2C_Amida%2C_Knowledge) — H/E segments 1/1; unreviewed.
+- [Siddur Ashkenaz, Weekday, Maariv, Amidah, Knowledge](https://www.sefaria.org/Siddur_Ashkenaz%2C_Weekday%2C_Maariv%2C_Amidah%2C_Knowledge) — H/E segments 3/3; unreviewed.
+- [The Koren Shalem Siddur; Ashkenaz, Understanding Jewish Prayer](https://www.sefaria.org/The_Koren_Shalem_Siddur%3B_Ashkenaz%2C_Understanding_Jewish_Prayer) — H/E segments 0/0; unreviewed.
