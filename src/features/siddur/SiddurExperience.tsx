@@ -917,7 +917,6 @@ export function SiddurExperience({
                 justifyContent: "center",
                 zIndex: 2,
                 borderRadius: 22,
-                backgroundColor: colors.parchment,
               }}
             >
               {language === "he" ? (
@@ -941,7 +940,6 @@ export function SiddurExperience({
                 justifyContent: "center",
                 zIndex: 2,
                 borderRadius: 22,
-                backgroundColor: colors.parchment,
               }}
             >
               {language === "he" ? (
