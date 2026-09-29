@@ -1,3 +1,5 @@
+import { ChoiceRow } from "@/components/ui/choice-row";
+import { readerLanguages, readerLanguageLabels } from "./model";
 import { useThemeColors } from "@/design/appearance";
 import { X } from "@/components/ui/icons";
 import { Text } from "@/components/ui/text";
@@ -164,44 +166,17 @@ export function ReadingSettingsSheet({
           >
             <View style={{ gap: 10 }}>
               <Text style={{ ...sectionLabel, color: colors.inkMuted }}>
-                LANGUAGE
+                Reading view
               </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  backgroundColor: colors.mineral,
-                  borderRadius: 17,
-                  padding: 4,
-                  gap: 4,
-                }}
-              >
-                {(["en", "he"] as const).map((item) => (
-                  <Pressable
+              <View style={{ gap: 8 }}>
+                {readerLanguages.map((item) => (
+                  <ChoiceRow
                     key={item}
-                    accessibilityRole="button"
-                    accessibilityLabel={item === "en" ? "English" : "Hebrew"}
-                    accessibilityState={{ selected: language === item }}
+                    title={readerLanguageLabels[item]}
+                    detail={item === "en" ? "Direct English translation" : item === "he" ? "Original Hebrew text" : "Hebrew pronunciation in Latin letters"}
+                    selected={language === item}
                     onPress={() => onLanguageChange(item)}
-                    style={{
-                      flex: 1,
-                      minHeight: 42,
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: 13,
-                      backgroundColor:
-                        language === item ? colors.blueSoft : "transparent",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color:
-                          language === item ? colors.blue : colors.inkMuted,
-                        fontWeight: language === item ? "700" : "500",
-                      }}
-                    >
-                      {item === "en" ? "English" : "עברית"}
-                    </Text>
-                  </Pressable>
+                  />
                 ))}
               </View>
             </View>

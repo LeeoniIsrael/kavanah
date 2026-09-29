@@ -1,3 +1,4 @@
+import { readerLanguages, readerLanguageLabels, segmentText } from "./model";
 /* eslint-disable react-hooks/exhaustive-deps -- Section fetches are keyed by canonical ref; language and scale reuse the same cached segments. */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -78,7 +79,7 @@ const pageGroups = (
     size = 0;
   const limit = Math.round(700 / scale);
   for (const s of segments) {
-    const length = ((lang === "he" ? s.he || s.en : s.en || s.he) ?? "").length;
+    const length = (segmentText(s, lang) ?? "").length;
     if (current.length && size + length > limit) {
       pages.push(current);
       current = [];
@@ -482,7 +483,9 @@ export function SiddurExperience({
       id: `${now}-${Math.random().toString(36).slice(2)}`,
       siddurId: bookId,
       versionKey:
-        (language === "he"
+        (language === "transliteration"
+          ? "connected-words-v1"
+          : language === "he"
           ? book.versions.he?.versionTitle
           : book.versions.en?.versionTitle) ?? "",
       language,
@@ -812,11 +815,11 @@ export function SiddurExperience({
                 marginBottom: 10,
               }}
             >
-              {(["en", "he"] as const).map((l) => (
+              {readerLanguages.map((l) => (
                 <Button
                   key={l}
                   accessibilityLabel={
-                    l === "en" ? "Read in English" : "Read in Hebrew"
+                    `Read ${readerLanguageLabels[l]}`
                   }
                   accessibilityState={{ selected: language === l }}
                   variant="ghost"
@@ -824,12 +827,13 @@ export function SiddurExperience({
                   style={{
                     borderRadius: 13,
                     minWidth: 83,
+                    flexShrink: 1,
                     backgroundColor:
                       language === l ? colors.vellum : "transparent",
                   }}
                 >
                   <Text style={{ textAlign: "center", color: colors.ink }}>
-                    {l === "en" ? "English" : "עברית"}
+                    {readerLanguageLabels[l]}
                   </Text>
                 </Button>
               ))}

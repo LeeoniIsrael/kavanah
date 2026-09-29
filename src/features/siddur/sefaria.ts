@@ -1,7 +1,7 @@
 import { candidateBooks } from "./registry";
 import { corePrayers } from "@/data/corePrayers";
 import type {
-  ReaderLanguage,
+  SourceLanguage,
   SiddurDefinition,
   SiddurNode,
   SiddurProvider,
@@ -70,7 +70,7 @@ export function mapSegments(
 export class SefariaSiddurProvider implements SiddurProvider {
   async getVersions(id: string): Promise<SiddurVersion[]> {
     const all = corePrayers.filter(p => p.sourceMetadata?.work === id).flatMap(p => [p.sourceMetadata!.sourceVersion, ...p.sourceMetadata!.translationVersions]);
-    return [...new Map(all.filter(v => v && (v.language === "he" || v.language === "en")).map(v => [`${v!.language}:${v!.versionTitle}`, {...v!, language: v!.language as ReaderLanguage}])).values()];
+    return [...new Map(all.filter(v => v && (v.language === "he" || v.language === "en")).map(v => [`${v!.language}:${v!.versionTitle}`, {...v!, language: v!.language as SourceLanguage}])).values()];
   }
   async getCatalog(): Promise<SiddurDefinition[]> {
     return Promise.all(candidateBooks.filter(book => corePrayers.some(p => p.sourceMetadata?.work === book.id)).map(async book => {

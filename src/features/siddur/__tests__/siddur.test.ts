@@ -138,3 +138,32 @@ test("published siddur provider uses the same offline research text and rejects 
   expect(spy).not.toHaveBeenCalled();
   spy.mockRestore();
 });
+
+test("reader offers exactly three independent text views", async () => {
+  const { readerLanguages } = await import("../model");
+  const { createReaderHtml } = await import("../readerHtml");
+  expect(readerLanguages).toEqual(["en", "transliteration", "he"]);
+  const segments = [{id: "a", ref: "a", sectionId: "s", order: 0, he: "מודה אני", en: "I give thanks", transliteration: "Modeh ani"}];
+  for (const mode of readerLanguages) {
+    const html = createReaderHtml(segments, mode, 1, [], false);
+    for (const [field, text] of [["he", "מודה אני"], ["en", "I give thanks"], ["transliteration", "Modeh ani"]]) {
+      expect(html.includes(text!)).toBe(mode === field);
+    }
+    expect(html).toContain('data-segment-id="a"');
+  }
+  expect(pageDirection("transliteration", -50)).toBe(1);
+});
+
+test("transliteration keeps instructions in English and never substitutes other prayer text", async () => {
+  const { createReaderHtml } = await import("../readerHtml");
+  const html = createReaderHtml([
+    {id: "a", ref: "a", sectionId: "s", order: 0, kind: "instruction", en: "Stand here", transliteration: "Instruction sounds"},
+    {id: "b", ref: "b", sectionId: "s", order: 1, he: "שלום", en: "Peace"},
+  ], "transliteration", 1, [], true);
+  expect(html).toContain("Stand here");
+  expect(html).toContain("not recited");
+  expect(html).toContain("Transliteration is unavailable");
+  expect(html).not.toContain("Instruction sounds");
+  expect(html).not.toContain("Peace");
+  expect(html).not.toContain("שלום");
+});

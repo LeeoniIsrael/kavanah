@@ -1,4 +1,16 @@
-export type ReaderLanguage = "he" | "en";
+export type SourceLanguage = "he" | "en";
+export type ReaderLanguage = SourceLanguage | "transliteration";
+export const readerLanguages = ["en", "transliteration", "he"] as const;
+export const readerLanguageLabels: Record<ReaderLanguage, string> = {
+  en: "Translation",
+  transliteration: "Transliteration",
+  he: "Hebrew",
+};
+export function segmentText(segment: SiddurSegment, language: ReaderLanguage) {
+  return language === "transliteration"
+    ? (segment.kind === "instruction" ? segment.en : segment.transliteration)
+    : segment[language];
+}
 export type Nusach =
   | "ASHKENAZ"
   | "SEFARD"
@@ -22,7 +34,7 @@ export type Scope = "COMPLETE" | "WEEKDAY" | "SHABBAT_FESTIVAL" | "MACHZOR";
 export type Presentation = "STANDARD" | "INTERLINEAR" | "TRANSLITERATED";
 export type PrayerProfile = "general" | "masculine" | "feminine";
 export type SiddurVersion = {
-  language: ReaderLanguage;
+  language: SourceLanguage;
   versionTitle: string;
   license: string;
   versionSource?: string | undefined;
@@ -37,8 +49,8 @@ export type SiddurDefinition = {
   presentation: Presentation;
   occasion?: string | undefined;
   denomination?: Denomination | undefined;
-  availability: Record<ReaderLanguage, boolean>;
-  versions: Partial<Record<ReaderLanguage, SiddurVersion | undefined>>;
+  availability: Record<SourceLanguage, boolean>;
+  versions: Partial<Record<SourceLanguage, SiddurVersion | undefined>>;
   fallbackEnglish?: SiddurVersion | undefined;
 };
 export type SiddurNode = {

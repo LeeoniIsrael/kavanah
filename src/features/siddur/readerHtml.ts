@@ -1,3 +1,4 @@
+import { readerLanguageLabels, segmentText } from "./model";
 import type { ReaderLanguage, SiddurSegment, TextAnnotation } from "./model";
 const escape = (s: string) =>
   s
@@ -16,18 +17,17 @@ export function createReaderHtml(
   let previousMissing = false;
   const body = segments
     .map((s) => {
-      const value = language === "he" ? s.he : s.en;
+      const value = segmentText(s, language);
       if (!value) {
         if (previousMissing) return "";
         previousMissing = true;
-        const other = language === "he" ? s.en : s.he;
-        return `<p class="missing" dir="ltr">${other ? (language === "he" ? "Hebrew text is unavailable in this captured edition. English remains available." : "English translation is unavailable in the research catalog. Hebrew remains available.") : "Text is unavailable in the research catalog."}</p>`;
+        return `<p class="missing" dir="ltr">${readerLanguageLabels[language]} is unavailable for this passage.</p>`;
       }
       previousMissing = false;
       const aid = s.kind === "instruction"
         ? '<p class="missing" dir="ltr">Prayer-book instruction · not recited</p>'
-        : s.transliteration ? `<p class="missing" dir="ltr">Pronunciation · draft</p><p class="pronunciation" dir="ltr">${escape(s.transliteration)}</p>` : "";
-      return `${aid}<p data-segment-id="${escape(s.id)}" dir="${language === "he" ? "rtl" : "ltr"}">${escape(value)}</p>`;
+        : "";
+      return `${aid}<p data-segment-id="${escape(s.id)}" class="${language === "transliteration" && s.kind !== "instruction" ? "pronunciation" : "passage"}" dir="${language === "he" ? "rtl" : "ltr"}">${escape(value)}</p>`;
     })
     .join("");
   const payload = JSON.stringify(
@@ -36,7 +36,7 @@ export function createReaderHtml(
   const css = `:root{color-scheme:${dark ? "dark" : "light"}}html,body{margin:0;padding:0;background:${dark ? "#17212D" : "#FFFFFF"};color:${dark ? "#E9EEF4" : "#152137"}}body{box-sizing:border-box;padding:29px 28px 48px;font-family:${language === "he" ? "'NotoSansHebrew_400Regular',-apple-system,'Arial Hebrew',Arial,sans-serif" : "'Manrope_400Regular',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"};font-size:${Math.round((language === "he" ? 22 : 19) * scale)}px;line-height:${language === "he" ? 1.82 : 1.72};font-weight:400;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-webkit-user-select:text;user-select:text}p{margin:0 0 1.15em;unicode-bidi:plaintext;overflow-wrap:break-word}p:last-child{margin-bottom:0}.pronunciation{white-space:pre-line;font-family:-apple-system,Arial,sans-serif;font-size:1.15em;line-height:1.65;text-align:left}.missing{font-family:-apple-system,Arial,sans-serif;font-size:14px;line-height:1.5;color:${dark ? "#A7B4C3" : "#647184"};user-select:none;-webkit-user-select:none}.highlight{background:rgba(174,190,219,.42);border-radius:3px}::highlight(saved){background:rgba(174,190,219,.42)}::selection{background:rgba(110,151,216,.35)}#scroll-track{position:fixed;${language === "he" ? "left" : "right"}:7px;top:12%;height:76%;width:4px;border-radius:4px;background:${dark ? "#354658" : "#E4E8ED"};opacity:.72;pointer-events:none;z-index:10}#scroll-fill{width:100%;height:0;border-radius:4px;background:linear-gradient(to bottom,${dark ? "#8DB6E8,#E9EEF4" : "#B7CCE8,#0B1A3B"})}#scroll-track[hidden]{display:none}`;
   const credits = [...new Set(segments.flatMap(s => [s.heVersion, s.enVersion]).filter((v): v is string => Boolean(v)))].join("; ");
   const sourceNote = `<p class="missing" dir="ltr">Captured source text. Pronunciation and text review pending. ${escape(credits)}</p>`;
-  return `<!doctype html><html lang="${language}" dir="${language === "he" ? "rtl" : "ltr"}"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>${css}</style></head><body>${sourceNote}${body}<div id="scroll-track" aria-hidden="true"><div id="scroll-fill"></div></div><script>(function(){
+  return `<!doctype html><html lang="${language === "transliteration" ? "he-Latn" : language}" dir="${language === "he" ? "rtl" : "ltr"}"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>${css}</style></head><body>${sourceNote}${body}<div id="scroll-track" aria-hidden="true"><div id="scroll-fill"></div></div><script>(function(){
  const send=(v)=>window.ReactNativeWebView.postMessage(JSON.stringify(v));
  const anns=${payload};
  function locate(node,offset){let p=node.nodeType===1?node:node.parentElement;while(p&&!p.dataset?.segmentId)p=p.parentElement;if(!p)return null;const walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT);let count=0,n;while(n=walker.nextNode()){if(n===node)return{id:p.dataset.segmentId,offset:count+offset};count+=n.textContent.length}return{id:p.dataset.segmentId,offset:count}}
