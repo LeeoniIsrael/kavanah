@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
@@ -94,9 +95,7 @@ export async function loadCircleAccount(session: Session | null) {
       useCircleAccount.setState({
         ready: true,
         error:
-          error instanceof Error
-            ? error.message
-            : "Could not load your account.",
+          userFacingError(error, "Could not load your account."),
       });
   }
 }

@@ -1,3 +1,4 @@
+import { isAppleSignInCanceled, UserFacingError } from "@/services/userFacingError";
 import * as AppleAuthentication from "expo-apple-authentication";
 import * as Crypto from "expo-crypto";
 import * as Linking from "expo-linking";
@@ -23,7 +24,7 @@ export function validateContact(value: string, channel: CodeChannel): string | n
 }
 export async function sendSignInCode(value: string, channel: CodeChannel): Promise<void> {
   const message = validateContact(value, channel);
-  if (message) throw new Error(message);
+  if (message) throw new UserFacingError(message);
   const contact = normalizeContact(value, channel);
   const { error } = await requireCircle().auth.signInWithOtp(
     channel === "email"
@@ -33,7 +34,7 @@ export async function sendSignInCode(value: string, channel: CodeChannel): Promi
   if (error) throw error;
 }
 export async function verifySignInCode(value: string, code: string, channel: CodeChannel): Promise<void> {
-  if (!/^\d{6,10}$/.test(code.trim())) throw new Error("Enter the code we sent you.");
+  if (!/^\d{6,10}$/.test(code.trim())) throw new UserFacingError("Enter the code we sent you.");
   const contact = normalizeContact(value, channel);
   const { error } = await requireCircle().auth.verifyOtp(
     channel === "email"
@@ -44,7 +45,7 @@ export async function verifySignInCode(value: string, code: string, channel: Cod
 }
 export async function signInWithApple(): Promise<boolean> {
   if (Platform.OS !== "ios" || !(await AppleAuthentication.isAvailableAsync())) {
-    throw new Error("Apple sign-in is available on supported Apple devices.");
+    throw new UserFacingError("Apple sign-in is available on supported Apple devices.");
   }
   const rawNonce = Array.from(Crypto.getRandomBytes(32), (byte) => byte.toString(16).padStart(2, "0")).join("");
   const hashedNonce = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, rawNonce);
@@ -53,7 +54,7 @@ export async function signInWithApple(): Promise<boolean> {
       requestedScopes: [AppleAuthentication.AppleAuthenticationScope.EMAIL, AppleAuthentication.AppleAuthenticationScope.FULL_NAME],
       nonce: hashedNonce,
     });
-    if (!credential.identityToken) throw new Error("Apple did not return a sign-in token. Try again.");
+    if (!credential.identityToken) throw new UserFacingError("Apple sign-in did not complete. Please try again.");
     const { error } = await requireCircle().auth.signInWithIdToken({
       provider: "apple", token: credential.identityToken, nonce: rawNonce,
     });
@@ -61,7 +62,7 @@ export async function signInWithApple(): Promise<boolean> {
     await recordTermsAcceptance();
     return true;
   } catch (error) {
-    if (error instanceof Error && error.message.includes("ERR_REQUEST_CANCELED")) return false;
+    if (isAppleSignInCanceled(error)) return false;
     throw error;
   }
 }
@@ -73,14 +74,14 @@ export async function signInWithGoogle(): Promise<boolean> {
     options: { redirectTo, skipBrowserRedirect: true },
   });
   if (error) throw error;
-  if (!data.url) throw new Error("Google sign-in could not start. Try again.");
+  if (!data.url) throw new UserFacingError("Google sign-in could not start. Try again.");
   const result = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
   if (result.type !== "success") return false;
   const fragment = result.url.split("#")[1] ?? result.url.split("?")[1] ?? "";
   const params = new URLSearchParams(fragment);
   const accessToken = params.get("access_token");
   const refreshToken = params.get("refresh_token");
-  if (!accessToken || !refreshToken) throw new Error(params.get("error_description") ?? "Google sign-in did not complete. Try again.");
+  if (!accessToken || !refreshToken) throw new UserFacingError("Google sign-in did not complete. Try again.");
   const { error: sessionError } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
   if (sessionError) throw sessionError;
   await recordTermsAcceptance();

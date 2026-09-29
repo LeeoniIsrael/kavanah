@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { AccordionReveal } from "@/components/ui/accordion";
 import { useState } from "react";
 import { Linking, ScrollView, TextInput, View } from "react-native";
@@ -161,9 +162,7 @@ export function NotificationSettingsScreen() {
       setLocation(await requestZmanimLocation());
     } catch (e) {
       setMessage(
-        e instanceof Error
-          ? e.message
-          : "Location unavailable. Please try again.",
+        userFacingError(e, "Location unavailable. Please try again."),
       );
     } finally {
       setWorking(false);
@@ -186,9 +185,7 @@ export function NotificationSettingsScreen() {
         );
     } catch (e) {
       setMessage(
-        e instanceof Error
-          ? e.message
-          : "Could not enable reminders. Please try again.",
+        userFacingError(e, "Could not enable reminders. Please try again."),
       );
     } finally {
       setWorking(false);

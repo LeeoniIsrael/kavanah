@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { currentPrayerAvailability } from "@/services/currentPrayerAvailability";
 import { timedPracticeForPrayer } from "@/services/prayerAvailability";
 import { recoverPrayerHistory } from "@/services/activityCalendar";
@@ -131,9 +132,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
           ? {
               loadingPrayerId: null,
               prayerLoadError:
-                error instanceof Error
-                  ? error.message
-                  : "This prayer could not be loaded right now.",
+                userFacingError(error, "This prayer could not be loaded right now."),
             }
           : state,
       );

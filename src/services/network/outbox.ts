@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { create } from "zustand";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 type Command = { id: string; rpc: string; args: Record<string, unknown> };
@@ -65,9 +66,7 @@ export async function flushCircle() {
     if (epoch === generation)
       useCircleSync.setState({
         error:
-          error instanceof Error
-            ? error.message
-            : "Could not sync. Try again when connected.",
+          userFacingError(error, "Could not sync. Try again when connected."),
       });
   } finally {
     flushing = false;

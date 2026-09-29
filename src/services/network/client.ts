@@ -1,3 +1,4 @@
+import { UserFacingError } from "@/services/userFacingError";
 import "react-native-url-polyfill/auto";
 import { createClient, processLock } from "@supabase/supabase-js";
 import * as SecureStore from "expo-secure-store";
@@ -37,7 +38,7 @@ export const circleClient = circleConfigured
   : null;
 export function requireCircle() {
   if (!circleClient)
-    throw new Error(
+    throw new UserFacingError(
       "Circle accounts are not available in this build yet. Your practice stays on this device.",
     );
   return circleClient;
@@ -57,17 +58,17 @@ export async function circleRpc(
     !session ||
     (expectedUser && session.user.id !== expectedUser)
   )
-    throw new Error("Sign in to this account to sync its changes.");
+    throw new UserFacingError("Sign in to this account to sync its changes.");
   // Pin the request to the session checked above, even if sign-out occurs before fetch.
   const { data, error } = await client
     .rpc(name, args)
     .setHeader("Authorization", `Bearer ${session.access_token}`);
   if (error?.code === "23505" && name === "circle_join")
-    throw new Error("That handle is already taken. Choose another.");
+    throw new UserFacingError("That handle is already taken. Choose another.");
   if (error?.code === "P0002" && name === "circle_record")
-    throw new Error(
+    throw new UserFacingError(
       "This prayer is not available for Circle yet. It is still saved on your device.",
     );
-  if (error) throw new Error(error.message);
+  if (error) throw error;
   return data;
 }

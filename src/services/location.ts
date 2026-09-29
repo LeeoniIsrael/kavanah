@@ -1,3 +1,4 @@
+import { UserFacingError } from "@/services/userFacingError";
 import * as Location from "expo-location";
 
 import type { GeoPoint } from "@/types/zmanim";
@@ -5,7 +6,7 @@ import type { GeoPoint } from "@/types/zmanim";
 export async function requestZmanimLocation(): Promise<GeoPoint> {
   const { status } = await Location.requestForegroundPermissionsAsync();
   if (status !== Location.PermissionStatus.GRANTED) {
-    throw new Error("Location is off. Enable it to calculate accurate times for where you are.");
+    throw new UserFacingError("Location is off. Enable it to calculate accurate times for where you are.");
   }
 
   const position = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });

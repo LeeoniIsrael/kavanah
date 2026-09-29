@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { useEffect, useState } from "react";
 import {
   Animated,
@@ -122,7 +123,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     setBusy(true);
     setMessage("");
     try { await action(); }
-    catch (error) { setMessage(error instanceof Error ? error.message : "Something went wrong. Try again."); void softHaptic(); }
+    catch (error) { setMessage(userFacingError(error, step === "audience" || step === "community" ? "Could not save your preferences. Please try again." : "Could not sign in. Please try again.")); void softHaptic(); }
     finally { setBusy(false); }
   };
   const done = async () => {
@@ -170,6 +171,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
           }]}
         >
           {mode === "account" && <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={goBack} style={styles.close}><Ionicons name="close" size={23} color={ink} /></Pressable>}
+          <ScrollView style={styles.flex} contentContainerStyle={styles.welcomeScroll} bounces={false}>
           <View style={styles.welcomeBottom}>
             <AnimatedWelcomeHeadline />
             <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
@@ -205,6 +207,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             <Text style={styles.privacy}>Your prayer stays private.</Text>
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
+          </ScrollView>
         </Animated.View>
       </SafeAreaView>
     );
@@ -295,7 +298,8 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   heroCenter: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, alignItems: "center", justifyContent: "center" },
   logo: { alignItems: "center", justifyContent: "center" },
-  welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
+  welcomeContent: { flex: 1, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
+  welcomeScroll: { flexGrow: 1, justifyContent: "flex-end", paddingTop: 260, paddingBottom: 12 },
   welcomeBottom: { marginTop: "auto" },
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },

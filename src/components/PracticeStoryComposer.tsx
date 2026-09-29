@@ -1,3 +1,4 @@
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { BrandWordmark } from "@/components/BrandMark";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -164,7 +165,7 @@ function StoryComposerSession({
 
     try {
       if (!(await Sharing.isAvailableAsync())) {
-        throw new Error("Sharing is not available on this device.");
+        throw new UserFacingError("Sharing is not available on this device.");
       }
       const uri = await captureRef(storyView, {
         format: "png",
@@ -181,9 +182,7 @@ function StoryComposerSession({
       await successHaptic();
     } catch (shareError) {
       setError(
-        shareError instanceof Error
-          ? shareError.message
-          : "This story could not be prepared.",
+        userFacingError(shareError, "This story could not be prepared."),
       );
     } finally {
       setIsSharing(false);

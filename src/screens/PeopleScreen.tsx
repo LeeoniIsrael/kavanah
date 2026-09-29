@@ -1,3 +1,4 @@
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Platform, Pressable, View } from "react-native";
@@ -101,7 +102,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
       await action();
     } catch (e) {
       setError(
-        e instanceof Error ? e.message : "Could not connect. Please try again.",
+        userFacingError(e, "Could not connect. Please try again."),
       );
     } finally {
       setBusy(false);
@@ -140,7 +141,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   }, [profile, circleRpc]);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- load updates state only after awaited network reads.
-    void load().catch((e) => setError(e.message));
+    void load().catch((e) => setError(userFacingError(e, "Could not load your people. Please try again.")));
   }, [load]);
   const change = (other: string, action: string) =>
     run(async () => {
@@ -253,7 +254,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             () =>
               void run(async () => {
                 if (sent) {
-                  if (!termsAccepted) throw new Error("Please accept the Terms of Use and Privacy Policy to continue.");
+                  if (!termsAccepted) throw new UserFacingError("Please accept the Terms of Use and Privacy Policy to continue.");
                   const { error } = await requireCircle().auth.verifyOtp({
                     email: email.trim(),
                     token: code.trim(),
@@ -262,9 +263,9 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
                   if (error) throw error;
                   await recordTermsAcceptance();
                 } else {
-                  if (!termsAccepted) throw new Error("Please accept the Terms of Use and Privacy Policy to continue.");
+                  if (!termsAccepted) throw new UserFacingError("Please accept the Terms of Use and Privacy Policy to continue.");
                   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
-                    throw new Error("Enter your email address.");
+                    throw new UserFacingError("Enter your email address.");
                   const { error } = await requireCircle().auth.signInWithOtp({
                     email: email.trim(),
                     options: { data: { terms_accepted_at: new Date().toISOString(), terms_version: TERMS_VERSION } },
@@ -329,7 +330,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
                   !/^[a-z0-9_]{3,24}$/.test(handle.trim().toLowerCase()) ||
                   !name.trim()
                 )
-                  throw new Error(
+                  throw new UserFacingError(
                     "Add your name and a handle with 3–24 letters, numbers or underscores.",
                   );
                 await circleRpc("circle_join", {
