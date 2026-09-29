@@ -34,7 +34,7 @@ module.exports = function withWidgetFonts(config) {
       .map((child) => child.value)
       .find((childId) => project.getPBXGroupByKey(childId)?.name === "Resources");
     if (!resourcesGroupId) {
-      resourcesGroupId = project.addPbxGroup([], "Resources").uuid;
+      resourcesGroupId = project.addPbxGroup([], "Resources", "Resources").uuid;
       project.addToPbxGroup(resourcesGroupId, widgetGroupId);
     }
 
@@ -52,9 +52,10 @@ module.exports = function withWidgetFonts(config) {
       const projectRoot = config.modRequest.projectRoot;
       const platformRoot = config.modRequest.platformProjectRoot;
       const widgetDirectory = path.join(platformRoot, "ExpoWidgetsTarget");
+      const resourcesDirectory = path.join(widgetDirectory, "Resources");
       const infoPlistPath = path.join(widgetDirectory, "Info.plist");
       const plist = require("@expo/plist").default;
-      fs.mkdirSync(widgetDirectory, { recursive: true });
+      fs.mkdirSync(resourcesDirectory, { recursive: true });
 
       for (const [weight, fileName] of fontFiles) {
         const sourcePath = path.join(
@@ -65,7 +66,7 @@ module.exports = function withWidgetFonts(config) {
           weight,
           fileName,
         );
-        fs.copyFileSync(sourcePath, path.join(widgetDirectory, fileName));
+        fs.copyFileSync(sourcePath, path.join(resourcesDirectory, fileName));
       }
 
       const infoPlist = plist.parse(fs.readFileSync(infoPlistPath, "utf8"));
