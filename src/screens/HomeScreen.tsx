@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
 import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
@@ -40,10 +41,10 @@ import {
   Easing,
   Modal,
   Pressable,
-  ScrollView,
   StyleSheet,
   View,
   useWindowDimensions,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -292,15 +293,13 @@ export function HomeScreen(): React.JSX.Element {
               ? (location?.label ?? "Local prayer times")
               : "Prayer times, wherever you are"}
           </Text>
-          <Text style={homeStyles.locationCaption}>
-            {isLoading
-              ? "Finding your location…"
-              : nextZman
+          {isLoading ? <CircleLoadingIndicator accessibilityLabel="Finding your location" style={{ alignSelf: "flex-start" }} /> : <Text style={homeStyles.locationCaption}>
+            {nextZman
                 ? "View today’s times"
                 : error
                   ? "Location unavailable. Tap to try again."
                   : "Set your location to see local times"}
-          </Text>
+          </Text>}
         </View>
         <ChevronRight size={16} color={colors.inkMuted} />
       </Button>

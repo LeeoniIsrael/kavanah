@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { ChoiceRow } from "@/components/ui/choice-row";
 import { readerLanguages, readerLanguageLabels } from "./model";
 import { useThemeColors } from "@/design/appearance";
@@ -6,9 +7,9 @@ import { Text } from "@/components/ui/text";
 import {
   Modal,
   Pressable,
-  ScrollView,
   View,
   useWindowDimensions,
+  ScrollView,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type {
@@ -31,6 +32,7 @@ type Props = {
   onBookChange: (id: string) => void;
   profile: PrayerProfile;
   onProfileChange: (profile: PrayerProfile) => void;
+  downloading: boolean;
   downloadStatus: string;
   onDownload: () => void;
 };
@@ -50,6 +52,7 @@ export function ReadingSettingsSheet({
   onBookChange,
   profile,
   onProfileChange,
+  downloading,
   downloadStatus,
   onDownload,
 }: Props): React.JSX.Element {
@@ -173,7 +176,13 @@ export function ReadingSettingsSheet({
                   <ChoiceRow
                     key={item}
                     title={readerLanguageLabels[item]}
-                    detail={item === "en" ? "Direct English translation" : item === "he" ? "Original Hebrew text" : "Hebrew pronunciation in Latin letters"}
+                    detail={
+                      item === "en"
+                        ? "Direct English translation"
+                        : item === "he"
+                          ? "Original Hebrew text"
+                          : "Hebrew pronunciation in Latin letters"
+                    }
                     selected={language === item}
                     onPress={() => onLanguageChange(item)}
                   />
@@ -358,6 +367,11 @@ export function ReadingSettingsSheet({
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Download complete Siddur"
+                disabled={downloading}
+                accessibilityState={{
+                  busy: downloading,
+                  disabled: downloading,
+                }}
                 onPress={onDownload}
                 style={{
                   minHeight: 48,
@@ -371,7 +385,11 @@ export function ReadingSettingsSheet({
                   Download this Siddur
                 </Text>
               </Pressable>
-              {downloadStatus ? (
+              {downloading ? (
+                <CircleLoadingIndicator
+                  accessibilityLabel={downloadStatus || "Downloading Siddur"}
+                />
+              ) : downloadStatus ? (
                 <Text style={{ color: colors.inkMuted, fontSize: 12 }}>
                   {downloadStatus}
                 </Text>

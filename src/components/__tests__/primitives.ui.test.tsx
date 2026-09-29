@@ -68,7 +68,9 @@ test("loading buttons expose busy state and block duplicate submissions", async 
     busy: true,
     disabled: true,
   });
-  expect(screen.getByText("Saving")).toBeTruthy();
+  expect(screen.queryByText("Saving")).toBeNull();
+  expect(button.props.accessibilityValue).toEqual({ text: "Saving" });
+  expect(screen.getByRole("progressbar")).toBeTruthy();
   await act(async () => {
     fireEvent.press(button);
   });

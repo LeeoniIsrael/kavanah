@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { startReminderScheduling } from "@/services/reminderScheduler";
 import { startCircleAccount } from "@/store/circleAccountStore";
 import { circleClient } from "@/services/network/client";
@@ -61,12 +62,10 @@ export function AppProviders({
   if (!hydrated) {
     return (
       <View
-        accessibilityLabel="Opening Kavanah"
-        accessibilityRole="progressbar"
         style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
       >
         <StatusBar barStyle="light-content" />
-        <BrandWordmark width={190} color="#FFFFFF" />
+        <CircleLoadingIndicator dotColor="#FFFFFF" accessibilityLabel="Opening Kavanah" />
       </View>
     );
   }

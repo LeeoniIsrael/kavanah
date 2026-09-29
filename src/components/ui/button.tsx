@@ -1,9 +1,7 @@
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
-import { Text, TextClassContext } from "@/components/ui/text";
+import { TextClassContext } from "@/components/ui/text";
 import {
   useThemeColors,
-  useThemedStyles,
-  type ThemeColors,
 } from "@/design/appearance";
 import { iconMetrics } from "@/design/iconography";
 import { motion } from "@/design/theme";
@@ -16,7 +14,7 @@ import {
   tapHaptic,
 } from "@/services/haptics";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Animated,
   Easing,
@@ -137,7 +135,6 @@ type ButtonProps = Omit<PressableProps, "style"> &
     haptic?: boolean | HapticTone;
     isLoading?: boolean;
     loadingLabel?: ReactNode;
-    loadingIndicator?: ReactNode;
     withPressAnimation?: boolean;
     animationDuration?: number;
     width?: number;
@@ -151,7 +148,7 @@ const AnimatedButton = Animated.createAnimatedComponent(Pressable);
 
 function Button({
   className,
-  variant,
+  variant = "default",
   size,
   style,
   onPress,
@@ -163,7 +160,6 @@ function Button({
   haptic = "none",
   isLoading = false,
   loadingLabel,
-  loadingIndicator,
   withPressAnimation = true,
   animationDuration = motion.pressMs,
   width,
@@ -174,28 +170,10 @@ function Button({
   ...props
 }: ButtonProps) {
   const colors = useThemeColors();
-  const styles = useThemedStyles(makestyles);
 
   const [scale] = useState(() => new Animated.Value(1));
-  const [loadingOpacity] = useState(
-    () => new Animated.Value(isLoading ? 1 : 0),
-  );
   const [restingWidth, setRestingWidth] = useState<number>();
   const reduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    loadingOpacity.stopAnimation();
-    if (!isLoading) {
-      loadingOpacity.setValue(0);
-      return;
-    }
-    Animated.timing(loadingOpacity, {
-      toValue: 1,
-      duration: reduceMotion ? 0 : animationDuration * 2,
-      easing: Easing.bezier(...motion.standard),
-      useNativeDriver: true,
-    }).start();
-  }, [animationDuration, isLoading, loadingOpacity, reduceMotion]);
 
   const animateTo = (value: number) => {
     scale.stopAnimation();
@@ -247,6 +225,12 @@ function Button({
       <AnimatedButton
         accessibilityRole="button"
         {...props}
+        accessibilityLabel={props.accessibilityLabel}
+        accessibilityValue={
+          isLoading && typeof loadingLabel === "string"
+            ? { text: loadingLabel }
+            : props.accessibilityValue
+        }
         disabled={disabled}
         accessibilityState={{
           ...accessibilityState,
@@ -280,6 +264,7 @@ function Button({
               : {}),
             minWidth: Math.max(
               iconMetrics.target,
+              isLoading ? (restingWidth ?? 0) : 0,
               typeof callerStyle?.minWidth === "number"
                 ? callerStyle.minWidth
                 : 0,
@@ -311,24 +296,11 @@ function Button({
         }}
       >
         {isLoading ? (
-          <Animated.View
-            pointerEvents="none"
-            style={[styles.loadingContent, { opacity: loadingOpacity }]}
-          >
-            {loadingIndicator ?? (
-              <CircleLoadingIndicator
-                dotColor={indicatorColor}
-                dotRadius={2.5}
-                dotSpacing={4}
-              />
-            )}
-            {typeof loadingLabel === "string" ||
-            typeof loadingLabel === "number" ? (
-              <Text>{loadingLabel}</Text>
-            ) : (
-              loadingLabel
-            )}
-          </Animated.View>
+          <CircleLoadingIndicator
+            dotColor={indicatorColor}
+            dotRadius={2.5}
+            dotSpacing={4}
+          />
         ) : (
           props.children
         )}
@@ -336,17 +308,6 @@ function Button({
     </TextClassContext.Provider>
   );
 }
-
-const makestyles = (colors: ThemeColors) =>
-  StyleSheet.create({
-    loadingContent: {
-      alignItems: "center",
-      flexDirection: "row",
-      flexShrink: 1,
-      gap: 8,
-      justifyContent: "center",
-    },
-  });
 
 export { Button, buttonTextVariants, buttonVariants };
 export type { ButtonProps };

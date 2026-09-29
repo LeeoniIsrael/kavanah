@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { useState } from "react";
 import {
   ActionSheetIOS,
@@ -104,7 +105,10 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
     }
   };
   const open = () => {
-    if (Platform.OS === "web") { setMessage("Profile photos are available in the mobile app."); return; }
+    if (Platform.OS === "web") {
+      setMessage("Profile photos are available in the mobile app.");
+      return;
+    }
     if (Platform.OS === "ios") {
       const options = [
         "Take photo",
@@ -186,13 +190,16 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
         </View>
         <View style={{ flex: 1, gap: 4 }}>
           <Text variant="section">{name}</Text>
-          <Text variant="body" style={{ color: colors.blue }}>
-            {busy
-              ? "Saving photo…"
-              : uri
-                ? "Change photo"
-                : "Add a profile photo"}
-          </Text>
+          {busy ? (
+            <CircleLoadingIndicator
+              accessibilityLabel="Preparing profile photo"
+              style={{ alignSelf: "flex-start" }}
+            />
+          ) : (
+            <Text variant="body" style={{ color: colors.blue }}>
+              {uri ? "Change photo" : "Add a profile photo"}
+            </Text>
+          )}
           <Text variant="caption">
             Saved on this device. Not shared with Circle.
           </Text>

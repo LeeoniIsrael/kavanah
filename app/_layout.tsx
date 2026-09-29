@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { useAppColorScheme, useAppearanceStore } from "@/design/appearance";
 import { themeVariables } from "@/design/themeVariables";
 import "../global.css";
@@ -26,11 +27,12 @@ export default function RootLayout(): React.JSX.Element | null {
   const scheme = useAppColorScheme();
   const preference = useAppearanceStore((s) => s.preference);
   useEffect(() => {
-    if (Platform.OS !== "web") Appearance.setColorScheme(
-      preference === "system" ? "unspecified" : preference,
-    );
+    if (Platform.OS !== "web")
+      Appearance.setColorScheme(
+        preference === "system" ? "unspecified" : preference,
+      );
   }, [preference]);
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     Manrope_400Regular,
     Manrope_500Medium,
     Manrope_600SemiBold,
@@ -39,8 +41,18 @@ export default function RootLayout(): React.JSX.Element | null {
     NotoSansHebrew_600SemiBold,
   });
 
-  if (!fontsLoaded) {
-    return null;
+  if (!fontsLoaded && !fontError) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: NAV_THEME[scheme].colors.background,
+          justifyContent: "center",
+        }}
+      >
+        <CircleLoadingIndicator accessibilityLabel="Opening Kavanah" />
+      </View>
+    );
   }
 
   return (

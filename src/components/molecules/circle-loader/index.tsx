@@ -1,9 +1,5 @@
-import {
-  useThemeColors,
-  useThemedStyles,
-  type ThemeColors,
-} from "@/design/appearance";
-import { useEffect, useRef } from "react";
+import { useThemeColors } from "@/design/appearance";
+import { useEffect, useState } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
@@ -26,7 +22,7 @@ function WaveDot({
   duration: number;
   reduceMotion: boolean;
 }): React.JSX.Element {
-  const progress = useRef(new Animated.Value(0)).current;
+  const [progress] = useState(() => new Animated.Value(0));
 
   useEffect(() => {
     if (reduceMotion) {
@@ -38,16 +34,18 @@ function WaveDot({
     const wave = Animated.loop(
       Animated.sequence([
         Animated.timing(progress, {
-          duration: duration / 2,
-          easing: Easing.out(Easing.cubic),
+          duration,
+          easing: Easing.inOut(Easing.ease),
           toValue: 1,
           useNativeDriver: true,
+          isInteraction: false,
         }),
         Animated.timing(progress, {
-          duration: duration / 2,
-          easing: Easing.in(Easing.cubic),
+          duration,
+          easing: Easing.inOut(Easing.ease),
           toValue: 0,
           useNativeDriver: true,
+          isInteraction: false,
         }),
       ]),
     );
@@ -57,25 +55,16 @@ function WaveDot({
     return () => animation.stop();
   }, [delay, duration, progress, reduceMotion]);
 
-  const opacity = progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0.5, 1],
-  });
   const translateY = progress.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, -diameter * 0.72],
-  });
-  const scale = progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0.88, 1],
+    outputRange: [0, -diameter * 0.425],
   });
 
   return (
     <Animated.View
       style={{
         height: diameter,
-        opacity,
-        transform: [{ translateY }, { scale }],
+        transform: [{ translateY }],
         width: diameter,
       }}
     >
@@ -97,6 +86,7 @@ function WaveDot({
 
 /** Three dots rising in sequence to communicate indeterminate progress. */
 export function CircleLoadingIndicator({
+  accessibilityLabel = "Loading",
   dotColor,
   dotRadius = 3,
   dotSpacing = 5,
@@ -105,7 +95,6 @@ export function CircleLoadingIndicator({
 }: CircleLoadingIndicatorProps): React.JSX.Element {
   const colors = useThemeColors();
   dotColor ??= colors.blue;
-  const styles = useThemedStyles(makestyles);
 
   const reduceMotion = useReducedMotion();
   const safeRadius = Math.max(1, dotRadius);
@@ -114,12 +103,19 @@ export function CircleLoadingIndicator({
 
   return (
     <View
-      accessibilityLabel="Loading"
+      accessible
+      accessibilityLabel={accessibilityLabel}
+      accessibilityState={{ busy: true }}
       accessibilityRole="progressbar"
       accessibilityValue={{ text: "In progress" }}
       style={[
         styles.container,
-        { columnGap: Math.max(0, dotSpacing), minHeight: diameter * 1.75 },
+        {
+          width: diameter * DOT_COUNT + Math.max(0, dotSpacing) * (DOT_COUNT - 1),
+          columnGap: Math.max(0, dotSpacing),
+          minHeight: diameter * 1.85,
+          paddingTop: diameter * 0.425,
+        },
         style,
       ]}
     >
@@ -137,13 +133,14 @@ export function CircleLoadingIndicator({
   );
 }
 
-const makestyles = (colors: ThemeColors) =>
-  StyleSheet.create({
-    container: {
-      alignItems: "center",
-      flexDirection: "row",
-      justifyContent: "center",
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignSelf: "center",
+    flexShrink: 0,
+  },
+});
 
 export type { CircleLoadingIndicatorProps } from "./types";

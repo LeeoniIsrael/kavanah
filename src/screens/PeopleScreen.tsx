@@ -186,6 +186,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const button = (label: string, action: () => void, secondary = false) => (
     <Button
       disabled={busy}
+      isLoading={busy}
       variant={secondary ? "secondary" : "default"}
       onPress={action}
     >
@@ -248,7 +249,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             />
           )}
           {button(
-            busy ? "Connecting…" : sent ? "Verify code" : "Continue with email",
+            sent ? "Verify code" : "Continue with email",
             () =>
               void run(async () => {
                 if (sent) {

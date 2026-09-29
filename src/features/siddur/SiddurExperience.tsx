@@ -1,18 +1,18 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { readerLanguages, readerLanguageLabels, segmentText } from "./model";
 /* eslint-disable react-hooks/exhaustive-deps -- Section fetches are keyed by canonical ref; language and scale reuse the same cached segments. */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Alert,
   Animated,
   Easing,
   Modal,
   Platform,
   Pressable,
-  ScrollView,
   TextInput,
   View,
   useWindowDimensions,
+  ScrollView,
 } from "react-native";
 import {
   SafeAreaView,
@@ -58,7 +58,12 @@ import { ReadingSettingsSheet } from "./ReadingSettingsSheet";
 import { pageDirection, pageForRef } from "./navigation";
 import { createReaderHtml } from "./readerHtml";
 import { leafNodes, normalizeHebrewSearch, sefariaProvider } from "./sefaria";
-import { downloadBook, loadBook, loadSection, preloadSections } from "./service";
+import {
+  downloadBook,
+  loadBook,
+  loadSection,
+  preloadSections,
+} from "./service";
 import type {
   Bookmark,
   PrayerProfile,
@@ -102,9 +107,19 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
 function FadingReaderPage(props: WebViewProps) {
   const [ready, setReady] = useState(false);
   return (
-    <FadeIn ready={ready} style={{ flex: 1 }}>
-      <WebView {...props} onLoadEnd={() => setReady(true)} />
-    </FadeIn>
+    <View style={{ flex: 1 }}>
+      {!ready && (
+        <CircleLoadingIndicator
+          accessibilityLabel="Loading Siddur page"
+          style={{ position: "absolute", top: "45%", alignSelf: "center" }}
+        />
+      )}
+      <FadeIn ready={ready} style={{ flex: 1 }}>
+
+        <WebView {...props} onLoadEnd={() => setReady(true)} />
+
+      </FadeIn>
+    </View>
   );
 }
 
@@ -130,6 +145,7 @@ export function SiddurExperience({
   const [catalog, setCatalog] = useState<SiddurDefinition[]>([]),
     [bookId, setBookId] = useState("Siddur Ashkenaz"),
     [reader, setReader] = useState(false),
+    [downloading, setDownloading] = useState(false),
     [loading, setLoading] = useState(false),
     [error, setError] = useState("");
   const [book, setBook] = useState<SiddurDefinition | null>(null),
@@ -294,7 +310,11 @@ export function SiddurExperience({
   }, [reader, section?.ref, bookId]);
   useEffect(() => {
     if (!reader || !section || readySection !== section.ref) return;
-    return preloadSections(bookId, leaves.map((leaf) => leaf.ref), sectionIndex);
+    return preloadSections(
+      bookId,
+      leaves.map((leaf) => leaf.ref),
+      sectionIndex,
+    );
   }, [reader, bookId, leaves, sectionIndex, readySection]);
   useEffect(() => {
     if (
@@ -486,8 +506,8 @@ export function SiddurExperience({
         (language === "transliteration"
           ? "connected-words-v1"
           : language === "he"
-          ? book.versions.he?.versionTitle
-          : book.versions.en?.versionTitle) ?? "",
+            ? book.versions.he?.versionTitle
+            : book.versions.en?.versionTitle) ?? "",
       language,
       startSegmentId: selection.start.id,
       startOffset: selection.start.offset,
@@ -694,7 +714,7 @@ export function SiddurExperience({
               }}
             >
               {loading ? (
-                <ActivityIndicator color={colors.onAccent} />
+                <CircleLoadingIndicator dotColor={colors.onAccent} />
               ) : (
                 <Text style={{ color: colors.onAccent, fontWeight: "700" }}>
                   Open reader
@@ -818,9 +838,7 @@ export function SiddurExperience({
               {readerLanguages.map((l) => (
                 <Button
                   key={l}
-                  accessibilityLabel={
-                    `Read ${readerLanguageLabels[l]}`
-                  }
+                  accessibilityLabel={`Read ${readerLanguageLabels[l]}`}
                   accessibilityState={{ selected: language === l }}
                   variant="ghost"
                   onPress={() => switchLanguage(l)}
@@ -895,7 +913,7 @@ export function SiddurExperience({
                   {error ? (
                     <Text style={{ color: colors.inkMuted }}>{error}</Text>
                   ) : (
-                    <ActivityIndicator color={colors.blue} />
+                    <CircleLoadingIndicator dotColor={colors.blue} />
                   )}
                 </View>
               )}
@@ -1231,8 +1249,11 @@ export function SiddurExperience({
             }}
             profile={profile}
             onProfileChange={setProfile}
+            downloading={downloading}
             downloadStatus={download}
             onDownload={() => {
+              if (downloading) return;
+              setDownloading(true);
               setDownload("Starting download…");
               void downloadBook(bookId, (done, total) =>
                 setDownload(`${done} of ${total} sections cached`),
@@ -1240,7 +1261,8 @@ export function SiddurExperience({
                 .then(() => setDownload("Available offline"))
                 .catch(() =>
                   setDownload("Download paused. Try again when connected."),
-                );
+                )
+                .finally(() => setDownloading(false));
             }}
           />
           {note ? (

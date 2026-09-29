@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
 import { prayerReadingGuide, prayerScopeNote } from "@/data/prayerReadingGuide";
 import { findLanguage } from "@/data/languages";
@@ -46,8 +47,8 @@ import {
   Modal,
   Platform,
   Pressable,
-  ScrollView,
   View,
+  ScrollView,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -56,7 +57,6 @@ import {
   type GuidedPrayerToken,
 } from "@/components/GuidedPrayer";
 import {
-  PrayerSearchSkeleton,
   PrayerTextSkeleton,
 } from "@/components/LoadingSkeletons";
 import {
@@ -647,11 +647,12 @@ export function PrayerScreen(): React.JSX.Element {
             {showResults ? (
               <FadeIn style={{ gap: 12 }}>
                 <SectionHeading
-                  title={isSearchingRemote ? "Searching prayers" : "Results"}
+                  title="Results"
                   detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
                 />
+                {isSearchingRemote ? <CircleLoadingIndicator accessibilityLabel="Searching prayers" /> : null}
                 {isSearchingRemote && visibleResults.length === 0 ? (
-                  <PrayerSearchSkeleton />
+                  <View />
                 ) : visibleResults.length > 0 ? (
                   visibleResults.map((result) => (
                     <FadeIn key={result.prayer.id}>
