@@ -10,11 +10,12 @@ import {
   PrayerExplanation,
 } from "@/components/PrayerExplanation";
 import type { ReadingGuide } from "@/data/prayerReadingGuide";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   Easing,
   type FlatList,
+  type ViewToken,
   StyleSheet,
   View,
 } from "react-native";
@@ -55,6 +56,27 @@ type Props = {
   quoteSource?: Omit<QuoteSource, "language" | "text"> | undefined;
   onSaveQuote: (source: QuoteSource, start: number, end: number) => boolean;
 };
+function PassageNumber({
+  value,
+  reduceMotion,
+}: {
+  value: number;
+  reduceMotion: boolean;
+}) {
+  const [opacity] = useState(() => new Animated.Value(reduceMotion ? 1 : 0.4));
+  useEffect(() => {
+    const animation = Animated.timing(opacity, {
+      toValue: 1,
+      duration: reduceMotion ? 0 : 160,
+      easing: Easing.out(Easing.quad),
+      useNativeDriver: true,
+    });
+    animation.start();
+    return () => animation.stop();
+  }, [opacity, reduceMotion]);
+  return <Animated.Text style={{ opacity }}>{value}</Animated.Text>;
+}
+
 export function GuidedPrayer({
   practice,
   completionBlockedReason,
@@ -85,6 +107,45 @@ export function GuidedPrayer({
   const [clockTick, setClockTick] = useState(Date.now);
   const scroll = useRef<FlatList<GuidedPrayerToken>>(null);
   const reduceMotion = useReducedMotion();
+  const displayedTokens = useMemo(
+    () =>
+      tokens.filter(
+        (token) =>
+          !(
+            practice === "tefillin" &&
+            blessingCustom === "one" &&
+            token.id === "tefillin-7"
+          ),
+      ),
+    [tokens, practice, blessingCustom],
+  );
+  const [visibleTokenId, setVisibleTokenId] = useState<string | null>(null);
+  const [viewabilityConfig] = useState(() => ({
+    viewAreaCoveragePercentThreshold: 5,
+  }));
+  const onViewableItemsChanged = useCallback(
+    ({ viewableItems }: { viewableItems: ViewToken<GuidedPrayerToken>[] }) => {
+      const first = viewableItems.find((item) => item.isViewable);
+      if (first) setVisibleTokenId(first.item.id);
+    },
+    [],
+  );
+  const currentIndex = Math.max(
+    0,
+    displayedTokens.findIndex((token) => token.id === visibleTokenId),
+  );
+  // Directions remain part of the scroll, but are not numbered as recited passages.
+  const countedTokens = displayedTokens.filter(
+    (token) => practice || token.kind !== "instruction",
+  );
+  const passageCount = countedTokens.length;
+  const passageNumber = Math.max(
+    1,
+    displayedTokens
+      .slice(0, currentIndex + 1)
+      .filter((token) => practice || token.kind !== "instruction").length,
+  );
+
   const scrollOffset = useSharedValue(0);
   const contentHeight = useSharedValue(0);
   const viewportHeight = useSharedValue(0);
@@ -244,14 +305,9 @@ export function GuidedPrayer({
               contentHeight.set(height);
             }}
             ref={scroll}
-            data={tokens.filter(
-              (token) =>
-                !(
-                  practice === "tefillin" &&
-                  blessingCustom === "one" &&
-                  token.id === "tefillin-7"
-                ),
-            )}
+            data={displayedTokens}
+            viewabilityConfig={viewabilityConfig}
+            onViewableItemsChanged={onViewableItemsChanged}
             keyExtractor={(item) => item.id}
             initialNumToRender={3}
             windowSize={5}
@@ -557,45 +613,71 @@ export function GuidedPrayer({
             alignItems: "center",
             gap: 12,
             paddingHorizontal: 24,
-            paddingTop: 12,
+            paddingTop: passageCount > 1 ? 0 : 12,
             paddingBottom: Math.max(insets.bottom, 16),
             backgroundColor: colors.parchment,
           }}
         >
           <View
-            pointerEvents="none"
-            accessible={false}
-            accessibilityElementsHidden
-            importantForAccessibility="no-hide-descendants"
-            onLayout={(event) => {
-              trackWidth.set(event.nativeEvent.layout.width);
-            }}
             style={{
-              position: "absolute",
-              top: 0,
-              left: 24,
-              right: 24,
-              height: 2,
+              alignSelf: "stretch",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 12,
             }}
           >
             <View
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0.75,
-                height: StyleSheet.hairlineWidth,
-                backgroundColor: colors.hairline,
+              pointerEvents="none"
+              accessible={false}
+              accessibilityElementsHidden
+              importantForAccessibility="no-hide-descendants"
+              onLayout={(event) => {
+                trackWidth.set(event.nativeEvent.layout.width);
               }}
-            />
-            {/* Direct UI-thread tracking has no trailing spring or autonomous motion,
+              style={{
+                flex: 1,
+                height: 2,
+              }}
+            >
+              <View
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  top: 0.75,
+                  height: StyleSheet.hairlineWidth,
+                  backgroundColor: colors.hairline,
+                }}
+              />
+              {/* Direct UI-thread tracking has no trailing spring or autonomous motion,
                 including with Reduce Motion enabled. */}
-            <Reanimated.View
-              style={[
-                { height: 2, borderRadius: 1, backgroundColor: colors.blue },
-                markerStyle,
-              ]}
-            />
+              <Reanimated.View
+                style={[
+                  { height: 2, borderRadius: 1, backgroundColor: colors.blue },
+                  markerStyle,
+                ]}
+              />
+            </View>
+            {passageCount > 1 ? (
+              <Text
+                accessibilityLabel={`${practice ? "Step" : "Passage"} ${passageNumber} of ${passageCount}`}
+                style={{
+                  color: colors.inkMuted,
+                  fontFamily: fonts.medium,
+                  fontSize: 12,
+                  lineHeight: 20,
+                  fontVariant: ["tabular-nums"],
+                  textAlign: "right",
+                }}
+              >
+                <PassageNumber
+                  key={`${prayerTitle}:${passageNumber}`}
+                  value={passageNumber}
+                  reduceMotion={reduceMotion}
+                />
+                {` / ${passageCount}`}
+              </Text>
+            ) : null}
           </View>
           <Text
             variant="caption"

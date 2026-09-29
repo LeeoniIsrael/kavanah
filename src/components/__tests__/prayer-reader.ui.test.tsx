@@ -189,3 +189,22 @@ test("source instructions are displayed as directions, never pronunciation or tr
   expect(view.getByText("Cover your eyes")).toBeTruthy();
   expect(view.queryByText("Translation · English")).toBeNull();
 });
+
+test("passage count follows the visible passage in either scroll direction without logging", () => {
+  const view = setup();
+  const list = view.UNSAFE_getByType(require("react-native").FlatList);
+  expect(view.getByLabelText("Passage 1 of 2")).toBeTruthy();
+  act(() =>
+    list.props.onViewableItemsChanged({
+      viewableItems: [{ item: tokens[1], index: 1, isViewable: true }],
+    }),
+  );
+  expect(view.getByLabelText("Passage 2 of 2")).toBeTruthy();
+  act(() =>
+    list.props.onViewableItemsChanged({
+      viewableItems: [{ item: tokens[0], index: 0, isViewable: true }],
+    }),
+  );
+  expect(view.getByLabelText("Passage 1 of 2")).toBeTruthy();
+  expect(view.onComplete).not.toHaveBeenCalled();
+});

@@ -227,3 +227,9 @@ The direct reader's footer divider carries a two-point rounded marker, inset to 
 
 Native iPhone 17 Pro inspection verified start/end positions, finger-driven scrolling, footer clearance, and light/dark marker contrast. The reduced-motion branch was inspected using a temporary runtime-only override; all overrides were removed. The existing Expo Go session at /private/tmp/kavanah-expo-go on port 8081 was reused with the changed reader synced from the working source.
 Typecheck, targeted lint and all six reader interaction tests passed in that fully local runtime checkout. Workspace checks stalled while accessing Documents dependencies, so validation used the local copy; no dependency changes were needed.
+
+### Passage position count
+
+Multi-passage readers pair the progress line with a small tabular current/total count. The first passage occupying at least 5% of the viewport determines the current number; instruction-only tokens do not increment prayer passages, while practices count their displayed steps. Hidden custom-specific steps are excluded. Only the current number receives a 160 ms opacity reveal; Reduced Motion makes it immediate. The count and track share a natural-height row so larger text cannot overlap the reader or footer. Screen readers receive a full Passage/Step N of M label, without repeated live announcements.
+
+Native dark iPhone 17 Pro scrolling verified the count moving through Shema alongside the marker in the existing /private/tmp/kavanah-expo-go runtime on port 8081. The shared simulator/server shut down before additional light and reduced-motion preview checks completed; temporary runtime overrides were removed. Typecheck, targeted lint and seven reader interaction tests passed in the local runtime, including forward/backward count updates without completion.
