@@ -57,7 +57,7 @@ import { ReadingSettingsSheet } from "./ReadingSettingsSheet";
 import { pageDirection, pageForRef } from "./navigation";
 import { createReaderHtml } from "./readerHtml";
 import { leafNodes, normalizeHebrewSearch, sefariaProvider } from "./sefaria";
-import { downloadBook, loadBook, loadSection } from "./service";
+import { downloadBook, loadBook, loadSection, preloadSections } from "./service";
 import type {
   Bookmark,
   PrayerProfile,
@@ -271,7 +271,9 @@ export function SiddurExperience({
             "No researched text is available in this section. Choose another section from Contents.",
           );
         else setError("");
-        setAnnotations(await loadAnnotations(bookId, section.ref));
+        const loadedAnnotations = await loadAnnotations(bookId, section.ref);
+        if (!active || request !== loadingId.current) return;
+        setAnnotations(loadedAnnotations);
         const anchor = pendingRestore.current;
         if (anchor) {
           const groups = pageGroups(s, language, fontScale);
@@ -280,8 +282,6 @@ export function SiddurExperience({
           pendingRestore.current = undefined;
         }
         setReadySection(section.ref);
-        const near = leaves[sectionIndex + 1];
-        if (near) void loadSection(bookId, near.ref).catch(() => {});
       } catch {
         if (active)
           setError("This section is not cached. Connect and try again.");
@@ -291,6 +291,10 @@ export function SiddurExperience({
       active = false;
     };
   }, [reader, section?.ref, bookId]);
+  useEffect(() => {
+    if (!reader || !section || readySection !== section.ref) return;
+    return preloadSections(bookId, leaves.map((leaf) => leaf.ref), sectionIndex);
+  }, [reader, bookId, leaves, sectionIndex, readySection]);
   useEffect(() => {
     if (
       !reader ||

@@ -4,7 +4,8 @@ import {
   recordDownloadProgress,
 } from "./cache";
 import { leafNodes, sefariaProvider } from "./sefaria";
-import type { SiddurDefinition, SiddurNode, SiddurSegment } from "./model";
+import { createSectionBuffer } from "./sectionBuffer";
+import type { SiddurDefinition, SiddurNode } from "./model";
 export async function loadBook(
   id: string,
 ): Promise<{ book: SiddurDefinition; nodes: SiddurNode[] }> {
@@ -15,14 +16,11 @@ export async function loadBook(
   await cacheBook(book, nodes);
   return { book, nodes };
 }
-export async function loadSection(
-  id: string,
-  ref: string,
-): Promise<SiddurSegment[]> {
-  const segments = await sefariaProvider.getSection(id, ref);
-  await cacheSection(id, ref, segments);
-  return segments;
-}
+const sectionBuffer = createSectionBuffer((id, ref) =>
+  sefariaProvider.getSection(id, ref),
+);
+export const loadSection = sectionBuffer.load;
+export const preloadSections = sectionBuffer.preload;
 export async function downloadBook(
   id: string,
   onProgress?: (complete: number, total: number) => void,
@@ -32,7 +30,7 @@ export async function downloadBook(
   let complete = 0;
   for (const leaf of leaves) {
     try {
-      await loadSection(id, leaf.ref);
+      await cacheSection(id, leaf.ref, await loadSection(id, leaf.ref));
       complete++;
     } catch {
       /* Retried on the next download. */
