@@ -84,14 +84,21 @@
     "title": "Shema",
     "sefariaRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema",
     "category": "daily",
-    "summary": "Shema · Siddur Ashkenaz",
-    "useCase": "Shema · Siddur Ashkenaz Themes: daily. Follow your community’s practice.",
+    "summary": "Shema Yisrael, Baruch shem, Ve’ahavta, Vehayah im shamoa and Vayomer, with the source’s congregational directions.",
+    "useCase": "Read all three paragraphs of Shema. Used morning and evening; the surrounding blessings belong to the appropriate service. For putting on tefillin, open Tefillin. For sleep, open Bedtime Shema.",
     "aliases": [
       "שמע",
       "shema yisrael",
       "hear israel",
       "adonai echad",
-      "daily"
+      "daily",
+      "veahavta",
+      "vehafta",
+      "v’ahavta",
+      "ve ahavta",
+      "vehaya im shamoa",
+      "vayomer",
+      "full shema"
     ],
     "tags": [
       "daily"
@@ -36726,14 +36733,19 @@
   },
   {
     "id": "sefaria-siddur-ashkenaz-weekday-maariv-keri-at-shema-al-hamita",
-    "title": "Keri'at Shema al Hamita",
+    "title": "Bedtime Shema",
     "sefariaRef": "Siddur Ashkenaz, Weekday, Maariv, Keri'at Shema al Hamita",
     "category": "daily",
-    "summary": "Keri'at Shema al Hamita · Siddur Ashkenaz",
-    "useCase": "Keri'at Shema al Hamita · Siddur Ashkenaz Themes: daily. Follow your community’s practice.",
+    "summary": "The bedtime sequence, including forgiveness, Hamapil, Shema and the accompanying verses in this Ashkenazi edition.",
+    "useCase": "Say when ready to sleep. Includes Hamapil and the passages printed in this edition; the order and added verses differ by custom. This does not replace Maariv.",
     "aliases": [
       "קריאת שמע על המיטה",
-      "daily"
+      "daily",
+      "bedtime",
+      "sleep",
+      "shema before bed",
+      "hamapil",
+      "keriat shema al hamita"
     ],
     "tags": [
       "daily"
@@ -46163,7 +46175,7 @@
     "sefariaRef": "Siddur Sefard, Bedtime Shema",
     "category": "sleep",
     "summary": "Bedtime Shema · Siddur Sefard",
-    "useCase": "Bedtime Shema · Siddur Sefard Themes: sleep. Follow your community’s practice.",
+    "useCase": "Say when ready to sleep. Includes Hamapil and the passages printed in this edition; the order and added verses differ by custom. This does not replace Maariv.",
     "aliases": [
       "קריאת שמע שעל המיטה",
       "sleep"
@@ -91888,5 +91900,227 @@
       "pronunciationStatus": "machine-draft-unreviewed",
       "alignmentStatus": "source-address-matched-unreviewed"
     }
+  },
+  {
+    "id": "tefillin",
+    "title": "Tefillin",
+    "sefariaRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin",
+    "category": "tefillin",
+    "summary": "Put on tefillin, follow your custom, and read the accompanying passages, including all three paragraphs of Shema.",
+    "useCase": "A weekday tefillin guide: preparation, blessings, wrapping, Kadesh, Vehayah ki yevi’acha, Shema with Ve’ahavta, and removal. A practice sequence, not the complete Shacharit service.",
+    "aliases": [
+      "תפילין",
+      "tefillin",
+      "tefilin",
+      "tfilin",
+      "tefillin prayer",
+      "lay tefillin",
+      "put on tefillin",
+      "wrapping tefillin",
+      "phylacteries"
+    ],
+    "tags": [
+      "tefillin"
+    ],
+    "tokens": [
+      {
+        "id": "tefillin-3",
+        "hebrew": "בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם אֲשֶׁר קִדְּ֒שָֽׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לְהָנִיחַ תְּפִלִּין:",
+        "translation": "Blessed are You, Adonoy our God, King of the Universe, Who sanctified us with His commandments and commanded us to put on tefillin.",
+        "transliteration": "bah-rookh ah-tah ah-doh-NAI eh-loh-hey-noo meh-lehkh hah-oh-lahm ah-shehr kee-DE-shah-noo be-meets-voh-tahv ve-tsee-vah-noo le-hah-nee-ahkh te-fee-leen:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 3",
+        "readingStep": {
+          "title": "First · Place the arm tefillin",
+          "body": "If you wear a tallit, put it on first. Place the arm box directly on the lower half of the upper-arm muscle, turned inward toward your heart. Right-handed people usually use the left arm; left-handed people usually use the right. For mixed handedness, ask which arm to use. Say the blessing below before tightening the strap."
+        }
+      },
+      {
+        "id": "tefillin-5",
+        "hebrew": "בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵֽינוּ מֶֽלֶךְ הָעוֹלָם אֲשֶׁר קִדְּ֒שָֽׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ עַל מִצְוַת תְּפִלִּין:",
+        "translation": "Blessed are You, Adonoy our God, King of the Universe, Who sanctified us with His commandments, and commanded us concerning the mitzvoh of tefillin.",
+        "transliteration": "bah-rookh ah-tah ah-doh-NAI eh-loh-hey-noo meh-lehkh hah-oh-lahm ah-shehr kee-DE-shah-noo be-meets-voh-tahv ve-tsee-vah-noo ahl meets-vaht te-fee-leen:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 5",
+        "readingStep": {
+          "title": "Next · Place the head tefillin",
+          "body": "After the arm blessing, secure the arm box and wind seven turns around the forearm according to your custom, black side outward. Avoid unrelated speech until both boxes are secured. Place the head box centrally above the original hairline, never on the forehead; the knot sits at the back of the head. Many Ashkenazi communities say this second blessing before securing the head tefillin. Sephardi, Chabad and some Ashkenazi customs omit it when there was no interruption."
+        },
+        "custom": "two-blessings"
+      },
+      {
+        "id": "tefillin-7",
+        "hebrew": "בָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד:",
+        "translation": "Blessed [is His] Name, Whose glorious kingdom is forever and ever.",
+        "transliteration": "bah-rookh shehm ke-vohd mahl-khoo-toh le-oh-lahm vah-ehd:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 7",
+        "readingStep": {
+          "title": "Then · After the second blessing",
+          "body": "If your custom uses the second blessing, secure the head tefillin, then say Baruch shem quietly. If your custom uses only one blessing, skip this response here."
+        },
+        "custom": "two-blessings"
+      },
+      {
+        "id": "tefillin-8",
+        "hebrew": "וּמֵחָכְמָתְ֒ךָ אֵל עֶלְיוֹן תַּאֲצִיל עָלַי וּמִבִּינָתְ֒ךָ תְּבִינֵֽנִי וּבְחַסְדְּ֒ךָ תַּגְדִּיל עָלַי וּבִגְבוּרָתְ֒ךָ תַּצְמִית אוֹיְ֒בַי וְקָמַי וְשֶׁמֶן הַטּוֹב תָּרִיק עַל שִׁבְעָה קְנֵי הַמְּ֒נוֹרָה לְהַשְׁפִּֽיעַ טוּבְ֒ךָ לִבְרִיּוֹתֶֽיךָ: פּוֹתֵחַ אֶת־יָדֶֽךָ וּמַשְׂבִּֽיעַ לְכָל־חַי רָצוֹן:",
+        "translation": "And may You impart from Your wisdom to me, God most high; and give me understanding from Your understanding. With Your lovingkindness, do great things with me. With Your merit, cut off my enemies and opponents. Pour bountiful oil upon the seven branches of the menorah, in order to cause goodness to flow to Your creatures. Open Your hand and fulfill the will of every living thing.",
+        "transliteration": "oo-meh-khohkh-mah-TE-khah ehl ehl-yohn tah-ah-tseel ah-lahy oo-mee-bee-nah-TE-khah te-vee-neh-nee oo-ve-khahs-DE-khah tahg-deel ah-lahy oo-veeg-voo-rah-TE-khah tahts-meet oh-YE-vahy ve-kah-mahy ve-sheh-mehn hah-tohv tah-reek ahl sheev-ah ke-ney hah-ME-noh-rah le-hahsh-pee-ah too-VE-khah leev-ree-yoh-tey-khah: poh-teh-ahkh eht yah-deh-khah oo-mahs-bee-ah le-khohl khahy rah-tsohn:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 8",
+        "readingStep": {
+          "title": "A customary request · Umechochmatecha",
+          "body": "This request appears in the Ashkenazi source after the head tefillin. Say it if it is your custom; it is not another blessing. Other communities omit it."
+        }
+      },
+      {
+        "id": "tefillin-10",
+        "hebrew": "וְאֵרַשְׂתִּיךְ לִי לְעוֹלָם, וְאֵרַשְׂתִּיךְ לִי בְּצֶֽדֶק וּבְמִשְׁפָּט וּבְחֶֽסֶד וּבְרַחֲמִים: וְאֵרַשְׂתִּיךְ לִי בֶּאֱמוּנָה, וְיָדַֽעַתְּ אֶת־יְהֹוָה:",
+        "translation": "And I will betrothe you to Me forever; and I will betrothe you to Me in righteousness, in justice, in kindliness and in mercy. And I will betrothe you to Me in faithfulness and you shall know Adonoy.",
+        "transliteration": "ve-eh-rahs-teekh lee le-oh-lahm, ve-eh-rahs-teekh lee be-tseh-dehk oo-ve-meesh-paht oo-ve-kheh-sehd oo-ve-rah-khah-meem: ve-eh-rahs-teekh lee beh-eh-moo-nah, ve-yah-dah-aht eht ah-doh-NAI:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 10",
+        "readingStep": {
+          "title": "Now · Finish wrapping the hand",
+          "body": "With the head tefillin secured, wind the strap three times around the middle finger and finish around the hand according to the pattern you were taught. The direction, finger order and hand shape differ by community. Many say Ve’erastich while wrapping; Chabad generally omits these verses. The source demonstration below shows the Chabad wrapping pattern, not every custom."
+        }
+      },
+      {
+        "id": "tefillin-12",
+        "hebrew": "וַיְדַבֵּר יְהֹוָה אֶל־משֶׁה לֵּאמֹר: קַדֶּשׁ־לִי כָל־בְּכוֹר פֶּֽטֶר כָּל־רֶֽחֶם בִּבְנֵי יִשְׂרָאֵל בָּאָדָם וּבַבְּ֒הֵמָה לִי הוּא: וַיֹּֽאמֶר משֶׁה אֶל־הָעָם זָכוֹר אֶת־הַיּוֹם הַזֶּה אֲשֶׁר יְצָאתֶם מִמִּצְרַֽיִם מִבֵּית עֲבָדִים כִּי בְּחֹֽזֶק יָד הוֹצִיא יְהֹוָה אֶתְכֶם מִזֶּה וְלֹא יֵאָכֵל חָמֵץ: הַיּוֹם אַתֶּם יֹצְ֒אִים בְּחֹֽדֶשׁ הָאָבִיב: וְהָיָה כִי־יְבִיאֲךָ יְהֹוָה אֶל־אֶֽרֶץ הַכְּ֒נַעֲנִי וְהַחִתִּי וְהָאֱמֹרִי וְהַחִוִּי וְהַיְבוּסִי אֲשֶׁר נִשְׁבַּע לַאֲבֹתֶֽיךָ לָֽתֶת לָךְ אֶֽרֶץ זָבַת חָלָב וּדְבָשׁ וְעָבַדְתָּ אֶת־הָעֲבֹדָה הַזֹּאת בַּחֹֽדֶשׁ הַזֶּה: שִׁבְעַת יָמִים תֹּאכַל מַצֹּת וּבַיּוֹם הַשְּׁ֒בִיעִי חַג לַיהוָֹה: מַצּוֹת יֵאָכֵל אֵת שִׁבְעַת הַיָּמִים וְלֹא־יֵרָאֶה לְךָ חָמֵץ וְלֹא־יֵרָאֶה לְךָ שְׂאֹר בְּכָל־גְּבֻלֶֽךָ: וְהִגַּדְתָּ לְבִנְךָ בַּיּוֹם הַהוּא לֵאמֹר בַּֽעֲבוּר זֶה עָשָׂה יְהֹוָה לִי בְּצֵאתִי מִמִּצְרָֽיִם: וְהָיָה לְךָ לְאוֹת עַל־יָדְ֒ךָ וּלְזִכָּרוֹן בֵּין עֵינֶֽיךָ לְמַֽעַן תִּֽהְיֶה תּוֹרַת יְהֹוָה בְּפִֽיךָ כִּי בְּיָד חֲזָקָה הוֹצִאֲךָ יְהֹוָה מִמִּצְרָֽיִם: וְשָׁמַרְתָּ אֶת־הַחֻקָּה הַזֹּאת לְמוֹעֲדָהּ מִיָּמִים יָמִֽימָה:",
+        "translation": "Adonoy spoke to Moses, saying: “Sanctify unto Me all the firstborn, whatsoever opens the womb among the Children of Israel, both of man and beast is Mine.” And Moses said to the people: “Remember this day on which you came out of Egypt, out of the house of bondage, for with a strong hand Adonoy brought you out from here, and [therefore] you must not eat chametz. This day you are departing, in the month of springtime. And it will be when Adonoy will bring you to the land of the Canaanites and the Hittites, and the Emorites, and the Hivites, and the Jebusites, which He swore to your fathers to give you, a land flowing with milk and honey, you shall perform this service in this month. Seven days, you shall eat matzos, and on the seventh day there shall be a festival [dedicated] to Adonoy. Matzos shall be eaten during these seven days, and no chametz and no leaven shall be seen in your possession within all your boundaries. And you shall relate to your son on that day, saying: ‘Because of this Adonoy acted on my behalf when I came out of Egypt. And it shall be for a sign upon your arm and for a reminder between your eyes so that Adonoy’s teaching will be [the words of] your mouth; for with a strong hand Adonoy brought you out of Egypt. And you shall keep this ordinance in its appointed time from year to year.",
+        "transliteration": "vah-ye-dah-behr ah-doh-NAI ehl m-sheh leh-mohr: kah-dehsh lee khohl be-khohr peh-tehr kohl reh-khehm beev-ney yees-rah-ehl bah-ah-dahm oo-vah-BE-heh-mah lee hoo: vah-yoh-mehr m-sheh ehl hah-ahm zah-khohr eht hah-yohm hah-zeh ah-shehr ye-tsah-tehm mee-meets-rah-yeem mee-beyt ah-vah-deem kee be-khoh-zehk yahd hoh-tsee ah-doh-NAI eht-khehm mee-zeh ve-loh yeh-ah-khehl khah-mehts: hah-yohm ah-tehm yoh-TSE-eem be-khoh-dehsh hah-ah-veev: ve-hah-yah khee ye-vee-ah-khah ah-doh-NAI ehl eh-rehts hah-KE-nah-ah-nee ve-hah-khee-tee ve-hah-eh-moh-ree ve-hah-khee-vee ve-hah-ye-voo-see ah-shehr neesh-bah lah-ah-voh-tey-khah lah-teht lahkh eh-rehts zah-vaht khah-lahv oo-de-vahsh ve-ah-vahd-tah eht hah-ah-voh-dah hah-zoht bah-khoh-dehsh hah-zeh: sheev-aht yah-meem toh-khahl mah-tsoht oo-vah-yohm hah-SHE-vee-ee khahg lah-ah-doh-NAI: mah-tsoht yeh-ah-khehl eht sheev-aht hah-yah-meem ve-loh yeh-rah-eh le-khah khah-mehts ve-loh yeh-rah-eh le-khah se-ohr be-khohl ge-voo-leh-khah: ve-hee-gahd-tah le-veen-khah bah-yohm hah-hoo leh-mohr bah-ah-voor zeh ah-sah ah-doh-NAI lee be-tseh-tee mee-meets-rah-yeem: ve-hah-yah le-khah le-oht ahl yah-DE-khah oo-le-zee-kah-rohn beyn ey-ney-khah le-mah-ahn tee-he-yeh toh-raht ah-doh-NAI be-fee-khah kee be-yahd khah-zah-kah hoh-tsee-ah-khah ah-doh-NAI mee-meets-rah-yeem: ve-shah-mahr-tah eht hah-khoo-kah hah-zoht le-moh-ah-dahh mee-yah-meem yah-mee-mah:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 12",
+        "readingStep": {
+          "title": "While wearing tefillin · Kadesh",
+          "body": "Many communities read these two Exodus passages while wearing tefillin. This guide places them before Shema, following the captured Ashkenazi order. Their place in the full service differs by custom. Begin with Exodus 13:1–10 below."
+        }
+      },
+      {
+        "id": "tefillin-13",
+        "hebrew": "וְהָיָה כִּי־יְבִאֲךָ יְהֹוָה אֶל־אֶֽרֶץ הַכְּ֒נַעֲנִי כַּאֲשֶׁר נִשְׁבַּע לְךָ וְלַאֲבֹתֶֽיךָ וּנְתָנָהּ לָךְ: וְהַעֲבַרְתָּ כָל־פֶּֽטֶר־רֶֽחֶם לַֽיהוָֹה וְכָל פֶּֽטֶר שֶֽׁגֶר בְּהֵמָה אֲשֶׁר יִהְיֶה לְךָ הַזְּ֒כָרִים לַיהוָֹה: וְכָל־פֶּֽטֶר חֲמֹר תִּפְדֶּה בְשֶׂה וְאִם־לֹא תִפְדֶּה וַעֲרַפְתּוֹ וְכֹל בְּכוֹר אָדָם בְּבָנֶֽיךָ תִּפְדֶּה: וְהָיָה כִּי־יִשְׁאָלְ֒ךָ בִנְךָ מָחָר לֵאמֹר מַה־זֹּאת וְאָמַרְתָּ אֵלָיו בְּחֹֽזֶק יָד הוֹצִיאָֽנוּ יְהֹוָה מִמִּצְרַֽיִם מִבֵּית עֲבָדִים: וַיְהִי כִּי־הִקְשָׁה פַרְעֹה לְשַׁלְּ֒חֵנוּ וַיַּהֲרֹג יְהֹוָה כָּל־בְּכוֹר בְּאֶֽרֶץ מִצְרַֽיִם מִבְּֽ֒כֹר אָדָם וְעַד־בְּכוֹר בְּהֵמָה עַל־כֵּן אֲנִי זֹבֵֽחַ לַֽיהוָֹה כָּל־פֶּֽטֶר רֶֽחֶם הַזְּ֒כָרִים וְכָל־בְּכוֹר בָּנַי אֶפְדֶּה: וְהָיָה לְאוֹת עַל־יָדְ֒כָה וּלְטוֹטָפֹת בֵּין עֵינֶֽיךָ כִּי בְּחֹֽזֶק יָד הוֹצִיאָֽנוּ יְהֹוָה מִמִּצְרָֽיִם:",
+        "translation": "And it will be, when Adonoy will bring you to the land of the Canaanites as He swore unto you and to your fathers, and will have given it to you. Then you shall bring to Adonoy every one that opens the womb, and every firstling that is dropped by cattle that belong to you, the males shall belong to Adonoy, The firstling of a donkey you shall redeem with a lamb; and if you do not redeem it, then you must kill it by breaking its neck. You must redeem every firstborn of man among your children. And it will be when your son asks you in future times, saying: ‘What is this?’ You shall say to him: ‘With a strong hand Adonoy brought us out of Egypt, out of the house of bondage. And it was when Pharaoh unyieldingly refused to let us go, that Adonoy killed all the firstborn in the land of Egypt, from the firstborn of man, to the firstborn of beast; therefore I sacrifice to Adonoy all that opens the womb that are males, and every firstborn of my sons, I redeem.’ And it shall be a sign upon your arm, and for totafos between your eyes, for with a strong hand, Adonoy brought us out of Egypt.",
+        "transliteration": "ve-hah-yah kee ye-vee-ah-khah ah-doh-NAI ehl eh-rehts hah-KE-nah-ah-nee kah-ah-shehr neesh-bah le-khah ve-lah-ah-voh-tey-khah oo-ne-tah-nahh lahkh: ve-hah-ah-vahr-tah khohl peh-tehr reh-khehm lah-ah-doh-NAI ve-khohl peh-tehr sheh-gehr be-heh-mah ah-shehr yeeh-yeh le-khah hah-ZE-khah-reem lah-ah-doh-NAI: ve-khohl peh-tehr khah-mohr teef-deh ve-seh ve-eem loh teef-deh vah-ah-rahf-toh ve-khohl be-khohr ah-dahm be-vah-ney-khah teef-deh: ve-hah-yah kee yeesh-ah-LE-khah veen-khah mah-khahr leh-mohr mahh zoht ve-ah-mahr-tah eh-lahv be-khoh-zehk yahd hoh-tsee-ah-noo ah-doh-NAI mee-meets-rah-yeem mee-beyt ah-vah-deem: vah-ye-hee kee heek-shah fahr-ohh le-shah-LE-kheh-noo vah-yah-hah-rohg ah-doh-NAI kohl be-khohr be-eh-rehts meets-rah-yeem mee-BE-khohr ah-dahm ve-ahd be-khohr be-heh-mah ahl kehn ah-nee zoh-veh-ahkh lah-ah-doh-NAI kohl peh-tehr reh-khehm hah-ZE-khah-reem ve-khohl be-khohr bah-nahy ehf-deh: ve-hah-yah le-oht ahl yah-DE-khah oo-le-toh-tah-foht beyn ey-ney-khah kee be-khoh-zehk yahd hoh-tsee-ah-noo ah-doh-NAI mee-meets-rah-yeem:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin 13",
+        "readingStep": {
+          "title": "Continue · Vehayah ki yevi’acha",
+          "body": "Read Exodus 13:11–16. Then continue to Shema; this is not the end of the reading."
+        }
+      },
+      {
+        "id": "tefillin-shema-2",
+        "hebrew": "אֵל מֶֽלֶךְ נֶאֱמָן:",
+        "translation": "(Almighty, faithful King)",
+        "transliteration": "ehl meh-lehkh neh-eh-mahn:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 2",
+        "readingStep": {
+          "title": "Before Shema · If your custom says it",
+          "body": "When praying alone, many Ashkenazi communities begin with El melech ne’eman. Omit these words with a minyan and in customs that use the final repetition instead, including Chabad. The blessing choice above does not select your Shema custom."
+        }
+      },
+      {
+        "id": "tefillin-shema-3",
+        "hebrew": "שְׁמַע יִשְׂרָאֵל יְהֹוָה אֱלֹהֵֽינוּ יְהֹוָה אֶחָד:",
+        "translation": "Hear, Israel: Adonoy is our God, Adonoy is One.",
+        "transliteration": "she-mah yees-rah-ehl ah-doh-NAI eh-loh-hey-noo ah-doh-NAI eh-khahd:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 3",
+        "readingStep": {
+          "title": "Now say · Shema Yisrael",
+          "body": "This is the opening of Shema, not the whole prayer. Cover your eyes with your right hand for this first verse. If you are following Shacharit, say Shema in its place after its opening blessings; do not use this guide to replace the service."
+        }
+      },
+      {
+        "id": "tefillin-shema-5",
+        "hebrew": "בָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד:",
+        "translation": "Blessed [is His] Name, Whose glorious kingdom is forever and ever.",
+        "transliteration": "bah-rookh shehm ke-vohd mahl-khoo-toh le-oh-lahm vah-ehd:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 5",
+        "readingStep": {
+          "title": "Quietly · Baruch shem",
+          "body": "Pause briefly after the opening verse, then say this response quietly."
+        }
+      },
+      {
+        "id": "tefillin-shema-6",
+        "hebrew": "וְאָהַבְתָּ אֵת יְהֹוָה אֱלֹהֶֽיךָ בְּכָל֯־לְ֯בָבְ֒ךָ וּבְכָל־נַפְשְׁ֒ךָ וּבְכָל־מְאֹדֶֽךָ: וְהָיוּ הַדְּ֒בָרִים הָאֵֽלֶּה אֲשֶׁר֯ אָ֯נֹכִי מְצַוְּ֒ךָ הַיּוֹם עַל֯־לְ֯בָבֶֽךָ: וְשִׁנַּנְתָּם לְבָנֶֽיךָ וְדִבַּרְתָּ בָּם בְּשִׁבְתְּ֒ךָ בְּבֵיתֶֽךָ וּבְלֶכְתְּ֒ךָ בַדֶּֽרֶךְ וּבְשָׁכְבְּ֒ךָ וּבְקוּמֶֽךָ: וּקְשַׁרְתָּם לְאוֹת עַל֯־יָ֯דֶֽךָ וְהָיוּ לְטֹטָפֹת בֵּין עֵינֶֽיךָ: וּכְתַבְתָּם עַל־מְזֻזוֹת בֵּיתֶֽךָ וּבִשְׁעָרֶֽיךָ:",
+        "translation": "And you shall love Adonoy your God with all your heart and with all your soul and with all your possessions. And these words which I command you today, shall be upon your heart. And you shall teach them sharply to your children. And you shall discuss them when you sit in your house, and when you travel on the road, and when you lie down and when you rise. And you shall bind them for a sign upon your hand, and they shall be for totafos between your eyes. And you shall write them upon the doorposts of your house and upon your gateways.",
+        "transliteration": "ve-ah-hahv-tah eht ah-doh-NAI eh-loh-hey-khah be-khahl le-vah-VE-khah oo-ve-khohl nahf-SHE-khah oo-ve-khohl me-oh-deh-khah: ve-hah-yoo hah-DE-vah-reem hah-eh-leh ah-SHEHR ah-noh-KHEE me-tsah-VE-khah hah-yohm ahl le-vah-veh-KHAH: ve-shee-nahn-tahm le-vah-ney-khah ve-dee-bahr-tah bahm be-sheev-TE-khah be-vey-teh-khah oo-ve-lehkh-TE-khah vah-deh-rehkh oo-ve-shah-khe-BE-khah oo-ve-koo-meh-khah: oo-ke-shahr-tahm le-oht ahl yah-deh-KHAH ve-hah-yoo le-toh-tah-foht beyn ey-ney-khah: oo-khe-tahv-tahm ahl me-zoo-zoht bey-teh-khah oo-veesh-ah-rey-khah:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 6",
+        "readingStep": {
+          "title": "Continue · Ve’ahavta",
+          "body": "Uncover your eyes and read the rest of the first paragraph. Continue through all the words below."
+        }
+      },
+      {
+        "id": "tefillin-shema-7",
+        "hebrew": "וְהָיָה אִם־שָׁמֹֽעַ תִּשְׁמְ֒עוּ אֶל־מִצְוֹתַי אֲשֶׁר֯ אָ֯נֹכִי מְצַוֶּה אֶתְכֶם הַיּוֹם לְאַהֲבָה אֶת־יְהֹוָה אֱלֹהֵיכֶם וּלְעָבְדוֹ בְּכָל֯־לְ֯בַבְכֶם וּבְכָל־נַפְשְׁ֒כֶם: וְנָתַתִּי מְטַר֯־אַ֯רְצְ֒כֶם בְּעִתּוֹ֯ י֯וֹרֶה וּמַלְקוֹשׁ וְאָסַפְתָּ דְגָנֶֽךָ וְתִירשְׁ֒ךָ וְיִצְהָרֶֽךָ: וְנָתַתִּי עֵֽשֶׂב֯ בְּ֯שָׂדְ֒ךָ לִבְהֶמְתֶּֽךָ וְאָכַלְתָּ וְשָׂבָֽעְתָּ: הִשָּׁמְ֒רוּ לָכֶם פֶּן֯־יִ֯פְתֶּה לְבַבְכֶם וְסַרְתֶּם וַעֲבַדְתֶּם אֱלֹהִים֯ אֲ֯חֵרִים וְהִשְׁתַּחֲוִיתֶם לָהֶם: וְחָרָה אַף־יְהֹוָה בָּכֶם וְעָצַר֯ אֶ֯ת־הַשָּׁמַֽיִם וְלֹא֯־יִ֯הְיֶה מָטָר וְהָאֲדָמָה לֹא תִתֵּן אֶת֯־יְ֯בוּלָהּ וַאֲבַדְתֶּם֯ מְ֯הֵרָה מֵעַל הָאָֽרֶץ הַטֹּבָה אֲשֶׁר֯ יְ֯הֹוָה נֹתֵן לָכֶם: וְשַׂמְתֶּם֯ אֶ֯ת־דְּבָרַי֯ אֵֽ֯לֶּה עַל֯־לְ֯בַבְכֶם וְעַל־נַפְשְׁ֒כֶם וּקְשַׁרְתֶּם֯ אֹ֯תָם לְאוֹת עַל֯־יֶ֯דְכֶם וְהָיוּ לְטוֹטָפֹת בֵּין עֵינֵיכֶם: וְלִמַּדְתֶּם֯ אֹ֯תָם אֶת־בְּנֵיכֶם לְדַבֵּר בָּם בְּשִׁבְתְּ֒ךָ בְּבֵיתֶֽךָ וּבְלֶכְתְּ֒ךָ בַדֶּֽרֶךְ וּבְשָׁכְבְּ֒ךָ וּבְקוּמֶֽךָ: וּכְתַבְתָּם עַל־מְזוּזוֹת בֵּיתֶֽךָ וּבִשְׁעָרֶֽיךָ: לְמַֽעַן֯ יִ֯רְבּוּ יְמֵיכֶם וִימֵי בְנֵיכֶם עַל הָאֲדָמָה אֲשֶׁר נִשְׁבַּע יְהֹוָה לַאֲבֹתֵיכֶם לָתֵת לָהֶם כִּימֵי הַשָּׁמַֽיִם עַל־הָאָֽרֶץ:",
+        "translation": "And it will be— if you vigilantly obey My commandments which I command you this day, to love Adonoy your God, and serve Him with your entire hearts and with your entire souls— that I will give rain for your land in its proper time, the early (autumn) rain and the late (spring) rain; and you will harvest your grain and your wine and your oil. And I will put grass in your fields for your cattle, and you will eat and be satisfied. Beware lest your hearts be swayed and you turn astray, and you worship alien gods and bow to them. And Adonoy’s fury will blaze among you, and He will close off the heavens and there will be no rain and the earth will not yield its produce; and you will perish swiftly from the good land which Adonoy gives you. Place these words of Mine upon your hearts and upon your souls,— and bind them for a sign upon your hands, and they shall be for totafos between your eyes. And you shall teach them to your sons, to speak them when you sit in your house, and when you travel on the road, and when you lie down and when you rise. And you shall write them upon the doorposts of your house and upon your gateways. In order that your days be prolonged, and the days of your children, upon the land which Adonoy swore to your fathers to give them [for as long] as the heavens are above the earth.",
+        "transliteration": "ve-hah-yah eem shah-moh-ah teesh-ME-oo ehl meets-voh-tahy ah-SHEHR ah-noh-KHEE me-tsah-veh eht-khehm hah-yohm le-ah-hah-vah eht ah-doh-NAI eh-loh-hey-khehm oo-le-ah-ve-doh be-khahl le-vahv-KHEHM oo-ve-khohl nahf-SHE-khehm: ve-nah-tah-tee me-tahr ahr-TSE-khehm be-ee-TOH yoh-REH oo-mahl-kohsh ve-ah-sahf-tah de-gah-neh-khah ve-tee-RSHE-khah ve-yeets-hah-reh-khah: ve-nah-tah-tee eh-SEHV be-sah-DE-khah leev-hehm-teh-khah ve-ah-khahl-tah ve-sah-vah-e-tah: hee-shah-ME-roo lah-khehm pehn yeef-TEH le-vahv-khehm ve-sahr-tehm vah-ah-vahd-tehm eh-loh-HEEM ah-kheh-REEM ve-heesh-tah-khah-vee-tehm lah-hehm: ve-khah-rah ahf ah-doh-NAI bah-khehm ve-ah-TSAHR eht hah-shah-mah-YEEM ve-loh yeeh-YEH mah-tahr ve-hah-ah-dah-mah loh tee-tehn eht ye-voo-LAHH vah-ah-vahd-TEHM me-heh-RAH meh-ahl hah-ah-rehts hah-toh-vah ah-SHEHR ah-doh-NAI noh-tehn lah-khehm: ve-sahm-TEHM eht de-vah-RAHY eh-LEH ahl le-vahv-KHEHM ve-ahl nahf-SHE-khehm oo-ke-shahr-TEHM oh-TAHM le-oht ahl yehd-KHEHM ve-hah-yoo le-toh-tah-foht beyn ey-ney-khehm: ve-lee-mahd-TEHM oh-TAHM eht be-ney-khehm le-dah-behr bahm be-sheev-TE-khah be-vey-teh-khah oo-ve-lehkh-TE-khah vah-deh-rehkh oo-ve-shah-khe-BE-khah oo-ve-koo-meh-khah: oo-khe-tahv-tahm ahl me-zoo-zoht bey-teh-khah oo-veesh-ah-rey-khah: le-mah-AHN yeer-BOO ye-mey-khehm vee-mey ve-ney-khehm ahl hah-ah-dah-mah ah-shehr neesh-bah ah-doh-NAI lah-ah-voh-tey-khehm lah-teht lah-hehm kee-mey hah-shah-mah-yeem ahl hah-ah-rehts:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 7",
+        "readingStep": {
+          "title": "Then · Vehayah im shamoa",
+          "body": "Read the second paragraph of Shema in full."
+        }
+      },
+      {
+        "id": "tefillin-shema-8",
+        "hebrew": "וַֽיֹּאמֶר֯ יְ֯הֹוָה֯ אֶ֯ל־משֶׁה לֵּאמֹר: דַּבֵּר֯ אֶ֯ל־בְּנֵי יִשְׂרָאֵל וְאָמַרְתָּ אֲלֵהֶם וְעָשׂוּ לָהֶם צִיצִת עַל־כַּנְפֵי בִגְ֒דֵיהֶם לְדֹרֹתָם וְנָתְ֒נוּ עַל־צִיצִת הַכָּנָף֯ פְּ֯תִיל תְּכֵֽלֶת: וְהָיָה לָכֶם לְצִיצִת וּרְאִיתֶם֯ אֹ֯תוֹ וּזְכַרְתֶּם֯ אֶ֯ת־כָּל־מִצְוֹת֯ יְ֯הֹוָה וַעֲשִׂיתֶם֯ אֹ֯תָם וְלֹא תָתֽוּרוּ אַחֲרֵי לְבַבְכֶם וְאַחֲרֵי עֵינֵיכֶם אֲשֶׁר֯־אַ֯תֶּם זֹנִים֯ אַ֯חֲרֵיהֶם: לְמַֽעַן תִּזְכְּ֒רוּ וַעֲשִׂיתֶם֯ אֶ֯ת־כָּל־מִצְוֹתָי וִהְיִיתֶם קְדשִׁים לֵאלֹהֵיכֶם: אֲנִי יְהֹוָה אֱלֹהֵיכֶם֯ אֲ֯שֶׁר הוֹצֵֽאתִי אֶתְכֶם֯ מֵ֯אֶֽרֶץ מִצְרַֽיִם לִהְיוֹת לָכֶם לֵאלֹהִים֯ אֲ֯נִי יְהֹוָה אֱלֹהֵיכֶם֯:",
+        "translation": "And Adonoy spoke to Moses saying: Speak to the children of Israel, and tell them to make for themselves fringes on the corners of their garments throughout their generations; and they will place with the fringes of each corner a thread of blue. And it will be to you for fringes, and you will look upon it and you will remember all the commandments of Adonoy, and you will perform them; and you will not turn aside after your hearts and after your eyes which cause you to go astray. In order that you will remember and perform all My commandments; and you will be holy unto your God. I am Adonoy, your God, Who brought you out of the land of Egypt to be your God: I am Adonoy, your God—",
+        "transliteration": "vah-yoh-MEHR ah-doh-NAI ehl m-SHEH leh-mohr: dah-BEHR ehl be-NEY yees-rah-ehl ve-ah-mahr-tah ah-leh-hehm ve-ah-soo lah-hehm tsee-tseet ahl kahn-fey VEEG-dey-hehm le-doh-roh-tahm ve-nah-TE-noo ahl tsee-tseet hah-kah-NAHF pe-TEEL te-kheh-leht: ve-hah-yah lah-khehm le-tsee-tseet oo-re-ee-TEHM oh-TOH oo-ze-khahr-TEHM eht kohl meets-VOHT ah-doh-NAI vah-ah-see-TEHM oh-TAHM ve-loh tah-too-roo ah-khah-rey le-vahv-khehm ve-ah-khah-rey ey-ney-khehm ah-shehr ah-TEHM zoh-NEEM ah-khah-rey-HEHM: le-mah-ahn teez-KE-roo vah-ah-see-TEHM eht kohl meets-voh-TAHY veeh-yee-tehm ke-d-sheem leh-loh-hey-khehm: ah-nee ah-doh-NAI eh-loh-hey-KHEHM ah-SHEHR hoh-tseh-tee eht-KHEHM meh-eh-REHTS meets-rah-yeem leeh-yoht lah-khehm leh-loh-HEEM ah-NEE ah-doh-NAI eh-loh-hey-KHEHM:",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 8",
+        "readingStep": {
+          "title": "Then · Vayomer",
+          "body": "Read the third paragraph of Shema, including the remembrance of the Exodus. Follow your custom at the ending: Chabad practice when alone repeats the final words Ani Adonai Eloheichem before saying Emet. Other customs use their own repetition or listen to the leader. Join the ending to Emet below without unrelated speech."
+        }
+      },
+      {
+        "id": "tefillin-shema-10",
+        "hebrew": "אֱ֯מֶת",
+        "translation": "—is true—",
+        "transliteration": "eh-MEHT",
+        "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Blessings of the Shema, Shema 10",
+        "readingStep": {
+          "title": "Finish this reading · Emet",
+          "body": "Say this word joined to the end of the previous paragraph. In a congregation, follow the leader’s repetition according to your custom. During Shacharit, continue directly into the blessing after Shema in your siddur."
+        }
+      }
+    ],
+    "source": "local-cache",
+    "updatedAt": "2026-09-27T00:00:00.000Z",
+    "hebrewReview": {
+      "contentKind": "remote-unreviewed",
+      "status": "pending",
+      "tradition": "varies",
+      "sourceTitle": "Siddur Ashkenaz · Tefillin and Shema",
+      "sourceRef": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin",
+      "sourceUrl": "https://www.sefaria.org/Siddur_Ashkenaz,_Weekday,_Shacharit,_Preparatory_Prayers,_Tefillin",
+      "licenseStatus": "verification-required",
+      "notes": "Selected, source-addressed passages assembled into a practice guide. The unaligned Leshem yichud introduction is not included. Customary passages are labeled. Hebrew, translation and pronunciation retain the captured Metsudah edition and await expert review."
+    },
+    "sourceMetadata": {
+      "work": "Practice guides",
+      "categories": [
+        "Liturgy"
+      ],
+      "path": [],
+      "hebrewTitle": "תפילין",
+      "sourceVersion": {
+        "versionTitle": "The Metsudah siddur, 1981",
+        "language": "he",
+        "actualLanguage": "he",
+        "license": "CC-BY",
+        "versionSource": "https://www.nli.org.il/he/books/NNL_ALEPH002211687"
+      },
+      "translationVersions": [
+        {
+          "versionTitle": "Translation based on the Metsudah linear siddur, by Avrohom Davis, 1981",
+          "language": "en",
+          "actualLanguage": "en",
+          "license": "CC-BY",
+          "versionSource": "https://www.nli.org.il/he/books/NNL_ALEPH002211687"
+        }
+      ]
+    },
+    "research": {
+      "id": "practice-tefillin",
+      "pronunciationStatus": "machine-draft-unreviewed",
+      "alignmentStatus": "source-address-matched-unreviewed"
+    },
+    "practice": "tefillin"
   }
 ]

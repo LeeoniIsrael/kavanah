@@ -2,8 +2,8 @@
   "generatedAt": "2026-09-27T00:00:00.000Z",
   "sourceApi": "offline-research-snapshot",
   "sourceCatalog": "docs/research/prayer-dictionary",
-  "workCount": 31,
-  "entryCount": 560,
+  "workCount": 32,
+  "entryCount": 561,
   "languages": [
     "he",
     "en"
@@ -78,13 +78,20 @@
         "shema yisrael",
         "hear israel",
         "adonai echad",
-        "daily"
+        "daily",
+        "veahavta",
+        "vehafta",
+        "v’ahavta",
+        "ve ahavta",
+        "vehaya im shamoa",
+        "vayomer",
+        "full shema"
       ],
       "tags": [
         "daily"
       ],
-      "summary": "Shema · Siddur Ashkenaz",
-      "useCase": "Shema · Siddur Ashkenaz Themes: daily. Follow your community’s practice.",
+      "summary": "Shema Yisrael, Baruch shem, Ve’ahavta, Vehayah im shamoa and Vayomer, with the source’s congregational directions.",
+      "useCase": "Read all three paragraphs of Shema. Used morning and evening; the surrounding blessings belong to the appropriate service. For putting on tefillin, open Tefillin. For sleep, open Bedtime Shema.",
       "sourceVersion": {
         "versionTitle": "The Metsudah siddur, 1981",
         "language": "he",
@@ -12246,7 +12253,7 @@
     },
     {
       "id": "sefaria-siddur-ashkenaz-weekday-maariv-keri-at-shema-al-hamita",
-      "title": "Keri'at Shema al Hamita",
+      "title": "Bedtime Shema",
       "hebrewTitle": "קריאת שמע על המיטה",
       "ref": "Siddur Ashkenaz, Weekday, Maariv, Keri'at Shema al Hamita",
       "work": "Siddur Ashkenaz",
@@ -12261,13 +12268,18 @@
       "tradition": "ashkenaz",
       "aliases": [
         "קריאת שמע על המיטה",
-        "daily"
+        "daily",
+        "bedtime",
+        "sleep",
+        "shema before bed",
+        "hamapil",
+        "keriat shema al hamita"
       ],
       "tags": [
         "daily"
       ],
-      "summary": "Keri'at Shema al Hamita · Siddur Ashkenaz",
-      "useCase": "Keri'at Shema al Hamita · Siddur Ashkenaz Themes: daily. Follow your community’s practice.",
+      "summary": "The bedtime sequence, including forgiveness, Hamapil, Shema and the accompanying verses in this Ashkenazi edition.",
+      "useCase": "Say when ready to sleep. Includes Hamapil and the passages printed in this edition; the order and added verses differ by custom. This does not replace Maariv.",
       "sourceVersion": {
         "versionTitle": "The Metsudah siddur, 1981",
         "language": "he",
@@ -15148,7 +15160,7 @@
         "sleep"
       ],
       "summary": "Bedtime Shema · Siddur Sefard",
-      "useCase": "Bedtime Shema · Siddur Sefard Themes: sleep. Follow your community’s practice.",
+      "useCase": "Say when ready to sleep. Includes Hamapil and the passages printed in this edition; the order and added verses differ by custom. This does not replace Maariv.",
       "sourceVersion": {
         "versionTitle": "The Metsudah siddur, 1981",
         "language": "he",
@@ -23550,6 +23562,50 @@
           "actualLanguage": "en",
           "license": "Public Domain",
           "versionSource": "http://opensiddur.org/2010/08/%D7%AA%D7%A0%D7%B4%D7%9A-the-holy-scriptures-a-new-translation-jps-1917/"
+        }
+      ]
+    },
+    {
+      "id": "tefillin",
+      "title": "Tefillin",
+      "hebrewTitle": "תפילין",
+      "ref": "Siddur Ashkenaz, Weekday, Shacharit, Preparatory Prayers, Tefillin",
+      "work": "Practice guides",
+      "categories": [
+        "Liturgy"
+      ],
+      "path": [],
+      "tradition": "varies",
+      "aliases": [
+        "תפילין",
+        "tefillin",
+        "tefilin",
+        "tfilin",
+        "tefillin prayer",
+        "lay tefillin",
+        "put on tefillin",
+        "wrapping tefillin",
+        "phylacteries"
+      ],
+      "tags": [
+        "tefillin"
+      ],
+      "summary": "Put on tefillin, follow your custom, and read the accompanying passages, including all three paragraphs of Shema.",
+      "useCase": "A weekday tefillin guide: preparation, blessings, wrapping, Kadesh, Vehayah ki yevi’acha, Shema with Ve’ahavta, and removal. A practice sequence, not the complete Shacharit service.",
+      "sourceVersion": {
+        "versionTitle": "The Metsudah siddur, 1981",
+        "language": "he",
+        "actualLanguage": "he",
+        "license": "CC-BY",
+        "versionSource": "https://www.nli.org.il/he/books/NNL_ALEPH002211687"
+      },
+      "translationVersions": [
+        {
+          "versionTitle": "Translation based on the Metsudah linear siddur, by Avrohom Davis, 1981",
+          "language": "en",
+          "actualLanguage": "en",
+          "license": "CC-BY",
+          "versionSource": "https://www.nli.org.il/he/books/NNL_ALEPH002211687"
         }
       ]
     }

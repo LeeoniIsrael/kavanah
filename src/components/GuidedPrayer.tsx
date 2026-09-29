@@ -1,3 +1,10 @@
+import { Linking } from "react-native";
+import type { PrayerToken } from "@/types/prayer";
+import { prayerTokenStep } from "@/data/prayerSteps";
+import {
+  TefillinPreparation,
+  type TefillinBlessingCustom,
+} from "@/components/TefillinPreparation";
 import {
   PrayerConversation,
   PrayerExplanation,
@@ -15,15 +22,9 @@ import { fonts, motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import type { QuoteSource } from "@/store/socialStore";
 
-export type GuidedPrayerToken = {
-  kind?: "instruction";
-  id: string;
-  hebrew: string;
-  transliteration: string;
-  translation: string;
-  translationLanguage?: string;
-};
+export type GuidedPrayerToken = PrayerToken & { translationLanguage?: string };
 type Props = {
+  practice?: "tefillin" | undefined;
   completionBlockedReason?: string | undefined;
   startedAt: number;
   prayerTitle: string;
@@ -44,6 +45,7 @@ type Props = {
   onSaveQuote: (source: QuoteSource, start: number, end: number) => boolean;
 };
 export function GuidedPrayer({
+  practice,
   completionBlockedReason,
   startedAt,
   prayerTitle,
@@ -66,6 +68,8 @@ export function GuidedPrayer({
   const colors = useThemeColors(),
     insets = useSafeAreaInsets();
   const [reveal] = useState(() => new Animated.Value(1));
+  const [blessingCustom, setBlessingCustom] =
+    useState<TefillinBlessingCustom>("compare");
   const [activeQuoteField, setActiveQuoteField] = useState("");
   const [clockTick, setClockTick] = useState(Date.now);
   const scroll = useRef<FlatList<GuidedPrayerToken>>(null);
@@ -191,7 +195,14 @@ export function GuidedPrayer({
         <Animated.View style={{ flex: 1, opacity: reveal }}>
           <FlatList
             ref={scroll}
-            data={tokens}
+            data={tokens.filter(
+              (token) =>
+                !(
+                  practice === "tefillin" &&
+                  blessingCustom === "one" &&
+                  token.id === "tefillin-7"
+                ),
+            )}
             keyExtractor={(item) => item.id}
             initialNumToRender={3}
             windowSize={5}
@@ -202,7 +213,7 @@ export function GuidedPrayer({
             }}
             ListHeaderComponent={
               <View style={{ gap: 16, paddingBottom: 24 }}>
-                {quoteSource ? (
+                {quoteSource && !practice ? (
                   <Text
                     style={{
                       color: colors.inkMuted,
@@ -213,6 +224,12 @@ export function GuidedPrayer({
                     Tap a word in the pronunciation or Hebrew, then tap the last
                     word to keep it as your weekly quote.
                   </Text>
+                ) : null}
+                {practice === "tefillin" ? (
+                  <TefillinPreparation
+                    custom={blessingCustom}
+                    onChange={setBlessingCustom}
+                  />
                 ) : null}
                 {guide?.before ? (
                   <View style={{ gap: 8 }}>
@@ -269,7 +286,23 @@ export function GuidedPrayer({
                       </Text>
                     </>
                   ) : null}
-                  {guide.source && onGuideSource ? (
+                  {guide.links?.map((link) => (
+                    <Button
+                      key={link.url}
+                      variant="ghost"
+                      size="content"
+                      accessibilityRole="link"
+                      onPress={() => {
+                        void Linking.openURL(link.url);
+                      }}
+                      style={{ minHeight: 44, justifyContent: "flex-start" }}
+                    >
+                      <Text style={{ color: colors.blue, flexShrink: 1 }}>
+                        {link.title}
+                      </Text>
+                    </Button>
+                  ))}
+                  {!guide.links?.length && guide.source && onGuideSource ? (
                     <Button
                       variant="ghost"
                       size="content"
@@ -285,40 +318,156 @@ export function GuidedPrayer({
               ) : null
             }
             ItemSeparatorComponent={() => <View style={{ height: 36 }} />}
-            renderItem={({ item: token }) => (
-              <View style={{ gap: 24 }}>
-                {token.kind === "instruction" ? (
-                  <Text variant="caption" style={{ color: colors.inkMuted }}>Prayer-book instruction · not recited</Text>
-                ) : null}
-                {token.transliteration ? (
-                  <View
-                    style={{
-                      padding: 20,
-                      borderRadius: 26,
-                      backgroundColor: colors.vellum,
-                      gap: 10,
-                    }}
-                  >
-                    <Text variant="caption" style={{ color: colors.inkMuted }}>
-                      Pronunciation · draft
+            renderItem={({ item: token }) => {
+              const step = prayerTokenStep(token);
+              const skipHeadBlessing =
+                practice === "tefillin" &&
+                blessingCustom === "one" &&
+                token.id === "tefillin-5";
+              if (token.kind === "instruction" || skipHeadBlessing)
+                return (
+                  <View style={{ gap: 10 }}>
+                    <Text
+                      style={{
+                        color: colors.blue,
+                        fontFamily: fonts.semibold,
+                        fontSize: 20,
+                        lineHeight: 28,
+                      }}
+                    >
+                      {step?.title ?? "What to do"}
                     </Text>
-                    {quoteSource ? (
+                    <Text variant="caption" style={{ color: colors.inkMuted }}>
+                      Direction · not recited
+                    </Text>
+                    <Text
+                      style={{
+                        color: colors.ink,
+                        fontSize: 16,
+                        lineHeight: 25,
+                      }}
+                    >
+                      {skipHeadBlessing
+                        ? "Secure the arm box and wind seven turns around the forearm according to your custom, black side outward. Without unrelated speech, place the head box centrally above your original hairline, never on the forehead. Keep the knot at the back of the head. Secure it without another blessing, then finish the hand wraps."
+                        : token.translation}
+                    </Text>
+                  </View>
+                );
+              return (
+                <View style={{ gap: 24 }}>
+                  {step ? (
+                    <View style={{ gap: 10 }}>
+                      <Text
+                        style={{
+                          color: colors.blue,
+                          fontFamily: fonts.semibold,
+                          fontSize: 20,
+                          lineHeight: 28,
+                        }}
+                      >
+                        {step.title}
+                      </Text>
+                      <Text
+                        style={{
+                          color: colors.ink,
+                          fontSize: 16,
+                          lineHeight: 25,
+                        }}
+                      >
+                        {step.body}
+                      </Text>
+                    </View>
+                  ) : null}
+                  {token.transliteration ? (
+                    <View
+                      style={{
+                        padding: 20,
+                        borderRadius: 26,
+                        backgroundColor: colors.vellum,
+                        gap: 10,
+                      }}
+                    >
+                      <Text
+                        variant="caption"
+                        style={{ color: colors.inkMuted }}
+                      >
+                        Pronunciation · draft
+                      </Text>
+                      {quoteSource ? (
+                        <InlineQuoteText
+                          active={
+                            activeQuoteField === `${token.id}:transliteration`
+                          }
+                          fieldId={`${token.id}:transliteration`}
+                          onActivate={setActiveQuoteField}
+                          onSave={onSaveQuote}
+                          source={{
+                            ...quoteSource,
+                            text: token.transliteration,
+                            language: "transliteration",
+                          }}
+                          style={{
+                            fontFamily: fonts.regular,
+                            fontSize: 25,
+                            lineHeight: 39,
+                            color: colors.ink,
+                          }}
+                        />
+                      ) : (
+                        <Text
+                          selectable
+                          style={{
+                            fontFamily: fonts.regular,
+                            fontSize: 25,
+                            lineHeight: 39,
+                            color: colors.ink,
+                          }}
+                        >
+                          {token.transliteration}
+                        </Text>
+                      )}
+                    </View>
+                  ) : null}
+                  {token.translation ? (
+                    <View style={{ gap: 10 }}>
+                      <Text
+                        variant="caption"
+                        style={{ color: colors.inkMuted }}
+                      >
+                        Translation · {token.translationLanguage ?? language}
+                      </Text>
+                      <Text
+                        selectable
+                        style={{
+                          fontFamily: fonts.regular,
+                          fontSize: 17,
+                          lineHeight: 28,
+                          color: colors.ink,
+                        }}
+                      >
+                        {token.translation}
+                      </Text>
+                    </View>
+                  ) : null}
+                  {token.hebrew ? (
+                    quoteSource ? (
                       <InlineQuoteText
-                        active={
-                          activeQuoteField === `${token.id}:transliteration`
-                        }
-                        fieldId={`${token.id}:transliteration`}
+                        active={activeQuoteField === `${token.id}:hebrew`}
+                        fieldId={`${token.id}:hebrew`}
                         onActivate={setActiveQuoteField}
                         onSave={onSaveQuote}
                         source={{
                           ...quoteSource,
-                          text: token.transliteration,
-                          language: "transliteration",
+                          text: token.hebrew,
+                          language: "he",
                         }}
                         style={{
-                          fontFamily: fonts.regular,
+                          fontFamily: fonts.hebrew,
                           fontSize: 25,
-                          lineHeight: 39,
+                          lineHeight: 40,
+                          fontWeight: "400",
+                          writingDirection: "rtl",
+                          textAlign: "right",
                           color: colors.ink,
                         }}
                       />
@@ -326,85 +475,31 @@ export function GuidedPrayer({
                       <Text
                         selectable
                         style={{
-                          fontFamily: fonts.regular,
+                          fontFamily: fonts.hebrew,
                           fontSize: 25,
-                          lineHeight: 39,
+                          lineHeight: 40,
+                          fontWeight: "400",
+                          writingDirection: "rtl",
+                          textAlign: "right",
                           color: colors.ink,
                         }}
                       >
-                        {token.transliteration}
+                        {token.hebrew}
                       </Text>
-                    )}
-                  </View>
-                ) : null}
-                {token.translation ? (
-                  <View style={{ gap: 10 }}>
-                    <Text variant="caption" style={{ color: colors.inkMuted }}>
-                      Translation · {token.translationLanguage ?? language}
-                    </Text>
-                    <Text
-                      selectable
-                      style={{
-                        fontFamily: fonts.regular,
-                        fontSize: 17,
-                        lineHeight: 28,
-                        color: colors.ink,
-                      }}
-                    >
-                      {token.translation}
-                    </Text>
-                  </View>
-                ) : null}
-                {token.hebrew ? (
-                  quoteSource ? (
-                    <InlineQuoteText
-                      active={activeQuoteField === `${token.id}:hebrew`}
-                      fieldId={`${token.id}:hebrew`}
-                      onActivate={setActiveQuoteField}
-                      onSave={onSaveQuote}
-                      source={{
-                        ...quoteSource,
-                        text: token.hebrew,
-                        language: "he",
-                      }}
-                      style={{
-                        fontFamily: fonts.hebrew,
-                        fontSize: 25,
-                        lineHeight: 40,
-                        fontWeight: "400",
-                        writingDirection: "rtl",
-                        textAlign: "right",
-                        color: colors.ink,
-                      }}
+                    )
+                  ) : null}
+                  {explanationContext && tokens.length > 1 ? (
+                    <PrayerExplanation
+                      passage={
+                        tokens.length > 1
+                          ? token.translation || token.hebrew
+                          : undefined
+                      }
                     />
-                  ) : (
-                    <Text
-                      selectable
-                      style={{
-                        fontFamily: fonts.hebrew,
-                        fontSize: 25,
-                        lineHeight: 40,
-                        fontWeight: "400",
-                        writingDirection: "rtl",
-                        textAlign: "right",
-                        color: colors.ink,
-                      }}
-                    >
-                      {token.hebrew}
-                    </Text>
-                  )
-                ) : null}
-                {explanationContext && tokens.length > 1 ? (
-                  <PrayerExplanation
-                    passage={
-                      tokens.length > 1
-                        ? token.translation || token.hebrew
-                        : undefined
-                    }
-                  />
-                ) : null}
-              </View>
-            )}
+                  ) : null}
+                </View>
+              );
+            }}
           />
         </Animated.View>
         <View

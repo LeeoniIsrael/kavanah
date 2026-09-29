@@ -1,3 +1,4 @@
+import Constants, { ExecutionEnvironment } from "expo-constants";
 import type { AppearancePreference } from "@/design/appearance";
 import { zmanimGuide } from "@/data/zmanimGuide";
 import { palettes } from "@/design/theme";
@@ -43,8 +44,12 @@ export function updateNextPrayerWidget(
   locationLabel: string | undefined,
   appearance: AppearancePreference,
 ): void {
+  // Do not import the native widget module in Expo Go: its missing-module error
+  // is also reported to LogBox even when a require is inside try/catch.
+  if (Constants.executionEnvironment === ExecutionEnvironment.StoreClient) return;
   try {
     // expo-widgets is available only in a native build. Expo Go safely skips this feature.
+    // eslint-disable-next-line @typescript-eslint/no-require-imports -- load only after the Expo Go guard
     const widget = require("./NextPrayerWidget").default as WidgetHandle;
     const now = new Date();
     const future = upcomingZmanim

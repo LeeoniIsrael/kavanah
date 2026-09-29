@@ -65,6 +65,9 @@ for b in load('biblical-prayers.json'):
   excluded.append(dict(id=id,ref=b['ref'],reason='Biblical alignment or pronunciation incomplete'));continue
  tokens=[dict(id=f'{id}-{i+1}',hebrew=h,translation=e,transliteration=clean(p['transliterationDraft']['text'])) for i,(h,e,p) in enumerate(zip(hs,es,ps))]
  make(id,b['ref'],b['title'],b['buckets'],b['ref'].split(' ')[0],[], 'scriptural','',he,en,tokens,'excerpt',b['title'],id)
+from importPracticeGuides import add_practice_guides
+add_practice_guides(DATA, entries, make, editions, clean)
+redirects["tefillin-blessing"] = "tefillin"
 # Stable default and prominent daily entries, followed by the complete Psalter and source order.
 entries.sort(key=lambda p: (0 if p['id']=='modeh-ani' else 1 if p['id']=='shema' else 2 if p['id']=='asher-yatzar' else 3))
 assert len({p['id'] for p in entries})==len(entries)

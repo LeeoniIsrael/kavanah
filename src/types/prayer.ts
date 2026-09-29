@@ -1,5 +1,8 @@
 export type PrayerToken = {
   kind?: "instruction";
+  readingStep?: { title: string; body: string };
+  sourceRef?: string;
+  custom?: "two-blessings";
   id: string;
   hebrew: string;
   translation: string;
@@ -25,7 +28,8 @@ export type PrayerCategory =
   | "nation"
   | "source";
 
-export type HebrewContentKind = "complete" | "excerpt" | "collection" | "missing" | "remote-unreviewed";
+export type HebrewContentKind =
+  "complete" | "excerpt" | "collection" | "missing" | "remote-unreviewed";
 
 export type HebrewReviewStatus = "pending" | "approved" | "changes-requested";
 
@@ -71,6 +75,7 @@ export type PrayerSourceMetadata = {
 
 export type PrayerText = {
   id: string;
+  practice?: "tefillin";
   title: string;
   sefariaRef: string;
   category: PrayerCategory;
@@ -83,7 +88,11 @@ export type PrayerText = {
   updatedAt: string;
   hebrewReview: HebrewReview;
   sourceMetadata?: PrayerSourceMetadata;
-  research?: { id: string; pronunciationStatus: "machine-draft-unreviewed"; alignmentStatus: string };
+  research?: {
+    id: string;
+    pronunciationStatus: "machine-draft-unreviewed";
+    alignmentStatus: string;
+  };
 };
 
 export type LiturgyIndexEntry = {
