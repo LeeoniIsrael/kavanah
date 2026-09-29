@@ -107,8 +107,13 @@ export function ChapterRuler({
 
   const [pan] = useState(() =>
     PanResponder.create({
+      // Capture touches on the ruler before the screen's vertical ScrollView
+      // can claim them, including while the finger is held still.
+      onStartShouldSetPanResponderCapture: () => true,
+      onMoveShouldSetPanResponderCapture: () => true,
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
+      onPanResponderTerminationRequest: () => false,
       onPanResponderGrant: () => {
         start.current = current.current;
         setTarget(current.current);
