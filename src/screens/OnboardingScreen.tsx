@@ -18,6 +18,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import * as AppleAuthentication from "expo-apple-authentication";
+import { isRunningInExpoGo } from "expo";
 import { BrandWordmark } from "@/components/BrandMark";
 import { AnimatedWelcomeHeadline } from "@/components/AnimatedWelcomeHeadline";
 import { fonts } from "@/design/theme";
@@ -98,7 +99,18 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const inExpoGo = isRunningInExpoGo();
+  const [appleAvailable, setAppleAvailable] = useState<boolean | null>(inExpoGo ? false : null);
   const [intro] = useState(() => new Animated.Value(mode === "onboarding" ? 0 : 1));
+
+  useEffect(() => {
+    if (Platform.OS !== "ios" || !appleSignInEnabled || inExpoGo) return;
+    let mounted = true;
+    void AppleAuthentication.isAvailableAsync()
+      .then((available) => { if (mounted) setAppleAvailable(available); })
+      .catch(() => { if (mounted) setAppleAvailable(false); });
+    return () => { mounted = false; };
+  }, [inExpoGo]);
 
   useEffect(() => {
     if (mode !== "onboarding") return;
@@ -134,9 +146,10 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   };
   const afterSignIn = () => { void confirmHaptic(); if (mode === "account") router.replace("/profile"); else next("audience"); };
   const canSignIn = circleConfigured && (
-    (Platform.OS === "ios" && appleSignInEnabled) ||
+    (Platform.OS === "ios" && appleSignInEnabled && appleAvailable === true) ||
     emailSignInEnabled || googleSignInEnabled || phoneSignInEnabled
   );
+  const checkingApple = circleConfigured && Platform.OS === "ios" && appleSignInEnabled && appleAvailable === null;
   const submitCredential = () => void run(async () => {
     if (step === "code") { await verifySignInCode(contact, code, channel); await recordTermsAcceptance(); afterSignIn(); }
     else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
@@ -185,7 +198,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
                 <Text style={styles.termsText}>I agree to the <Text accessibilityRole="link" style={styles.termsLink} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/terms-of-use.md")}>Terms of Use</Text> and <Text accessibilityRole="link" style={styles.termsLink} onPress={() => void Linking.openURL("https://github.com/LeeoniIsrael/kavanah/blob/main/docs/privacy-policy.md")}>Privacy Policy</Text>.</Text>
               </Pressable>
               <View pointerEvents={termsAccepted && !busy ? "auto" : "none"} style={[styles.providerGroup, (!termsAccepted || busy) && styles.providersDisabled]}>
-                {Platform.OS === "ios" && appleSignInEnabled && (
+                {Platform.OS === "ios" && appleSignInEnabled && appleAvailable === true && (
                   <AppleAuthentication.AppleAuthenticationButton
                     buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                     buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
@@ -199,7 +212,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
                 {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy || !termsAccepted} onPress={() => { setChannel("phone"); next("contact"); }} />}
               </View>
               </>
-            ) : <Text style={styles.unavailable}>Account sign-in is being set up. You can keep using your prayer book without an account.</Text>}
+            ) : <Text style={styles.unavailable}>{checkingApple ? "Checking Apple sign-in…" : Platform.OS === "ios" && appleSignInEnabled && appleAvailable === false ? "Apple sign-in needs a Kavanah test build on this phone. You can keep using your prayer book without an account." : "Account sign-in is being set up. You can keep using your prayer book without an account."}</Text>}
             {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
             {mode === "account" && !canSignIn && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
             <Text style={styles.privacy}>Your prayer stays private.</Text>
