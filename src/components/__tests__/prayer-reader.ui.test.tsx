@@ -1,5 +1,23 @@
 import { act, fireEvent, render } from "@testing-library/react-native";
 import { GuidedPrayer } from "../GuidedPrayer";
+jest.mock("react-native-reanimated", () => ({
+  __esModule: true,
+  default: {
+    View: require("react-native").View,
+    FlatList: require("react-native").FlatList,
+  },
+  useSharedValue: (value: number) =>
+    require("react").useRef({
+      value,
+      set(next: number) {
+        this.value = next;
+      },
+    }).current,
+  useAnimatedStyle: (factory: () => unknown) => factory(),
+  useAnimatedScrollHandler:
+    (handler: (event: unknown) => void) => (event: { nativeEvent: unknown }) =>
+      handler(event.nativeEvent),
+}));
 jest.mock("@/design/appearance", () => ({
   useThemeColors: () => require("@/design/theme").palettes.light,
   useThemedStyles: (factory: any) =>

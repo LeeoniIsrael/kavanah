@@ -11,7 +11,18 @@ import {
 } from "@/components/PrayerExplanation";
 import type { ReadingGuide } from "@/data/prayerReadingGuide";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, FlatList, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  Easing,
+  type FlatList,
+  StyleSheet,
+  View,
+} from "react-native";
+import Reanimated, {
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  useSharedValue,
+} from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/text";
 import { Button } from "@/components/ui/button";
@@ -74,6 +85,36 @@ export function GuidedPrayer({
   const [clockTick, setClockTick] = useState(Date.now);
   const scroll = useRef<FlatList<GuidedPrayerToken>>(null);
   const reduceMotion = useReducedMotion();
+  const scrollOffset = useSharedValue(0);
+  const contentHeight = useSharedValue(0);
+  const viewportHeight = useSharedValue(0);
+  const trackWidth = useSharedValue(0);
+  const onReaderScroll = useAnimatedScrollHandler((event) => {
+    scrollOffset.set(event.contentOffset.y);
+  });
+  const markerStyle = useAnimatedStyle(() => {
+    const width = trackWidth.value;
+    const viewport = viewportHeight.value;
+    const content = contentHeight.value;
+    const ready = width > 0 && viewport > 0 && content > 0;
+    const thumb = Math.min(
+      width,
+      Math.max(24, (width * viewport) / Math.max(content, viewport, 1)),
+    );
+    const distance = Math.max(0, content - viewport);
+    const progress =
+      distance > 0
+        ? Math.min(1, Math.max(0, scrollOffset.value / distance))
+        : 0;
+    return {
+      opacity: ready ? 1 : 0,
+      width: thumb,
+      transform: [{ translateX: progress * (width - thumb) }],
+    };
+  });
+  useEffect(() => {
+    scrollOffset.set(0);
+  }, [prayerTitle, visible, scrollOffset]);
   const elapsedSeconds = Math.max(
     0,
     Math.floor((clockTick - startedAt) / 1000),
@@ -193,7 +234,15 @@ export function GuidedPrayer({
           </View>
         ) : null}
         <Animated.View style={{ flex: 1, opacity: reveal }}>
-          <FlatList
+          <Reanimated.FlatList
+            onScroll={onReaderScroll}
+            scrollEventThrottle={16}
+            onLayout={(event) => {
+              viewportHeight.set(event.nativeEvent.layout.height);
+            }}
+            onContentSizeChange={(_, height) => {
+              contentHeight.set(height);
+            }}
             ref={scroll}
             data={tokens.filter(
               (token) =>
@@ -510,11 +559,44 @@ export function GuidedPrayer({
             paddingHorizontal: 24,
             paddingTop: 12,
             paddingBottom: Math.max(insets.bottom, 16),
-            borderTopWidth: StyleSheet.hairlineWidth,
-            borderTopColor: colors.hairline,
             backgroundColor: colors.parchment,
           }}
         >
+          <View
+            pointerEvents="none"
+            accessible={false}
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            onLayout={(event) => {
+              trackWidth.set(event.nativeEvent.layout.width);
+            }}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 24,
+              right: 24,
+              height: 2,
+            }}
+          >
+            <View
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                top: 0.75,
+                height: StyleSheet.hairlineWidth,
+                backgroundColor: colors.hairline,
+              }}
+            />
+            {/* Direct UI-thread tracking has no trailing spring or autonomous motion,
+                including with Reduce Motion enabled. */}
+            <Reanimated.View
+              style={[
+                { height: 2, borderRadius: 1, backgroundColor: colors.blue },
+                markerStyle,
+              ]}
+            />
+          </View>
           <Text
             variant="caption"
             style={{ color: colors.inkMuted, textAlign: "center" }}
