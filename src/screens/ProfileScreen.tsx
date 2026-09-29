@@ -8,7 +8,7 @@ import {
 } from "@/store/circleAccountStore";
 import { circleConfigured, requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
+import { Accordion } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
 import { ChoiceRow } from "@/components/ui/choice-row";
 import { Switch } from "@/components/ui/switch";
@@ -145,7 +145,10 @@ export function ProfileScreen(): React.JSX.Element {
           </Button>
         )}
         {!accountSession && !circleConfigured && (
-          <Text variant="caption">Account sync is being set up. Your prayer book remains available on this device.</Text>
+          <Text variant="caption">
+            Account sync is being set up. Your prayer book remains available on
+            this device.
+          </Text>
         )}
       </View>
       {accountSession && (
@@ -532,88 +535,88 @@ export function ProfileScreen(): React.JSX.Element {
                   data.
                 </Text>
               </View>
-              <BouncyAccordion.Root defaultValue="device" gap={6}>
-                <BouncyAccordion.Item value="device">
-                  <BouncyAccordion.Trigger accessibilityLabel="Stored on this device">
-                    <BouncyAccordion.Trigger.Icon>
+              <Accordion.Root defaultValue="device" gap={6}>
+                <Accordion.Item value="device">
+                  <Accordion.Trigger accessibilityLabel="Stored on this device">
+                    <Accordion.Trigger.Icon>
                       <LockKeyhole size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
+                    </Accordion.Trigger.Icon>
+                    <Accordion.Trigger.Label>
                       Stored on this device
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
+                    </Accordion.Trigger.Label>
+                  </Accordion.Trigger>
+                  <Accordion.Content>
                     Bookmarks, streaks, language preferences, reminder settings,
                     and the coordinates used to calculate zmanim. Precise
                     coordinates are not sent to the prayer assistant.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="circle">
-                  <BouncyAccordion.Trigger accessibilityLabel="Circle account data">
-                    <BouncyAccordion.Trigger.Icon>
+                  </Accordion.Content>
+                </Accordion.Item>
+                <Accordion.Item value="circle">
+                  <Accordion.Trigger accessibilityLabel="Circle account data">
+                    <Accordion.Trigger.Icon>
                       <UserRound size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
+                    </Accordion.Trigger.Icon>
+                    <Accordion.Trigger.Label>
                       Circle account
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
+                    </Accordion.Trigger.Label>
+                  </Accordion.Trigger>
+                  <Accordion.Content>
                     Joining Circle saves future prayer completions to your
                     account. Sharing starts off; accepted connections see only
                     the updates you choose to share. Your address book is never
                     uploaded. Delete your cloud account from Profile → Account;
                     private device activity remains here.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="assistant">
-                  <BouncyAccordion.Trigger accessibilityLabel="Prayer assistant data use">
-                    <BouncyAccordion.Trigger.Icon>
+                  </Accordion.Content>
+                </Accordion.Item>
+                <Accordion.Item value="assistant">
+                  <Accordion.Trigger accessibilityLabel="Prayer assistant data use">
+                    <Accordion.Trigger.Icon>
                       <MessageCircle size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
+                    </Accordion.Trigger.Icon>
+                    <Accordion.Trigger.Label>
                       Prayer assistant
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
+                    </Accordion.Trigger.Label>
+                  </Accordion.Trigger>
+                  <Accordion.Content>
                     Only after you allow it, your question, selected prayer
                     text, language, source reference, and review status are sent
                     through Kavanah's server to OpenAI. Display translations are
                     identified as unreviewed. Email addresses, phone numbers,
                     and street addresses are removed first. Questions are not
                     used for advertising.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="guidance">
-                  <BouncyAccordion.Trigger accessibilityLabel="Religious guidance">
-                    <BouncyAccordion.Trigger.Icon>
+                  </Accordion.Content>
+                </Accordion.Item>
+                <Accordion.Item value="guidance">
+                  <Accordion.Trigger accessibilityLabel="Religious guidance">
+                    <Accordion.Trigger.Icon>
                       <ShieldCheck size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
+                    </Accordion.Trigger.Icon>
+                    <Accordion.Trigger.Label>
                       Religious guidance
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
+                    </Accordion.Trigger.Label>
+                  </Accordion.Trigger>
+                  <Accordion.Content>
                     Assistant answers are educational and may be incomplete.
                     They are not binding halachic rulings and do not replace a
                     qualified rabbi, doctor, or emergency service.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="choice">
-                  <BouncyAccordion.Trigger accessibilityLabel="Your choice">
-                    <BouncyAccordion.Trigger.Icon>
+                  </Accordion.Content>
+                </Accordion.Item>
+                <Accordion.Item value="choice">
+                  <Accordion.Trigger accessibilityLabel="Your choice">
+                    <Accordion.Trigger.Icon>
                       <Check size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
+                    </Accordion.Trigger.Icon>
+                    <Accordion.Trigger.Label>
                       Your choice
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
+                    </Accordion.Trigger.Label>
+                  </Accordion.Trigger>
+                  <Accordion.Content>
                     You can turn off the prayer assistant or reminders here at
                     any time. Kavanah can still be used for prayer search,
                     reading, bookmarks, and local zmanim without an account.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-              </BouncyAccordion.Root>
+                  </Accordion.Content>
+                </Accordion.Item>
+              </Accordion.Root>
             </ScrollView>
           )}
         </SafeAreaView>

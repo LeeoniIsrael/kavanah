@@ -1,6 +1,14 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { fireEvent, render, screen } from "@testing-library/react-native";
-
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
+jest.mock("react-native-reanimated", () => ({
+  __esModule: true,
+  default: { View: require("react-native").View },
+  Easing: require("react-native").Easing,
+  useSharedValue: (value: number) => require("react").useRef({ value }).current,
+  useAnimatedStyle: (factory: () => unknown) => factory(),
+  withTiming: (value: number) => value,
+}));
 
 jest.mock("@/hooks/useReducedMotion", () => ({ useReducedMotion: () => true }));
 
@@ -45,3 +53,8 @@ test("bouncy accordion exposes and changes its expanded state", () => {
     screen.getByRole("button", { name: "Assistant data", expanded: false }),
   ).toBeTruthy();
 });
+
+jest.mock("@/components/ui/icons", () => ({
+  ChevronDown: () => null,
+  Plus: () => null,
+}));
