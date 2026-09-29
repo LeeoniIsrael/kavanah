@@ -71,6 +71,8 @@ redirects["tefillin-blessing"] = "tefillin"
 # Stable default and prominent daily entries, followed by the complete Psalter and source order.
 entries.sort(key=lambda p: (0 if p['id']=='modeh-ani' else 1 if p['id']=='shema' else 2 if p['id']=='asher-yatzar' else 3))
 assert len({p['id'] for p in entries})==len(entries)
+from readableTransliteration import apply_readable_transliteration
+apply_readable_transliteration(entries)
 write(OUT/'researchPrayers.json',entries)
 index=[]
 for p in entries:

@@ -56,7 +56,7 @@ test("Veahavta searches the full Shema, and bedtime keeps Hamapil", () => {
   expect(prayerReadingGuide(bedtime).before).toContain("separate from Maariv");
 });
 
-test("tefillin blessings and Exodus passages preserve the captured source exactly", () => {
+test("tefillin blessings and Exodus passages preserve captured Hebrew and English exactly", () => {
   const fs = require("node:fs");
   const zlib = require("node:zlib");
   const corpus = zlib
@@ -77,13 +77,13 @@ test("tefillin blessings and Exodus passages preserve the captured source exactl
     const t = tefillin.tokens.find((t) => t.id === `tefillin-${n}`)!;
     expect(t.hebrew).toBe(h.text);
     expect(t.translation).toBe(e.text);
-    expect(t.transliteration).toBe(
-      h.transliterationDraft.text
-        .replace(/[\u200c\u200d]/g, "")
-        .replace(/\s+/g, " ")
-        .trim(),
-    );
   }
+});
+
+test("tefillin uses the shared connected-word pronunciation style", () => {
+  expect(tefillin.tokens[0]?.transliteration).toBe(
+    "Baruch atah Adonai Eloheinu melech ha'olam asher kidshanu b'mitzvotav ve tzivanu lehaniach tefillin.",
+  );
 });
 
 test("related service fragments explain their scope and congregational setting", () => {

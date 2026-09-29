@@ -5,7 +5,7 @@ import { useThemeColors } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
 import type { QuoteSource } from "@/store/socialStore";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import type { StyleProp, TextStyle } from "react-native";
 import { Pressable, View } from "react-native";
 
@@ -27,7 +27,19 @@ export function InlineQuoteText({
   style,
 }: Props): React.JSX.Element {
   const colors = useThemeColors();
-  const words = source.text.trim().split(/\s+/u).filter(Boolean);
+  const words = source.text
+    .trim()
+    .split(/(\s+)/u)
+    .flatMap((part, index, parts) =>
+      !part || /^\s/u.test(part)
+        ? []
+        : [
+            {
+              text: part,
+              startsLine: index > 0 && !!parts[index - 1]?.includes("\n"),
+            },
+          ],
+    );
   const [range, setRange] = useState<[number, number] | null>(null);
   const [saved, setSaved] = useState(false);
 
@@ -55,37 +67,45 @@ export function InlineQuoteText({
           rowGap: 2,
         }}
       >
-        {words.map((word, index) => {
+        {words.map(({ text: word, startsLine }, index) => {
           const selected = active && index >= low && index <= high;
           return (
-            <Pressable
-              key={`${word}-${index}`}
-              accessibilityRole="button"
-              accessibilityLabel={`${word}, word ${index + 1}`}
-              accessibilityHint={
-                active
-                  ? "Sets the end of your weekly quote"
-                  : "Starts a weekly quote selection"
-              }
-              accessibilityState={{ selected }}
-              onPress={() => chooseWord(index)}
-              hitSlop={{ top: 5, bottom: 5 }}
-              style={{
-                borderRadius: 6,
-                backgroundColor: selected ? colors.blue : "transparent",
-                paddingHorizontal: selected ? 4 : 0,
-              }}
-            >
-              <Text
-                style={[
-                  style,
-                  source.language === "he" && { fontFamily: fonts.hebrew },
-                  selected && { color: colors.onAccent },
-                ]}
+            <Fragment key={`${word}-${index}`}>
+              {startsLine ? (
+                <View
+                  testID="quote-line-break"
+                  accessible={false}
+                  style={{ width: "100%", height: 0 }}
+                />
+              ) : null}
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={`${word}, word ${index + 1}`}
+                accessibilityHint={
+                  active
+                    ? "Sets the end of your weekly quote"
+                    : "Starts a weekly quote selection"
+                }
+                accessibilityState={{ selected }}
+                onPress={() => chooseWord(index)}
+                hitSlop={{ top: 5, bottom: 5 }}
+                style={{
+                  borderRadius: 6,
+                  backgroundColor: selected ? colors.blue : "transparent",
+                  paddingHorizontal: selected ? 4 : 0,
+                }}
               >
-                {word}
-              </Text>
-            </Pressable>
+                <Text
+                  style={[
+                    style,
+                    source.language === "he" && { fontFamily: fonts.hebrew },
+                    selected && { color: colors.onAccent },
+                  ]}
+                >
+                  {word}
+                </Text>
+              </Pressable>
+            </Fragment>
           );
         })}
       </View>
