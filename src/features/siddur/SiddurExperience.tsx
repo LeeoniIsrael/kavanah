@@ -17,7 +17,10 @@ import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
-import WebView, { type WebViewMessageEvent } from "react-native-webview";
+import WebView, {
+  type WebViewProps,
+  type WebViewMessageEvent,
+} from "react-native-webview";
 import { captureRef } from "react-native-view-shot";
 import * as Sharing from "expo-sharing";
 import * as Clipboard from "expo-clipboard";
@@ -33,6 +36,7 @@ import {
   MoreHorizontal,
   Settings2,
 } from "lucide-react-native";
+import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors, useAppColorScheme } from "@/design/appearance";
@@ -94,6 +98,15 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   justifyContent: "center" as const,
   backgroundColor: colors.mineral,
 });
+function FadingReaderPage(props: WebViewProps) {
+  const [ready, setReady] = useState(false);
+  return (
+    <FadeIn ready={ready} style={{ flex: 1 }}>
+      <WebView {...props} onLoadEnd={() => setReady(true)} />
+    </FadeIn>
+  );
+}
+
 export type SiddurMenuAction =
   "contents" | "bookmark" | "share" | "save" | "settings";
 
@@ -201,7 +214,11 @@ export function SiddurExperience({
       setLanguage(saved?.language ?? "en");
       setFontScale(saved?.fontScale ?? 1);
       setProfile(saved?.profile ?? "general");
-      setBookmarks((await loadBookmarks(id)).filter(b => refs.some(n => n.ref === b.sectionRef)));
+      setBookmarks(
+        (await loadBookmarks(id)).filter((b) =>
+          refs.some((n) => n.ref === b.sectionRef),
+        ),
+      );
       const target = Math.max(
         0,
         refs.findIndex(
@@ -226,7 +243,12 @@ export function SiddurExperience({
     let live = true;
     void selectedBook()
       .then((id) => {
-        if (live) void sefariaProvider.getCatalog().then(books => open(books.some(b => b.id === id) ? id! : "Siddur Ashkenaz"));
+        if (live)
+          void sefariaProvider
+            .getCatalog()
+            .then((books) =>
+              open(books.some((b) => b.id === id) ? id! : "Siddur Ashkenaz"),
+            );
       })
       .catch(() => {
         if (live) void open("Siddur Ashkenaz");
@@ -838,7 +860,7 @@ export function SiddurExperience({
               }}
             >
               {segments.length ? (
-                <WebView
+                <FadingReaderPage
                   key={`${section?.ref}:${pageIndex}:${language}:${fontScale}`}
                   source={{ html }}
                   originWhitelist={["about:blank"]}
@@ -1130,7 +1152,10 @@ export function SiddurExperience({
                                 }}
                               >
                                 <Text
-                                  style={{ color: colors.ink, fontWeight: "600" }}
+                                  style={{
+                                    color: colors.ink,
+                                    fontWeight: "600",
+                                  }}
                                 >
                                   {leaves[i]?.titleEn}
                                 </Text>

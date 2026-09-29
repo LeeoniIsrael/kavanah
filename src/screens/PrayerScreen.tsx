@@ -42,8 +42,6 @@ import {
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  Animated,
-  Easing,
   Linking,
   Modal,
   Platform,
@@ -70,6 +68,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GooeyInfoPopover, GooeyPopover } from "@/components/ui/gooey-popover";
 import { spacing } from "@/design/theme";
+import { FadeIn } from "@/components/ui/fade-in";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
@@ -173,8 +172,7 @@ export function PrayerScreen(): React.JSX.Element {
   const [localizedPrayer, setLocalizedPrayer] =
     useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
-  const selected =
-    prayers.find((prayer) => prayer.id === selectedPrayerId);
+  const selected = prayers.find((prayer) => prayer.id === selectedPrayerId);
   const selectedPractice = selected ? habitForPrayer(selected) : undefined;
   const bookmarkedPrayers = bookmarkedPrayerIds
     .map((id) => prayers.find((prayer) => prayer.id === id))
@@ -190,9 +188,6 @@ export function PrayerScreen(): React.JSX.Element {
   const showResults = query.trim().length > 0;
   const groupedResults = groupPrayerSearchResults(results);
   const visibleResults = showResults ? groupedResults.slice(0, 18) : [];
-  const [bookmarkReveal] = useState(
-    () => new Animated.Value(showResults ? 0 : 1),
-  );
   const focusSetup = getPrayerFocusSetup();
   const [defaultView, setDefaultView] =
     useState<PrayerLandingView>(savedPrayerLanding);
@@ -216,7 +211,8 @@ export function PrayerScreen(): React.JSX.Element {
 
   useFocusEffect(
     useCallback(() => {
-      if (!params.prayerId && params.query === undefined) setLibraryView(defaultView);
+      if (!params.prayerId && params.query === undefined)
+        setLibraryView(defaultView);
     }, [defaultView, params.prayerId, params.query]),
   );
 
@@ -268,17 +264,6 @@ export function PrayerScreen(): React.JSX.Element {
     }, 450);
     return () => clearTimeout(handle);
   }, [query, searchRemote]);
-
-  useEffect(() => {
-    Animated.timing(bookmarkReveal, {
-      toValue: showResults ? 0 : 1,
-      duration: reduceMotion ? 0 : showResults ? 220 : 280,
-      easing: showResults
-        ? Easing.out(Easing.cubic)
-        : Easing.bezier(0.2, 0.9, 0.25, 1),
-      useNativeDriver: false,
-    }).start();
-  }, [bookmarkReveal, reduceMotion, showResults]);
 
   useEffect(() => {
     let cancelled = false;
@@ -387,7 +372,8 @@ export function PrayerScreen(): React.JSX.Element {
   }));
   const showReaderDetails =
     !guidedPrayerOpen ||
-    (!selectedLoading && (Boolean(prayerLoadError) || guidedTokens.length === 0));
+    (!selectedLoading &&
+      (Boolean(prayerLoadError) || guidedTokens.length === 0));
 
   const startGuidedPrayer = () => {
     setGuidedPrayerOpen(true);
@@ -532,11 +518,7 @@ export function PrayerScreen(): React.JSX.Element {
           </GooeyPopover.Content>
         </GooeyPopover.Root>
       }
-      {...(libraryView === "siddur"
-        ? {
-            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
-          }
-        : {})}
+      contentContainerStyle={{ gap: 12, paddingTop: 8, paddingBottom: 40 }}
     >
       <View
         accessibilityRole="tablist"
@@ -579,140 +561,119 @@ export function PrayerScreen(): React.JSX.Element {
           </Button>
         ))}
       </View>
-      {libraryView === "siddur" ? (
-        <SiddurExperience
-          embedded
-          menuCommand={readerMenuCommand}
-          onBookmarkStatus={setReaderBookmarked}
-          onChooseDefault={chooseDefaultView}
-        />
-      ) : (
-        <View className="gap-6">
-          <View>
-            <SearchBar
-              accessibilityLabel="Search prayers"
-              style={{ flex: 1 }}
-              placeholder="Search for a prayer"
-              value={query}
-              onChangeText={setQuery}
-            />
-          </View>
-
-          {!showResults && (
-            <Animated.View
-              pointerEvents="auto"
-              className="overflow-hidden"
-              style={[
-                {
-                  opacity: bookmarkReveal,
-                  maxHeight: bookmarkReveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 320],
-                  }),
-                  marginBottom: bookmarkReveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, spacing.md],
-                  }),
-                  transform: [
-                    {
-                      translateY: bookmarkReveal.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [-12, 0],
-                      }),
-                    },
-                  ],
-                },
-              ]}
-            >
-              <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
-                <View className="pl-1">
-                  <Text variant="caption">Bookmarked</Text>
-                  <Text variant="section">Saved prayers</Text>
-                </View>
-                <View className="gap-2">
-                  {bookmarkedPrayers.length > 0 ? (
-                    bookmarkedPrayers.map((prayer) => (
-                      <View
-                        key={prayer.id}
-                        className="rounded-md bg-card flex-row items-center overflow-hidden"
-                      >
-                        <View className="flex-1">
-                          <Button
-                            variant="ghost"
-                            size="content"
-                            accessibilityLabel={`Open ${prayer.title}`}
-                            accessibilityRole="button"
-                            onPress={() => void openPrayer(prayer.id)}
-                            className="px-4 py-4"
-                          >
-                            <Text
-                              variant="section"
-                              className="text-[16px] leading-[21px]"
-                            >
-                              {prayer.title}
-                            </Text>
-                            <Text
-                              variant="body"
-                              numberOfLines={2}
-                              className="text-[12px] leading-[17px]"
-                            >
-                              {prayer.useCase || prayer.category}
-                            </Text>
-                          </Button>
-                        </View>
-                        <View className="w-[52px] items-start">
-                          <Button
-                            variant="secondary"
-                            size="content"
-                            accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
-                            accessibilityRole="button"
-                            haptic="confirm"
-                            onPress={() => toggleBookmark(prayer.id)}
-                            pressedScale={0.96}
-                            className="w-11 h-11 rounded-full items-center justify-center bg-muted"
-                          >
-                            <BookmarkMinus size={20} color={colors.blue} />
-                          </Button>
-                        </View>
-                      </View>
-                    ))
-                  ) : (
-                    <Text variant="body">
-                      Tap the bookmark on any prayer to keep it here.
-                    </Text>
-                  )}
-                </View>
-              </Card>
-            </Animated.View>
-          )}
-
-          {showResults ? (
-            <View className="gap-3">
-              <SectionHeading
-                title={isSearchingRemote ? "Searching prayers" : "Results"}
-                detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
+      <FadeIn key={libraryView}>
+        {libraryView === "siddur" ? (
+          <SiddurExperience
+            embedded
+            menuCommand={readerMenuCommand}
+            onBookmarkStatus={setReaderBookmarked}
+            onChooseDefault={chooseDefaultView}
+          />
+        ) : (
+          <View className="gap-6">
+            <View>
+              <SearchBar
+                accessibilityLabel="Search prayers"
+                style={{ flex: 1 }}
+                placeholder="Search for a prayer"
+                value={query}
+                onChangeText={setQuery}
               />
-              {isSearchingRemote && visibleResults.length === 0 ? (
-                <PrayerSearchSkeleton />
-              ) : visibleResults.length > 0 ? (
-                visibleResults.map((result) => (
-                  <PrayerSearchGroupCard
-                    key={result.prayer.id}
-                    group={result}
-                    onOpen={(id) => void openPrayer(id)}
-                  />
-                ))
-              ) : (
-                <Card>
-                  <Text variant="body">
-                    Keep typing. Matches appear here as the search gets clearer.
-                  </Text>
-                </Card>
-              )}
             </View>
-          ) : null}
-        </View>
-      )}
+
+            {!showResults && (
+              <FadeIn>
+                <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
+                  <View className="pl-1">
+                    <Text variant="caption">Bookmarked</Text>
+                    <Text variant="section">Saved prayers</Text>
+                  </View>
+                  <View className="gap-2">
+                    {bookmarkedPrayers.length > 0 ? (
+                      bookmarkedPrayers.map((prayer) => (
+                        <FadeIn key={prayer.id}>
+                          <View className="rounded-md bg-card flex-row items-center overflow-hidden">
+                            <View className="flex-1">
+                              <Button
+                                variant="ghost"
+                                size="content"
+                                accessibilityLabel={`Open ${prayer.title}`}
+                                accessibilityRole="button"
+                                onPress={() => void openPrayer(prayer.id)}
+                                className="px-4 py-4"
+                              >
+                                <Text
+                                  variant="section"
+                                  className="text-[16px] leading-[21px]"
+                                >
+                                  {prayer.title}
+                                </Text>
+                                <Text
+                                  variant="body"
+                                  numberOfLines={2}
+                                  className="text-[12px] leading-[17px]"
+                                >
+                                  {prayer.useCase || prayer.category}
+                                </Text>
+                              </Button>
+                            </View>
+                            <View className="w-[52px] items-start">
+                              <Button
+                                variant="secondary"
+                                size="content"
+                                accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
+                                accessibilityRole="button"
+                                haptic="confirm"
+                                onPress={() => toggleBookmark(prayer.id)}
+                                pressedScale={0.96}
+                                className="w-11 h-11 rounded-full items-center justify-center bg-muted"
+                              >
+                                <BookmarkMinus size={20} color={colors.blue} />
+                              </Button>
+                            </View>
+                          </View>
+                        </FadeIn>
+                      ))
+                    ) : (
+                      <Text variant="body">
+                        Tap the bookmark on any prayer to keep it here.
+                      </Text>
+                    )}
+                  </View>
+                </Card>
+              </FadeIn>
+            )}
+
+            {showResults ? (
+              <FadeIn style={{ gap: 12 }}>
+                <SectionHeading
+                  title={isSearchingRemote ? "Searching prayers" : "Results"}
+                  detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
+                />
+                {isSearchingRemote && visibleResults.length === 0 ? (
+                  <PrayerSearchSkeleton />
+                ) : visibleResults.length > 0 ? (
+                  visibleResults.map((result) => (
+                    <FadeIn key={result.prayer.id}>
+                      <PrayerSearchGroupCard
+                        group={result}
+                        onOpen={(id) => void openPrayer(id)}
+                      />
+                    </FadeIn>
+                  ))
+                ) : (
+                  <Card>
+                    <Text variant="body">
+                      Keep typing. Matches appear here as the search gets
+                      clearer.
+                    </Text>
+                  </Card>
+                )}
+              </FadeIn>
+            ) : null}
+          </View>
+        )}
+      </FadeIn>
 
       <Modal
         visible={readerOpen && Boolean(selected)}
