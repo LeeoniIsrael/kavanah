@@ -1,3 +1,5 @@
+import { contentMotion } from "@/design/contentMotion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { useAppColorScheme, useAppearanceStore } from "@/design/appearance";
 import { themeVariables } from "@/design/themeVariables";
@@ -25,6 +27,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout(): React.JSX.Element | null {
   const scheme = useAppColorScheme();
+  const reducedMotion = useReducedMotion();
   const preference = useAppearanceStore((s) => s.preference);
   useEffect(() => {
     if (Platform.OS !== "web")
@@ -64,7 +67,7 @@ export default function RootLayout(): React.JSX.Element | null {
             <ThemeProvider value={NAV_THEME[scheme]}>
               <StatusBar style={scheme === "dark" ? "light" : "dark"} />
               <NotificationRouter />
-              <Stack screenOptions={{ headerShown: false }}>
+              <Stack screenOptions={{ headerShown: false, animation: reducedMotion ? "none" : "fade", animationDuration: contentMotion.duration }}>
                 <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="index" />
               </Stack>

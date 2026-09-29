@@ -233,3 +233,7 @@ Typecheck, targeted lint and all six reader interaction tests passed in that ful
 Multi-passage readers pair the progress line with a small tabular current/total count. The first passage occupying at least 5% of the viewport determines the current number; instruction-only tokens do not increment prayer passages, while practices count their displayed steps. Hidden custom-specific steps are excluded. Only the current number receives a 160 ms opacity reveal; Reduced Motion makes it immediate. The count and track share a natural-height row so larger text cannot overlap the reader or footer. Screen readers receive a full Passage/Step N of M label, without repeated live announcements.
 
 Native dark iPhone 17 Pro scrolling verified the count moving through Shema alongside the marker in the existing /private/tmp/kavanah-expo-go runtime on port 8081. The shared simulator/server shut down before additional light and reduced-motion preview checks completed; temporary runtime overrides were removed. Typecheck, targeted lint and seven reader interaction tests passed in the local runtime, including forward/backward count updates without completion.
+
+### Shared content fades
+
+Use the shared 180 ms content reveal and 18-point scrolling edge fade described in [Content motion](content-motion.md). Use `FadeViewport` around existing virtualized readers; use the shared fading `ScrollView` for other vertical and horizontal content. Preserve existing control animations and make all new fades static with Reduced Motion.

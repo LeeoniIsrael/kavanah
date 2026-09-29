@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/ui/fade-in";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { CircleFriends } from "@/screens/PeopleScreen";
 import { usePrayerStore } from "@/store/prayerStore";
@@ -28,7 +29,8 @@ import {
   X,
 } from "@/components/ui/icons";
 import { useMemo, useState } from "react";
-import { Modal, ScrollView, StyleSheet, Switch, View } from "react-native";
+import { Modal, StyleSheet, Switch, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const modes: { id: PrayerSharing; title: string; detail: string }[] = [
@@ -146,6 +148,7 @@ export function CircleScreen(): React.JSX.Element {
   );
   return (
     <View style={s.screen}>
+      <FadeIn key={selected} style={{ flex: 1 }}>
       {selected === "friends" ? (
         <CircleFriends tabs={tabs} lead={lead} />
       ) : (
@@ -233,6 +236,7 @@ export function CircleScreen(): React.JSX.Element {
           )}
         />
       )}
+      </FadeIn>
       <SharingSettings
         visible={settingsOpen}
         onClose={() => setSettingsOpen(false)}

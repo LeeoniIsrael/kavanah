@@ -1,5 +1,6 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { ScrollView, View } from "react-native";
+import { View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { format, isValid, parseISO } from "date-fns";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";

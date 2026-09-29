@@ -1,0 +1,9 @@
+# Content motion
+
+Content uses a shared 180 ms eased opacity reveal (`contentMotion`). Native stack navigation fades instead of sliding. Native tabs retain their system chrome and replay the reveal when returning to a mounted destination. Prayer, Times and Friends content switches use the same rhythm. Existing button, input, disclosure and reader interactions keep their own animations.
+
+Use the shared `ScrollView` from `components/ui/fade-scroll-view` for native vertical and horizontal scrolling. It preserves the native ref and event API. `FadeViewport` supplies the same treatment around an existing virtualized list or WebView, without nesting scroll containers. An 18-point alpha ramp at each viewport edge reveals content as it moves into view in either direction; the reading area remains fully opaque. The mask is fixed, so scrolling needs no JS timers, per-text observers, or repeated React updates. Keep sufficient content padding so final lines and controls clear the ramp.
+
+Reduced Motion makes the mask opaque and removes the new navigation and content reveals. No idle loop, typewriter delay, translation, or artificial loading time is added. The existing theme and typography remain unchanged.
+
+Validation: typecheck and targeted production lint passed in a fully local current-source copy. Eleven interaction tests cover scroll/ref preservation, both fade axes, live Reduced Motion changes, repeated tab focus, and existing reader behavior. The changes were synced to the existing iPhone 17 Pro Expo Go runtime at `/private/tmp/kavanah-expo-go`, port 8081. Concurrent work changed its route and runtime during inspection; Device Hub then reported the Mac locked. Full visual acceptance of scrolling, tab transitions, light/dark appearance and system Reduced Motion remains pending. No preview-only overrides were added for this change.

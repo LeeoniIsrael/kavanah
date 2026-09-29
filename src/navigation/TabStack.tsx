@@ -1,19 +1,24 @@
+import { NavigationFade } from "./NavigationFade";
+import { contentMotion } from "@/design/contentMotion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useThemeColors } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import { Stack } from "expo-router";
 
 export function TabStack({
   title,
-  animation,
 }: {
   title: string;
-  animation?: "default" | "fade" | "fade_from_bottom";
 }): React.JSX.Element {
   const colors = useThemeColors();
+  const reducedMotion = useReducedMotion();
 
   return (
     <Stack
+      screenLayout={({ children }) => <NavigationFade>{children}</NavigationFade>}
       screenOptions={{
+        animation: reducedMotion ? "none" : "fade",
+        animationDuration: contentMotion.duration,
         contentStyle: { backgroundColor: colors.parchment },
         headerBackButtonDisplayMode: "minimal",
         headerShown: false,
@@ -27,7 +32,7 @@ export function TabStack({
         },
       }}
     >
-      <Stack.Screen name="index" options={{ title, ...(animation ? { animation } : {}) }} />
+      <Stack.Screen name="index" options={{ title }} />
     </Stack>
   );
 }

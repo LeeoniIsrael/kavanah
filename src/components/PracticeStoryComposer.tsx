@@ -14,10 +14,10 @@ import {
   Image,
   Modal,
   Platform,
-  ScrollView,
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { captureRef } from "react-native-view-shot";
 

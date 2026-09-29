@@ -48,8 +48,8 @@ import {
   Platform,
   Pressable,
   View,
-  ScrollView,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import {

@@ -12,8 +12,8 @@ import {
   TextInput,
   View,
   useWindowDimensions,
-  ScrollView,
 } from "react-native";
+import { FadeViewport, ScrollView } from "@/components/ui/fade-scroll-view";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -115,9 +115,9 @@ function FadingReaderPage(props: WebViewProps) {
         />
       )}
       <FadeIn ready={ready} style={{ flex: 1 }}>
-
+        <FadeViewport style={{ flex: 1 }}>
         <WebView {...props} onLoadEnd={() => setReady(true)} />
-
+      </FadeViewport>
       </FadeIn>
     </View>
   );

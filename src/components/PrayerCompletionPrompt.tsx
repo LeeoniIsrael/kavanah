@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, Pressable, ScrollView, View } from "react-native";
+import { Animated, Easing, Pressable, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Share2 } from "@/components/ui/icons";

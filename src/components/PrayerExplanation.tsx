@@ -16,8 +16,8 @@ import {
   TextInput,
   View,
   useWindowDimensions,
-  ScrollView,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";

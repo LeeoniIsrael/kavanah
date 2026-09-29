@@ -1,3 +1,4 @@
+import { contentMotion } from "@/design/contentMotion";
 import { useEffect, useState, type ReactNode } from "react";
 import { Animated, Easing, type StyleProp, type ViewStyle } from "react-native";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -22,7 +23,7 @@ export function FadeIn({
     }
     const animation = Animated.timing(opacity, {
       toValue: 1,
-      duration: 180,
+      duration: contentMotion.duration,
       easing: Easing.out(Easing.cubic),
       useNativeDriver: true,
     });

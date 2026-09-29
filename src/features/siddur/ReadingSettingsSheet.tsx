@@ -9,8 +9,8 @@ import {
   Pressable,
   View,
   useWindowDimensions,
-  ScrollView,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type {
   PrayerProfile,

@@ -1,7 +1,8 @@
 import { userFacingError } from "@/services/userFacingError";
 import { AccordionReveal } from "@/components/ui/accordion";
 import { useState } from "react";
-import { Linking, ScrollView, TextInput, View } from "react-native";
+import { Linking, TextInput, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useRouter } from "expo-router";
 import { format } from "date-fns";
 import { Screen } from "@/components/Screen";

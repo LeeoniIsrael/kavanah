@@ -1,3 +1,4 @@
+import { FadeViewport } from "@/components/ui/fade-scroll-view";
 import { Linking } from "react-native";
 import type { PrayerToken } from "@/types/prayer";
 import { prayerTokenStep } from "@/data/prayerSteps";
@@ -295,6 +296,7 @@ export function GuidedPrayer({
           </View>
         ) : null}
         <Animated.View style={{ flex: 1, opacity: reveal }}>
+          <FadeViewport style={{ flex: 1 }}>
           <Reanimated.FlatList
             onScroll={onReaderScroll}
             scrollEventThrottle={16}
@@ -606,6 +608,7 @@ export function GuidedPrayer({
               );
             }}
           />
+        </FadeViewport>
         </Animated.View>
         <View
           style={{

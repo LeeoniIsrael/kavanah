@@ -44,8 +44,8 @@ import {
   StyleSheet,
   View,
   useWindowDimensions,
-  ScrollView,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Checkbox } from "@/components/organisms/check-box";

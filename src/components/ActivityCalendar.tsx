@@ -1,11 +1,11 @@
 import { ActivityTiming } from "./ActivityTiming";
 import { useMemo, useState } from "react";
 import {
-  ScrollView,
   StyleSheet,
   View,
   useWindowDimensions,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { addMonths, format, isSameMonth, startOfMonth } from "date-fns";
 import { Button } from "./ui/button";
 import { Text } from "./ui/text";
