@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
@@ -8,7 +9,7 @@ import {
 } from "@/store/circleAccountStore";
 import { circleConfigured, requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Accordion } from "@/components/ui/accordion";
+import { PrivacyDataUse } from "@/components/PrivacyDataUse";
 import { Card } from "@/components/ui/card";
 import { ChoiceRow } from "@/components/ui/choice-row";
 import { Switch } from "@/components/ui/switch";
@@ -18,7 +19,6 @@ import { cn } from "@/lib/utils";
 import {
   Bell,
   Share2,
-  Check,
   ChevronRight,
   Languages,
   LockKeyhole,
@@ -29,7 +29,8 @@ import {
   X,
 } from "@/components/ui/icons";
 import { useState } from "react";
-import { Alert, Modal, Platform, ScrollView, View } from "react-native";
+import { Alert, Modal, Platform, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -94,9 +95,10 @@ export function ProfileScreen(): React.JSX.Element {
       }
     } catch (error) {
       setAccountError(
-        error instanceof Error
-          ? error.message
-          : "Could not update your account. Please try again.",
+        userFacingError(
+          error,
+          "Could not update your account. Please try again.",
+        ),
       );
     } finally {
       setAccountAction(null);
@@ -522,101 +524,17 @@ export function ProfileScreen(): React.JSX.Element {
             </ScrollView>
           ) : (
             <ScrollView
-              contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
+              contentContainerClassName="px-6 pt-[72px] pb-12"
               showsVerticalScrollIndicator={false}
             >
-              <View className="gap-1 pr-12">
-                <Text variant="caption">Privacy</Text>
-                <Text variant="display" className="text-[34px] leading-[39px]">
-                  Clear by design
-                </Text>
-                <Text variant="body">
-                  Open each section to see exactly how Kavanah handles your
-                  data.
-                </Text>
-              </View>
-              <Accordion.Root defaultValue="device" gap={6}>
-                <Accordion.Item value="device">
-                  <Accordion.Trigger accessibilityLabel="Stored on this device">
-                    <Accordion.Trigger.Icon>
-                      <LockKeyhole size={20} color={colors.blue} />
-                    </Accordion.Trigger.Icon>
-                    <Accordion.Trigger.Label>
-                      Stored on this device
-                    </Accordion.Trigger.Label>
-                  </Accordion.Trigger>
-                  <Accordion.Content>
-                    Bookmarks, streaks, language preferences, reminder settings,
-                    and the coordinates used to calculate zmanim. Precise
-                    coordinates are not sent to the prayer assistant.
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="circle">
-                  <Accordion.Trigger accessibilityLabel="Circle account data">
-                    <Accordion.Trigger.Icon>
-                      <UserRound size={20} color={colors.blue} />
-                    </Accordion.Trigger.Icon>
-                    <Accordion.Trigger.Label>
-                      Circle account
-                    </Accordion.Trigger.Label>
-                  </Accordion.Trigger>
-                  <Accordion.Content>
-                    Joining Circle saves future prayer completions to your
-                    account. Sharing starts off; accepted connections see only
-                    the updates you choose to share. Your address book is never
-                    uploaded. Delete your cloud account from Profile → Account;
-                    private device activity remains here.
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="assistant">
-                  <Accordion.Trigger accessibilityLabel="Prayer assistant data use">
-                    <Accordion.Trigger.Icon>
-                      <MessageCircle size={20} color={colors.blue} />
-                    </Accordion.Trigger.Icon>
-                    <Accordion.Trigger.Label>
-                      Prayer assistant
-                    </Accordion.Trigger.Label>
-                  </Accordion.Trigger>
-                  <Accordion.Content>
-                    Only after you allow it, your question, selected prayer
-                    text, language, source reference, and review status are sent
-                    through Kavanah's server to OpenAI. Display translations are
-                    identified as unreviewed. Email addresses, phone numbers,
-                    and street addresses are removed first. Questions are not
-                    used for advertising.
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="guidance">
-                  <Accordion.Trigger accessibilityLabel="Religious guidance">
-                    <Accordion.Trigger.Icon>
-                      <ShieldCheck size={20} color={colors.blue} />
-                    </Accordion.Trigger.Icon>
-                    <Accordion.Trigger.Label>
-                      Religious guidance
-                    </Accordion.Trigger.Label>
-                  </Accordion.Trigger>
-                  <Accordion.Content>
-                    Assistant answers are educational and may be incomplete.
-                    They are not binding halachic rulings and do not replace a
-                    qualified rabbi, doctor, or emergency service.
-                  </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="choice">
-                  <Accordion.Trigger accessibilityLabel="Your choice">
-                    <Accordion.Trigger.Icon>
-                      <Check size={20} color={colors.blue} />
-                    </Accordion.Trigger.Icon>
-                    <Accordion.Trigger.Label>
-                      Your choice
-                    </Accordion.Trigger.Label>
-                  </Accordion.Trigger>
-                  <Accordion.Content>
-                    You can turn off the prayer assistant or reminders here at
-                    any time. Kavanah can still be used for prayer search,
-                    reading, bookmarks, and local zmanim without an account.
-                  </Accordion.Content>
-                </Accordion.Item>
-              </Accordion.Root>
+              <PrivacyDataUse
+                assistantEnabled={assistantEnabled}
+                circleEnabled={Boolean(accountSession)}
+                onAssistantChange={(enabled) => {
+                  void confirmHaptic();
+                  setAssistantConsent(enabled);
+                }}
+              />
             </ScrollView>
           )}
         </SafeAreaView>
