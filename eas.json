@@ -13,7 +13,8 @@
         "EXPO_PUBLIC_SUPABASE_URL": "https://wrbbmrzwssefrjrzakth.supabase.co",
         "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_LZVZAY9wrqEm7pY185eIHw_eCKzOpoi",
         "EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN": "true",
-        "EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN": "true"
+        "EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN": "true",
+        "EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN": "true"
       },
       "node": "24.21.0"
     },
