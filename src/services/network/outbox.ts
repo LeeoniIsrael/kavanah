@@ -5,6 +5,8 @@ let owner: string | null = null;
 let commands: Command[] = [];
 let flushing = false;
 let generation = 0;
+const MAX_PENDING = 500;
+const MAX_BATCH = 25;
 export const useCircleSync = create<{ pending: number; error: string | null }>(
   () => ({ pending: 0, error: null }),
 );
@@ -40,8 +42,24 @@ export function queueCircle(
   if (!owner) return;
   // Coalesce only adjacent preference changes; preserve consent order relative to completions.
   const last = commands[commands.length - 1];
-  if (last?.id === id) commands[commands.length - 1] = { id, rpc, args };
-  else commands.push({ id, rpc, args });
+  if (
+    last?.id === id ||
+    (last?.rpc === "circle_preferences" && rpc === "circle_preferences")
+  )
+    commands[commands.length - 1] = { id, rpc, args };
+  else {
+    // Leave completion history on device at capacity; never evict earlier consent.
+    // Reserve one extra slot for a preference change so turning sharing off cannot
+    // be overtaken by a later completion. Adjacent preference changes coalesce.
+    if (commands.length >= MAX_PENDING && rpc !== "circle_preferences") {
+      useCircleSync.setState({
+        error:
+          "The sync queue is full. New activity stays on this device until you retry sync.",
+      });
+      return;
+    }
+    commands.push({ id, rpc, args });
+  }
   save();
   void flushCircle();
 }
@@ -51,7 +69,8 @@ export async function flushCircle() {
   const epoch = generation;
   const account = owner;
   try {
-    while (commands.length && epoch === generation) {
+    let sent = 0;
+    while (commands.length && epoch === generation && sent < MAX_BATCH) {
       const command = commands[0]!;
       const { circleRpc } = await import("./client");
       if (epoch !== generation) break;
@@ -59,6 +78,7 @@ export async function flushCircle() {
       if (epoch !== generation) break;
       if (commands[0] === command) commands.shift();
       save();
+      sent++;
     }
     if (epoch === generation) useCircleSync.setState({ error: null });
   } catch (error) {
@@ -74,6 +94,7 @@ export async function flushCircle() {
   }
 }
 export function clearOutbox() {
+  generation++;
   commands = [];
   save();
 }

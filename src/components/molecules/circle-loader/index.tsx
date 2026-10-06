@@ -3,7 +3,7 @@ import {
   useThemedStyles,
   type ThemeColors,
 } from "@/design/appearance";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
@@ -26,7 +26,7 @@ function WaveDot({
   duration: number;
   reduceMotion: boolean;
 }): React.JSX.Element {
-  const progress = useRef(new Animated.Value(0)).current;
+  const [progress] = useState(() => new Animated.Value(0));
 
   useEffect(() => {
     if (reduceMotion) {

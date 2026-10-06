@@ -1,5 +1,9 @@
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
-import { readSocialData, writeSocialData } from "@/services/socialStorage";
+import {
+  readSocialData,
+  writeSocialData,
+  removeAccountLocalData,
+} from "@/services/socialStorage";
 import { create } from "zustand";
 import type { Session } from "@supabase/supabase-js";
 import {
@@ -46,7 +50,9 @@ export async function loadCircleAccount(session: Session | null) {
     const localIdentity = usePrayerIdentityStore.getState().identity;
     usePrayerIdentityStore.getState().restoreFromAccount(metadata);
     if (!metadata.prayer_identity && localIdentity) {
-      void requireCircle().auth.updateUser({ data: { prayer_identity: localIdentity } }).catch(() => undefined);
+      void requireCircle()
+        .auth.updateUser({ data: { prayer_identity: localIdentity } })
+        .catch(() => undefined);
     }
   }
   if (!session) {
@@ -130,12 +136,29 @@ export function startCircleAccount() {
   });
   return () => subscription.unsubscribe();
 }
-export async function deleteCircleAccount() {
+let deletion: Promise<void> | null = null;
+export function deleteCircleAccount(): Promise<void> {
+  if (deletion) return deletion;
+  deletion = deleteAccount().finally(() => {
+    deletion = null;
+  });
+  return deletion;
+}
+async function deleteAccount() {
   const id = useCircleAccount.getState().session?.user.id;
+  if (!id) throw new Error("Sign in to delete this account.");
   await circleRpc("circle_delete_account", {}, id);
-  if (id) writeSocialData(`circle.profile.${id}`, null);
-  clearOutbox();
+  removeAccountLocalData(id);
+  // A completed deletion must never clear a different account that signed in
+  // while the server request was running.
+  if (useCircleAccount.getState().session?.user.id !== id) return;
+  epoch++;
   setOutboxOwner(null);
-  await requireCircle().auth.signOut({ scope: "local" });
+  clearOutbox();
+  const { error } = await requireCircle().auth.signOut({ scope: "local" });
   await loadCircleAccount(null);
+  if (error)
+    throw new Error(
+      "The cloud account was deleted, but local sign-out could not finish. Restart and clear local data.",
+    );
 }

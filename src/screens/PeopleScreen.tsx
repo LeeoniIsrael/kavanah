@@ -1,3 +1,4 @@
+import { useExclusiveAction } from "@/hooks/useExclusiveAction";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
@@ -85,21 +86,24 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const [contacts, setContacts] = useState<Contact[]>([]),
     [updates, setUpdates] = useState<Update[]>([]),
     [more, setMore] = useState(false);
-  const run = async (action: () => Promise<void>) => {
-    if (busy) return;
-    setBusy(true);
-    setError(null);
-    setNotice(null);
-    try {
-      await action();
-    } catch (e) {
-      setError(
-        e instanceof Error ? e.message : "Could not connect. Please try again.",
-      );
-    } finally {
-      setBusy(false);
-    }
-  };
+  const exclusive = useExclusiveAction();
+  const run = (action: () => Promise<void>) =>
+    exclusive(async () => {
+      setBusy(true);
+      setError(null);
+      setNotice(null);
+      try {
+        await action();
+      } catch (e) {
+        setError(
+          e instanceof Error
+            ? e.message
+            : "Could not connect. Please try again.",
+        );
+      } finally {
+        setBusy(false);
+      }
+    });
   const load = useCallback(async () => {
     if (!profile) return;
     const db = requireCircle();

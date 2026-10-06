@@ -116,7 +116,7 @@ async function main(): Promise<void> {
 
 async function fetchSource(spec: SourceSpec) {
   const endpoint = `https://www.sefaria.org/api/v3/texts/${encodeURIComponent(spec.ref)}?version=hebrew`;
-  const response = await fetch(endpoint, { headers: { Accept: "application/json" } });
+  const response = await fetch(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error(`Sefaria returned ${response.status} for ${spec.ref}`);
 
   const payload = (await response.json()) as SefariaResponse;

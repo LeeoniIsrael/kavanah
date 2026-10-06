@@ -2,6 +2,7 @@ import "react-native-url-polyfill/auto";
 import { createClient, processLock } from "@supabase/supabase-js";
 import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
+import { fetch as expoFetch } from "expo/fetch";
 
 const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const key = process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -24,8 +25,57 @@ const storage = {
       ? Promise.resolve(void memory.delete(k))
       : SecureStore.deleteItemAsync(k),
 };
+const boundedFetch: typeof fetch = async (input, init) => {
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+  const timer = setTimeout(abort, 12000);
+  init?.signal?.addEventListener("abort", abort, { once: true });
+  if (init?.signal?.aborted) abort();
+  try {
+    const response = await expoFetch(input, {
+      ...init,
+      signal: controller.signal,
+    });
+    // PostgREST is capped at 200 rows. Buffer under the deadline; do not return
+    // headers and silently leave an unbounded body read outside the timeout.
+    if (Number(response.headers.get("content-length")) > 2 * 1024 * 1024)
+      throw new Error("Circle response is too large.");
+    if (!response.body || [204, 205].includes(response.status)) return response;
+    const reader = response.body.getReader();
+    const chunks: Uint8Array[] = [];
+    let bytes = 0;
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        bytes += value.byteLength;
+        if (bytes > 2 * 1024 * 1024)
+          throw new Error("Circle response is too large.");
+        chunks.push(value);
+      }
+    } finally {
+      await reader.cancel().catch(() => undefined);
+      reader.releaseLock();
+    }
+    const data = new Uint8Array(bytes);
+    let offset = 0;
+    for (const chunk of chunks) {
+      data.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+    return new Response(data, {
+      status: response.status,
+      headers: response.headers,
+    });
+  } finally {
+    clearTimeout(timer);
+    controller.abort();
+    init?.signal?.removeEventListener("abort", abort);
+  }
+};
 export const circleClient = circleConfigured
   ? createClient(url!, key!, {
+      global: { fetch: boundedFetch },
       auth: {
         storage,
         autoRefreshToken: true,

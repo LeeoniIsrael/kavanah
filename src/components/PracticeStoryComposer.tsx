@@ -18,7 +18,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { captureRef } from "react-native-view-shot";
+import { captureRef, releaseCapture } from "react-native-view-shot";
 
 import { Button } from "@/components/ui/button";
 import { grid } from "@/design/theme";
@@ -162,6 +162,7 @@ function StoryComposerSession({
     setError("");
     setIsSharing(true);
 
+    let captured: string | undefined;
     try {
       if (!(await Sharing.isAvailableAsync())) {
         throw new Error("Sharing is not available on this device.");
@@ -173,6 +174,7 @@ function StoryComposerSession({
         height: 1920,
         result: "tmpfile",
       });
+      captured = uri;
       await Sharing.shareAsync(uri, {
         dialogTitle: "Share your Kavanah moment",
         mimeType: "image/png",
@@ -186,6 +188,7 @@ function StoryComposerSession({
           : "This story could not be prepared.",
       );
     } finally {
+      if (captured) releaseCapture(captured);
       setIsSharing(false);
     }
   };

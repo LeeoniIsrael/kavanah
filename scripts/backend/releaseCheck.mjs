@@ -1,5 +1,14 @@
+import { createRequire } from "node:module";
+import { URL } from "node:url";
+import { Buffer } from "node:buffer";
 // Configuration gate only; never claims to replace hosted acceptance tests or App Review.
+const require=createRequire(import.meta.url);
+const {getAssistantConfig}=require('../../server/assistantPolicy.cjs');
 const failures=[];
+if(process.env.ASSISTANT_ENABLED==='true'&&!getAssistantConfig(process.env))failures.push('Enabled assistant needs valid server-only credentials, daily/lifetime caps and supported model');
+for(const [name,value] of Object.entries(process.env)) {
+ if(name.startsWith('EXPO_PUBLIC_')&&(/sb_secret_/.test(value)||/service_role/.test(value)||/^(?:sk-|sk_)/.test(value))) failures.push(`${name} appears to contain a server secret`);
+}
 const required=['EXPO_PUBLIC_SUPABASE_URL','EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY','EXPO_PUBLIC_INVITE_URL','APP_STORE_URL'];
 for(const name of required)if(!process.env[name])failures.push(`${name} is missing`);
 for(const name of ['EXPO_PUBLIC_SUPABASE_URL','EXPO_PUBLIC_INVITE_URL']){

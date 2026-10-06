@@ -67,7 +67,7 @@ OPENAI_MODEL=gpt-5.6-luna
 EXPO_PUBLIC_ASSISTANT_API_URL=https://your-domain.example/api/assistant
 ```
 
-The app removes recognizable email addresses, phone numbers, and common street-address patterns before transport. The backend moderates questions, limits output, disables OpenAI storage, and labels review status in the model context. The current in-memory daily request limit is not sufficient for a multi-instance public launch; use a shared durable limiter and a hard provider budget before release.
+The app removes recognizable email addresses, phone numbers, and common street-address patterns before transport. The backend moderates questions, limits output, disables OpenAI storage, and labels review status in the model context. The server now fails closed unless its PostgreSQL admission guard and explicit daily/lifetime request caps are configured. Follow [production operations](docs/production-operations.md) before enabling paid work; the caps do not cover hosting or database DDoS costs.
 
 ## Architecture
 
@@ -100,9 +100,9 @@ The current [release handoff](docs/release-handoff-2026-09-27.md) records what h
 
 - No Hebrew prayer is rabbinically approved in runtime yet.
 - Translation providers are free, unofficial production dependencies and must be replaced with licensed or reviewed content.
-- User MMKV data is not encrypted at rest yet.
+- Native user MMKV now uses a device-only encryption key and migrates older values. SQLite annotations and photo files still rely on operating-system protection; native migration/deletion QA remains open.
 - Expo Go does not persist MMKV data and cannot fully test notifications.
-- Assistant request limits are process-local and can be bypassed by reinstalling or changing installation IDs.
+- Assistant caps are shared and durable in the repository; hosted deployment, edge abuse controls, and provider billing configuration remain unverified.
 - TLS pinning and production crash reporting are not implemented.
 - Zmanim methods are shown, but local custom and rabbinic method selection are not implemented.
 - Service collections need section-level content design; they must not be presented as complete single prayers.
@@ -118,3 +118,7 @@ See [backend deployment and operating guide](docs/social-backend.md) and [releas
 The first launch shows a short animated welcome and keeps local exploration available. On iOS, Sign in with Apple is the primary account option once the Supabase Apple provider accepts `com.leeoniisrael.kavanah` and `EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN=true` is set alongside the public Supabase URL and publishable key in a private `.env`. A standalone iOS build also needs this App ID registered with the Sign in with Apple capability in an enrolled Apple Developer account. Email-code sign-in stays hidden until `EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN=true` is set; its OTP template must contain `{{ .Token }}`, and a custom SMTP service is needed before sending to users outside the Supabase team. Google and phone stay hidden until their provider setup is verified and the matching flag is set. Google also needs `kavanah://auth` in Auth redirect settings; phone needs an SMS provider. Never put provider secrets in Expo variables.
 
 The selected daily prayer view is saved locally and, after sign-in, to the user's Supabase Auth metadata. The three plain-language community choices map to the corresponding indexed siddur. The woman's daily view omits selected ritual-specific sections as a navigation default; this is not a religious ruling. Text and practice guidance remain under review, and users can change their choice in Profile. Sign out and account deletion are available in Profile.
+
+## Production-readiness audit
+
+Read [the October 6 audit](docs/production-readiness-audit.md) and [operations/recovery guide](docs/production-operations.md). Repository tests and bundle exports do not establish hosted or App Store readiness. The current verdict remains **NOT READY** for a public launch.

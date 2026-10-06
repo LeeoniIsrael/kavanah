@@ -14,6 +14,9 @@ type ZmanimState = {
   refresh: () => Promise<void>;
 };
 
+let locationGeneration = 0;
+export function invalidateLocationRequests(): void { locationGeneration++; }
+
 export const useZmanimStore = create<ZmanimState>((set, get) => ({
   location: null,
   locationCheckedAt: null,
@@ -23,11 +26,14 @@ export const useZmanimStore = create<ZmanimState>((set, get) => ({
   error: null,
   refresh: async () => {
     if (get().isLoading) return;
+    const generation = locationGeneration;
     set({ isLoading: true, error: null });
     try {
       const location = await requestZmanimLocation();
+      if (generation !== locationGeneration) return;
       const now = new Date();
       const schedule = await calculateZmanimRange(location, now, 7);
+      if (generation !== locationGeneration) return;
       const dateKey = toDateKey(now);
       const zmanim = schedule.filter(
         (zman) => toDateKey(zman.time) === dateKey,
@@ -42,12 +48,13 @@ export const useZmanimStore = create<ZmanimState>((set, get) => ({
         upcomingZmanim,
       });
     } catch {
+      if (generation !== locationGeneration) return;
       set({
         error:
           "Couldn’t get local prayer times. Check location access in Settings, then tap Update.",
       });
     } finally {
-      set({ isLoading: false });
+      if (generation === locationGeneration) set({ isLoading: false });
     }
   },
 }));

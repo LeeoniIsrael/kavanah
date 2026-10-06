@@ -1,4 +1,5 @@
 import Constants from "expo-constants";
+import * as Crypto from "expo-crypto";
 import { fetch as expoFetch } from "expo/fetch";
 
 import { getOrCreateInstallationId, redactPii } from "@/services/security";
@@ -6,7 +7,7 @@ import { getOrCreateInstallationId, redactPii } from "@/services/security";
 export const HALACHIC_ASSISTANT_SYSTEM_PROMPT = [
   "Kavanah answers from the prayer text, review status, and source references supplied with each question.",
   "It explains context in plain language, separates established practice from interpretation, and does not issue binding halachic rulings.",
-  "Personal details are removed before a question is sent."
+  "Recognizable personal details are redacted where detected before a question is sent.",
 ].join(" ");
 
 export type AssistantMessage = {
@@ -24,11 +25,16 @@ type AssistantStreamEvent = {
 
 const MAX_CONTEXT_ITEMS = 18;
 const MAX_CONTEXT_ITEM_LENGTH = 1400;
-const DEFAULT_ASSISTANT_API_URL = "https://kavanah-rho.vercel.app/api/assistant";
+const DEFAULT_ASSISTANT_API_URL =
+  "https://kavanah-rho.vercel.app/api/assistant";
 const CONNECTION_TIMEOUT_MS = 12000;
 const STREAM_IDLE_TIMEOUT_MS = 20000;
 
-export async function* createAssistantStream(userInput: string, providedContext: string[]): AsyncGenerator<string> {
+export async function* createAssistantStream(
+  userInput: string,
+  providedContext: string[],
+  signal?: AbortSignal,
+): AsyncGenerator<string> {
   const endpoint = getAssistantEndpoint();
   if (!endpoint) {
     yield "The assistant is not connected in this build yet. The prayer and its source details remain available above.";
@@ -37,7 +43,14 @@ export async function* createAssistantStream(userInput: string, providedContext:
 
   const installationId = await getOrCreateInstallationId();
   const controller = new AbortController();
-  const connectionTimeout = setTimeout(() => controller.abort(), CONNECTION_TIMEOUT_MS);
+  const cancel = () => controller.abort();
+  signal?.addEventListener("abort", cancel, { once: true });
+  if (signal?.aborted) controller.abort();
+  const totalTimeout = setTimeout(() => controller.abort(), 35000);
+  const connectionTimeout = setTimeout(
+    () => controller.abort(),
+    CONNECTION_TIMEOUT_MS,
+  );
   let response: Awaited<ReturnType<typeof expoFetch>>;
   try {
     response = await expoFetch(endpoint, {
@@ -45,83 +58,122 @@ export async function* createAssistantStream(userInput: string, providedContext:
       headers: {
         Accept: "text/event-stream",
         "Content-Type": "application/json",
-        "X-Kavanah-Install-Id": installationId
+        "X-Kavanah-Install-Id": installationId,
+        "X-Kavanah-Request-Id": Crypto.randomUUID(),
       },
       body: JSON.stringify({
         question: redactPii(userInput.trim()).slice(0, 1000),
-        context: providedContext
-          .slice(0, MAX_CONTEXT_ITEMS)
-          .map((item) => redactPii(item).slice(0, MAX_CONTEXT_ITEM_LENGTH))
+        context: boundedContext(providedContext),
       }),
-      signal: controller.signal
+      signal: controller.signal,
     });
   } catch (error) {
-    if (controller.signal.aborted) {
-      throw new Error("The assistant took too long to connect. Please try again.");
+    clearTimeout(totalTimeout);
+    signal?.removeEventListener("abort", cancel);
+    controller.abort();
+    if (error instanceof Error && error.name === "AbortError") {
+      throw new Error(
+        "The assistant took too long to connect. Please try again.",
+      );
     }
     throw error;
   } finally {
     clearTimeout(connectionTimeout);
   }
 
-  if (!response.ok) {
-    const payload = (await response.json().catch(() => null)) as { error?: unknown } | null;
-    throw new Error(typeof payload?.error === "string" ? payload.error : "The assistant could not answer right now.");
-  }
-
-  if (!response.body) {
-    throw new Error("The assistant response was empty.");
-  }
-
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = "";
-
   try {
-    while (true) {
-      const { done, value } = await readWithTimeout(reader, STREAM_IDLE_TIMEOUT_MS);
-      buffer += decoder.decode(value, { stream: !done });
-      const events = buffer.split("\n\n");
-      buffer = events.pop() ?? "";
+    if (!response.ok) {
+      const payload = (await response.json().catch(() => null)) as {
+        error?: unknown;
+      } | null;
+      throw new Error(
+        typeof payload?.error === "string"
+          ? payload.error
+          : "The assistant could not answer right now.",
+      );
+    }
 
-      for (const event of events) {
-        const data = event
-          .split("\n")
-          .find((line) => line.startsWith("data: "))
-          ?.slice(6);
-        if (!data) {
-          continue;
+    if (!response.body) {
+      throw new Error("The assistant response was empty.");
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let bytes = 0;
+    let completed = false;
+
+    try {
+      while (true) {
+        const { done, value } = await readWithTimeout(
+          reader,
+          STREAM_IDLE_TIMEOUT_MS,
+        );
+        bytes += value?.byteLength ?? 0;
+        if (bytes > 262144)
+          throw new Error("The assistant response was too large.");
+        buffer += decoder.decode(value, { stream: !done });
+        if (buffer.length > 65536)
+          throw new Error("The assistant response was invalid.");
+        const events = buffer.split("\n\n");
+        buffer = events.pop() ?? "";
+
+        for (const event of events) {
+          const data = event
+            .split("\n")
+            .find((line) => line.startsWith("data: "))
+            ?.slice(6);
+          if (!data) {
+            continue;
+          }
+          const parsed = JSON.parse(data) as AssistantStreamEvent;
+          if (typeof parsed.error === "string") {
+            throw new Error(parsed.error);
+          }
+          if (parsed.done === true) completed = true;
+          if (typeof parsed.delta === "string") {
+            yield parsed.delta;
+          }
         }
-        const parsed = JSON.parse(data) as AssistantStreamEvent;
-        if (typeof parsed.error === "string") {
-          throw new Error(parsed.error);
-        }
-        if (typeof parsed.delta === "string") {
-          yield parsed.delta;
+
+        if (done) {
+          if (!completed)
+            throw new Error(
+              "The assistant connection ended before the answer was complete.",
+            );
+          break;
         }
       }
-
-      if (done) {
-        break;
-      }
+    } finally {
+      await reader.cancel().catch(() => undefined);
+      reader.releaseLock();
     }
   } finally {
-    await reader.cancel().catch(() => undefined);
-    reader.releaseLock();
+    clearTimeout(totalTimeout);
+    signal?.removeEventListener("abort", cancel);
+    controller.abort();
   }
 }
 
 async function readWithTimeout(
   reader: ReadableStreamDefaultReader<Uint8Array>,
-  timeoutMs: number
+  timeoutMs: number,
 ): Promise<ReadableStreamReadResult<Uint8Array>> {
   let timeout: ReturnType<typeof setTimeout> | undefined;
   try {
     return await Promise.race([
       reader.read(),
       new Promise<never>((_, reject) => {
-        timeout = setTimeout(() => reject(new Error("The assistant response paused for too long. Please try again.")), timeoutMs);
-      })
+        timeout = setTimeout(
+          () =>
+            reject(
+              new Error(
+                "The assistant response paused for too long. Please try again.",
+              ),
+            ),
+          timeoutMs,
+        );
+      }),
     ]);
   } finally {
     if (timeout) clearTimeout(timeout);
@@ -138,9 +190,23 @@ function getAssistantEndpoint(): string | null {
   }
 
   const endpoint = configured.trim();
-  const isLocalDevelopment = __DEV__ && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//i.test(endpoint);
+  const isLocalDevelopment =
+    __DEV__ && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//i.test(endpoint);
   if (!endpoint.startsWith("https://") && !isLocalDevelopment) {
     throw new Error("The assistant endpoint must use HTTPS.");
   }
   return endpoint;
+}
+
+function boundedContext(items: string[]): string[] {
+  let remaining = 18000;
+  return items.slice(0, MAX_CONTEXT_ITEMS).flatMap((item) => {
+    if (remaining <= 2) return [];
+    const clean = redactPii(item).slice(
+      0,
+      Math.min(MAX_CONTEXT_ITEM_LENGTH, remaining - 2),
+    );
+    remaining -= clean.length + 2;
+    return [clean];
+  });
 }

@@ -17,7 +17,10 @@
     "test:ui": "jest --config jest.ui.config.cjs --runInBand",
     "test:backend": "node scripts/backend/test.mjs",
     "backend:catalog": "tsx scripts/backend/generateCatalog.ts",
-    "release:check": "node scripts/backend/releaseCheck.mjs"
+    "release:check": "node scripts/backend/releaseCheck.mjs",
+    "test:api": "node --test scripts/backend/assistant.test.cjs",
+    "build": "expo export --platform all --output-dir dist",
+    "test:concurrency": "node scripts/backend/concurrency.mjs"
   },
   "jest": {
     "preset": "ts-jest",
@@ -37,7 +40,9 @@
       "^expo-secure-store$": "<rootDir>/src/test/expoSecureStoreMock.ts",
       "^hebrew-transliteration$": "<rootDir>/src/test/hebrewTransliterationMock.ts",
       "^react-native-mmkv$": "<rootDir>/src/test/mmkvMock.ts",
-      "^expo-file-system$": "<rootDir>/src/test/expoFileSystemMock.ts"
+      "^expo-file-system$": "<rootDir>/src/test/expoFileSystemMock.ts",
+      "^react-native$": "<rootDir>/src/test/reactNativeMock.ts",
+      "^expo/fetch$": "<rootDir>/src/test/expoFetchMock.ts"
     }
   },
   "dependencies": {
@@ -119,6 +124,7 @@
     "eslint-config-expo": "~57.0.2",
     "jest": "^29.7.0",
     "jest-expo": "~57.0.5",
+    "pg": "^8.23.1",
     "prettier": "^3.4.2",
     "react-test-renderer": "19.2.3",
     "tailwindcss": "^3.4.17",

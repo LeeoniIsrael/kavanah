@@ -4,7 +4,7 @@ Status: implemented and tested locally. The owner upgraded the existing **Kavana
 
 ## Architecture
 
-Kavanah uses Expo → Supabase Auth + HTTPS PostgREST RPC → managed PostgreSQL. There is no custom always-on application server, Redis, load balancer, media pipeline, or realtime subscription for Circle. The existing Vercel assistant remains separate; its deployment/rate limiting still needs production review.
+Kavanah uses Expo → Supabase Auth + HTTPS PostgREST RPC → managed PostgreSQL. There is no custom always-on application server, Redis, load balancer, media pipeline, or realtime subscription for Circle. The Vercel assistant remains separate. The October 6 audit adds durable shared admission, fixed pair locking, private-table RLS and deletion/queue safeguards; hosted acceptance is still required. See [production-readiness audit](production-readiness-audit.md) and [operations](production-operations.md).
 
 - Auth: verified email codes, no password database or address-book permissions. Native sessions use Keychain/Keystore through Expo SecureStore. Web sessions are memory-only. Biometric locking remains a separate local feature.
 - Profiles: unique normalized handle and display name, private by default. Exact-handle requests avoid a browsable public directory. Names are visible to accepted connections and pending request participants. A person who knows a handle can request a connection; that limited discoverability is intentional.

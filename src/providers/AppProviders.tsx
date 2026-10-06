@@ -1,3 +1,8 @@
+import {
+  useLocalDataDeletion,
+  clearLocalData,
+  finishLocalDataDeletion,
+} from "@/services/localDataDeletion";
 import { startReminderScheduling } from "@/services/reminderScheduler";
 import { startCircleAccount } from "@/store/circleAccountStore";
 import { circleClient } from "@/services/network/client";
@@ -17,6 +22,7 @@ export function AppProviders({
   children,
 }: PropsWithChildren): React.JSX.Element {
   const colors = useThemeColors();
+  const deletionStatus = useLocalDataDeletion((state) => state.status);
   useEffect(() => startReminderScheduling(), []);
   useEffect(() => {
     const stop = startCircleAccount();
@@ -58,12 +64,54 @@ export function AppProviders({
     return () => subscription.remove();
   }, [biometricLockEnabled]);
 
+  if (deletionStatus !== "idle") {
+    return (
+      <View className="flex-1 items-center justify-center p-6 bg-background gap-4">
+        <Text accessibilityRole="header" variant="section">
+          {deletionStatus === "done"
+            ? "Local data cleared"
+            : deletionStatus === "error"
+              ? "Local data could not be fully cleared"
+              : "Clearing local data…"}
+        </Text>
+        <Text accessibilityLiveRegion="polite" variant="body">
+          {deletionStatus === "done"
+            ? "Practice history, bookmarks, annotations, preferences, saved locations, and local photos were removed. Your cloud account remains. Public downloaded prayer text remains available."
+            : deletionStatus === "error"
+              ? "Some data may remain. Check your connection and try again."
+              : "Please keep Kavanah open until this finishes."}
+        </Text>
+        {deletionStatus === "done" && (
+          <Button
+            accessibilityLabel="Continue after clearing local data"
+            onPress={finishLocalDataDeletion}
+          >
+            <Text>Continue</Text>
+          </Button>
+        )}
+        {deletionStatus === "error" && (
+          <Button
+            accessibilityLabel="Retry clearing local data"
+            onPress={() => void clearLocalData()}
+          >
+            <Text>Retry</Text>
+          </Button>
+        )}
+      </View>
+    );
+  }
+
   if (!hydrated) {
     return (
       <View
         accessibilityLabel="Opening Kavanah"
         accessibilityRole="progressbar"
-        style={{ flex: 1, backgroundColor: "#000000", alignItems: "center", justifyContent: "center" }}
+        style={{
+          flex: 1,
+          backgroundColor: "#000000",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         <StatusBar barStyle="light-content" />
         <BrandWordmark width={190} color="#FFFFFF" />
@@ -82,7 +130,7 @@ export function AppProviders({
           Kavanah is locked
         </Text>
         <Text className="text-[16px] leading-[22px] font-normal tracking-normal text-muted-foreground text-center max-w-[310px] font-body">
-          Your saved prayers and personal progress stay private.
+          Unlock to see your saved prayers and personal progress.
         </Text>
         <Button
           variant="default"

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { localWritesSuspended } from "@/services/mmkv";
+import { useEffect, useRef, useState } from "react";
 import {
   ActionSheetIOS,
   Alert,
@@ -25,6 +26,13 @@ export function profilePhotoFile(owner: string) {
 }
 export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
   const colors = useThemeColors();
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
   const [uri, setUri] = useState(() => {
     if (Platform.OS === "web") return null;
     const file = profilePhotoFile(owner);
@@ -68,7 +76,13 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
         source === "camera"
           ? await ImagePicker.launchCameraAsync(options)
           : await ImagePicker.launchImageLibraryAsync(options);
-      if (result.canceled || !result.assets[0]) return;
+      if (
+        !mounted.current ||
+        localWritesSuspended() ||
+        result.canceled ||
+        !result.assets[0]
+      )
+        return;
       const picked = new File(result.assets[0].uri);
       if (picked.size > 15 * 1024 * 1024) {
         setMessage("Choose a photo smaller than 15 MB.");
@@ -81,8 +95,10 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
         `profile-photo-${encodeURIComponent(owner)}-pending.jpg`,
       );
       if (staged.exists) staged.delete();
-      await picked.copy(staged);
-      await staged.move(target, { overwrite: true });
+      // These file operations are synchronous. Keep replacement in the same
+      // turn as the mounted/reset guard instead of yielding between operations.
+      picked.copySync(staged);
+      staged.moveSync(target, { overwrite: true });
       setUri(`${target.uri}?v=${Date.now()}`);
       setMessage("Photo saved on this device.");
       void confirmHaptic();
@@ -104,7 +120,10 @@ export function ProfilePhoto({ owner, name }: { owner: string; name: string }) {
     }
   };
   const open = () => {
-    if (Platform.OS === "web") { setMessage("Profile photos are available in the mobile app."); return; }
+    if (Platform.OS === "web") {
+      setMessage("Profile photos are available in the mobile app.");
+      return;
+    }
     if (Platform.OS === "ios") {
       const options = [
         "Take photo",

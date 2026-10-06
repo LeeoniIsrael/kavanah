@@ -1,3 +1,6 @@
+import thirdPartyNotices from "@/data/thirdPartyNotices.json";
+import { clearLocalData } from "@/services/localDataDeletion";
+import Constants from "expo-constants";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
@@ -28,8 +31,15 @@ import {
   UserRound,
   X,
 } from "@/components/ui/icons";
-import { useState } from "react";
-import { Alert, Modal, Platform, ScrollView, View } from "react-native";
+import { useRef, useState } from "react";
+import {
+  Alert,
+  Linking,
+  Modal,
+  Platform,
+  ScrollView,
+  View,
+} from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -47,7 +57,7 @@ import {
   useSettingsStore,
 } from "@/store/settingsStore";
 
-type ProfileModal = "focus" | "language" | "privacy" | null;
+type ProfileModal = "focus" | "language" | "privacy" | "notices" | null;
 
 export function ProfileScreen(): React.JSX.Element {
   const colors = useThemeColors();
@@ -73,13 +83,15 @@ export function ProfileScreen(): React.JSX.Element {
     "signOut" | "delete" | null
   >(null);
   const [accountError, setAccountError] = useState<string | null>(null);
+  const accountLock = useRef(false);
   const reduceMotion = useReducedMotion();
   const primaryLanguage = findLanguage(primaryLanguageCode);
   const assistantEnabled =
     assistantConsentVersion === CURRENT_ASSISTANT_CONSENT_VERSION;
 
   const runAccountAction = async (action: "signOut" | "delete") => {
-    if (accountAction) return;
+    if (accountLock.current) return;
+    accountLock.current = true;
     setAccountAction(action);
     setAccountError(null);
     try {
@@ -99,6 +111,7 @@ export function ProfileScreen(): React.JSX.Element {
           : "Could not update your account. Please try again.",
       );
     } finally {
+      accountLock.current = false;
       setAccountAction(null);
     }
   };
@@ -119,6 +132,38 @@ export function ProfileScreen(): React.JSX.Element {
         onPress: () => void runAccountAction("delete"),
       },
     ]);
+  };
+
+  const confirmClearLocalData = () => {
+    const message =
+      "This removes local practice history, bookmarks, annotations, preferences, saved locations, and photos, cancels reminders, and signs you out. Your cloud account and public downloaded prayer text remain. Unsent Circle changes will be lost.";
+    if (Platform.OS === "web") {
+      if (globalThis.confirm?.(`${message}\n\nClear local data?`))
+        void clearLocalData();
+      return;
+    }
+    Alert.alert("Clear local data?", message, [
+      { text: "Keep data", style: "cancel" },
+      {
+        text: "Clear local data",
+        style: "destructive",
+        onPress: () => void clearLocalData(),
+      },
+    ]);
+  };
+  const openPolicy = (
+    key: "privacyPolicyUrl" | "termsUrl" | "thirdPartyNoticesUrl",
+  ) => {
+    const url = Constants.expoConfig?.extra?.[key];
+    if (typeof url !== "string" || !url.startsWith("https://")) {
+      setAccountError("This policy is not available in this build.");
+      return;
+    }
+    void Linking.openURL(url).catch(() =>
+      setAccountError(
+        "Could not open the policy. Check your connection and try again.",
+      ),
+    );
   };
 
   return (
@@ -145,7 +190,10 @@ export function ProfileScreen(): React.JSX.Element {
           </Button>
         )}
         {!accountSession && !circleConfigured && (
-          <Text variant="caption">Account sync is being set up. Your prayer book remains available on this device.</Text>
+          <Text variant="caption">
+            Account sync is being set up. Your prayer book remains available on
+            this device.
+          </Text>
         )}
       </View>
       {accountSession && (
@@ -414,6 +462,8 @@ export function ProfileScreen(): React.JSX.Element {
             </Text>
             <Text className="text-[13px] leading-[20px] font-medium tracking-normal text-muted-foreground font-label">
               Allow prayer questions to be processed by OpenAI through Kavanah.
+              Supabase stores hashed identifiers and usage counters for abuse
+              prevention.
             </Text>
           </View>
           <Switch
@@ -517,6 +567,28 @@ export function ProfileScreen(): React.JSX.Element {
             >
               <PrayerFocusSetupContent />
             </ScrollView>
+          ) : activeModal === "notices" ? (
+            <ScrollView contentContainerClassName="px-6 pt-[72px] pb-12 gap-6">
+              <Text accessibilityRole="header" variant="display">
+                Third-party notices
+              </Text>
+              {thirdPartyNotices.map((notice) => (
+                <View key={notice.title} style={{ gap: 12 }}>
+                  <Text accessibilityRole="header" variant="section">
+                    {notice.title}
+                  </Text>
+                  <Text variant="body" selectable>
+                    {notice.license}
+                  </Text>
+                </View>
+              ))}
+              <Button
+                variant="secondary"
+                onPress={() => openPolicy("thirdPartyNoticesUrl")}
+              >
+                <Text>Source and additional notices</Text>
+              </Button>
+            </ScrollView>
           ) : (
             <ScrollView
               contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
@@ -578,9 +650,10 @@ export function ProfileScreen(): React.JSX.Element {
                     Only after you allow it, your question, selected prayer
                     text, language, source reference, and review status are sent
                     through Kavanah's server to OpenAI. Display translations are
-                    identified as unreviewed. Email addresses, phone numbers,
-                    and street addresses are removed first. Questions are not
-                    used for advertising.
+                    identified as unreviewed. Recognizable email addresses,
+                    phone numbers, and common street-address patterns are
+                    redacted where detected. Avoid submitting identifying
+                    information. Questions are not used for advertising.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="guidance">
@@ -614,6 +687,34 @@ export function ProfileScreen(): React.JSX.Element {
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
               </BouncyAccordion.Root>
+              <Button
+                variant="secondary"
+                onPress={() => openPolicy("privacyPolicyUrl")}
+              >
+                <Text>Privacy policy</Text>
+              </Button>
+              <Button
+                variant="secondary"
+                onPress={() => openPolicy("termsUrl")}
+              >
+                <Text>Terms of use</Text>
+              </Button>
+              <Button
+                variant="secondary"
+                onPress={() => setActiveModal("notices")}
+              >
+                <Text>Third-party notices</Text>
+              </Button>
+              <Button
+                variant="secondary"
+                accessibilityLabel="Clear data saved on this device"
+                onPress={confirmClearLocalData}
+              >
+                <Text>Clear local data</Text>
+              </Button>
+              {accountError && (
+                <Text accessibilityRole="alert">{accountError}</Text>
+              )}
             </ScrollView>
           )}
         </SafeAreaView>

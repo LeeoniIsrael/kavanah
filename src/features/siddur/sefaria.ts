@@ -1,3 +1,4 @@
+import { secureFetch } from "@/services/network";
 import { allowedLicense, candidateBooks, chooseVersions } from "./registry";
 import type {
   ReaderLanguage,
@@ -22,7 +23,7 @@ type ApiVersion = {
   text?: unknown;
 };
 async function getJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${BASE}${path}`, {
+  const response = await secureFetch(`${BASE}${path}`, {
     headers: { Accept: "application/json" },
   });
   if (!response.ok) throw new Error("Sefaria temporarily unavailable");
@@ -32,7 +33,9 @@ const title = (node: ApiNode, lang: string) =>
   node.titles?.find((t) => t.lang === lang && t.primary)?.text ??
   node.titles?.find((t) => t.lang === lang)?.text;
 export function normalizeSchema(index: string, root: ApiNode): SiddurNode[] {
+  let visited = 0;
   const visit = (node: ApiNode, path: string[], depth: number): SiddurNode => {
+    if (depth > 16 || ++visited > 10000) throw new Error("The source structure is too large or deeply nested.");
     const en = title(node, "en") ?? node.key ?? "";
     const parts = depth === 0 ? [index] : [...path, en];
     const ref = parts.join(", ");

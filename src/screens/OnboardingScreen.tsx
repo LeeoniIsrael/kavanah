@@ -202,7 +202,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             ) : <Text style={styles.unavailable}>{checkingApple ? "Checking Apple sign-in…" : Platform.OS === "ios" && appleSignInEnabled && appleAvailable === false ? "Apple sign-in needs a Kavanah test build on this phone. You can keep using your prayer book without an account." : "Account sign-in is being set up. You can keep using your prayer book without an account."}</Text>}
             {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
             {mode === "account" && !canSignIn && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
-            <Text style={styles.privacy}>Your prayer stays private.</Text>
+            <Text style={styles.privacy}>You choose whether to share your practice.</Text>
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
         </Animated.View>

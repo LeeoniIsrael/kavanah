@@ -41,11 +41,15 @@ function useAnimatedPlaceholder({
   );
   const [phase, setPhase] = useState<"enter" | "hold" | "exit">("enter");
 
-  useEffect(() => {
+  const [previousConfig, setPreviousConfig] = useState({ prompts, reduceMotion });
+  // Reset this derived animation state when its inputs change, before rendering
+  // the next prompt rather than cascading a synchronous effect update.
+  if (previousConfig.prompts !== prompts || previousConfig.reduceMotion !== reduceMotion) {
+    setPreviousConfig({ prompts, reduceMotion });
     setPromptIndex(0);
     setCharacterCount(reduceMotion ? (prompts[0]?.length ?? 0) : 0);
     setPhase("enter");
-  }, [prompts, reduceMotion]);
+  }
 
   useEffect(() => {
     if (!prompts.length || reduceMotion || prompts.length === 1) return;

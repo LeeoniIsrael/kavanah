@@ -117,3 +117,12 @@ test("Hebrew page progression mirrors English", () => {
   expect(pageDirection("en", -50)).toBe(1);
   expect(pageDirection("he", -50)).toBe(-1);
 });
+
+test("reader permits zoom, blocks external resources, and escapes untrusted text", async () => {
+  const { createReaderHtml } = await import("../readerHtml");
+  const html = createReaderHtml(mapSegments("Section", [], ['<img src="https://tracker.example">']), "en", 1, [], false);
+  expect(html).not.toContain("user-scalable=no");
+  expect(html).toContain("Content-Security-Policy");
+  expect(html).toContain("&lt;img");
+  expect(html).not.toContain('<img src="https://tracker.example">');
+});

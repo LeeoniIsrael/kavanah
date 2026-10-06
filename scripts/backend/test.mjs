@@ -2,8 +2,8 @@ import { PGlite } from '@electric-sql/pglite';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const db=new PGlite();
-await db.exec(`create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
-for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
+await db.exec(`create role service_role; create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
+for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql','202610060001_production_safeguards.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
 const a='00000000-0000-4000-8000-000000000001',b='00000000-0000-4000-8000-000000000002',c='00000000-0000-4000-8000-000000000003';
 await db.exec(`insert into auth.users values('${a}'),('${b}'),('${c}');`);
 async function as(id){await db.exec(`reset role; select set_config('request.jwt.claim.sub','${id}',false); set role authenticated;`);}
@@ -21,6 +21,8 @@ for(const table of ['circle_profiles','circle_connections','circle_activity']){
   where n.nspname='public' and c.relname=$1`,[table])).rows[0];
  assert.deepEqual(privileges,{rls:true,anon_select:false,user_select:true,user_insert:false,user_update:false,user_delete:false});checks++;
 }
+const privateTables=(await q("select c.relname,c.relrowsecurity rls,has_table_privilege('authenticated',c.oid,'SELECT') can_read from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='private' and c.relkind='r'")).rows;
+for(const table of privateTables){assert.equal(table.rls,true,table.relname);assert.equal(table.can_read,false,table.relname);checks++;}
 for(const [id,handle] of [[a,'alice'],[b,'bobby'],[c,'carol']]){await as(id);await q("select circle_join($1,$1,'America/New_York',false)",[handle]);}
 await as(a);
 await denied("insert into circle_activity(owner,event_key,kind,prayer_id,title) values($1,'fake','prayer','modeh-ani','Fake')",[a]);
@@ -81,6 +83,36 @@ for(const table of ['public.circle_profiles','public.circle_activity','private.s
  assert.equal((await q(`select count(*)::int n from ${table} where ${key}=$1`,[a])).rows[0].n,0);checks++;
 }
 await db.exec(`set role anon`);await denied('select * from circle_activity');await denied('select * from circle_feed()');await denied("select circle_join('outsider','Outsider','UTC',false)");
+// The assistant guard must be callable only by the server role.
+await denied("select assistant_reserve(gen_random_uuid(),repeat('a',64),repeat('b',64),10,100)");
+await db.exec('reset role; set role authenticated');
+await denied("select assistant_reserve(gen_random_uuid(),repeat('a',64),repeat('b',64),10,100)");
+await denied('select * from private.assistant_budget');
+await db.exec('reset role; set role service_role');
+const reserve=async(id,installation='a',ip='b',daily=100,total=1000)=>(await q("select assistant_reserve($1,repeat($2,64),repeat($3,64),$4,$5) status",[id,installation,ip,daily,total])).rows[0].status;
+const rid='10000000-0000-4000-8000-000000000001';
+assert.equal(await reserve(rid),'allowed');checks++;
+assert.equal(await reserve(rid),'duplicate');checks++;
+assert.equal(await reserve('10000000-0000-4000-8000-000000000002'),'busy');checks++;
+await q('select assistant_finish($1)',[rid]);
+assert.equal(await reserve(rid),'duplicate');checks++;
+for(let i=2;i<=10;i++){
+ const id=`10000000-0000-4000-8000-${String(i).padStart(12,'0')}`;
+ assert.equal(await reserve(id),'allowed');await q('select assistant_finish($1)',[id]);
+}
+assert.equal(await reserve('10000000-0000-4000-8000-000000000011'),'rate');checks++;
+assert.equal(await reserve('10000000-0000-4000-8000-000000000012','c','d',10),'rate');checks++;
+assert.equal(await reserve('10000000-0000-4000-8000-000000000013','c','d',100,10),'budget');checks++;
+await denied("select assistant_reserve(gen_random_uuid(),repeat('a',64),repeat('b',64),10001,100)");
+// Concurrency leases survive instance death and expire, without refunding cost.
+await db.exec("reset role; update private.assistant_requests set expires_at=now()-interval '1 second'; update private.assistant_budget set minute_hits=0; set role service_role");
+for(let i=0;i<5;i++)assert.equal(await reserve(`20000000-0000-4000-8000-${String(i).padStart(12,'0')}`,String(i),String(i)),'allowed');
+assert.equal(await reserve('20000000-0000-4000-8000-000000000099','f','f'),'busy');checks++;
+await db.exec("reset role; update private.assistant_requests set expires_at=now()-interval '1 second'; set role service_role");
+assert.equal(await reserve('20000000-0000-4000-8000-000000000099','f','f'),'allowed');checks++;
+// Turning off sharing or completion duplication cannot change another user's rows.
+await db.exec('reset role');
+assert.equal((await q('select count(*)::int n from auth.users where id=$1',[a])).rows[0].n,0);checks++;
 await db.close();console.log(`${checks} database/security checks passed against PostgreSQL (PGlite).`);
 
 // Public invitation rendering must not echo executable input or invent a store listing.

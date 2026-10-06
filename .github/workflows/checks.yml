@@ -9,6 +9,15 @@ jobs:
   application-and-database:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: integration-tests-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -19,5 +28,12 @@ jobs:
       - run: npm run typecheck
       - run: npm test -- --runInBand
       - run: npm run test:backend
-      - name: Check social, account, reminder and Focus code
-        run: npx eslint src/screens/PeopleScreen.tsx src/screens/ProfileScreen.tsx src/services/network src/store/circleAccountStore.ts src/store/socialStore.ts src/providers/AppProviders.tsx src/screens/CircleScreen.tsx scripts/backend/generateCatalog.ts src/services/reminderPlan.ts src/services/reminderScheduler.ts src/store/reminderStore.ts src/screens/NotificationSettingsScreen.tsx src/screens/HolidayChecklistScreen.tsx app/focus-setup.tsx src/components/PrayerFocusSetupContent.tsx src/services/prayerFocus.ts src/services/__tests__/prayerFocus.test.ts
+      - run: npm run test:concurrency
+        env:
+          PG_TEST_URL: postgresql://postgres:integration-tests-only@127.0.0.1:5432/postgres
+      - run: npm run test:api
+      - run: npm run test:ui
+      - run: npm run lint
+      - run: npm run build
+        env:
+          CI: '1'

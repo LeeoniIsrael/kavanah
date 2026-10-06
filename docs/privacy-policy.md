@@ -1,6 +1,6 @@
 # Kavanah Privacy Policy
 
-Updated September 25, 2026 — Circle launch draft; deployment, processor region, and private support contact must be confirmed before release.
+Updated October 6, 2026 — draft for owner and legal review; deployment, processor region, and private support contact must be confirmed before release.
 
 Kavanah is designed to provide prayer text, local Jewish times, reminders, bookmarks, and private habit tracking while collecting as little personal information as possible.
 
@@ -10,13 +10,19 @@ Kavanah stores prayer bookmarks, streak history, language preferences, reminder 
 
 ## Location
 
-Location access is optional. If allowed, Kavanah uses your current coordinates to calculate local solar and halachic times. Precise coordinates are not included in prayer-assistant requests. You can revoke location access in device settings.
+Location access is optional. If allowed, Kavanah uses your current coordinates to calculate local solar and halachic times. Precise coordinates are not included in prayer-assistant requests. You can revoke location access in device settings. The operating system location and reverse-geocoding services may process coordinates under the device’s settings and their own terms. Kavanah does not send coordinates to Circle or the prayer assistant.
 
 ## Prayer assistant
 
-The prayer assistant is optional and remains disabled until you allow it. When used, Kavanah sends your question, the selected prayer text, your chosen language, the prayer's source reference, and its review status through a Kavanah-controlled server to OpenAI for processing. Display translations and transliterations are explicitly identified to the assistant as not rabbinically reviewed. Kavanah removes recognizable email addresses, phone numbers, and street addresses before transmission. Do not submit private, confidential, medical, financial, or identifying information.
+The prayer assistant is optional and remains disabled until you allow it. When used, Kavanah sends your question, the selected prayer text, your chosen language, the prayer's source reference, and its review status through a Kavanah-controlled server to OpenAI for processing. Display translations and transliterations are explicitly identified to the assistant as not rabbinically reviewed. The app and server redact recognizable email addresses, phone numbers, and common street-address patterns where detected. This is best effort and cannot detect all identifying information. Do not submit private, confidential, medical, financial, or identifying information.
+
+The server also processes the connection IP address and installation identifier for abuse prevention. It stores keyed hashes, request identifiers, usage counters, and short-lived concurrency reservations in Supabase; it does not store questions or answers in those tables. An installation hash is also sent to OpenAI as a safety identifier. Hashes and request records are pruned on admitted requests after their enforcement window (daily hashes and two-day duplicate records); idle records can remain until the next admitted request or an operator cleanup. The lifetime counter contains no user identifiers. Hosting/provider access logs have separately configured retention.
 
 Assistant requests are processed for the purpose of answering the question, preventing abuse, and maintaining service reliability. They are not used by Kavanah for advertising. OpenAI's API data handling and retention practices are described in [OpenAI's API data controls](https://developers.openai.com/api/docs/guides/your-data).
+
+## Public text and translation services
+
+Opening uncached library text or searching remote references contacts Sefaria directly with the requested reference or search term and the device connection IP. Non-English prayer display can send public prayer passages and the target language directly to Google's unofficial translation endpoint, with MyMemory (Translated) as a fallback. These services receive the device connection IP. Prayer questions, photos, and account credentials are not sent to translation services by this flow. Production rights, accuracy, and provider terms still require review.
 
 ## Notifications
 
@@ -28,7 +34,7 @@ Creating a practice story is optional. A photo you choose stays on your device w
 
 ## Accounts
 
-In builds where Circle accounts are enabled, joining is optional. Supabase processes your email for sign-in, your display name and handle, connection requests, sharing preferences, prayer completion times and durations from enrollment onward, weekly quote selections, and moderation reports. This activity can reveal religious practice. Prior device history is not uploaded by joining. Prayer content remains usable without an account.
+In builds where Circle accounts are enabled, joining is optional. Supabase processes your email for sign-in, your display name and handle, selected prayer-view audience and community in Auth metadata, timezone, connection requests, sharing preferences, prayer completion times and durations from enrollment onward, weekly quote selections, and moderation reports. This activity can reveal religious practice. Prior device history is not uploaded by joining. Prayer content remains usable without an account.
 
 Updates are shared only with accepted connections according to your choices. Your handle lets people request a connection; names are visible to accepted connections and people involved in pending requests. Blocking removes the connection and prevents either person from reading the other’s updates. Kavanah does not upload your address book. Invitations use the system share sheet and are sent only by you through your chosen service. Invitation URLs include the handle you choose to share.
 
@@ -36,15 +42,15 @@ Cloud data is retained while your account exists unless you remove individual sh
 
 ## Data deletion
 
-Deleting Kavanah removes its local app-container data but does not delete a Circle cloud account. Use Circle → Friends → Delete account to remove the cloud profile, posts, completion records, connections, and associated records. Active data is deleted when this action succeeds; backup copies expire with the configured backup retention. Device-only practice remains unless you remove local app data. Operating-system secure storage can have different uninstall behavior by platform; Kavanah stores the biometric preference, pseudonymous assistant installation ID, and, when signed in to Circle, authentication credentials in operating-system secure storage. Sign-out removes the app session. Assistant consent and reminders can be revoked inside Kavanah at any time. An in-app control to clear all local Kavanah data is planned before public release.
+Deleting Kavanah removes its local app-container data but does not delete a Circle cloud account. Use Profile → Account → Delete profile (or Circle → Friends → Delete account) to remove the cloud profile, posts, completion records, connections, and associated records. Active data is deleted when this action succeeds; backup copies expire with the configured backup retention. Device-only practice remains unless you remove local app data. Operating-system secure storage can have different uninstall behavior by platform; Kavanah stores the biometric preference, pseudonymous assistant installation ID, and, when signed in to Circle, authentication credentials in operating-system secure storage. Sign-out removes the app session. Assistant consent and reminders can be revoked inside Kavanah at any time. Profile → Privacy and data use → Clear local data removes local practice history, bookmarks, annotations, preferences, saved locations, and app-local photos, cancels reminders, clears unsent Circle changes, and signs out. Public downloaded siddur text remains available. This action does not delete a cloud account, images previously exported to Photos or another app, or provider/device backups. Native preference/activity MMKV storage uses a device-only encryption key; reader annotations and image files are not covered by that MMKV encryption. Expo Go and browser previews do not provide the native storage protections.
 
 ## Children
 
-Kavanah is not directed to children under 13 and does not knowingly collect personal information from children.
+Owner review required: confirm the intended age audience and jurisdictions before publishing this draft. Child-directed use or knowingly collecting children’s account or religious-practice information requires qualified review and appropriate parental-consent handling. The application does not implement a parental-consent flow.
 
 ## Changes and contact
 
-Material changes will be reflected in this policy and, when necessary, presented in the app for renewed consent. Privacy questions and deletion concerns can be submitted through the [Kavanah support page](https://github.com/LeeoniIsrael/kavanah/issues).
+Material changes will be reflected in this policy and, when necessary, presented in the app for renewed consent. TODO(owner): provide a private support/deletion contact and identify the responsible business. Do not submit personal information or deletion evidence to the public GitHub issue tracker.
 
 ## Local reminders and preparation lists
 

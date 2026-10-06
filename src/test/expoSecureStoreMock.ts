@@ -13,3 +13,6 @@ export async function getItemAsync(key: string): Promise<string | null> {
 export async function deleteItemAsync(key: string): Promise<void> {
   values.delete(key);
 }
+
+export function getItem(key: string): string | null { return values.get(key) ?? null; }
+export function setItem(key: string, value: string): void { values.set(key, value); }

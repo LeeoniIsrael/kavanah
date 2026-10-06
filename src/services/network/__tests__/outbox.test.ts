@@ -97,3 +97,46 @@ test("an old account in-flight response cannot remove the next account queue", a
     "bob",
   );
 });
+test("a large backlog is uploaded in a finite batch", async () => {
+  mockStorage.set(
+    "circle.outbox.alice",
+    Array.from({ length: 40 }, (_, i) => ({
+      id: String(i),
+      rpc: "circle_record",
+      args: { event: String(i) },
+    })),
+  );
+  setOutboxOwner("alice");
+  await flushCircle();
+  expect(rpc).toHaveBeenCalledTimes(25);
+  expect(useCircleSync.getState().pending).toBe(15);
+});
+test("queue capacity preserves a sharing-off change before future completions", async () => {
+  mockStorage.set(
+    "circle.outbox.alice",
+    Array.from({ length: 500 }, (_, i) => ({
+      id: String(i),
+      rpc: "circle_record",
+      args: { event: String(i) },
+    })),
+  );
+  setOutboxOwner("alice");
+  rpc.mockRejectedValue(new Error("Offline"));
+  queueCircle("circle_record", { event: "overflow" }, "overflow");
+  expect(useCircleSync.getState().pending).toBe(500);
+  queueCircle("circle_preferences", { prayer_mode: "off" }, "preferences");
+  await settle();
+  expect(useCircleSync.getState().pending).toBe(501);
+  queueCircle("circle_record", { event: "later" }, "later");
+  expect(useCircleSync.getState().pending).toBe(501);
+  expect(
+    (mockStorage.get("circle.outbox.alice") as { rpc: string }[]).at(-1)?.rpc,
+  ).toBe("circle_preferences");
+  for (let i = 0; i < 10; i++)
+    queueCircle(
+      "circle_preferences",
+      { prayer_mode: "off" },
+      `preferences-${i}`,
+    );
+  expect(useCircleSync.getState().pending).toBe(501);
+});

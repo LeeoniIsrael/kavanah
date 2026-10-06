@@ -302,7 +302,7 @@ function isObject(value: unknown): value is Record<string, unknown> {
 }
 
 async function getJson<T>(url: string): Promise<T> {
-  const response = await fetch(url, { headers: { Accept: "application/json" } });
+  const response = await fetch(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error(`${response.status} from ${url}`);
   return await response.json() as T;
 }
