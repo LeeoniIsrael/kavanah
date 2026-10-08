@@ -29,6 +29,7 @@ After applying, run [the read-only verification](sql/verify-production-safeguard
 - Before deployment, all nine original private tables existed with no anonymous/authenticated read or authenticated write grants; RLS was disabled there and all three assistant tables were absent. This establishes the starting state, not proof of cross-user policy behavior.
 - The owner then supplied the SQL editor result `Production safeguards applied`, confirming the single-transaction script reached its post-commit status.
 - The follow-up installed-state screenshot shows all six PASS rows: all 15 expected tables match RLS/client grants, and all five changed functions match their source fingerprints, fixed search paths and role grants. Hosted Data API schema exposure/row limits and account/API behavior still require verification. Backup restoration, provider usage controls and native acceptance remain open.
+- The Data API Settings screenshot shows a Max rows field of 200, extra search path `public, extensions`, automatic exposure of new tables enabled, and an exposed-schema selector reporting two of three schemas. The selected schema names are hidden; verification of the allowlist and saved settings remains pending. The table/function exposure selectors display zero of 15 tables and zero of 16 functions; actual authenticated/API access still requires testing before changing those controls.
 
 ### Enforced assistant bounds
 
