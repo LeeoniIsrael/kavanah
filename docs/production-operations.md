@@ -13,6 +13,20 @@ October 6, 2026. This is a deployment contract, not evidence that the hosted ser
 7. Set the mobile HTTPS assistant URL and rebuild. Older clients can omit a request UUID; new clients send one for deduplication. Native user-data migration requires a signed development/release build, not Expo Go.
 8. The Vercel configuration explicitly disables an Expo build for the API deployment. `npm run build` is a separate mobile/web bundle verification command. Do not publish `dist/` to the API project accidentally; mobile bundles belong in the native release, and a web deployment needs its own review.
 
+### SQL editor deployment for the verified existing project
+
+When CLI access is unavailable, [docs/sql/production-safeguards.sql](sql/production-safeguards.sql) is the generated, single-transaction version of the October 6 migration. It has five-second lock and thirty-second statement limits, records the migration version if the existing Supabase CLI history table is present, and notifies PostgREST on commit. An error rolls back the transaction; repeat application fails instead of resetting counters. Run the complete file once in a new SQL editor query, then verify the table/RPC grants and hosted behavior. This applies only the new safeguards; it assumes the original Circle schema/catalog/grant migrations already exist. The assistant still needs its gateway rollout and explicit allowance before activation.
+
+Regenerate with `node scripts/backend/deploymentSql.mjs`; `npm run test:backend` verifies that the file matches the canonical migration and tests rollback/history behavior. If the project has no CLI migration history table, this script does not invent one. Before introducing CLI migrations later, reconcile all already-applied versions using Supabase's supported migration-history repair workflow rather than replaying them.
+
+### Owner-supplied dashboard evidence — October 8, 2026
+
+- Scheduled-backup screenshot lists daily physical backups; the newest shown was October 6, 2026 at 04:48:13 UTC (12:48:13 a.m. Eastern). A current restore drill remains outstanding.
+- The Point in time tab shows an available add-on and an Enable button: PITR is disabled. Enabling it and its additional cost remain an owner recovery/budget decision.
+- The metadata query shows all three public Circle tables installed with RLS enabled, anonymous SELECT denied, authenticated SELECT granted and direct authenticated INSERT/UPDATE/DELETE denied.
+- All nine original private tables exist with no anonymous/authenticated read or authenticated write grants; RLS is currently disabled there. All three assistant tables are absent. This establishes the starting state for the safeguards migration, not proof of cross-user policy behavior.
+- The safeguards migration has not yet been confirmed applied. Hosted account/API tests, backup restoration, provider usage controls and native acceptance remain open.
+
 ### Enforced assistant bounds
 
 | Scope | Bound |

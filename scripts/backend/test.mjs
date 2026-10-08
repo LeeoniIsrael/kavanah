@@ -1,9 +1,25 @@
 import { PGlite } from '@electric-sql/pglite';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+execFileSync(process.execPath, ['scripts/backend/deploymentSql.mjs', '--check'], { stdio: 'inherit' });
 const db=new PGlite();
 await db.exec(`create role service_role; create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
-for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql','202610060001_production_safeguards.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
+for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
+const deployment=readFileSync('docs/sql/production-safeguards.sql','utf8');
+// A failure at the end must undo new tables and replaced Circle functions.
+const previousRequest=(await db.query("select pg_get_functiondef('public.circle_request(text)'::regprocedure) definition")).rows[0].definition;
+await assert.rejects(db.exec(deployment.replace("NOTIFY pgrst, 'reload schema';", "SELECT 1/0;")));
+await db.exec('ROLLBACK');
+assert.equal((await db.query("select to_regclass('private.assistant_budget') present")).rows[0].present,null);
+assert.equal((await db.query("select pg_get_functiondef('public.circle_request(text)'::regprocedure) definition")).rows[0].definition,previousRequest);
+await db.exec('create schema supabase_migrations; create table supabase_migrations.schema_migrations(version text primary key, statements text[], name text)');
+await db.exec(deployment);
+assert.equal((await db.query("select count(*)::int n from supabase_migrations.schema_migrations where version='202610060001'")).rows[0].n,1);
+await assert.rejects(db.exec(deployment));
+await db.exec('ROLLBACK');
+assert.equal((await db.query('select count(*)::int n from private.assistant_budget')).rows[0].n,1);
+console.log('SQL editor transaction rollback, history recording and repeat-application protection passed.');
 const a='00000000-0000-4000-8000-000000000001',b='00000000-0000-4000-8000-000000000002',c='00000000-0000-4000-8000-000000000003';
 await db.exec(`insert into auth.users values('${a}'),('${b}'),('${c}');`);
 async function as(id){await db.exec(`reset role; select set_config('request.jwt.claim.sub','${id}',false); set role authenticated;`);}
