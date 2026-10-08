@@ -19,13 +19,15 @@ When CLI access is unavailable, [docs/sql/production-safeguards.sql](sql/product
 
 Regenerate with `node scripts/backend/deploymentSql.mjs`; `npm run test:backend` verifies that the file matches the canonical migration and tests rollback/history behavior. If the project has no CLI migration history table, this script does not invent one. Before introducing CLI migrations later, reconcile all already-applied versions using Supabase's supported migration-history repair workflow rather than replaying them.
 
+After applying, run [the read-only verification](sql/verify-production-safeguards.sql) in a separate query. Expect six PASS rows: all 15 tables' RLS/client grants and the five changed routines' exact source fingerprints, fixed search paths and execution grants. The check makes no provider call or allowance reservation. It does not prove cross-user policy behavior, JWT/API deployment or native sign-in; the two-account acceptance tests remain necessary. Its generated expectations are checked in the backend test runner, including deliberate grant/RLS/function-code regressions.
+
 ### Owner-supplied dashboard evidence — October 8, 2026
 
 - Scheduled-backup screenshot lists daily physical backups; the newest shown was October 6, 2026 at 04:48:13 UTC (12:48:13 a.m. Eastern). A current restore drill remains outstanding.
 - The Point in time tab shows an available add-on and an Enable button: PITR is disabled. Enabling it and its additional cost remain an owner recovery/budget decision.
 - The metadata query shows all three public Circle tables installed with RLS enabled, anonymous SELECT denied, authenticated SELECT granted and direct authenticated INSERT/UPDATE/DELETE denied.
-- All nine original private tables exist with no anonymous/authenticated read or authenticated write grants; RLS is currently disabled there. All three assistant tables are absent. This establishes the starting state for the safeguards migration, not proof of cross-user policy behavior.
-- The safeguards migration has not yet been confirmed applied. Hosted account/API tests, backup restoration, provider usage controls and native acceptance remain open.
+- Before deployment, all nine original private tables existed with no anonymous/authenticated read or authenticated write grants; RLS was disabled there and all three assistant tables were absent. This establishes the starting state, not proof of cross-user policy behavior.
+- The owner then supplied the SQL editor result `Production safeguards applied`, confirming the single-transaction script reached its post-commit status. The separate installed-state verification is pending. Hosted account/API tests, backup restoration, provider usage controls and native acceptance remain open.
 
 ### Enforced assistant bounds
 
