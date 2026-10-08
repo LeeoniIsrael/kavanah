@@ -27,7 +27,8 @@ After applying, run [the read-only verification](sql/verify-production-safeguard
 - The Point in time tab shows an available add-on and an Enable button: PITR is disabled. Enabling it and its additional cost remain an owner recovery/budget decision.
 - The metadata query shows all three public Circle tables installed with RLS enabled, anonymous SELECT denied, authenticated SELECT granted and direct authenticated INSERT/UPDATE/DELETE denied.
 - Before deployment, all nine original private tables existed with no anonymous/authenticated read or authenticated write grants; RLS was disabled there and all three assistant tables were absent. This establishes the starting state, not proof of cross-user policy behavior.
-- The owner then supplied the SQL editor result `Production safeguards applied`, confirming the single-transaction script reached its post-commit status. The separate installed-state verification is pending. Hosted account/API tests, backup restoration, provider usage controls and native acceptance remain open.
+- The owner then supplied the SQL editor result `Production safeguards applied`, confirming the single-transaction script reached its post-commit status.
+- The follow-up installed-state screenshot shows all six PASS rows: all 15 expected tables match RLS/client grants, and all five changed functions match their source fingerprints, fixed search paths and role grants. Hosted Data API schema exposure/row limits and account/API behavior still require verification. Backup restoration, provider usage controls and native acceptance remain open.
 
 ### Enforced assistant bounds
 
