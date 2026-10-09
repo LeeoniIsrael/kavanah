@@ -15,6 +15,8 @@ const env = {
   ASSISTANT_TOTAL_REQUEST_LIMIT: "1000",
 };
 const originalEnv = { ...process.env };
+const accountId = '00000000-0000-4000-8000-000000000001';
+const accountResponse = () => Response.json({ id: accountId, is_anonymous: false });
 let calls, logs, originalFetch, originalInfo, originalError;
 beforeEach(() => {
   Object.assign(process.env, env);
@@ -27,6 +29,7 @@ beforeEach(() => {
   console.info = console.error = (message) => logs.push(message);
   global.fetch = async (url, init) => {
     calls.push({ url, init });
+    if (url.endsWith('/auth/v1/user')) return accountResponse();
     if (url.endsWith("assistant_reserve")) return Response.json("allowed");
     if (url.endsWith("assistant_finish")) return Response.json(null);
     if (url.endsWith("moderations"))
@@ -51,6 +54,7 @@ function request(
     method: "POST",
     headers: {
       "content-type": "application/json",
+      authorization: "Bearer unit.test.token",
       "x-kavanah-install-id": "a".repeat(64),
       "x-kavanah-request-id": randomUUID(),
     },
@@ -126,8 +130,10 @@ test("client proxy headers are not trusted outside the verified Vercel adapter",
   assert.equal(calls.length, 0);
 });
 test("limiter failures fail closed before moderation or generation", async () => {
-  global.fetch = async () => {
-    throw Error("secret provider error");
+  const fetch = global.fetch;
+  global.fetch = async (url, init) => {
+    if (url.endsWith('assistant_reserve')) throw Error("secret provider error");
+    return fetch(url, init);
   };
   const res = response();
   await handler(request(), res);
@@ -138,12 +144,13 @@ test("limiter failures fail closed before moderation or generation", async () =>
 test("rejected durable allowance performs no paid work", async () => {
   global.fetch = async (url) => {
     calls.push(url);
+    if (url.endsWith('/auth/v1/user')) return accountResponse();
     return Response.json("budget");
   };
   const res = response();
   await handler(request(), res);
   assert.equal(res.statusCode, 429);
-  assert.equal(calls.length, 1);
+  assert.equal(calls.length, 2);
 });
 test("reserves before provider calls, redacts server-side, limits output, completes and releases", async () => {
   const res = response();
@@ -156,7 +163,8 @@ test("reserves before provider calls, redacts server-side, limits output, comple
   );
   assert.equal(res.statusCode, 200);
   assert(res.output.includes('"done":true'));
-  assert(calls[0].url.endsWith("assistant_reserve"));
+  assert(calls[0].url.endsWith('/auth/v1/user'));
+  assert(calls[1].url.endsWith("assistant_reserve"));
   assert(calls.at(-1).url.endsWith("assistant_finish"));
   const payload = JSON.parse(
     calls.find((c) => c.url.endsWith("responses")).init.body,
@@ -167,6 +175,64 @@ test("reserves before provider calls, redacts server-side, limits output, comple
   assert(!logs.join("").includes("user@example.com"));
   assert(!logs.join("").includes("127.0.0.1"));
   assert.equal(res.headers["Cache-Control"], "no-store, no-transform");
+});
+test('missing, malformed or oversized credentials perform no Auth, database or paid work', async () => {
+  for (const token of [undefined, 'Bearer forged', 'Bearer ' + 'x'.repeat(8193)]) {
+    const req = request(), res = response();
+    req.headers.authorization = token;
+    await handler(req, res);
+    assert.equal(res.statusCode, 401);
+  }
+  assert.equal(calls.length, 0);
+});
+test('invalid, expired or foreign-project tokens are rejected by the Auth server before admission', async () => {
+  global.fetch = async (url, init) => {
+    calls.push({url, init});
+    return Response.json({ error: 'invalid token with secret detail' }, { status: 401 });
+  };
+  const res = response();
+  await handler(request(), res);
+  assert.equal(res.statusCode, 401);
+  assert.equal(calls.length, 1);
+  assert(calls[0].url.endsWith('/auth/v1/user'));
+  assert(!JSON.stringify(res.payload).includes('secret'));
+  assert(!logs.join('').includes('unit.test.token'));
+});
+test('anonymous or malformed Auth identities cannot reserve allowance or perform paid work', async () => {
+  for (const identity of [{ id: accountId, is_anonymous: true }, { id: accountId }, { is_anonymous: false }]) {
+    global.fetch = async (url, init) => { calls.push({url, init}); return Response.json(identity); };
+    const res = response();
+    await handler(request(), res);
+    assert.equal(res.statusCode, 403);
+  }
+  assert.equal(calls.length, 3);
+  assert(calls.every(call => call.url.endsWith('/auth/v1/user')));
+});
+test('unavailable identity verification fails closed without database or paid work', async () => {
+  global.fetch = async (url, init) => { calls.push({url, init}); return Response.json({error:'secret'}, {status:503}); };
+  const res = response();
+  await handler(request(), res);
+  assert.equal(res.statusCode, 502);
+  assert.equal(calls.length, 1);
+  assert(!logs.join('').includes('secret'));
+});
+test('quota binds to the verified account even when installation IDs and claimed user IDs change', async () => {
+  for (const installation of ['a'.repeat(64), 'b'.repeat(64)]) {
+    const req = request({question:'Explain this prayer',context:['Prayer'],userId:installation});
+    req.headers['x-kavanah-install-id'] = installation;
+    const res = response();
+    await handler(req,res);
+    assert.equal(res.statusCode,200);
+  }
+  const reservations = calls.filter(call => call.url.endsWith('assistant_reserve'));
+  assert.equal(reservations.length,2);
+  const subjects = reservations.map(call => JSON.parse(call.init.body).installation_hash);
+  assert.equal(subjects[0], subjects[1]);
+  assert.notEqual(subjects[0], accountId);
+  for (const call of calls.filter(call => call.url.includes('api.openai.com'))) {
+    assert.equal(call.init.headers.Authorization, 'Bearer test-only');
+    assert(!call.init.body.includes(accountId));
+  }
 });
 test("malformed moderation fails closed and releases the lease", async () => {
   const fetch = global.fetch;

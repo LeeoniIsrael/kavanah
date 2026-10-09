@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import * as SecureStore from "expo-secure-store";
 import { Directory, File, Paths } from "expo-file-system";
-import { Platform } from "react-native";
+import { Alert, Platform } from "react-native";
 import { cacheStorage, userStorage, suspendLocalWrites } from "./mmkv";
 import { circleClient } from "./network/client";
 import { setOutboxOwner } from "./network/outbox";
@@ -28,6 +28,17 @@ export const useLocalDataDeletion = create<{
 export function finishLocalDataDeletion(): void {
   suspendLocalWrites(false);
   useLocalDataDeletion.setState({ status: "idle" });
+}
+export function requestLocalDataDeletion(): void {
+  const message = "This removes local practice history, bookmarks, annotations, preferences, saved locations, and photos, cancels reminders, and signs you out. Your cloud account and public downloaded prayer text remain. Unsent Circle changes will be lost.";
+  if (Platform.OS === "web") {
+    if (globalThis.confirm?.(`${message}\n\nClear local data?`)) void clearLocalData();
+    return;
+  }
+  Alert.alert("Clear local data?", message, [
+    { text: "Keep data", style: "cancel" },
+    { text: "Clear local data", style: "destructive", onPress: () => void clearLocalData() },
+  ]);
 }
 // Local reset intentionally leaves the cloud account intact. Cloud deletion has
 // its own authenticated RPC and confirmation; signed-in users see both choices.

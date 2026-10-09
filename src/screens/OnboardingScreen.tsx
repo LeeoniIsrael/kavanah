@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Animated,
   Easing,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   Pressable,
   ScrollView,
@@ -18,6 +19,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import * as AppleAuthentication from "expo-apple-authentication";
 import { isRunningInExpoGo } from "expo";
+import Constants from "expo-constants";
+import { Button } from "@/components/ui/button";
+import { isAccountSession } from "@/services/accountAccess";
+import { useCircleAccount } from "@/store/circleAccountStore";
+import { requestLocalDataDeletion } from "@/services/localDataDeletion";
 import { BrandWordmark } from "@/components/BrandMark";
 import { AnimatedWelcomeHeadline } from "@/components/AnimatedWelcomeHeadline";
 import { fonts } from "@/design/theme";
@@ -33,10 +39,6 @@ const muted = "#98A7B8";
 const background = "#000000";
 const edge = "#344254";
 const accent = "#8DB6E8";
-const appleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN === "true";
-const emailSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN === "true";
-const googleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN === "true";
-const phoneSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_PHONE_SIGN_IN === "true";
 
 const communityOptions: { value: PrayerCommunity; title: string; detail: string }[] = [
   { value: "european", title: "Eastern European", detail: "The prayer book many European communities use" },
@@ -84,22 +86,31 @@ function Action({
 }
 
 export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" | "account" | "preferences" }): React.JSX.Element {
+  const appleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN === "true";
+  const emailSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN === "true";
+  const googleSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN === "true";
+  const phoneSignInEnabled = process.env.EXPO_PUBLIC_ENABLE_PHONE_SIGN_IN === "true";
   const router = useRouter();
   const reduceMotion = useReducedMotion();
   const { height } = useWindowDimensions();
   const save = usePrayerIdentityStore((state) => state.save);
   const finish = usePrayerIdentityStore((state) => state.finish);
-  const [step, setStep] = useState<Step>(mode === "onboarding" ? "splash" : mode === "account" ? "welcome" : "audience");
+  const hasAccount = useCircleAccount((state) => isAccountSession(state.session));
+  const [requestedStep, setStep] = useState<Step>(mode === "preferences" || (mode === "onboarding" && hasAccount) ? "audience" : mode === "onboarding" ? "splash" : "welcome");
+  const step = !hasAccount && (requestedStep === "audience" || requestedStep === "community")
+    ? "welcome" : hasAccount && mode === "onboarding" && (requestedStep === "welcome" || requestedStep === "splash")
+      ? "audience" : requestedStep;
   const [channel, setChannel] = useState<CodeChannel>("email");
   const [contact, setContact] = useState("");
   const [code, setCode] = useState("");
   const [audience, setAudience] = useState<PrayerAudience | null>(null);
   const [community, setCommunity] = useState<PrayerCommunity | null>(null);
   const [busy, setBusy] = useState(false);
+  const actionLock = useRef(false);
   const [message, setMessage] = useState("");
   const inExpoGo = isRunningInExpoGo();
   const [appleAvailable, setAppleAvailable] = useState<boolean | null>(inExpoGo ? false : null);
-  const [intro] = useState(() => new Animated.Value(mode === "onboarding" ? 0 : 1));
+  const [intro] = useState(() => new Animated.Value(mode === "onboarding" && !hasAccount ? 0 : 1));
 
   useEffect(() => {
     if (Platform.OS !== "ios" || !appleSignInEnabled || inExpoGo) return;
@@ -108,10 +119,10 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
       .then((available) => { if (mounted) setAppleAvailable(available); })
       .catch(() => { if (mounted) setAppleAvailable(false); });
     return () => { mounted = false; };
-  }, [inExpoGo]);
+  }, [appleSignInEnabled, inExpoGo]);
 
   useEffect(() => {
-    if (mode !== "onboarding") return;
+    if (mode !== "onboarding" || hasAccount) return;
     // Give the mark a brief introduction without delaying account access.
     const timer = setTimeout(() => {
       Animated.timing(intro, {
@@ -124,20 +135,24 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
       });
     }, reduceMotion ? 0 : 900);
     return () => { clearTimeout(timer); intro.stopAnimation(); };
-  }, [intro, mode, reduceMotion]);
+  }, [intro, mode, reduceMotion, hasAccount]);
 
   const next = (value: Step) => { void tapHaptic(); setMessage(""); setStep(value); };
   const run = async (action: () => Promise<void>) => {
-    if (busy) return;
+    if (actionLock.current) return;
+    actionLock.current = true;
     setBusy(true);
     setMessage("");
     try { await action(); }
     catch (error) { setMessage(error instanceof Error ? error.message : "Something went wrong. Try again."); void softHaptic(); }
-    finally { setBusy(false); }
+    finally { actionLock.current = false; setBusy(false); }
   };
   const done = async () => {
     if (!audience || !community) return;
-    await save({ audience, community });
+    const session = useCircleAccount.getState().session;
+    if (!isAccountSession(session)) throw new Error("Sign in to open your prayer book.");
+    await save({ audience, community }, session.user.id);
+    if (useCircleAccount.getState().session?.user.id !== session.user.id) throw new Error("Your sign-in changed. Please try again.");
     if (mode === "onboarding") finish();
     void successHaptic();
     router.replace(mode === "preferences" ? "/profile" : "/prayer");
@@ -148,6 +163,11 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     emailSignInEnabled || googleSignInEnabled || phoneSignInEnabled
   );
   const checkingApple = circleConfigured && Platform.OS === "ios" && appleSignInEnabled && appleAvailable === null;
+  const openPolicy = (key: "privacyPolicyUrl" | "termsUrl") => void run(async () => {
+    const url = Constants.expoConfig?.extra?.[key];
+    if (typeof url !== "string" || !url.startsWith("https://")) throw new Error("This policy is not available in this build.");
+    await Linking.openURL(url);
+  });
   const submitCredential = () => void run(async () => {
     if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
     else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
@@ -180,6 +200,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             transform: [{ translateY: intro.interpolate({ inputRange: [0, 1], outputRange: [28, 0] }) }],
           }]}
         >
+          <ScrollView style={styles.flex} contentContainerStyle={styles.welcomeScroll} bounces={false}>
           {mode === "account" && <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={goBack} style={styles.close}><Ionicons name="close" size={23} color={ink} /></Pressable>}
           <View style={styles.welcomeBottom}>
             <AnimatedWelcomeHeadline />
@@ -187,6 +208,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
             {canSignIn ? (
               <View style={styles.providerGroup}>
                 {Platform.OS === "ios" && appleSignInEnabled && appleAvailable === true && (
+                  <View pointerEvents={busy ? "none" : "auto"} accessibilityState={{ busy, disabled: busy }}>
                   <AppleAuthentication.AppleAuthenticationButton
                     buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                     buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
@@ -194,17 +216,24 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
                     style={styles.appleButton}
                     onPress={() => { void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
                   />
+                  </View>
                 )}
                 {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />}
                 {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
                 {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy} onPress={() => { setChannel("phone"); next("contact"); }} />}
               </View>
-            ) : <Text style={styles.unavailable}>{checkingApple ? "Checking Apple sign-in…" : Platform.OS === "ios" && appleSignInEnabled && appleAvailable === false ? "Apple sign-in needs a Kavanah test build on this phone. You can keep using your prayer book without an account." : "Account sign-in is being set up. You can keep using your prayer book without an account."}</Text>}
-            {mode === "onboarding" && <Pressable accessibilityRole="button" onPress={() => next("audience")} hitSlop={10} style={styles.explore}><Text style={styles.exploreText}>Explore without an account <Ionicons name="arrow-forward" size={16} color={muted} /></Text></Pressable>}
+            ) : <Text style={styles.unavailable}>{checkingApple ? "Checking Apple sign-in…" : Platform.OS === "ios" && appleSignInEnabled && appleAvailable === false ? "Apple sign-in requires a Kavanah development or release build on a supported device." : "Sign-in is unavailable in this build. An account is required to use Kavanah."}</Text>}
+            {busy && <Text accessibilityRole="progressbar" accessibilityLiveRegion="polite" style={styles.privacy}>Working…</Text>}
             {mode === "account" && !canSignIn && <Action label="Back to Profile" kind="quiet" onPress={goBack} />}
-            <Text style={styles.privacy}>You choose whether to share your practice.</Text>
+            <Text style={styles.privacy}>An account is required. You choose whether to share your practice.</Text>
+            <View style={styles.policyLinks}>
+              <Button variant="link" accessibilityRole="link" accessibilityLabel="Read Privacy Policy" disabled={busy} onPress={() => openPolicy("privacyPolicyUrl")}><Text style={styles.policyLabel}>Privacy</Text></Button>
+              <Button variant="link" accessibilityRole="link" accessibilityLabel="Read Terms of Use" disabled={busy} onPress={() => openPolicy("termsUrl")}><Text style={styles.policyLabel}>Terms</Text></Button>
+            </View>
+            <Button variant="link" accessibilityLabel="Clear local data from this device" disabled={busy} onPress={requestLocalDataDeletion}><Text style={styles.policyLabel}>Clear local data</Text></Button>
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
+          </ScrollView>
         </Animated.View>
       </SafeAreaView>
     );
@@ -218,9 +247,9 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
           <View style={styles.formTop}>
             <BrandWordmark width={118} color="#FFFFFF" />
             <View style={styles.flex} />
-            <Pressable accessibilityRole="button" accessibilityLabel={mode !== "onboarding" && step === "audience" ? "Close" : "Go back"} onPress={goBack} hitSlop={12}>
+            {(step !== "audience" || mode !== "onboarding") && <Pressable accessibilityRole="button" accessibilityLabel={mode !== "onboarding" && step === "audience" ? "Close" : "Go back"} onPress={goBack} hitSlop={12}>
               <Text style={styles.backLabel}>{mode !== "onboarding" && step === "audience" ? "Close" : "Back"}</Text>
-            </Pressable>
+            </Pressable>}
           </View>
           {(step === "contact" || step === "code") && <>
             <View style={styles.formSpacer} />
@@ -297,6 +326,7 @@ const styles = StyleSheet.create({
   logo: { alignItems: "center", justifyContent: "center" },
   welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
   welcomeBottom: { marginTop: "auto" },
+  welcomeScroll: { flexGrow: 1 },
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
   providerGroup: { marginTop: 29, gap: 10 },
@@ -310,8 +340,8 @@ const styles = StyleSheet.create({
   actionIcon: { marginRight: 10 },
   googleIcon: { marginRight: 10, fontFamily: fonts.bold, fontSize: 20, lineHeight: 25 },
   unavailable: { color: muted, fontFamily: fonts.medium, fontSize: 14, lineHeight: 21, marginTop: 29 },
-  explore: { alignItems: "center", justifyContent: "center", minHeight: 42, marginTop: 8 },
-  exploreText: { color: muted, fontFamily: fonts.medium, fontSize: 13 },
+  policyLinks: { flexDirection: "row", justifyContent: "center", gap: 12 },
+  policyLabel: { color: accent, fontFamily: fonts.medium, fontSize: 12 },
   privacy: { color: "#738296", fontFamily: fonts.regular, fontSize: 11, textAlign: "center", marginTop: 19 },
   error: { color: "#F2A0A8", fontFamily: fonts.medium, fontSize: 13, lineHeight: 20, textAlign: "center", marginTop: 14 },
   formPage: { flexGrow: 1, paddingHorizontal: 27, paddingBottom: 24, maxWidth: 560, width: "100%", alignSelf: "center" },

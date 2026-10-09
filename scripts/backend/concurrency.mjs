@@ -36,13 +36,14 @@ try {
     if not exists(select 1 from pg_roles where rolname='service_role') then create role service_role; end if;
   end $roles$;`);
   await db.query(
-    `create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`,
+    `create schema auth; create table auth.users(id uuid primary key, is_anonymous boolean default false); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`,
   );
   for (const file of [
     "202609250001_circle.sql",
     "202609250002_catalog.sql",
     "202609270001_circle_table_grants.sql",
     "202610060001_production_safeguards.sql",
+    "202610080001_account_required.sql",
   ])
     await db.query(readFileSync(`supabase/migrations/${file}`, "utf8"));
   for (let i = 0; i < 12; i++) {
@@ -96,7 +97,7 @@ try {
   const a = randomUUID(),
     b = randomUUID(),
     c = randomUUID();
-  await db.query("insert into auth.users select unnest($1::uuid[])", [
+  await db.query("insert into auth.users(id) select unnest($1::uuid[])", [
     [a, b, c],
   ]);
   const as = async (client, id) => {
@@ -192,7 +193,7 @@ try {
     handle: `test_${i}`,
   }));
   await db.query(
-    "insert into auth.users select id from jsonb_to_recordset($1) as x(id uuid,handle text)",
+    "insert into auth.users(id) select id from jsonb_to_recordset($1) as x(id uuid,handle text)",
     [JSON.stringify(seed)],
   );
   await db.query(

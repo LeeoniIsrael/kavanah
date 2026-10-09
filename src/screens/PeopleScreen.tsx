@@ -52,7 +52,7 @@ export function CircleFriends({ tabs, lead }: FriendsProps) {
   const { handle } = useLocalSearchParams<{ handle?: string }>();
   return (
     <PeopleContent
-      key={`${id ?? "guest"}:${handle ?? ""}`}
+      key={`${id ?? "signed-out"}:${handle ?? ""}`}
       tabs={tabs}
       lead={lead}
     />
@@ -207,7 +207,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
           <Text style={ui.itemTitle}>Pray in good company</Text>
           <Text style={ui.body}>
             Sign in to join Circle. You choose who joins and what you share.
-            Private prayer works without an account.
+            You control whether your prayer activity is shared.
           </Text>
           {button("Sign in to join Circle", () => router.push("/sign-in"))}
         </View>

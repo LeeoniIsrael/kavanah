@@ -1,5 +1,5 @@
 import thirdPartyNotices from "@/data/thirdPartyNotices.json";
-import { clearLocalData } from "@/services/localDataDeletion";
+import { requestLocalDataDeletion } from "@/services/localDataDeletion";
 import Constants from "expo-constants";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
@@ -9,7 +9,7 @@ import {
   loadCircleAccount,
   useCircleAccount,
 } from "@/store/circleAccountStore";
-import { circleConfigured, requireCircle } from "@/services/network/client";
+import { requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
 import { Card } from "@/components/ui/card";
@@ -118,39 +118,22 @@ export function ProfileScreen(): React.JSX.Element {
 
   const confirmDeleteProfile = () => {
     const message =
-      "This permanently deletes your Circle profile, cloud prayer history, posts, and connections. Prayer activity saved only on this device stays here.";
+      "This deletes your Kavanah account and active Circle data, including cloud prayer history, posts, and connections, and signs you out. Device-only practice remains until you clear local data. You will need an account to use Kavanah again.";
     if (Platform.OS === "web") {
-      if (globalThis.confirm?.(`${message}\n\nDelete profile?`))
+      if (globalThis.confirm?.(`${message}\n\nDelete account?`))
         void runAccountAction("delete");
       return;
     }
-    Alert.alert("Delete your profile?", message, [
-      { text: "Keep profile", style: "cancel" },
+    Alert.alert("Delete your account?", message, [
+      { text: "Keep account", style: "cancel" },
       {
-        text: "Delete profile",
+        text: "Delete account",
         style: "destructive",
         onPress: () => void runAccountAction("delete"),
       },
     ]);
   };
 
-  const confirmClearLocalData = () => {
-    const message =
-      "This removes local practice history, bookmarks, annotations, preferences, saved locations, and photos, cancels reminders, and signs you out. Your cloud account and public downloaded prayer text remain. Unsent Circle changes will be lost.";
-    if (Platform.OS === "web") {
-      if (globalThis.confirm?.(`${message}\n\nClear local data?`))
-        void clearLocalData();
-      return;
-    }
-    Alert.alert("Clear local data?", message, [
-      { text: "Keep data", style: "cancel" },
-      {
-        text: "Clear local data",
-        style: "destructive",
-        onPress: () => void clearLocalData(),
-      },
-    ]);
-  };
   const openPolicy = (
     key: "privacyPolicyUrl" | "termsUrl" | "thirdPartyNoticesUrl",
   ) => {
@@ -172,8 +155,8 @@ export function ProfileScreen(): React.JSX.Element {
       subtitle="Your practice, preferences, and privacy."
     >
       <ProfilePhoto
-        key={profile?.id ?? "local"}
-        owner={profile?.id ?? "local"}
+        key={accountSession?.user.id ?? "signed-out"}
+        owner={accountSession?.user.id ?? "signed-out"}
         name={profile?.display_name ?? "Your profile"}
       />
       <View style={{ gap: 12 }}>
@@ -184,17 +167,6 @@ export function ProfileScreen(): React.JSX.Element {
         >
           <Text>Change my prayer view</Text>
         </Button>
-        {!accountSession && circleConfigured && (
-          <Button variant="secondary" onPress={() => router.push("/sign-in")}>
-            <Text>Sign in to save across devices</Text>
-          </Button>
-        )}
-        {!accountSession && !circleConfigured && (
-          <Text variant="caption">
-            Account sync is being set up. Your prayer book remains available on
-            this device.
-          </Text>
-        )}
       </View>
       {accountSession && (
         <View style={{ gap: 12 }}>
@@ -226,7 +198,7 @@ export function ProfileScreen(): React.JSX.Element {
                 variant="section"
                 className="text-[17px] leading-[24px] text-destructive"
               >
-                Delete profile
+                Delete account
               </Text>
             </Button>
           </Card>
@@ -502,7 +474,7 @@ export function ProfileScreen(): React.JSX.Element {
       </Card>
 
       <Text variant="body" className="text-[13px] leading-[20px] px-1">
-        Prayer stays usable without an account. In Circle, you control your
+        An account is required to use Kavanah. In Circle, you control your
         connections, sharing, and account deletion.
       </Text>
 
@@ -683,7 +655,7 @@ export function ProfileScreen(): React.JSX.Element {
                   <BouncyAccordion.Content>
                     You can turn off the prayer assistant or reminders here at
                     any time. Kavanah can still be used for prayer search,
-                    reading, bookmarks, and local zmanim without an account.
+                    reading, bookmarks, and local zmanim after signing in.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
               </BouncyAccordion.Root>
@@ -708,7 +680,7 @@ export function ProfileScreen(): React.JSX.Element {
               <Button
                 variant="secondary"
                 accessibilityLabel="Clear data saved on this device"
-                onPress={confirmClearLocalData}
+                onPress={requestLocalDataDeletion}
               >
                 <Text>Clear local data</Text>
               </Button>

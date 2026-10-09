@@ -92,13 +92,89 @@ COMMIT;
 SELECT 'Production safeguards applied' AS status;
 `;
 
+const accountSource = 'supabase/migrations/202610080001_account_required.sql';
+const accountDestination = 'docs/sql/require-accounts.sql';
+const accountVerificationDestination = 'docs/sql/verify-account-required.sql';
+const accountMigration = readFileSync(accountSource, 'utf8');
+const accountSignatures = {
+  'private.has_account': ['private.has_account()', true],
+  'private.allowed': ['private.allowed(uuid)', true],
+  'private.connected': ['private.connected(uuid)', true],
+  'private.throttle': ['private.throttle(text,integer)', false],
+  'public.circle_settings': ['public.circle_settings()', true],
+  'public.circle_remove': ['public.circle_remove(uuid)', true],
+};
+const accountRoutines = [...accountMigration.matchAll(/create(?: or replace)? function (private|public)\.(\w+)\([\s\S]*?\bas \$\$([\s\S]*?)\$\$/gi)];
+assert.equal(accountRoutines.length, 6, 'Review account verification after changing its routines');
+const accountRows = accountRoutines.map(([, schema, name, body]) => {
+  const [signature, userExecute] = accountSignatures[`${schema}.${name}`] ?? [];
+  assert(signature, `Missing account signature for ${schema}.${name}`);
+  return `    ('${signature}', '${createHash('sha256').update(body).digest('hex')}', ${userExecute})`;
+}).join(',\n');
+const accountSql = `-- Generated from ${accountSource}. Apply once after the production safeguards.
+BEGIN;
+SET LOCAL lock_timeout = '5s';
+SET LOCAL statement_timeout = '30s';
+${accountMigration}
+DO $kavanah_history$
+BEGIN
+  IF to_regclass('supabase_migrations.schema_migrations') IS NOT NULL THEN
+    EXECUTE 'INSERT INTO supabase_migrations.schema_migrations(version) VALUES ($1)'
+      USING '202610080001';
+  END IF;
+END
+$kavanah_history$;
+NOTIFY pgrst, 'reload schema';
+COMMIT;
+SELECT 'Account requirement applied' AS status;
+`;
+const accountVerification = `-- Read-only account requirement metadata verification. Expect seven PASS rows.
+-- Hosted two-account and anonymous-session behavior still needs acceptance testing.
+WITH expected_functions(signature, body_hash, user_execute) AS (
+  VALUES
+${accountRows}
+), function_checks AS (
+  SELECT e.signature, coalesce(
+    p.prosecdef AND p.proconfig @> ARRAY['search_path=""']
+    AND encode(sha256(convert_to(p.prosrc, 'UTF8')), 'hex') = e.body_hash
+    AND NOT has_function_privilege('anon', p.oid, 'EXECUTE')
+    AND has_function_privilege('authenticated', p.oid, 'EXECUTE') = e.user_execute,
+    false
+  ) AS passed
+  FROM expected_functions e LEFT JOIN pg_proc p ON p.oid = to_regprocedure(e.signature)
+), expected_tables(name) AS (
+  VALUES ('public.circle_profiles'), ('public.circle_connections'), ('public.circle_activity')
+), policy_checks AS (
+  SELECT e.name, EXISTS (
+    SELECT 1 FROM pg_policy p JOIN pg_class c ON c.oid = p.polrelid
+    WHERE c.oid = to_regclass(e.name) AND c.relrowsecurity
+    AND p.polname = 'account_required' AND NOT p.polpermissive AND p.polcmd = 'r'
+    AND p.polroles = ARRAY[to_regrole('authenticated')::oid]
+    AND pg_get_expr(p.polqual, p.polrelid) = 'private.has_account()'
+  ) AS passed FROM expected_tables e
+)
+SELECT signature AS check_name, CASE WHEN passed THEN 'PASS' ELSE 'FAIL' END AS status,
+       CASE WHEN passed THEN 'Function code, fixed search path and execution grants match'
+            ELSE 'Function missing or code/search path/grants differ' END AS detail
+FROM function_checks
+UNION ALL
+SELECT 'Restrictive account policies', CASE WHEN bool_and(passed) THEN 'PASS' ELSE 'FAIL' END,
+       coalesce(string_agg(name, ', ' ORDER BY name) FILTER (WHERE NOT passed),
+                'All three public tables require a non-anonymous existing Auth account')
+FROM policy_checks ORDER BY check_name;
+`;
+
 if (process.argv.includes('--check')) {
   assert.equal(readFileSync(destination, 'utf8'), sql, 'Regenerate the SQL editor deployment after changing its source migration');
   assert.equal(readFileSync(verificationDestination, 'utf8'), verification, 'Regenerate the installed-state verification after changing its source migration');
+  assert.equal(readFileSync(accountDestination, 'utf8'), accountSql, 'Regenerate the account deployment SQL');
+  assert.equal(readFileSync(accountVerificationDestination, 'utf8'), accountVerification, 'Regenerate the account verification SQL');
   console.log('SQL editor deployment and verification match the source migration.');
 } else {
   mkdirSync('docs/sql', { recursive: true });
   writeFileSync(destination, sql);
   writeFileSync(verificationDestination, verification);
-  console.log(`Saved ${destination} and ${verificationDestination}`);
+  writeFileSync(accountDestination, accountSql);
+  writeFileSync(accountVerificationDestination, accountVerification);
+  console.log('Saved production and account requirement deployment/verification SQL.');
 }

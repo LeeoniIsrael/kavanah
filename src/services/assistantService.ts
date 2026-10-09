@@ -2,7 +2,9 @@ import Constants from "expo-constants";
 import * as Crypto from "expo-crypto";
 import { fetch as expoFetch } from "expo/fetch";
 
-import { getOrCreateInstallationId, redactPii } from "@/services/security";
+import { redactPii } from "@/services/security";
+import { requireCircle } from "@/services/network/client";
+import { isAccountSession } from "@/services/accountAccess";
 
 export const HALACHIC_ASSISTANT_SYSTEM_PROMPT = [
   "Kavanah answers from the prayer text, review status, and source references supplied with each question.",
@@ -41,7 +43,8 @@ export async function* createAssistantStream(
     return;
   }
 
-  const installationId = await getOrCreateInstallationId();
+  const { data: { session }, error } = await requireCircle().auth.getSession();
+  if (error || !isAccountSession(session)) throw new Error("Sign in to use the assistant.");
   const controller = new AbortController();
   const cancel = () => controller.abort();
   signal?.addEventListener("abort", cancel, { once: true });
@@ -58,7 +61,7 @@ export async function* createAssistantStream(
       headers: {
         Accept: "text/event-stream",
         "Content-Type": "application/json",
-        "X-Kavanah-Install-Id": installationId,
+        Authorization: `Bearer ${session.access_token}`,
         "X-Kavanah-Request-Id": Crypto.randomUUID(),
       },
       body: JSON.stringify({

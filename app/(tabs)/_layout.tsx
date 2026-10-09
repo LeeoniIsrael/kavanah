@@ -3,6 +3,8 @@ import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import { useThemeColors } from "@/design/appearance";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 import type { ComponentProps, ComponentType, PropsWithChildren } from "react";
+import { isAccountSession } from "@/services/accountAccess";
+import { useCircleAccount } from "@/store/circleAccountStore";
 
 const SystemTabs = NativeTabs as ComponentType<
   PropsWithChildren<ComponentProps<typeof NativeTabs>>
@@ -11,7 +13,8 @@ const SystemTabs = NativeTabs as ComponentType<
 export default function TabsLayout(): React.JSX.Element {
   const colors = useThemeColors();
   const completed = usePrayerIdentityStore((state) => state.completed);
-  if (!completed) return <Redirect href="/" />;
+  const session = useCircleAccount((state) => state.session);
+  if (!completed || !isAccountSession(session)) return <Redirect href="/" />;
 
   return (
     <SystemTabs

@@ -48,7 +48,12 @@ module.exports = async function handler(request, response) {
         error:
           "The assistant is temporarily unavailable. Prayer reading remains available.",
       });
-  const installation = request.headers["x-kavanah-install-id"];
+  const authorization = request.headers.authorization;
+  if (typeof authorization !== "string" || authorization.length > 8192 ||
+      !/^Bearer [A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(authorization)) {
+    response.setHeader("WWW-Authenticate", "Bearer");
+    return response.status(401).json({ error: "Sign in to use the assistant." });
+  }
   const operationId =
     request.headers["x-kavanah-request-id"] ?? crypto.randomUUID();
   const ip =
@@ -61,8 +66,6 @@ module.exports = async function handler(request, response) {
       .status(503)
       .json({ error: "The assistant connection could not be verified." });
   if (
-    typeof installation !== "string" ||
-    !/^[a-f0-9]{64}$/i.test(installation) ||
     typeof operationId !== "string" ||
     !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(
       operationId,
@@ -119,12 +122,31 @@ module.exports = async function handler(request, response) {
   const hash = (value) =>
     crypto.createHmac("sha256", config.hashSecret).update(value).digest("hex");
   try {
+    // Verify with this project's Auth server; never trust decoded client JWT claims.
+    const identityResponse = await fetch(`${config.supabaseUrl}/auth/v1/user`, {
+      method: "GET", signal: controller.signal,
+      headers: { apikey: config.serviceKey, Authorization: authorization },
+    });
+    if (identityResponse.status === 401 || identityResponse.status === 403) {
+      outcome = "unauthorized";
+      response.setHeader("WWW-Authenticate", "Bearer");
+      return response.status(401).json({ error: "Sign in again to use the assistant." });
+    }
+    if (!identityResponse.ok) throw new Error("identity_unavailable");
+    const identity = await boundedJson(identityResponse);
+    if (identity.is_anonymous !== false || typeof identity.id !== "string" ||
+        !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/i.test(identity.id)) {
+      outcome = "account_required";
+      return response.status(403).json({ error: "A signed-in account is required to use the assistant." });
+    }
+    const accountHash = hash(`account:${identity.id.toLowerCase()}`);
     const admission = await rpc(
       config,
       "assistant_reserve",
       {
         request_id: operationId,
-        installation_hash: hash(installation.toLowerCase()),
+        // Retain the existing SQL argument/schema; this bucket now binds to the verified account.
+        installation_hash: accountHash,
         ip_hash: hash(ip),
         daily_limit: config.dailyLimit,
         total_limit: config.totalLimit,
@@ -182,7 +204,7 @@ module.exports = async function handler(request, response) {
         service_tier: "default",
         stream: true,
         store: false,
-        safety_identifier: hash(installation.toLowerCase()),
+        safety_identifier: accountHash,
       }),
     });
     if (!upstream.ok || !upstream.body) throw new Error("upstream_unavailable");

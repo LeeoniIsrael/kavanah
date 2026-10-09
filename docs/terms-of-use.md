@@ -4,6 +4,8 @@ Effective August 10, 2026
 
 Kavanah provides prayer text, translations, transliterations, Jewish calendar information, estimated zmanim, reminders, learning context, and optional AI-assisted explanations for personal educational use.
 
+An account is required to use Kavanah. Joining Circle, sharing practice, and using the assistant remain optional. You can sign out or delete your account in Profile. Account deletion signs you out; device-only data can be cleared separately from Profile or the sign-in screen. These account terms were updated October 8, 2026 and remain a draft for owner/legal review.
+
 ## Religious guidance
 
 Kavanah is not a rabbinic authority. Customs, prayer texts, pronunciations, calendar methods, and halachic opinions vary. Assistant responses and calculated times are informational and may be incomplete or inaccurate. Consult a qualified rabbi for personal rulings or time-sensitive observance.

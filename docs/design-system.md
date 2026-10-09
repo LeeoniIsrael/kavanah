@@ -131,7 +131,7 @@ Holiday preparation opens an occurrence-specific, locally saved checklist; compl
 
 Profile begins with a single portrait control. Its native action sheet offers Take photo, Choose photo, and Remove photo when present. The system picker provides a square crop; the portrait renders circularly. Loading and failures are explicit. Camera permission is requested only after Take photo; simulators explain their missing camera. Cancel leaves the saved portrait intact.
 
-Photos are currently private to this device, explicitly labeled, and stored separately for each Circle account (or a local guest). A staged file is copied into durable app documents before replacing the previous photo. Removal deletes that file. No photo is uploaded or represented as visible to friends. Hosted avatar storage and cross-device synchronization are not implemented.
+Photos are currently private to this device, explicitly labeled, and stored separately for each signed-in Auth account, including before Circle enrollment. A staged file is copied into durable app documents before replacing the previous photo. Removal deletes that file. No photo is uploaded or represented as visible to friends. Hosted avatar storage and cross-device synchronization are not implemented.
 
 The live iPhone 17 Pro Profile layout and Fast Refresh were inspected. Typecheck and targeted lint passed. Camera capture, interactive picker cropping, and selection still need physical-device acceptance testing; the simulator cannot capture a live camera photo. Existing native image-picker dependency is reused.
 

@@ -1,8 +1,9 @@
 import "react-native-url-polyfill/auto";
-import { createClient, processLock } from "@supabase/supabase-js";
+import { createClient, processLock, type Session } from "@supabase/supabase-js";
 import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
 import { fetch as expoFetch } from "expo/fetch";
+import { isAccountSession } from "@/services/accountAccess";
 
 const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const key = process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -92,6 +93,17 @@ export function requireCircle() {
     );
   return circleClient;
 }
+export async function updateAccountMetadata(session: Session, data: Record<string, unknown>): Promise<void> {
+  requireCircle();
+  if (!isAccountSession(session)) throw new Error("Sign in to save your preferences.");
+  // Pin to the originating token. SDK updateUser() reads whichever session is current later.
+  const response = await boundedFetch(`${url!}/auth/v1/user`, {
+    method: "PUT",
+    headers: { apikey: key!, Authorization: `Bearer ${session.access_token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ data }),
+  });
+  if (!response.ok) throw new Error("Could not save account preferences. Check your connection and try again.");
+}
 export async function circleRpc(
   name: string,
   args: Record<string, unknown> = {},
@@ -104,7 +116,7 @@ export async function circleRpc(
   } = await client.auth.getSession();
   if (
     sessionError ||
-    !session ||
+    !isAccountSession(session) ||
     (expectedUser && session.user.id !== expectedUser)
   )
     throw new Error("Sign in to this account to sync its changes.");

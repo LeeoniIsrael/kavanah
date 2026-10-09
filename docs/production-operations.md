@@ -4,7 +4,7 @@ October 6, 2026. This is a deployment contract, not evidence that the hosted ser
 
 ## Deploy the safeguards
 
-1. Review and back up the existing Supabase project. Apply all repository migrations in order, including `202610060001_production_safeguards.sql`, through the normal migration process. Do not paste a service-role key into the mobile environment or source control.
+1. Review and back up the existing Supabase project. Apply all repository migrations in order, including `202610060001_production_safeguards.sql` and `202610080001_account_required.sql`, through the normal migration process. Do not paste a service-role key into the mobile environment or source control.
 2. In Supabase API settings, expose only the schemas needed by Circle (`public`); exclude `private` and the unused `graphql_public`. Disable automatic exposure of new tables so future objects require explicit reviewed grants. The repository's local API configuration caps returned rows at 200. Verify the hosted equivalent, grants, RLS, and database advisor. The assistant admission functions are executable by `service_role` only; `anon` and `authenticated` must be denied.
 3. In Vercel's server environment set `OPENAI_API_KEY`, `OPENAI_MODEL=gpt-5.6-luna`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and a cryptographically random `ASSISTANT_RATE_LIMIT_SECRET` of at least 32 characters. Use a restricted OpenAI project key. The Supabase service-role credential is powerful: restrict team/environment access and rotate it through a tested rollout.
 4. Choose explicit positive integer `ASSISTANT_DAILY_REQUEST_LIMIT` (at most 10,000) and `ASSISTANT_TOTAL_REQUEST_LIMIT` (at most 100,000) using current OpenAI pricing and an owner-approved allowance. There are deliberately no permissive defaults. The total counts all admitted attempts, including moderation rejection, upstream failure, and disconnect. It survives deployments and midnight and is never automatically refunded. Raising the configured total intentionally authorizes more work; it does not reset the stored count.
@@ -21,6 +21,14 @@ Regenerate with `node scripts/backend/deploymentSql.mjs`; `npm run test:backend`
 
 After applying, run [the read-only verification](sql/verify-production-safeguards.sql) in a separate query. Expect six PASS rows: all 15 tables' RLS/client grants and the five changed routines' exact source fingerprints, fixed search paths and execution grants. The check makes no provider call or allowance reservation. It does not prove cross-user policy behavior, JWT/API deployment or native sign-in; the two-account acceptance tests remain necessary. Its generated expectations are checked in the backend test runner, including deliberate grant/RLS/function-code regressions.
 
+### Account-only rollout — owner requirement, October 8
+
+The owner requires an account for all app use. The repository removes guest entry, guards every product route during restoration/sign-out, rejects anonymous client sessions, and verifies a non-anonymous existing Supabase identity before assistant admission or paid work. The existing SQL `installation_hash` argument and bucket names are retained for migration compatibility; their values now bind to a keyed hash of the verified account ID. No mobile account token, raw user ID or email is sent to OpenAI. Its safety identifier is the account hash.
+
+Disable **Allow anonymous sign-ins** in Supabase Auth and leave **Allow new users to sign up** enabled. Disabling future signup alone does not invalidate existing anonymous JWTs. Apply [the account requirement SQL](sql/require-accounts.sql) once after the base safeguards, then run [its read-only verification](sql/verify-account-required.sql), expecting seven PASS rows. It checks the authoritative Auth row in RPC helpers and restrictive table policies. Existing anonymous identities cannot read/write Circle data; their own deletion RPC remains available for privacy cleanup. No Auth identities or existing practice history are automatically deleted by this migration.
+
+Deploy the changed gateway while its paid-work switch is disabled, then rebuild/install the updated app. Older clients without bearer credentials cannot call the new gateway. Verify actual provider sign-in, legacy guest upgrades, direct product links, startup restoration failure/retry, sign-out and account deletion on signed native builds. Policy links and confirmed local-data deletion remain accessible from sign-in. Preview builds without a working sign-in provider now block entry; web/Android need a configured supported method. Device-wide local practice is retained across sign-out; it is not yet a separate per-account vault. Clear local data before another person uses the same install; account isolation for these local stores remains a production privacy review item.
+
 ### Owner-supplied dashboard evidence — October 8, 2026
 
 - Scheduled-backup screenshot lists daily physical backups; the newest shown was October 6, 2026 at 04:48:13 UTC (12:48:13 a.m. Eastern). A current restore drill remains outstanding.
@@ -31,6 +39,7 @@ After applying, run [the read-only verification](sql/verify-production-safeguard
 - The follow-up installed-state screenshot shows all six PASS rows: all 15 expected tables match RLS/client grants, and all five changed functions match their source fingerprints, fixed search paths and role grants. Hosted Data API schema exposure/row limits and account/API behavior still require verification. Backup restoration, provider usage controls and native acceptance remain open.
 - The Data API Settings screenshot shows a Max rows field of 200, extra search path `public, extensions`, automatic exposure of new tables enabled, and an exposed-schema selector reporting two of three schemas. The open-menu follow-up confirms `public` and `graphql_public` selected, with `private` excluded. The application uses PostgREST table/RPC calls and has no GraphQL integration. The owner subsequently reports completing the requested changes: only `public` exposed, automatic new-table exposure disabled, Max rows retained at 200, and settings saved/refreshed. These changes are owner-reported; actual authenticated/API access still requires testing. The earlier table/function selectors displayed zero of 15 tables and zero of 16 functions and have not been changed as part of these instructions.
 - The Auth Providers screenshot shows Email, Apple and Google enabled; Phone and the other visible providers are disabled. Anonymous sign-in status is outside this screenshot. The checked-in preview/production build profiles enable the Apple UI; email/Google/phone UI flags remain optional and could be supplied through external build configuration. No existing provider has been disabled during this review. Before launch, reconcile intended sign-in methods and existing identities, then verify delivery quotas, server-side Auth rate limits and provider flows; hiding a UI option does not disable its Auth endpoint.
+- The owner reports Allow new users to sign up and Allow anonymous sign-ins both enabled, then explicitly requires removal of guest mode. Disabling anonymous signup and deploying the new account-only migration/gateway/native build are not yet confirmed. Live iOS/Android QA is unavailable in this cloud workspace.
 
 ### Enforced assistant bounds
 
@@ -39,7 +48,7 @@ After applying, run [the read-only verification](sql/verify-production-safeguard
 | All admitted work | Explicit daily cap and non-resetting lifetime cap |
 | Global burst | 30 admissions/minute |
 | Active work across all instances | 5 leases; each expires after 60 seconds if cleanup fails |
-| One installation | 10/day and 1 active request |
+| One verified account | 10/day and 1 active request (stored in the legacy installation bucket) |
 | One connection IP | 30/day and 2 active requests |
 | Request | 64 KiB JSON; 1,000-character question; 18 context items; 1,400 characters/item; 18,000 total context characters |
 | Provider output | 350 tokens; 256 KiB maximum provider body/stream |
@@ -47,7 +56,7 @@ After applying, run [the read-only verification](sql/verify-production-safeguard
 | Retry behavior | No automatic OpenAI retries or refunds; client POST requests are not automatically replayed |
 | Duplicate request UUID | Rejected while its record is retained, including after lease release |
 
-The installation identifier is not authentication. Attackers can rotate IDs and IPs and exhaust the public assistant's quota; the global caps still stop further admitted work. Prayer reading remains available. Anonymous assistance is a product tradeoff, not an authenticated entitlement.
+The assistant requires server-verified account credentials. Attackers can create multiple real accounts and rotate IPs to exhaust quota; the global caps still stop further admitted work. Client installation IDs do not change the per-account bucket. Prayer reading remains available to signed-in users. Edge and signup protections are still required because denied Auth/admission attempts consume hosting/database resources.
 
 A conservative upper estimate for generation is `N × (66,000 × input_price_per_million + 350 × output_price_per_million) / 1,000,000`, where N is the remaining lifetime allowance. This deliberately uses a pessimistic input-byte/token ceiling including the system prompt; actual tokenization is usually smaller. Verify current model availability, pricing, moderation charges, currency/tax and provider billing semantics before choosing N. The count is a work limit, not an exact dollar meter or cancellation guarantee.
 
@@ -62,7 +71,7 @@ A conservative upper estimate for generation is `N × (66,000 × input_price_per
 
 ## Retention and monitoring
 
-The assistant tables contain keyed IP/installation hashes, request UUIDs, short concurrency leases and aggregate counters, not prompts. Admission prunes previous-day buckets and request records older than two days. With no subsequent admission, records can remain. Before launch, enable and verify a scheduled cleanup through Supabase's supported scheduler (for example, enable `pg_cron`, then schedule the following once daily under an authorized operator role):
+The assistant tables contain keyed IP/account hashes, request UUIDs, short concurrency leases and aggregate counters, not prompts. Admission prunes previous-day buckets and request records older than two days. With no subsequent admission, records can remain. Before launch, enable and verify a scheduled cleanup through Supabase's supported scheduler (for example, enable `pg_cron`, then schedule the following once daily under an authorized operator role):
 
 ```sql
 select cron.schedule('kavanah-assistant-retention', '15 3 * * *', $job$
@@ -74,7 +83,7 @@ $job$);
 
 Do not delete/reset `private.assistant_budget` as part of retention. Finalize provider log/backup retention and private support contact in the policy. Cloud practice is currently retained until account deletion; choosing an additional automatic retention window is a business/legal decision.
 
-`/api/health` is a cheap liveness/configuration check and makes no database/OpenAI request. It does not establish provider connectivity. Route structured `assistant_request` outcomes and cleanup failures to a private log dashboard: watch errors/timeouts, p95 duration, budget/rate exhaustion and cleanup failures. Never add prompts, raw IPs, installation hashes, tokens or arbitrary exception messages to logs. Configure actual alerts and an on-call owner; a log statement alone sends no notification. Review Circle report age and outbox failures. Native release crash reporting remains unconfigured; review its data collection before adding it.
+`/api/health` is a cheap liveness/configuration check and makes no database/OpenAI request. It does not establish provider connectivity. Route structured `assistant_request` outcomes and cleanup failures to a private log dashboard: watch errors/timeouts, p95 duration, budget/rate exhaustion and cleanup failures. Never add prompts, raw IPs, account hashes, tokens or arbitrary exception messages to logs. Configure actual alerts and an on-call owner; a log statement alone sends no notification. Review Circle report age and outbox failures. Native release crash reporting remains unconfigured; review its data collection before adding it.
 
 ## Backup and recovery
 

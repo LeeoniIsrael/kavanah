@@ -1,12 +1,12 @@
 # Production-readiness audit
 
-October 6, 2026. Repository assessment and implemented remediation; not a certification or evidence of hosted deployment. **Verdict: NOT READY for a public production launch.** The local-first architecture is preserved. The main code safeguards are implemented and tested, but content approval, hosted acceptance, native-device QA, dependency review, recovery verification and owner/legal decisions remain blocking.
+Updated October 8, 2026. Repository assessment and implemented remediation; not a certification or evidence of hosted deployment. **Verdict: NOT READY for a public production launch.** The local-first architecture is preserved. The main code safeguards are implemented and tested, but content approval, hosted acceptance, native-device QA, dependency review, recovery verification and owner/legal decisions remain blocking.
 
 ## Architecture and scope
 
-Kavanah 0.2.0 is an Expo SDK 57 / React Native 0.86 / React 19 prayer companion using Expo Router, Zustand and NativeWind. Core prayer reading, practice tracking and zmanim work without an account. Native releases use MMKV, SQLite and app-local files; credentials and security preferences use OS SecureStore. Expo Go and browser previews have different storage guarantees.
+Kavanah 0.2.0 is an Expo SDK 57 / React Native 0.86 / React 19 prayer companion using Expo Router, Zustand and NativeWind. App access now requires a non-anonymous account. Prayer reading, practice tracking and zmanim remain local-first after sign-in. Native releases use MMKV, SQLite and app-local files; credentials and security preferences use OS SecureStore. Expo Go and browser previews have different storage guarantees.
 
-Optional Circle uses Supabase Auth, PostgreSQL and PostgREST RPC. Apple sign-in is configured in EAS; email, phone and Google are feature/configuration gated. The Vercel assistant makes OpenAI moderation and streamed Responses requests. The other public routes are an invitation page and a new health endpoint. Mobile releases use EAS; repository CI uses GitHub Actions. No production provider credentials were available, so no migration, dashboard change or live-provider acceptance is claimed.
+Required account authentication and optional Circle sharing use Supabase Auth, PostgreSQL and PostgREST RPC. Apple sign-in is configured in EAS; email, phone and Google are feature/configuration gated. The Vercel assistant makes OpenAI moderation and streamed Responses requests. The other public routes are an invitation page and a new health endpoint. Mobile releases use EAS; repository CI uses GitHub Actions. No production provider credentials were available to the agent. Owner screenshots verify the applied base safeguards; the new account-only rollout and hosted behavioral acceptance remain pending. Dashboard evidence is recorded in production-operations.md.
 
 Public text comes from bundled catalogs and Sefaria. Non-English localization uses Google's unofficial translation endpoint and MyMemory fallback. Expo location/reverse-geocoding supplies coordinates; kosher-zmanim calculates times locally. Notifications are local OS schedules. Photos are picked/captured locally and exported only through user-selected OS destinations. Other native SDKs provide biometrics, fonts, browser authentication, clipboard, sharing, media-library access, WebView reading, animation and graphics.
 
@@ -14,18 +14,24 @@ No payment provider, subscription billing, advertising, analytics/tracking SDK, 
 
 ### Major flows and trust boundaries
 
-1. Onboarding saves local prayer identity/community preferences; reading uses bundled or cached text. Remote search/text downloads are bounded HTTPS reads and retain licensing/review labels.
+1. Account sign-in precedes onboarding, which saves local prayer identity/community preferences and account metadata; reading uses bundled or cached text. Remote search/text downloads are bounded HTTPS reads and retain licensing/review labels.
 2. Completing a practice updates device history. Enrolled Circle users optionally enqueue account-bound commands; the server derives the owner from `auth.uid()`, validates catalog/event/time values and applies sharing choices. Previous local history is not uploaded on enrollment.
-3. Joining Circle authenticates with a configured provider, creates a constrained unique handle/profile, then requests/accepts connections. Reads pass database policies; writes pass constrained RPCs. Blocking revokes visibility and removes the connection. Feed pages use a stable keyset cursor.
-4. Optional assistance requires versioned user consent. The client sends a bounded question/context and installation/request identifiers. The server validates and redacts, reserves durable shared allowance, then calls moderation and generation. Client identifiers are abuse signals, not authenticated authorization.
+3. A signed-in user may join Circle, which creates a constrained unique handle/profile, then requests/accepts connections. Reads pass database policies; writes pass constrained RPCs. Blocking revokes visibility and removes the connection. Feed pages use a stable keyset cursor.
+4. Optional assistance requires versioned user consent. The client sends a bounded question/context, request UUID and account access token. The server verifies the identity with Supabase Auth, denies missing/invalid/anonymous identities, and binds quotas to the verified account hash before moderation/generation. Account tokens and raw user IDs are never forwarded to OpenAI.
 5. Optional location computes times locally; local reminders require contextual permission. Photo/story flows use contextual picker/share actions and clean temporary capture files.
-6. Cloud account deletion uses an authenticated database function deleting `auth.users` with related-record cascades. Local reset is a separate confirmation that clears personal device records, signs out and cancels reminders, with visible failure/retry states.
+6. Cloud account deletion uses an authenticated database function deleting `auth.users` with related-record cascades. Local reset is accessible before sign-in and is a separate confirmation that clears personal device records, signs out and cancels reminders, with visible failure/retry states.
+
+## Account-only requirement — October 8
+
+The owner requested removal of guest access. Protected route groups now require restored non-anonymous sign-in even for previously completed guest onboarding. The assistant verifies accounts on its server. The new account migration checks authoritative Auth rows in Circle RPC helpers and restrictive SELECT policies, while allowing legacy anonymous users to delete their own accounts. Preference saves pin the originating account token and verify the account again before committing local changes; failed saves preserve existing preferences. User-requested local deletion and policy links remain available before sign-in. Apple sign-in no longer requests an unused full-name permission. Repository checks cover these changes; the hosted migration/gateway, rebuilt app and signed-device acceptance remain outstanding.
+
+Device-wide prayer history/bookmarks/annotations still persist across sign-out and can be viewed by another signed-in account on the same installation. Photos and cloud outboxes are account-scoped. Separate local vaults require a migration/storage review; clear local data before changing the person using the install. This is a remaining privacy risk, not solved by the navigation gate.
 
 ## Prioritized findings and disposition
 
 | Priority | Finding | Disposition |
 | --- | --- | --- |
-| CRITICAL | Process-local assistant quotas could be bypassed across instances/restarts; no durable overall allowance | Fixed with transactional PostgreSQL admission, mandatory daily/lifetime caps, global/IP/installation/concurrency bounds, duplicate UUIDs and a fail-closed kill switch |
+| CRITICAL | Process-local assistant quotas could be bypassed across instances/restarts; no durable overall allowance | Fixed with transactional PostgreSQL admission, mandatory daily/lifetime caps, global/IP/account/concurrency bounds, duplicate UUIDs and a fail-closed kill switch |
 | CRITICAL | Provider requests/streams could remain active or be repeated without firm bounds | Fixed execution/body/output limits, abort on disconnect, bounded client networking, no automatic paid retry or POST replay; hosting admission/bill caps still require external setup |
 | CRITICAL | Native personal MMKV and JSON mirrors lacked the claimed storage protection | Added device-key encrypted MMKV migration and stopped native plaintext mirrors; missing-key files are preserved. SQLite annotations/photos remain outside this encryption and require a threat-model/device review |
 | CRITICAL | Concurrent connection/request/block operations could violate block or connection-cap invariants | Fixed stable pair locking and post-lock authorization checks; real multi-connection PostgreSQL tests pass |
@@ -52,7 +58,7 @@ Reviewed all repository HTTP endpoints:
 
 | Endpoint | Enforcement | Remaining boundary |
 | --- | --- | --- |
-| POST `/api/assistant` | Strict input/body sizes, trusted-host IP adapter, shared admission, moderation, limits/deadlines, sanitized failures, no cache | Anonymous quota exhaustion remains possible; edge WAF/usage limits and verified proxy behavior required |
+| POST `/api/assistant` | Server-verified non-anonymous account, strict input/body sizes, trusted-host IP adapter, shared admission, moderation, limits/deadlines, sanitized failures, no cache | Multi-account quota exhaustion remains possible; edge WAF/usage limits and verified proxy behavior required |
 | `/api/invite` | Constrained handle and App Store URL, escaped output, CSP/referrer/nosniff headers, no database or paid API | Public dynamic function can consume hosting invocations/bandwidth; edge protection required |
 | GET/HEAD `/api/health` | No provider/database calls, minimal non-secret config status, method restrictions | Liveness is not dependency connectivity or an alerting system |
 
@@ -62,16 +68,16 @@ No obvious committed server secret was found in the inspected tree/configuration
 
 | Data | Purpose/location | Access, recipients and retention |
 | --- | --- | --- |
-| Language, community/audience, onboarding choices, appearance, Focus/security/reminder preferences | Local personalization; MMKV/SecureStore | Device user; until local reset. Optional account metadata also reaches Supabase; review duplicated metadata and the sensitive-practice implications |
-| Prayer completion IDs/dates, durations, streaks, checklist state, bookmarks | Practice experience; native encrypted MMKV and legacy migration | Device user; until reset. Post-enrollment completion data reaches Supabase only through optional account flow |
+| Language, community/audience, onboarding choices, appearance, Focus/security/reminder preferences | Local personalization; MMKV/SecureStore | Device user; until local reset. Required account prayer-view metadata also reaches Supabase; review duplicated metadata and the sensitive-practice implications |
+| Prayer completion IDs/dates, durations, streaks, checklist state, bookmarks | Practice experience; native encrypted MMKV and legacy migration | Device user; until reset. Post-enrollment completion data reaches Supabase only through optional Circle enrollment |
 | Reader bookmarks, annotations and position | SQLite reader personalization | Device user; until reset; not encrypted by the new MMKV key |
 | Coordinates, city/timezone and reminder schedule | Local zmanim/notifications; memory and saved reminder location | Device/OS location and reverse-geocoding services; not sent to Circle/OpenAI; removed by local reset |
 | Chosen photos and rendered stories | Local profile/story UX; app document/cache files | Device and user-selected export destination; no cloud upload. App-local copies removed on reset; exported copies are outside app control |
-| Auth identifiers/email/provider metadata and session | Optional account authentication; Supabase Auth / SecureStore | Provider and authorized operators; active account deletion/sign-out. Provider logs/backups have separately configured retention |
+| Auth identifiers/email/provider metadata and session | Required account authentication; Supabase Auth / SecureStore | Provider and authorized operators; active account deletion/sign-out. Provider logs/backups have separately configured retention |
 | Handle/name/timezone, connections, sharing choices, completions, activity/quotes | Circle social experience; PostgreSQL | Owner/authorized connection participants under policy; active records cascade on account deletion, individual activity removal supported |
 | Blocks, reports, suspensions and abuse counters | Safety/moderation; private PostgreSQL | Authorized operators/functions. Operational review, retention and private contact still need owner decisions |
 | Assistant question, public prayer context and language | Optional answer; transient gateway/OpenAI processing | OpenAI and hosting; no prompt storage in admission tables; provider processing/log retention must be finalized; redaction is best effort |
-| Assistant connection IP and installation ID | Abuse admission | Server receives originals; Supabase stores keyed hashes/UUIDs and counters. OpenAI receives an installation hash as `safety_identifier`. Daily buckets/two-day request records are pruned on admission; idle cleanup needs scheduler; total counter is aggregate |
+| Assistant connection IP, verified account ID and access token | Account verification and abuse admission | Supabase Auth verifies the token; admission stores keyed IP/account hashes, UUIDs and counters. OpenAI receives only the account hash as `safety_identifier`. Daily buckets/two-day request records are pruned on admission; idle cleanup needs scheduler; total counter is aggregate |
 | Public reference/search text, translation passages/language, device IP | Content retrieval/localization | Sefaria, Google translation and MyMemory; cached locally; provider terms/retention outside repository control |
 
 No address book, payment credentials, advertising ID or marketing audience is collected by these flows. Permissions remain contextual. Do not treat religious activity or pseudonymous hashes as anonymous/non-sensitive data. Retention periods and subprocessors are not invented; unresolved provider/business facts remain explicit policy TODOs.
@@ -107,10 +113,10 @@ Cloud backup/PITR, Auth coverage, encrypted access/retention and an isolated res
 ## Validation and limitations
 
 - Type checker passed; full lint passed with 14 existing warnings and no errors.
-- Unit tests: 152 across 34 suites, including missing-key preservation and in-flight SQLite deletion ordering. UI component tests: 14 across four iOS Jest suites.
-- Database migration/policy runner: 61 checks plus invitation checks passed against PGlite.
+- Unit tests: 170 across 38 suites, including account restoration, authenticated assistant transport, account-switch preference saves, missing-key preservation and in-flight SQLite deletion ordering. UI component tests: 24 across six iOS Jest suites, including guest-route denial, sign-out, pre-sign-in deletion/policies and duplicate-submission failure handling.
+- Database migration/policy runner: 77 checks plus invitation and generated deployment/verification regression checks passed against PGlite. Existing anonymous identities and deleted-user tokens are denied product reads/writes; own-account deletion remains available.
 - Independent PostgreSQL connections passed concurrent daily/lifetime admission, duplicate-request, duplicate-completion, block/request ordering and connection-cap tests. Local test server used PostgreSQL 18; CI is configured for PostgreSQL 17. Hosted PostgREST/Supabase Auth acceptance is still required.
-- Gateway tests: 10 passed, including disabled/misconfigured operation, invalid inputs, spoofed IP handling, fail-closed limiter, caps, moderation failure, redaction, failed stream, disconnect and deadline termination.
+- Gateway tests: 15 passed, including disabled/misconfigured operation, missing/invalid/anonymous/deleted account denial before paid work, verified account quota binding, invalid inputs, spoofed IP handling, fail-closed limiter, caps, moderation failure, redaction, failed stream, disconnect and deadline termination.
 - iOS, Android and web Expo exports passed. These are bundles, not signed native builds or device/browser acceptance.
 - Release configuration check fails as intended in this environment: production Supabase URL/public key, invitation URL and App Store URL are absent. No dummy settings were supplied to claim a release pass.
 - Dependency audit remains failing: 75 reported vulnerable package entries (54 high, 21 moderate), many representing shared transitive advisory chains. Zero critical entries does not mean all runtime paths are secure.

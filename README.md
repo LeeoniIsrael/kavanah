@@ -84,7 +84,7 @@ The main layers are:
 
 ## Privacy
 
-Prayer reading remains available without an account. Circle account and sharing code exists but requires a hosted Supabase project and explicit production configuration; it is not a deployed service merely because the code is present. Kavanah has no analytics SDK or advertising. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional and consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
+An account is required to use Kavanah. Prayer reading and zmanim still use device-local data after sign-in; Circle enrollment and sharing remain optional. Supabase configuration and a usable sign-in provider are required. Kavanah has no analytics SDK or advertising. Precise coordinates are used on device and are not sent to the assistant. Assistant use is optional, requires server-verified sign-in, and is consent-gated. Review [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms-of-use.md](docs/terms-of-use.md), and [SECURITY.md](SECURITY.md) before changing data flows.
 
 Travel reminders are intentionally user-triggered. Mobile operating systems do not let Kavanah inspect route duration inside Apple Maps, Google Maps, or Waze. The custom URL above can be used from iPhone Shortcuts or an Android automation, while route details remain outside Kavanah.
 
@@ -109,13 +109,13 @@ The current [release handoff](docs/release-handoff-2026-09-27.md) records what h
 
 ## Circle backend
 
-Circle's managed Postgres schema, security rules, and authenticated API are in `supabase/`. The app includes optional email-code accounts, approved connections, invitations, and a shared prayer feed. Backend configuration is required before accounts are offered; the app keeps private prayer usable without it.
+Circle's managed Postgres schema, security rules, and authenticated API are in `supabase/`. The app requires a non-anonymous account and supports configured email-code/social sign-in, approved connections, invitations, and an optional shared prayer feed. A build without working authentication blocks product access and displays a sign-in failure state.
 
 See [backend deployment and operating guide](docs/social-backend.md) and [release checklist](docs/release-checklist.md). Run `npm run test:backend` for PostgreSQL policy/API tests and `npm run release:check` for the release configuration gate. No cloud project is provisioned just by cloning this repository.
 
 ### First-run sign-in and prayer view
 
-The first launch shows a short animated welcome and keeps local exploration available. On iOS, Sign in with Apple is the primary account option once the Supabase Apple provider accepts `com.leeoniisrael.kavanah` and `EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN=true` is set alongside the public Supabase URL and publishable key in a private `.env`. A standalone iOS build also needs this App ID registered with the Sign in with Apple capability in an enrolled Apple Developer account. Email-code sign-in stays hidden until `EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN=true` is set; its OTP template must contain `{{ .Token }}`, and a custom SMTP service is needed before sending to users outside the Supabase team. Google and phone stay hidden until their provider setup is verified and the matching flag is set. Google also needs `kavanah://auth` in Auth redirect settings; phone needs an SMS provider. Never put provider secrets in Expo variables.
+The first launch shows a short animated welcome and requires sign-in before preferences or prayer access. On iOS, Sign in with Apple is the primary account option once the Supabase Apple provider accepts `com.leeoniisrael.kavanah` and `EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN=true` is set alongside the public Supabase URL and publishable key in a private `.env`. A standalone iOS build also needs this App ID registered with the Sign in with Apple capability in an enrolled Apple Developer account. Email-code sign-in stays hidden until `EXPO_PUBLIC_ENABLE_EMAIL_SIGN_IN=true` is set; its OTP template must contain `{{ .Token }}`, and a custom SMTP service is needed before sending to users outside the Supabase team. Google and phone stay hidden until their provider setup is verified and the matching flag is set. Google also needs `kavanah://auth` in Auth redirect settings; phone needs an SMS provider. Never put provider secrets in Expo variables.
 
 The selected daily prayer view is saved locally and, after sign-in, to the user's Supabase Auth metadata. The three plain-language community choices map to the corresponding indexed siddur. The woman's daily view omits selected ritual-specific sections as a navigation default; this is not a religious ruling. Text and practice guidance remain under review, and users can change their choice in Profile. Sign out and account deletion are available in Profile.
 
