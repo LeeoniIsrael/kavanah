@@ -1,8 +1,61 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import {
+  copyFileSync,
+  mkdirSync,
+  mkdtempSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import test from "node:test";
 import { probeEdgeRateLimit } from "./edgeRateLimit.mjs";
 
 const healthy = () => Response.json({ status: "ok", assistant: "disabled" });
+
+test("downloaded CLI prints a result through normal and linked temporary paths", () => {
+  const directory = mkdtempSync(join(tmpdir(), "kavanah-edge-cli-test-"));
+  try {
+    const real = join(directory, "real");
+    const alias = join(directory, "alias");
+    mkdirSync(real);
+    symlinkSync(real, alias, "dir");
+    copyFileSync(
+      new URL("./edgeRateLimit.mjs", import.meta.url),
+      join(real, "check.mjs"),
+    );
+    const mock = join(directory, "mock-fetch.mjs");
+    // Preload ensures these subprocess tests can never contact production.
+    writeFileSync(
+      mock,
+      'globalThis.fetch = async () => Response.json({status:"ok",assistant:"configured"});',
+    );
+    for (const args of [
+      [join(real, "check.mjs")],
+      [join(alias, "check.mjs")],
+      ["--preserve-symlinks-main", join(alias, "check.mjs")],
+    ]) {
+      const run = spawnSync(process.execPath, ["--import", mock, ...args], {
+        encoding: "utf8",
+        timeout: 5_000,
+      });
+      assert.equal(run.error, undefined);
+      assert.equal(
+        run.status,
+        2,
+        "The CLI must run and report an inconclusive baseline",
+      );
+      assert.match(run.stderr, /Checking production health/);
+      const result = JSON.parse(run.stdout);
+      assert.equal(result.outcome, "inconclusive");
+      assert.equal(result.requests, 1);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test("probe uses only credential-free health GETs and stops on a 429", async () => {
   let calls = 0;

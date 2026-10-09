@@ -1,4 +1,5 @@
-import { pathToFileURL } from "node:url";
+import { realpathSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
 // Owner-operated probe of this application's cheap health route only.
 // No credentials, redirects, provider calls, retries, or configurable target.
@@ -102,10 +103,23 @@ export async function probeEdgeRateLimit({
   );
 }
 
-if (
-  process.argv[1] &&
-  pathToFileURL(process.argv[1]).href === import.meta.url
-) {
+function isDirectInvocation() {
+  if (!process.argv[1]) return false;
+  try {
+    // macOS temporary folders can be reached through /var -> /private/var.
+    return (
+      realpathSync(process.argv[1]) ===
+      realpathSync(fileURLToPath(import.meta.url))
+    );
+  } catch {
+    return false; // Imported from stdin/non-file runners; do not start network work.
+  }
+}
+
+if (isDirectInvocation()) {
+  console.error(
+    "Checking production health (maximum 211 requests / 20 seconds)...",
+  );
   try {
     const result = await probeEdgeRateLimit();
     console.log(JSON.stringify(result, null, 2));
