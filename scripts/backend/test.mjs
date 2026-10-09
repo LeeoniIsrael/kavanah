@@ -199,7 +199,64 @@ await db.exec('reset role'); await q('update auth.users set is_anonymous=true wh
 await as(legacy);await q('select circle_delete_account()');
 await denied("select circle_join('deleted_guest','Deleted','UTC',false)");
 await as(a);await denied("select circle_join('deleted_user','Deleted','UTC',false)");
+await db.exec('reset role');
+const restoreInventory=readFileSync('docs/sql/inspect-restore-source.sql','utf8');
+await db.exec("begin read only; set local statement_timeout='5s'");
+const currentInventory=(await q(restoreInventory)).rows;
+assert.equal(currentInventory.length,8);
+assert.equal(currentInventory.find(row=>row.check_name==='External routine candidates').status,'NOT_FOUND');
+await db.exec('rollback');
 await db.close();console.log(`${checks} database/security checks passed against PostgreSQL (PGlite).`);
+
+// Inventory reads only catalogs, including when optional job relations are absent,
+// when the named relation is a view, and when hooks contain private tokens/URLs.
+const inventoryDb=new PGlite();
+try {
+ const inspect=async()=>{
+  await inventoryDb.exec("begin read only; set local statement_timeout='5s'");
+  try{return (await inventoryDb.query(restoreInventory)).rows;}
+  finally{await inventoryDb.exec('rollback');}
+ };
+ const absent=await inspect();
+ assert.equal(absent.length,8);
+ assert(absent.every(row=>row.status==='NOT_FOUND'));
+ await inventoryDb.exec(`
+  create schema cron; create schema net; create schema pgcustom;
+  create function net.http_post() returns integer language plpgsql as $$
+   begin raise exception 'An inventory must never invoke this integration'; end $$;
+  create view cron.job as select net.http_post() command;
+  create table net.http_request_queue(secret text);
+  insert into net.http_request_queue values ('FIXTURE_PRIVATE_TOKEN');
+  create foreign data wrapper fixture_fdw;
+  create server fixture_server foreign data wrapper fixture_fdw
+   options (endpoint 'https://fixture.invalid/FIXTURE_PRIVATE_TOKEN');
+  create function public.fixture_hook() returns trigger language plpgsql as $$
+   begin
+    -- https://fixture.invalid/FIXTURE_PRIVATE_TOKEN
+    perform net.http_post(); return new;
+   end $$;
+  create function pgcustom.fixture_integration() returns void language plpgsql as $$
+   begin perform net.http_post(); end $$;
+  create table public.fixture_records(id integer);
+  create trigger fixture_hook before insert on public.fixture_records
+   for each row execute function public.fixture_hook();
+  create function public.fixture_ddl() returns event_trigger language plpgsql as $$
+   begin return; end $$;
+  create event trigger fixture_ddl on ddl_command_end
+   execute function public.fixture_ddl();
+ `);
+ const observed=await inspect();
+ for(const name of ['Scheduled-job relation','HTTP-queue relation','Foreign servers',
+                    'Application triggers','Enabled event triggers','External routine candidates']){
+  assert.equal(observed.find(row=>row.check_name===name).status,'REVIEW',name);
+ }
+ assert.equal(observed.find(row=>row.check_name==='External routine candidates').observed,2);
+ assert(!JSON.stringify(observed).includes('FIXTURE_PRIVATE_TOKEN'));
+ assert(!JSON.stringify(observed).includes('fixture.invalid'));
+ assert.equal((await inventoryDb.query('select count(*)::int n from public.fixture_records')).rows[0].n,0);
+ assert.equal((await inventoryDb.query('select secret from net.http_request_queue')).rows[0].secret,'FIXTURE_PRIVATE_TOKEN');
+ console.log('Restore-source inventory: read-only execution, missing/hostile optional relations, hook detection and secret omission passed.');
+} finally {await inventoryDb.close();}
 
 // Public invitation rendering must not echo executable input or invent a store listing.
 const {default:invite}=await import('../../api/invite.js');
