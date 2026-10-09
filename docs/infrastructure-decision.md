@@ -1,6 +1,6 @@
 # Infrastructure decision for Kavanah
 
-Researched October 9, 2026. This is an architecture and cost recommendation, not authorization to purchase, resize, transfer or migrate services. The owner prioritizes making Kavanah usable, avoiding large recurring bills, and continuing OnHand as a separate project. A precise monthly budget was requested and remains pending.
+Researched October 9, 2026. This is an architecture and cost recommendation, not authorization to purchase, resize, transfer or migrate services. The owner sets a **$50/month total infrastructure budget** covering Kavanah, OnHand and hosting, and directs the current work to focus only on Kavanah. OnHand remains a separate ongoing project; its existing shared charges count against the total, but no work on or change to that project is authorized by this focus instruction.
 
 ## Decision
 
@@ -36,6 +36,14 @@ These are approximate full-month **Supabase-only** scenarios using published com
 
 Paid Nano and Micro share the same rate. Each extra active project adds hourly compute; $10 credits apply per organization, not per project. Separating both products into paid organizations costs more but separates billing quotas and administration. Keeping OnHand in the existing organization is acceptable during this stage if its compute is intentional; do not pause or remove it based on this audit. If it is purely development later, a separate Free organization can be evaluated, with a backup and plan-feature review: Free projects can pause after inactivity and do not include automatic backups. Transfers can have downtime. [Compute billing](https://supabase.com/docs/guides/platform/manage-your-usage/compute), [project transfers](https://supabase.com/docs/guides/platform/project-transfer), [plan comparison](https://supabase.com/pricing).
 
+## Applying the owner's $50 total budget
+
+Use $50 as a planning ceiling for the combined monthly infrastructure bill, counting provider taxes and fees conservatively within it. Annual app-store membership fees were excluded from the original budget question. The approximately $35 shared Supabase baseline leaves about $15 before tax and other providers; this is unverified headroom, not an allowance to purchase new services. Keep the assistant disabled, the Spend Cap enabled and the current fixed compute until recovery and current service inventory are verified.
+
+Aim to plan recurring costs at or below $40 including tax, reserving $10 for variability. This is a recommended planning buffer, not an owner-approved extra purchase or an installed alert. Reassess the plan when the combined estimate approaches $40, and do not add costs that would push it beyond $50. Provider hard limits and reviewed fixed charges must enforce individual boundaries; this document does not install a universal $50 cutoff across vendors. Complete add-on/build/email inventory remains necessary to establish the actual total.
+
+Kavanah work proceeds under this constraint. Do not buy Team, PITR, replicas or a second Pro organization under the current plan: their reviewed baselines exceed the ceiling. A required paid hosting change also needs a revised design, since the approximately $35 shared database plus $20 Vercel Pro baseline exceeds $50 before tax. Establish an eligible hosting configuration and acceptable recovery objective within the budget, or present the specific unmet requirement and priced choices to the owner. Do not relax a launch requirement or claim production readiness to make the budget fit.
+
 ## Controls that keep the bill predictable
 
 | Boundary | Current protection | What still needs verification or a decision |
@@ -50,7 +58,7 @@ Paid Nano and Micro share the same rate. Each extra active project adds hourly c
 
 [Supabase Cost Control](https://supabase.com/docs/guides/platform/cost-control) caps selected usage items, not the entire invoice. Compute, branching/replica compute, PITR and several add-ons are excluded. The practical low-cost configuration is a fixed, reviewed set of instances plus the enabled cap, with expensive optional features off. Alerts help detect problems; they are not enforcement.
 
-The current Vercel Hobby plan cannot purchase additional usage and can lose availability at quota exhaustion. [Vercel's current pricing](https://vercel.com/pricing) lists Pro from $20/month with usage-based charges. If a paid hosting change is needed, include it in the whole-app budget before buying: roughly $35 of shared Supabase plus $20 of hosting is already $55 before tax or other services. Do not assume a $50 target for Kavanah alone also covers OnHand and every shared bill. [Hobby eligibility](https://vercel.com/docs/plans/hobby).
+The current Vercel Hobby plan cannot purchase additional usage and can lose availability at quota exhaustion. [Vercel's current pricing](https://vercel.com/pricing) lists Pro from $20/month with usage-based charges. If a paid hosting change is needed, include it in the whole-app budget before buying: roughly $35 of shared Supabase plus $20 of hosting is already $55 before tax or other services, exceeding the owner's $50 total ceiling. The budget is shared, not $50 available for Kavanah in addition to OnHand. [Hobby eligibility](https://vercel.com/docs/plans/hobby).
 
 ## Alternatives assessed
 
@@ -95,6 +103,6 @@ A migration candidate should pass all existing database, concurrency and API tes
 
 ## Next chronological work
 
-Record the exact monthly budget when the owner answers. Use the current Pro configuration while checking a fresh backup and performing an isolated recovery test. Then close hosted Auth/RLS/abuse acceptance, the local account privacy gap and signed-native functionality checks. Before expanding users, establish resource/latency baselines and the whole-app cost controls. Provider changes should follow an unmet requirement and a verified migration plan; no external infrastructure changes have been made as part of this research.
+The owner has answered: $50/month total, with work focused on Kavanah. Next inspect fresh scheduled backups in [the existing project's backup dashboard](https://supabase.com/dashboard/project/wrbbmrzwssefrjrzakth/database/backups); the prior screenshot's newest backup was October 6. This is a view-only check, not a production restore or paid add-on activation. Use the current Pro configuration while designing an isolated recovery test within the budget. Then close hosted Auth/RLS/abuse acceptance, the local account privacy gap and signed-native functionality checks. Before expanding users, establish resource/latency baselines and the whole-app cost controls. Provider changes should follow an unmet requirement and a verified migration plan; no external infrastructure changes have been made as part of this research.
 
 The ongoing evidence and launch blockers are in [production operations](production-operations.md) and [the production-readiness audit](production-readiness-audit.md). This recommendation does not close those blockers.

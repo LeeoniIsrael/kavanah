@@ -92,7 +92,7 @@ Core reading remains usable when backend or assistant fails. No paid upgrade, ch
 
 ## Cost exposure and safeguards
 
-The owner prioritizes avoiding large monthly bills and confirms OnHand remains an ongoing separate project. [The infrastructure decision](infrastructure-decision.md) recommends retaining Supabase Pro for Kavanah's existing PostgreSQL/Auth/RPC design, with its cap enabled and AI disabled, while completing release gates. It provides realistic cost scenarios and measured upgrade/migration triggers. The requested whole-app monthly budget remains pending; no provider migration or purchase has been made.
+The owner prioritizes avoiding large monthly bills and confirms **$50/month total infrastructure**, while directing current work to **Kavanah only**. OnHand remains an ongoing separate project: count its existing shared charges toward the budget without modifying it. [The infrastructure decision](infrastructure-decision.md) recommends retaining Supabase Pro for Kavanah's existing PostgreSQL/Auth/RPC design, with its cap enabled and AI disabled, while completing release gates. It provides realistic cost scenarios and measured upgrade/migration triggers. The $50 target is not an installed cross-provider spending cutoff; full service inventory and excluded-charge controls still need verification. No provider migration or purchase has been made.
 
 | Feature/provider | Potential charges | Implemented bounds / required external control |
 | --- | --- | --- |
