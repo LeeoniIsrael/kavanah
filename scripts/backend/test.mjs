@@ -201,6 +201,7 @@ await denied("select circle_join('deleted_guest','Deleted','UTC',false)");
 await as(a);await denied("select circle_join('deleted_user','Deleted','UTC',false)");
 await db.exec('reset role');
 const restoreInventory=readFileSync('docs/sql/inspect-restore-source.sql','utf8');
+const restoreHooks=readFileSync('docs/sql/identify-restore-hooks.sql','utf8');
 await db.exec("begin read only; set local statement_timeout='5s'");
 const currentInventory=(await q(restoreInventory)).rows;
 assert.equal(currentInventory.length,8);
@@ -212,14 +213,15 @@ await db.close();console.log(`${checks} database/security checks passed against 
 // when the named relation is a view, and when hooks contain private tokens/URLs.
 const inventoryDb=new PGlite();
 try {
- const inspect=async()=>{
+ const inspect=async(sql=restoreInventory)=>{
   await inventoryDb.exec("begin read only; set local statement_timeout='5s'");
-  try{return (await inventoryDb.query(restoreInventory)).rows;}
+  try{return (await inventoryDb.query(sql)).rows;}
   finally{await inventoryDb.exec('rollback');}
  };
  const absent=await inspect();
  assert.equal(absent.length,8);
  assert(absent.every(row=>row.status==='NOT_FOUND'));
+ assert.deepEqual(await inspect(restoreHooks),[]);
  await inventoryDb.exec(`
   create schema cron; create schema net; create schema pgcustom;
   create function net.http_post() returns integer language plpgsql as $$
@@ -235,7 +237,8 @@ try {
     -- https://fixture.invalid/FIXTURE_PRIVATE_TOKEN
     perform net.http_post(); return new;
    end $$;
-  create function pgcustom.fixture_integration() returns void language plpgsql as $$
+  create function pgcustom.fixture_integration(secret text default 'FIXTURE_DEFAULT_TOKEN')
+   returns void language plpgsql as $$
    begin perform net.http_post(); end $$;
   create table public.fixture_records(id integer);
   create trigger fixture_hook before insert on public.fixture_records
@@ -253,9 +256,34 @@ try {
  assert.equal(observed.find(row=>row.check_name==='External routine candidates').observed,2);
  assert(!JSON.stringify(observed).includes('FIXTURE_PRIVATE_TOKEN'));
  assert(!JSON.stringify(observed).includes('fixture.invalid'));
+ const hookDetails=await inspect(restoreHooks);
+ assert.equal(hookDetails.length,3);
+ assert(hookDetails.every(row=>row.matched_total===3 && /^[a-f0-9]{64}$/.test(row.body_sha256)));
+ assert(hookDetails.some(row=>row.kind==='event_trigger' && row.name==='fixture_ddl'
+  && row.routine==='public.fixture_ddl()'));
+ assert(hookDetails.some(row=>row.kind==='routine_candidate' && row.name==='pgcustom.fixture_integration'
+  && row.routine==='pgcustom.fixture_integration(secret text)'));
+ assert(!JSON.stringify(hookDetails).includes('FIXTURE_PRIVATE_TOKEN'));
+ assert(!JSON.stringify(hookDetails).includes('FIXTURE_DEFAULT_TOKEN'));
+ assert(!JSON.stringify(hookDetails).includes('fixture.invalid'));
+ const priorFingerprint=hookDetails.find(row=>row.name==='public.fixture_hook').body_sha256;
+ await inventoryDb.exec(`create or replace function public.fixture_hook() returns trigger
+  language plpgsql as $$begin perform net.http_post(); return null; end $$;`);
+ const changedHook=(await inspect(restoreHooks)).find(row=>row.name==='public.fixture_hook');
+ assert.notEqual(changedHook.body_sha256,priorFingerprint);
+ assert.equal(changedHook.routine,'public.fixture_hook()');
+ await inventoryDb.exec('alter event trigger fixture_ddl disable');
+ assert(!(await inspect(restoreHooks)).some(row=>row.name==='fixture_ddl'));
+ await inventoryDb.exec('alter event trigger fixture_ddl enable');
+ // Counts stay visible when a follow-up would otherwise silently omit hooks.
+ for(let i=0;i<51;i++) await inventoryDb.exec(`create function pgcustom.fixture_${i}() returns void
+  language plpgsql as $$begin perform net.http_post(); end $$;`);
+ const boundedHooks=await inspect(restoreHooks);
+ assert.equal(boundedHooks.length,50);
+ assert(boundedHooks.every(row=>row.matched_total===54));
  assert.equal((await inventoryDb.query('select count(*)::int n from public.fixture_records')).rows[0].n,0);
  assert.equal((await inventoryDb.query('select secret from net.http_request_queue')).rows[0].secret,'FIXTURE_PRIVATE_TOKEN');
- console.log('Restore-source inventory: read-only execution, missing/hostile optional relations, hook detection and secret omission passed.');
+ console.log('Restore-source inventory/hooks: read-only execution, hostile optional relations, custom-schema detection, body fingerprints, visible truncation and secret omission passed.');
 } finally {await inventoryDb.close();}
 
 // Public invitation rendering must not echo executable input or invent a store listing.
