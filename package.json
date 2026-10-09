@@ -19,6 +19,8 @@
     "backend:catalog": "tsx scripts/backend/generateCatalog.ts",
     "release:check": "node scripts/backend/releaseCheck.mjs",
     "test:api": "node --test scripts/backend/assistant.test.cjs",
+    "test:edge-probe": "node --test scripts/backend/edgeRateLimit.test.mjs",
+    "edge:check": "node scripts/backend/edgeRateLimit.mjs",
     "build": "expo export --platform all --output-dir dist",
     "test:concurrency": "node scripts/backend/concurrency.mjs"
   },
