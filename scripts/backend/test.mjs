@@ -2,6 +2,7 @@ import { PGlite } from '@electric-sql/pglite';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 execFileSync(process.execPath, ['scripts/backend/deploymentSql.mjs', '--check'], { stdio: 'inherit' });
 const db=new PGlite();
 await db.exec(`create role service_role; create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key, is_anonymous boolean default false); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
@@ -202,6 +203,7 @@ await as(a);await denied("select circle_join('deleted_user','Deleted','UTC',fals
 await db.exec('reset role');
 const restoreInventory=readFileSync('docs/sql/inspect-restore-source.sql','utf8');
 const restoreHooks=readFileSync('docs/sql/identify-restore-hooks.sql','utf8');
+const restoreHookLines=readFileSync('docs/sql/compare-restore-hook-lines.sql','utf8');
 await db.exec("begin read only; set local statement_timeout='5s'");
 const currentInventory=(await q(restoreInventory)).rows;
 assert.equal(currentInventory.length,8);
@@ -222,6 +224,9 @@ try {
  assert.equal(absent.length,8);
  assert(absent.every(row=>row.status==='NOT_FOUND'));
  assert.deepEqual(await inspect(restoreHooks),[]);
+ const missingLines=await inspect(restoreHookLines);
+ assert.equal(missingLines.length,3);
+ assert(missingLines.every(row=>row.status==='MISSING' && row.line_fingerprints===null));
  await inventoryDb.exec(`
   create schema cron; create schema net; create schema pgcustom;
   create function net.http_post() returns integer language plpgsql as $$
@@ -283,7 +288,56 @@ try {
  assert(boundedHooks.every(row=>row.matched_total===54));
  assert.equal((await inventoryDb.query('select count(*)::int n from public.fixture_records')).rows[0].n,0);
  assert.equal((await inventoryDb.query('select secret from net.http_request_queue')).rows[0].secret,'FIXTURE_PRIVATE_TOKEN');
+ // Line comparison never returns unknown code and never invokes provider hooks.
+ // Reconstruct ALL lines from known text and verify the complete body hash;
+ // trimmed/whitespace matches alone are insufficient (including inside literals).
+ const hash=value=>createHash('sha256').update(value,'utf8').digest('hex');
+ const body="\nbegin\n\t-- https://fixture.invalid/FIXTURE_PRIVATE_TOKEN \r\n"+
+  "  perform net.http_post();\n  raise exception 'FIXTURE_LITERAL_ONE';\nend;\n";
+ await inventoryDb.exec(`create schema if not exists extensions;
+  create function extensions.grant_pg_net_access() returns event_trigger
+   language plpgsql as $body$${body}$body$;
+  create function extensions.grant_pg_net_access(secret text default 'FIXTURE_DEFAULT_TOKEN')
+   returns void language plpgsql as $$begin raise exception 'Must not execute'; end $$;`);
+ const lineRows=await inspect(restoreHookLines);
+ assert.equal(lineRows.length,3);
+ const compared=lineRows.find(row=>row.routine==='extensions.grant_pg_net_access()');
+ assert.equal(compared.status,'COMPARE');
+ assert.equal(compared.body_sha256,hash(body));
+ assert.equal(compared.line_count,body.split('\n').length);
+ const known=new Map(body.split('\n').map(line=>{
+  const content=line.replace(/^[ \t\r]+|[ \t\r]+$/g,'');
+  return [hash(content),content];
+ }));
+ const reconstructed=compared.line_fingerprints.map((line,index)=>{
+  assert.equal(line.line,index+1);
+  assert.match(line.prefix_ws,/^[ \t\r]*$/);
+  assert.match(line.suffix_ws,/^[ \t\r]*$/);
+  assert(known.has(line.trimmed_sha256));
+  const value=line.prefix_ws+known.get(line.trimmed_sha256)+line.suffix_ws;
+  assert.equal(hash(value),line.sha256);
+  return value;
+ }).join('\n');
+ assert.equal(reconstructed,body);
+ assert.equal(hash(reconstructed),compared.body_sha256);
+ for(const secret of ['FIXTURE_PRIVATE_TOKEN','FIXTURE_DEFAULT_TOKEN','FIXTURE_LITERAL_ONE','fixture.invalid']){
+  assert(!JSON.stringify(lineRows).includes(secret));
+ }
+ await inventoryDb.exec(`create or replace function extensions.grant_pg_net_access()
+  returns event_trigger language plpgsql as $body$${body.replace('FIXTURE_LITERAL_ONE','FIXTURE_LITERAL_TWO')}$body$;`);
+ const literalChanged=(await inspect(restoreHookLines)).find(row=>row.status==='COMPARE');
+ assert.notEqual(literalChanged.body_sha256,compared.body_sha256);
+ assert(literalChanged.line_fingerprints.some(line=>!known.has(line.trimmed_sha256)));
+ for(const oversized of ["begin\n-- "+'x'.repeat(16384)+"\nend;",
+                        "begin\n"+'-- bounded\n'.repeat(200)+"end;"]){
+  await inventoryDb.exec(`create or replace function extensions.grant_pg_net_access()
+   returns event_trigger language plpgsql as $body$${oversized}$body$;`);
+  const rejected=(await inspect(restoreHookLines)).find(row=>row.routine==='extensions.grant_pg_net_access()');
+  assert.equal(rejected.status,'TOO_LARGE');
+  assert.equal(rejected.line_fingerprints,null);
+ }
  console.log('Restore-source inventory/hooks: read-only execution, hostile optional relations, custom-schema detection, body fingerprints, visible truncation and secret omission passed.');
+ console.log('Restore-hook line comparison: exact reconstruction, changed literals, missing/oversized routines and secret omission passed without invoking hooks.');
 } finally {await inventoryDb.close();}
 
 // Public invitation rendering must not echo executable input or invent a store listing.
