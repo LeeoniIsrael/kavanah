@@ -2,7 +2,7 @@ project_id = "kavanah"
 [api]
 enabled = true
 port = 54321
-schemas = ["public", "graphql_public"]
+schemas = ["public"]
 extra_search_path = ["public", "extensions"]
 max_rows = 200
 [db]
@@ -12,6 +12,7 @@ major_version = 17
 enabled = true
 site_url = "https://kavanah-rho.vercel.app"
 enable_signup = true
+enable_anonymous_sign_ins = false
 [auth.email]
 enable_signup = false
 enable_confirmations = true

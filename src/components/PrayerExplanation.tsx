@@ -73,6 +73,7 @@ export function PrayerConversation({
   const [busy, setBusy] = useState(false);
   const [focusComposer, setFocusComposer] = useState(false);
   const input = useRef<TextInput>(null);
+  const activeRequest = useRef<AbortController | null>(null);
   const lock = useRef(false),
     generation = useRef(0),
     atBottom = useRef(true);
@@ -80,9 +81,13 @@ export function PrayerConversation({
   useEffect(
     () => () => {
       generation.current += 1;
+      activeRequest.current?.abort();
     },
     [],
   );
+  useEffect(() => {
+    if (!accepted) activeRequest.current?.abort();
+  }, [accepted]);
   const send = async (question: string, history = turns) => {
     const clean = question.trim().slice(0, 1000);
     if (!clean || lock.current) return;
@@ -97,6 +102,8 @@ export function PrayerConversation({
     setBusy(true);
     setDraft("");
     setPending("");
+    const controller = new AbortController();
+    activeRequest.current = controller;
     const request = ++generation.current;
     const next: PrayerTurn[] = [
       ...history,
@@ -110,6 +117,7 @@ export function PrayerConversation({
       for await (const chunk of createAssistantStream(
         clean,
         prayerConversationContext(context, history, language),
+        controller.signal,
       )) {
         if (generation.current !== request) break;
         answer += chunk;
@@ -130,6 +138,7 @@ export function PrayerConversation({
           },
         ]);
     } finally {
+      if (activeRequest.current === controller) activeRequest.current = null;
       if (generation.current === request) {
         setBusy(false);
         lock.current = false;
@@ -247,8 +256,10 @@ export function PrayerConversation({
                     <View style={{ gap: 20 }}>
                       <Text style={ui.body}>
                         Your questions, this conversation and the prayer text
-                        are sent to OpenAI. AI answers can make mistakes. Avoid
-                        sharing private details.
+                        are sent to OpenAI. Supabase stores hashed connection
+                        identifiers and usage counters to prevent abuse. AI
+                        answers can make mistakes. Avoid sharing private
+                        details.
                       </Text>
                       <Button
                         onPress={() => {

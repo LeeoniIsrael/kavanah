@@ -1,32 +1,21 @@
-# Kavanah Security Model
+# Kavanah security model
 
-Kavanah is designed around data minimization: precise location is used on device for zmanim, the current release has no accounts, and assistant inputs are redacted before external transport.
+An account is required for app access. Prayer data remains local-first; Circle sharing and the assistant are optional. Cloud authorization is enforced separately by database policies/RPCs and server-verified assistant credentials. Religious activity, audience/community preferences, questions, location, photos, and annotations can be sensitive even without a real name.
 
-## Implemented Controls
+## Repository-enforced controls
 
-- HTTPS-only requests are enforced by `secureFetch`.
-- Optional biometric unlock is implemented with `expo-local-authentication`, with its preference stored in `expo-secure-store`.
-- The pseudonymous assistant installation ID is stored in `expo-secure-store`.
-- MMKV separates user state from cached public text data. User MMKV values are not encrypted at rest yet and must not be described as encrypted.
-- Email addresses, phone numbers, street addresses, and precise coordinates are masked before assistant use.
-- Zmanim and tefillin reminders are scheduled as local notifications.
+- Supabase JWT ownership, explicit RLS, denied direct writes, private-schema isolation, fixed-path definer RPCs, bounded/keyset feeds, database write quotas, unique event constraints, and authenticated cascading account deletion.
+- Shared locks for connection approval/request/block races and the 200-contact cap. Completion retries keep their event IDs and originating account.
+- The assistant fails closed until its server-only configuration, account verification and durable admission RPC work. Global daily/lifetime request caps, IP/account quotas, concurrency leases, payload/output caps, deadlines, cancellation, duplicate UUIDs, moderation, and no automatic paid retries precede generation.
+- Server-only OpenAI/Supabase credentials. Public Supabase publishable keys are identifiers, not an authorization boundary. Never put server secrets in `EXPO_PUBLIC_*`.
+- Native user MMKV uses a random SecureStore key; legacy MMKV and plaintext mirrors migrate before removal. SQLite annotations/photos remain protected by the OS rather than by MMKV encryption. Expo Go/browser previews have different storage guarantees.
+- Optional biometric app access, contextual location/notification/photo permission prompts, assistant consent version 2, no analytics/advertising SDK, best-effort client/server PII redaction.
+- In-app local-data clearing, account-specific file cleanup, safe account switching during deletion, bounded outbox batches, HTTPS/deadline/response-size policies, privacy-safe server outcome logging, and escaped/offline reader HTML.
 
-## Release Hardening
+## Boundaries and launch gates
 
-The following are known release gaps, not implemented controls:
+No claim of complete PII detection, authenticated source provenance, regulatory compliance, or absolute security is made. Request caps constrain assistant work, not all hosting/database traffic. Secrets, edge limits, Supabase Auth/email/SMS settings, backup restores, monitoring delivery, moderation staffing, native migration/accessibility QA, licenses, and legal/business details require deployment evidence. See [audit](docs/production-readiness-audit.md) and [operations](docs/production-operations.md).
 
-- Replace process-memory assistant rate limits with shared durable enforcement and a hard provider budget.
-- Encrypt or further minimize local user history and add a clear-local-data control.
-- Add privacy-safe crash reporting that excludes prayer questions, coordinates, and religious activity.
-- Treat client PII redaction as best effort; never promise that all sensitive text can be detected.
+Use supported OS TLS verification. Certificate pinning is not implemented and is not automatically required: introducing it without a rotation/recovery plan can cause outages. Native network, backup, and device protection settings need release-build verification.
 
-Expo managed JavaScript cannot fully enforce TLS 1.3 negotiation or certificate pinning by itself. Production release builds should add native network security configuration during the config-plugin or prebuild phase:
-
-- iOS: App Transport Security with TLS 1.3-capable endpoints, plus certificate or public-key pinning in the native networking layer.
-- Android: Network Security Config disallowing cleartext traffic, with certificate pins for primary endpoints.
-- Future account backend: short-lived access tokens, refresh-token rotation, audience and issuer validation, complete account deletion, and no precise location logging.
-
-## Primary External Endpoints
-
-- `https://www.sefaria.org` for public Jewish text synchronization.
-- The prayer assistant uses the Kavanah-controlled `api/assistant.js` HTTPS gateway for moderation, request limits, prompt enforcement, and source-bounded responses. The OpenAI key remains server-side.
+TODO(owner): provide a private security-reporting contact. Do not post tokens, questions, religious activity, or identifying evidence to public GitHub issues.

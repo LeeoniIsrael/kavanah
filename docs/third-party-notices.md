@@ -25,3 +25,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Bundled fonts and icons
+
+The exact license texts shipped with the installed, lockfile-pinned packages are preserved in:
+
+- [Manrope — SIL OFL 1.1](../assets/licenses/Manrope-OFL.txt), from `@expo-google-fonts/manrope/LICENSE_FONT`.
+- [Noto Sans Hebrew — SIL OFL 1.1](../assets/licenses/Noto-Sans-Hebrew-OFL.txt), from `@expo-google-fonts/noto-sans-hebrew/LICENSE_FONT`.
+- [Lucide — ISC and included Feather-derived notices](../assets/licenses/Lucide-ISC.txt), from `lucide-react-native/LICENSE`.
+
+Package fonts and vector icons retain their upstream notices. Kavanah brand artwork, `logoexpo.png`, the signed Shortcut, and bundled prayer/translation text still require owner/source provenance review; these notices do not establish rights in those assets. Runtime Sefaria edition metadata is a licensing gate, not rabbinic approval or an independent legal rights determination.

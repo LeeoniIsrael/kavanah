@@ -5,6 +5,9 @@ import "../global.css";
 import { AppErrorBoundary } from "@/components/AppErrorBoundary";
 import { NAV_THEME } from "@/lib/theme";
 import { AppProviders } from "@/providers/AppProviders";
+import { AccountNavigator } from "@/components/AccountNavigator";
+import { isAccountSession } from "@/services/accountAccess";
+import { useCircleAccount } from "@/store/circleAccountStore";
 import { getNotificationNavigationUrl } from "@/services/notifications";
 import { Manrope_400Regular } from "@expo-google-fonts/manrope/400Regular";
 import { Manrope_500Medium } from "@expo-google-fonts/manrope/500Medium";
@@ -15,7 +18,7 @@ import { NotoSansHebrew_600SemiBold } from "@expo-google-fonts/noto-sans-hebrew/
 import { PortalHost } from "@rn-primitives/portal";
 import { useFonts } from "expo-font";
 import * as Notifications from "expo-notifications";
-import { type Href, Stack, ThemeProvider, useRouter } from "expo-router";
+import { type Href, ThemeProvider, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { Appearance, Platform, View } from "react-native";
@@ -50,10 +53,7 @@ export default function RootLayout(): React.JSX.Element | null {
             <ThemeProvider value={NAV_THEME[scheme]}>
               <StatusBar style={scheme === "dark" ? "light" : "dark"} />
               <NotificationRouter />
-              <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="(tabs)" />
-                <Stack.Screen name="index" />
-              </Stack>
+              <AccountNavigator />
               <PortalHost />
             </ThemeProvider>
           </AppProviders>
@@ -72,6 +72,7 @@ function NotificationRouter(): null {
       response: Notifications.NotificationResponse | null,
     ) => {
       if (!response) return;
+      if (!isAccountSession(useCircleAccount.getState().session)) return;
       const url = getNotificationNavigationUrl(response);
       if (!url) return;
       router.push(url.replace("kavanah://", "/") as Href);

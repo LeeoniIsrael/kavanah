@@ -345,11 +345,11 @@ function Trigger({
       }}
       onPressIn={() => {
         if (!reduceMotion) {
-          triggerScale.value = withSpring(pressScale, PRESS_IN_SPRING);
+          triggerScale.set(withSpring(pressScale, PRESS_IN_SPRING));
         }
       }}
       onPressOut={() => {
-        triggerScale.value = reduceMotion ? 1 : withSpring(1, PRESS_OUT_SPRING);
+        triggerScale.set(reduceMotion ? 1 : withSpring(1, PRESS_OUT_SPRING));
       }}
       style={[styles.trigger, style, animatedStyle]}
     >

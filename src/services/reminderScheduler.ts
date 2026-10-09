@@ -1,3 +1,4 @@
+import { localWritesSuspended } from "@/services/mmkv";
 import { habitForPrayer } from "./practiceHabit";
 import * as Notifications from "expo-notifications";
 import { AppState, Platform } from "react-native";
@@ -69,6 +70,7 @@ export function syncReminders(): Promise<void> {
   return queue;
 }
 async function reconcile() {
+  if (localWritesSuspended()) return;
   const state = useReminderStore.getState(),
     prefs = state.prefs;
   useReminderStore.setState({ syncing: true, error: null });
@@ -224,4 +226,13 @@ export function startReminderScheduling() {
     stopHistory();
     subscription.remove();
   };
+}
+
+export async function cancelLocalRemindersForDeletion(): Promise<void> {
+  await queue.catch(() => undefined);
+  const notifications = await Notifications.getAllScheduledNotificationsAsync();
+  for (const notification of notifications) {
+    if (owned(notification) || notification.identifier === "kavanah-notification-test" || notification.content.data?.type === "travel-prayer")
+      await Notifications.cancelScheduledNotificationAsync(notification.identifier);
+  }
 }

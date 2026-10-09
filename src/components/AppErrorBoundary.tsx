@@ -24,7 +24,8 @@ export class AppErrorBoundary extends Component<PropsWithChildren, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
-    console.error("Kavanah render failure", error.message, info.componentStack);
+    if (__DEV__) console.error("Kavanah render failure", error.message, info.componentStack);
+    else console.error(JSON.stringify({ event: "render_failure", name: error.name }));
   }
 
   private retry = (): void => {

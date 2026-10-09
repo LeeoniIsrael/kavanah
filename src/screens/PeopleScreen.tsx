@@ -1,3 +1,4 @@
+import { useExclusiveAction } from "@/hooks/useExclusiveAction";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
@@ -51,7 +52,7 @@ export function CircleFriends({ tabs, lead }: FriendsProps) {
   const { handle } = useLocalSearchParams<{ handle?: string }>();
   return (
     <PeopleContent
-      key={`${id ?? "guest"}:${handle ?? ""}`}
+      key={`${id ?? "signed-out"}:${handle ?? ""}`}
       tabs={tabs}
       lead={lead}
     />
@@ -85,21 +86,24 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const [contacts, setContacts] = useState<Contact[]>([]),
     [updates, setUpdates] = useState<Update[]>([]),
     [more, setMore] = useState(false);
-  const run = async (action: () => Promise<void>) => {
-    if (busy) return;
-    setBusy(true);
-    setError(null);
-    setNotice(null);
-    try {
-      await action();
-    } catch (e) {
-      setError(
-        e instanceof Error ? e.message : "Could not connect. Please try again.",
-      );
-    } finally {
-      setBusy(false);
-    }
-  };
+  const exclusive = useExclusiveAction();
+  const run = (action: () => Promise<void>) =>
+    exclusive(async () => {
+      setBusy(true);
+      setError(null);
+      setNotice(null);
+      try {
+        await action();
+      } catch (e) {
+        setError(
+          e instanceof Error
+            ? e.message
+            : "Could not connect. Please try again.",
+        );
+      } finally {
+        setBusy(false);
+      }
+    });
   const load = useCallback(async () => {
     if (!profile) return;
     const db = requireCircle();
@@ -203,7 +207,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
           <Text style={ui.itemTitle}>Pray in good company</Text>
           <Text style={ui.body}>
             Sign in to join Circle. You choose who joins and what you share.
-            Private prayer works without an account.
+            You control whether your prayer activity is shared.
           </Text>
           {button("Sign in to join Circle", () => router.push("/sign-in"))}
         </View>

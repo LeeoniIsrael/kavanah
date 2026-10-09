@@ -1,11 +1,16 @@
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
-import { readSocialData, writeSocialData } from "@/services/socialStorage";
+import {
+  readSocialData,
+  writeSocialData,
+  removeAccountLocalData,
+} from "@/services/socialStorage";
 import { create } from "zustand";
 import type { Session } from "@supabase/supabase-js";
 import {
   circleClient,
   circleRpc,
   requireCircle,
+  updateAccountMetadata,
 } from "@/services/network/client";
 import {
   pendingCirclePreferences,
@@ -14,6 +19,7 @@ import {
   clearOutbox,
 } from "@/services/network/outbox";
 import { useSocialStore } from "./socialStore";
+import { isAccountSession } from "@/services/accountAccess";
 export type CircleProfile = {
   id: string;
   handle: string;
@@ -24,15 +30,20 @@ type State = {
   profile: CircleProfile | null;
   ready: boolean;
   error: string | null;
+  sessionReady: boolean;
+  sessionError: string | null;
 };
 export const useCircleAccount = create<State>(() => ({
   session: null,
   profile: null,
   ready: false,
   error: null,
+  sessionReady: false,
+  sessionError: null,
 }));
 let epoch = 0;
 export async function loadCircleAccount(session: Session | null) {
+  session = isAccountSession(session) ? session : null;
   const generation = ++epoch;
   setOutboxOwner(null);
   useCircleAccount.setState({
@@ -40,13 +51,16 @@ export async function loadCircleAccount(session: Session | null) {
     profile: null,
     ready: false,
     error: null,
+    sessionReady: true,
+    sessionError: null,
   });
   if (session) {
     const metadata = session.user.user_metadata ?? {};
     const localIdentity = usePrayerIdentityStore.getState().identity;
     usePrayerIdentityStore.getState().restoreFromAccount(metadata);
     if (!metadata.prayer_identity && localIdentity) {
-      void requireCircle().auth.updateUser({ data: { prayer_identity: localIdentity } }).catch(() => undefined);
+      void updateAccountMetadata(session, { prayer_identity: localIdentity })
+        .catch(() => undefined);
     }
   }
   if (!session) {
@@ -100,42 +114,76 @@ export async function loadCircleAccount(session: Session | null) {
       });
   }
 }
-export function startCircleAccount() {
+export async function restoreCircleSession() {
+  const generation = ++epoch;
+  setOutboxOwner(null);
+  useCircleAccount.setState({ session: null, profile: null, sessionReady: false, sessionError: null });
   if (!circleClient) {
-    useCircleAccount.setState({ ready: true });
-    return () => undefined;
+    await loadCircleAccount(null);
+    return;
   }
-  const initialEpoch = epoch;
-  void circleClient.auth
-    .getSession()
-    .then(({ data }) => {
-      if (epoch === initialEpoch) return loadCircleAccount(data.session);
-    })
-    .catch(() =>
-      useCircleAccount.setState({
-        ready: true,
-        error: "Could not restore sign-in.",
-      }),
-    );
+  try {
+    const { data, error } = await circleClient.auth.getSession();
+    if (generation !== epoch) return;
+    if (error) throw error;
+    await loadCircleAccount(data.session);
+  } catch {
+    if (generation === epoch) useCircleAccount.setState({
+      session: null, profile: null, ready: true, sessionReady: true,
+      sessionError: "Could not restore sign-in. Check your connection and try again.",
+    });
+  }
+}
+export function startCircleAccount() {
+  void restoreCircleSession();
+  if (!circleClient) return () => { epoch++; };
   const {
     data: { subscription },
   } = circleClient.auth.onAuthStateChange((event, session) => {
     if (event === "INITIAL_SESSION") return;
+    const accountSession = isAccountSession(session) ? session : null;
+    const previousId = useCircleAccount.getState().session?.user.id;
+    // Revoke route access immediately; profile hydration runs outside the auth lock.
+    useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
     // Never await Supabase calls inside its auth lock. Refresh does not reload preferences/outbox.
-    if (event === "TOKEN_REFRESHED") {
-      useCircleAccount.setState({ session });
+    if (event === "TOKEN_REFRESHED" && accountSession && previousId === accountSession.user.id) {
       return;
     }
-    setTimeout(() => void loadCircleAccount(session), 0);
+    const generation = ++epoch;
+    setOutboxOwner(null);
+    if (!accountSession) {
+      useCircleAccount.setState({ profile: null, ready: true });
+      return;
+    }
+    setTimeout(() => {
+      if (generation === epoch) void loadCircleAccount(accountSession);
+    }, 0);
   });
-  return () => subscription.unsubscribe();
+  return () => { epoch++; subscription.unsubscribe(); };
 }
-export async function deleteCircleAccount() {
+let deletion: Promise<void> | null = null;
+export function deleteCircleAccount(): Promise<void> {
+  if (deletion) return deletion;
+  deletion = deleteAccount().finally(() => {
+    deletion = null;
+  });
+  return deletion;
+}
+async function deleteAccount() {
   const id = useCircleAccount.getState().session?.user.id;
+  if (!id) throw new Error("Sign in to delete this account.");
   await circleRpc("circle_delete_account", {}, id);
-  if (id) writeSocialData(`circle.profile.${id}`, null);
-  clearOutbox();
+  removeAccountLocalData(id);
+  // A completed deletion must never clear a different account that signed in
+  // while the server request was running.
+  if (useCircleAccount.getState().session?.user.id !== id) return;
+  epoch++;
   setOutboxOwner(null);
-  await requireCircle().auth.signOut({ scope: "local" });
+  clearOutbox();
+  const { error } = await requireCircle().auth.signOut({ scope: "local" });
   await loadCircleAccount(null);
+  if (error)
+    throw new Error(
+      "The cloud account was deleted, but local sign-out could not finish. Restart and clear local data.",
+    );
 }

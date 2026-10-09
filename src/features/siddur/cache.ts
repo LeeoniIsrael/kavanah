@@ -1,3 +1,4 @@
+import { localWritesSuspended } from "@/services/mmkv";
 import * as SQLite from "expo-sqlite";
 import { normalizeHebrewSearch } from "./sefaria";
 import type {
@@ -9,6 +10,19 @@ import type {
   TextAnnotation,
 } from "./model";
 let database: Promise<SQLite.SQLiteDatabase> | undefined;
+let personalWrites: Promise<void> = Promise.resolve();
+function writePersonal(
+  action: (connection: SQLite.SQLiteDatabase) => Promise<void>,
+): Promise<void> {
+  if (localWritesSuspended()) return Promise.resolve();
+  const pending = personalWrites.then(async () => {
+    const connection = await db();
+    if (!localWritesSuspended()) await action(connection);
+  });
+  // A failed write must reach its caller without preventing a later reset.
+  personalWrites = pending.catch(() => undefined);
+  return pending;
+}
 async function db() {
   database ??= (async () => {
     const connection = await SQLite.openDatabaseAsync("siddur-v1.db");
@@ -17,6 +31,8 @@ async function db() {
       CREATE TABLE IF NOT EXISTS siddur_sections(ref TEXT PRIMARY KEY, book_id TEXT NOT NULL, data TEXT NOT NULL, updated_at INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS siddur_segments(ref TEXT PRIMARY KEY, section_ref TEXT NOT NULL, book_id TEXT NOT NULL, he TEXT, en TEXT, data TEXT NOT NULL);
       CREATE INDEX IF NOT EXISTS segments_section ON siddur_segments(section_ref);
+      CREATE INDEX IF NOT EXISTS segments_book ON siddur_segments(book_id);
+      CREATE INDEX IF NOT EXISTS sections_book ON siddur_sections(book_id);
       CREATE TABLE IF NOT EXISTS siddur_section_cache(ref TEXT PRIMARY KEY, book_id TEXT NOT NULL, updated_at INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS siddur_versions(book_id TEXT NOT NULL, language TEXT NOT NULL, version_title TEXT NOT NULL, license TEXT NOT NULL, source TEXT, PRIMARY KEY(book_id,language,version_title));
       CREATE TABLE IF NOT EXISTS siddur_downloads(book_id TEXT PRIMARY KEY, completed INTEGER NOT NULL DEFAULT 0, total INTEGER NOT NULL DEFAULT 0, updated_at INTEGER NOT NULL);
@@ -115,20 +131,19 @@ export async function cachedSection(
   return marker ? [] : null;
 }
 export async function savePosition(position: ReaderPosition) {
-  await (
-    await db()
-  ).runAsync(
-    "INSERT OR REPLACE INTO reader_positions VALUES(?,?)",
-    position.siddurId,
-    JSON.stringify(position),
-  );
-  await (
-    await db()
-  ).runAsync(
-    "INSERT OR REPLACE INTO reader_preferences VALUES(?,?)",
-    "selected_book",
-    position.siddurId,
-  );
+  return writePersonal(async (connection) => {
+    await connection.runAsync(
+      "INSERT OR REPLACE INTO reader_positions VALUES(?,?)",
+      position.siddurId,
+      JSON.stringify(position),
+    );
+    if (localWritesSuspended()) return;
+    await connection.runAsync(
+      "INSERT OR REPLACE INTO reader_preferences VALUES(?,?)",
+      "selected_book",
+      position.siddurId,
+    );
+  });
 }
 export async function loadPosition(
   bookId: string,
@@ -151,14 +166,14 @@ export async function selectedBook(): Promise<string | null> {
   return r?.value ?? null;
 }
 export async function saveBookmark(bookmark: Bookmark) {
-  await (
-    await db()
-  ).runAsync(
-    "INSERT OR REPLACE INTO bookmarks VALUES(?,?,?)",
-    bookmark.id,
-    bookmark.siddurId,
-    JSON.stringify(bookmark),
-  );
+  return writePersonal(async (connection) => {
+    await connection.runAsync(
+      "INSERT OR REPLACE INTO bookmarks VALUES(?,?,?)",
+      bookmark.id,
+      bookmark.siddurId,
+      JSON.stringify(bookmark),
+    );
+  });
 }
 export async function removeBookmark(id: string) {
   await (await db()).runAsync("DELETE FROM bookmarks WHERE id=?", id);
@@ -173,15 +188,15 @@ export async function loadBookmarks(bookId: string): Promise<Bookmark[]> {
   return rows.map((r) => JSON.parse(r.data));
 }
 export async function saveAnnotation(a: TextAnnotation) {
-  await (
-    await db()
-  ).runAsync(
-    "INSERT OR REPLACE INTO annotations VALUES(?,?,?,?)",
-    a.id,
-    a.siddurId,
-    a.startSegmentId.replace(/\.\d+$/, ""),
-    JSON.stringify(a),
-  );
+  return writePersonal(async (connection) => {
+    await connection.runAsync(
+      "INSERT OR REPLACE INTO annotations VALUES(?,?,?,?)",
+      a.id,
+      a.siddurId,
+      a.startSegmentId.replace(/\.\d+$/, ""),
+      JSON.stringify(a),
+    );
+  });
 }
 export async function loadAnnotations(
   bookId: string,
@@ -200,19 +215,31 @@ export async function searchCached(
   bookId: string,
   query: string,
 ): Promise<SiddurSegment[]> {
-  const rows = await (
-    await db()
-  ).getAllAsync<{ data: string }>(
-    "SELECT data FROM siddur_segments WHERE book_id=? ORDER BY rowid",
-    bookId,
-  );
   const needle = normalizeHebrewSearch(query);
-  return rows
-    .map((r) => JSON.parse(r.data) as SiddurSegment)
-    .filter((s) =>
-      normalizeHebrewSearch(`${s.he ?? ""} ${s.en ?? ""}`).includes(needle),
-    )
-    .slice(0, 50);
+  if (!needle) return [];
+  const connection = await db();
+  const matches: SiddurSegment[] = [];
+  let after = 0;
+  while (matches.length < 50) {
+    const rows = await connection.getAllAsync<{ rowid: number; data: string }>(
+      "SELECT rowid,data FROM siddur_segments WHERE book_id=? AND rowid>? ORDER BY rowid LIMIT 200",
+      bookId,
+      after,
+    );
+    if (!rows.length) break;
+    for (const row of rows) {
+      const segment = JSON.parse(row.data) as SiddurSegment;
+      if (
+        normalizeHebrewSearch(
+          `${segment.he ?? ""} ${segment.en ?? ""}`,
+        ).includes(needle)
+      )
+        matches.push(segment);
+      if (matches.length === 50) break;
+    }
+    after = rows[rows.length - 1]!.rowid;
+  }
+  return matches;
 }
 export async function downloadProgress(bookId: string) {
   return (await db()).getFirstAsync<{ completed: number; total: number }>(
@@ -234,4 +261,15 @@ export async function recordDownloadProgress(
     total,
     Date.now(),
   );
+}
+
+export async function clearSiddurPersonalData(): Promise<void> {
+  // Reset suspends new writes before calling this. Drain native calls already
+  // underway so their delayed completion cannot recreate deleted personal rows.
+  await personalWrites;
+  const connection = await db();
+  await connection.execAsync(`PRAGMA secure_delete = ON;
+    DELETE FROM reader_positions; DELETE FROM bookmarks;
+    DELETE FROM annotations; DELETE FROM reader_preferences;
+    PRAGMA wal_checkpoint(TRUNCATE); VACUUM; PRAGMA wal_checkpoint(TRUNCATE);`);
 }

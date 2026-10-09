@@ -8,7 +8,7 @@ const LANGUAGE_KEY = "settings.primary-language";
 const ASSISTANT_CONSENT_KEY = "settings.assistant-consent-version";
 const ZMAN_NOTIFICATIONS_KEY = "settings.zman-notifications";
 const PRAYER_FOCUS_KEY = "settings.prayer-focus";
-export const CURRENT_ASSISTANT_CONSENT_VERSION = 1;
+export const CURRENT_ASSISTANT_CONSENT_VERSION = 2;
 
 type SettingsState = {
   primaryLanguageCode: string;

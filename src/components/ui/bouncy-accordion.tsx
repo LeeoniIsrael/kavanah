@@ -9,7 +9,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
   type PropsWithChildren,
   type ReactNode,
@@ -127,7 +126,7 @@ function Item({ children, value, style }: ItemProps): React.JSX.Element {
   const { gap, openValue, radius, toggle } = useRootContext();
   const isOpen = openValue === value;
   const reduceMotion = useReducedMotion();
-  const progress = useRef(new Animated.Value(isOpen ? 1 : 0)).current;
+  const [progress] = useState(() => new Animated.Value(isOpen ? 1 : 0));
 
   useEffect(() => {
     if (reduceMotion) {

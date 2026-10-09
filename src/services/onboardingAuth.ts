@@ -41,7 +41,7 @@ export async function signInWithApple(): Promise<boolean> {
   const hashedNonce = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, rawNonce);
   try {
     const credential = await AppleAuthentication.signInAsync({
-      requestedScopes: [AppleAuthentication.AppleAuthenticationScope.EMAIL, AppleAuthentication.AppleAuthenticationScope.FULL_NAME],
+      requestedScopes: [AppleAuthentication.AppleAuthenticationScope.EMAIL],
       nonce: hashedNonce,
     });
     if (!credential.identityToken) throw new Error("Apple did not return a sign-in token. Try again.");

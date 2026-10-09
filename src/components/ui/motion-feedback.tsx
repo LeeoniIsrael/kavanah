@@ -1,6 +1,6 @@
 import { motion } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { useEffect, useRef, type PropsWithChildren } from "react";
+import { useEffect, useRef, useState, type PropsWithChildren } from "react";
 import { Animated, Easing, type StyleProp, type ViewStyle } from "react-native";
 
 type MotionProps = PropsWithChildren<{
@@ -14,7 +14,7 @@ export function StatusPulse({
   children,
   style,
 }: MotionProps): React.JSX.Element {
-  const scale = useRef(new Animated.Value(1)).current;
+  const [scale] = useState(() => new Animated.Value(1));
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -61,8 +61,8 @@ export function StateBounce({
   trigger: string | number | boolean;
   style?: StyleProp<ViewStyle>;
 }>): React.JSX.Element {
-  const scale = useRef(new Animated.Value(1)).current;
-  const offset = useRef(new Animated.Value(0)).current;
+  const [scale] = useState(() => new Animated.Value(1));
+  const [offset] = useState(() => new Animated.Value(0));
   const reduceMotion = useReducedMotion();
   const mounted = useRef(false);
 
@@ -122,7 +122,7 @@ export function LoadingOrbit({
   children,
   style,
 }: MotionProps): React.JSX.Element {
-  const rotation = useRef(new Animated.Value(0)).current;
+  const [rotation] = useState(() => new Animated.Value(0));
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {

@@ -10,7 +10,7 @@ export async function getOrCreateInstallationId(): Promise<string> {
   }
   const installationId = await Crypto.digestStringAsync(
     Crypto.CryptoDigestAlgorithm.SHA256,
-    `${Date.now()}-${Math.random()}-${Math.random()}`
+    Array.from(Crypto.getRandomBytes(32), (byte) => byte.toString(16).padStart(2, "0")).join("")
   );
   await SecureStore.setItemAsync(INSTALLATION_ID_KEY, installationId, {
     keychainAccessible: SecureStore.WHEN_UNLOCKED_THIS_DEVICE_ONLY

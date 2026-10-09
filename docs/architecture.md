@@ -2,7 +2,7 @@
 
 ## Product Boundary
 
-Kavanah is a local-first prayer utility. Core prayer and zmanim features remain usable without an account. The codebase also contains optional Circle accounts and sharing through Supabase Auth and PostgreSQL, which have not been deployed or accepted for public use. The optional assistant remains a separate serverless service. There is no advertising or analytics SDK.
+Kavanah is a local-first prayer utility. App access requires a non-anonymous Supabase account; prayer and zmanim calculations still use local data after sign-in. Circle enrollment and sharing remain optional. The base hosted schema has owner-supplied verification, but account-only deployment and operational acceptance remain pending. The optional assistant remains a separate serverless service. There is no advertising or analytics SDK.
 
 ## Runtime Shape
 
@@ -19,7 +19,7 @@ React Native screens and components
         HTTPS external services
 ```
 
-Expo Router's root layout loads fonts, safe-area context, the app error boundary, privacy providers, and the navigation theme. The `(tabs)` route group exposes Home, Prayer, Times, Circle, and Profile through platform-native tabs, with a native stack inside each tab. Circle's account actions remain unavailable without backend configuration. The assistant lives inside a selected prayer instead of occupying its own tab.
+Expo Router's root layout loads fonts, safe-area context, the app error boundary, privacy providers, and the navigation theme. Protected route groups require a restored non-anonymous session and completed onboarding; sign-out revokes access immediately. The entry screen handles restoration/loading/retry and keeps policies/local deletion accessible before sign-in. The `(tabs)` route group exposes Home, Prayer, Times, Circle, and Profile through platform-native tabs, with a native stack inside each tab. Circle's account actions remain unavailable without backend configuration. The assistant lives inside a selected prayer instead of occupying its own tab.
 
 ## State and Storage
 
@@ -28,11 +28,11 @@ Expo Router's root layout loads fonts, safe-area context, the app error boundary
 - `streakStore`: enabled practices, completion dates, milestones, and optional freezes.
 - `settingsStore`: language, assistant consent version, and notification preference.
 - `authStore`: biometric-lock preference and unlock behavior.
-- `circleAccountStore` and `socialStore`: optional Supabase session/profile state, sharing preferences, and a local account-scoped outbox.
+- `circleAccountStore` and `socialStore`: required Supabase session and optional Circle profile state, sharing preferences, and a local account-scoped outbox.
 
-`src/services/mmkv.ts` creates separate `kavanah.user` and `kavanah.cache` stores in development/release builds. Expo Go falls back to memory because MMKV requires native code. User MMKV data is currently not encrypted at rest. This must be resolved before claims of encrypted local data are made.
+`src/services/mmkv.ts` creates separate `kavanah.user` and `kavanah.cache` stores in development/release builds. Expo Go falls back to memory because MMKV requires native code. Native user MMKV now migrates to `kavanah.user.secure-v1` using a random device-only SecureStore key. Release builds stop writing plaintext JSON mirrors. SQLite reader annotations and photos remain outside that encryption; do not claim that all local data is encrypted. Expo Go/web do not provide the native protection. Migration and interrupted-reset device tests remain release gates.
 
-The biometric preference and pseudonymous assistant installation ID use `expo-secure-store`. Biometric lock protects app access but is not equivalent to encrypting the MMKV database.
+The biometric preference and account credentials use `expo-secure-store`. A legacy installation ID may remain until local reset; the assistant now uses a server-verified account hash. Biometric lock protects app access but is not equivalent to encrypting the MMKV database.
 
 ## Prayer Content and Provenance
 
@@ -73,14 +73,15 @@ The prayer reader builds a labeled context containing:
 - Hebrew prayer text;
 - display translation/transliteration explicitly marked unreviewed.
 
-The client redacts recognizable PII and sends a pseudonymous installation ID from SecureStore. `api/assistant.js` validates request shape, runs OpenAI moderation, applies a short source-bounded prompt, limits output, streams text, sets `store: false`, and returns no internal provider error details.
+The client sends its Supabase access token and both client and server redact recognizable PII. The server verifies the account with Supabase Auth, rejects anonymous/missing/deleted identities, validates bounded input, reserves durable PostgreSQL allowance before moderation/generation, limits output, streams text, sets `store: false`, cancels on deadline/disconnect, and returns no internal provider error details. Supplied prayer provenance is untrusted; the server never treats a client review label as authenticated approval.
 
 Known backend limits:
 
-- Rate limiting is process memory, not shared durable state.
-- The installation ID is not authenticated and can be regenerated.
+- Account authentication is verified server-side on every assistant request. Per-account quota subjects are keyed hashes of the verified user ID; client installation/user IDs cannot change them. Global daily/lifetime caps still apply.
+- Shared IP/account buckets, 60-second concurrency leases, duplicate UUIDs, and global counters are PostgreSQL transactions restricted to the server role.
 - Redaction is best effort and cannot guarantee removal of all sensitive text.
-- No production observability or budget circuit breaker exists.
+- Structured outcomes and `/api/health` are implemented; dashboards, alert delivery, actual provider limits, and device crash reporting require owner setup.
+- See `production-operations.md` for enabling the service and the separate hosting/database cost controls.
 
 ## Network Policy
 
@@ -100,8 +101,8 @@ Dynamic Type, VoiceOver reading order, Android TalkBack, full RTL layout, and iP
 
 - Mobile: Expo SDK 57 and EAS profiles in `eas.json`.
 - Assistant: Vercel serverless function configured by `vercel.json`.
-- Optional Circle: Supabase Auth, PostgREST RPC, PostgreSQL migrations, and the invitation endpoint. See `docs/social-backend.md` for the deployment and acceptance contract.
+- Required accounts / optional Circle: Supabase Auth, PostgREST RPC, PostgreSQL migrations, and the invitation endpoint. See `docs/social-backend.md` for the deployment and acceptance contract.
 - Required production secret: `OPENAI_API_KEY` on the backend only.
 - Required mobile environment: `EXPO_PUBLIC_ASSISTANT_API_URL` in EAS.
 
-Production submission remains blocked until content review, licensed localization, durable assistant limits, stable legal/support URLs, device testing, and privacy/security gaps are closed.
+Production submission remains blocked until content review, licensed localization, hosted acceptance of the implemented durable assistant limits, stable legal/support URLs, device testing, dependency review, and recovery/privacy gaps are closed. See `production-readiness-audit.md` for the current verdict and evidence.

@@ -412,7 +412,7 @@ export function SiddurExperience({
       interaction.current = "idle";
     } else if (m.type === "pinch" && m.scale) {
       setFontScale((s) =>
-        Math.max(0.8, Math.min(1.7, Math.round(s * m.scale! * 20) / 20)),
+        Math.max(0.8, Math.min(2.5, Math.round(s * m.scale! * 20) / 20)),
       );
     } else if (
       m.type === "drag" &&

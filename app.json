@@ -30,7 +30,8 @@
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
         "USE_BIOMETRIC"
-      ]
+      ],
+      "allowBackup": false
     },
     "plugins": [
       "expo-router",
@@ -60,7 +61,6 @@
       "expo-sharing",
       "expo-status-bar",
       "expo-apple-authentication",
-      "expo-web-browser",
       "expo-web-browser",
       "expo-sqlite",
       [
@@ -95,7 +95,8 @@
       "supportUrl": "https://github.com/LeeoniIsrael/kavanah/issues",
       "eas": {
         "projectId": "8763a342-4956-4e23-a92e-16e457e8294f"
-      }
+      },
+      "thirdPartyNoticesUrl": "https://github.com/LeeoniIsrael/kavanah/blob/main/docs/third-party-notices.md"
     },
     "owner": "leeoniisrael",
     "splash": {
