@@ -92,6 +92,8 @@ Core reading remains usable when backend or assistant fails. No paid upgrade, ch
 
 ## Cost exposure and safeguards
 
+The owner prioritizes avoiding large monthly bills and confirms OnHand remains an ongoing separate project. [The infrastructure decision](infrastructure-decision.md) recommends retaining Supabase Pro for Kavanah's existing PostgreSQL/Auth/RPC design, with its cap enabled and AI disabled, while completing release gates. It provides realistic cost scenarios and measured upgrade/migration triggers. The requested whole-app monthly budget remains pending; no provider migration or purchase has been made.
+
 | Feature/provider | Potential charges | Implemented bounds / required external control |
 | --- | --- | --- |
 | OpenAI assistant/moderation | Tokens and attempted provider calls | Mandatory durable daily/lifetime admission caps, 350 output tokens, bounded input, no paid retries, 25-second deadline, concurrency leases and kill switch; confirm model pricing/account hard limits |

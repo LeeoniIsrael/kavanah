@@ -1,0 +1,100 @@
+# Infrastructure decision for Kavanah
+
+Researched October 9, 2026. This is an architecture and cost recommendation, not authorization to purchase, resize, transfer or migrate services. The owner prioritizes making Kavanah usable, avoiding large recurring bills, and continuing OnHand as a separate project. A precise monthly budget was requested and remains pending.
+
+## Decision
+
+Keep **Supabase Pro for Kavanah** while completing the release audit. It is the best fit among the options reviewed for this existing application and the owner's current priorities. Keep the Spend Cap enabled and the optional AI assistant disabled. Plan a Nano-to-Micro change after recovery is verified and a maintenance window is chosen; the displayed paid hourly rate is the same, with twice the memory. Do not buy Team, replicas or PITR just because the product is going to production.
+
+Supabase is a credible managed production option, but choosing it does not make this app production-ready. Hosted authorization tests, recovery, account isolation on the device, dependency review and signed-device acceptance are still open. A provider migration would not repair those application defects. Keep the current **NOT READY for public production** verdict until the relevant gates close.
+
+Revisit the provider when a measured requirement exceeds what this configuration can deliver within the approved budget. **Neon is the first alternative to evaluate for PostgreSQL**, especially if intermittent usage or a stricter recovery requirement makes its complete quote attractive. There is no evidence yet that a migration would lower Kavanah's total operating cost or improve its observed availability.
+
+## What the application actually needs
+
+Prayer text, reading state, practice tracking, zmanim, reminders and chosen photos primarily run or persist on the device. Required account sign-in and optional Circle use Supabase Auth, PostgREST and PostgreSQL. Account/session restoration and offline acceptance still need device testing; local computation is not a promise of uninterrupted app entry during an Auth outage.
+
+Circle needs relational joins, unique constraints, transactions, row locks, server-derived identity and RLS. These enforce connection caps, bilateral blocking, duplicate completion prevention and deletion. The optional Vercel assistant also verifies Supabase accounts and uses PostgreSQL for durable spending admission. There is no application cloud photo storage, realtime listener fleet, background worker fleet or paid SMS/marketing sender to provision.
+
+The coupling is concrete: `src/services/network/client.ts` implements the Supabase client and RPC boundary; `src/services/onboardingAuth.ts` implements provider/OTP sign-in; `api/assistant.js` calls `/auth/v1/user` and `/rest/v1/rpc/`; database migrations reference `auth.users`, `auth.uid()`, Supabase roles and account deletion cascades. PostgreSQL business data is portable, but the complete identity/API contract needs migration work. Do not present a database dump as a complete backend migration.
+
+## Current evidence and realistic cost baseline
+
+Owner screenshots establish Spend Cap enabled; Kavanah was last shown in `us-east-1` on Nano with a 2 GB gp3 disk, standard performance and no replicas. The invoice's Micro billing label alone does not establish a hardware resize; verify the current compute size before changing it. The effective disk growth limit shown is 8 GB. Advanced autoscaling still displays a 60,000 GB maximum, which must be reviewed before any future cap removal. CPU was 2–4%, memory about 53%, and connections six of 60 in the snapshot; this does not measure launch capacity.
+
+The organization bills both Kavanah and OnHand. The current screenshot shows **$25 current costs**, **$32.51 projected**, and **$3.62 compute offset by $3.62 credits**. The estimate changes during the cycle and can lag new projects/add-ons by an hour. The earlier subscription invoice was $27 including tax. No complete future invoice or total-dollar hard stop has been established.
+
+These are approximate full-month **Supabase-only** scenarios using published compute rates and the paid organization's $10 compute credit. They exclude taxes, add-ons, overages, separate hosting, email, AI, cloud builds and store fees. The actual partial-month forecast need not equal them.
+
+| Scenario | Approximate monthly baseline before tax |
+| --- | ---: |
+| One Pro organization, only Kavanah on paid Nano/Micro | $25 |
+| Same organization, Kavanah and OnHand both active on Nano/Micro | $35 |
+| Same two projects, Kavanah on Small and OnHand on Micro | $40 |
+| Two separate Pro organizations, one Micro project in each | $50 |
+| Kavanah alone on Small with seven-day PITR | $130 |
+
+Paid Nano and Micro share the same rate. Each extra active project adds hourly compute; $10 credits apply per organization, not per project. Separating both products into paid organizations costs more but separates billing quotas and administration. Keeping OnHand in the existing organization is acceptable during this stage if its compute is intentional; do not pause or remove it based on this audit. If it is purely development later, a separate Free organization can be evaluated, with a backup and plan-feature review: Free projects can pause after inactivity and do not include automatic backups. Transfers can have downtime. [Compute billing](https://supabase.com/docs/guides/platform/manage-your-usage/compute), [project transfers](https://supabase.com/docs/guides/platform/project-transfer), [plan comparison](https://supabase.com/pricing).
+
+## Controls that keep the bill predictable
+
+| Boundary | Current protection | What still needs verification or a decision |
+| --- | --- | --- |
+| Supabase included-usage overages | Enabled Spend Cap; dashboard states 8 GB disk growth ceiling | Covered quota exhaustion can stop service. Monitor growth and quotas; do not automatically disable the cap to restore availability |
+| Supabase compute | Selected fixed compute tier; documented compute sizes do not automatically upgrade | Active project/branch inventory, restricted administrative access and review before new instances or resizing. Compute is excluded from Spend Cap |
+| Optional add-ons | No replicas shown; PITR previously shown disabled; standard disk performance | Verify remaining add-ons rather than assuming absence from a bill proves they are disabled. Custom domains, IPv4, enhanced disk performance and log drains can add recurring charges |
+| OpenAI | Assistant disabled in production and preview; implemented durable daily/lifetime admission and bounded generation | No paid activation until model/pricing and provider controls are verified and an explicit allowance is selected |
+| Hosting | Vercel Hobby and verified API edge rate limiting | Hobby eligibility is personal/non-commercial. Commercial use may need a paid plan or a separately tested hosting change; paid hosting needs tested spending stops |
+| Email/SMS | Phone Auth disabled in owner screenshot; no marketing sender | Hosted Email Auth is enabled. Its abuse/delivery controls and any SMTP account still need review; hiding a client option is insufficient |
+| Builds/CI | No runtime-triggered cloud builds; bounded CI job duration | Check account-level metered usage controls separately; the database cap does not cover these providers |
+
+[Supabase Cost Control](https://supabase.com/docs/guides/platform/cost-control) caps selected usage items, not the entire invoice. Compute, branching/replica compute, PITR and several add-ons are excluded. The practical low-cost configuration is a fixed, reviewed set of instances plus the enabled cap, with expensive optional features off. Alerts help detect problems; they are not enforcement.
+
+The current Vercel Hobby plan cannot purchase additional usage and can lose availability at quota exhaustion. [Vercel's current pricing](https://vercel.com/pricing) lists Pro from $20/month with usage-based charges. If a paid hosting change is needed, include it in the whole-app budget before buying: roughly $35 of shared Supabase plus $20 of hosting is already $55 before tax or other services. Do not assume a $50 target for Kavanah alone also covers OnHand and every shared bill. [Hobby eligibility](https://vercel.com/docs/plans/hobby).
+
+## Alternatives assessed
+
+| Option | Fit for Kavanah | Cost/control implications | Recommendation |
+| --- | --- | --- | --- |
+| Supabase Pro | Existing Auth, SQL/RLS and RPC safeguards fit directly | Predictable base with reviewed fixed compute and cap; recovery/support add-ons cost extra | Keep now; verify operations and test load |
+| Neon managed PostgreSQL and its backend services | Closest database alternative; now includes managed Auth/Data API | Scale-to-zero can help idle workloads; active compute, storage and selected services remain metered. Enforce resource quotas and assess wake latency | First migration candidate if benchmarks and a complete quote show a material benefit |
+| Firebase Auth + Firestore | Strong mobile ecosystem; current relational model and SQL safeguards would need substantial reimplementation | Reads, writes, index reads and listeners can drive charges. New selected-service spend caps do not cover Firestore and are delayed | No migration for cost anxiety alone |
+| Firebase SQL Connect + Cloud SQL | Provides managed PostgreSQL, so Firebase is not limited to NoSQL | Different API/Auth integration; both Cloud SQL and SQL Connect billing must be counted | Evaluate only for a specific Firebase integration benefit |
+| AWS RDS PostgreSQL + an API/Auth stack | SQL and explicit Multi-AZ architecture can meet demanding availability requirements | Instance, storage, network, API, authentication and operations costs require a complete design. Budgets are delayed controls | Evaluate when requirements and engineering ownership justify the added work |
+| Self-hosted Supabase or PostgreSQL on a VPS | More infrastructure control; a server invoice can be predictable | Owner takes over patching, recovery, monitoring and availability. Backups and bandwidth remain separate considerations | Avoid at this stage |
+
+Neon offers API-enforced compute time, uptime, written-data and branch-size quotas, plus minimum/maximum autoscaling settings. These are useful resource stops, but must be tested for the selected plan and all chosen services before claiming a total bill bound. Continuous traffic can keep compute awake and erase idle savings. Native Apple/Google sign-in, identity mapping, RPC behavior, deletion and current permission tests must pass against a migration prototype. Neon now offers managed Better Auth and Data API; it is not accurate to describe it as only a database. Its current live pricing endpoint could not be read by the research tool, so no complete current dollar quote is asserted here. [Consumption controls](https://neon.com/blog/provision-postgres-neon-api), [managed identity](https://neon.com/blog/neon-auth-branchable-identity-in-your-database), [production considerations](https://neon.com/blog/6-best-practices-for-running-neon-in-production), [pricing to verify before a trial](https://neon.com/pricing).
+
+Firebase's **Preview** spend caps apply to AI Logic, App Hosting, Cloud Functions and Extensions. Google explicitly says they are not hard caps: reporting delays can allow extra billed usage. Firestore is not on the eligible-service list. SQL Connect is a separate relational option with a Cloud SQL bill and service operation/egress pricing. [Spend-cap scope and delays](https://firebase.google.com/docs/projects/billing/spend-caps), [Firestore billing](https://firebase.google.com/docs/firestore/pricing), [SQL Connect billing](https://firebase.google.com/docs/sql-connect/pricing).
+
+RDS Multi-AZ provides a synchronous standby and automatic failover; this is an actual availability feature, not the same as adding an asynchronous read replica for faster reads. It does not reproduce Supabase Auth/PostgREST by itself. AWS Budgets can lag incurred charges, so a budget alone cannot make an AWS deployment safe from large bills. Self-hosting moves operational responsibility to the owner. [RDS failover](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html), [RDS cost components](https://aws.amazon.com/rds/postgresql/pricing/), [AWS budget limitations](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html), [self-hosting responsibilities](https://supabase.com/docs/guides/self-hosting).
+
+## Reliability and recovery tradeoffs
+
+The published Supabase plan comparison does **not** include an uptime SLA on Pro or Team. Team's support SLA is a different commitment; paying $599/month for Team is not a compute-scaling step or proof of application uptime. A contractual uptime requirement calls for an Enterprise quote or an alternative meeting that requirement. Public status pages and vendor case studies cannot establish Kavanah's actual availability or rank providers fairly. No provider trial, independent comparative uptime study or load benchmark was performed. [Plan/support distinction](https://supabase.com/pricing).
+
+Pro includes seven days of daily database backups. Daily recovery can lose approximately a day's cloud changes; restore downtime and actual recoverability must be tested. Supabase PITR starts around $100/month for seven-day recovery and requires at least Small compute, producing the approximate $130 single-project scenario above. It remains outside Spend Cap. If losing a day of Circle data becomes unacceptable, this is a real decision point: obtain a complete Neon/other managed PostgreSQL recovery quote and compare restore drills, not just list prices. Never describe periodic logical exports as equivalent to PITR. Database backups do not include Storage object bytes; Kavanah currently has no cloud storage buckets to back up. [Backup/PITR requirements](https://supabase.com/docs/guides/platform/backups).
+
+## Upgrade and migration triggers
+
+These are proposed operational decision thresholds, not provider guarantees, measured limits or already-configured alerts. Establish baselines from the intended launch regions and realistic staging data first.
+
+| Trigger | First action | When to change infrastructure |
+| --- | --- | --- |
+| Last observed Nano on a paid plan | Verify current compute, fresh backups/recovery and choose a maintenance window | If still on Nano, move to Micro at the same displayed hourly rate for 1 GB memory; validate Auth, Circle and deletion afterwards |
+| Circle request p95 exceeds an initial 1-second target, with sustained CPU above roughly 70%, memory above 80%, or connection saturation/timeouts | Inspect slow queries, locks, indexes, pooling and request patterns; distinguish network/Auth latency from database pressure | Consider Small/next compute size only if resource pressure persists during representative peaks after tuning |
+| Disk reaches 70% of provisioned capacity or growth forecasts reaching the effective 8 GB cap within 30 days | Inspect retention, indexes/bloat and expected first expansion; establish safe cleanup | Approve a bounded disk allowance or reduce retained data under an owner-approved policy before cap exhaustion |
+| Included monthly usage exceeds 70% or the projected whole-app bill approaches the approved budget | Review per-provider/project usage and optional paid features | Keep enforceable stops; adjust launch capacity or select a measured cheaper option. Do not silently lift caps |
+| Cloud-data recovery needs become shorter than one day, or the restore drill misses the owner-approved recovery time | Price and test finer recovery options | Compare PITR plus required compute with alternatives; migrate if requirements and total cost justify it |
+| Repeated backend outages breach a chosen availability objective after application/configuration faults are excluded | Retain incident evidence and use provider support | Evaluate an SLA-backed/HA deployment, including Supabase Enterprise, Neon or RDS, with a realistic budget |
+| A contract requires an unavailable region, network isolation, certification evidence or uptime commitment | Identify the exact requirement and service/plan offering it | Evaluate plans/providers meeting it; user counts alone do not establish the requirement |
+
+Do not migrate at an arbitrary 1,000 or 10,000 registered users. Most core calculations are local, while a small number of busy Circle accounts can generate significant load. Measure concurrent requests, SQL work, account restoration, storage growth and egress. The assistant's current global admission limit is deliberately 30/minute and five active requests; greater AI throughput is a separate product/budget decision, not merely a database upgrade.
+
+A migration candidate should pass all existing database, concurrency and API tests plus hosted two-account/anonymous denial, native sign-in, deletion and recovery tests. Use synthetic staging data, preserve account IDs/ownership and deletion semantics, arrange a controlled write cutover, and retain a tested rollback. Do not casually dual-write accounts or quota counters. Preserve conservative lifetime AI admission counts across any migration or restore.
+
+## Next chronological work
+
+Record the exact monthly budget when the owner answers. Use the current Pro configuration while checking a fresh backup and performing an isolated recovery test. Then close hosted Auth/RLS/abuse acceptance, the local account privacy gap and signed-native functionality checks. Before expanding users, establish resource/latency baselines and the whole-app cost controls. Provider changes should follow an unmet requirement and a verified migration plan; no external infrastructure changes have been made as part of this research.
+
+The ongoing evidence and launch blockers are in [production operations](production-operations.md) and [the production-readiness audit](production-readiness-audit.md). This recommendation does not close those blockers.

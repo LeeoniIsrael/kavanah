@@ -2,7 +2,7 @@
 
 ## Product Boundary
 
-Kavanah is a local-first prayer utility. App access requires a non-anonymous Supabase account; prayer and zmanim calculations still use local data after sign-in. Circle enrollment and sharing remain optional. The base hosted schema has owner-supplied verification, but account-only deployment and operational acceptance remain pending. The optional assistant remains a separate serverless service. There is no advertising or analytics SDK.
+Kavanah is a local-first prayer utility. App access requires a non-anonymous Supabase account; prayer and zmanim calculations still use local data after sign-in. Circle enrollment and sharing remain optional. Owner evidence verifies the installed base/account-only schema and the deployed gateway's disabled state; hosted behavioral and native operational acceptance remain pending. The optional assistant remains a separate serverless service. There is no advertising or analytics SDK.
 
 ## Runtime Shape
 
@@ -98,6 +98,8 @@ Known backend limits:
 Dynamic Type, VoiceOver reading order, Android TalkBack, full RTL layout, and iPad split-size behavior still require device QA.
 
 ## Deployment
+
+The October 9 [infrastructure decision](infrastructure-decision.md) recommends retaining Supabase Pro with reviewed fixed compute, Spend Cap enabled and paid AI disabled while completing the release gates. It compares alternatives and defines upgrade/migration triggers; selecting a managed provider does not establish application readiness.
 
 - Mobile: Expo SDK 57 and EAS profiles in `eas.json`.
 - Assistant: Vercel serverless function configured by `vercel.json`.
