@@ -19,7 +19,8 @@ import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { QuoteSelector } from "@/components/QuoteSelector";
-import { Input } from "@/components/ui/input";
+import { PrayerSearchBar } from "@/components/PrayerSearchBar";
+import { PrayerSearchOverlay } from "@/components/PrayerSearchOverlay";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
 import { cn } from "@/lib/utils";
@@ -34,7 +35,6 @@ import {
   MoonStar,
   Quote,
   RefreshCw,
-  Search,
   X,
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -42,6 +42,7 @@ import {
   Alert,
   Animated,
   Easing,
+  Keyboard,
   Linking,
   Modal,
   Platform,
@@ -164,6 +165,7 @@ export function PrayerScreen(): React.JSX.Element {
     null,
   );
   const [readerOpen, setReaderOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
   const [guidedPrayerOpen, setGuidedPrayerOpen] = useState(false);
@@ -339,6 +341,8 @@ export function PrayerScreen(): React.JSX.Element {
   }, [primaryLanguageCode, selected]);
 
   const openPrayer = (id: string) => {
+    Keyboard.dismiss();
+    setSearchOpen(false);
     void selectPrayer(id);
     setGuidedPrayerOpen(true);
 
@@ -346,6 +350,12 @@ export function PrayerScreen(): React.JSX.Element {
     setReaderOpen(true);
     setFocusPromptMessage("");
     setFocusPromptOpen(false);
+  };
+
+  const closeSearch = () => {
+    Keyboard.dismiss();
+    setSearchOpen(false);
+    setQuery("");
   };
 
   const prayerIdentity = usePrayerIdentityStore((state) => state.identity);
@@ -599,26 +609,16 @@ export function PrayerScreen(): React.JSX.Element {
         />
       ) : (
         <View className="gap-6">
-          <View
-            style={{
-              backgroundColor: colors.vellum,
-              borderCurve: "continuous",
-            }}
-            className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
-          >
-            <Search size={20} color={colors.inkMuted} />
-            <Input
-              accessibilityLabel="Search prayers"
-              value={query}
-              onChangeText={setQuery}
-              placeholders={[
-                "Search for travel…",
-                "Search for Shema…",
-                "Search for protection…",
-              ]}
-              className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent dark:bg-transparent px-0 shadow-none"
-              placeholderTextColor={colors.inkMuted}
-            />
+          <View className="flex-row items-center gap-3">
+            <View className="flex-1">
+              <PrayerSearchBar
+                active={false}
+                value={query}
+                onChangeText={setQuery}
+                onActivate={() => setSearchOpen(true)}
+                onCancel={closeSearch}
+              />
+            </View>
             <Button
               variant="secondary"
               size="content"
@@ -756,6 +756,16 @@ export function PrayerScreen(): React.JSX.Element {
           ) : null}
         </View>
       )}
+
+      <PrayerSearchOverlay
+        visible={searchOpen}
+        query={query}
+        results={groupedResults}
+        searching={isSearchingRemote}
+        onChangeText={setQuery}
+        onClose={closeSearch}
+        onOpenPrayer={openPrayer}
+      />
 
       <Modal
         visible={readerOpen && Boolean(selected)}
