@@ -10,7 +10,6 @@ import {
   circleClient,
   circleRpc,
   requireCircle,
-  updateAccountMetadata,
 } from "@/services/network/client";
 import {
   pendingCirclePreferences,
@@ -46,6 +45,11 @@ export async function loadCircleAccount(session: Session | null) {
   session = isAccountSession(session) ? session : null;
   const generation = ++epoch;
   setOutboxOwner(null);
+  // Account metadata is authoritative. Device-wide legacy preferences may
+  // belong to somebody else and must never be uploaded on sign-in.
+  if (session && useCircleAccount.getState().session?.user.id !== session.user.id) {
+    usePrayerIdentityStore.getState().restoreFromAccount(session.user.user_metadata ?? {}, session.user.id);
+  }
   useCircleAccount.setState({
     session,
     profile: null,
@@ -54,15 +58,6 @@ export async function loadCircleAccount(session: Session | null) {
     sessionReady: true,
     sessionError: null,
   });
-  if (session) {
-    const metadata = session.user.user_metadata ?? {};
-    const localIdentity = usePrayerIdentityStore.getState().identity;
-    usePrayerIdentityStore.getState().restoreFromAccount(metadata);
-    if (!metadata.prayer_identity && localIdentity) {
-      void updateAccountMetadata(session, { prayer_identity: localIdentity })
-        .catch(() => undefined);
-    }
-  }
   if (!session) {
     useCircleAccount.setState({ ready: true });
     return;
@@ -143,12 +138,17 @@ export function startCircleAccount() {
     if (event === "INITIAL_SESSION") return;
     const accountSession = isAccountSession(session) ? session : null;
     const previousId = useCircleAccount.getState().session?.user.id;
-    // Revoke route access immediately; profile hydration runs outside the auth lock.
-    useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
     // Never await Supabase calls inside its auth lock. Refresh does not reload preferences/outbox.
     if (event === "TOKEN_REFRESHED" && accountSession && previousId === accountSession.user.id) {
+      useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
       return;
     }
+    // Restore preferences synchronously before publishing the new session, so
+    // neither routes nor onboarding render the previous account's identity.
+    if (accountSession && previousId !== accountSession.user.id) {
+      usePrayerIdentityStore.getState().restoreFromAccount(accountSession.user.user_metadata ?? {}, accountSession.user.id);
+    }
+    useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
     const generation = ++epoch;
     setOutboxOwner(null);
     if (!accountSession) {

@@ -1,6 +1,8 @@
 # Production-readiness audit
 
-Updated October 9, 2026. Repository assessment, implemented remediation and identified owner-supplied deployment evidence; not a certification. **Verdict: NOT READY for a public production launch.** The local-first architecture is preserved. The main code safeguards are implemented and tested, but content approval, hosted acceptance, native-device QA, dependency review, recovery verification and owner/legal decisions remain blocking.
+Updated October 13, 2026. Repository assessment, implemented remediation and identified owner-supplied deployment evidence; not a certification. **Verdict: NOT READY for a public production launch.** The local-first architecture is preserved. The main code safeguards are implemented and tested, but content approval, hosted acceptance, native-device QA, dependency review, recovery verification and owner/legal decisions remain blocking.
+
+The [October 13 continuation](production-continuation-2026-10-13.md) records the latest local fixes and validation: account-owned prayer preferences with no automatic legacy metadata upload, the Handlebars critical-advisory patch, 177 unit tests, verified local Docker and isolated PostgreSQL concurrency tests. Fresh-export/scheduled-backup recovery and full device-history isolation remain open. Its fresh dependency count (54 high, 22 moderate, zero critical package entries) supersedes the historical count below. Local changes await authorized publication and deployment; they are not evidence of installed production behavior.
 
 ## Architecture and scope
 

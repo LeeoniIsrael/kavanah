@@ -20,7 +20,7 @@ export async function probeEdgeRateLimit({
     throw new Error("Probe timeout must be between 1 and 20000 milliseconds.");
   }
   const started = Date.now();
-  const deadline = AbortSignal.timeout(timeoutMs);
+  const deadline = globalThis.AbortSignal.timeout(timeoutMs);
   const counts = {};
   let requests = 0;
   let next = 0;
@@ -42,7 +42,7 @@ export async function probeEdgeRateLimit({
         cache: "no-store",
         credentials: "omit",
         redirect: "error",
-        signal: AbortSignal.any([deadline, AbortSignal.timeout(4_000)]),
+        signal: globalThis.AbortSignal.any([deadline, globalThis.AbortSignal.timeout(4_000)]),
       });
       counts[response.status] = (counts[response.status] ?? 0) + 1;
       if (response.status === 429) limited = true;

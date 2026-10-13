@@ -6,6 +6,8 @@ const mockLookup = jest.fn();
 const mockOwner = jest.fn();
 const mockRpc = jest.fn();
 const mockUnsubscribe = jest.fn();
+const mockUpdateMetadata = jest.fn();
+const mockRestoreIdentity = jest.fn();
 let mockAuthEvent: (event: AuthChangeEvent, session: Session | null) => void;
 jest.mock("@/services/network/client", () => {
   const client = {
@@ -19,14 +21,14 @@ jest.mock("@/services/network/client", () => {
     },
     from: () => ({ select: () => ({ eq: () => ({ maybeSingle: () => mockLookup() }) }) }),
   };
-  return { circleClient: client, requireCircle: () => client, circleRpc: () => mockRpc() };
+  return { circleClient: client, requireCircle: () => client, circleRpc: () => mockRpc(), updateAccountMetadata: (...args: unknown[]) => mockUpdateMetadata(...args) };
 });
 jest.mock("@/services/network/outbox", () => ({
   setOutboxOwner: (id: string | null) => mockOwner(id),
   flushCircle: jest.fn(), clearOutbox: jest.fn(), pendingCirclePreferences: () => null,
 }));
 jest.mock("@/services/socialStorage", () => ({ readSocialData: () => null, writeSocialData: jest.fn(), removeAccountLocalData: jest.fn() }));
-jest.mock("@/store/prayerIdentityStore", () => ({ usePrayerIdentityStore: { getState: () => ({ identity: null, restoreFromAccount: jest.fn() }) } }));
+jest.mock("@/store/prayerIdentityStore", () => ({ usePrayerIdentityStore: { getState: () => ({ identity: { audience: "woman", community: "hasidic" }, restoreFromAccount: (...args: unknown[]) => mockRestoreIdentity(...args) }) } }));
 jest.mock("@/store/socialStore", () => ({ useSocialStore: { setState: jest.fn() } }));
 import { loadCircleAccount, restoreCircleSession, startCircleAccount, useCircleAccount } from "../circleAccountStore";
 
@@ -39,7 +41,32 @@ beforeEach(() => {
   mockLookup.mockReset().mockResolvedValue({ data: null, error: null });
   mockRpc.mockReset().mockResolvedValue({ prayers: "off", milestones: false });
   mockOwner.mockClear();
+  mockUpdateMetadata.mockClear();
+  mockRestoreIdentity.mockReset();
   useCircleAccount.setState({ session: null, profile: null, sessionReady: false, sessionError: null, ready: false, error: null });
+});
+
+test("sign-in never copies legacy device prayer identity into the new cloud account", async () => {
+  await loadCircleAccount(session("bob"));
+  expect(mockRestoreIdentity).toHaveBeenCalledWith({}, "bob");
+  expect(mockUpdateMetadata).not.toHaveBeenCalled();
+});
+
+test("same-account profile reload preserves preferences saved since the cached auth token", async () => {
+  await loadCircleAccount(session("alice"));
+  mockRestoreIdentity.mockClear();
+  await loadCircleAccount(session("alice"));
+  expect(mockRestoreIdentity).not.toHaveBeenCalled();
+});
+
+test("auth events restore the new identity before publishing the new session", async () => {
+  stop = startCircleAccount(); await flush();
+  mockRestoreIdentity.mockImplementation(() => {
+    expect(useCircleAccount.getState().session).toBeNull();
+  });
+  mockAuthEvent("SIGNED_IN", session("bob"));
+  expect(mockRestoreIdentity).toHaveBeenCalledWith({}, "bob");
+  expect(useCircleAccount.getState().session?.user.id).toBe("bob");
 });
 afterEach(() => { stop?.(); stop = undefined; jest.useRealTimers(); });
 

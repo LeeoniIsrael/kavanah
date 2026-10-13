@@ -75,7 +75,7 @@ export async function clearLocalData(): Promise<void> {
     }
     userStorage.clearAll();
     cacheStorage.clearAll();
-    usePrayerIdentityStore.setState({ identity: null, completed: false });
+    usePrayerIdentityStore.setState({ identity: null, completed: false, ownerId: null });
     usePrayerStore.setState({
       history: [],
       bookmarkedPrayerIds: [],
