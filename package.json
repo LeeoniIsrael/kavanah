@@ -22,7 +22,8 @@
     "test:edge-probe": "node --test scripts/backend/edgeRateLimit.test.mjs",
     "edge:check": "node scripts/backend/edgeRateLimit.mjs",
     "build": "expo export --platform all --output-dir dist",
-    "test:concurrency": "node scripts/backend/concurrency.mjs"
+    "test:concurrency": "node scripts/backend/concurrency.mjs",
+    "test:url-decoder": "node --test scripts/backend/urlDecoder.test.cjs"
   },
   "jest": {
     "preset": "ts-jest",
@@ -110,7 +111,8 @@
     "react-native-worklets": "0.10.1",
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
-    "zustand": "^5.0.2"
+    "zustand": "^5.0.2",
+    "decode-uri-component": "file:vendor/decode-uri-component"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -133,5 +135,8 @@
     "ts-jest": "^29.4.11",
     "tsx": "^4.23.12",
     "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "decode-uri-component": "$decode-uri-component"
   }
 }
