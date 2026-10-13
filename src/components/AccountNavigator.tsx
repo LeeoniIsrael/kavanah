@@ -10,7 +10,7 @@ export function AccountNavigator(): React.JSX.Element {
   const completed = usePrayerIdentityStore((state) => state.completed);
   const canOpenApp = sessionReady && !sessionError && isAccountSession(session) && completed;
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack key={session?.user.id ?? "signed-out"} screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="sign-in" />
       <Stack.Protected guard={canOpenApp}>

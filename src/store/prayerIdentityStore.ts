@@ -1,3 +1,4 @@
+import { onAccountScopeChange } from "@/services/accountScope";
 import { create } from "zustand";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { circleClient, updateAccountMetadata } from "@/services/network/client";
@@ -17,13 +18,14 @@ const isIdentity = (value: unknown): value is PrayerIdentity => {
 };
 const isTrue = (value: unknown): value is true => value === true;
 type AccountIdentity = { ownerId: string; identity: PrayerIdentity | null; completed: boolean };
-const persistedAccount = readSocialData(accountKey, (value): value is AccountIdentity => {
+const readAccount = () => readSocialData(accountKey, (value): value is AccountIdentity => {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<AccountIdentity>;
   return typeof candidate.ownerId === "string" && candidate.ownerId.length > 0 &&
     (candidate.identity === null || isIdentity(candidate.identity)) &&
     typeof candidate.completed === "boolean";
 });
+const persistedAccount = readAccount();
 // Owner and value must be one record: a crash between separate writes could
 // otherwise associate the new person's choice with the previous person's ID.
 function persistAccount(ownerId: string, identity: PrayerIdentity | null, completed: boolean) {
@@ -80,3 +82,8 @@ export const usePrayerIdentityStore = create<State>((set, get) => ({
     set({ identity, completed, ownerId: accountId });
   },
 }));
+
+onAccountScopeChange(() => {
+  const saved = readAccount();
+  usePrayerIdentityStore.setState({ identity: saved?.identity ?? null, ownerId: saved?.ownerId ?? null, completed: saved?.completed ?? false });
+});

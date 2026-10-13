@@ -1,3 +1,4 @@
+import { onAccountScopeChange } from "@/services/accountScope";
 import { queueCircle } from "@/services/network/outbox";
 import { create } from "zustand";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
@@ -261,3 +262,14 @@ function isSavedSocial(value: unknown): value is SavedSocial {
     s.seenDays.every((x) => typeof x === "string")
   );
 }
+
+onAccountScopeChange(() => {
+  const profile = readSocialData(PROFILE_KEY, isSocialProfile);
+  const saved = readSocialData(STORAGE_KEY, isSavedSocial);
+  useSocialStore.setState({
+    profile,
+    preferences: saved?.preferences ?? { prayers: "off", milestones: false },
+    posts: saved?.posts ?? [], seenEvents: saved?.seenEvents ?? [],
+    seenDays: saved?.seenDays ?? [], hasPrayedEver: saved?.hasPrayedEver ?? false,
+  });
+});

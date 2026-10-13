@@ -1,5 +1,6 @@
-import { File, Paths } from "expo-file-system";
+import { Directory, File, Paths } from "expo-file-system";
 import { Platform } from "react-native";
+import { accountStorageKey, accountStoragePrefix } from "./accountScope";
 import {
   readJson,
   userStorage,
@@ -14,6 +15,9 @@ export function readSocialData<T>(
   key: string,
   guard: (value: unknown) => value is T,
 ): T | null {
+  const scoped = accountStorageKey(key);
+  if (!scoped) return null;
+  key = scoped;
   if (Platform.OS === "web") {
     try {
       const raw = globalThis.localStorage?.getItem(`kavanah.${key}`);
@@ -53,6 +57,9 @@ export function readSocialData<T>(
 }
 export function writeSocialData(key: string, value: unknown): void {
   if (localWritesSuspended()) return;
+  const scoped = accountStorageKey(key);
+  if (!scoped) return;
+  key = scoped;
   // Release builds use encrypted MMKV; plaintext files are only an Expo Go fallback.
   writeJson(userStorage, key, value);
   if (Platform.OS === "web") {
@@ -78,6 +85,9 @@ export function writeSocialData(key: string, value: unknown): void {
 }
 
 export function removeSocialData(key: string): void {
+  const scoped = accountStorageKey(key);
+  if (!scoped) return;
+  key = scoped;
   userStorage.delete(key);
   if (Platform.OS === "web")
     globalThis.localStorage?.removeItem(`kavanah.${key}`);
@@ -90,6 +100,15 @@ export function removeSocialData(key: string): void {
 export function removeAccountLocalData(id: string): void {
   removeSocialData(`circle.profile.${id}`);
   removeSocialData(`circle.outbox.${id}`);
+  const prefix = accountStoragePrefix(id);
+  for (const key of userStorage.getAllKeys()) if (key.startsWith(prefix)) userStorage.delete(key);
+  if (Platform.OS === "web") {
+    for (const key of Object.keys(globalThis.localStorage ?? {}))
+      if (key.startsWith(`kavanah.${prefix}`)) globalThis.localStorage.removeItem(key);
+  } else {
+    for (const file of new Directory(Paths.document).list())
+      if (file instanceof File && file.name.startsWith(prefix) && file.name.endsWith(".json")) file.delete();
+  }
   if (Platform.OS !== "web") {
     for (const suffix of ["", "-pending"]) {
       const file = new File(

@@ -2,7 +2,10 @@ import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 
 import { findLanguage } from "@/data/languages";
-import { userStorage } from "@/services/mmkv";
+import { onAccountScopeChange } from "@/services/accountScope";
+const isString = (v: unknown): v is string => typeof v === "string";
+const isBoolean = (v: unknown): v is boolean => typeof v === "boolean";
+const isNumber = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v);
 
 const LANGUAGE_KEY = "settings.primary-language";
 const ASSISTANT_CONSENT_KEY = "settings.assistant-consent-version";
@@ -25,53 +28,44 @@ type SettingsState = {
   setPrayerFocusEnabled: (enabled: boolean) => void;
 };
 
-const initialLanguageCode = userStorage.getString(LANGUAGE_KEY) ?? "en";
-const initialAssistantConsentVersion = Number(
-  userStorage.getString(ASSISTANT_CONSENT_KEY) ?? "0",
-);
-const initialZmanNotificationsEnabled =
-  userStorage.getString(ZMAN_NOTIFICATIONS_KEY) === "true";
-const initialPrayerFocusEnabled =
-  userStorage.getString(PRAYER_FOCUS_KEY) === "true";
-
+function savedSettings() {
+  return {
+    primaryLanguageCode: findLanguage(readSocialData(LANGUAGE_KEY, isString) ?? "en").code,
+    assistantConsentVersion: readSocialData(ASSISTANT_CONSENT_KEY, isNumber) ?? 0,
+    zmanNotificationsEnabled: readSocialData(ZMAN_NOTIFICATIONS_KEY, isBoolean) ?? false,
+    prayerFocusEnabled: readSocialData(PRAYER_FOCUS_KEY, isBoolean) ?? false,
+    shareAfterPrayer: readSocialData("settings.share-after-prayer", isBoolean) ?? true,
+    calendarInIsrael: readSocialData("settings.calendar-israel", isBoolean) ?? false,
+  };
+}
 export const useSettingsStore = create<SettingsState>((set) => ({
-  primaryLanguageCode: findLanguage(initialLanguageCode).code,
-  assistantConsentVersion: Number.isFinite(initialAssistantConsentVersion)
-    ? initialAssistantConsentVersion
-    : 0,
-  zmanNotificationsEnabled: initialZmanNotificationsEnabled,
-  prayerFocusEnabled: initialPrayerFocusEnabled,
-  shareAfterPrayer:
-    userStorage.getString("settings.share-after-prayer") !== "false",
+  ...savedSettings(),
   setShareAfterPrayer: (enabled) => {
-    userStorage.set("settings.share-after-prayer", String(enabled));
+    writeSocialData("settings.share-after-prayer", enabled);
     set({ shareAfterPrayer: enabled });
   },
-  calendarInIsrael:
-    readSocialData(
-      "settings.calendar-israel",
-      (v): v is boolean => typeof v === "boolean",
-    ) ?? userStorage.getString("settings.calendar-israel") === "true",
   setCalendarInIsrael: (value) => {
     writeSocialData("settings.calendar-israel", value);
     set({ calendarInIsrael: value });
   },
   setPrimaryLanguageCode: (code) => {
     const language = findLanguage(code);
-    userStorage.set(LANGUAGE_KEY, language.code);
+    writeSocialData(LANGUAGE_KEY, language.code);
     set({ primaryLanguageCode: language.code });
   },
   setAssistantConsent: (accepted) => {
     const version = accepted ? CURRENT_ASSISTANT_CONSENT_VERSION : 0;
-    userStorage.set(ASSISTANT_CONSENT_KEY, String(version));
+    writeSocialData(ASSISTANT_CONSENT_KEY, version);
     set({ assistantConsentVersion: version });
   },
   setZmanNotificationsEnabled: (enabled) => {
-    userStorage.set(ZMAN_NOTIFICATIONS_KEY, String(enabled));
+    writeSocialData(ZMAN_NOTIFICATIONS_KEY, enabled);
     set({ zmanNotificationsEnabled: enabled });
   },
   setPrayerFocusEnabled: (enabled) => {
-    userStorage.set(PRAYER_FOCUS_KEY, String(enabled));
+    writeSocialData(PRAYER_FOCUS_KEY, enabled);
     set({ prayerFocusEnabled: enabled });
   },
 }));
+
+onAccountScopeChange(() => useSettingsStore.setState(savedSettings()));

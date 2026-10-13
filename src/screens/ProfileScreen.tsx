@@ -118,7 +118,7 @@ export function ProfileScreen(): React.JSX.Element {
 
   const confirmDeleteProfile = () => {
     const message =
-      "This deletes your Kavanah account and active Circle data, including cloud prayer history, posts, and connections, and signs you out. Device-only practice remains until you clear local data. You will need an account to use Kavanah again.";
+      "This deletes your Kavanah account and active Circle data, including cloud prayer history, posts, and connections, and signs you out. It also removes this account’s practice history, bookmarks, notes, preferences, and reminders from this device. Older records without an account owner remain until you clear local data. You will need an account to use Kavanah again.";
     if (Platform.OS === "web") {
       if (globalThis.confirm?.(`${message}\n\nDelete account?`))
         void runAccountAction("delete");
@@ -589,7 +589,11 @@ export function ProfileScreen(): React.JSX.Element {
                   <BouncyAccordion.Content>
                     Bookmarks, streaks, language preferences, reminder settings,
                     and the coordinates used to calculate zmanim. Precise
-                    coordinates are not sent to the prayer assistant.
+                    coordinates are not sent to the prayer assistant. Personal records are
+                    kept separately for each account. Older records without an
+                    account owner are preserved but hidden; they are not assigned
+                    to the next person who signs in. Clear local data removes
+                    personal records for all accounts on this device.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="circle">
@@ -605,8 +609,10 @@ export function ProfileScreen(): React.JSX.Element {
                     Joining Circle saves future prayer completions to your
                     account. Sharing starts off; accepted connections see only
                     the updates you choose to share. Your address book is never
-                    uploaded. Delete your cloud account from Profile → Account;
-                    private device activity remains here.
+                    uploaded. Deleting your account from Profile → Account also
+                    removes its personal records from this device. Other accounts’
+                    records and older records without an owner remain until you
+                    clear local data.
                   </BouncyAccordion.Content>
                 </BouncyAccordion.Item>
                 <BouncyAccordion.Item value="assistant">

@@ -17,7 +17,8 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import WebView, { type WebViewMessageEvent } from "react-native-webview";
-import { captureRef } from "react-native-view-shot";
+import { captureRef, releaseCapture } from "react-native-view-shot";
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
 import * as Sharing from "expo-sharing";
 import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
@@ -99,6 +100,7 @@ export function SiddurExperience({
   onBookmarkStatus?: (bookmarked: boolean) => void;
   onChooseDefault?: () => void;
 }) {
+  const readerScope = useRef(accountScope()).current;
   const insets = useSafeAreaInsets();
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const colors = useThemeColors(),
@@ -176,11 +178,14 @@ export function SiddurExperience({
     };
   }, []);
   const open = useCallback(async (id: string) => {
+    if (!isCurrentAccountScope(readerScope)) return;
     setLoading(true);
     setError("");
     try {
       const loaded = await loadBook(id);
+      if (!isCurrentAccountScope(readerScope)) return;
       const saved = await loadPosition(id);
+      if (!isCurrentAccountScope(readerScope)) return;
       const refs = leafNodes(loaded.nodes);
       pendingRestore.current = saved?.segmentRef;
       setSegments([]);
@@ -211,7 +216,7 @@ export function SiddurExperience({
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [readerScope]);
   useEffect(() => {
     if (!embedded) return;
     let live = true;
@@ -262,6 +267,7 @@ export function SiddurExperience({
   }, [reader, section?.ref, bookId]);
   useEffect(() => {
     if (
+      !isCurrentAccountScope(readerScope) ||
       !reader ||
       !section ||
       readySection !== section.ref ||
@@ -436,7 +442,7 @@ export function SiddurExperience({
       goPage((m.side > 0.5 ? 1 : -1) * (language === "he" ? -1 : 1));
   };
   const addAnnotation = async (type: "highlight" | "note") => {
-    if (!selection || !book) return;
+    if (!isCurrentAccountScope(readerScope) || !selection || !book) return;
     const now = Date.now();
     const a: TextAnnotation = {
       id: `${now}-${Math.random().toString(36).slice(2)}`,
@@ -457,6 +463,7 @@ export function SiddurExperience({
       updatedAt: now,
     };
     await saveAnnotation(a);
+    if (!isCurrentAccountScope(readerScope)) return;
     setAnnotations((old) => [...old, a]);
     setNote(false);
     setNoteText("");
@@ -465,7 +472,7 @@ export function SiddurExperience({
     void confirmHaptic();
   };
   const toggleBookmark = async () => {
-    if (!location) return;
+    if (!isCurrentAccountScope(readerScope) || !location) return;
     if (currentBookmark) {
       await removeBookmark(currentBookmark.id);
       setBookmarks((b) => b.filter((x) => x.id !== currentBookmark.id));
@@ -484,22 +491,27 @@ export function SiddurExperience({
     void confirmHaptic();
   };
   const share = async (save = false) => {
-    if (!pageRef.current) return;
+    if (!isCurrentAccountScope(readerScope) || !pageRef.current) return;
+    let uri: string | undefined;
     try {
-      const uri = await captureRef(pageRef.current, {
+      uri = await captureRef(pageRef.current, {
         format: "png",
         quality: 1,
       });
+      if (!isCurrentAccountScope(readerScope)) return;
       if (save) {
         const permission = await MediaLibrary.requestPermissionsAsync(true, [
           "photo",
         ]);
+        if (!isCurrentAccountScope(readerScope)) return;
         if (permission.granted) await MediaLibrary.Asset.create(uri);
         else setError("Allow photo access to save this page.");
-      } else if (await Sharing.isAvailableAsync())
+      } else if (await Sharing.isAvailableAsync() && isCurrentAccountScope(readerScope))
         await Sharing.shareAsync(uri, { mimeType: "image/png" });
     } catch {
       setError("This page could not be captured right now.");
+    } finally {
+      if (uri) releaseCapture(uri);
     }
   };
   const chooseCapture = () =>

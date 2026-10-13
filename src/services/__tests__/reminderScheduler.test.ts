@@ -55,7 +55,10 @@ jest.mock("@/store/streakStore", () => ({
   useStreakStore: { getState: () => ({ habits: [] }) },
 }));
 jest.mock("../reminderPlan", () => ({ buildReminderPlan: () => mockPlan }));
-import { syncReminders } from "../reminderScheduler";
+import { syncReminders, cancelLocalRemindersForDeletion } from "../reminderScheduler";
+import { setAccountScope } from "../accountScope";
+import { Platform } from "react-native";
+import * as Notifications from "expo-notifications";
 const planned = (i: number): PlannedReminder => ({
   id: `kavanah-reminder:${i}`,
   date: new Date(Date.now() + (i + 1) * 3600000),
@@ -65,6 +68,7 @@ const planned = (i: number): PlannedReminder => ({
 });
 describe("native reminder reconciliation", () => {
   beforeEach(() => {
+    setAccountScope("alice");
     jest.clearAllMocks();
     mockNative.length = 0;
     mockGranted = true;
@@ -125,4 +129,62 @@ describe("native reminder reconciliation", () => {
     await Promise.all([first, syncReminders()]);
     expect(mockNative).toHaveLength(0);
   });
+  it("account switching waits for an in-flight native schedule and cancels the old account's reminder", async () => {
+    let release!: () => void;
+    mockSchedule.mockImplementationOnce(request => new Promise<string>(resolve => {
+      release = () => {
+        mockNative.push({ identifier: request.identifier, content: request.content });
+        resolve(request.identifier);
+      };
+    }));
+    const pending = syncReminders();
+    await new Promise(resolve => setImmediate(resolve));
+    setAccountScope("bob");
+    const cleanup = cancelLocalRemindersForDeletion();
+    release();
+    await Promise.all([pending, cleanup]);
+    expect(mockNative).toEqual([]);
+  });
+});
+
+
+test("new schedules wait until old-account cancellation finishes", async () => {
+  setAccountScope("alice");
+  mockNative.length = 0;
+  mockNative.push({ identifier: "kavanah-reminder:old", content: { data: {} } });
+  mockPlan = [planned(1)];
+  mockState.prefs = { enabled: true, sound: false };
+  mockGranted = true;
+  mockSchedule.mockClear();
+  let release!: () => void;
+  mockCancel.mockImplementationOnce(id => new Promise<void>(resolve => {
+    release = () => {
+      const index = mockNative.findIndex(n => n.identifier === id);
+      if (index >= 0) mockNative.splice(index, 1);
+      resolve();
+    };
+  }));
+  const cleanup = cancelLocalRemindersForDeletion();
+  await new Promise(resolve => setImmediate(resolve));
+  setAccountScope("bob");
+  const next = syncReminders();
+  await new Promise(resolve => setImmediate(resolve));
+  expect(mockSchedule).not.toHaveBeenCalled();
+  release();
+  await Promise.all([cleanup, next]);
+  expect(mockNative.map(n => n.identifier)).toEqual([planned(1).id]);
+});
+
+
+test("web account transitions do not call unavailable native notification APIs", async () => {
+  Object.assign(Platform, { OS: "web" });
+  jest.clearAllMocks();
+  try {
+    await cancelLocalRemindersForDeletion();
+    await syncReminders();
+    expect(Notifications.getAllScheduledNotificationsAsync).not.toHaveBeenCalled();
+    expect(mockState.status).toContain("iOS and Android");
+  } finally {
+    Object.assign(Platform, { OS: "ios" });
+  }
 });

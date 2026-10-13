@@ -1,4 +1,5 @@
 import { localWritesSuspended } from "@/services/mmkv";
+import { accountScope, isCurrentAccountScope } from "./accountScope";
 import { habitForPrayer } from "./practiceHabit";
 import * as Notifications from "expo-notifications";
 import { AppState, Platform } from "react-native";
@@ -11,6 +12,7 @@ import { useStreakStore } from "@/store/streakStore";
 import { usePrayerStore } from "@/store/prayerStore";
 
 export async function requestReminderPermission() {
+  if (Platform.OS === "web") return false;
   await setupChannels();
   let permission = await Notifications.getPermissionsAsync();
   if (!allows(permission) && permission.canAskAgain)
@@ -20,26 +22,31 @@ export async function requestReminderPermission() {
   return allows(permission);
 }
 export async function sendTestReminder(): Promise<boolean> {
-  if (!(await requestReminderPermission())) return false;
+  const scope = accountScope();
+  if (!scope.owner || !(await requestReminderPermission()) || !isCurrentAccountScope(scope)) return false;
   const sound = useReminderStore.getState().prefs.sound;
-  await Notifications.cancelScheduledNotificationAsync(
-    "kavanah-notification-test",
-  );
-  await Notifications.scheduleNotificationAsync({
-    identifier: "kavanah-notification-test",
-    content: {
-      title: "Kavanah",
-      body: "A gentle reminder, just as you chose.",
-      sound: sound ? "default" : false,
-      data: { type: "practice-reminder", url: "kavanah://notifications" },
-    },
-    trigger: {
-      type: Notifications.SchedulableTriggerInputTypes.DATE,
-      date: new Date(Date.now() + 5000),
-      channelId: sound ? "practice-sound" : "practice-quiet",
-    },
+  let sent = false;
+  const pending = queue.catch(() => undefined).then(async () => {
+    if (!isCurrentAccountScope(scope) || localWritesSuspended()) return;
+    await Notifications.cancelScheduledNotificationAsync("kavanah-notification-test");
+    if (!isCurrentAccountScope(scope) || localWritesSuspended()) return;
+    await Notifications.scheduleNotificationAsync({
+      identifier: "kavanah-notification-test",
+      content: {
+        title: "Kavanah", body: "A gentle reminder, just as you chose.",
+        sound: sound ? "default" : false,
+        data: { type: "practice-reminder", url: "kavanah://notifications" },
+      },
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.DATE,
+        date: new Date(Date.now() + 5000), channelId: sound ? "practice-sound" : "practice-quiet",
+      },
+    });
+    sent = true;
   });
-  return true;
+  queue = pending.catch(() => undefined);
+  await pending;
+  return sent && isCurrentAccountScope(scope);
 }
 
 const allows = (p: Notifications.NotificationPermissionsStatus) =>
@@ -70,7 +77,13 @@ export function syncReminders(): Promise<void> {
   return queue;
 }
 async function reconcile() {
+  if (Platform.OS === "web") {
+    useReminderStore.setState({ syncing: false, scheduled: 0, preview: [], status: "Reminders are available in the iOS and Android app." });
+    return;
+  }
   if (localWritesSuspended()) return;
+  const scope = accountScope();
+  const current = () => isCurrentAccountScope(scope) && !localWritesSuspended();
   const state = useReminderStore.getState(),
     prefs = state.prefs;
   useReminderStore.setState({ syncing: true, error: null });
@@ -78,7 +91,7 @@ async function reconcile() {
     const existing = await Notifications.getAllScheduledNotificationsAsync();
     const permission = await Notifications.getPermissionsAsync();
     const active =
-      prefs.enabled && allows(permission) && Boolean(state.location);
+      current() && prefs.enabled && allows(permission) && Boolean(state.location);
     const completed: Record<string, string[]> = Object.fromEntries(
       useStreakStore
         .getState()
@@ -123,6 +136,7 @@ async function reconcile() {
         await Notifications.cancelScheduledNotificationAsync(n.identifier);
     if (active) await setupChannels();
     for (const p of desired) {
+      if (!current()) return;
       if (
         existing.some(
           (n) =>
@@ -154,6 +168,7 @@ async function reconcile() {
       plan.length > capacity && desired.length
         ? desired[desired.length - 1]!.date
         : new Date(Date.now() + 29 * 86400000);
+    if (!current() && scope.owner) return;
     useReminderStore.setState({
       scheduled: desired.length,
       preview: desired
@@ -170,12 +185,13 @@ async function reconcile() {
               : `${desired.length} reminders scheduled through ${format(until, "MMM d")}. Open Kavanah regularly to keep them current.`,
     });
   } catch {
+    if (!current()) return;
     useReminderStore.setState({
       error:
         "Reminders could not be updated. Please retry; previous reminders may still be scheduled.",
     });
   } finally {
-    useReminderStore.setState({ syncing: false });
+    if (current() || !scope.owner) useReminderStore.setState({ syncing: false });
   }
 }
 export function startReminderScheduling() {
@@ -228,11 +244,16 @@ export function startReminderScheduling() {
   };
 }
 
-export async function cancelLocalRemindersForDeletion(): Promise<void> {
-  await queue.catch(() => undefined);
-  const notifications = await Notifications.getAllScheduledNotificationsAsync();
-  for (const notification of notifications) {
-    if (owned(notification) || notification.identifier === "kavanah-notification-test" || notification.content.data?.type === "travel-prayer")
-      await Notifications.cancelScheduledNotificationAsync(notification.identifier);
-  }
+export function cancelLocalRemindersForDeletion(): Promise<void> {
+  if (Platform.OS === "web") return Promise.resolve();
+  const pending = queue.catch(() => undefined).then(async () => {
+    const notifications = await Notifications.getAllScheduledNotificationsAsync();
+    for (const notification of notifications) {
+      if (owned(notification) || notification.identifier === "kavanah-notification-test" || notification.content.data?.type === "travel-prayer")
+        await Notifications.cancelScheduledNotificationAsync(notification.identifier);
+    }
+  });
+  // New reconciliations must wait for cancellation as well as earlier schedules.
+  queue = pending.catch(() => undefined);
+  return pending;
 }

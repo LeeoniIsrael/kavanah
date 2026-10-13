@@ -1,3 +1,4 @@
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
 import { useState } from "react";
 import { Linking, ScrollView, TextInput, View } from "react-native";
 import { useRouter } from "expo-router";
@@ -154,10 +155,12 @@ export function NotificationSettingsScreen() {
   const [working, setWorking] = useState(false),
     [message, setMessage] = useState("");
   const locate = async () => {
+    const scope = accountScope();
     setWorking(true);
     setMessage("");
     try {
-      setLocation(await requestZmanimLocation());
+      const point = await requestZmanimLocation();
+      if (isCurrentAccountScope(scope)) setLocation(point);
     } catch (e) {
       setMessage(
         e instanceof Error
@@ -169,6 +172,7 @@ export function NotificationSettingsScreen() {
     }
   };
   const enable = async (value: boolean) => {
+    const scope = accountScope();
     if (!value) {
       update({ enabled: false });
       return;
@@ -177,8 +181,12 @@ export function NotificationSettingsScreen() {
     setMessage("");
     try {
       if (await requestReminderPermission()) {
+        if (!isCurrentAccountScope(scope)) return;
         update({ enabled: true });
-        if (!location) setLocation(await requestZmanimLocation());
+        if (!location) {
+          const point = await requestZmanimLocation();
+          if (isCurrentAccountScope(scope)) setLocation(point);
+        }
       } else
         setMessage(
           "Allow notifications in device settings, then turn reminders on.",
