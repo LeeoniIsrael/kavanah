@@ -1,10 +1,10 @@
 # Acceptance scopes for owner approval — October 13, 2026
 
-**Prepared proposals only. No authorization, execution, budget acceptance or operational/legal attestation is implied.** Keep the assistant disabled. The public Git source was verified locally as `https://github.com/LeeoniIsrael/kavanah.git`. The current app implementation is the three local commits ending at `e24abe7`; subsequent analysis documents are separately reviewable.
+**Hosted/signing/real-recovery proposals remain unapproved.** The original three-commit publication has now been explicitly approved and completed as described below. No broader budget acceptance or operational/legal attestation is implied. Keep the assistant disabled. The public Git source was verified locally as `https://github.com/LeeoniIsrael/kavanah.git`. The current app implementation is the three local commits ending at `e24abe7`; subsequent analysis documents are separately reviewable.
 
 ## 1. Publish the three implementation commits
 
-The parent is already awaiting approval for `7fcf162`, `83b2b01` and `e24abe7`: publish to new branch `codex/account-isolation-20261013` on `origin`, then create a draft PR with base `work`. CI and Vercel preview side effects were disclosed. **If approval names these three commits, push `e24abe7` explicitly, not an advanced `HEAD`.** Check that the remote branch does not already exist; do not force-push. Later documentation or fixes need their own inclusion authority. No merge, main push, production rollout, EAS Update or store submission is included.
+The parent obtained explicit approval for `7fcf162`, `83b2b01` and `e24abe7`. Those exact commits are published to `codex/account-isolation-20261013` on `origin`; [draft PR #3](https://github.com/LeeoniIsrael/kavanah/pull/3) targets `work`, with all checks passing. CI and Vercel preview side effects were disclosed. **If approval names these three commits, push `e24abe7` explicitly, not an advanced `HEAD`.** Check that the remote branch does not already exist; do not force-push. Later documentation or fixes need their own inclusion authority. No merge, main push, production rollout, EAS Update or store submission is included.
 
 ## 2. Bounded hosted two-account acceptance
 
@@ -54,7 +54,7 @@ Minimum inputs for this gate: the approved secure path and handling limits, exis
 
 ## Minimum user decisions, in order
 
-1. Answer the already-pending three-commit publication approval. Additional analysis documents do not broaden it.
+1. The three-commit publication approval is complete. Review the separately reported exact SHA for later analysis/dependency/CI changes if publishing that follow-up; do not treat the earlier approval as permission to push an advanced `HEAD`.
 2. Designate two disposable test identities and already-approved devices; approve the bounded hosted mutations and one signing/build path. Existing account/provider capacity and credential access must be checked before execution.
 3. Choose the encrypted local recovery destination and accept or revise handling/resource/retention limits and RPO/RTO; provide access privately through an existing mechanism.
 4. Supply actual content, legal and operational review decisions from the responsible people. No operator, lawyer, rabbi, budget acceptance, retention promise or rights attestation is being invented by this document.

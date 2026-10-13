@@ -1,6 +1,6 @@
 # Remaining tooling advisories — October 13, 2026
 
-**Disposition: review completed; risks are not accepted or fully remediated.** The installed application lockfile remains unchanged from `e24abe7`. The audit reports 73 affected package entries (54 high, 19 moderate, zero critical), tracing to five root advisories below. Inherited counts overlap and are not a count of independent exploitable vulnerabilities.
+**Historical disposition at `948db4d`: review completed; risks were not accepted or fully remediated.** The lockfile at that review was unchanged from `e24abe7`. The later [targeted remediation](dependency-remediation-2026-10-13.md) applies and validates parser/UUID fixes and records the new 59-entry audit; it supersedes their candidate-only status below. The audit reports 73 affected package entries (54 high, 19 moderate, zero critical), tracing to five root advisories below. Inherited counts overlap and are not a count of independent exploitable vulnerabilities.
 
 Public npm registry metadata was rechecked at 21:58 UTC. Installed package source, parent ranges, CI, application imports and the final export source maps were inspected. None of these five affected npm packages appeared as modules in the inspected iOS, Android, web or worker maps. **Absence from these maps is not proof of non-exploitability:** build processes, CLI signing, dependency execution, other configurations and hosted build images remain separate trust boundaries. No hosted signing service or production credential was inspected.
 
