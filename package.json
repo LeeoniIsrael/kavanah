@@ -23,7 +23,8 @@
     "edge:check": "node scripts/backend/edgeRateLimit.mjs",
     "build": "expo export --platform all --output-dir dist",
     "test:concurrency": "node scripts/backend/concurrency.mjs",
-    "test:url-decoder": "node --test scripts/backend/urlDecoder.test.cjs"
+    "test:url-decoder": "node --test scripts/backend/urlDecoder.test.cjs",
+    "test:parser-override": "node --test scripts/backend/parserOverride.test.cjs"
   },
   "jest": {
     "preset": "ts-jest",
@@ -137,6 +138,12 @@
     "typescript": "~6.0.3"
   },
   "overrides": {
-    "decode-uri-component": "$decode-uri-component"
+    "decode-uri-component": "$decode-uri-component",
+    "tailwindcss": {
+      "postcss-selector-parser": "7.1.6"
+    },
+    "postcss-nested@6.2.0": {
+      "postcss-selector-parser": "7.1.6"
+    }
   }
 }

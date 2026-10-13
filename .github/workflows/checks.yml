@@ -33,6 +33,7 @@ jobs:
           PG_TEST_URL: postgresql://postgres:integration-tests-only@127.0.0.1:5432/postgres
       - run: npm run test:api
       - run: npm run test:url-decoder
+      - run: npm run test:parser-override
       - run: npm run test:edge-probe
       - run: npm run test:ui
       - run: npm run lint
