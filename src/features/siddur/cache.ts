@@ -1,7 +1,8 @@
 import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
 import { localWritesSuspended } from "@/services/mmkv";
 import * as SQLite from "expo-sqlite";
-import { normalizeHebrewSearch } from "./sefaria";
+import { corePrayers } from "@/data/corePrayers";
+import { sefariaProvider, normalizeHebrewSearch } from "./sefaria";
 import type {
   Bookmark,
   ReaderPosition,
@@ -221,30 +222,10 @@ export async function searchCached(
 ): Promise<SiddurSegment[]> {
   const needle = normalizeHebrewSearch(query);
   if (!needle) return [];
-  const connection = await db();
-  const matches: SiddurSegment[] = [];
-  let after = 0;
-  while (matches.length < 50) {
-    const rows = await connection.getAllAsync<{ rowid: number; data: string }>(
-      "SELECT rowid,data FROM siddur_segments WHERE book_id=? AND rowid>? ORDER BY rowid LIMIT 200",
-      bookId,
-      after,
-    );
-    if (!rows.length) break;
-    for (const row of rows) {
-      const segment = JSON.parse(row.data) as SiddurSegment;
-      if (
-        normalizeHebrewSearch(
-          `${segment.he ?? ""} ${segment.en ?? ""}`,
-        ).includes(needle)
-      )
-        matches.push(segment);
-      if (matches.length === 50) break;
-    }
-    after = rows[rows.length - 1]!.rowid;
-  }
-  return matches;
+  const groups = await Promise.all(corePrayers.filter(p => p.sourceMetadata?.work === bookId).map(p => sefariaProvider.getSection(bookId,p.sefariaRef)));
+  return groups.flat().filter(s => normalizeHebrewSearch(`${s.he} ${s.en} ${s.transliteration}`).includes(needle)).slice(0,50);
 }
+
 export async function downloadProgress(bookId: string) {
   return (await db()).getFirstAsync<{ completed: number; total: number }>(
     "SELECT completed,total FROM siddur_downloads WHERE book_id=?",

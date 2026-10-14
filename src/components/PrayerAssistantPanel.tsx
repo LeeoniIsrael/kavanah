@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { AssistantMessageBubble } from "@/components/AssistantMessageBubble";
 import { AssistantBeam, AssistantMark } from "@/components/AssistantMotion";
 import { Button } from "@/components/ui/button";
@@ -47,7 +48,7 @@ export function PrayerAssistantPanel({
   return (
     <View style={s.section}>
       <View style={s.heading}>
-        <AssistantMark busy={isStreaming} />
+        <AssistantMark busy={false} />
         <View style={{ flex: 1, gap: 4 }}>
           <Text style={s.title}>Go a little deeper.</Text>
           <Text style={s.subtitle}>Explore this prayer with Kavanah AI.</Text>
@@ -60,7 +61,7 @@ export function PrayerAssistantPanel({
           ))}
         </View>
       )}
-      <AssistantBeam active={focused || isStreaming}>
+      <AssistantBeam active={focused && !isStreaming}>
         <TextInput
           accessibilityLabel="Question about this prayer"
           value={input}
@@ -77,13 +78,18 @@ export function PrayerAssistantPanel({
           textAlignVertical="top"
         />
         <View style={s.toolbar}>
-          <Text accessibilityLiveRegion="polite" style={s.status}>
-            {isStreaming
-              ? "Reflecting on this prayer…"
-              : input.length
+          {isStreaming ? (
+            <CircleLoadingIndicator
+              accessibilityLabel="Reflecting on this prayer"
+              style={{ flex: 1, alignItems: "center" }}
+            />
+          ) : (
+            <Text accessibilityLiveRegion="polite" style={s.status}>
+              {input.length
                 ? `${input.length}/1000`
                 : "Meaning, context, everyday practice"}
-          </Text>
+            </Text>
+          )}
           <Button
             size="content"
             variant="ghost"

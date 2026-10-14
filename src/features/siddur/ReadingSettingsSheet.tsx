@@ -1,13 +1,16 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
+import { ChoiceRow } from "@/components/ui/choice-row";
+import { readerLanguages, readerLanguageLabels } from "./model";
 import { useThemeColors } from "@/design/appearance";
 import { X } from "@/components/ui/icons";
 import { Text } from "@/components/ui/text";
 import {
   Modal,
   Pressable,
-  ScrollView,
   View,
   useWindowDimensions,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type {
   PrayerProfile,
@@ -29,6 +32,7 @@ type Props = {
   onBookChange: (id: string) => void;
   profile: PrayerProfile;
   onProfileChange: (profile: PrayerProfile) => void;
+  downloading: boolean;
   downloadStatus: string;
   onDownload: () => void;
 };
@@ -48,6 +52,7 @@ export function ReadingSettingsSheet({
   onBookChange,
   profile,
   onProfileChange,
+  downloading,
   downloadStatus,
   onDownload,
 }: Props): React.JSX.Element {
@@ -124,11 +129,18 @@ export function ReadingSettingsSheet({
             <View style={{ flex: 1, gap: 3 }}>
               <Text
                 accessibilityRole="header"
-                style={{ color: colors.ink, fontSize: 23, fontWeight: "700" }}
+                style={{
+                  color: colors.ink,
+                  fontSize: 23,
+                  lineHeight: 30,
+                  fontWeight: "700",
+                }}
               >
                 Reading settings
               </Text>
-              <Text style={{ color: colors.inkMuted, fontSize: 13 }}>
+              <Text
+                style={{ color: colors.inkMuted, fontSize: 13, lineHeight: 20 }}
+              >
                 Make the Siddur comfortable to read.
               </Text>
             </View>
@@ -157,44 +169,23 @@ export function ReadingSettingsSheet({
           >
             <View style={{ gap: 10 }}>
               <Text style={{ ...sectionLabel, color: colors.inkMuted }}>
-                LANGUAGE
+                Reading view
               </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  backgroundColor: colors.mineral,
-                  borderRadius: 17,
-                  padding: 4,
-                  gap: 4,
-                }}
-              >
-                {(["en", "he"] as const).map((item) => (
-                  <Pressable
+              <View style={{ gap: 8 }}>
+                {readerLanguages.map((item) => (
+                  <ChoiceRow
                     key={item}
-                    accessibilityRole="button"
-                    accessibilityLabel={item === "en" ? "English" : "Hebrew"}
-                    accessibilityState={{ selected: language === item }}
+                    title={readerLanguageLabels[item]}
+                    detail={
+                      item === "en"
+                        ? "Direct English translation"
+                        : item === "he"
+                          ? "Original Hebrew text"
+                          : "Hebrew pronunciation in Latin letters"
+                    }
+                    selected={language === item}
                     onPress={() => onLanguageChange(item)}
-                    style={{
-                      flex: 1,
-                      minHeight: 42,
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: 13,
-                      backgroundColor:
-                        language === item ? colors.blueSoft : "transparent",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color:
-                          language === item ? colors.blue : colors.inkMuted,
-                        fontWeight: language === item ? "700" : "500",
-                      }}
-                    >
-                      {item === "en" ? "English" : "עברית"}
-                    </Text>
-                  </Pressable>
+                  />
                 ))}
               </View>
             </View>
@@ -376,6 +367,11 @@ export function ReadingSettingsSheet({
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Download complete Siddur"
+                disabled={downloading}
+                accessibilityState={{
+                  busy: downloading,
+                  disabled: downloading,
+                }}
                 onPress={onDownload}
                 style={{
                   minHeight: 48,
@@ -389,7 +385,11 @@ export function ReadingSettingsSheet({
                   Download this Siddur
                 </Text>
               </Pressable>
-              {downloadStatus ? (
+              {downloading ? (
+                <CircleLoadingIndicator
+                  accessibilityLabel={downloadStatus || "Downloading Siddur"}
+                />
+              ) : downloadStatus ? (
                 <Text style={{ color: colors.inkMuted, fontSize: 12 }}>
                   {downloadStatus}
                 </Text>

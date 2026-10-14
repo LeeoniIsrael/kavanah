@@ -44,6 +44,7 @@ try {
     "202609270001_circle_table_grants.sql",
     "202610060001_production_safeguards.sql",
     "202610080001_account_required.sql",
+    "202610140001_research_catalog.sql",
   ])
     await db.query(readFileSync(`supabase/migrations/${file}`, "utf8"));
   for (let i = 0; i < 12; i++) {

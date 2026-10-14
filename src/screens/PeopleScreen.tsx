@@ -2,8 +2,9 @@ import { useExclusiveAction } from "@/hooks/useExclusiveAction";
 import { ACCOUNT_DELETION_MESSAGE } from "@/services/accountDeletionMessage";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { Alert, Linking, Share, View } from "react-native";
+import { Alert, Linking, Platform, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { Screen } from "@/components/Screen";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,9 +98,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
         await action();
       } catch (e) {
         setError(
-          e instanceof Error
-            ? e.message
-            : "Could not connect. Please try again.",
+          userFacingError(e, "Could not connect. Please try again."),
         );
       } finally {
         setBusy(false);
@@ -138,7 +137,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   }, [profile, circleRpc]);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- load updates state only after awaited network reads.
-    void load().catch((e) => setError(e.message));
+    void load().catch((e) => setError(userFacingError(e, "Could not load your people. Please try again.")));
   }, [load]);
   const change = (other: string, action: string) =>
     run(async () => {
@@ -148,9 +147,9 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const invite = () =>
     run(async () => {
       const link = process.env.EXPO_PUBLIC_INVITE_URL;
-      await Share.share({
-        message: `Join me on Kavanah. A little space for prayer, together. Add @${profile!.handle} in Circle.${link && /^https:\/\//.test(link) ? `\n${link}?handle=${encodeURIComponent(profile!.handle)}` : ""}`,
-      });
+      const message = `Hey! Join me on Kavanah — a little space for prayer, together. Add me as a friend: @${profile!.handle}.${link && /^https:\/\//.test(link) ? ` ${link}?handle=${encodeURIComponent(profile!.handle)}` : ""}`;
+      const separator = Platform.OS === "ios" ? "&" : "?";
+      await Linking.openURL(`sms:${separator}body=${encodeURIComponent(message)}`);
     });
   const report = (post: Update) =>
     Alert.alert(
@@ -184,6 +183,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
   const button = (label: string, action: () => void, secondary = false) => (
     <Button
       disabled={busy}
+      isLoading={busy}
       variant={secondary ? "secondary" : "default"}
       onPress={action}
     >
@@ -191,7 +191,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
     </Button>
   );
   return (
-    <Screen largeTitle="Circle" subtitle="Prayer, shared simply.">
+    <Screen largeTitle="Friends" subtitle="Prayer, shared simply.">
       {tabs}
       {!circleConfigured ? (
         <View style={ui.surface}>
@@ -252,7 +252,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
                   !/^[a-z0-9_]{3,24}$/.test(handle.trim().toLowerCase()) ||
                   !name.trim()
                 )
-                  throw new Error(
+                  throw new UserFacingError(
                     "Add your name and a handle with 3–24 letters, numbers or underscores.",
                   );
                 await circleRpc("circle_join", {
@@ -274,7 +274,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
               @{profile.handle} · Only accepted connections see your updates.
             </Text>
             <View style={{ flexDirection: "row", gap: 12, flexWrap: "wrap" }}>
-              {button("Invite a friend", () => void invite())}
+              {button("Text a friend", () => void invite())}
               {button("Refresh", () => void run(load), true)}
             </View>
           </View>
@@ -371,7 +371,7 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             </View>
           ))}
           {lead}
-          <Text style={ui.sectionTitle}>Friends’ activity</Text>
+          <Text style={ui.sectionTitle}>Friends’ feed</Text>
           {!updates.length && (
             <Text style={ui.body}>
               Shared prayers and weekly quotes from your circle will appear

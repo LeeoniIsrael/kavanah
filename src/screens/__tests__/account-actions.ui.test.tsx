@@ -1,3 +1,4 @@
+import { UserFacingError } from "@/services/userFacingError";
 import type { Session } from "@supabase/supabase-js";
 import { act, fireEvent, render } from "@testing-library/react-native";
 import { Alert } from "react-native";
@@ -88,7 +89,8 @@ for (const [name, Screen] of [["Profile", ProfileScreen], ["Circle", () => <Circ
       const view = render(<Screen />);
       fireEvent.press(view.getByText("Sign out"));
       await flush();
-      expect(view.getByText("Sign-out unavailable")).toBeTruthy();
+      expect(view.queryByText("Sign-out unavailable")).toBeNull();
+      expect(view.getByText(name === "Profile" ? "Could not update your account. Please try again." : "Could not connect. Please try again.")).toBeTruthy();
       expect(loadCircleAccount).not.toHaveBeenCalled();
       expect(useCircleAccount.getState().session?.user.id).toBe("alice");
       mockSignOut.mockResolvedValue({ error: null });
@@ -115,7 +117,7 @@ for (const [name, Screen] of [["Profile", ProfileScreen], ["Circle", () => <Circ
     });
 
     test("a deletion cleanup failure is visible and is not reported as success", async () => {
-      jest.mocked(deleteCircleAccount).mockRejectedValue(new Error("The cloud account was deleted, but local cleanup failed."));
+      jest.mocked(deleteCircleAccount).mockRejectedValue(new UserFacingError("The cloud account was deleted, but local cleanup failed."));
       const view = render(<Screen />);
       fireEvent.press(view.getByText("Delete account"));
       const buttons = jest.mocked(Alert.alert).mock.calls[0]![2];
@@ -124,3 +126,16 @@ for (const [name, Screen] of [["Profile", ProfileScreen], ["Circle", () => <Circ
     });
   });
 }
+
+
+test("restored privacy layout retains account isolation, deletion controls and visible build identity", () => {
+  const view = render(<ProfileScreen />);
+  expect(view.getByLabelText(/Kavanah build/)).toBeTruthy();
+  fireEvent.press(view.getByText("Privacy and data use"));
+  expect(view.getByText("Your practice is yours.")).toBeTruthy();
+  expect(view.getByText(/Older records without an account owner/)).toBeTruthy();
+  expect(view.queryByText(/works without an account/)).toBeNull();
+  expect(view.getByText("Terms of use")).toBeTruthy();
+  expect(view.getByText("Third-party notices")).toBeTruthy();
+  expect(view.getByLabelText("Clear data saved on this device")).toBeTruthy();
+});

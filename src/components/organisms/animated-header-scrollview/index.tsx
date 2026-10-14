@@ -1,3 +1,4 @@
+import { FadeViewport } from "@/components/ui/fade-scroll-view";
 import { useThemedStyles, type ThemeColors } from "@/design/appearance";
 import { fonts } from "@/design/theme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -122,18 +123,21 @@ export function AnimatedHeaderSurface(props: SurfaceProps) {
   );
   return (
     <SafeAreaView edges={["top", "left", "right"]} style={styles.screen}>
+      <FadeViewport style={{ flex: 1 }}>
       {props.renderScroll(header, {
         onScroll,
         scrollEventThrottle: 16,
         accessibilityLabel: `${props.largeTitle} screen`,
         automaticallyAdjustsScrollIndicatorInsets: true,
         contentInsetAdjustmentBehavior: "automatic",
+        scrollEnabled: props.scrollEnabled,
         keyboardShouldPersistTaps: "handled",
         keyboardDismissMode: "interactive",
         contentContainerStyle: [styles.content, props.contentContainerStyle],
         showsVerticalScrollIndicator:
           props.showsVerticalScrollIndicator ?? false,
       })}
+      </FadeViewport>
       <Animated.View
         pointerEvents={collapsed ? "auto" : "none"}
         accessibilityElementsHidden={!collapsed}

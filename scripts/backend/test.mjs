@@ -1,9 +1,10 @@
 import { PGlite } from '@electric-sql/pglite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 execFileSync(process.execPath, ['scripts/backend/deploymentSql.mjs', '--check'], { stdio: 'inherit' });
+execFileSync(process.execPath, ['--import', 'tsx', 'scripts/backend/generateCatalog.ts', '--check'], { stdio: 'inherit' });
 const db=new PGlite();
 await db.exec(`create role service_role; create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key, is_anonymous boolean default false); create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
 for(const file of ['202609250001_circle.sql','202609250002_catalog.sql','202609270001_circle_table_grants.sql'])await db.exec(readFileSync(`supabase/migrations/${file}`,'utf8'));
@@ -56,6 +57,32 @@ assert((await db.query(accountVerification)).rows.every(row=>row.status==='PASS'
 await assert.rejects(db.exec(accountDeployment));
 await db.exec('ROLLBACK');
 console.log('Account-only deployment rollback, history, repeat protection and policy verification passed.');
+// The catalog migration must run AFTER the installed account and budget safeguards.
+// Unique versions matter to the Supabase migration ledger, regardless of filename suffix.
+const migrationFiles = readdirSync('supabase/migrations').filter(name => name.endsWith('.sql')).sort();
+const versions = migrationFiles.map(name => name.split('_')[0]);
+assert.equal(new Set(versions).size, versions.length, 'Migration version collision');
+assert.equal(migrationFiles.at(-1), '202610140001_research_catalog.sql');
+const securitySnapshot = async () => ({
+  functions: (await db.query(`select p.oid::regprocedure::text signature,pg_get_functiondef(p.oid) definition,p.proacl::text acl
+    from pg_proc p join pg_namespace n on n.oid=p.pronamespace
+    where n.nspname in ('public','private') and p.prokind='f' and p.proname<>'require_active_prayer' order by 1`)).rows,
+  policies: (await db.query('select * from pg_policies order by schemaname,tablename,policyname')).rows,
+  tables: (await db.query(`select n.nspname,c.relname,c.relrowsecurity,c.relacl::text acl from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname in ('public','private') and c.relkind='r' order by 1,2`)).rows,
+  triggers: (await db.query(`select pg_get_triggerdef(t.oid) definition from pg_trigger t join pg_class c on c.oid=t.tgrelid join pg_namespace n on n.oid=c.relnamespace where not t.tgisinternal and n.nspname in ('public','private') and t.tgname<>'active_prayer' order by 1`)).rows,
+});
+const beforeCatalog = await securitySnapshot();
+const catalogMigration = readFileSync('supabase/migrations/202610140001_research_catalog.sql','utf8');
+await assert.rejects(db.exec(catalogMigration.replace(/commit;\s*$/i,'select 1/0; commit;')));
+await db.exec('ROLLBACK');
+assert.deepEqual(await securitySnapshot(),beforeCatalog);
+assert.equal((await db.query("select count(*)::int n from information_schema.columns where table_schema='private' and table_name='catalog' and column_name='active'")).rows[0].n,0);
+await db.exec(catalogMigration);
+assert.deepEqual(await securitySnapshot(),beforeCatalog);
+assert((await verify()).every(row=>row.status==='PASS'));
+assert((await db.query(accountVerification)).rows.every(row=>row.status==='PASS'));
+assert.equal((await db.query("select count(*)::int n from pg_trigger where tgname='active_prayer'")).rows[0].n,2);
+console.log('Unique ordered catalog migration preserves security functions, grants, policies and guards; rollback and installed verification pass.');
 const a='00000000-0000-4000-8000-000000000001',b='00000000-0000-4000-8000-000000000002',c='00000000-0000-4000-8000-000000000003';
 await db.exec(`insert into auth.users(id) values('${a}'),('${b}'),('${c}');`);
 async function as(id){await db.exec(`reset role; select set_config('request.jwt.claim.sub','${id}',false); set role authenticated;`);}
@@ -96,7 +123,9 @@ assert.equal((await q('select * from circle_feed()')).rows.length,0);checks++;
 
 await as(a);
 await denied("select circle_quote('modeh-ani','My arbitrary caption','en',0,2)");
-const text='I thank You, living and enduring King, for restoring my soul with compassion; great is Your faithfulness.';
+const text=JSON.parse(readFileSync('src/data/researchPrayers.json','utf8')).find(p=>p.id==='modeh-ani').tokens[0].translation;
+await denied("select circle_record('removed','idf-prayer',null,now())");
+await denied("select circle_quote('modeh-ani','I thank You, living and enduring King, for restoring my soul with compassion; great is Your faithfulness.','en',0,2)");
 await q("select circle_quote('modeh-ani',$1,'en',0,2)",[text]);
 await q("select circle_quote('modeh-ani',$1,'en',0,3)",[text]);
 assert.equal((await q("select * from circle_activity where kind='quote'")).rows.length,1);checks++;

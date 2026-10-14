@@ -1,3 +1,4 @@
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import {
   readSocialData,
@@ -130,9 +131,7 @@ export async function loadCircleAccount(session: Session | null) {
       useCircleAccount.setState({
         ready: true,
         error:
-          error instanceof Error
-            ? error.message
-            : "Could not load your account.",
+          userFacingError(error, "Could not load your account."),
       });
   }
 }
@@ -201,7 +200,7 @@ export function deleteCircleAccount(): Promise<void> {
 }
 async function deleteAccount() {
   const id = useCircleAccount.getState().session?.user.id;
-  if (!id) throw new Error("Sign in to delete this account.");
+  if (!id) throw new UserFacingError("Sign in to delete this account.");
   await circleRpc("circle_delete_account", {}, id);
   const deletingCurrent = useCircleAccount.getState().session?.user.id === id;
   if (deletingCurrent) {
@@ -218,7 +217,7 @@ async function deleteAccount() {
     removeAccountLocalData(id);
   } catch {
     if (deletingCurrent && epoch === deletionEpoch) useCircleAccount.setState({ sessionReady: true, ready: true, sessionError: "The cloud account was deleted, but local cleanup failed. Clear local data before using this installation again." });
-    throw new Error("The cloud account was deleted, but local cleanup failed. Clear local data to retry cleanup.");
+    throw new UserFacingError("The cloud account was deleted, but local cleanup failed. Clear local data to retry cleanup.");
   }
   // A completed deletion must never clear a different account that signed in
   // while the server request was running.
@@ -229,7 +228,7 @@ async function deleteAccount() {
   const { error } = await requireCircle().auth.signOut({ scope: "local" });
   await loadCircleAccount(null);
   if (error)
-    throw new Error(
+    throw new UserFacingError(
       "The cloud account was deleted, but local sign-out could not finish. Restart and clear local data.",
     );
 }

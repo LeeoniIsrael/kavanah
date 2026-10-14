@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import {
   createContext,
   useContext,
@@ -7,17 +8,16 @@ import {
   type ReactNode,
 } from "react";
 import {
-  ActivityIndicator,
   Animated,
   Keyboard,
   KeyboardAvoidingView,
   Modal,
   Platform,
-  ScrollView,
   TextInput,
   View,
   useWindowDimensions,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
@@ -326,9 +326,9 @@ export function PrayerConversation({
                           {turn.content}
                         </Text>
                       ) : (
-                        <ActivityIndicator
+                        <CircleLoadingIndicator
                           style={{ alignSelf: "flex-start" }}
-                          color={colors.blue}
+                          dotColor={colors.blue}
                         />
                       )}
                       {turn.failed && index === turns.length - 1 ? (

@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { BrandMark } from "@/components/BrandMark";
 import {
   useThemeColors,
@@ -10,9 +11,7 @@ import { StyleSheet, View } from "react-native";
 import Animated, {
   cancelAnimation,
   Easing,
-  interpolate,
   useAnimatedProps,
-  useAnimatedStyle,
   useSharedValue,
   withRepeat,
   withTiming,
@@ -24,67 +23,13 @@ const AnimatedRect = Animated.createAnimatedComponent(Rect);
 /** UI-thread motion, with a quiet resting state and no simulated progress. */
 export function AssistantMark({ busy }: { busy: boolean }) {
   const s = useThemedStyles(makes);
-
-  const reduced = useReducedMotion();
-  const turn = useSharedValue(0);
-  const activity = useSharedValue(0);
-  useEffect(() => {
-    activity.value = withTiming(busy ? 1 : 0, { duration: reduced ? 0 : 420 });
-    cancelAnimation(turn);
-    if (busy && !reduced) {
-      turn.value = 0;
-      turn.value = withRepeat(
-        withTiming(1, { duration: 2800, easing: Easing.linear }),
-        -1,
-        false,
-      );
-    } else {
-      turn.value = withTiming(0, {
-        duration: reduced ? 0 : 520,
-        easing: Easing.out(Easing.cubic),
-      });
-    }
-    return () => cancelAnimation(turn);
-  }, [busy, reduced, activity, turn]);
-  const markStyle = useAnimatedStyle(() => ({
-    opacity: 1 - activity.value * 0.82,
-    transform: [{ scale: 1 - activity.value * 0.3 }],
-  }));
-  const orbitStyle = useAnimatedStyle(() => ({
-    opacity: activity.value,
-    borderRadius: interpolate(
-      Math.sin(turn.value * Math.PI * 4) * 0.5 + 0.5,
-      [0, 1],
-      [10, 22],
-    ),
-    transform: [
-      { rotate: `${turn.value * 360}deg` },
-      {
-        scale: interpolate(
-          Math.cos(turn.value * Math.PI * 4),
-          [-1, 1],
-          [0.82, 1],
-        ),
-      },
-    ],
-  }));
-  const innerStyle = useAnimatedStyle(() => ({
-    opacity: activity.value * 0.65,
-    borderRadius: interpolate(turn.value, [0, 0.5, 1], [16, 7, 16]),
-    transform: [{ rotate: `${-turn.value * 360}deg` }],
-  }));
   return (
-    <View
-      accessible={false}
-      accessibilityElementsHidden
-      importantForAccessibility="no-hide-descendants"
-      style={s.mark}
-    >
-      <Animated.View style={markStyle}>
+    <View style={s.mark}>
+      {busy ? (
+        <CircleLoadingIndicator accessibilityLabel="Reflecting on this prayer" />
+      ) : (
         <BrandMark size={30} />
-      </Animated.View>
-      <Animated.View style={[s.orbit, orbitStyle]} />
-      <Animated.View style={[s.inner, innerStyle]} />
+      )}
     </View>
   );
 }

@@ -32,7 +32,7 @@ test("failed completion survives retry with the same event id and owner", async 
   await settle();
   expect(useCircleSync.getState()).toMatchObject({
     pending: 1,
-    error: "Offline",
+    error: "Could not sync. Try again when connected.",
   });
   await flushCircle();
   expect(rpc).toHaveBeenLastCalledWith(

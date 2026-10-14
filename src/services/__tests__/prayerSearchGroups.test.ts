@@ -31,14 +31,10 @@ describe("prayer search groups", () => {
     );
     expect(
       modeh[0].editions.some(({ prayer }) =>
-        prayer.sefariaRef.includes("Shabbat"),
+        prayer.sefariaRef.includes("Siddur Sefard"),
       ),
     ).toBe(true);
-    expect(
-      modeh[0].editions.some(({ prayer }) =>
-        prayer.sefariaRef.includes("Weekday"),
-      ),
-    ).toBe(true);
+    expect(modeh[0].prayer.sefariaRef).toContain("Weekday");
   });
 
   it("keeps distinct prayer titles separate and ignores repeated source IDs", () => {

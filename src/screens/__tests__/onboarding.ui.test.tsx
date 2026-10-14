@@ -73,6 +73,7 @@ test("code submission blocks duplicates and shows an actionable sending failure"
   let fail!: (error: Error) => void;
   jest.mocked(sendSignInCode).mockImplementation(() => new Promise((_, reject) => { fail = reject; }));
   const view = render(<OnboardingScreen mode="account" />);
+  fireEvent.press(view.getByLabelText("Accept Terms of Use and Privacy Policy"));
   fireEvent.press(view.getByText("Continue with email"));
   fireEvent.changeText(view.getByLabelText("Email address"), "test@example.com");
   act(() => {
@@ -82,7 +83,7 @@ test("code submission blocks duplicates and shows an actionable sending failure"
   expect(sendSignInCode).toHaveBeenCalledTimes(1);
   await act(async () => { fail(new Error("Check your connection and try again.")); });
   expect(view.getByRole("alert")).toBeTruthy();
-  expect(view.getByText("Check your connection and try again.")).toBeTruthy();
+  expect(view.getByText("Could not sign in. Please try again.")).toBeTruthy();
   expect(mockReplace).not.toHaveBeenCalled();
 });
 
@@ -99,4 +100,15 @@ test("sign-out while saving preferences cannot finish onboarding or enter the ap
   expect(usePrayerIdentityStore.getState().finish).not.toHaveBeenCalled();
   expect(mockReplace).not.toHaveBeenCalled();
   expect(view.getByText("Continue with email")).toBeTruthy();
+});
+
+
+test("sign-in is disabled until explicit terms acceptance", () => {
+  const view = render(<OnboardingScreen mode="account" />);
+  fireEvent.press(view.getByText("Continue with email"));
+  expect(view.queryByLabelText("Email address")).toBeNull();
+  expect(sendSignInCode).not.toHaveBeenCalled();
+  fireEvent.press(view.getByLabelText("Accept Terms of Use and Privacy Policy"));
+  fireEvent.press(view.getByText("Continue with email"));
+  expect(view.getByLabelText("Email address")).toBeTruthy();
 });

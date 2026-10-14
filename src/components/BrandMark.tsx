@@ -19,7 +19,7 @@ export function BrandMark({
   return (
     <SvgXml
       xml={xml}
-      width={(size * 50) / 57}
+      width={(size * 54) / 57}
       height={size}
       accessibilityLabel="Kavanah"
     />

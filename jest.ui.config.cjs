@@ -9,6 +9,6 @@ module.exports = {
       "<rootDir>/node_modules/lucide-react-native/dist/cjs/lucide-react-native.js",
   },
   transformIgnorePatterns: [
-    "node_modules/(?!((jest-)?react-native.*|@react-native(-community)?|@rn-primitives|expo.*|@expo.*/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|nativewind|react-native-css-interop|lucide-react-native)/)",
+    "node_modules/(?!((jest-)?react-native.*|@react-native(-community|-masked-view)?|@rn-primitives|expo.*|@expo.*/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|nativewind|react-native-css-interop|lucide-react-native)/)",
   ],
 };

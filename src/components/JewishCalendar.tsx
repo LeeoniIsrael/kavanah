@@ -1,7 +1,8 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { holidayOn } from "@/services/reminderPlan";
 import { useMemo, useState } from "react";
-import { ScrollView, Switch, View, useWindowDimensions } from "react-native";
+import { Switch, View, useWindowDimensions } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import {
   addMonths,
   format,

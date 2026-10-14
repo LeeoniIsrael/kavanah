@@ -118,7 +118,7 @@ test("restoration failures block access and can be retried without granting a se
 test("a signed-in account retains local access when Circle profile loading is offline", async () => {
   mockLookup.mockResolvedValue({ data: null, error: new Error("Offline") });
   await loadCircleAccount(session());
-  expect(useCircleAccount.getState()).toMatchObject({ session: session(), sessionReady: true, ready: true, error: "Offline" });
+  expect(useCircleAccount.getState()).toMatchObject({ session: session(), sessionReady: true, ready: true, error: "Could not load your account." });
 });
 
 test("sign-out revokes access immediately and cancels queued sign-in hydration", async () => {

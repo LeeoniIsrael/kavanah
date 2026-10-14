@@ -1,4 +1,5 @@
 import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { BrandWordmark } from "@/components/BrandMark";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,10 +15,10 @@ import {
   Image,
   Modal,
   Platform,
-  ScrollView,
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { captureRef, releaseCapture } from "react-native-view-shot";
 
@@ -169,7 +170,7 @@ function StoryComposerSession({
     let captured: string | undefined;
     try {
       if (!(await Sharing.isAvailableAsync())) {
-        throw new Error("Sharing is not available on this device.");
+        throw new UserFacingError("Sharing is not available on this device.");
       }
       if (!isCurrentAccountScope(storyScope)) return;
       const uri = await captureRef(storyView, {
@@ -189,9 +190,7 @@ function StoryComposerSession({
       await successHaptic();
     } catch (shareError) {
       setError(
-        shareError instanceof Error
-          ? shareError.message
-          : "This story could not be prepared.",
+        userFacingError(shareError, "This story could not be prepared."),
       );
     } finally {
       if (captured) releaseCapture(captured);
