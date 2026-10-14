@@ -1,3 +1,4 @@
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
 import {
   readSocialData,
@@ -10,7 +11,6 @@ import {
   circleClient,
   circleRpc,
   requireCircle,
-  updateAccountMetadata,
 } from "@/services/network/client";
 import {
   pendingCirclePreferences,
@@ -20,6 +20,8 @@ import {
 } from "@/services/network/outbox";
 import { useSocialStore } from "./socialStore";
 import { isAccountSession } from "@/services/accountAccess";
+import { accountScope, setAccountScope } from "@/services/accountScope";
+import { cancelLocalRemindersForDeletion, syncReminders } from "@/services/reminderScheduler";
 export type CircleProfile = {
   id: string;
   handle: string;
@@ -42,10 +44,39 @@ export const useCircleAccount = create<State>(() => ({
   sessionError: null,
 }));
 let epoch = 0;
+let localTransitionFailed = false;
 export async function loadCircleAccount(session: Session | null) {
   session = isAccountSession(session) ? session : null;
   const generation = ++epoch;
   setOutboxOwner(null);
+  const owner = session?.user.id ?? null;
+  if (accountScope().owner !== owner || owner === null || useCircleAccount.getState().session?.user.id !== owner || localTransitionFailed) {
+    useCircleAccount.setState({ session: null, profile: null, sessionReady: false });
+    try {
+      setAccountScope(owner, localTransitionFailed);
+      // Revoke old scheduled notifications before granting the next account access.
+      await cancelLocalRemindersForDeletion();
+      if (generation !== epoch) return;
+      localTransitionFailed = false;
+    } catch {
+      if (generation !== epoch) return;
+      localTransitionFailed = true;
+      if (generation === epoch) useCircleAccount.setState({ session: null, sessionReady: true, ready: true, sessionError: "Could not safely switch local accounts. Restart and try again." });
+      return;
+    }
+    if (generation !== epoch) return;
+  }
+  // Account metadata is authoritative. Device-wide legacy preferences may
+  // belong to somebody else and must never be uploaded on sign-in.
+  if (session && useCircleAccount.getState().session?.user.id !== session.user.id) {
+    try {
+      usePrayerIdentityStore.getState().restoreFromAccount(session.user.user_metadata ?? {}, session.user.id);
+    } catch {
+      localTransitionFailed = true;
+      useCircleAccount.setState({ session: null, sessionReady: true, ready: true, sessionError: "Could not safely load local account preferences. Restart and try again." });
+      return;
+    }
+  }
   useCircleAccount.setState({
     session,
     profile: null,
@@ -54,19 +85,11 @@ export async function loadCircleAccount(session: Session | null) {
     sessionReady: true,
     sessionError: null,
   });
-  if (session) {
-    const metadata = session.user.user_metadata ?? {};
-    const localIdentity = usePrayerIdentityStore.getState().identity;
-    usePrayerIdentityStore.getState().restoreFromAccount(metadata);
-    if (!metadata.prayer_identity && localIdentity) {
-      void updateAccountMetadata(session, { prayer_identity: localIdentity })
-        .catch(() => undefined);
-    }
-  }
   if (!session) {
     useCircleAccount.setState({ ready: true });
     return;
   }
+  void syncReminders();
   const cacheKey = `circle.profile.${session.user.id}`;
   const cached = readSocialData(cacheKey, (v): v is CircleProfile =>
     Boolean(
@@ -108,9 +131,7 @@ export async function loadCircleAccount(session: Session | null) {
       useCircleAccount.setState({
         ready: true,
         error:
-          error instanceof Error
-            ? error.message
-            : "Could not load your account.",
+          userFacingError(error, "Could not load your account."),
       });
   }
 }
@@ -128,6 +149,11 @@ export async function restoreCircleSession() {
     if (error) throw error;
     await loadCircleAccount(data.session);
   } catch {
+    if (generation !== epoch) return;
+    try {
+      setAccountScope(null);
+      await cancelLocalRemindersForDeletion();
+    } catch { if (generation === epoch) localTransitionFailed = true; }
     if (generation === epoch) useCircleAccount.setState({
       session: null, profile: null, ready: true, sessionReady: true,
       sessionError: "Could not restore sign-in. Check your connection and try again.",
@@ -143,16 +169,19 @@ export function startCircleAccount() {
     if (event === "INITIAL_SESSION") return;
     const accountSession = isAccountSession(session) ? session : null;
     const previousId = useCircleAccount.getState().session?.user.id;
-    // Revoke route access immediately; profile hydration runs outside the auth lock.
-    useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
     // Never await Supabase calls inside its auth lock. Refresh does not reload preferences/outbox.
     if (event === "TOKEN_REFRESHED" && accountSession && previousId === accountSession.user.id) {
+      useCircleAccount.setState({ session: accountSession, sessionReady: true, sessionError: null });
       return;
     }
+    // Revoke access immediately. Hydrate the next account and cancel old native
+    // reminders outside the Auth lock before publishing its session.
+    useCircleAccount.setState({ session: null, sessionReady: !accountSession, sessionError: null });
     const generation = ++epoch;
     setOutboxOwner(null);
     if (!accountSession) {
       useCircleAccount.setState({ profile: null, ready: true });
+      void loadCircleAccount(null);
       return;
     }
     setTimeout(() => {
@@ -171,19 +200,35 @@ export function deleteCircleAccount(): Promise<void> {
 }
 async function deleteAccount() {
   const id = useCircleAccount.getState().session?.user.id;
-  if (!id) throw new Error("Sign in to delete this account.");
+  if (!id) throw new UserFacingError("Sign in to delete this account.");
   await circleRpc("circle_delete_account", {}, id);
-  removeAccountLocalData(id);
+  const deletingCurrent = useCircleAccount.getState().session?.user.id === id;
+  if (deletingCurrent) {
+    epoch++;
+    setOutboxOwner(null);
+    useCircleAccount.setState({ session: null, profile: null, sessionReady: false });
+    setAccountScope(null);
+  }
+  const deletionEpoch = epoch;
+  try {
+    if (deletingCurrent) await cancelLocalRemindersForDeletion();
+    const { clearSiddurAccountData } = await import("@/features/siddur/cache");
+    await clearSiddurAccountData(id);
+    removeAccountLocalData(id);
+  } catch {
+    if (deletingCurrent && epoch === deletionEpoch) useCircleAccount.setState({ sessionReady: true, ready: true, sessionError: "The cloud account was deleted, but local cleanup failed. Clear local data before using this installation again." });
+    throw new UserFacingError("The cloud account was deleted, but local cleanup failed. Clear local data to retry cleanup.");
+  }
   // A completed deletion must never clear a different account that signed in
   // while the server request was running.
-  if (useCircleAccount.getState().session?.user.id !== id) return;
+  if (!deletingCurrent || epoch !== deletionEpoch || useCircleAccount.getState().session) return;
   epoch++;
   setOutboxOwner(null);
   clearOutbox();
   const { error } = await requireCircle().auth.signOut({ scope: "local" });
   await loadCircleAccount(null);
   if (error)
-    throw new Error(
+    throw new UserFacingError(
       "The cloud account was deleted, but local sign-out could not finish. Restart and clear local data.",
     );
 }

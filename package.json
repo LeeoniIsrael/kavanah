@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest",
-    "prayers:index": "tsx scripts/generateLiturgyIndex.ts",
+    "prayers:index": "python3 scripts/importResearchCatalog.py",
     "prayers:review": "tsx scripts/generateHebrewReviewPacket.ts",
     "prayers:source": "tsx scripts/sourceHebrewCandidates.ts",
     "test:ui": "jest --config jest.ui.config.cjs --runInBand",
@@ -22,7 +22,11 @@
     "test:edge-probe": "node --test scripts/backend/edgeRateLimit.test.mjs",
     "edge:check": "node scripts/backend/edgeRateLimit.mjs",
     "build": "expo export --platform all --output-dir dist",
-    "test:concurrency": "node scripts/backend/concurrency.mjs"
+    "test:concurrency": "node scripts/backend/concurrency.mjs",
+    "test:url-decoder": "node --test scripts/backend/urlDecoder.test.cjs",
+    "test:parser-override": "node --test scripts/backend/parserOverride.test.cjs",
+    "test:uuid-override": "node --test scripts/backend/uuidOverride.test.cjs",
+    "prayers:import": "python3 scripts/importResearchCatalog.py"
   },
   "jest": {
     "preset": "ts-jest",
@@ -50,6 +54,7 @@
   "dependencies": {
     "@expo-google-fonts/manrope": "^0.4.2",
     "@expo-google-fonts/noto-sans-hebrew": "^0.4.1",
+    "@expo/ui": "~57.0.20",
     "@expo/vector-icons": "^15.0.3",
     "@react-native-community/netinfo": "12.0.1",
     "@react-native-google-signin/google-signin": "^13.2.0",
@@ -90,6 +95,7 @@
     "expo-sqlite": "~57.0.3",
     "expo-status-bar": "~57.0.1",
     "expo-web-browser": "~57.0.3",
+    "expo-widgets": "~57.0.21",
     "hebrew-transliteration": "^2.10.1",
     "kosher-zmanim": "^0.9.0",
     "lucide-react-native": "^1.21.0",
@@ -110,7 +116,8 @@
     "react-native-worklets": "0.10.1",
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
-    "zustand": "^5.0.2"
+    "zustand": "^5.0.2",
+    "decode-uri-component": "file:vendor/decode-uri-component"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -133,5 +140,17 @@
     "ts-jest": "^29.4.11",
     "tsx": "^4.23.12",
     "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "decode-uri-component": "$decode-uri-component",
+    "tailwindcss": {
+      "postcss-selector-parser": "7.1.6"
+    },
+    "postcss-nested@6.2.0": {
+      "postcss-selector-parser": "7.1.6"
+    },
+    "xcode@3.0.1": {
+      "uuid": "11.1.1"
+    }
   }
 }

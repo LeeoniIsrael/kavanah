@@ -202,3 +202,38 @@ Ask about this prayer remains visible in the reader header and opens In simple w
 Follow-up requests include recent user/assistant turns plus bounded prayer/source context. Failed answers are excluded from future context. Closing the conversation preserves messages and unsent text while the reader remains open; starting a different prayer resets the conversation. Conversations are in-memory, not a permanent chat archive. Only one request can run at once; errors can retry without duplicating the user turn. The input uses keyboard avoidance and multiline expansion; responses auto-scroll only while already near the bottom. AI consent is retained and queued questions wait for explicit acceptance.
 
 Verification: two context tests, three reader tests and a conversation interaction test cover follow-up context, no request on open, and draft/history retention across close/reopen. Typecheck and targeted production lint pass. Native iPhone 17 Pro screenshots show the persistent entry point and expanded composer/consent state. Temporary preview auto-open overrides were removed. No new native dependencies or additional Metro session.
+
+### Editions within search cards
+
+Other editions is a full-width disclosure inside the shared prayer card, separate from its primary open action. It dismisses the search keyboard and reveals the source list within the same surface. Natural-height measurement keeps every source accessible through the screen's existing scroll view. Height, opacity and chevron rotation share a short eased UI-thread transition; repeated taps reverse the transition and Reduced Motion removes it. Collapsed sources are excluded from touch and accessibility navigation.
+
+Verified expansion/collapse, alternative-source opening, bottom clearance, light/dark appearance, and the Reduced Motion branch in the live iPhone 17 Pro preview. Three interaction regressions cover independent actions, single-source cards and arriving search results. Maximum Dynamic Type was inspected at the disclosure; full-list scrolling at that size was blocked when Device Hub stopped accepting pointer input. Preview-only light/motion overrides and the temporary text-size change were restored. Existing Expo Go runtime omits WidgetSync; native widgets were not exercised by this change.
+
+### Padded press feedback
+
+Use shared Button `size="row"` for text-led tappable rows: 16-point side padding, 12-point vertical padding, a 64-point minimum target, and continuous control corners. Reserve `size="content"` for controls whose content already supplies its own inset. Home's practice choices, prayer choices, location and activity summary use the row size so pressed/hover fills have breathing room around labels and trailing controls. Standalone choices use spacing instead of rounded bottom rules.
+
+The practice sheet keeps Done visible and scrolls within 85% of the window. At larger text sizes, its title and description join the scrollable content. Native iPhone 17 Pro inspection covered light/dark highlight geometry, normal-size bottom clearance, Fast Refresh, and the largest-text header. Pointer scrolling at maximum text was blocked when Device Hub lost its window connection. Temporary highlight/appearance overrides and the text-size change were restored. Typecheck, targeted lint and four contrast tests passed; the existing primitives UI suite could not initialize its Reanimated worklets mock. No new animation or dependency was added.
+
+### Prayer view transitions
+
+Siddur and Find a prayer share identical header, subtitle, Options and segmented-control geometry: 8-point top padding and 12-point outer spacing. Only the content below the tabs replays a 180 ms native opacity reveal on each switch, without translation or stagger. Newly mounted saved prayers and search results use the same reveal; the Siddur web page reveals after its load completes. Reduced Motion displays ready content immediately. Saved prayers use their natural height, with no animated clipping limit.
+
+Validation: initial typecheck, targeted lint and three search-card interaction tests passed. A final typecheck encountered an unrelated concurrent edit in InlineQuoteText.tsx:39 (possibly undefined value). Both native iPhone 17 Pro layouts and loaded Siddur content were inspected in the current-source Expo Go runtime at /private/tmp/kavanah-tefillin-preview, port 8081; the shared chrome stayed aligned and the Siddur footer was visible. Device Hub pointer failures and an unrelated system permission prompt limited repeated-switch, long-list and system Reduced Motion checks. Reduced Motion is handled by the shared hook; its system setting was not changed. Temporary preview state was removed. No new dependencies.
+
+### Prayer reading position
+
+The direct reader's footer divider carries a two-point rounded marker, inset to the reading column. Its width reflects viewport/content height (with a 24-point visibility floor), and its position tracks the clamped scroll offset on the UI thread. Layout and content-size callbacks own the measurements; native scroll events supply only the offset. Resizing, expanded guidance and font changes update the geometry. Reading progress never logs completion. Direct tracking adds no spring, delay or idle animation, including with Reduced Motion.
+
+Native iPhone 17 Pro inspection verified start/end positions, finger-driven scrolling, footer clearance, and light/dark marker contrast. The reduced-motion branch was inspected using a temporary runtime-only override; all overrides were removed. The existing Expo Go session at /private/tmp/kavanah-expo-go on port 8081 was reused with the changed reader synced from the working source.
+Typecheck, targeted lint and all six reader interaction tests passed in that fully local runtime checkout. Workspace checks stalled while accessing Documents dependencies, so validation used the local copy; no dependency changes were needed.
+
+### Passage position count
+
+Multi-passage readers pair the progress line with a small tabular current/total count. The first passage occupying at least 5% of the viewport determines the current number; instruction-only tokens do not increment prayer passages, while practices count their displayed steps. Hidden custom-specific steps are excluded. Only the current number receives a 160 ms opacity reveal; Reduced Motion makes it immediate. The count and track share a natural-height row so larger text cannot overlap the reader or footer. Screen readers receive a full Passage/Step N of M label, without repeated live announcements.
+
+Native dark iPhone 17 Pro scrolling verified the count moving through Shema alongside the marker in the existing /private/tmp/kavanah-expo-go runtime on port 8081. The shared simulator/server shut down before additional light and reduced-motion preview checks completed; temporary runtime overrides were removed. Typecheck, targeted lint and seven reader interaction tests passed in the local runtime, including forward/backward count updates without completion.
+
+### Shared content fades
+
+Use the shared 180 ms content reveal and 18-point scrolling edge fade described in [Content motion](content-motion.md). Use `FadeViewport` around existing virtualized readers; use the shared fading `ScrollView` for other vertical and horizontal content. Preserve existing control animations and make all new fades static with Reduced Motion.

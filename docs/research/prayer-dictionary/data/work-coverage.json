@@ -1,0 +1,469 @@
+[
+  {
+    "work": "Siddur Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 454,
+    "withHebrew": 445,
+    "withEnglish": 257,
+    "withBoth": 256,
+    "retrievalErrors": [
+      {
+        "language": "he",
+        "versionTitle": "The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/The%20Metsudah%20siddur%3A%20a%20new%20linear%20siddur%20with%20English%20translation%20by%20Avrohom%20Davis%2C%201981.json",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "work": "Siddur Edot HaMizrach",
+    "tradition": "edot-hamizrach",
+    "sections": 129,
+    "withHebrew": 129,
+    "withEnglish": 46,
+    "withBoth": 46,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Siddur Sefard",
+    "tradition": "nusach-sefard",
+    "sections": 219,
+    "withHebrew": 219,
+    "withEnglish": 87,
+    "withBoth": 87,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Shabbat Siddur Sefard Linear",
+    "tradition": "nusach-sefard",
+    "sections": 146,
+    "withHebrew": 140,
+    "withEnglish": 141,
+    "withBoth": 139,
+    "retrievalErrors": []
+  },
+  {
+    "work": "The Koren Shalem Siddur; Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 135,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Weekday Siddur Chabad",
+    "tradition": "chabad",
+    "sections": 47,
+    "withHebrew": 0,
+    "withEnglish": 6,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Weekday Siddur Sefard Linear",
+    "tradition": "nusach-sefard",
+    "sections": 81,
+    "withHebrew": 74,
+    "withEnglish": 74,
+    "withBoth": 74,
+    "retrievalErrors": [
+      {
+        "language": "he",
+        "versionTitle": "The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Weekday%20Siddur%20Sefard%20Linear/Hebrew/The%20Metsudah%20siddur%3A%20a%20new%20linear%20siddur%20with%20English%20translation%20by%20Avrohom%20Davis%2C%201981.json",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "language": "en",
+        "versionTitle": "The Metsudah siddur: a new linear siddur with English translation by Avrohom Davis, 1981 [en]",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Weekday%20Siddur%20Sefard%20Linear/English/The%20Metsudah%20siddur%3A%20a%20new%20linear%20siddur%20with%20English%20translation%20by%20Avrohom%20Davis%2C%201981%20%5Ben%5D.json",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "work": "Pesach Haggadah",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 38,
+    "withHebrew": 38,
+    "withEnglish": 38,
+    "withBoth": 38,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Pesach Haggadah Edot Hamizrah",
+    "tradition": "edot-hamizrach",
+    "sections": 31,
+    "withHebrew": 0,
+    "withEnglish": 19,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Rosh Hashanah Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 98,
+    "withHebrew": 97,
+    "withEnglish": 98,
+    "withBoth": 97,
+    "retrievalErrors": [
+      {
+        "language": "he",
+        "versionTitle": "The Metsudah Machzor. Metsudah Publications, New York -- he (paragraph ed.)",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/High%20Holidays/Machzor%20Rosh%20Hashanah%20Ashkenaz/Hebrew/The%20Metsudah%20Machzor.%20Metsudah%20Publications%2C%20New%20York%20--%20he%20%28paragraph%20ed.%29.json",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "language": "en",
+        "versionTitle": "The Metsudah Machzor. Metsudah Publications, New York -- en (paragraph ed.)",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/High%20Holidays/Machzor%20Rosh%20Hashanah%20Ashkenaz/English/The%20Metsudah%20Machzor.%20Metsudah%20Publications%2C%20New%20York%20--%20en%20%28paragraph%20ed.%29.json",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "work": "Machzor Rosh Hashanah Ashkenaz Linear",
+    "tradition": "ashkenaz",
+    "sections": 98,
+    "withHebrew": 97,
+    "withEnglish": 98,
+    "withBoth": 97,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Rosh Hashanah Edot HaMizrach",
+    "tradition": "edot-hamizrach",
+    "sections": 53,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Rosh Hashanah Sefard",
+    "tradition": "nusach-sefard",
+    "sections": 76,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Yom Kippur Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 81,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Yom Kippur Ashkenaz Linear",
+    "tradition": "ashkenaz",
+    "sections": 81,
+    "withHebrew": 80,
+    "withEnglish": 80,
+    "withBoth": 79,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Yom Kippur Edot HaMizrach",
+    "tradition": "edot-hamizrach",
+    "sections": 56,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Machzor Yom Kippur Sefard",
+    "tradition": "nusach-sefard",
+    "sections": 67,
+    "withHebrew": 0,
+    "withEnglish": 2,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Selichot Edot HaMizrach",
+    "tradition": "edot-hamizrach",
+    "sections": 1,
+    "withHebrew": 1,
+    "withEnglish": 1,
+    "withBoth": 1,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Selichot Nusach Ashkenaz Lita",
+    "tradition": "ashkenaz-lita",
+    "sections": 156,
+    "withHebrew": 156,
+    "withEnglish": 156,
+    "withBoth": 156,
+    "retrievalErrors": [
+      {
+        "language": "en",
+        "versionTitle": "The Metsudah Selichos: translated and annotated by Rabbi Avrohom Davis, Metsudah Publications, 1986",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/High%20Holidays/Selichot%20Nusach%20Ashkenaz%20Lita/English/The%20Metsudah%20Selichos%3A%20translated%20and%20annotated%20by%20Rabbi%20Avrohom%20Davis%2C%20Metsudah%20Publications%2C%201986.json",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "work": "Selichot Nusach Lita Linear",
+    "tradition": "ashkenaz-lita",
+    "sections": 156,
+    "withHebrew": 156,
+    "withEnglish": 156,
+    "withBoth": 156,
+    "retrievalErrors": [
+      {
+        "language": "he",
+        "versionTitle": "The Metsudah Selichos: Hebrew text, Metsudah Publications, 1986",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/High%20Holidays/Selichot%20Nusach%20Lita%20Linear/Hebrew/The%20Metsudah%20Selichos%3A%20Hebrew%20text%2C%20Metsudah%20Publications%2C%201986.json",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "language": "en",
+        "versionTitle": "The Metsudah Selichos: translated and annotated by Rabbi Avrohom Davis, Metsudah Publications, 1986",
+        "exportUrl": "https://storage.googleapis.com/sefaria-export/json/Liturgy/High%20Holidays/Selichot%20Nusach%20Lita%20Linear/English/The%20Metsudah%20Selichos%3A%20translated%20and%20annotated%20by%20Rabbi%20Avrohom%20Davis%2C%20Metsudah%20Publications%2C%201986.json",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "work": "Selichot Nusach Polin",
+    "tradition": "ashkenaz-polin",
+    "sections": 143,
+    "withHebrew": 143,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "The Koren Rosh HaShana Mahzor; Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 66,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "The Koren Yom Kippur Mahzor; Ashkenaz",
+    "tradition": "ashkenaz",
+    "sections": 67,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Unetaneh Tokef",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Azharot of Solomon ibn Gabirol",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 4,
+    "withHebrew": 4,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Keter Malkhut",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 40,
+    "withHebrew": 40,
+    "withEnglish": 40,
+    "withBoth": 40,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Lekha Dodi",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 10,
+    "withHebrew": 10,
+    "withEnglish": 10,
+    "withBoth": 10,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Shalom Aleichem",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 1,
+    "withEnglish": 1,
+    "withBoth": 1,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Shir HaKavod",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Yedid Nefesh",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 1,
+    "withEnglish": 1,
+    "withBoth": 1,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Akdamut Milin",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Birkat Hamazon",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 10,
+    "withHebrew": 1,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Hadran",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Hadran for Tanakh",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Hallel",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Kabbalat Shabbat",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 0,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Ketubah Text",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Kinnot for Tisha B'Av (Ashkenaz)",
+    "tradition": "ashkenaz",
+    "sections": 50,
+    "withHebrew": 45,
+    "withEnglish": 18,
+    "withBoth": 18,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Leshon Chakhamim",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 129,
+    "withHebrew": 127,
+    "withEnglish": 3,
+    "withBoth": 3,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Ma'aneh Lashon Chabad",
+    "tradition": "chabad",
+    "sections": 5,
+    "withHebrew": 5,
+    "withEnglish": 2,
+    "withBoth": 2,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Ma'avar Yabbok",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 202,
+    "withHebrew": 201,
+    "withEnglish": 1,
+    "withBoth": 1,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Perek Shirah",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 9,
+    "withHebrew": 7,
+    "withEnglish": 8,
+    "withBoth": 7,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Seder Ma'amadot",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 7,
+    "withHebrew": 7,
+    "withEnglish": 6,
+    "withBoth": 6,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Seder Tisha B'Av (Edot HaMizrach)",
+    "tradition": "edot-hamizrach",
+    "sections": 52,
+    "withHebrew": 0,
+    "withEnglish": 16,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Tikkun HaKlali",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  },
+  {
+    "work": "Yizkor",
+    "tradition": "requires-edition-specific-identification",
+    "sections": 1,
+    "withHebrew": 0,
+    "withEnglish": 1,
+    "withBoth": 0,
+    "retrievalErrors": []
+  }
+]

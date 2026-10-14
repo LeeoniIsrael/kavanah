@@ -1,3 +1,5 @@
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { BrandWordmark } from "@/components/BrandMark";
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,10 +15,10 @@ import {
   Image,
   Modal,
   Platform,
-  ScrollView,
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { captureRef, releaseCapture } from "react-native-view-shot";
 
@@ -94,6 +96,7 @@ function StoryComposerSession({
 }: Props & { moment: PracticeStoryMoment }): React.JSX.Element {
   const colors = useThemeColors();
 
+  const storyScope = useRef(accountScope()).current;
   const storyRef = useRef<View>(null);
   const [layout, setLayout] = useState<StoryLayout>("focus");
   const [photoUri, setPhotoUri] = useState<string | null>(null);
@@ -111,7 +114,7 @@ function StoryComposerSession({
   );
 
   const choosePhoto = async (source: "camera" | "library") => {
-    if (isPickingPhoto || isSharing) return;
+    if (!isCurrentAccountScope(storyScope) || isPickingPhoto || isSharing) return;
     setError("");
     setIsPickingPhoto(true);
     try {
@@ -123,6 +126,7 @@ function StoryComposerSession({
           return;
         }
         const permission = await ImagePicker.requestCameraPermissionsAsync();
+        if (!isCurrentAccountScope(storyScope)) return;
         if (!permission.granted) {
           setError(
             "Camera access is off. Enable it in Settings to take a photo, or choose one from Photos.",
@@ -140,6 +144,7 @@ function StoryComposerSession({
         source === "camera"
           ? await ImagePicker.launchCameraAsync(options)
           : await ImagePicker.launchImageLibraryAsync(options);
+      if (!isCurrentAccountScope(storyScope)) return;
       if (!result.canceled && result.assets[0]?.uri) {
         setPhotoReady(false);
         setPhotoUri(result.assets[0].uri);
@@ -158,15 +163,16 @@ function StoryComposerSession({
 
   const shareStory = async () => {
     const storyView = storyRef.current;
-    if (!storyView || !moment || isSharing || !photoReady) return;
+    if (!isCurrentAccountScope(storyScope) || !storyView || !moment || isSharing || !photoReady) return;
     setError("");
     setIsSharing(true);
 
     let captured: string | undefined;
     try {
       if (!(await Sharing.isAvailableAsync())) {
-        throw new Error("Sharing is not available on this device.");
+        throw new UserFacingError("Sharing is not available on this device.");
       }
+      if (!isCurrentAccountScope(storyScope)) return;
       const uri = await captureRef(storyView, {
         format: "png",
         quality: 1,
@@ -175,6 +181,7 @@ function StoryComposerSession({
         result: "tmpfile",
       });
       captured = uri;
+      if (!isCurrentAccountScope(storyScope)) return;
       await Sharing.shareAsync(uri, {
         dialogTitle: "Share your Kavanah moment",
         mimeType: "image/png",
@@ -183,9 +190,7 @@ function StoryComposerSession({
       await successHaptic();
     } catch (shareError) {
       setError(
-        shareError instanceof Error
-          ? shareError.message
-          : "This story could not be prepared.",
+        userFacingError(shareError, "This story could not be prepared."),
       );
     } finally {
       if (captured) releaseCapture(captured);

@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/ui/fade-in";
 import { zmanimGuide } from "@/data/zmanimGuide";
 import { useInterfaceStyles } from "@/design/layout";
 import { Card } from "@/components/ui/card";
@@ -100,6 +101,7 @@ export function ZmanimScreen(): React.JSX.Element {
           );
         })}
       </View>
+      <FadeIn key={calendar ? "calendar" : "times"} style={{ gap: 24 }}>
       {calendar ? (
         <JewishCalendarView key={date ?? "current"} />
       ) : (
@@ -219,6 +221,7 @@ export function ZmanimScreen(): React.JSX.Element {
           </View>
         </>
       )}
+      </FadeIn>
     </Screen>
   );
 }

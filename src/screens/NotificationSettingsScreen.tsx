@@ -1,5 +1,9 @@
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
+import { userFacingError } from "@/services/userFacingError";
+import { AccordionReveal } from "@/components/ui/accordion";
 import { useState } from "react";
-import { Linking, ScrollView, TextInput, View } from "react-native";
+import { Linking, TextInput, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useRouter } from "expo-router";
 import { format } from "date-fns";
 import { Screen } from "@/components/Screen";
@@ -154,21 +158,22 @@ export function NotificationSettingsScreen() {
   const [working, setWorking] = useState(false),
     [message, setMessage] = useState("");
   const locate = async () => {
+    const scope = accountScope();
     setWorking(true);
     setMessage("");
     try {
-      setLocation(await requestZmanimLocation());
+      const point = await requestZmanimLocation();
+      if (isCurrentAccountScope(scope)) setLocation(point);
     } catch (e) {
       setMessage(
-        e instanceof Error
-          ? e.message
-          : "Location unavailable. Please try again.",
+        userFacingError(e, "Location unavailable. Please try again."),
       );
     } finally {
       setWorking(false);
     }
   };
   const enable = async (value: boolean) => {
+    const scope = accountScope();
     if (!value) {
       update({ enabled: false });
       return;
@@ -177,17 +182,19 @@ export function NotificationSettingsScreen() {
     setMessage("");
     try {
       if (await requestReminderPermission()) {
+        if (!isCurrentAccountScope(scope)) return;
         update({ enabled: true });
-        if (!location) setLocation(await requestZmanimLocation());
+        if (!location) {
+          const point = await requestZmanimLocation();
+          if (isCurrentAccountScope(scope)) setLocation(point);
+        }
       } else
         setMessage(
           "Allow notifications in device settings, then turn reminders on.",
         );
     } catch (e) {
       setMessage(
-        e instanceof Error
-          ? e.message
-          : "Could not enable reminders. Please try again.",
+        userFacingError(e, "Could not enable reminders. Please try again."),
       );
     } finally {
       setWorking(false);
@@ -337,67 +344,65 @@ export function NotificationSettingsScreen() {
               value={setting.enabled}
               onChange={(enabled) => change({ enabled })}
             />
-            {setting.enabled ? (
-              <>
-                <ValueField
-                  label="At (24-hour time)"
-                  value={setting.time}
-                  time
-                  onChange={(time) => change({ time })}
-                />
-                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                  <View style={{ flexDirection: "row", gap: 4 }}>
-                    {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
-                      (d, i) => (
-                        <Button
-                          key={d}
-                          variant={
-                            setting.days.includes(i) ? "default" : "secondary"
-                          }
-                          size="sm"
-                          accessibilityLabel={`${row.title} on ${d}`}
-                          accessibilityState={{
-                            selected: setting.days.includes(i),
-                          }}
-                          onPress={() =>
-                            change({
-                              days: setting.days.includes(i)
-                                ? setting.days.filter((day) => day !== i)
-                                : [...setting.days, i],
-                            })
-                          }
-                          style={{ minWidth: 44 }}
-                        >
-                          <Text>{d}</Text>
-                        </Button>
-                      ),
-                    )}
-                  </View>
-                </ScrollView>
-                {!setting.days.length ? (
-                  <Text style={ui.caption}>
-                    Choose at least one day to receive this reminder.
-                  </Text>
-                ) : null}
-                {row.id === "tefillin" ? (
-                  <>
-                    <Text style={ui.caption}>
-                      Sent only between local sunrise and sunset. Always skips
-                      Shabbat and major holidays.
-                    </Text>
-                    <ReminderToggle
-                      title="Skip Chol HaMoed"
-                      detail="Keep this on if that is your custom."
-                      value={prefs.skipCholHamoed}
-                      onChange={(skipCholHamoed) => update({ skipCholHamoed })}
-                    />
-                  </>
-                ) : null}
+            <AccordionReveal open={setting.enabled} style={{ gap: 12 }}>
+              <ValueField
+                label="At (24-hour time)"
+                value={setting.time}
+                time
+                onChange={(time) => change({ time })}
+              />
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                <View style={{ flexDirection: "row", gap: 4 }}>
+                  {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                    (d, i) => (
+                      <Button
+                        key={d}
+                        variant={
+                          setting.days.includes(i) ? "default" : "secondary"
+                        }
+                        size="sm"
+                        accessibilityLabel={`${row.title} on ${d}`}
+                        accessibilityState={{
+                          selected: setting.days.includes(i),
+                        }}
+                        onPress={() =>
+                          change({
+                            days: setting.days.includes(i)
+                              ? setting.days.filter((day) => day !== i)
+                              : [...setting.days, i],
+                          })
+                        }
+                        style={{ minWidth: 44 }}
+                      >
+                        <Text>{d}</Text>
+                      </Button>
+                    ),
+                  )}
+                </View>
+              </ScrollView>
+              {!setting.days.length ? (
                 <Text style={ui.caption}>
-                  Skipped when you’ve already marked this practice done.
+                  Choose at least one day to receive this reminder.
                 </Text>
-              </>
-            ) : null}
+              ) : null}
+              {row.id === "tefillin" ? (
+                <>
+                  <Text style={ui.caption}>
+                    Sent only between local sunrise and sunset. Always skips
+                    Shabbat and major holidays.
+                  </Text>
+                  <ReminderToggle
+                    title="Skip Chol HaMoed"
+                    detail="Keep this on if that is your custom."
+                    value={prefs.skipCholHamoed}
+                    onChange={(skipCholHamoed) => update({ skipCholHamoed })}
+                  />
+                </>
+              ) : null}
+              <Text style={ui.caption}>
+                Skipped when you’ve already marked this practice done.
+              </Text>
+            </AccordionReveal>
           </View>
         );
       })}
@@ -424,7 +429,7 @@ export function NotificationSettingsScreen() {
                   })
                 }
               />
-              {setting.enabled ? (
+              <AccordionReveal open={setting.enabled} style={{ gap: 12 }}>
                 <ValueField
                   label="Minutes before · 0 means at the time"
                   value={String(setting.lead)}
@@ -437,7 +442,7 @@ export function NotificationSettingsScreen() {
                     })
                   }
                 />
-              ) : null}
+              </AccordionReveal>
             </View>
           );
         })}
@@ -449,41 +454,39 @@ export function NotificationSettingsScreen() {
           value={prefs.holidays.enabled}
           onChange={(enabled) => holidayChange({ enabled })}
         />
-        {prefs.holidays.enabled ? (
-          <>
-            <ValueField
-              label="Days before the start"
-              max={14}
-              value={String(prefs.holidays.lead)}
-              onChange={(lead) => holidayChange({ lead: Number(lead) })}
-            />
-            <ValueField
-              label="Send at (24-hour time)"
-              time
-              value={prefs.holidays.time}
-              onChange={(time) => holidayChange({ time })}
-            />
-            <ReminderToggle
-              title="Festivals"
-              value={prefs.holidays.festivals}
-              onChange={(festivals) => holidayChange({ festivals })}
-            />
-            <ReminderToggle
-              title="Fast days"
-              value={prefs.holidays.fasts}
-              onChange={(fasts) => holidayChange({ fasts })}
-            />
-            <ReminderToggle
-              title="Rosh Chodesh"
-              value={prefs.holidays.roshChodesh}
-              onChange={(roshChodesh) => holidayChange({ roshChodesh })}
-            />
-            <Text style={ui.caption}>
-              For evening-start holidays, advance notice counts back from that
-              evening’s date. Minor fasts use the daytime date.
-            </Text>
-          </>
-        ) : null}
+        <AccordionReveal open={prefs.holidays.enabled} style={{ gap: 12 }}>
+          <ValueField
+            label="Days before the start"
+            max={14}
+            value={String(prefs.holidays.lead)}
+            onChange={(lead) => holidayChange({ lead: Number(lead) })}
+          />
+          <ValueField
+            label="Send at (24-hour time)"
+            time
+            value={prefs.holidays.time}
+            onChange={(time) => holidayChange({ time })}
+          />
+          <ReminderToggle
+            title="Festivals"
+            value={prefs.holidays.festivals}
+            onChange={(festivals) => holidayChange({ festivals })}
+          />
+          <ReminderToggle
+            title="Fast days"
+            value={prefs.holidays.fasts}
+            onChange={(fasts) => holidayChange({ fasts })}
+          />
+          <ReminderToggle
+            title="Rosh Chodesh"
+            value={prefs.holidays.roshChodesh}
+            onChange={(roshChodesh) => holidayChange({ roshChodesh })}
+          />
+          <Text style={ui.caption}>
+            For evening-start holidays, advance notice counts back from that
+            evening’s date. Minor fasts use the daytime date.
+          </Text>
+        </AccordionReveal>
       </View>
       <View style={ui.surface}>
         <ReminderToggle
@@ -494,31 +497,29 @@ export function NotificationSettingsScreen() {
             update({ checklist: { ...prefs.checklist, enabled } })
           }
         />
-        {prefs.checklist.enabled ? (
-          <>
-            <ValueField
-              label="Days before the start"
-              max={14}
-              value={String(prefs.checklist.lead)}
-              onChange={(lead) =>
-                update({
-                  checklist: { ...prefs.checklist, lead: Number(lead) },
-                })
-              }
-            />
-            <ValueField
-              label="Send at (24-hour time)"
-              time
-              value={prefs.checklist.time}
-              onChange={(time) =>
-                update({ checklist: { ...prefs.checklist, time } })
-              }
-            />
-            <Text style={ui.caption}>
-              No reminder if you’ve finished the checklist.
-            </Text>
-          </>
-        ) : null}
+        <AccordionReveal open={prefs.checklist.enabled} style={{ gap: 12 }}>
+          <ValueField
+            label="Days before the start"
+            max={14}
+            value={String(prefs.checklist.lead)}
+            onChange={(lead) =>
+              update({
+                checklist: { ...prefs.checklist, lead: Number(lead) },
+              })
+            }
+          />
+          <ValueField
+            label="Send at (24-hour time)"
+            time
+            value={prefs.checklist.time}
+            onChange={(time) =>
+              update({ checklist: { ...prefs.checklist, time } })
+            }
+          />
+          <Text style={ui.caption}>
+            No reminder if you’ve finished the checklist.
+          </Text>
+        </AccordionReveal>
         <Button
           variant="secondary"
           onPress={() => router.push("/holiday-checklist")}
@@ -540,27 +541,25 @@ export function NotificationSettingsScreen() {
           value={prefs.quiet}
           onChange={(quiet) => update({ quiet })}
         />
-        {prefs.quiet ? (
-          <>
-            <ValueField
-              label="From (24-hour time)"
-              time
-              value={prefs.quietStart}
-              onChange={(quietStart) => update({ quietStart })}
-            />
-            <ValueField
-              label="Until (24-hour time)"
-              time
-              value={prefs.quietEnd}
-              onChange={(quietEnd) => update({ quietEnd })}
-            />
-            {prefs.quietStart === prefs.quietEnd ? (
-              <Text style={ui.caption}>
-                Matching times silence reminders all day.
-              </Text>
-            ) : null}
-          </>
-        ) : null}
+        <AccordionReveal open={prefs.quiet} style={{ gap: 12 }}>
+          <ValueField
+            label="From (24-hour time)"
+            time
+            value={prefs.quietStart}
+            onChange={(quietStart) => update({ quietStart })}
+          />
+          <ValueField
+            label="Until (24-hour time)"
+            time
+            value={prefs.quietEnd}
+            onChange={(quietEnd) => update({ quietEnd })}
+          />
+          {prefs.quietStart === prefs.quietEnd ? (
+            <Text style={ui.caption}>
+              Matching times silence reminders all day.
+            </Text>
+          ) : null}
+        </AccordionReveal>
         <ReminderToggle
           title="Quiet on Shabbat & holidays"
           detail="Sunset to nightfall on Shabbat and major holidays."

@@ -3,6 +3,7 @@ import {
   clearLocalData,
   finishLocalDataDeletion,
 } from "@/services/localDataDeletion";
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { startReminderScheduling } from "@/services/reminderScheduler";
 import { startCircleAccount } from "@/store/circleAccountStore";
 import { circleClient } from "@/services/network/client";
@@ -114,7 +115,7 @@ export function AppProviders({
         }}
       >
         <StatusBar barStyle="light-content" />
-        <BrandWordmark width={190} color="#FFFFFF" />
+        <CircleLoadingIndicator dotColor="#FFFFFF" accessibilityLabel="Opening Kavanah" />
       </View>
     );
   }

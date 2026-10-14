@@ -55,11 +55,11 @@ export async function clearLocalData(): Promise<void> {
     }
     await loadCircleAccount(null);
     await cancelLocalRemindersForDeletion();
+    await clearSiddurPersonalData();
     if (Platform.OS !== "web") {
-      await clearSiddurPersonalData();
       // Delete only app-owned legacy records and photos, not an open MMKV/SQLite file.
       const owned =
-        /^(?:(?:circle|social|settings|reminders|prayer|prayers|streaks|siddur|onboarding)\..+\.json|profile-photo-.+\.jpg)$/;
+        /^(?:(?:account|circle|social|settings|reminders|prayer|prayers|streaks|siddur|onboarding)\..+\.json|profile-photo-.+\.jpg)$/;
       for (const file of new Directory(Paths.document).list()) {
         if (file instanceof File && owned.test(file.name)) file.delete();
       }
@@ -75,7 +75,7 @@ export async function clearLocalData(): Promise<void> {
     }
     userStorage.clearAll();
     cacheStorage.clearAll();
-    usePrayerIdentityStore.setState({ identity: null, completed: false });
+    usePrayerIdentityStore.setState({ identity: null, completed: false, ownerId: null });
     usePrayerStore.setState({
       history: [],
       bookmarkedPrayerIds: [],

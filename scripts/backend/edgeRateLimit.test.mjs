@@ -11,7 +11,11 @@ import {
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
+import { setTimeout, clearTimeout } from "node:timers";
+import { URL } from "node:url";
 import { probeEdgeRateLimit } from "./edgeRateLimit.mjs";
+
+const { Response, AbortSignal } = globalThis;
 
 const healthy = () => Response.json({ status: "ok", assistant: "disabled" });
 

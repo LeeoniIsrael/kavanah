@@ -1,4 +1,5 @@
 import { suspendLocalWrites } from "@/services/mmkv";
+import { setAccountScope } from "@/services/accountScope";
 import { clearSiddurPersonalData, saveBookmark } from "../cache";
 const mockRun = jest.fn();
 const mockExec = jest.fn<Promise<void>, [string]>();
@@ -10,6 +11,7 @@ jest.mock("expo-sqlite", () => ({
 }));
 
 test("local reset waits for an in-flight SQLite write and prevents queued writes from restoring private rows", async () => {
+  setAccountScope("alice");
   let release!: () => void;
   const records = new Set<string>();
   mockRun.mockImplementation(

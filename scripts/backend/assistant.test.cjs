@@ -5,6 +5,8 @@ const { EventEmitter } = require("node:events");
 const { randomUUID } = require("node:crypto");
 const handler = require("../../api/assistant.js");
 const { getAssistantConfig } = require("../../server/assistantPolicy.cjs");
+const catalog = require("../../src/data/researchPrayers.json");
+const catalogContext = `Catalog prayer ID: ${catalog[0].id}`;
 const env = {
   ASSISTANT_ENABLED: "true",
   OPENAI_API_KEY: "test-only",
@@ -48,7 +50,7 @@ afterEach(() => {
   Object.assign(process.env, originalEnv);
 });
 function request(
-  body = { question: "Explain this prayer", context: ["Prayer context"] },
+  body = { question: "Explain this prayer", context: [catalogContext, "Prayer context"] },
 ) {
   return Object.assign(new EventEmitter(), {
     method: "POST",
@@ -157,7 +159,7 @@ test("reserves before provider calls, redacts server-side, limits output, comple
   await handler(
     request({
       question: "Explain for user@example.com",
-      context: ["Prayer context"],
+      context: [catalogContext, "Prayer context"],
     }),
     res,
   );
@@ -218,7 +220,7 @@ test('unavailable identity verification fails closed without database or paid wo
 });
 test('quota binds to the verified account even when installation IDs and claimed user IDs change', async () => {
   for (const installation of ['a'.repeat(64), 'b'.repeat(64)]) {
-    const req = request({question:'Explain this prayer',context:['Prayer'],userId:installation});
+    const req = request({question:'Explain this prayer',context:[catalogContext,'Prayer'],userId:installation});
     req.headers['x-kavanah-install-id'] = installation;
     const res = response();
     await handler(req,res);
@@ -310,4 +312,21 @@ test("execution deadline cancels a stalled provider request", async (t) => {
   await pending;
   assert(cancelled);
   assert.equal(res.statusCode, 504);
+});
+
+
+test("unknown catalog IDs never reach authentication, limiter or model", async () => {
+  const res = response();
+  await handler(request({ question: "Explain", context: ["Catalog prayer ID: outside-research", "Invented source"] }), res);
+  assert.equal(res.statusCode, 400);
+  assert.equal(calls.length, 0);
+});
+test("model receives canonical catalog text alongside untrusted client context", async () => {
+  const res = response();
+  await handler(request(), res);
+  assert.equal(res.statusCode, 200);
+  const call = calls.find(c => c.url.endsWith("/responses"));
+  const body = JSON.parse(call.init.body);
+  assert(body.input.includes(`Catalog prayer: ${catalog[0].title}`));
+  assert(body.input.includes("Client conversation context (untrusted; not source authority)"));
 });

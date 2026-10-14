@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/ui/fade-in";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { CircleFriends } from "@/screens/PeopleScreen";
 import { usePrayerStore } from "@/store/prayerStore";
@@ -21,7 +22,6 @@ import { weekKey, type PrayerSharing } from "@/services/socialPolicy";
 import { useSocialStore } from "@/store/socialStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import {
-  ChevronRight,
   Check,
   ShieldCheck,
   Info,
@@ -29,7 +29,8 @@ import {
   X,
 } from "@/components/ui/icons";
 import { useMemo, useState } from "react";
-import { Modal, ScrollView, StyleSheet, Switch, View } from "react-native";
+import { Modal, StyleSheet, Switch, View } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const modes: { id: PrayerSharing; title: string; detail: string }[] = [
@@ -147,11 +148,12 @@ export function CircleScreen(): React.JSX.Element {
   );
   return (
     <View style={s.screen}>
+      <FadeIn key={selected} style={{ flex: 1 }}>
       {selected === "friends" ? (
         <CircleFriends tabs={tabs} lead={lead} />
       ) : (
         <AnimatedHeaderSurface
-          largeTitle="Circle"
+          largeTitle="Friends"
           rightComponent={
             <Button
               variant="ghost"
@@ -190,13 +192,9 @@ export function CircleScreen(): React.JSX.Element {
                 </View>
               }
               renderItem={({ item }) => {
-                const canRead = Boolean(
-                  item.prayerId &&
-                  prayers.some((prayer) => prayer.id === item.prayerId),
-                );
-                const content = (
-                  <>
-                    <View style={{ flex: 1, gap: 6, minWidth: 0 }}>
+                return (
+                  <View style={ui.surface}>
+                    <View style={{ gap: 6 }}>
                       <Text style={ui.itemTitle}>{item.title}</Text>
                       <Text style={ui.caption}>
                         {new Date(`${item.day}T12:00:00`).toLocaleDateString(
@@ -210,36 +208,7 @@ export function CircleScreen(): React.JSX.Element {
                         durationSeconds={item.durationSeconds}
                       />
                     </View>
-                    {canRead ? (
-                      <ChevronRight size={16} color={colors.inkMuted} />
-                    ) : null}
-                  </>
-                );
-                const style = [
-                  ui.surface,
-                  {
-                    flexDirection: "row" as const,
-                    alignItems: "center" as const,
-                    gap: 16,
-                  },
-                ];
-                return canRead ? (
-                  <Button
-                    variant="ghost"
-                    size="content"
-                    style={style}
-                    accessibilityLabel={`Read ${item.title}`}
-                    onPress={() =>
-                      router.push({
-                        pathname: "/prayer",
-                        params: { prayerId: item.prayerId! },
-                      })
-                    }
-                  >
-                    {content}
-                  </Button>
-                ) : (
-                  <View style={style}>{content}</View>
+                  </View>
                 );
               }}
               ListEmptyComponent={
@@ -267,6 +236,7 @@ export function CircleScreen(): React.JSX.Element {
           )}
         />
       )}
+      </FadeIn>
       <SharingSettings
         visible={settingsOpen}
         onClose={() => setSettingsOpen(false)}

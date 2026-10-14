@@ -1,6 +1,8 @@
 import { defaultReminders } from "@/services/reminderPlan";
 import { isReminderPreferences, useReminderStore } from "../reminderStore";
 import { readSocialData } from "@/services/socialStorage";
+import { setAccountScope } from "@/services/accountScope";
+beforeEach(() => setAccountScope("alice"));
 describe("reminder preferences", () => {
   it("rejects malformed persisted data and invalid clock values", () => {
     expect(isReminderPreferences({})).toBe(false);

@@ -1,3 +1,5 @@
+import { BuildIdentity } from "@/components/BuildIdentity";
+import { userFacingError, UserFacingError } from "@/services/userFacingError";
 import { useEffect, useRef, useState } from "react";
 import {
   Animated,
@@ -6,13 +8,13 @@ import {
   Linking,
   Platform,
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -108,6 +110,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
   const [busy, setBusy] = useState(false);
   const actionLock = useRef(false);
   const [message, setMessage] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const inExpoGo = isRunningInExpoGo();
   const [appleAvailable, setAppleAvailable] = useState<boolean | null>(inExpoGo ? false : null);
   const [intro] = useState(() => new Animated.Value(mode === "onboarding" && !hasAccount ? 0 : 1));
@@ -144,7 +147,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     setBusy(true);
     setMessage("");
     try { await action(); }
-    catch (error) { setMessage(error instanceof Error ? error.message : "Something went wrong. Try again."); void softHaptic(); }
+    catch (error) { setMessage(userFacingError(error, step === "audience" || step === "community" ? "Could not save your preferences. Please try again." : "Could not sign in. Please try again.")); void softHaptic(); }
     finally { actionLock.current = false; setBusy(false); }
   };
   const done = async () => {
@@ -169,6 +172,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
     await Linking.openURL(url);
   });
   const submitCredential = () => void run(async () => {
+    if (!termsAccepted) throw new UserFacingError("Please accept the Terms of Use and Privacy Policy to continue.");
     if (step === "code") { await verifySignInCode(contact, code, channel); afterSignIn(); }
     else { await sendSignInCode(contact, channel); void softHaptic(); next("code"); }
   });
@@ -205,22 +209,26 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
           <View style={styles.welcomeBottom}>
             <AnimatedWelcomeHeadline />
             <Text style={styles.welcomeDescription}>Make each moment of prayer your own.</Text>
+            {canSignIn && <Pressable accessibilityRole="checkbox" accessibilityLabel="Accept Terms of Use and Privacy Policy" accessibilityState={{ checked: termsAccepted, disabled: busy }} disabled={busy} onPress={() => { setTermsAccepted(value => !value); void tapHaptic(); }} style={styles.termsCheck}>
+              <Ionicons name={termsAccepted ? "checkbox" : "square-outline"} size={21} color={termsAccepted ? accent : muted} />
+              <Text style={styles.termsText}>I agree to the Terms of Use and Privacy Policy linked below.</Text>
+            </Pressable>}
             {canSignIn ? (
               <View style={styles.providerGroup}>
                 {Platform.OS === "ios" && appleSignInEnabled && appleAvailable === true && (
-                  <View pointerEvents={busy ? "none" : "auto"} accessibilityState={{ busy, disabled: busy }}>
+                  <View pointerEvents={busy || !termsAccepted ? "none" : "auto"} accessibilityState={{ busy, disabled: busy || !termsAccepted }} style={!termsAccepted ? styles.providersDisabled : undefined}>
                   <AppleAuthentication.AppleAuthenticationButton
                     buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                     buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
                     cornerRadius={11}
                     style={styles.appleButton}
-                    onPress={() => { void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
+                    onPress={() => { if (!termsAccepted) return; void tapHaptic(); void run(async () => { if (await signInWithApple()) afterSignIn(); }); }}
                   />
                   </View>
                 )}
-                {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy} onPress={() => { setChannel("email"); next("contact"); }} />}
-                {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
-                {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy} onPress={() => { setChannel("phone"); next("contact"); }} />}
+                {emailSignInEnabled && <Action label="Continue with email" kind="solid" disabled={busy || !termsAccepted} onPress={() => { setChannel("email"); next("contact"); }} />}
+                {googleSignInEnabled && <Action label="Continue with Google" icon="google" disabled={busy || !termsAccepted} onPress={() => void run(async () => { if (await signInWithGoogle()) afterSignIn(); })} />}
+                {phoneSignInEnabled && <Action label="Continue with phone" kind="quiet" disabled={busy || !termsAccepted} onPress={() => { setChannel("phone"); next("contact"); }} />}
               </View>
             ) : <Text style={styles.unavailable}>{checkingApple ? "Checking Apple sign-in…" : Platform.OS === "ios" && appleSignInEnabled && appleAvailable === false ? "Apple sign-in requires a Kavanah development or release build on a supported device." : "Sign-in is unavailable in this build. An account is required to use Kavanah."}</Text>}
             {busy && <Text accessibilityRole="progressbar" accessibilityLiveRegion="polite" style={styles.privacy}>Working…</Text>}
@@ -231,6 +239,7 @@ export function OnboardingScreen({ mode = "onboarding" }: { mode?: "onboarding" 
               <Button variant="link" accessibilityRole="link" accessibilityLabel="Read Terms of Use" disabled={busy} onPress={() => openPolicy("termsUrl")}><Text style={styles.policyLabel}>Terms</Text></Button>
             </View>
             <Button variant="link" accessibilityLabel="Clear local data from this device" disabled={busy} onPress={requestLocalDataDeletion}><Text style={styles.policyLabel}>Clear local data</Text></Button>
+            <BuildIdentity color={muted} />
             {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
           </View>
           </ScrollView>
@@ -324,12 +333,16 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   heroCenter: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, alignItems: "center", justifyContent: "center" },
   logo: { alignItems: "center", justifyContent: "center" },
-  welcomeContent: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
+  welcomeContent: { flex: 1, paddingHorizontal: 27, paddingBottom: 20, maxWidth: 560, width: "100%", alignSelf: "center" },
+  welcomeScroll: { flexGrow: 1, justifyContent: "flex-end", paddingTop: 260, paddingBottom: 12 },
   welcomeBottom: { marginTop: "auto" },
-  welcomeScroll: { flexGrow: 1 },
   close: { alignSelf: "flex-end", padding: 8, marginTop: 12, marginRight: -8 },
   welcomeDescription: { color: muted, fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, marginTop: 6 },
   providerGroup: { marginTop: 29, gap: 10 },
+  providersDisabled: { opacity: 0.45 },
+  termsCheck: { marginTop: 20, minHeight: 44, flexDirection: "row", alignItems: "center", gap: 10 },
+  termsText: { flex: 1, color: muted, fontFamily: fonts.regular, fontSize: 12, lineHeight: 18 },
+  termsLink: { color: accent, fontFamily: fonts.semibold, textDecorationLine: "underline" },
   appleButton: { width: "100%", height: 56 },
   actionPressable: { width: "100%" },
   actionSurface: { minHeight: 56, borderRadius: 11, borderWidth: 1, flexDirection: "row", justifyContent: "center", alignItems: "center", paddingHorizontal: 20 },

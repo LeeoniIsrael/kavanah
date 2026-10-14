@@ -1,6 +1,8 @@
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
 import { localWritesSuspended } from "@/services/mmkv";
 import * as SQLite from "expo-sqlite";
-import { normalizeHebrewSearch } from "./sefaria";
+import { corePrayers } from "@/data/corePrayers";
+import { sefariaProvider, normalizeHebrewSearch } from "./sefaria";
 import type {
   Bookmark,
   ReaderPosition,
@@ -12,12 +14,13 @@ import type {
 let database: Promise<SQLite.SQLiteDatabase> | undefined;
 let personalWrites: Promise<void> = Promise.resolve();
 function writePersonal(
-  action: (connection: SQLite.SQLiteDatabase) => Promise<void>,
+  action: (connection: SQLite.SQLiteDatabase, owner: string) => Promise<void>,
 ): Promise<void> {
-  if (localWritesSuspended()) return Promise.resolve();
+  const scope = accountScope();
+  if (localWritesSuspended() || !scope.owner) return Promise.resolve();
   const pending = personalWrites.then(async () => {
     const connection = await db();
-    if (!localWritesSuspended()) await action(connection);
+    if (!localWritesSuspended() && isCurrentAccountScope(scope)) await action(connection, scope.owner!);
   });
   // A failed write must reach its caller without preventing a later reset.
   personalWrites = pending.catch(() => undefined);
@@ -39,7 +42,13 @@ async function db() {
       CREATE TABLE IF NOT EXISTS reader_positions(book_id TEXT PRIMARY KEY, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS bookmarks(id TEXT PRIMARY KEY, book_id TEXT NOT NULL, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS annotations(id TEXT PRIMARY KEY, book_id TEXT NOT NULL, section_ref TEXT NOT NULL, data TEXT NOT NULL);
-      CREATE TABLE IF NOT EXISTS reader_preferences(key TEXT PRIMARY KEY, value TEXT NOT NULL);`);
+      CREATE TABLE IF NOT EXISTS reader_preferences(key TEXT PRIMARY KEY, value TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS account_reader_positions(owner TEXT NOT NULL, book_id TEXT NOT NULL, data TEXT NOT NULL, PRIMARY KEY(owner,book_id));
+      CREATE TABLE IF NOT EXISTS account_bookmarks(owner TEXT NOT NULL, id TEXT NOT NULL, book_id TEXT NOT NULL, data TEXT NOT NULL, PRIMARY KEY(owner,id));
+      CREATE TABLE IF NOT EXISTS account_annotations(owner TEXT NOT NULL, id TEXT NOT NULL, book_id TEXT NOT NULL, section_ref TEXT NOT NULL, data TEXT NOT NULL, PRIMARY KEY(owner,id));
+      CREATE INDEX IF NOT EXISTS account_bookmarks_book ON account_bookmarks(owner,book_id);
+      CREATE INDEX IF NOT EXISTS account_annotations_section ON account_annotations(owner,book_id,section_ref);
+      CREATE TABLE IF NOT EXISTS account_reader_preferences(owner TEXT NOT NULL, key TEXT NOT NULL, value TEXT NOT NULL, PRIMARY KEY(owner,key));`);
     return connection;
   })();
   return database;
@@ -131,44 +140,43 @@ export async function cachedSection(
   return marker ? [] : null;
 }
 export async function savePosition(position: ReaderPosition) {
-  return writePersonal(async (connection) => {
+  return writePersonal(async (connection, owner) => {
     await connection.runAsync(
-      "INSERT OR REPLACE INTO reader_positions VALUES(?,?)",
+      "INSERT OR REPLACE INTO account_reader_positions VALUES(?,?,?)",
+      owner,
       position.siddurId,
       JSON.stringify(position),
     );
     if (localWritesSuspended()) return;
     await connection.runAsync(
-      "INSERT OR REPLACE INTO reader_preferences VALUES(?,?)",
+      "INSERT OR REPLACE INTO account_reader_preferences VALUES(?,?,?)",
+      owner,
       "selected_book",
       position.siddurId,
     );
   });
 }
-export async function loadPosition(
-  bookId: string,
-): Promise<ReaderPosition | null> {
-  const r = await (
-    await db()
-  ).getFirstAsync<{ data: string }>(
-    "SELECT data FROM reader_positions WHERE book_id=?",
-    bookId,
+export async function loadPosition(bookId: string): Promise<ReaderPosition | null> {
+  const scope = accountScope();
+  if (!scope.owner) return null;
+  const row = await (await db()).getFirstAsync<{ data: string }>(
+    "SELECT data FROM account_reader_positions WHERE owner=? AND book_id=?", scope.owner, bookId,
   );
-  return r ? JSON.parse(r.data) : null;
+  return isCurrentAccountScope(scope) && row ? JSON.parse(row.data) : null;
 }
 export async function selectedBook(): Promise<string | null> {
-  const r = await (
-    await db()
-  ).getFirstAsync<{ value: string }>(
-    "SELECT value FROM reader_preferences WHERE key=?",
-    "selected_book",
+  const scope = accountScope();
+  if (!scope.owner) return null;
+  const row = await (await db()).getFirstAsync<{ value: string }>(
+    "SELECT value FROM account_reader_preferences WHERE owner=? AND key=?", scope.owner, "selected_book",
   );
-  return r?.value ?? null;
+  return isCurrentAccountScope(scope) ? row?.value ?? null : null;
 }
 export async function saveBookmark(bookmark: Bookmark) {
-  return writePersonal(async (connection) => {
+  return writePersonal(async (connection, owner) => {
     await connection.runAsync(
-      "INSERT OR REPLACE INTO bookmarks VALUES(?,?,?)",
+      "INSERT OR REPLACE INTO account_bookmarks VALUES(?,?,?,?)",
+      owner,
       bookmark.id,
       bookmark.siddurId,
       JSON.stringify(bookmark),
@@ -176,21 +184,23 @@ export async function saveBookmark(bookmark: Bookmark) {
   });
 }
 export async function removeBookmark(id: string) {
-  await (await db()).runAsync("DELETE FROM bookmarks WHERE id=?", id);
+  return writePersonal(async (connection, owner) => {
+    await connection.runAsync("DELETE FROM account_bookmarks WHERE owner=? AND id=?", owner, id);
+  });
 }
 export async function loadBookmarks(bookId: string): Promise<Bookmark[]> {
-  const rows = await (
-    await db()
-  ).getAllAsync<{ data: string }>(
-    "SELECT data FROM bookmarks WHERE book_id=? ORDER BY rowid DESC",
-    bookId,
+  const scope = accountScope();
+  if (!scope.owner) return [];
+  const rows = await (await db()).getAllAsync<{ data: string }>(
+    "SELECT data FROM account_bookmarks WHERE owner=? AND book_id=? ORDER BY rowid DESC", scope.owner, bookId,
   );
-  return rows.map((r) => JSON.parse(r.data));
+  return isCurrentAccountScope(scope) ? rows.map(row => JSON.parse(row.data)) : [];
 }
 export async function saveAnnotation(a: TextAnnotation) {
-  return writePersonal(async (connection) => {
+  return writePersonal(async (connection, owner) => {
     await connection.runAsync(
-      "INSERT OR REPLACE INTO annotations VALUES(?,?,?,?)",
+      "INSERT OR REPLACE INTO account_annotations VALUES(?,?,?,?,?)",
+      owner,
       a.id,
       a.siddurId,
       a.startSegmentId.replace(/\.\d+$/, ""),
@@ -198,18 +208,13 @@ export async function saveAnnotation(a: TextAnnotation) {
     );
   });
 }
-export async function loadAnnotations(
-  bookId: string,
-  sectionRef: string,
-): Promise<TextAnnotation[]> {
-  const rows = await (
-    await db()
-  ).getAllAsync<{ data: string }>(
-    "SELECT data FROM annotations WHERE book_id=? AND section_ref=?",
-    bookId,
-    sectionRef,
+export async function loadAnnotations(bookId: string, sectionRef: string): Promise<TextAnnotation[]> {
+  const scope = accountScope();
+  if (!scope.owner) return [];
+  const rows = await (await db()).getAllAsync<{ data: string }>(
+    "SELECT data FROM account_annotations WHERE owner=? AND book_id=? AND section_ref=?", scope.owner, bookId, sectionRef,
   );
-  return rows.map((r) => JSON.parse(r.data));
+  return isCurrentAccountScope(scope) ? rows.map(row => JSON.parse(row.data)) : [];
 }
 export async function searchCached(
   bookId: string,
@@ -217,30 +222,10 @@ export async function searchCached(
 ): Promise<SiddurSegment[]> {
   const needle = normalizeHebrewSearch(query);
   if (!needle) return [];
-  const connection = await db();
-  const matches: SiddurSegment[] = [];
-  let after = 0;
-  while (matches.length < 50) {
-    const rows = await connection.getAllAsync<{ rowid: number; data: string }>(
-      "SELECT rowid,data FROM siddur_segments WHERE book_id=? AND rowid>? ORDER BY rowid LIMIT 200",
-      bookId,
-      after,
-    );
-    if (!rows.length) break;
-    for (const row of rows) {
-      const segment = JSON.parse(row.data) as SiddurSegment;
-      if (
-        normalizeHebrewSearch(
-          `${segment.he ?? ""} ${segment.en ?? ""}`,
-        ).includes(needle)
-      )
-        matches.push(segment);
-      if (matches.length === 50) break;
-    }
-    after = rows[rows.length - 1]!.rowid;
-  }
-  return matches;
+  const groups = await Promise.all(corePrayers.filter(p => p.sourceMetadata?.work === bookId).map(p => sefariaProvider.getSection(bookId,p.sefariaRef)));
+  return groups.flat().filter(s => normalizeHebrewSearch(`${s.he} ${s.en} ${s.transliteration}`).includes(needle)).slice(0,50);
 }
+
 export async function downloadProgress(bookId: string) {
   return (await db()).getFirstAsync<{ completed: number; total: number }>(
     "SELECT completed,total FROM siddur_downloads WHERE book_id=?",
@@ -271,5 +256,15 @@ export async function clearSiddurPersonalData(): Promise<void> {
   await connection.execAsync(`PRAGMA secure_delete = ON;
     DELETE FROM reader_positions; DELETE FROM bookmarks;
     DELETE FROM annotations; DELETE FROM reader_preferences;
+    DELETE FROM account_reader_positions; DELETE FROM account_bookmarks;
+    DELETE FROM account_annotations; DELETE FROM account_reader_preferences;
     PRAGMA wal_checkpoint(TRUNCATE); VACUUM; PRAGMA wal_checkpoint(TRUNCATE);`);
+}
+
+export async function clearSiddurAccountData(owner: string): Promise<void> {
+  await personalWrites;
+  const connection = await db();
+  for (const table of ["account_reader_positions", "account_bookmarks", "account_annotations", "account_reader_preferences"]) {
+    await connection.runAsync(`DELETE FROM ${table} WHERE owner=?`, owner);
+  }
 }

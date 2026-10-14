@@ -1,3 +1,4 @@
+import { userFacingError } from "@/services/userFacingError";
 import { currentPrayerAvailability } from "@/services/currentPrayerAvailability";
 import { timedPracticeForPrayer } from "@/services/prayerAvailability";
 import { recoverPrayerHistory } from "@/services/activityCalendar";
@@ -5,8 +6,9 @@ import { useSocialStore } from "@/store/socialStore";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import { create } from "zustand";
 
-import { cacheStorage, readJson } from "@/services/mmkv";
+import { accountScope, isCurrentAccountScope, onAccountScopeChange } from "@/services/accountScope";
 import {
+  catalogPrayer,
   getCachedPrayers,
   hydratePrayerFromSefaria,
   mergePrayerCollections,
@@ -57,7 +59,7 @@ type PrayerState = {
 
 const cached = getCachedPrayers();
 const persistedBookmarks = readSocialData(BOOKMARKS_KEY, isStringArray) ??
-  readJson(cacheStorage, BOOKMARKS_KEY, isStringArray) ?? ["tefillin-blessing"];
+  [];
 const persistedHistory = recoverPrayerHistory(
   readSocialData(HISTORY_KEY, isPrayerHistoryArray) ?? [],
   useSocialStore.getState().posts,
@@ -81,6 +83,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     set({ query, results: searchPrayers(query, prayers) });
   },
   searchRemote: async (queryOverride) => {
+    const scope = accountScope();
     const query = (queryOverride ?? get().query).trim();
     if (query.length < 2) {
       return;
@@ -88,15 +91,23 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     set({ isSearchingRemote: true });
     try {
       const remotePrayers = await searchSefariaPrayerRefs(query);
+      if (!isCurrentAccountScope(scope)) return;
       const prayers = mergePrayerCollections(get().prayers, remotePrayers);
       if (get().query.trim().toLowerCase() === query.toLowerCase()) {
         set({ prayers, results: searchPrayers(query, prayers) });
       }
     } finally {
-      set({ isSearchingRemote: false });
+      if (isCurrentAccountScope(scope)) set({ isSearchingRemote: false });
     }
   },
   selectPrayer: async (id) => {
+    const scope = accountScope();
+    const canonical = catalogPrayer(id);
+    if (!canonical) {
+      set({ selectedPrayerId: "", loadingPrayerId: null, prayerLoadError: "This prayer is not included in the current research catalog." });
+      return;
+    }
+    id = canonical.id;
     set({ selectedPrayerId: id, loadingPrayerId: null, prayerLoadError: null });
     const prayer = get().prayers.find((item) => item.id === id);
     if (!prayer || prayer.source !== "sefaria-search") {
@@ -105,6 +116,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     set({ loadingPrayerId: id });
     try {
       const hydrated = await hydratePrayerFromSefaria(prayer);
+      if (!isCurrentAccountScope(scope)) return;
       set((state) => {
         const prayers = state.prayers.map((item) =>
           item.id === id ? hydrated : item,
@@ -119,14 +131,13 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
         };
       });
     } catch (error) {
+      if (!isCurrentAccountScope(scope)) return;
       set((state) =>
         state.selectedPrayerId === id
           ? {
               loadingPrayerId: null,
               prayerLoadError:
-                error instanceof Error
-                  ? error.message
-                  : "This prayer could not be loaded right now.",
+                userFacingError(error, "This prayer could not be loaded right now."),
             }
           : state,
       );
@@ -148,6 +159,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     source = "guided-reading",
     practice,
   ) => {
+    if (!catalogPrayer(prayer.id)) return null;
     if (
       !currentPrayerAvailability(
         practice ?? timedPracticeForPrayer(prayer),
@@ -178,9 +190,11 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
     return entry;
   },
   sync: async () => {
+    const scope = accountScope();
     set({ isSyncing: true });
     try {
       const prayers = await syncCorePrayers();
+      if (!isCurrentAccountScope(scope)) return;
       set((state) => ({
         prayers,
         results: searchPrayers(state.query, prayers),
@@ -191,7 +205,7 @@ export const usePrayerStore = create<PrayerState>((set, get) => ({
           : (prayers[0]?.id ?? "shema"),
       }));
     } finally {
-      set({ isSyncing: false });
+      if (isCurrentAccountScope(scope)) set({ isSyncing: false });
     }
   },
 }));
@@ -220,3 +234,10 @@ function isPrayerHistoryArray(value: unknown): value is PrayerHistoryEntry[] {
     })
   );
 }
+
+onAccountScopeChange(() => usePrayerStore.setState({
+  history: recoverPrayerHistory(readSocialData(HISTORY_KEY, isPrayerHistoryArray) ?? [], useSocialStore.getState().posts),
+  bookmarkedPrayerIds: readSocialData(BOOKMARKS_KEY, isStringArray) ?? [],
+  query: "", results: searchPrayers("", usePrayerStore.getState().prayers), selectedPrayerId: "shema", isSearchingRemote: false, isSyncing: false,
+  loadingPrayerId: null, prayerLoadError: null,
+}));

@@ -1,3 +1,4 @@
+import { onAccountScopeChange } from "@/services/accountScope";
 import { create } from "zustand";
 import { readSocialData, writeSocialData } from "@/services/socialStorage";
 import {
@@ -129,4 +130,11 @@ export const useReminderStore = create<ReminderState>((set, get) => ({
       set({ error: "Your checklist could not be saved." });
     }
   },
+}));
+
+onAccountScopeChange(() => useReminderStore.setState({
+  prefs: readSocialData(KEY, isReminderPreferences) ?? defaultReminders(),
+  location: readSocialData("reminders.location", isLocation),
+  checklists: readSocialData("reminders.checklists", isChecklists) ?? {},
+  status: "Reminders are off.", error: null, syncing: false, scheduled: 0, preview: [],
 }));

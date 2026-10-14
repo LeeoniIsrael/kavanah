@@ -4,7 +4,7 @@ Effective August 10, 2026
 
 Kavanah provides prayer text, translations, transliterations, Jewish calendar information, estimated zmanim, reminders, learning context, and optional AI-assisted explanations for personal educational use.
 
-An account is required to use Kavanah. Joining Circle, sharing practice, and using the assistant remain optional. You can sign out or delete your account in Profile. Account deletion signs you out; device-only data can be cleared separately from Profile or the sign-in screen. These account terms were updated October 8, 2026 and remain a draft for owner/legal review.
+An account is required to use Kavanah. Joining Circle, sharing practice, and using the assistant remain optional. You can sign out or delete your account in Profile. Account deletion signs you out and removes the deleted account’s saved personal data and reminders from this device. Other accounts’ records and older unowned records remain until local reset. Clear local data, available from Profile or the sign-in screen, removes personal records for all accounts on that device without deleting their cloud accounts. These account terms were updated October 13, 2026 and remain a draft for owner/legal review.
 
 ## Religious guidance
 

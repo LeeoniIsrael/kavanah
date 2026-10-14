@@ -4,6 +4,10 @@ const mockRpc = jest.fn();
 const mockSignOut = jest.fn();
 const mockOwner = jest.fn();
 const mockClear = jest.fn();
+const mockLocalCleanup = jest.fn();
+const mockCancelReminders = jest.fn();
+jest.mock("@/services/reminderScheduler", () => ({ cancelLocalRemindersForDeletion: () => mockCancelReminders(), syncReminders: jest.fn() }));
+jest.mock("@/features/siddur/cache", () => ({ clearSiddurAccountData: () => mockLocalCleanup() }));
 jest.mock("@/services/network/client", () => ({
   circleClient: null,
   circleRpc: (...args: unknown[]) => mockRpc(...args),
@@ -21,9 +25,9 @@ jest.mock("@/store/socialStore", () => ({
   useSocialStore: { setState: jest.fn() },
 }));
 jest.mock("@/store/prayerIdentityStore", () => ({
-  usePrayerIdentityStore: { getState: jest.fn() },
+  usePrayerIdentityStore: { getState: () => ({ restoreFromAccount: jest.fn() }) },
 }));
-import { deleteCircleAccount, useCircleAccount } from "../circleAccountStore";
+import { deleteCircleAccount, loadCircleAccount, useCircleAccount } from "../circleAccountStore";
 import { File, Paths } from "expo-file-system";
 import { userStorage } from "@/services/mmkv";
 import { writeSocialData } from "@/services/socialStorage";
@@ -33,12 +37,37 @@ beforeEach(() => {
   mockSignOut.mockReset().mockResolvedValue({ error: null });
   mockOwner.mockClear();
   mockClear.mockClear();
+  mockLocalCleanup.mockReset().mockResolvedValue(undefined);
+  mockCancelReminders.mockReset().mockResolvedValue(undefined);
   userStorage.clearAll();
   useCircleAccount.setState({
     session: session("alice"),
     profile: null,
     ready: true,
   });
+});
+
+test("deletion cannot sign out a newer account while its local transition is still pending", async () => {
+  let finishCleanup!: () => void;
+  let finishSwitch!: () => void;
+  mockLocalCleanup.mockImplementation(() => new Promise<void>(resolve => { finishCleanup = resolve; }));
+  const deleting = deleteCircleAccount();
+  await new Promise(resolve => setImmediate(resolve));
+  mockCancelReminders.mockImplementationOnce(() => new Promise<void>(resolve => { finishSwitch = resolve; }));
+  const switching = loadCircleAccount(session("bob"));
+  expect(useCircleAccount.getState().session).toBeNull();
+  finishCleanup(); await deleting;
+  expect(mockSignOut).not.toHaveBeenCalled();
+  finishSwitch(); await switching;
+  expect(useCircleAccount.getState().session?.user.id).toBe("bob");
+});
+
+test("a failed local cleanup after cloud deletion remains a visible access-blocking error", async () => {
+  mockLocalCleanup.mockRejectedValue(new Error("private disk details"));
+  await expect(deleteCircleAccount()).rejects.toThrow("local cleanup failed");
+  expect(useCircleAccount.getState()).toMatchObject({ session: null, sessionReady: true, sessionError: expect.stringContaining("local cleanup failed") });
+  expect(useCircleAccount.getState().sessionError).not.toContain("private disk");
+  expect(mockCancelReminders).toHaveBeenCalledTimes(1);
 });
 test("duplicate deletion submissions share one authenticated operation and remove account files", async () => {
   let finish!: () => void;

@@ -1,3 +1,4 @@
+jest.mock("react-native", () => ({ Platform: { OS: "web" } }));
 jest.mock("@/services/location", () => ({ requestZmanimLocation: jest.fn() }));
 import { usePrayerStore } from "../prayerStore";
 import { useZmanimStore } from "../zmanimStore";
@@ -21,15 +22,15 @@ it("does not save a reader completion after sunset, including an earlier start",
     locationCheckedAt: +sunset - 60000,
   });
   usePrayerStore.setState({ history: [] });
-  const prayer = { id: "tefillin-blessing", title: "Blessing for Tefillin" };
+  const prayer = { id: "modeh-ani", title: "Modeh Ani" };
   expect(
     usePrayerStore
       .getState()
-      .recordCompletion(prayer, sunset, new Date(+sunset - 300000)),
+      .recordCompletion(prayer, sunset, new Date(+sunset - 300000), "reader", "tefillin"),
   ).toBeNull();
   expect(usePrayerStore.getState().history).toEqual([]);
   expect(
-    usePrayerStore.getState().recordCompletion(prayer, new Date(+sunset - 1)),
+    usePrayerStore.getState().recordCompletion(prayer, new Date(+sunset - 1), undefined, "reader", "tefillin"),
   ).not.toBeNull();
   expect(usePrayerStore.getState().history).toHaveLength(1);
 });
@@ -76,4 +77,14 @@ it("uses the reader's matched practice when enforcing the completion window", ()
     ),
   ).toBeNull();
   expect(usePrayerStore.getState().history).toEqual([]);
+});
+
+it("rejects removed prayers without deleting historical entries", async () => {
+  const store = usePrayerStore.getState();
+  const history = store.history;
+  expect(store.recordCompletion({id: "outside-research", title: "Old text"})).toBeNull();
+  await store.selectPrayer("outside-research");
+  expect(usePrayerStore.getState().prayerLoadError).toContain("not included");
+  expect(usePrayerStore.getState().selectedPrayerId).toBe("");
+  expect(usePrayerStore.getState().history).toEqual(history);
 });

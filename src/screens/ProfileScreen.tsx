@@ -1,6 +1,9 @@
+import { BuildIdentity } from "@/components/BuildIdentity";
 import thirdPartyNotices from "@/data/thirdPartyNotices.json";
 import { requestLocalDataDeletion } from "@/services/localDataDeletion";
+import { ACCOUNT_DELETION_MESSAGE } from "@/services/accountDeletionMessage";
 import Constants from "expo-constants";
+import { userFacingError } from "@/services/userFacingError";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
 import { useRouter } from "expo-router";
@@ -11,7 +14,7 @@ import {
 } from "@/store/circleAccountStore";
 import { requireCircle } from "@/services/network/client";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { BouncyAccordion } from "@/components/ui/bouncy-accordion";
+import { PrivacyDataUse } from "@/components/PrivacyDataUse";
 import { Card } from "@/components/ui/card";
 import { ChoiceRow } from "@/components/ui/choice-row";
 import { Switch } from "@/components/ui/switch";
@@ -21,7 +24,6 @@ import { cn } from "@/lib/utils";
 import {
   Bell,
   Share2,
-  Check,
   ChevronRight,
   Languages,
   LockKeyhole,
@@ -37,9 +39,9 @@ import {
   Linking,
   Modal,
   Platform,
-  ScrollView,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -106,9 +108,10 @@ export function ProfileScreen(): React.JSX.Element {
       }
     } catch (error) {
       setAccountError(
-        error instanceof Error
-          ? error.message
-          : "Could not update your account. Please try again.",
+        userFacingError(
+          error,
+          "Could not update your account. Please try again.",
+        ),
       );
     } finally {
       accountLock.current = false;
@@ -117,8 +120,7 @@ export function ProfileScreen(): React.JSX.Element {
   };
 
   const confirmDeleteProfile = () => {
-    const message =
-      "This deletes your Kavanah account and active Circle data, including cloud prayer history, posts, and connections, and signs you out. Device-only practice remains until you clear local data. You will need an account to use Kavanah again.";
+    const message = ACCOUNT_DELETION_MESSAGE;
     if (Platform.OS === "web") {
       if (globalThis.confirm?.(`${message}\n\nDelete account?`))
         void runAccountAction("delete");
@@ -563,102 +565,17 @@ export function ProfileScreen(): React.JSX.Element {
             </ScrollView>
           ) : (
             <ScrollView
-              contentContainerClassName="px-6 pt-[72px] pb-12 gap-6"
+              contentContainerClassName="px-6 pt-[72px] pb-12"
               showsVerticalScrollIndicator={false}
             >
-              <View className="gap-1 pr-12">
-                <Text variant="caption">Privacy</Text>
-                <Text variant="display" className="text-[34px] leading-[39px]">
-                  Clear by design
-                </Text>
-                <Text variant="body">
-                  Open each section to see exactly how Kavanah handles your
-                  data.
-                </Text>
-              </View>
-              <BouncyAccordion.Root defaultValue="device" gap={6}>
-                <BouncyAccordion.Item value="device">
-                  <BouncyAccordion.Trigger accessibilityLabel="Stored on this device">
-                    <BouncyAccordion.Trigger.Icon>
-                      <LockKeyhole size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
-                      Stored on this device
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
-                    Bookmarks, streaks, language preferences, reminder settings,
-                    and the coordinates used to calculate zmanim. Precise
-                    coordinates are not sent to the prayer assistant.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="circle">
-                  <BouncyAccordion.Trigger accessibilityLabel="Circle account data">
-                    <BouncyAccordion.Trigger.Icon>
-                      <UserRound size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
-                      Circle account
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
-                    Joining Circle saves future prayer completions to your
-                    account. Sharing starts off; accepted connections see only
-                    the updates you choose to share. Your address book is never
-                    uploaded. Delete your cloud account from Profile → Account;
-                    private device activity remains here.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="assistant">
-                  <BouncyAccordion.Trigger accessibilityLabel="Prayer assistant data use">
-                    <BouncyAccordion.Trigger.Icon>
-                      <MessageCircle size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
-                      Prayer assistant
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
-                    Only after you allow it, your question, selected prayer
-                    text, language, source reference, and review status are sent
-                    through Kavanah's server to OpenAI. Display translations are
-                    identified as unreviewed. Recognizable email addresses,
-                    phone numbers, and common street-address patterns are
-                    redacted where detected. Avoid submitting identifying
-                    information. Questions are not used for advertising.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="guidance">
-                  <BouncyAccordion.Trigger accessibilityLabel="Religious guidance">
-                    <BouncyAccordion.Trigger.Icon>
-                      <ShieldCheck size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
-                      Religious guidance
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
-                    Assistant answers are educational and may be incomplete.
-                    They are not binding halachic rulings and do not replace a
-                    qualified rabbi, doctor, or emergency service.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-                <BouncyAccordion.Item value="choice">
-                  <BouncyAccordion.Trigger accessibilityLabel="Your choice">
-                    <BouncyAccordion.Trigger.Icon>
-                      <Check size={20} color={colors.blue} />
-                    </BouncyAccordion.Trigger.Icon>
-                    <BouncyAccordion.Trigger.Label>
-                      Your choice
-                    </BouncyAccordion.Trigger.Label>
-                  </BouncyAccordion.Trigger>
-                  <BouncyAccordion.Content>
-                    You can turn off the prayer assistant or reminders here at
-                    any time. Kavanah can still be used for prayer search,
-                    reading, bookmarks, and local zmanim after signing in.
-                  </BouncyAccordion.Content>
-                </BouncyAccordion.Item>
-              </BouncyAccordion.Root>
+              <PrivacyDataUse
+                assistantEnabled={assistantEnabled}
+                circleEnabled={Boolean(accountSession)}
+                onAssistantChange={(enabled) => {
+                  void confirmHaptic();
+                  setAssistantConsent(enabled);
+                }}
+              />
               <Button
                 variant="secondary"
                 onPress={() => openPolicy("privacyPolicyUrl")}
@@ -691,6 +608,7 @@ export function ProfileScreen(): React.JSX.Element {
           )}
         </SafeAreaView>
       </Modal>
+      <BuildIdentity />
     </Screen>
   );
 }

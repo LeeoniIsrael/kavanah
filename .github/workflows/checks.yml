@@ -24,7 +24,7 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - run: npm run typecheck
       - run: npm test -- --runInBand
       - run: npm run test:backend
@@ -32,9 +32,19 @@ jobs:
         env:
           PG_TEST_URL: postgresql://postgres:integration-tests-only@127.0.0.1:5432/postgres
       - run: npm run test:api
+      - run: npm run test:url-decoder
+      - run: npm run test:parser-override
+      - run: npm run test:uuid-override
       - run: npm run test:edge-probe
       - run: npm run test:ui
       - run: npm run lint
       - run: npm run build
         env:
           CI: '1'
+      - name: Generate iOS project without installing pods or signing
+        run: node node_modules/expo/bin/cli prebuild --platform ios --no-install
+        env:
+          CI: '1'
+          EXPO_NO_DOTENV: '1'
+      - name: Verify generated widget font resources
+        run: node scripts/backend/checkWidgetFonts.cjs

@@ -1,9 +1,7 @@
 import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
-import { Text, TextClassContext } from "@/components/ui/text";
+import { TextClassContext } from "@/components/ui/text";
 import {
   useThemeColors,
-  useThemedStyles,
-  type ThemeColors,
 } from "@/design/appearance";
 import { iconMetrics } from "@/design/iconography";
 import { motion } from "@/design/theme";
@@ -16,7 +14,7 @@ import {
   tapHaptic,
 } from "@/services/haptics";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Animated,
   Easing,
@@ -78,6 +76,7 @@ const buttonVariants = cva(
           Platform.select({ web: "has-[>svg]:px-4" }),
         ),
         icon: "size-11 rounded-full",
+        row: "min-h-16 flex-row items-center justify-start gap-4 px-4 py-3 rounded-md",
         content:
           "h-auto min-h-11 p-0 flex-col items-stretch justify-start rounded-md",
       },
@@ -117,6 +116,7 @@ const buttonTextVariants = cva(
         sm: "",
         lg: "",
         icon: "",
+        row: "",
         content: "",
       },
     },
@@ -135,7 +135,6 @@ type ButtonProps = Omit<PressableProps, "style"> &
     haptic?: boolean | HapticTone;
     isLoading?: boolean;
     loadingLabel?: ReactNode;
-    loadingIndicator?: ReactNode;
     withPressAnimation?: boolean;
     animationDuration?: number;
     width?: number;
@@ -149,7 +148,7 @@ const AnimatedButton = Animated.createAnimatedComponent(Pressable);
 
 function Button({
   className,
-  variant,
+  variant = "default",
   size,
   style,
   onPress,
@@ -161,7 +160,6 @@ function Button({
   haptic = "none",
   isLoading = false,
   loadingLabel,
-  loadingIndicator,
   withPressAnimation = true,
   animationDuration = motion.pressMs,
   width,
@@ -172,28 +170,10 @@ function Button({
   ...props
 }: ButtonProps) {
   const colors = useThemeColors();
-  const styles = useThemedStyles(makestyles);
 
   const [scale] = useState(() => new Animated.Value(1));
-  const [loadingOpacity] = useState(
-    () => new Animated.Value(isLoading ? 1 : 0),
-  );
   const [restingWidth, setRestingWidth] = useState<number>();
   const reduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    loadingOpacity.stopAnimation();
-    if (!isLoading) {
-      loadingOpacity.setValue(0);
-      return;
-    }
-    Animated.timing(loadingOpacity, {
-      toValue: 1,
-      duration: reduceMotion ? 0 : animationDuration * 2,
-      easing: Easing.bezier(...motion.standard),
-      useNativeDriver: true,
-    }).start();
-  }, [animationDuration, isLoading, loadingOpacity, reduceMotion]);
 
   const animateTo = (value: number) => {
     scale.stopAnimation();
@@ -228,7 +208,13 @@ function Button({
   const disabled = Boolean(props.disabled || isLoading);
   const callerStyle = StyleSheet.flatten(style);
   const minimumHeight =
-    size === "lg" ? 56 : !size || size === "default" ? 48 : iconMetrics.target;
+    size === "row"
+      ? 64
+      : size === "lg"
+        ? 56
+        : !size || size === "default"
+          ? 48
+          : iconMetrics.target;
   const indicatorColor =
     variant === "default" || variant === "destructive"
       ? colors.onAccent
@@ -239,6 +225,12 @@ function Button({
       <AnimatedButton
         accessibilityRole="button"
         {...props}
+        accessibilityLabel={props.accessibilityLabel}
+        accessibilityValue={
+          isLoading && typeof loadingLabel === "string"
+            ? { text: loadingLabel }
+            : props.accessibilityValue
+        }
         disabled={disabled}
         accessibilityState={{
           ...accessibilityState,
@@ -272,6 +264,7 @@ function Button({
               : {}),
             minWidth: Math.max(
               iconMetrics.target,
+              isLoading ? (restingWidth ?? 0) : 0,
               typeof callerStyle?.minWidth === "number"
                 ? callerStyle.minWidth
                 : 0,
@@ -303,24 +296,11 @@ function Button({
         }}
       >
         {isLoading ? (
-          <Animated.View
-            pointerEvents="none"
-            style={[styles.loadingContent, { opacity: loadingOpacity }]}
-          >
-            {loadingIndicator ?? (
-              <CircleLoadingIndicator
-                dotColor={indicatorColor}
-                dotRadius={2.5}
-                dotSpacing={4}
-              />
-            )}
-            {typeof loadingLabel === "string" ||
-            typeof loadingLabel === "number" ? (
-              <Text>{loadingLabel}</Text>
-            ) : (
-              loadingLabel
-            )}
-          </Animated.View>
+          <CircleLoadingIndicator
+            dotColor={indicatorColor}
+            dotRadius={2.5}
+            dotSpacing={4}
+          />
         ) : (
           props.children
         )}
@@ -328,17 +308,6 @@ function Button({
     </TextClassContext.Provider>
   );
 }
-
-const makestyles = (colors: ThemeColors) =>
-  StyleSheet.create({
-    loadingContent: {
-      alignItems: "center",
-      flexDirection: "row",
-      flexShrink: 1,
-      gap: 8,
-      justifyContent: "center",
-    },
-  });
 
 export { Button, buttonTextVariants, buttonVariants };
 export type { ButtonProps };

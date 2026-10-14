@@ -4,7 +4,7 @@ import { formatISO, isSameDay, parseISO, subDays } from "date-fns";
 import { useSocialStore } from "@/store/socialStore";
 import { create } from "zustand";
 
-import { readJson, userStorage, writeJson } from "@/services/mmkv";
+import { onAccountScopeChange } from "@/services/accountScope";
 
 export type StreakHabit =
   "shacharit" | "mincha" | "maariv" | "tefillin" | "study";
@@ -69,7 +69,7 @@ function isStreakHabitArray(value: unknown): value is StreakHabit[] {
 const persisted =
   readSocialData(STORAGE_KEY, isHabitProgressArray) ?? initialHabits;
 const persistedEnabledHabits =
-  readJson(userStorage, ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
+  readSocialData(ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys;
 
 writeSocialData(STORAGE_KEY, persisted);
 
@@ -221,7 +221,7 @@ function persist(state: { habits: HabitProgress[] }): {
 function persistEnabledHabits(state: { enabledHabits: StreakHabit[] }): {
   enabledHabits: StreakHabit[];
 } {
-  writeJson(userStorage, ENABLED_HABITS_KEY, state.enabledHabits);
+  writeSocialData(ENABLED_HABITS_KEY, state.enabledHabits);
   return state;
 }
 
@@ -230,3 +230,8 @@ function milestones(streak: number): string[] {
     .filter((milestone) => streak >= milestone)
     .map((milestone) => `${milestone} days`);
 }
+
+onAccountScopeChange(() => useStreakStore.setState({
+  habits: readSocialData(STORAGE_KEY, isHabitProgressArray) ?? initialHabits,
+  enabledHabits: readSocialData(ENABLED_HABITS_KEY, isStreakHabitArray) ?? habitKeys,
+}));

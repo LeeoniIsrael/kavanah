@@ -1,3 +1,4 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
 import { usePracticeAvailability } from "@/hooks/usePracticeAvailability";
 import { prayerReadingGuide, prayerScopeNote } from "@/data/prayerReadingGuide";
 import { findLanguage } from "@/data/languages";
@@ -18,12 +19,18 @@ import {
 import { createIndexedPrayer } from "@/services/prayerService";
 import { habitForPrayer } from "@/services/practiceHabit";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { QuoteSelector } from "@/components/QuoteSelector";
-import { Input } from "@/components/ui/input";
+import { ChoiceRow } from "@/components/ui/choice-row";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { SearchBar } from "@/components/SearchBar";
 import { Text } from "@/components/ui/text";
 import { useThemeColors } from "@/design/appearance";
+import { useInterfaceStyles } from "@/design/layout";
 import { cn } from "@/lib/utils";
-import type { QuoteSource } from "@/store/socialStore";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import {
   Bookmark,
@@ -32,23 +39,17 @@ import {
   CircleHelp,
   ExternalLink,
   MoonStar,
-  Quote,
-  RefreshCw,
-  Search,
   X,
 } from "@/components/ui/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  Alert,
-  Animated,
-  Easing,
   Linking,
   Modal,
   Platform,
   Pressable,
-  ScrollView,
   View,
 } from "react-native";
+import { ScrollView } from "@/components/ui/fade-scroll-view";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import {
@@ -56,7 +57,6 @@ import {
   type GuidedPrayerToken,
 } from "@/components/GuidedPrayer";
 import {
-  PrayerSearchSkeleton,
   PrayerTextSkeleton,
 } from "@/components/LoadingSkeletons";
 import {
@@ -68,13 +68,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GooeyInfoPopover, GooeyPopover } from "@/components/ui/gooey-popover";
 import { spacing } from "@/design/theme";
+import { FadeIn } from "@/components/ui/fade-in";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { buildPrayerAssistantContext } from "@/services/assistantContext";
 import { confirmHaptic, successHaptic } from "@/services/haptics";
-import {
-  localizeHebrewTransliteration,
-  translatePrayerText,
-} from "@/services/localizationService";
 import { getPrayerFocusSetup } from "@/services/prayerFocus";
 import { usePrayerStore } from "@/store/prayerStore";
 import { usePrayerIdentityStore } from "@/store/prayerIdentityStore";
@@ -117,10 +114,11 @@ function hebrewReviewMessage(kind: HebrewContentKind): string {
     return "This entry represents a full service whose sections must be reviewed individually.";
   if (kind === "missing")
     return "Kavanah will not invent or silently substitute sacred text while the canonical Hebrew is being prepared.";
-  return "This text came from a live library search and is outside Kavanah's reviewed catalog.";
+  return "This captured prayer-book section is in the research catalog. Text, alignment, and pronunciation await expert review.";
 }
 
 export function PrayerScreen(): React.JSX.Element {
+  const ui = useInterfaceStyles();
   const availability = usePracticeAvailability();
   const colors = useThemeColors();
 
@@ -134,7 +132,6 @@ export function PrayerScreen(): React.JSX.Element {
     results,
     selectedPrayerId,
     query,
-    isSyncing,
     isSearchingRemote,
     loadingPrayerId,
     prayerLoadError,
@@ -144,7 +141,6 @@ export function PrayerScreen(): React.JSX.Element {
     selectPrayer,
     toggleBookmark,
     recordCompletion,
-    sync,
   } = usePrayerStore();
   const shareAfterPrayer = useSettingsStore((state) => state.shareAfterPrayer);
   const setShareAfterPrayer = useSettingsStore(
@@ -153,7 +149,7 @@ export function PrayerScreen(): React.JSX.Element {
   const pendingShare = useRef<PracticeStoryMoment | null>(null);
   const completeHabit = useStreakStore((state) => state.completeHabit);
   const recordSocialPrayer = useSocialStore((state) => state.recordPrayer);
-  const [quoteSource, setQuoteSource] = useState<QuoteSource | null>(null);
+  const setWeeklyQuote = useSocialStore((state) => state.setWeeklyQuote);
   const primaryLanguageCode = useSettingsStore(
     (state) => state.primaryLanguageCode,
   );
@@ -163,6 +159,7 @@ export function PrayerScreen(): React.JSX.Element {
   const prayerSession = useRef<{ startedAt: Date; completed: boolean } | null>(
     null,
   );
+  const [prayerStartedAt, setPrayerStartedAt] = useState<number | null>(null);
   const [readerOpen, setReaderOpen] = useState(false);
   const [focusPromptOpen, setFocusPromptOpen] = useState(false);
   const [focusPromptMessage, setFocusPromptMessage] = useState("");
@@ -175,8 +172,7 @@ export function PrayerScreen(): React.JSX.Element {
   const [localizedPrayer, setLocalizedPrayer] =
     useState<LocalizedPrayer | null>(null);
   const reduceMotion = useReducedMotion();
-  const selected =
-    prayers.find((prayer) => prayer.id === selectedPrayerId) ?? prayers[0];
+  const selected = prayers.find((prayer) => prayer.id === selectedPrayerId);
   const selectedPractice = selected ? habitForPrayer(selected) : undefined;
   const bookmarkedPrayers = bookmarkedPrayerIds
     .map((id) => prayers.find((prayer) => prayer.id === id))
@@ -192,14 +188,12 @@ export function PrayerScreen(): React.JSX.Element {
   const showResults = query.trim().length > 0;
   const groupedResults = groupPrayerSearchResults(results);
   const visibleResults = showResults ? groupedResults.slice(0, 18) : [];
-  const [bookmarkReveal] = useState(
-    () => new Animated.Value(showResults ? 0 : 1),
-  );
   const focusSetup = getPrayerFocusSetup();
   const [defaultView, setDefaultView] =
     useState<PrayerLandingView>(savedPrayerLanding);
   const [libraryView, setLibraryView] =
     useState<PrayerLandingView>(savedPrayerLanding);
+  const [defaultViewDialogOpen, setDefaultViewDialogOpen] = useState(false);
   const [optionsOpen, setOptionsOpen] = useState(false);
   const [readerMenuCommand, setReaderMenuCommand] = useState<{
     id: number;
@@ -217,35 +211,24 @@ export function PrayerScreen(): React.JSX.Element {
 
   useFocusEffect(
     useCallback(() => {
-      if (!params.prayerId && !params.query) setLibraryView(defaultView);
+      if (!params.prayerId && params.query === undefined)
+        setLibraryView(defaultView);
     }, [defaultView, params.prayerId, params.query]),
   );
 
-  const chooseDefaultView = () =>
-    Alert.alert("Open Prayer to", "Choose what appears when you tap Prayer.", [
-      {
-        text: "Siddur",
-        onPress: () => {
-          writeSocialData(PRAYER_LANDING_KEY, "siddur");
-          setDefaultView("siddur");
-          setLibraryView("siddur");
-        },
-      },
-      {
-        text: "Find a prayer",
-        onPress: () => {
-          writeSocialData(PRAYER_LANDING_KEY, "search");
-          setDefaultView("search");
-          setLibraryView("search");
-        },
-      },
-      { text: "Cancel", style: "cancel" },
-    ]);
+  const chooseDefaultView = () => setDefaultViewDialogOpen(true);
+
+  const selectDefaultView = (view: PrayerLandingView) => {
+    writeSocialData(PRAYER_LANDING_KEY, view);
+    setDefaultView(view);
+    setLibraryView(view);
+    setDefaultViewDialogOpen(false);
+  };
 
   useEffect(() => {
     const linkedQuery = params.query?.trim();
-    if (linkedQuery) {
-      setQuery(linkedQuery);
+    if (params.query !== undefined) {
+      setQuery(linkedQuery ?? "");
       // A new external route must reveal its requested search results.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLibraryView("search");
@@ -256,7 +239,9 @@ export function PrayerScreen(): React.JSX.Element {
       // Deep-link navigation resets the reader and assistant as one transition.
       setGuidedPrayerOpen(true);
 
-      prayerSession.current = { startedAt: new Date(), completed: false };
+      const startedAt = new Date();
+      prayerSession.current = { startedAt, completed: false };
+      setPrayerStartedAt(startedAt.getTime());
       setReaderOpen(true);
       setFocusPromptMessage("");
       setFocusPromptOpen(false);
@@ -281,17 +266,6 @@ export function PrayerScreen(): React.JSX.Element {
   }, [query, searchRemote]);
 
   useEffect(() => {
-    Animated.timing(bookmarkReveal, {
-      toValue: showResults ? 0 : 1,
-      duration: reduceMotion ? 0 : showResults ? 220 : 280,
-      easing: showResults
-        ? Easing.out(Easing.cubic)
-        : Easing.bezier(0.2, 0.9, 0.25, 1),
-      useNativeDriver: false,
-    }).start();
-  }, [bookmarkReveal, reduceMotion, showResults]);
-
-  useEffect(() => {
     let cancelled = false;
 
     async function localizeSelectedPrayer(): Promise<void> {
@@ -309,22 +283,12 @@ export function PrayerScreen(): React.JSX.Element {
         })),
       });
 
-      const tokens = await Promise.all(
-        selected.tokens.map(async (token) => ({
-          ...token,
-          localizedTransliteration: localizeHebrewTransliteration(
-            token.transliteration,
-            primaryLanguageCode,
-          ),
-          localizedTranslation:
-            primaryLanguageCode === "he" && token.hebrew
-              ? token.hebrew
-              : await translatePrayerText(
-                  token.translation,
-                  primaryLanguageCode,
-                ),
-        })),
-      );
+      // Only captured English and pronunciation are published; never replace them with generated text.
+      const tokens = selected.tokens.map((token) => ({
+        ...token,
+        localizedTransliteration: token.transliteration,
+        localizedTranslation: token.translation,
+      }));
 
       if (!cancelled) {
         setLocalizedPrayer({ prayerId: selected.id, tokens });
@@ -342,7 +306,9 @@ export function PrayerScreen(): React.JSX.Element {
     void selectPrayer(id);
     setGuidedPrayerOpen(true);
 
-    prayerSession.current = { startedAt: new Date(), completed: false };
+    const startedAt = new Date();
+    prayerSession.current = { startedAt, completed: false };
+    setPrayerStartedAt(startedAt.getTime());
     setReaderOpen(true);
     setFocusPromptMessage("");
     setFocusPromptOpen(false);
@@ -373,10 +339,10 @@ export function PrayerScreen(): React.JSX.Element {
   };
   const closeReader = () => {
     setCompletionMoment(null);
-    setQuoteSource(null);
     setGuidedPrayerOpen(false);
     setFocusPromptOpen(false);
     setReaderOpen(false);
+    setPrayerStartedAt(null);
     if (params.prayerId) {
       router.setParams({ prayerId: "" });
     }
@@ -396,17 +362,18 @@ export function PrayerScreen(): React.JSX.Element {
           localizedTransliteration: token.transliteration,
         })) ?? []);
   const guidedTokens: GuidedPrayerToken[] = readerTokens.map((token) => ({
+    ...token,
     id: token.id,
+    ...(token.kind ? { kind: token.kind } : {}),
     hebrew: token.hebrew,
     transliteration: token.localizedTransliteration,
     translation: token.localizedTranslation,
-    translationLanguage:
-      primaryLanguageCode !== "en" &&
-      primaryLanguageCode !== "he" &&
-      token.localizedTranslation === token.translation
-        ? "English (translation unavailable)"
-        : findLanguage(primaryLanguageCode).name,
+    translationLanguage: "English",
   }));
+  const showReaderDetails =
+    !guidedPrayerOpen ||
+    (!selectedLoading &&
+      (Boolean(prayerLoadError) || guidedTokens.length === 0));
 
   const startGuidedPrayer = () => {
     setGuidedPrayerOpen(true);
@@ -464,7 +431,8 @@ export function PrayerScreen(): React.JSX.Element {
   return (
     <Screen
       largeTitle="Prayer"
-      subtitle="Your siddur and prayers, together."
+      subtitle={`${prayers.length} researched entries · Hebrew, English & pronunciation.`}
+      scrollEnabled={libraryView !== "siddur"}
       rightComponent={
         <GooeyPopover.Root
           open={optionsOpen}
@@ -550,18 +518,14 @@ export function PrayerScreen(): React.JSX.Element {
           </GooeyPopover.Content>
         </GooeyPopover.Root>
       }
-      {...(libraryView === "siddur"
-        ? {
-            contentContainerStyle: { gap: 12, paddingTop: 8, paddingBottom: 0 },
-          }
-        : {})}
+      contentContainerStyle={{ gap: 12, paddingTop: 8, paddingBottom: 40 }}
     >
       <View
         accessibilityRole="tablist"
         style={{
           flexDirection: "row",
-          gap: 6,
-          padding: 5,
+          gap: 4,
+          padding: 4,
           borderRadius: 20,
           backgroundColor: colors.mineral,
         }}
@@ -570,11 +534,17 @@ export function PrayerScreen(): React.JSX.Element {
           <Button
             key={view}
             variant="ghost"
+            size="content"
             accessibilityRole="tab"
             accessibilityState={{ selected: libraryView === view }}
             onPress={() => setLibraryView(view)}
             style={{
               flex: 1,
+              minHeight: 44,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingHorizontal: 12,
+              paddingVertical: 10,
               borderRadius: 16,
               backgroundColor:
                 libraryView === view ? colors.blue : "transparent",
@@ -582,6 +552,7 @@ export function PrayerScreen(): React.JSX.Element {
           >
             <Text
               style={{
+                ...ui.itemTitle,
                 color: libraryView === view ? colors.onAccent : colors.ink,
               }}
             >
@@ -590,172 +561,120 @@ export function PrayerScreen(): React.JSX.Element {
           </Button>
         ))}
       </View>
-      {libraryView === "siddur" ? (
-        <SiddurExperience
-          embedded
-          menuCommand={readerMenuCommand}
-          onBookmarkStatus={setReaderBookmarked}
-          onChooseDefault={chooseDefaultView}
-        />
-      ) : (
-        <View className="gap-6">
-          <View
-            style={{
-              backgroundColor: colors.vellum,
-              borderCurve: "continuous",
-            }}
-            className="min-h-[62px] flex-row items-center gap-3 overflow-hidden rounded-lg pl-5 pr-2"
-          >
-            <Search size={20} color={colors.inkMuted} />
-            <Input
-              accessibilityLabel="Search prayers"
-              value={query}
-              onChangeText={setQuery}
-              placeholders={[
-                "Search for travel…",
-                "Search for Shema…",
-                "Search for protection…",
-              ]}
-              className="h-auto min-h-[56px] flex-1 w-auto border-0 bg-transparent dark:bg-transparent px-0 shadow-none"
-              placeholderTextColor={colors.inkMuted}
-            />
-            <Button
-              variant="secondary"
-              size="content"
-              accessibilityLabel="Refresh prayer library"
-              accessibilityRole="button"
-              onPress={() => void sync()}
-              disabled={isSyncing}
-              isLoading={isSyncing}
-              className="w-11 h-11 rounded-full items-center justify-center bg-muted"
-            >
-              <RefreshCw
-                size={20}
-                color={
-                  isSyncing || isSearchingRemote ? colors.inkMuted : colors.ink
-                }
+      <FadeIn key={libraryView}>
+        {libraryView === "siddur" ? (
+          <SiddurExperience
+            embedded
+            menuCommand={readerMenuCommand}
+            onBookmarkStatus={setReaderBookmarked}
+            onChooseDefault={chooseDefaultView}
+          />
+        ) : (
+          <View className="gap-6">
+            <View>
+              <SearchBar
+                accessibilityLabel="Search prayers"
+                style={{ flex: 1 }}
+                placeholder="Search for a prayer"
+                value={query}
+                onChangeText={setQuery}
               />
-            </Button>
-          </View>
+            </View>
 
-          {!showResults && (
-            <Animated.View
-              pointerEvents="auto"
-              className="overflow-hidden"
-              style={[
-                {
-                  opacity: bookmarkReveal,
-                  maxHeight: bookmarkReveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 320],
-                  }),
-                  marginBottom: bookmarkReveal.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, spacing.md],
-                  }),
-                  transform: [
-                    {
-                      translateY: bookmarkReveal.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [-12, 0],
-                      }),
-                    },
-                  ],
-                },
-              ]}
-            >
-              <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
-                <View className="flex-row items-center justify-between gap-3">
-                  <View>
+            {!showResults && (
+              <FadeIn>
+                <Card className="gap-4 bg-[transparent] border-[0px] px-0 py-2 shadow-none">
+                  <View className="pl-1">
                     <Text variant="caption">Bookmarked</Text>
                     <Text variant="section">Saved prayers</Text>
                   </View>
-                  <BookmarkCheck size={20} color={colors.gold} />
-                </View>
-                <View className="gap-2">
-                  {bookmarkedPrayers.length > 0 ? (
-                    bookmarkedPrayers.map((prayer) => (
-                      <View
-                        key={prayer.id}
-                        className="rounded-md bg-card flex-row items-center overflow-hidden"
-                      >
-                        <View className="flex-1">
-                          <Button
-                            variant="ghost"
-                            size="content"
-                            accessibilityLabel={`Open ${prayer.title}`}
-                            accessibilityRole="button"
-                            onPress={() => void openPrayer(prayer.id)}
-                            className="px-4 py-4"
-                          >
-                            <Text
-                              variant="section"
-                              className="text-[16px] leading-[21px]"
-                            >
-                              {prayer.title}
-                            </Text>
-                            <Text
-                              variant="body"
-                              numberOfLines={2}
-                              className="text-[12px] leading-[17px]"
-                            >
-                              {prayer.useCase || prayer.category}
-                            </Text>
-                          </Button>
-                        </View>
-                        <View className="w-[52px] items-start">
-                          <Button
-                            variant="secondary"
-                            size="content"
-                            accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
-                            accessibilityRole="button"
-                            haptic="confirm"
-                            onPress={() => toggleBookmark(prayer.id)}
-                            pressedScale={0.96}
-                            className="w-11 h-11 rounded-full items-center justify-center bg-muted"
-                          >
-                            <BookmarkMinus size={20} color={colors.blue} />
-                          </Button>
-                        </View>
-                      </View>
-                    ))
-                  ) : (
-                    <Text variant="body">
-                      Tap the bookmark on any prayer to keep it here.
-                    </Text>
-                  )}
-                </View>
-              </Card>
-            </Animated.View>
-          )}
-
-          {showResults ? (
-            <View className="gap-3">
-              <SectionHeading
-                title={isSearchingRemote ? "Searching prayers" : "Results"}
-                detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
-              />
-              {isSearchingRemote && visibleResults.length === 0 ? (
-                <PrayerSearchSkeleton />
-              ) : visibleResults.length > 0 ? (
-                visibleResults.map((result) => (
-                  <PrayerSearchGroupCard
-                    key={result.prayer.id}
-                    group={result}
-                    onOpen={(id) => void openPrayer(id)}
-                  />
-                ))
-              ) : (
-                <Card>
-                  <Text variant="body">
-                    Keep typing. Matches appear here as the search gets clearer.
-                  </Text>
+                  <View className="gap-2">
+                    {bookmarkedPrayers.length > 0 ? (
+                      bookmarkedPrayers.map((prayer) => (
+                        <FadeIn key={prayer.id}>
+                          <View className="rounded-md bg-card flex-row items-center overflow-hidden">
+                            <View className="flex-1">
+                              <Button
+                                variant="ghost"
+                                size="content"
+                                accessibilityLabel={`Open ${prayer.title}`}
+                                accessibilityRole="button"
+                                onPress={() => void openPrayer(prayer.id)}
+                                className="px-4 py-4"
+                              >
+                                <Text
+                                  variant="section"
+                                  className="text-[16px] leading-[21px]"
+                                >
+                                  {prayer.title}
+                                </Text>
+                                <Text
+                                  variant="body"
+                                  numberOfLines={2}
+                                  className="text-[12px] leading-[17px]"
+                                >
+                                  {prayer.useCase || prayer.category}
+                                </Text>
+                              </Button>
+                            </View>
+                            <View className="w-[52px] items-start">
+                              <Button
+                                variant="secondary"
+                                size="content"
+                                accessibilityLabel={`Remove ${prayer.title} from bookmarks`}
+                                accessibilityRole="button"
+                                haptic="confirm"
+                                onPress={() => toggleBookmark(prayer.id)}
+                                pressedScale={0.96}
+                                className="w-11 h-11 rounded-full items-center justify-center bg-muted"
+                              >
+                                <BookmarkMinus size={20} color={colors.blue} />
+                              </Button>
+                            </View>
+                          </View>
+                        </FadeIn>
+                      ))
+                    ) : (
+                      <Text variant="body">
+                        Tap the bookmark on any prayer to keep it here.
+                      </Text>
+                    )}
+                  </View>
                 </Card>
-              )}
-            </View>
-          ) : null}
-        </View>
-      )}
+              </FadeIn>
+            )}
+
+            {showResults ? (
+              <FadeIn style={{ gap: 12 }}>
+                <SectionHeading
+                  title="Results"
+                  detail={`${groupedResults.length} ${groupedResults.length === 1 ? "prayer" : "prayers"}`}
+                />
+                {isSearchingRemote ? <CircleLoadingIndicator accessibilityLabel="Searching prayers" /> : null}
+                {isSearchingRemote && visibleResults.length === 0 ? (
+                  <View />
+                ) : visibleResults.length > 0 ? (
+                  visibleResults.map((result) => (
+                    <FadeIn key={result.prayer.id}>
+                      <PrayerSearchGroupCard
+                        group={result}
+                        onOpen={(id) => void openPrayer(id)}
+                      />
+                    </FadeIn>
+                  ))
+                ) : (
+                  <Card>
+                    <Text variant="body">
+                      Keep typing. Matches appear here as the search gets
+                      clearer.
+                    </Text>
+                  </Card>
+                )}
+              </FadeIn>
+            ) : null}
+          </View>
+        )}
+      </FadeIn>
 
       <Modal
         visible={readerOpen && Boolean(selected)}
@@ -771,6 +690,8 @@ export function PrayerScreen(): React.JSX.Element {
       >
         <SafeAreaProvider>
           <SafeAreaView style={{ flex: 1, backgroundColor: colors.parchment }}>
+            {showReaderDetails ? (
+              <>
             {selected ? (
               <View
                 className="z-[10] flex-row justify-between"
@@ -989,17 +910,6 @@ export function PrayerScreen(): React.JSX.Element {
                       {token.hebrew ? (
                         <Text
                           variant="section"
-                          accessibilityHint="Hold to choose a Hebrew quote"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.hebrew,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: "he",
-                            })
-                          }
                           className="font-hebrew-heading font-semibold text-right text-[33px] leading-[50px] text-foreground"
                         >
                           {token.hebrew}
@@ -1022,50 +932,7 @@ export function PrayerScreen(): React.JSX.Element {
                         <Text className="text-[12px] leading-[16px] font-medium tracking-normal text-inkFaint font-label">
                           Translation
                         </Text>
-                        <Text
-                          variant="body"
-                          onLongPress={() =>
-                            setQuoteSource({
-                              prayerId: selected.id,
-                              title: selected.title,
-                              text: token.localizedTranslation,
-                              sourceRef: selected.hebrewReview.sourceRef,
-                              sourceUrl: selected.hebrewReview.sourceUrl,
-                              language: primaryLanguageCode,
-                            })
-                          }
-                        >
-                          {token.localizedTranslation}
-                        </Text>
-                        {token.localizedTranslation.trim() ? (
-                          <Button
-                            variant="ghost"
-                            size="content"
-                            accessibilityLabel={`Choose a quote from line ${readerTokens.indexOf(token) + 1}`}
-                            onPress={() =>
-                              setQuoteSource({
-                                prayerId: selected.id,
-                                title: selected.title,
-                                text: token.localizedTranslation,
-                                sourceRef: selected.hebrewReview.sourceRef,
-                                sourceUrl: selected.hebrewReview.sourceUrl,
-                                language: primaryLanguageCode,
-                              })
-                            }
-                            style={{
-                              flexDirection: "row",
-                              alignItems: "center",
-                              gap: 8,
-                              minHeight: 44,
-                              alignSelf: "flex-start",
-                            }}
-                          >
-                            <Quote size={16} color={colors.blue} />
-                            <Text style={{ fontSize: 13, color: colors.blue }}>
-                              Choose a quote
-                            </Text>
-                          </Button>
-                        ) : null}
+                        <Text variant="body">{token.localizedTranslation}</Text>
                       </View>
                     </View>
                   ))}
@@ -1079,11 +946,28 @@ export function PrayerScreen(): React.JSX.Element {
                         {selected.sourceMetadata.sourceVersion.versionTitle} ·{" "}
                         {selected.sourceMetadata.sourceVersion.license}
                       </Text>
+                      {selected.sourceMetadata.translationVersions.map((version) => (
+                        <Text key={version.versionTitle} style={{ color: colors.inkMuted }}>
+                          English: {version.versionTitle} · {version.license} · {version.versionSource}
+                        </Text>
+                      ))}
+                      <Text style={{ color: colors.inkMuted }}>
+                        {selected.sourceMetadata.sourceVersion.versionSource}
+                      </Text>
                     </View>
                   ) : null}
                 </View>
               ) : null}
             </ScrollView>
+              </>
+            ) : selectedLoading ? (
+              <View style={{ flex: 1, paddingHorizontal: 24, paddingTop: 24 }}>
+                <Text variant="section" style={{ color: colors.ink }}>
+                  Opening {selected?.title ?? "prayer"}
+                </Text>
+                <PrayerTextSkeleton />
+              </View>
+            ) : null}
             {focusPromptOpen ? (
               <View
                 accessibilityViewIsModal
@@ -1150,6 +1034,7 @@ export function PrayerScreen(): React.JSX.Element {
               </View>
             ) : null}
             <GuidedPrayer
+              startedAt={prayerStartedAt ?? 0}
               prayerTitle={selected?.title ?? "Prayer"}
               guide={selected ? prayerReadingGuide(selected) : undefined}
               scopeNote={selected ? prayerScopeNote(selected) : undefined}
@@ -1169,6 +1054,7 @@ export function PrayerScreen(): React.JSX.Element {
                   : undefined;
                 if (url) void Linking.openURL(url);
               }}
+              practice={selected?.practice}
               tokens={guidedTokens}
               visible={guidedPrayerOpen && !selectedLoading && !prayerLoadError}
               onClose={closeReader}
@@ -1178,17 +1064,17 @@ export function PrayerScreen(): React.JSX.Element {
               reviewPending={selected?.hebrewReview.status !== "approved"}
               completionBlockedReason={availability(selectedPractice).reason}
               onComplete={completeGuidedPrayer}
-              onQuote={(token) => {
-                if (selected)
-                  setQuoteSource({
-                    prayerId: selected.id,
-                    title: selected.title,
-                    text: token.translation || token.hebrew,
-                    sourceRef: selected.hebrewReview.sourceRef,
-                    sourceUrl: selected.hebrewReview.sourceUrl,
-                    language: token.translation ? primaryLanguageCode : "he",
-                  });
-              }}
+              quoteSource={
+                selected
+                  ? {
+                      prayerId: selected.id,
+                      title: selected.title,
+                      sourceRef: selected.hebrewReview.sourceRef,
+                      sourceUrl: selected.hebrewReview.sourceUrl,
+                    }
+                  : undefined
+              }
+              onSaveQuote={setWeeklyQuote}
             />
             {completionMoment ? (
               <PrayerCompletionPrompt
@@ -1207,16 +1093,6 @@ export function PrayerScreen(): React.JSX.Element {
                 }}
               />
             ) : null}
-            {quoteSource && (
-              <QuoteSelector
-                source={quoteSource}
-                onClose={() => setQuoteSource(null)}
-                onViewCircle={() => {
-                  closeReader();
-                  router.push("/circle");
-                }}
-              />
-            )}
           </SafeAreaView>
         </SafeAreaProvider>
       </Modal>
@@ -1224,6 +1100,45 @@ export function PrayerScreen(): React.JSX.Element {
         moment={shareMoment}
         onClose={() => setShareMoment(null)}
       />
+      <Dialog
+        open={defaultViewDialogOpen}
+        onOpenChange={setDefaultViewDialogOpen}
+      >
+        <DialogContent
+          className="gap-5 rounded-xl p-5"
+          accessibilityViewIsModal
+        >
+          <View className="gap-2 pr-10">
+            <DialogTitle>Open Prayer to</DialogTitle>
+            <DialogDescription>
+              Choose what appears when you tap Prayer.
+            </DialogDescription>
+          </View>
+          <View accessibilityRole="radiogroup" className="gap-2">
+            <ChoiceRow
+              title="Siddur"
+              detail="Browse the prayer book"
+              selected={defaultView === "siddur"}
+              onPress={() => selectDefaultView("siddur")}
+            />
+            <ChoiceRow
+              title="Find a prayer"
+              detail="Search prayers by name or text"
+              selected={defaultView === "search"}
+              onPress={() => selectDefaultView("search")}
+            />
+          </View>
+          <Button
+            variant="ghost"
+            accessibilityRole="button"
+            accessibilityLabel="Cancel choosing the default Prayer view"
+            onPress={() => setDefaultViewDialogOpen(false)}
+            className="min-h-11 items-center justify-center rounded-md"
+          >
+            <Text className="text-muted-foreground">Cancel</Text>
+          </Button>
+        </DialogContent>
+      </Dialog>
     </Screen>
   );
 }

@@ -1,3 +1,4 @@
+import { onAccountScopeChange } from "@/services/accountScope";
 import { create } from "zustand";
 
 import { requestZmanimLocation } from "@/services/location";
@@ -62,3 +63,8 @@ export const useZmanimStore = create<ZmanimState>((set, get) => ({
 function toDateKey(date: Date): string {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 }
+
+onAccountScopeChange(() => {
+  invalidateLocationRequests();
+  useZmanimStore.setState({ location: null, locationCheckedAt: null, zmanim: [], upcomingZmanim: [], isLoading: false, error: null });
+});

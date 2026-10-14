@@ -1,33 +1,48 @@
+import { CircleLoadingIndicator } from "@/components/molecules/circle-loader";
+import { readerLanguages, readerLanguageLabels, segmentText } from "./model";
 /* eslint-disable react-hooks/exhaustive-deps -- Section fetches are keyed by canonical ref; language and scale reuse the same cached segments. */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Alert,
   Animated,
+  Easing,
   Modal,
   Platform,
   Pressable,
-  ScrollView,
   TextInput,
   View,
   useWindowDimensions,
 } from "react-native";
+import { FadeViewport, ScrollView } from "@/components/ui/fade-scroll-view";
 import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
-import WebView, { type WebViewMessageEvent } from "react-native-webview";
-import { captureRef } from "react-native-view-shot";
+import WebView, {
+  type WebViewProps,
+  type WebViewMessageEvent,
+} from "react-native-webview";
+import { captureRef, releaseCapture } from "react-native-view-shot";
+import { accountScope, isCurrentAccountScope } from "@/services/accountScope";
 import * as Sharing from "expo-sharing";
 import * as Clipboard from "expo-clipboard";
 import * as MediaLibrary from "expo-media-library";
+import { LinearGradient } from "expo-linear-gradient";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { BookOpen, Search, X } from "@/components/ui/icons";
-import { List, MoreHorizontal, Settings2 } from "lucide-react-native";
+import { BookOpen, X } from "@/components/ui/icons";
+import { SearchBar } from "@/components/SearchBar";
+import {
+  ChevronLeft,
+  ChevronRight,
+  List,
+  MoreHorizontal,
+  Settings2,
+} from "lucide-react-native";
+import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useThemeColors, useAppColorScheme } from "@/design/appearance";
-import { confirmHaptic } from "@/services/haptics";
+import { confirmHaptic, softHaptic } from "@/services/haptics";
 import {
   loadAnnotations,
   loadBookmarks,
@@ -44,7 +59,12 @@ import { ReadingSettingsSheet } from "./ReadingSettingsSheet";
 import { pageDirection, pageForRef } from "./navigation";
 import { createReaderHtml } from "./readerHtml";
 import { leafNodes, normalizeHebrewSearch, sefariaProvider } from "./sefaria";
-import { downloadBook, loadBook, loadSection } from "./service";
+import {
+  downloadBook,
+  loadBook,
+  loadSection,
+  preloadSections,
+} from "./service";
 import type {
   Bookmark,
   PrayerProfile,
@@ -65,7 +85,7 @@ const pageGroups = (
     size = 0;
   const limit = Math.round(700 / scale);
   for (const s of segments) {
-    const length = ((lang === "he" ? s.he || s.en : s.en || s.he) ?? "").length;
+    const length = (segmentText(s, lang) ?? "").length;
     if (current.length && size + length > limit) {
       pages.push(current);
       current = [];
@@ -85,6 +105,25 @@ const button = (colors: ReturnType<typeof useThemeColors>) => ({
   justifyContent: "center" as const,
   backgroundColor: colors.mineral,
 });
+function FadingReaderPage(props: WebViewProps) {
+  const [ready, setReady] = useState(false);
+  return (
+    <View style={{ flex: 1 }}>
+      {!ready && (
+        <CircleLoadingIndicator
+          accessibilityLabel="Loading Siddur page"
+          style={{ position: "absolute", top: "45%", alignSelf: "center" }}
+        />
+      )}
+      <FadeIn ready={ready} style={{ flex: 1 }}>
+        <FadeViewport style={{ flex: 1 }}>
+        <WebView {...props} onLoadEnd={() => setReady(true)} />
+      </FadeViewport>
+      </FadeIn>
+    </View>
+  );
+}
+
 export type SiddurMenuAction =
   "contents" | "bookmark" | "share" | "save" | "settings";
 
@@ -99,6 +138,7 @@ export function SiddurExperience({
   onBookmarkStatus?: (bookmarked: boolean) => void;
   onChooseDefault?: () => void;
 }) {
+  const readerScope = useRef(accountScope()).current;
   const insets = useSafeAreaInsets();
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const colors = useThemeColors(),
@@ -107,6 +147,7 @@ export function SiddurExperience({
   const [catalog, setCatalog] = useState<SiddurDefinition[]>([]),
     [bookId, setBookId] = useState("Siddur Ashkenaz"),
     [reader, setReader] = useState(false),
+    [downloading, setDownloading] = useState(false),
     [loading, setLoading] = useState(false),
     [error, setError] = useState("");
   const [book, setBook] = useState<SiddurDefinition | null>(null),
@@ -176,11 +217,14 @@ export function SiddurExperience({
     };
   }, []);
   const open = useCallback(async (id: string) => {
+    if (!isCurrentAccountScope(readerScope)) return;
     setLoading(true);
     setError("");
     try {
       const loaded = await loadBook(id);
+      if (!isCurrentAccountScope(readerScope)) return;
       const saved = await loadPosition(id);
+      if (!isCurrentAccountScope(readerScope)) return;
       const refs = leafNodes(loaded.nodes);
       pendingRestore.current = saved?.segmentRef;
       setSegments([]);
@@ -192,7 +236,11 @@ export function SiddurExperience({
       setLanguage(saved?.language ?? "en");
       setFontScale(saved?.fontScale ?? 1);
       setProfile(saved?.profile ?? "general");
-      setBookmarks(await loadBookmarks(id));
+      setBookmarks(
+        (await loadBookmarks(id)).filter((b) =>
+          refs.some((n) => n.ref === b.sectionRef),
+        ),
+      );
       const target = Math.max(
         0,
         refs.findIndex(
@@ -206,18 +254,23 @@ export function SiddurExperience({
       setReader(true);
     } catch {
       setError(
-        "This siddur is unavailable right now. Connect to download its approved text.",
+        "This siddur is unavailable right now. Choose one of the available researched books.",
       );
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [readerScope]);
   useEffect(() => {
     if (!embedded) return;
     let live = true;
     void selectedBook()
       .then((id) => {
-        if (live) void open(id ?? "Siddur Ashkenaz");
+        if (live)
+          void sefariaProvider
+            .getCatalog()
+            .then((books) =>
+              open(books.some((b) => b.id === id) ? id! : "Siddur Ashkenaz"),
+            );
       })
       .catch(() => {
         if (live) void open("Siddur Ashkenaz");
@@ -237,10 +290,12 @@ export function SiddurExperience({
         setSegments(s);
         if (!s.length)
           setError(
-            "No approved text is available in this section. Choose another section from Contents.",
+            "No researched text is available in this section. Choose another section from Contents.",
           );
         else setError("");
-        setAnnotations(await loadAnnotations(bookId, section.ref));
+        const loadedAnnotations = await loadAnnotations(bookId, section.ref);
+        if (!active || request !== loadingId.current) return;
+        setAnnotations(loadedAnnotations);
         const anchor = pendingRestore.current;
         if (anchor) {
           const groups = pageGroups(s, language, fontScale);
@@ -249,8 +304,6 @@ export function SiddurExperience({
           pendingRestore.current = undefined;
         }
         setReadySection(section.ref);
-        const near = leaves[sectionIndex + 1];
-        if (near) void loadSection(bookId, near.ref).catch(() => {});
       } catch {
         if (active)
           setError("This section is not cached. Connect and try again.");
@@ -261,7 +314,16 @@ export function SiddurExperience({
     };
   }, [reader, section?.ref, bookId]);
   useEffect(() => {
+    if (!reader || !section || readySection !== section.ref) return;
+    return preloadSections(
+      bookId,
+      leaves.map((leaf) => leaf.ref),
+      sectionIndex,
+    );
+  }, [reader, bookId, leaves, sectionIndex, readySection]);
+  useEffect(() => {
     if (
+      !isCurrentAccountScope(readerScope) ||
       !reader ||
       !section ||
       readySection !== section.ref ||
@@ -312,12 +374,13 @@ export function SiddurExperience({
       Animated.spring(slide, {
         toValue: 0,
         useNativeDriver: true,
-        tension: 85,
-        friction: 12,
+        tension: 110,
+        friction: 15,
       }).start();
       return;
     }
     const turn = () => {
+      void softHaptic();
       if (direction > 0) {
         if (pageIndex < pages.length - 1) setPageIndex((p) => p + 1);
         else goSection(sectionIndex + 1);
@@ -335,12 +398,14 @@ export function SiddurExperience({
     Animated.parallel([
       Animated.timing(opacity, {
         toValue: 0.35,
-        duration: 220,
+        duration: 150,
+        easing: Easing.in(Easing.cubic),
         useNativeDriver: true,
       }),
       Animated.timing(slide, {
         toValue: -visualDirection * travel,
-        duration: 220,
+        duration: 150,
+        easing: Easing.in(Easing.cubic),
         useNativeDriver: true,
       }),
     ]).start(({ finished }) => {
@@ -354,12 +419,14 @@ export function SiddurExperience({
         Animated.parallel([
           Animated.timing(opacity, {
             toValue: 1,
-            duration: 260,
+            duration: 180,
+            easing: Easing.out(Easing.cubic),
             useNativeDriver: true,
           }),
           Animated.timing(slide, {
             toValue: 0,
-            duration: 260,
+            duration: 180,
+            easing: Easing.out(Easing.cubic),
             useNativeDriver: true,
           }),
         ]).start(() => {
@@ -427,8 +494,8 @@ export function SiddurExperience({
       Animated.spring(slide, {
         toValue: 0,
         useNativeDriver: true,
-        tension: 85,
-        friction: 12,
+        tension: 110,
+        friction: 15,
       }).start();
     } else if (m.type === "swipe" && m.dx)
       goPage(pageDirection(language, m.dx));
@@ -436,15 +503,17 @@ export function SiddurExperience({
       goPage((m.side > 0.5 ? 1 : -1) * (language === "he" ? -1 : 1));
   };
   const addAnnotation = async (type: "highlight" | "note") => {
-    if (!selection || !book) return;
+    if (!isCurrentAccountScope(readerScope) || !selection || !book) return;
     const now = Date.now();
     const a: TextAnnotation = {
       id: `${now}-${Math.random().toString(36).slice(2)}`,
       siddurId: bookId,
       versionKey:
-        (language === "he"
-          ? book.versions.he?.versionTitle
-          : book.versions.en?.versionTitle) ?? "",
+        (language === "transliteration"
+          ? "connected-words-v1"
+          : language === "he"
+            ? book.versions.he?.versionTitle
+            : book.versions.en?.versionTitle) ?? "",
       language,
       startSegmentId: selection.start.id,
       startOffset: selection.start.offset,
@@ -457,6 +526,7 @@ export function SiddurExperience({
       updatedAt: now,
     };
     await saveAnnotation(a);
+    if (!isCurrentAccountScope(readerScope)) return;
     setAnnotations((old) => [...old, a]);
     setNote(false);
     setNoteText("");
@@ -465,7 +535,7 @@ export function SiddurExperience({
     void confirmHaptic();
   };
   const toggleBookmark = async () => {
-    if (!location) return;
+    if (!isCurrentAccountScope(readerScope) || !location) return;
     if (currentBookmark) {
       await removeBookmark(currentBookmark.id);
       setBookmarks((b) => b.filter((x) => x.id !== currentBookmark.id));
@@ -484,22 +554,27 @@ export function SiddurExperience({
     void confirmHaptic();
   };
   const share = async (save = false) => {
-    if (!pageRef.current) return;
+    if (!isCurrentAccountScope(readerScope) || !pageRef.current) return;
+    let uri: string | undefined;
     try {
-      const uri = await captureRef(pageRef.current, {
+      uri = await captureRef(pageRef.current, {
         format: "png",
         quality: 1,
       });
+      if (!isCurrentAccountScope(readerScope)) return;
       if (save) {
         const permission = await MediaLibrary.requestPermissionsAsync(true, [
           "photo",
         ]);
+        if (!isCurrentAccountScope(readerScope)) return;
         if (permission.granted) await MediaLibrary.Asset.create(uri);
         else setError("Allow photo access to save this page.");
-      } else if (await Sharing.isAvailableAsync())
+      } else if (await Sharing.isAvailableAsync() && isCurrentAccountScope(readerScope))
         await Sharing.shareAsync(uri, { mimeType: "image/png" });
     } catch {
       setError("This page could not be captured right now.");
+    } finally {
+      if (uri) releaseCapture(uri);
     }
   };
   const chooseCapture = () =>
@@ -635,7 +710,7 @@ export function SiddurExperience({
               {bookId}
             </Text>
             <Text style={{ color: colors.inkMuted }}>
-              Read the structured Sefaria text, with your place saved on this
+              Read selected research sections, with your place saved on this
               device.
             </Text>
             <Button
@@ -651,7 +726,7 @@ export function SiddurExperience({
               }}
             >
               {loading ? (
-                <ActivityIndicator color={colors.onAccent} />
+                <CircleLoadingIndicator dotColor={colors.onAccent} />
               ) : (
                 <Text style={{ color: colors.onAccent, fontWeight: "700" }}>
                   Open reader
@@ -749,14 +824,16 @@ export function SiddurExperience({
               >
                 <List size={20} color={colors.ink} />
               </Button>
-              <Button
-                variant="ghost"
-                accessibilityLabel="Reader menu"
-                onPress={openReaderMenu}
-                style={button(colors)}
-              >
-                <MoreHorizontal size={23} color={colors.ink} />
-              </Button>
+              {!embedded ? (
+                <Button
+                  variant="ghost"
+                  accessibilityLabel="Reader menu"
+                  onPress={openReaderMenu}
+                  style={button(colors)}
+                >
+                  <MoreHorizontal size={23} color={colors.ink} />
+                </Button>
+              ) : null}
             </View>
           )}
           {!embedded ? (
@@ -770,81 +847,168 @@ export function SiddurExperience({
                 marginBottom: 10,
               }}
             >
-              {(["en", "he"] as const).map((l) => (
+              {readerLanguages.map((l) => (
                 <Button
                   key={l}
-                  accessibilityLabel={
-                    l === "en" ? "Read in English" : "Read in Hebrew"
-                  }
+                  accessibilityLabel={`Read ${readerLanguageLabels[l]}`}
                   accessibilityState={{ selected: language === l }}
                   variant="ghost"
                   onPress={() => switchLanguage(l)}
                   style={{
                     borderRadius: 13,
                     minWidth: 83,
+                    flexShrink: 1,
                     backgroundColor:
                       language === l ? colors.vellum : "transparent",
                   }}
                 >
                   <Text style={{ textAlign: "center", color: colors.ink }}>
-                    {l === "en" ? "English" : "עברית"}
+                    {readerLanguageLabels[l]}
                   </Text>
                 </Button>
               ))}
             </View>
           ) : null}
-          <Animated.View
-            ref={pageRef}
-            collapsable={false}
+          <View
             style={{
               flex: 1,
-              marginHorizontal: embedded ? 0 : 12,
-              borderRadius: 24,
-              overflow: "hidden",
-              transformOrigin: "bottom",
-              backgroundColor: colors.vellum,
-              opacity,
-              transform: [
-                { translateX: slide },
-                { rotateZ: pageTilt },
-                { translateY: pageLift },
-              ],
-              shadowColor: colors.shadow,
-              shadowOpacity: 0.07,
-              shadowRadius: 10,
+              position: "relative",
+              marginHorizontal: embedded ? -24 : 12,
             }}
           >
-            {segments.length ? (
-              <WebView
-                key={`${section?.ref}:${pageIndex}:${language}:${fontScale}`}
-                source={{ html }}
-                originWhitelist={["about:blank"]}
-                onShouldStartLoadWithRequest={(r) => r.url === "about:blank"}
-                onMessage={onMessage}
-                textInteractionEnabled
-                javaScriptEnabled
-                domStorageEnabled={false}
-                scrollEnabled
-                showsVerticalScrollIndicator={false}
-                style={{ backgroundColor: colors.vellum }}
-              />
-            ) : (
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 25,
-                }}
-              >
-                {error ? (
-                  <Text style={{ color: colors.inkMuted }}>{error}</Text>
-                ) : (
-                  <ActivityIndicator color={colors.blue} />
-                )}
-              </View>
-            )}
-          </Animated.View>
+            <Animated.View
+              ref={pageRef}
+              collapsable={false}
+              style={{
+                flex: 1,
+                marginHorizontal: embedded ? 24 : 0,
+                borderRadius: 24,
+                overflow: "hidden",
+                transformOrigin: "bottom",
+                backgroundColor: colors.vellum,
+                opacity,
+                transform: [
+                  { translateX: slide },
+                  { rotateZ: pageTilt },
+                  { translateY: pageLift },
+                ],
+                shadowColor: colors.shadow,
+                shadowOpacity: 0.07,
+                shadowRadius: 10,
+              }}
+            >
+              {segments.length ? (
+                <FadingReaderPage
+                  key={`${section?.ref}:${pageIndex}:${language}:${fontScale}`}
+                  source={{ html }}
+                  originWhitelist={["about:blank"]}
+                  onShouldStartLoadWithRequest={(r) => r.url === "about:blank"}
+                  onMessage={onMessage}
+                  textInteractionEnabled
+                  javaScriptEnabled
+                  domStorageEnabled={false}
+                  scrollEnabled
+                  bounces={false}
+                  directionalLockEnabled
+                  showsVerticalScrollIndicator={false}
+                  style={{ backgroundColor: colors.vellum }}
+                />
+              ) : (
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: 25,
+                  }}
+                >
+                  {error ? (
+                    <Text style={{ color: colors.inkMuted }}>{error}</Text>
+                  ) : (
+                    <CircleLoadingIndicator dotColor={colors.blue} />
+                  )}
+                </View>
+              )}
+            </Animated.View>
+            {embedded ? (
+              <>
+                <LinearGradient
+                  colors={[colors.parchment, colors.vellum, colors.parchment]}
+                  locations={[0, 0.5, 1]}
+                  start={{ x: 0.5, y: 0 }}
+                  end={{ x: 0.5, y: 1 }}
+                  pointerEvents="none"
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 24,
+                  }}
+                />
+                <LinearGradient
+                  colors={[colors.parchment, colors.vellum, colors.parchment]}
+                  locations={[0, 0.5, 1]}
+                  start={{ x: 0.5, y: 0 }}
+                  end={{ x: 0.5, y: 1 }}
+                  pointerEvents="none"
+                  style={{
+                    position: "absolute",
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 24,
+                  }}
+                />
+              </>
+            ) : null}
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Previous page"
+              onPress={() => goPage(-1)}
+              style={{
+                position: "absolute",
+                left: -8,
+                top: "50%",
+                width: 44,
+                height: 52,
+                marginTop: -26,
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 2,
+                borderRadius: 22,
+              }}
+            >
+              {language === "he" ? (
+                <ChevronRight size={18} color={colors.blue} />
+              ) : (
+                <ChevronLeft size={18} color={colors.blue} />
+              )}
+            </Pressable>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Next page"
+              onPress={() => goPage(1)}
+              style={{
+                position: "absolute",
+                right: -8,
+                top: "50%",
+                width: 44,
+                height: 52,
+                marginTop: -26,
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 2,
+                borderRadius: 22,
+              }}
+            >
+              {language === "he" ? (
+                <ChevronLeft size={18} color={colors.blue} />
+              ) : (
+                <ChevronRight size={18} color={colors.blue} />
+              )}
+            </Pressable>
+          </View>
           {selection ? (
             <View
               style={{
@@ -908,181 +1072,178 @@ export function SiddurExperience({
             />
           </View>
           {toc ? (
-            <View
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                justifyContent: "flex-end",
-                backgroundColor: "#0008",
-                zIndex: 30,
-              }}
+            <Modal
+              visible={toc}
+              transparent
+              animationType={reduceMotion ? "none" : "slide"}
+              onRequestClose={() => setToc(false)}
             >
               <View
                 style={{
-                  height: "90%",
-                  backgroundColor: colors.parchment,
-                  borderTopLeftRadius: 26,
-                  borderTopRightRadius: 26,
-                  overflow: "hidden",
+                  flex: 1,
+                  justifyContent: "flex-end",
+                  backgroundColor: "#0008",
                 }}
               >
-                <SafeAreaView
+                <View
                   style={{
-                    flex: 1,
-                    backgroundColor: colors.parchment,
-                    padding: 20,
+                    height: "88%",
+                    maxHeight: windowHeight - Math.max(insets.top, 24),
+                    backgroundColor: colors.vellum,
+                    borderTopLeftRadius: 26,
+                    borderTopRightRadius: 26,
+                    overflow: "hidden",
                   }}
                 >
-                  <View
+                  <SafeAreaView
+                    edges={["bottom"]}
                     style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "space-between",
+                      flex: 1,
+                      backgroundColor: colors.vellum,
+                      paddingHorizontal: 24,
+                      paddingTop: 16,
                     }}
                   >
-                    <Text variant="section" style={{ fontSize: 24 }}>
-                      Contents
-                    </Text>
-                    <Button
-                      onPress={() => setToc(false)}
-                      accessibilityLabel="Close contents"
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
                     >
-                      <X size={22} color={colors.ink} />
-                    </Button>
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      backgroundColor: colors.mineral,
-                      borderRadius: 16,
-                      paddingHorizontal: 12,
-                      marginVertical: 16,
-                    }}
-                  >
-                    <Search size={18} color={colors.inkMuted} />
-                    <TextInput
+                      <Text
+                        variant="section"
+                        style={{ fontSize: 24, lineHeight: 32 }}
+                      >
+                        Contents
+                      </Text>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onPress={() => setToc(false)}
+                        accessibilityLabel="Close contents"
+                        style={{ backgroundColor: colors.blue }}
+                      >
+                        <X size={22} color={colors.onAccent} />
+                      </Button>
+                    </View>
+                    <SearchBar
                       value={query}
                       onChangeText={setQuery}
                       placeholder="Search English or Hebrew"
-                      placeholderTextColor={colors.inkMuted}
-                      style={{
-                        height: 48,
-                        flex: 1,
-                        marginLeft: 8,
-                        color: colors.ink,
-                      }}
+                      accessibilityLabel="Search siddur section titles in English or Hebrew"
+                      style={{ marginVertical: 16 }}
                     />
-                  </View>
-                  <ScrollView keyboardShouldPersistTaps="handled">
-                    {!query && bookmarks.length ? (
-                      <View style={{ paddingVertical: 10 }}>
-                        <Text variant="section">Saved places</Text>
-                        {bookmarks.map((saved) => {
-                          const i = leaves.findIndex(
-                            (n) => n.ref === saved.sectionRef,
-                          );
-                          return (
-                            <Pressable
-                              key={saved.id}
-                              accessibilityRole="button"
-                              accessibilityLabel={`Return to ${leaves[i]?.titleEn ?? "saved place"}`}
-                              onPress={() => {
-                                pendingRestore.current = saved.segmentRef;
-                                goSection(i);
-                              }}
-                              style={{
-                                paddingVertical: 12,
-                                borderBottomWidth: 1,
-                                borderColor: colors.hairline,
-                              }}
-                            >
-                              <Text style={{ color: colors.ink }}>
-                                {leaves[i]?.titleEn ?? saved.sectionRef}
-                              </Text>
-                            </Pressable>
-                          );
-                        })}
-                      </View>
-                    ) : null}
-                    {query.trim().length >= 2 && contentResults.length ? (
-                      <View style={{ paddingVertical: 10 }}>
-                        <Text variant="section">
-                          Text matches in downloaded sections
-                        </Text>
-                        {contentResults.map((result) => {
-                          const i = leaves.findIndex(
-                            (n) => n.ref === result.sectionId,
-                          );
-                          return (
-                            <Pressable
-                              key={result.ref}
-                              accessibilityRole="button"
-                              accessibilityLabel={`Go to ${result.ref}`}
-                              onPress={() => {
-                                pendingRestore.current = result.ref;
-                                goSection(i);
-                              }}
-                              style={{
-                                paddingVertical: 12,
-                                borderBottomWidth: 1,
-                                borderColor: colors.hairline,
-                              }}
-                            >
-                              <Text
-                                style={{ color: colors.ink, fontWeight: "600" }}
+                    <ScrollView keyboardShouldPersistTaps="handled">
+                      {!query && bookmarks.length ? (
+                        <View style={{ paddingVertical: 10 }}>
+                          <Text variant="section">Saved places</Text>
+                          {bookmarks.map((saved) => {
+                            const i = leaves.findIndex(
+                              (n) => n.ref === saved.sectionRef,
+                            );
+                            return (
+                              <Pressable
+                                key={saved.id}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Return to ${leaves[i]?.titleEn ?? "saved place"}`}
+                                onPress={() => {
+                                  pendingRestore.current = saved.segmentRef;
+                                  goSection(i);
+                                }}
+                                style={{
+                                  paddingVertical: 12,
+                                  borderBottomWidth: 1,
+                                  borderColor: colors.hairline,
+                                }}
                               >
-                                {leaves[i]?.titleEn}
-                              </Text>
-                              <Text
-                                numberOfLines={2}
-                                style={{ color: colors.inkMuted }}
+                                <Text style={{ color: colors.ink }}>
+                                  {leaves[i]?.titleEn ?? saved.sectionRef}
+                                </Text>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                      ) : null}
+                      {query.trim().length >= 2 && contentResults.length ? (
+                        <View style={{ paddingVertical: 10 }}>
+                          <Text variant="section">
+                            Text matches in downloaded sections
+                          </Text>
+                          {contentResults.map((result) => {
+                            const i = leaves.findIndex(
+                              (n) => n.ref === result.sectionId,
+                            );
+                            return (
+                              <Pressable
+                                key={result.ref}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Go to ${result.ref}`}
+                                onPress={() => {
+                                  pendingRestore.current = result.ref;
+                                  goSection(i);
+                                }}
+                                style={{
+                                  paddingVertical: 12,
+                                  borderBottomWidth: 1,
+                                  borderColor: colors.hairline,
+                                }}
                               >
-                                {result.en ?? result.he}
-                              </Text>
-                            </Pressable>
-                          );
-                        })}
-                      </View>
-                    ) : null}
-                    {filtered.map(({ n, i }) => (
-                      <Pressable
-                        key={n.ref}
-                        accessibilityRole="button"
-                        accessibilityLabel={`Go to ${n.titleEn}`}
-                        onPress={() => goSection(i)}
-                        style={{
-                          paddingVertical: 14,
-                          paddingLeft: Math.min(n.depth, 4) * 10,
-                          borderBottomWidth: 1,
-                          borderColor: colors.hairline,
-                        }}
-                      >
-                        <Text
+                                <Text
+                                  style={{
+                                    color: colors.ink,
+                                    fontWeight: "600",
+                                  }}
+                                >
+                                  {leaves[i]?.titleEn}
+                                </Text>
+                                <Text
+                                  numberOfLines={2}
+                                  style={{ color: colors.inkMuted }}
+                                >
+                                  {result.en ?? result.he}
+                                </Text>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                      ) : null}
+                      {filtered.map(({ n, i }) => (
+                        <Pressable
+                          key={n.ref}
+                          accessibilityRole="button"
+                          accessibilityLabel={`Go to ${n.titleEn}`}
+                          onPress={() => goSection(i)}
                           style={{
-                            color: colors.ink,
-                            fontSize: 16,
-                            fontWeight: "600",
+                            paddingVertical: 14,
+                            paddingLeft: Math.min(n.depth, 4) * 10,
+                            borderBottomWidth: 1,
+                            borderColor: colors.hairline,
                           }}
                         >
-                          {n.titleEn}
-                        </Text>
-                        {n.titleHe ? (
                           <Text
-                            style={{ color: colors.inkMuted, fontSize: 13 }}
+                            style={{
+                              color: colors.ink,
+                              fontSize: 16,
+                              fontWeight: "600",
+                            }}
                           >
-                            {n.titleHe}
+                            {n.titleEn}
                           </Text>
-                        ) : null}
-                      </Pressable>
-                    ))}
-                  </ScrollView>
-                </SafeAreaView>
+                          {n.titleHe ? (
+                            <Text
+                              style={{ color: colors.inkMuted, fontSize: 13 }}
+                            >
+                              {n.titleHe}
+                            </Text>
+                          ) : null}
+                        </Pressable>
+                      ))}
+                    </ScrollView>
+                  </SafeAreaView>
+                </View>
               </View>
-            </View>
+            </Modal>
           ) : null}
           <ReadingSettingsSheet
             visible={settings}
@@ -1100,8 +1261,11 @@ export function SiddurExperience({
             }}
             profile={profile}
             onProfileChange={setProfile}
+            downloading={downloading}
             downloadStatus={download}
             onDownload={() => {
+              if (downloading) return;
+              setDownloading(true);
               setDownload("Starting download…");
               void downloadBook(bookId, (done, total) =>
                 setDownload(`${done} of ${total} sections cached`),
@@ -1109,7 +1273,8 @@ export function SiddurExperience({
                 .then(() => setDownload("Available offline"))
                 .catch(() =>
                   setDownload("Download paused. Try again when connected."),
-                );
+                )
+                .finally(() => setDownloading(false));
             }}
           />
           {note ? (
