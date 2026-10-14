@@ -34,9 +34,12 @@ module.exports = function withWidgetFonts(config) {
       .map((child) => child.value)
       .find((childId) => project.getPBXGroupByKey(childId)?.name === "Resources");
     if (!resourcesGroupId) {
-      resourcesGroupId = project.addPbxGroup([], "Resources").uuid;
+      resourcesGroupId = project.addPbxGroup([], "Resources", ".").uuid;
       project.addToPbxGroup(resourcesGroupId, widgetGroupId);
     }
+    // node-xcode serializes an omitted path as the literal "undefined". These
+    // files live directly in the parent widget directory, including on reruns.
+    project.getPBXGroupByKey(resourcesGroupId).path = ".";
 
     for (const [, fileName] of fontFiles) {
       if (!project.hasFile(fileName)) {

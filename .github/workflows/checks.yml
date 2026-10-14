@@ -41,3 +41,10 @@ jobs:
       - run: npm run build
         env:
           CI: '1'
+      - name: Generate iOS project without installing pods or signing
+        run: node node_modules/expo/bin/cli prebuild --platform ios --no-install
+        env:
+          CI: '1'
+          EXPO_NO_DOTENV: '1'
+      - name: Verify generated widget font resources
+        run: node scripts/backend/checkWidgetFonts.cjs
