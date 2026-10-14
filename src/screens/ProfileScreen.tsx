@@ -1,5 +1,6 @@
 import thirdPartyNotices from "@/data/thirdPartyNotices.json";
 import { requestLocalDataDeletion } from "@/services/localDataDeletion";
+import { ACCOUNT_DELETION_MESSAGE } from "@/services/accountDeletionMessage";
 import Constants from "expo-constants";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PrayerFocusSetupContent } from "@/components/PrayerFocusSetupContent";
@@ -117,8 +118,7 @@ export function ProfileScreen(): React.JSX.Element {
   };
 
   const confirmDeleteProfile = () => {
-    const message =
-      "This deletes your Kavanah account and active Circle data, including cloud prayer history, posts, and connections, and signs you out. It also removes this account’s practice history, bookmarks, notes, preferences, and reminders from this device. Older records without an account owner remain until you clear local data. You will need an account to use Kavanah again.";
+    const message = ACCOUNT_DELETION_MESSAGE;
     if (Platform.OS === "web") {
       if (globalThis.confirm?.(`${message}\n\nDelete account?`))
         void runAccountAction("delete");

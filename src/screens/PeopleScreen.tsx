@@ -1,4 +1,5 @@
 import { useExclusiveAction } from "@/hooks/useExclusiveAction";
+import { ACCOUNT_DELETION_MESSAGE } from "@/services/accountDeletionMessage";
 import { ActivityTiming } from "@/components/ActivityTiming";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Alert, Linking, Share, View } from "react-native";
@@ -531,8 +532,11 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             "Sign out",
             () =>
               void run(async () => {
-                const { error } = await requireCircle().auth.signOut();
+                const { error } = await requireCircle().auth.signOut({
+                  scope: "local",
+                });
                 if (error) throw error;
+                await loadCircleAccount(null);
               }),
             true,
           )}
@@ -540,8 +544,8 @@ function PeopleContent({ tabs, lead }: FriendsProps) {
             "Delete account",
             () =>
               Alert.alert(
-                "Delete your Circle account?",
-                "This permanently deletes your profile, cloud prayer history, posts and connections. Private device activity stays on this phone.",
+                "Delete your account?",
+                ACCOUNT_DELETION_MESSAGE,
                 [
                   { text: "Cancel", style: "cancel" },
                   {
